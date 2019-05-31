@@ -8,8 +8,8 @@ import javax.swing.SwingConstants;
 
 public class Facilities extends JPanel {
 	
-	JPanel panelFacilities;
-	JLabel titleFacilities;
+	public  JPanel panelFacilities;
+	private  JLabel titleFacilities;
 	
 	public Facilities() {
 		//Facilities Panel Settings

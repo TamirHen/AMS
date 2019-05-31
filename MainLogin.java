@@ -24,16 +24,24 @@ import java.awt.event.ActionEvent;
 
 public class MainLogin extends JFrame {
 
-	private JPanel loginPanel;
 	private JButton btnLogin;
 
 	private JTextField tf_loginUsername;
 	private JTextField tf_loginPassword;
 	private JPasswordField passwordField_Login;
+	
+	
+	private JLabel lblLoginFailed;
+	private JLabel lblLoginLogo;
 
 	private static Stadium stadium;
 
+	//---set users---//
+	private User myUser;
+	//---------------//
+	
 	//---panels declarations---//
+	private JPanel loginPanel;
 	public static Menu mainPanel;
 	public static Overview  overviewPanel;
 	public static Properties propertiesPanel;
@@ -69,6 +77,9 @@ public class MainLogin extends JFrame {
 		// set stadium:
 		setStadium(new Stadium("Bloomfield", "Maccabi Tel Aviv", 29522, "She'erit Israel, Tel Aviv"));
 
+		//set users:
+		myUser = new User("TamirHen", "Tamir", "Hen", "Tamir1491993", "tamirhen6@gmail.com");
+
 		// set first panel:
 
 		loginPanel = new JPanel();
@@ -89,11 +100,11 @@ public class MainLogin extends JFrame {
 		loginPanel.setLayout(null);
 
 		// ---login logo---//
-		JLabel lblNewLabel = new JLabel("");
-		lblNewLabel.setBounds(385, 120, 344, 104);
-		lblNewLabel.setIcon(new ImageIcon(MainLogin.class.getResource("/Images/loginLogo.png")));
-		lblNewLabel.setBorder(null);
-		loginPanel.add(lblNewLabel);
+		lblLoginLogo = new JLabel("");
+		lblLoginLogo.setBounds(385, 120, 344, 104);
+		lblLoginLogo.setIcon(new ImageIcon(MainLogin.class.getResource("/Images/loginLogo.png")));
+		lblLoginLogo.setBorder(null);
+		loginPanel.add(lblLoginLogo);
 
 		// ---username---//
 		tf_loginUsername = new JTextField();
@@ -110,6 +121,14 @@ public class MainLogin extends JFrame {
 		passwordField_Login.setFont(UI_Elements.font_bodyFillText);
 		passwordField_Login.setHorizontalAlignment(SwingConstants.CENTER);
 		loginPanel.add(passwordField_Login);
+		
+		//---login failed label---//
+		lblLoginFailed = new JLabel("Failed to login - username or password is incorrect");
+		lblLoginFailed.setFont(UI_Elements.font_bodyFillText);
+		lblLoginFailed.setBounds(397, 400, 470, 76);
+		lblLoginFailed.setForeground(Color.RED);
+		lblLoginFailed.setVisible(false);
+		loginPanel.add(lblLoginFailed);
 
 		// ---login button---//
 
@@ -136,14 +155,19 @@ public class MainLogin extends JFrame {
 			}
 		});
 		btnLogin.addActionListener(new ActionListener() {
+			@SuppressWarnings("deprecation")
 			public void actionPerformed(ActionEvent arg0) {
-				setContentPane(mainPanel.menuPanel);
-				getContentPane().add(overviewPanel.panelOverview);
-				getContentPane().add(propertiesPanel.panelProperties);
-				getContentPane().add(salesPanel.panelSales);
-				getContentPane().add(facilitiesPanel.panelFacilities);
-				
-				overviewPanel.panelOverview.setVisible(true);
+				if (isUserExist(tf_loginUsername.getText(),passwordField_Login.getPassword())) {
+					setContentPane(mainPanel.menuPanel);
+					getContentPane().add(overviewPanel.panelOverview);
+					getContentPane().add(propertiesPanel.panelProperties);
+					getContentPane().add(salesPanel.panelSales);
+					getContentPane().add(facilitiesPanel.panelFacilities);
+					overviewPanel.panelOverview.setVisible(true);
+				}
+				else
+					lblLoginFailed.setVisible(true);
+
 			}
 		});
 		loginPanel.add(btnLogin);
@@ -159,6 +183,16 @@ public class MainLogin extends JFrame {
 
 	public static void setStadium(Stadium stdm) {
 		stadium = stdm;
+	}
+	public boolean isUserExist(String userName, char[] password) {
+		String temp = new String(password);
+		if (userName.equals(myUser.getUserName())&&temp.equals(myUser.getPassword())) {
+//			if (myUser.getUserName()==userName&&temp==myUser.getPassword())
+			return true;
+		}
+		else {
+			return false;
+		}
 	}
 
 }

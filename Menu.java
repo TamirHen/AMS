@@ -19,6 +19,8 @@ public class Menu extends JPanel {
 	public JPanel menuPanel;
 	public JPanel overviewPanel;
 	//---------------------//
+	
+
 
 	private JLabel HeaderBG;
 	private JButton btnOverview;
@@ -29,11 +31,10 @@ public class Menu extends JPanel {
 	public Menu() {
 		
 		menuPanel = new JPanel();
-		
 		menuPanel.setBackground(UI_Elements.color_menuBar);
 		menuPanel.setBounds(0, 0, 1114, 600);
 		menuPanel.setLayout(null);
-
+		
 		HeaderBG = new JLabel();
 		HeaderBG.setIcon(new ImageIcon(Menu.class.getResource("/Images/logoHeader.png")));
 		HeaderBG.setBorder(null);

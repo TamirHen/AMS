@@ -37,7 +37,6 @@ public class Properties extends JPanel {
 	private JTextField tf_TotalNumOfSeasonTickets;
 	private JTextField tf_TotalRevenueGameTickets;
 	
-	// PROPERTIES PANEL ELEMENTS
 	private int sectionInedex;
 	private JComboBox<?> cb_sectionType;
 	private JComboBox<?> cb_sectionRanking;
@@ -50,7 +49,23 @@ public class Properties extends JPanel {
 	private JButton editProperties;
 	private JButton finishEditPropertiesButton;
 	private JButton btnCancelEdit;
+	
+	private  JLabel titleProperties;
+	private JLabel lblArenaName;
+	private  JLabel lblArenaType;
+	private  JLabel lblAddress;
+	private  JLabel lblArenaNumOfSeats;
+	private  JLabel lblSectionManagement;
+	private  JLabel lblSectionType;
+	private  JLabel lblSectionTicketPrice;
+	private  JLabel lblSectionNumOfSeats;
+	private  JLabel lblIsRoofed;
+	private  JLabel lblSectionRanking;
+	
+	private  JSeparator separatorProperties;
 
+	
+	
 	public Properties() {
 		panelProperties = new JPanel();
 		panelProperties.setBorder(null);
@@ -61,7 +76,7 @@ public class Properties extends JPanel {
 		panelProperties.setVisible(false);
 
 		// Properties Page Title
-		JLabel titleProperties = new JLabel("PROPERTIES");
+		titleProperties = new JLabel("PROPERTIES");
 		titleProperties.setVerticalAlignment(SwingConstants.TOP);
 		titleProperties.setBounds(25, 22, 470, 76);
 		titleProperties.setCursor(Cursor.getPredefinedCursor(Cursor.DEFAULT_CURSOR));
@@ -69,7 +84,7 @@ public class Properties extends JPanel {
 		titleProperties.setFont(new Font(UI_Elements.mainFontName, Font.BOLD, UI_Elements.textPanelTitleSize));
 		panelProperties.add(titleProperties);
 
-		JLabel lblArenaName = new JLabel("Arena Name:");
+		lblArenaName = new JLabel("Arena Name:");
 		lblArenaName.setBorder(null);
 		lblArenaName.setForeground(Color.WHITE);
 		lblArenaName.setFont(UI_Elements.font_bodyLabel);
@@ -86,7 +101,7 @@ public class Properties extends JPanel {
 		panelProperties.add(tf_arenaName);
 		tf_arenaName.setColumns(10);
 
-		JLabel lblArenaType = new JLabel("Arena Type:");
+		lblArenaType = new JLabel("Arena Type:");
 		lblArenaType.setBorder(null);
 		lblArenaType.setForeground(Color.WHITE);
 		lblArenaType.setFont(UI_Elements.font_bodyLabel);
@@ -99,7 +114,7 @@ public class Properties extends JPanel {
 		cb_arenaType.setFont(UI_Elements.font_bodyFillText);
 		panelProperties.add(cb_arenaType);
 
-		JLabel lblAddress = new JLabel("Address:");
+		lblAddress = new JLabel("Address:");
 		lblAddress.setBorder(null);
 		lblAddress.setForeground(Color.WHITE);
 		lblAddress.setFont(UI_Elements.font_bodyLabel);
@@ -116,7 +131,7 @@ public class Properties extends JPanel {
 		panelProperties.add(tf_address);
 		tf_address.setColumns(10);
 
-		JLabel lblArenaNumOfSeats = new JLabel("Num. of Seats:");
+		lblArenaNumOfSeats = new JLabel("Num. of Seats:");
 		lblArenaNumOfSeats.setBorder(null);
 		lblArenaNumOfSeats.setForeground(Color.WHITE);
 		lblArenaNumOfSeats.setFont(UI_Elements.font_bodyLabel);
@@ -133,11 +148,11 @@ public class Properties extends JPanel {
 		panelProperties.add(tf_arenaNumOfSeats);
 		tf_arenaNumOfSeats.setColumns(10);
 
-		JSeparator separatorProperties = new JSeparator();
+		separatorProperties = new JSeparator();
 		separatorProperties.setBounds(35, 230, 384, 10);
 		panelProperties.add(separatorProperties);
 
-		JLabel lblSectionManagement = new JLabel("SECTION MANAGEMENT");
+		lblSectionManagement = new JLabel("SECTION MANAGEMENT");
 		lblSectionManagement.setForeground(Color.WHITE);
 		lblSectionManagement.setFont(UI_Elements.font_bodyLabel);
 		lblSectionManagement.setBorder(null);
@@ -159,7 +174,7 @@ public class Properties extends JPanel {
 		cb_sectionSelection.setBounds(35, 275, 265, 20);
 		panelProperties.add(cb_sectionSelection);
 
-		JLabel lblSectionType = new JLabel("Section Type:");
+		lblSectionType = new JLabel("Section Type:");
 		lblSectionType.setForeground(Color.WHITE);
 		lblSectionType.setFont(UI_Elements.font_bodyLabel);
 		lblSectionType.setBorder(null);
@@ -181,7 +196,7 @@ public class Properties extends JPanel {
 			}
 		});
 
-		JLabel lblSectionTicketPrice = new JLabel("Ticket Price:");
+		lblSectionTicketPrice = new JLabel("Ticket Price:");
 		lblSectionTicketPrice.setBorder(null);
 		lblSectionTicketPrice.setForeground(Color.WHITE);
 		lblSectionTicketPrice.setFont(UI_Elements.font_bodyLabel);
@@ -198,7 +213,7 @@ public class Properties extends JPanel {
 		panelProperties.add(tf_sectionTicketPrice);
 		tf_sectionTicketPrice.setColumns(10);
 
-		JLabel lblSectionNumOfSeats = new JLabel("Num. of Seats:");
+		lblSectionNumOfSeats = new JLabel("Num. of Seats:");
 		lblSectionNumOfSeats.setBorder(null);
 		lblSectionNumOfSeats.setForeground(Color.WHITE);
 		lblSectionNumOfSeats.setFont(UI_Elements.font_bodyLabel);
@@ -215,7 +230,7 @@ public class Properties extends JPanel {
 		panelProperties.add(tf_sectionNumOfSeats);
 		tf_sectionNumOfSeats.setColumns(10);
 
-		JLabel lblIsRoofed = new JLabel("Is Roofed?:");
+		lblIsRoofed = new JLabel("Is Roofed?:");
 		lblIsRoofed.setBorder(null);
 		lblIsRoofed.setForeground(Color.WHITE);
 		lblIsRoofed.setFont(UI_Elements.font_bodyLabel);
@@ -246,7 +261,7 @@ public class Properties extends JPanel {
 		rdbtnIsRoofedNO.setBounds(230, 405, 65, 26);
 		panelProperties.add(rdbtnIsRoofedNO);
 
-		JLabel lblSectionRanking = new JLabel("Section Ranking:");
+		lblSectionRanking = new JLabel("Section Ranking:");
 		lblSectionRanking.setForeground(Color.WHITE);
 		lblSectionRanking.setFont(UI_Elements.font_bodyLabel);
 		lblSectionRanking.setBorder(null);
@@ -509,9 +524,5 @@ public class Properties extends JPanel {
 
 	}
 	
-	//getters and setters:
 
-//	public static JPanel getPanelProperties() {
-//		return panelProperties;
-//	}
 }
