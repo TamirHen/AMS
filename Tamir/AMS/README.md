@@ -1,2 +1,0 @@
-# AMS
-Arena Management System
