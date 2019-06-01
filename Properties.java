@@ -91,7 +91,7 @@ public class Properties extends JPanel {
 		lblArenaName.setBounds(35, 103, 109, 26);
 		panelProperties.add(lblArenaName);
 
-		tf_arenaName = new JTextField(MainLogin.getStadium().getStadiumName());
+		tf_arenaName = new JTextField(AMSFrame.getStadium().getStadiumName());
 		tf_arenaName.setDisabledTextColor(Color.BLACK);
 		tf_arenaName.setEnabled(false);
 		tf_arenaName.setEditable(false);
@@ -121,7 +121,7 @@ public class Properties extends JPanel {
 		lblAddress.setBounds(35, 163, 109, 26);
 		panelProperties.add(lblAddress);
 
-		tf_address = new JTextField(MainLogin.getStadium().getAddress());
+		tf_address = new JTextField(AMSFrame.getStadium().getAddress());
 		tf_address.setDisabledTextColor(Color.BLACK);
 		tf_address.setEnabled(false);
 		tf_address.setEditable(false);
@@ -138,7 +138,7 @@ public class Properties extends JPanel {
 		lblArenaNumOfSeats.setBounds(35, 193, 109, 26);
 		panelProperties.add(lblArenaNumOfSeats);
 
-		tf_arenaNumOfSeats = new JTextField(String.valueOf(MainLogin.getStadium().getCapacity()));
+		tf_arenaNumOfSeats = new JTextField(String.valueOf(AMSFrame.getStadium().getCapacity()));
 		tf_arenaNumOfSeats.setDisabledTextColor(Color.BLACK);
 		tf_arenaNumOfSeats.setEnabled(false);
 		tf_arenaNumOfSeats.setEditable(false);
@@ -161,14 +161,14 @@ public class Properties extends JPanel {
 
 		cb_sectionSelection = new JComboBox();
 		cb_sectionSelection
-				.setModel(new DefaultComboBoxModel(new String[] { MainLogin.getStadium().getArenaSection(0).getSectionName(),
-						MainLogin.getStadium().getArenaSection(1).getSectionName(), MainLogin.getStadium().getArenaSection(2).getSectionName(),
-						MainLogin.getStadium().getArenaSection(3).getSectionName(), MainLogin.getStadium().getArenaSection(4).getSectionName(),
-						MainLogin.getStadium().getArenaSection(5).getSectionName(), MainLogin.getStadium().getArenaSection(6).getSectionName(),
-						MainLogin.getStadium().getArenaSection(7).getSectionName(), MainLogin.getStadium().getArenaSection(8).getSectionName(),
-						MainLogin.getStadium().getArenaSection(9).getSectionName(), MainLogin.getStadium().getArenaSection(10).getSectionName(),
-						MainLogin.getStadium().getArenaSection(11).getSectionName(), MainLogin.getStadium().getArenaSection(12).getSectionName(),
-						MainLogin.getStadium().getArenaSection(13).getSectionName(), MainLogin.getStadium().getArenaSection(14).getSectionName(), }));
+				.setModel(new DefaultComboBoxModel(new String[] { AMSFrame.getStadium().getArenaSection(0).getSectionName(),
+						AMSFrame.getStadium().getArenaSection(1).getSectionName(), AMSFrame.getStadium().getArenaSection(2).getSectionName(),
+						AMSFrame.getStadium().getArenaSection(3).getSectionName(), AMSFrame.getStadium().getArenaSection(4).getSectionName(),
+						AMSFrame.getStadium().getArenaSection(5).getSectionName(), AMSFrame.getStadium().getArenaSection(6).getSectionName(),
+						AMSFrame.getStadium().getArenaSection(7).getSectionName(), AMSFrame.getStadium().getArenaSection(8).getSectionName(),
+						AMSFrame.getStadium().getArenaSection(9).getSectionName(), AMSFrame.getStadium().getArenaSection(10).getSectionName(),
+						AMSFrame.getStadium().getArenaSection(11).getSectionName(), AMSFrame.getStadium().getArenaSection(12).getSectionName(),
+						AMSFrame.getStadium().getArenaSection(13).getSectionName(), AMSFrame.getStadium().getArenaSection(14).getSectionName(), }));
 		cb_sectionSelection.setFont(UI_Elements.font_bodyFillText);
 		cb_sectionSelection.setBorder(null);
 		cb_sectionSelection.setBounds(35, 275, 265, 20);
@@ -188,7 +188,7 @@ public class Properties extends JPanel {
 		cb_sectionType.setBorder(null);
 		cb_sectionType.setBounds(156, 315, 265, 20);
 		panelProperties.add(cb_sectionType);
-		cb_sectionType.setSelectedItem(MainLogin.getStadium().getArenaSection(0/* DO NOT CHANGE 0 VALUE */).getSectionType());
+		cb_sectionType.setSelectedItem(AMSFrame.getStadium().getArenaSection(0/* DO NOT CHANGE 0 VALUE */).getSectionType());
 		cb_sectionType.setRenderer(new DefaultListCellRenderer() { // Send Yoni
 			public void paint(Graphics g) {
 				setForeground(Color.BLACK);
@@ -203,7 +203,7 @@ public class Properties extends JPanel {
 		lblSectionTicketPrice.setBounds(35, 345, 109, 26);
 		panelProperties.add(lblSectionTicketPrice);
 
-		tf_sectionTicketPrice = new JTextField(String.valueOf(MainLogin.getStadium().getArenaSection(0).getTicketPrice()));
+		tf_sectionTicketPrice = new JTextField(String.valueOf(AMSFrame.getStadium().getArenaSection(0).getTicketPrice()));
 		tf_sectionTicketPrice.setDisabledTextColor(Color.BLACK);
 		tf_sectionTicketPrice.setEnabled(false);
 		tf_sectionTicketPrice.setEditable(false);
@@ -220,7 +220,7 @@ public class Properties extends JPanel {
 		lblSectionNumOfSeats.setBounds(35, 375, 109, 26);
 		panelProperties.add(lblSectionNumOfSeats);
 
-		tf_sectionNumOfSeats = new JTextField(String.valueOf(MainLogin.getStadium().getArenaSection(1).getNumOfSeats()));
+		tf_sectionNumOfSeats = new JTextField(String.valueOf(AMSFrame.getStadium().getArenaSection(1).getNumOfSeats()));
 		tf_sectionNumOfSeats.setDisabledTextColor(Color.BLACK);
 		tf_sectionNumOfSeats.setEnabled(false);
 		tf_sectionNumOfSeats.setEditable(false);
@@ -275,7 +275,7 @@ public class Properties extends JPanel {
 		cb_sectionRanking.setBorder(null);
 		cb_sectionRanking.setBounds(156, 435, 265, 20);
 		panelProperties.add(cb_sectionRanking);
-		cb_sectionRanking.setSelectedItem(MainLogin.getStadium().getArenaSection(0/* DO NOT CHANGE 0 VALUE */).getSectionRanking());
+		cb_sectionRanking.setSelectedItem(AMSFrame.getStadium().getArenaSection(0/* DO NOT CHANGE 0 VALUE */).getSectionRanking());
 		cb_sectionRanking.setRenderer(new DefaultListCellRenderer() { // Send Yoni
 			public void paint(Graphics g) {
 				setForeground(Color.BLACK);
@@ -386,22 +386,22 @@ public class Properties extends JPanel {
 
 				sectionInedex = cb_sectionSelection.getSelectedIndex(); // Gets the Section we want to edit
 
-				MainLogin.getStadium().setStadiumName(tf_arenaName.getText());
-				MainLogin.getStadium().setAddress(tf_address.getText());
-				MainLogin.getStadium().setCapacity(Integer.valueOf(tf_arenaNumOfSeats.getText()).intValue());
+				AMSFrame.getStadium().setStadiumName(tf_arenaName.getText());
+				AMSFrame.getStadium().setAddress(tf_address.getText());
+				AMSFrame.getStadium().setCapacity(Integer.valueOf(tf_arenaNumOfSeats.getText()).intValue());
 				// -------------//
-				MainLogin.getStadium().getArenaSection(sectionInedex)
+				AMSFrame.getStadium().getArenaSection(sectionInedex)
 						.setSectionType(cb_sectionType.getModel().getSelectedItem().toString());
-				MainLogin.getStadium().getArenaSection(sectionInedex)
+				AMSFrame.getStadium().getArenaSection(sectionInedex)
 						.setSectionRanking(cb_sectionRanking.getModel().getSelectedItem().toString());
-				MainLogin.getStadium().getArenaSection(sectionInedex)
+				AMSFrame.getStadium().getArenaSection(sectionInedex)
 						.setTicketPrice(Float.valueOf(tf_sectionTicketPrice.getText()).floatValue());
-				MainLogin.getStadium().getArenaSection(sectionInedex)
+				AMSFrame.getStadium().getArenaSection(sectionInedex)
 						.setNumOfSeats(Integer.valueOf(tf_sectionNumOfSeats.getText()).intValue());
 				if (rdbtnIsRoofedYes.isSelected()) {
-					MainLogin.getStadium().getArenaSection(sectionInedex).setRoofed(true);
+					AMSFrame.getStadium().getArenaSection(sectionInedex).setRoofed(true);
 				} else {
-					MainLogin.getStadium().getArenaSection(sectionInedex).setRoofed(false);
+					AMSFrame.getStadium().getArenaSection(sectionInedex).setRoofed(false);
 				}
 				// -------------//
 				setProperties(false);
@@ -417,16 +417,16 @@ public class Properties extends JPanel {
 
 				sectionInedex = cb_sectionSelection.getSelectedIndex(); // Gets the Section we want to edit
 
-				tf_arenaName.setText(MainLogin.getStadium().getStadiumName());
-				tf_address.setText(MainLogin.getStadium().getAddress());
-				tf_arenaNumOfSeats.setText(String.valueOf(MainLogin.getStadium().getCapacity()));
+				tf_arenaName.setText(AMSFrame.getStadium().getStadiumName());
+				tf_address.setText(AMSFrame.getStadium().getAddress());
+				tf_arenaNumOfSeats.setText(String.valueOf(AMSFrame.getStadium().getCapacity()));
 				// -------------//
 
-				cb_sectionType.setSelectedItem(MainLogin.getStadium().getArenaSection(sectionInedex).getSectionType());
-				cb_sectionRanking.setSelectedItem(MainLogin.getStadium().getArenaSection(sectionInedex).getSectionRanking());
-				tf_sectionTicketPrice.setText(String.valueOf(MainLogin.getStadium().getArenaSection(sectionInedex).getTicketPrice()));
-				tf_sectionNumOfSeats.setText(String.valueOf(MainLogin.getStadium().getArenaSection(sectionInedex).getNumOfSeats()));
-				if (MainLogin.getStadium().getArenaSection(sectionInedex).isRoofed()) {
+				cb_sectionType.setSelectedItem(AMSFrame.getStadium().getArenaSection(sectionInedex).getSectionType());
+				cb_sectionRanking.setSelectedItem(AMSFrame.getStadium().getArenaSection(sectionInedex).getSectionRanking());
+				tf_sectionTicketPrice.setText(String.valueOf(AMSFrame.getStadium().getArenaSection(sectionInedex).getTicketPrice()));
+				tf_sectionNumOfSeats.setText(String.valueOf(AMSFrame.getStadium().getArenaSection(sectionInedex).getNumOfSeats()));
+				if (AMSFrame.getStadium().getArenaSection(sectionInedex).isRoofed()) {
 					rdbtnIsRoofedYes.setSelected(true);
 					rdbtnIsRoofedNO.setSelected(false);
 				} else {
@@ -471,21 +471,21 @@ public class Properties extends JPanel {
 		});
 		// put after cb_sectionRanking
 		for (int i = 0; i < 15; i++) {
-			MainLogin.getStadium().getArenaSection(i).setSectionType(cb_sectionType.getModel().getSelectedItem().toString());
+			AMSFrame.getStadium().getArenaSection(i).setSectionType(cb_sectionType.getModel().getSelectedItem().toString());
 
 		}
-		if (MainLogin.getStadium().getArenaSection(0).isRoofed()) {
+		if (AMSFrame.getStadium().getArenaSection(0).isRoofed()) {
 			rdbtnIsRoofedYes.setSelected(true);
 		} else {
 			rdbtnIsRoofedYes.setSelected(false);
 		}
-		if (!MainLogin.getStadium().getArenaSection(0).isRoofed()) {
+		if (!AMSFrame.getStadium().getArenaSection(0).isRoofed()) {
 			rdbtnIsRoofedNO.setSelected(true);
 		} else {
 			rdbtnIsRoofedNO.setSelected(false);
 		}
 		for (int i = 0; i < 15; i++) {
-			MainLogin.getStadium().getArenaSection(i).setSectionRanking(cb_sectionRanking.getModel().getSelectedItem().toString());
+			AMSFrame.getStadium().getArenaSection(i).setSectionRanking(cb_sectionRanking.getModel().getSelectedItem().toString());
 		}
 	}
 
@@ -510,11 +510,11 @@ public class Properties extends JPanel {
 
 	public void displaySectionDetails(int index) {
 
-		cb_sectionType.setSelectedItem(MainLogin.getStadium().getArenaSection(index).getSectionType());
-		cb_sectionRanking.setSelectedItem(MainLogin.getStadium().getArenaSection(index).getSectionRanking());
-		tf_sectionTicketPrice.setText(String.valueOf(MainLogin.getStadium().getArenaSection(index).getTicketPrice()));
-		tf_sectionNumOfSeats.setText(String.valueOf(MainLogin.getStadium().getArenaSection(index).getNumOfSeats()));
-		if (MainLogin.getStadium().getArenaSection(index).isRoofed()) {
+		cb_sectionType.setSelectedItem(AMSFrame.getStadium().getArenaSection(index).getSectionType());
+		cb_sectionRanking.setSelectedItem(AMSFrame.getStadium().getArenaSection(index).getSectionRanking());
+		tf_sectionTicketPrice.setText(String.valueOf(AMSFrame.getStadium().getArenaSection(index).getTicketPrice()));
+		tf_sectionNumOfSeats.setText(String.valueOf(AMSFrame.getStadium().getArenaSection(index).getNumOfSeats()));
+		if (AMSFrame.getStadium().getArenaSection(index).isRoofed()) {
 			rdbtnIsRoofedYes.setSelected(true);
 			rdbtnIsRoofedNO.setSelected(false);
 		} else {

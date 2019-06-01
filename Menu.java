@@ -27,7 +27,9 @@ public class Menu extends JPanel {
 	private JButton btnProperties;
 	private JButton btnSales;
 	private JButton btnFacilities;
-
+	private JButton btnUserName;
+	private JButton btnLogout;
+	
 	public Menu() {
 		
 		menuPanel = new JPanel();
@@ -56,14 +58,16 @@ public class Menu extends JPanel {
 		btnOverview.setBounds(0, 100, 189, 40);
 		btnOverview.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
-				MainLogin.overviewPanel.panelOverview.setVisible(true);
+				AMSFrame.overviewPanel.panelOverview.setVisible(true);
 				btnOverview.setBackground(UI_Elements.color_menuButtonSelected);
-				MainLogin.propertiesPanel.panelProperties.setVisible(false);
+				AMSFrame.propertiesPanel.panelProperties.setVisible(false);
 				btnProperties.setBackground(UI_Elements.color_menuBar);
-				MainLogin.salesPanel.panelSales.setVisible(false);
+				AMSFrame.salesPanel.panelSales.setVisible(false);
 				btnSales.setBackground(UI_Elements.color_menuBar);
-				MainLogin.facilitiesPanel.panelFacilities.setVisible(false);
+				AMSFrame.facilitiesPanel.panelFacilities.setVisible(false);
 				btnFacilities.setBackground(UI_Elements.color_menuBar);
+				
+
 			}
 		});
 		menuPanel.add(btnOverview);
@@ -82,14 +86,16 @@ public class Menu extends JPanel {
 		btnProperties.setBounds(0, (btnOverview.getBounds().y) + 40, 189, 40);
 		btnProperties.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
-				MainLogin.overviewPanel.panelOverview.setVisible(false);
+				AMSFrame.overviewPanel.panelOverview.setVisible(false);
 				btnOverview.setBackground(UI_Elements.color_menuBar);
-				MainLogin.propertiesPanel.panelProperties.setVisible(true);
+				AMSFrame.propertiesPanel.panelProperties.setVisible(true);
 				btnProperties.setBackground(UI_Elements.color_menuButtonSelected);
-				MainLogin.salesPanel.panelSales.setVisible(false);
+				AMSFrame.salesPanel.panelSales.setVisible(false);
 				btnSales.setBackground(UI_Elements.color_menuBar);
-				MainLogin.facilitiesPanel.panelFacilities.setVisible(false);
+				AMSFrame.facilitiesPanel.panelFacilities.setVisible(false);
 				btnFacilities.setBackground(UI_Elements.color_menuBar);
+				
+
 			}
 		});
 		menuPanel.add(btnProperties);
@@ -108,14 +114,16 @@ public class Menu extends JPanel {
 		btnSales.setBounds(0, (btnOverview.getBounds().y) + 40 * 2, 189, 40);
 		btnSales.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
-				MainLogin.overviewPanel.panelOverview.setVisible(false);
+				AMSFrame.overviewPanel.panelOverview.setVisible(false);
 				btnOverview.setBackground(UI_Elements.color_menuBar);
-				MainLogin.propertiesPanel.panelProperties.setVisible(false);
+				AMSFrame.propertiesPanel.panelProperties.setVisible(false);
 				btnProperties.setBackground(UI_Elements.color_menuBar);
-				MainLogin.salesPanel.panelSales.setVisible(true);
+				AMSFrame.salesPanel.panelSales.setVisible(true);
 				btnSales.setBackground(UI_Elements.color_menuButtonSelected);
-				MainLogin.facilitiesPanel.panelFacilities.setVisible(false);
+				AMSFrame.facilitiesPanel.panelFacilities.setVisible(false);
 				btnFacilities.setBackground(UI_Elements.color_menuBar);
+				
+
 			}
 		});
 		menuPanel.add(btnSales);
@@ -134,18 +142,82 @@ public class Menu extends JPanel {
 		btnFacilities.setBounds(0, (btnOverview.getBounds().y) + 40 * 3, 189, 40);
 		btnFacilities.addActionListener(new ActionListener() {
 		public void actionPerformed(ActionEvent arg0) {
-			MainLogin.overviewPanel.panelOverview.setVisible(false);
+			AMSFrame.overviewPanel.panelOverview.setVisible(false);
 			btnOverview.setBackground(UI_Elements.color_menuBar);
-			MainLogin.propertiesPanel.panelProperties.setVisible(false);
+			AMSFrame.propertiesPanel.panelProperties.setVisible(false);
 			btnProperties.setBackground(UI_Elements.color_menuBar);
-			MainLogin.salesPanel.panelSales.setVisible(false);
+			AMSFrame.salesPanel.panelSales.setVisible(false);
 			btnSales.setBackground(UI_Elements.color_menuBar);
-			MainLogin.facilitiesPanel.panelFacilities.setVisible(true);
+			AMSFrame.facilitiesPanel.panelFacilities.setVisible(true);
 			btnFacilities.setBackground(UI_Elements.color_menuButtonSelected);
+			
+
 		}
 	});
 		menuPanel.add(btnFacilities);
+		
+		btnUserName = new JButton("Welcome "+AMSFrame.getUser().getFirstName()+"!");
+		btnUserName.setAlignmentY(0.0f);
+		btnUserName.setFocusPainted(false);
+		btnUserName.setRequestFocusEnabled(false);
+		btnUserName.setCursor(Cursor.getPredefinedCursor(Cursor.HAND_CURSOR));
+		btnUserName.setHorizontalAlignment(SwingConstants.CENTER);
+		btnUserName.setForeground(UI_Elements.color_menuButtonText);
+		btnUserName.setOpaque(true);
+		btnUserName.setBorder(null);
+		btnUserName.setFont(UI_Elements.font_menuButtonTextDefault);
+		btnUserName.setBackground(UI_Elements.color_menuBar);
+		btnUserName.setBounds(0, (btnOverview.getBounds().y) + 41 * 10, 189, 40);
+		btnUserName.addActionListener(new ActionListener() {
+		public void actionPerformed(ActionEvent arg0) {
+			if (btnUserName.getBackground()==UI_Elements.color_menuButtonSelected) {
+				btnUserName.setBackground(UI_Elements.color_menuBar);
+				btnLogout.setVisible(false);
+			}
+			else {
+				btnUserName.setBackground(UI_Elements.color_menuButtonSelected);
+				btnLogout.setVisible(true);
+			}
+
+		}
+	});
+		menuPanel.add(btnUserName);
+		
+		btnLogout = new JButton("LOGOUT");
+		btnLogout.setAlignmentY(0.0f);
+		btnLogout.setFocusPainted(false);
+		btnLogout.setRequestFocusEnabled(false);
+		btnLogout.setCursor(Cursor.getPredefinedCursor(Cursor.HAND_CURSOR));
+		btnLogout.setHorizontalAlignment(SwingConstants.CENTER);
+		btnLogout.setForeground(UI_Elements.color_menuButtonText);
+		btnLogout.setOpaque(true);
+		btnLogout.setBorder(null);
+		btnLogout.setFont(UI_Elements.font_menuButtonTextUser);
+		btnLogout.setBackground(UI_Elements.color_menuBar);
+		btnLogout.setBounds(0, (btnUserName.getBounds().y) - 25, 189, 25);
+		btnLogout.setVisible(false);
+		btnLogout.addActionListener(new ActionListener() {
+		public void actionPerformed(ActionEvent arg0) {
+			btnUserName.setBackground(UI_Elements.color_menuBar);
+			btnLogout.setVisible(false);
+			AMSFrame.displayLoginPage();
+		}
+	});
+		menuPanel.add(btnLogout);
 
 	}
-
+	
+	//getters and setters:
+	public JButton getBtnOverview() {
+		return btnOverview;
+	}
+	public JButton getBtnProperties() {
+		return btnProperties;
+	}
+	public JButton getBtnSales() {
+		return btnSales;
+	}
+	public JButton getBtnFacilities() {
+		return btnFacilities;
+	}
 }
