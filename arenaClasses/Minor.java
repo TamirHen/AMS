@@ -111,3 +111,11 @@ public class Minor extends Employee {
 	}
 
 }
+
+
+
+
+
+
+
+

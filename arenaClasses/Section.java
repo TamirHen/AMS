@@ -5,7 +5,7 @@ public class Section {
 	private static int nextSectionNumber = 1;
 	private String sectionName;
 	private String sectionRanking;
-	private float price;
+	private float pricePrice;
 	private boolean isRoofed;
 	private int numOfSeats;
 	private int takenSeats;
@@ -60,11 +60,11 @@ public class Section {
 	}
 
 	public float getTicketPrice() {
-		return price;
+		return pricePrice;
 	}
 
-	public void setTicketPrice(float price) {
-		this.price = price;
+	public void setTicketPrice(float ticketPrice) {
+		this.pricePrice = ticketPrice;
 	}
 
 	public boolean isRoofed() {

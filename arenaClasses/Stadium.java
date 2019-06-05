@@ -4,7 +4,6 @@ import java.util.Scanner;
 import java.util.ArrayList;
 
 public class Stadium {
-	static int nextStadiumId;
 	private int stadiumId;
 	private String stadiumName;
 	private String homeTeam;
@@ -13,10 +12,8 @@ public class Stadium {
 	private Section[] arenaSection;
 
 	// Constructor:
-	public Stadium(String stadiumName, String homeTeam, int capacity, String address) {
-		Stadium.nextStadiumId = 1;
-		this.setStadiumId(Stadium.nextStadiumId);
-		Stadium.nextStadiumId++;
+	public Stadium(int stadiumId, String stadiumName, String homeTeam, int capacity, String address) {
+		this.setStadiumId(stadiumId);
 		this.setStadiumName(stadiumName);
 		this.setHomeTeam(homeTeam);
 		this.setCapacity(capacity);
@@ -71,14 +68,6 @@ public class Stadium {
 	public Section getArenaSection(int sectionNumber) {
 		return this.arenaSection[sectionNumber];
 	}
-//	public void setArenaSection(int sectionNumber, String sectionRanking, float ticketPrice, boolean isRoofed, int numOfSeats, String sectionType) {
-//		this.arenaSection[sectionNumber].setSectionRanking(sectionRanking);
-//		this.arenaSection[sectionNumber].setTicketPrice(ticketPrice);
-//		this.arenaSection[sectionNumber].setRoofed(isRoofed);
-//		this.arenaSection[sectionNumber].setNumOfSeats(numOfSeats);
-//		this.arenaSection[sectionNumber].setSectionType(sectionType);
-//	}
 
-	// Methods:
 
 }

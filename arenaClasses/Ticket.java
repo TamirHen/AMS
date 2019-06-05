@@ -1,18 +1,26 @@
 package arenaClasses;
 
 public abstract class Ticket {
+	private int ticketId;
 	private float ticketPrice;
-	private int ticketSectionId;
+	private int ticketSection;
 	private boolean isPurchased;
 
 	// Constructor:
-	public Ticket(float ticketPrice, int ticketSectionId, boolean isPurchased) {
+	public Ticket(float ticketPrice, int ticketSection, boolean isPurchased) {
 		this.setTicketPrice(ticketPrice);
-		this.setTicketSectionId(ticketSectionId);
+		this.setTicketSection(ticketSection);
 		this.setPurchased(false);
 	}
 
 	// Data members getters and setters:
+	public int getTicketId() {
+		return ticketId;
+	}
+
+	public void setTicketId(int ticketId) {
+		this.ticketId = ticketId;
+	}
 	public float getTicketPrice() {
 		return ticketPrice;
 	}
@@ -21,12 +29,12 @@ public abstract class Ticket {
 		this.ticketPrice = ticketPrice;
 	}
 
-	public int getTicketSectionId() {
-		return ticketSectionId;
+	public int getTicketSection() {
+		return ticketSection;
 	}
 
-	public void setTicketSectionId(int ticketSectionId) {
-		this.ticketSectionId = ticketSectionId;
+	public void setTicketSection(int ticketSectionId) {
+		this.ticketSection = ticketSectionId;
 	}
 
 	public boolean isPurchased() {
@@ -36,5 +44,6 @@ public abstract class Ticket {
 	public void setPurchased(boolean isPurchased) {
 		this.isPurchased = isPurchased;
 	}
+
 
 }

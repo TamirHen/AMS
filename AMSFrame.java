@@ -17,10 +17,18 @@ import javax.swing.JTextField;
 import javax.swing.SwingConstants;
 import javax.swing.border.EmptyBorder;
 
+import org.sqlite.core.DB;
+
 import arenaClasses.*;
 
 import java.awt.event.ActionListener;
 import java.awt.event.ActionEvent;
+import java.sql.*;
+import javax.swing.*;
+import java.sql.Connection;
+import java.sql.DriverManager;
+import java.sql.ResultSet;
+import java.sql.Statement;
 
 public class AMSFrame extends JFrame {
 	
@@ -28,11 +36,12 @@ public class AMSFrame extends JFrame {
 	//---set stadium---//
 	private static Stadium stadium;
 	//-----------------//
-	
+	SqliteDB db;
+
 	//---set users---//
 	private static User myUser;
 	//---------------//
-	
+
 	//---panels declarations---//
 	public static Login loginPanel;
 	public static Menu menuPanel;
@@ -43,8 +52,11 @@ public class AMSFrame extends JFrame {
 	//-------------------------//
 
 	public static void main(String[] args) {
+		//---set DB---//
+//		SqliteDB db = new SqliteDB();
+		//------------//
 		EventQueue.invokeLater(new Runnable() {
-			public void run() {
+			public void run() {				
 				try {
 					AMSFrame frame = new AMSFrame();
 					frame.setVisible(true);
@@ -52,7 +64,7 @@ public class AMSFrame extends JFrame {
 					frame.setMinimumSize(new Dimension(1114, 600));
 					frame.setResizable(false);
 					frame.setTitle("AMS - Arena Management System");
-
+					
 				} catch (Exception e) {
 					e.printStackTrace();
 				}
@@ -71,11 +83,12 @@ public class AMSFrame extends JFrame {
 		mainPanel.setLayout(null);
 		
 		// set stadium:
-		setStadium(new Stadium("Bloomfield", "Maccabi Tel Aviv", 29522, "She'erit Israel, Tel Aviv"));
-
+		setStadium(new Stadium(1, "Bloomfield", "Maccabi Tel Aviv", 29522, "She'erit Israel, Tel Aviv"));
+//		db.getStadiumDetailsDB(stadium);
+		
 		//set users:
 		myUser = new User("USERNAME", "AMS", "USER", "PASSWORD", "ams@hit.com");
-
+		
 		// set all panels:
 		loginPanel = new Login();
 		menuPanel = new Menu();
@@ -92,8 +105,8 @@ public class AMSFrame extends JFrame {
 		getContentPane().add(facilitiesPanel.panelFacilities);
 		
 		getContentPane().add(menuPanel.menuPanel);
-
-//		displayLoginPage();
+		
+		displayLoginPage();
 
 	} //end of constructor
 	

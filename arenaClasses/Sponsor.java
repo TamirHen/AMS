@@ -2,6 +2,7 @@ package arenaClasses;
 
 public class Sponsor extends Department {
 	private String sponsorName;
+	private float annualRevenue;
 
 	// Constructor:
 	public Sponsor(String departmentName, String sponsorName) {
@@ -16,6 +17,14 @@ public class Sponsor extends Department {
 
 	public void setSponsorName(String sponsorName) {
 		this.sponsorName = sponsorName;
+	}
+
+	public float getAnnualRevenue() {
+		return annualRevenue;
+	}
+
+	public void setAnnualRevenue(float annualRevenue) {
+		this.annualRevenue = annualRevenue;
 	}
 
 }

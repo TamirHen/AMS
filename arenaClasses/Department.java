@@ -1,6 +1,6 @@
 package arenaClasses;
 
-public class Department {
+public abstract class Department {
 	private String departmentName;
 
 	// Constructor:
