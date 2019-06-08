@@ -20,6 +20,7 @@ import javax.swing.border.EmptyBorder;
 import org.sqlite.core.DB;
 
 import arenaClasses.*;
+import sqlite.SqliteDB;
 
 import java.awt.event.ActionListener;
 import java.awt.event.ActionEvent;
@@ -29,7 +30,7 @@ import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.ResultSet;
 import java.sql.Statement;
-
+import sqlite.*;
 public class AMSFrame extends JFrame {
 	
 	public JPanel mainPanel;
@@ -52,9 +53,7 @@ public class AMSFrame extends JFrame {
 	//-------------------------//
 
 	public static void main(String[] args) {
-		//---set DB---//
-//		SqliteDB db = new SqliteDB();
-		//------------//
+
 		EventQueue.invokeLater(new Runnable() {
 			public void run() {				
 				try {
@@ -78,14 +77,15 @@ public class AMSFrame extends JFrame {
 
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		setBounds(0, 0, 1114, 600);
-		
+		//set db:
+		db = new SqliteDB();
 		mainPanel = new JPanel();
 		mainPanel.setLayout(null);
 		
 		// set stadium:
-		setStadium(new Stadium(1, "Bloomfield", "Maccabi Tel Aviv", 29522, "She'erit Israel, Tel Aviv"));
-//		db.getStadiumDetailsDB(stadium);
-		
+//		setStadium(new Stadium(1, "Bloomfield", "Maccabi Tel Aviv", 29522, "She'erit Israel, Tel Aviv", 15));
+		db.initializeStadium();
+		stadium = db.stadium;
 		//set users:
 		myUser = new User("USERNAME", "AMS", "USER", "PASSWORD", "ams@hit.com");
 		

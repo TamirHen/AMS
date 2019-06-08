@@ -10,16 +10,18 @@ public class Stadium {
 	private int capacity;
 	private String address;
 	private Section[] arenaSection;
+	private int numOfSections;
 
 	// Constructor:
-	public Stadium(int stadiumId, String stadiumName, String homeTeam, int capacity, String address) {
+	public Stadium(int stadiumId, String stadiumName, String homeTeam, int capacity, String address, int numOfSections) {
 		this.setStadiumId(stadiumId);
 		this.setStadiumName(stadiumName);
 		this.setHomeTeam(homeTeam);
 		this.setCapacity(capacity);
 		this.setAddress(address);
-		this.arenaSection = new Section[15];
-		for (int i = 0; i < 15; i++) {
+		this.numOfSections=numOfSections;
+		this.arenaSection = new Section[numOfSections];
+		for (int i = 0; i < numOfSections; i++) {
 			arenaSection[i] = new Section("", 0, true, 0, "");
 		}
 	}
@@ -67,6 +69,14 @@ public class Stadium {
 
 	public Section getArenaSection(int sectionNumber) {
 		return this.arenaSection[sectionNumber];
+	}
+
+	public int getNumOfSections() {
+		return numOfSections;
+	}
+
+	public void setNumOfSections(int numOfSections) {
+		this.numOfSections = numOfSections;
 	}
 
 

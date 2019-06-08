@@ -1,3 +1,4 @@
+package sqlite;
 import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.ResultSet;
@@ -7,6 +8,8 @@ import arenaClasses.*;
 public class SqliteDB {
 	Connection c = null;
 	Statement stmt = null;
+	
+	public Stadium stadium;
 	
 	public SqliteDB() {
 		//try to connect to DB:
@@ -39,12 +42,12 @@ public class SqliteDB {
 
 		}
 	}	
-	public ResultSet getStadiumDetailsDB() {
-		ResultSet rs = null;
+	public void initializeStadium () {
 		try {
 			this.stmt = c.createStatement();
-			rs = stmt.executeQuery("select top 1 * from Stadium");
-//			stadium = new Stadium(Integer.parseInt(rs.getString("stadiumId")), rs.getString("stadiumName"), rs.getString("homeTeam"), Integer.parseInt(rs.getString("capacity")), rs.getString("address"));
+			ResultSet rs = stmt.executeQuery("select * from Stadium");
+			
+			this.stadium = new Stadium(Integer.parseInt(rs.getString("stadiumId")), rs.getString("stadiumName"), rs.getString("homeTeam"), Integer.parseInt(rs.getString("capacity")), rs.getString("address"),Integer.parseInt(rs.getString("numOfSections")));
 //			stadium.setStadiumId(Integer.parseInt(rs.getString("stadiumId")));
 //			stadium.setStadiumName(rs.getString("stadiumName"));
 //			stadium.setHomeTeam(rs.getString("homeTeam"));
@@ -55,7 +58,6 @@ public class SqliteDB {
 			System.out.println("Error: " + e.getMessage());
 
 		}
-		return rs;
 	}
 	//close close User:
 	public void closeConnection() {
