@@ -156,7 +156,7 @@ public class Menu extends JPanel {
 //	});
 		menuPanel.add(btnFacilities);
 		
-		btnUserName = new JButton();
+		btnUserName = new JButton("");
 		btnUserName.setAlignmentY(0.0f);
 		btnUserName.setFocusPainted(false);
 		btnUserName.setRequestFocusEnabled(false);
@@ -208,16 +208,5 @@ public class Menu extends JPanel {
 	}
 	
 	//getters and setters:
-	public JButton getBtnOverview() {
-		return btnOverview;
-	}
-	public JButton getBtnProperties() {
-		return btnProperties;
-	}
-	public JButton getBtnSales() {
-		return btnSales;
-	}
-	public JButton getBtnFacilities() {
-		return btnFacilities;
-	}
+
 }

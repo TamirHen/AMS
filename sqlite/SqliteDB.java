@@ -11,9 +11,11 @@ public class SqliteDB {
 	
 	public Stadium stadium;
 	public User[] user;
-	public User signInUser;
 	private int userSize=0;
-	
+	public User signInUser;
+	public Section[] section;
+	public int sectionSize=0;
+
 	public SqliteDB() {
 		//try to connect to DB:
 		try {
@@ -46,13 +48,14 @@ public class SqliteDB {
 			System.out.println("Error: " + e.getMessage());
 
 		}
-	}	
+	}
+	
 	public void initializeStadium () {
 		try {
 			this.stmt = c.createStatement();
 			ResultSet rs = stmt.executeQuery("select * from Stadium");
-			
-			this.stadium = new Stadium(Integer.parseInt(rs.getString("stadiumId")), rs.getString("stadiumName"), rs.getString("homeTeam"), Integer.parseInt(rs.getString("capacity")), rs.getString("address"),Integer.parseInt(rs.getString("numOfSections")));
+			initializeSections();
+			this.stadium = new Stadium(Integer.parseInt(rs.getString("stadiumId")), rs.getString("stadiumName"), rs.getString("homeTeam"), Integer.parseInt(rs.getString("capacity")), rs.getString("address"),Integer.parseInt(rs.getString("numOfSections")), section);
 
 			
 		} catch (Exception e) {
@@ -60,7 +63,27 @@ public class SqliteDB {
 
 		}
 	}
+	
+	public void initializeSections() {
+		try {
+			this.stmt = c.createStatement();
+			ResultSet rs = stmt.executeQuery("select * from Section");
+			
+			while(rs.next()) {
+				sectionSize++;
+			}
+			rs = stmt.executeQuery("select * from Section");
+			section = new Section[sectionSize];
+			sectionSize=0;
+			while(rs.next()) {
+				this.section[sectionSize]=new Section(Integer.parseInt(rs.getString("sectionNumber")), rs.getString("sectionName"), rs.getString("sectionRanking"), Float.parseFloat(rs.getString("ticketPrice")), Boolean.parseBoolean(rs.getString("isRoofed")), Integer.parseInt(rs.getString("numOfSeats")), Integer.parseInt(rs.getString("takenSeats")), Integer.parseInt(rs.getString("availableSeats")), rs.getString("sectionType"));
+				sectionSize++;
+			}
+		} catch (Exception e) {
+			System.out.println("Error: " + e.getMessage());
 
+		}
+	}
 	public void closeConnection() {
 		try {
 			c.close();

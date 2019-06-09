@@ -13,17 +13,17 @@ public class Stadium {
 	private int numOfSections;
 
 	// Constructor:
-	public Stadium(int stadiumId, String stadiumName, String homeTeam, int capacity, String address, int numOfSections) {
+	public Stadium(int stadiumId, String stadiumName, String homeTeam, int capacity, String address, int numOfSections, Section[] arenaSection) {
 		this.setStadiumId(stadiumId);
 		this.setStadiumName(stadiumName);
 		this.setHomeTeam(homeTeam);
 		this.setCapacity(capacity);
 		this.setAddress(address);
 		this.numOfSections=numOfSections;
-		this.arenaSection = new Section[numOfSections];
-		for (int i = 0; i < numOfSections; i++) {
-			arenaSection[i] = new Section("", 0, true, 0, "");
-		}
+		this.arenaSection = arenaSection;
+//		for (int i = 0; i < numOfSections; i++) {
+//			arenaSection[i] = new Section("", 0, true, 0, "");
+//		}
 	}
 
 	// Data members getters and setters:

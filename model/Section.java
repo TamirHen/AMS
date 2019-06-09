@@ -2,7 +2,6 @@ package model;
 
 public class Section {
 	private int sectionNumber;
-	private static int nextSectionNumber = 1;
 	private String sectionName;
 	private String sectionRanking;
 	private float pricePrice;
@@ -13,16 +12,15 @@ public class Section {
 	private String sectionType;
 
 	// Constructor:
-	public Section(String sectionRanking, float ticketPrice, boolean isRoofed, int numOfSeats, String sectionType) {
-		this.setSectionNumber();
-		Section.setNextSectionNumber();
-		this.setSectionName(sectionNumber);
+	public Section(int sectionNumber, String sectionName, String sectionRanking, float ticketPrice, boolean isRoofed, int numOfSeats, int takenSeats, int availableSeats, String sectionType) {
+		this.setSectionNumber(sectionNumber);
+		this.setSectionName(sectionName);
 		this.setSectionRanking(sectionRanking);
 		this.setTicketPrice(ticketPrice);
 		this.setRoofed(isRoofed);
 		this.setNumOfSeats(numOfSeats);
-		this.setTakenSeats(0);
-		this.setAvailableSeats(numOfSeats);
+		this.setTakenSeats(takenSeats);
+		this.setAvailableSeats(availableSeats);
 		this.setSectionType(sectionType);
 	}
 
@@ -31,24 +29,16 @@ public class Section {
 		return sectionNumber;
 	}
 
-	public void setSectionNumber() {
-		this.sectionNumber = nextSectionNumber;
-	}
-
-	public static int getNextSectionNumber() {
-		return nextSectionNumber;
-	}
-
-	public static void setNextSectionNumber() {
-		Section.nextSectionNumber++;
+	public void setSectionNumber(int sectionNumber) {
+		this.sectionNumber = sectionNumber;
 	}
 
 	public String getSectionName() {
 		return sectionName;
 	}
 
-	public void setSectionName(int sectionNumber) {
-		this.sectionName = "Section " + String.valueOf(this.sectionNumber);
+	public void setSectionName(String sectionName) {
+		this.sectionName = sectionName;
 	}
 
 	public String getSectionRanking() {

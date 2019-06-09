@@ -37,10 +37,10 @@ public class Properties extends JPanel {
 	public JTextField tf_TotalRevenueGameTickets;
 	
 	public int sectionInedex;
-	public JComboBox<?> cb_sectionType;
-	public JComboBox<?> cb_sectionRanking;
-	public JComboBox<?> cb_sectionSelection;
-	public JComboBox<?> cb_arenaType;
+	public JComboBox<String> cb_sectionType;
+	public JComboBox<String> cb_sectionRanking;
+	public JComboBox<String> cb_sectionSelection;
+	public JComboBox<String> cb_arenaType;
 
 	public JRadioButton rdbtnIsRoofedYes;
 	public JRadioButton rdbtnIsRoofedNO;
@@ -159,7 +159,7 @@ public class Properties extends JPanel {
 		panelProperties.add(lblSectionManagement);
 
 		cb_sectionSelection = new JComboBox();
-		cb_sectionSelection.setModel(new DefaultComboBoxModel(new String[] {"test1", "test2", "test3" }));
+		cb_sectionSelection.setModel(new DefaultComboBoxModel(new String[] {}));
 		cb_sectionSelection.setFont(UI_Elements.font_bodyFillText);
 		cb_sectionSelection.setBorder(null);
 		cb_sectionSelection.setBounds(35, 275, 265, 20);
