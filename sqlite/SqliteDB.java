@@ -3,13 +3,16 @@ import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.ResultSet;
 import java.sql.Statement;
-import arenaClasses.*;
+import model.*;
 
 public class SqliteDB {
 	Connection c = null;
 	Statement stmt = null;
 	
 	public Stadium stadium;
+	public User[] user;
+	public User signInUser;
+	private int userSize=0;
 	
 	public SqliteDB() {
 		//try to connect to DB:
@@ -23,20 +26,22 @@ public class SqliteDB {
 		}
 	}
 	
-	public void getUserName() {
+	public void initializeUsers() {
 		
 		try {
 			this.stmt = c.createStatement();
 			ResultSet rs = stmt.executeQuery("select * from User");
 			
 			while(rs.next()) {
-				String userName = rs.getString("userName");
-				String password = rs.getString("password");
-				
-				System.out.println(userName + "  " + password);
-
+				userSize++;
 			}
-			
+			rs = stmt.executeQuery("select * from User");
+			user = new User[userSize];
+			userSize=0;
+			while(rs.next()) {
+				this.user[userSize]=new User(rs.getString("userName"), rs.getString("firstName"), rs.getString("lastName"), rs.getString("password"), rs.getString("email"));
+				userSize++;
+			}
 		} catch (Exception e) {
 			System.out.println("Error: " + e.getMessage());
 
@@ -48,18 +53,14 @@ public class SqliteDB {
 			ResultSet rs = stmt.executeQuery("select * from Stadium");
 			
 			this.stadium = new Stadium(Integer.parseInt(rs.getString("stadiumId")), rs.getString("stadiumName"), rs.getString("homeTeam"), Integer.parseInt(rs.getString("capacity")), rs.getString("address"),Integer.parseInt(rs.getString("numOfSections")));
-//			stadium.setStadiumId(Integer.parseInt(rs.getString("stadiumId")));
-//			stadium.setStadiumName(rs.getString("stadiumName"));
-//			stadium.setHomeTeam(rs.getString("homeTeam"));
-//			stadium.setAddress(rs.getString("address"));
-//			stadium.setCapacity(Integer.parseInt(rs.getString("capacity")));
+
 			
 		} catch (Exception e) {
 			System.out.println("Error: " + e.getMessage());
 
 		}
 	}
-	//close close User:
+
 	public void closeConnection() {
 		try {
 			c.close();
@@ -67,5 +68,16 @@ public class SqliteDB {
 		} catch (Exception e) {
 			// error
 		}
+	}
+
+	public boolean isUserExist(String userName, char[] password) {
+		String temp = new String(password);
+		for(int i=0; i<userSize; i++) {
+			if (userName.equals(user[i].getUserName())&&temp.equals(user[i].getPassword())) {
+				this.signInUser=user[i];
+				return true;
+			}
+		}
+		return false;
 	}
 }
