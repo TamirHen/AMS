@@ -92,6 +92,31 @@ public class SqliteDB {
 			// error
 		}
 	}
+	
+	public void updateProperties() {
+		try {
+			this.stmt = c.createStatement();
+			ResultSet rs = stmt.executeQuery("select * from Stadium");
+//			this.stadium = new Stadium(Integer.parseInt(rs.getString("stadiumId")), rs.getString("stadiumName"), rs.getString("homeTeam"), Integer.parseInt(rs.getString("capacity")), rs.getString("address"),Integer.parseInt(rs.getString("numOfSections")), section);
+
+			
+		} catch (Exception e) {
+			System.out.println("Error: " + e.getMessage());
+
+		}
+	}
+	
+	public void updateSections(int sectionNumToUpdate, String newSectionType, int newTicketPrice, int newNumOfSeats, String newIsRoofed, String newSectionRanking) {
+		try {
+			this.stmt = c.createStatement();
+			ResultSet rs = stmt.executeQuery("update Section set sectionType="+newSectionType+", ticketPrice="+newTicketPrice+", numOfSeats="+newNumOfSeats+", isRoofed="+newIsRoofed+", sectionRanking="+newSectionRanking+" where sectionNumber="+sectionNumToUpdate);
+			//Check if working
+			
+		} catch (Exception e) {
+			System.out.println("Error: " + e.getMessage());
+
+		}
+	}
 
 	public boolean isUserExist(String userName, char[] password) {
 		String temp = new String(password);

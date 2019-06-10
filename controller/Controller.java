@@ -170,6 +170,7 @@ public class Controller {
 
 		view.propertiesPanel.finishEditPropertiesButton.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
+
 				view.propertiesPanel.cb_sectionSelection.setEnabled(true);
 				view.propertiesPanel.finishEditPropertiesButton.setVisible(false);
 				view.propertiesPanel.editProperties.setVisible(true);
