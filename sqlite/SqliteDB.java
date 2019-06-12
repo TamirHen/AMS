@@ -93,25 +93,22 @@ public class SqliteDB {
 		}
 	}
 	
-	public void updateProperties() {
+	public void updateProperties(int stadiumIdToUpdate, String stadiumName, String homeTeam, int capacity, String address, int numOfSections) {
 		try {
 			this.stmt = c.createStatement();
-			ResultSet rs = stmt.executeQuery("select * from Stadium");
-//			this.stadium = new Stadium(Integer.parseInt(rs.getString("stadiumId")), rs.getString("stadiumName"), rs.getString("homeTeam"), Integer.parseInt(rs.getString("capacity")), rs.getString("address"),Integer.parseInt(rs.getString("numOfSections")), section);
-
-			
+			System.out.println("update Stadium set stadiumName='"+stadiumName+"', homeTeam='"+homeTeam+"', capacity="+capacity+", address='"+address+"', numOfSections="+numOfSections+" where stadiumId="+stadiumIdToUpdate);
+			stmt.executeUpdate("update Stadium set stadiumName='"+stadiumName+"', homeTeam='"+homeTeam+"', capacity="+capacity+", address='"+address+"', numOfSections="+numOfSections+" where stadiumId="+stadiumIdToUpdate);
 		} catch (Exception e) {
 			System.out.println("Error: " + e.getMessage());
 
 		}
 	}
 	
-	public void updateSections(int sectionNumToUpdate, String newSectionType, int newTicketPrice, int newNumOfSeats, String newIsRoofed, String newSectionRanking) {
+	public void updateSections(int sectionNumToUpdate, String newSectionType, Float newTicketPrice, int newNumOfSeats, String newIsRoofed, String newSectionRanking) {
 		try {
 			this.stmt = c.createStatement();
-			ResultSet rs = stmt.executeQuery("update Section set sectionType="+newSectionType+", ticketPrice="+newTicketPrice+", numOfSeats="+newNumOfSeats+", isRoofed="+newIsRoofed+", sectionRanking="+newSectionRanking+" where sectionNumber="+sectionNumToUpdate);
-			//Check if working
-			
+			System.out.println("update Section set sectionType='"+newSectionType+"', ticketPrice="+newTicketPrice+", numOfSeats="+newNumOfSeats+", isRoofed='"+newIsRoofed+"', sectionRanking='"+newSectionRanking+"' where sectionNumber="+sectionNumToUpdate);
+			stmt.executeUpdate("update Section set sectionType='"+newSectionType+"', ticketPrice="+newTicketPrice+", numOfSeats="+newNumOfSeats+", isRoofed='"+newIsRoofed+"', sectionRanking='"+newSectionRanking+"' where sectionNumber="+sectionNumToUpdate);
 		} catch (Exception e) {
 			System.out.println("Error: " + e.getMessage());
 

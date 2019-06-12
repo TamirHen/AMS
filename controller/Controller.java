@@ -43,7 +43,14 @@ public class Controller {
 
 			}	
 		});
-	
+		//btnSignUp pressed:
+		view.loginPanel.btnSignUp.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent arg0) {
+				
+
+			}	
+		});
+		
 		//---menu panel---//
 		//button overview pressed:
 		view.menuPanel.btnOverview.addActionListener(new ActionListener() {
@@ -171,13 +178,17 @@ public class Controller {
 		view.propertiesPanel.finishEditPropertiesButton.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
 
+
 				view.propertiesPanel.cb_sectionSelection.setEnabled(true);
 				view.propertiesPanel.finishEditPropertiesButton.setVisible(false);
 				view.propertiesPanel.editProperties.setVisible(true);
 				view.propertiesPanel.btnCancelEdit.setVisible(false);
 
 				view.propertiesPanel.sectionInedex = view.propertiesPanel.cb_sectionSelection.getSelectedIndex(); // Gets the Section we want to edit
-
+				
+				//update changes in DB:
+				model.db.updateProperties(1, view.propertiesPanel.tf_arenaName.getText(), "Real Madrid", Integer.parseInt(view.propertiesPanel.tf_arenaNumOfSeats.getText()), view.propertiesPanel.tf_address.getText(), 5);
+				
 				model.stadium.setStadiumName(view.propertiesPanel.tf_arenaName.getText());
 				model.stadium.setAddress(view.propertiesPanel.tf_address.getText());
 				model.stadium.setCapacity(Integer.valueOf(view.propertiesPanel.tf_arenaNumOfSeats.getText()).intValue());
@@ -192,8 +203,13 @@ public class Controller {
 						.setNumOfSeats(Integer.valueOf(view.propertiesPanel.tf_sectionNumOfSeats.getText()).intValue());
 				if (view.propertiesPanel.rdbtnIsRoofedYes.isSelected()) {
 					model.stadium.getArenaSection(view.propertiesPanel.sectionInedex).setRoofed(true);
+					//set new Section properties in DB with "isRoofed" true:
+					model.db.updateSections(view.propertiesPanel.sectionInedex+1, view.propertiesPanel.cb_sectionType.getModel().getSelectedItem().toString(), Float.valueOf(view.propertiesPanel.tf_sectionTicketPrice.getText()).floatValue(), Integer.valueOf(view.propertiesPanel.tf_sectionNumOfSeats.getText()).intValue(), "true", view.propertiesPanel.cb_sectionRanking.getModel().getSelectedItem().toString());
 				} else {
 					model.stadium.getArenaSection(view.propertiesPanel.sectionInedex).setRoofed(false);
+					//set new Section properties in DB with "isRoofed" false:
+					model.db.updateSections(view.propertiesPanel.sectionInedex+1, view.propertiesPanel.cb_sectionType.getModel().getSelectedItem().toString(), Float.valueOf(view.propertiesPanel.tf_sectionTicketPrice.getText()).floatValue(), Integer.valueOf(view.propertiesPanel.tf_sectionNumOfSeats.getText()).intValue(), "false", view.propertiesPanel.cb_sectionRanking.getModel().getSelectedItem().toString());
+
 				}
 				// -------------//
 				view.propertiesPanel.setProperties(false);

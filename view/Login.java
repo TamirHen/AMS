@@ -28,7 +28,8 @@ public class Login extends JPanel {
 	public JPanel panelLogin;
 
 	public JButton btnLogin;
-
+	public JButton btnSignUp;
+	
 	public JTextField tf_loginUsername;
 	public JTextField tf_loginPassword;
 	public JPasswordField passwordField_Login;
@@ -73,12 +74,12 @@ public class Login extends JPanel {
 		//---login failed label---//
 		lblLoginFailed = new JLabel("Failed to login - username or password is incorrect");
 		lblLoginFailed.setFont(UI_Elements.font_bodyFillText);
-		lblLoginFailed.setBounds(lblLoginLogo.getBounds().x+2, 400, 470, 76);
+		lblLoginFailed.setBounds(lblLoginLogo.getBounds().x+2, 417, 470, 76);
 		lblLoginFailed.setForeground(Color.RED);
 		lblLoginFailed.setVisible(false);
 		panelLogin.add(lblLoginFailed);
 
-		// ---login button---//
+		//---login button---//
 
 		btnLogin = new JButton("LOGIN");
 		btnLogin.setVisible(true);
@@ -116,8 +117,45 @@ public class Login extends JPanel {
 		
 		panelLogin.add(btnLogin);
 		
-		panelLogin.setVisible(true);
+		//---Register---//
+		
+		btnSignUp = new JButton("SIGN UP");
+		btnSignUp.setVisible(true);
+		btnSignUp.setBounds(497, 403, 120, 35);
+		btnSignUp.setFocusPainted(false);
+		btnSignUp.setRequestFocusEnabled(false);
+		btnSignUp.setCursor(Cursor.getPredefinedCursor(Cursor.HAND_CURSOR));
+		btnSignUp.setHorizontalAlignment(SwingConstants.CENTER);
+		btnSignUp.setForeground(Color.WHITE);
+		btnSignUp.setOpaque(true);
+		btnSignUp.setBorder(null);
+		btnSignUp.setFont(new Font(UI_Elements.mainFontName, Font.BOLD, 20));
+		btnSignUp.setBackground(UI_Elements.color_panelBodyButtonDefault);
+		btnSignUp.addMouseListener(new MouseAdapter() {
+			public void mouseEntered(MouseEvent e) {
+				btnSignUp.setBackground(UI_Elements.color_panelBodyButtonRollover);
+			}
 
+			public void mouseExited(MouseEvent e) {
+				btnSignUp.setBackground(UI_Elements.color_panelBodyButtonDefault);
+
+			}
+		});
+//		btnLogin.addActionListener(new ActionListener() {
+//			@SuppressWarnings("deprecation")
+//			public void actionPerformed(ActionEvent arg0) {
+//				if (SqliteDB.isUserExist(tf_loginUsername.getText(),passwordField_Login.getPassword())) {
+//					View.btnLoginPressed();
+//				}
+//				else
+//					lblLoginFailed.setVisible(true);
+//
+//			}
+//		});
+		
+		panelLogin.add(btnSignUp);
+		
+		panelLogin.setVisible(true);
 
 	} //end of constructor
 
