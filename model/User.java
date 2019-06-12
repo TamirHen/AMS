@@ -6,16 +6,11 @@ public class User {
 	private String userName;
 	private String firstName;
 	private String lastName;
-	int userId;
-	static int nextUserId;
 	private String password;
 	private String email;
 
 	// Constructor:
 	public User(String userName, String firstName, String lastName, String password, String email) {
-		User.nextUserId = 1;
-		this.userId = User.nextUserId;
-		User.nextUserId++;
 		this.setUserName(userName);
 		this.setFirstName(firstName);
 		this.setLastName(lastName);

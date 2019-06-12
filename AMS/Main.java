@@ -19,8 +19,6 @@ public class Main {
 					Controller amsController = new Controller(amsView, amsModel);
 								
 					amsView.setVisible(true);
-					amsView.setMaximumSize(new Dimension(1114, 600));
-					amsView.setMinimumSize(new Dimension(1114, 600));
 					amsView.setResizable(false);
 					amsView.setTitle("AMS - Arena Management System");
 					

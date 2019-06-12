@@ -13,7 +13,7 @@ public class Model {
 	
 	public Model() {
 		//set DB:
-		db = new SqliteDB();
+		db = SqliteDB.getInstance();
 		// set stadium:
 		db.initializeStadium();
 		stadium = db.stadium;

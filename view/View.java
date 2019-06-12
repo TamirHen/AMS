@@ -36,7 +36,8 @@ public class View extends JFrame {
 	
 	public JPanel mainPanel;
 
-
+	//sign up frame declaration:
+	public SignUp signUp;
 	//---panels declarations---//
 	public Login loginPanel;
 	public Menu menuPanel;
@@ -67,14 +68,15 @@ public class View extends JFrame {
 
 	public View() {
 
-		// set JFrame:
+		// set main JFrame:
 
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		setBounds(0, 0, 1114, 600);
 		mainPanel = new JPanel();
 		mainPanel.setLayout(null);
 		
-
+		// set sign up frame:
+		signUp = new SignUp();
 		// set all panels:
 		loginPanel = new Login();
 		menuPanel = new Menu();

@@ -4,6 +4,7 @@ import java.util.Scanner;
 import java.util.ArrayList;
 
 public class Stadium {
+	private static Stadium instance=null;
 	private int stadiumId;
 	private String stadiumName;
 	private String homeTeam;
@@ -13,7 +14,7 @@ public class Stadium {
 	private int numOfSections;
 
 	// Constructor:
-	public Stadium(int stadiumId, String stadiumName, String homeTeam, int capacity, String address, int numOfSections, Section[] arenaSection) {
+	private Stadium(int stadiumId, String stadiumName, String homeTeam, int capacity, String address, int numOfSections, Section[] arenaSection) {
 		this.setStadiumId(stadiumId);
 		this.setStadiumName(stadiumName);
 		this.setHomeTeam(homeTeam);
@@ -25,7 +26,12 @@ public class Stadium {
 //			arenaSection[i] = new Section("", 0, true, 0, "");
 //		}
 	}
-
+	public static Stadium getInstance(int stadiumId, String stadiumName, String homeTeam, int capacity, String address, int numOfSections, Section[] arenaSection) {
+		if (instance==null) {
+			instance = new Stadium(stadiumId, stadiumName, homeTeam, capacity, address, numOfSections, arenaSection);
+		}
+		return instance;
+	}
 	// Data members getters and setters:
 	public int getStadiumId() {
 		return stadiumId;

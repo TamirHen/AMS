@@ -6,6 +6,7 @@ import java.sql.Statement;
 import model.*;
 
 public class SqliteDB {
+	private static SqliteDB instance=null;
 	Connection c = null;
 	Statement stmt = null;
 	
@@ -16,7 +17,7 @@ public class SqliteDB {
 	public Section[] section;
 	public int sectionSize=0;
 
-	public SqliteDB() {
+	private SqliteDB() {
 		//try to connect to DB:
 		try {
 			Class.forName("org.sqlite.JDBC");
@@ -50,12 +51,19 @@ public class SqliteDB {
 		}
 	}
 	
+	public static SqliteDB getInstance() {
+		if (instance==null) {
+			instance = new SqliteDB();
+		}
+		return instance;
+	}
+	
 	public void initializeStadium () {
 		try {
 			this.stmt = c.createStatement();
 			ResultSet rs = stmt.executeQuery("select * from Stadium");
 			initializeSections();
-			this.stadium = new Stadium(Integer.parseInt(rs.getString("stadiumId")), rs.getString("stadiumName"), rs.getString("homeTeam"), Integer.parseInt(rs.getString("capacity")), rs.getString("address"),Integer.parseInt(rs.getString("numOfSections")), section);
+			this.stadium = Stadium.getInstance(Integer.parseInt(rs.getString("stadiumId")), rs.getString("stadiumName"), rs.getString("homeTeam"), Integer.parseInt(rs.getString("capacity")), rs.getString("address"),Integer.parseInt(rs.getString("numOfSections")), section);
 
 			
 		} catch (Exception e) {

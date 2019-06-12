@@ -46,7 +46,7 @@ public class Controller {
 		//btnSignUp pressed:
 		view.loginPanel.btnSignUp.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
-				
+				view.signUp.setVisible(true);
 
 			}	
 		});
