@@ -15,38 +15,39 @@ public class Minor extends Employee {
 		this.setRole(role);
 	}
 
-	@Override
-	public boolean add(String e) {
-		// TODO Auto-generated method stub
-		return false;
+	// Data members getters and setters:
+	public int getManagerName() {
+		return managerName;
 	}
 
-	@Override
-	public boolean addAll(Collection<? extends String> c) {
-		// TODO Auto-generated method stub
-		return false;
+	public void setManagerName(int managerName) {
+		this.managerName = managerName;
 	}
 
-	@Override
-	public void clear() {
-		// TODO Auto-generated method stub
-
+	public String getRole() {
+		return role;
 	}
 
-	@Override
-	public boolean contains(Object o) {
-		// TODO Auto-generated method stub
-		return false;
+	public void setRole(String role) {
+		this.role = role;
 	}
+	
+	//------------------//
 
 	@Override
-	public boolean containsAll(Collection<?> c) {
+	public int size() {
 		// TODO Auto-generated method stub
-		return false;
+		return 0;
 	}
 
 	@Override
 	public boolean isEmpty() {
+		// TODO Auto-generated method stub
+		return false;
+	}
+
+	@Override
+	public boolean contains(Object o) {
 		// TODO Auto-generated method stub
 		return false;
 	}
@@ -58,7 +59,37 @@ public class Minor extends Employee {
 	}
 
 	@Override
+	public Object[] toArray() {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public <T> T[] toArray(T[] a) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public boolean add(String e) {
+		// TODO Auto-generated method stub
+		return false;
+	}
+
+	@Override
 	public boolean remove(Object o) {
+		// TODO Auto-generated method stub
+		return false;
+	}
+
+	@Override
+	public boolean containsAll(Collection<?> c) {
+		// TODO Auto-generated method stub
+		return false;
+	}
+
+	@Override
+	public boolean addAll(Collection<? extends String> c) {
 		// TODO Auto-generated method stub
 		return false;
 	}
@@ -76,40 +107,13 @@ public class Minor extends Employee {
 	}
 
 	@Override
-	public int size() {
+	public void clear() {
 		// TODO Auto-generated method stub
-		return 0;
+		
 	}
-
-	@Override
-	public Object[] toArray() {
-		// TODO Auto-generated method stub
-		return null;
-	}
-
-	@Override
-	public <T> T[] toArray(T[] a) {
-		// TODO Auto-generated method stub
-		return null;
-	}
-
-	// Data members getters and setters:
-	public int getManagerName() {
-		return managerName;
-	}
-
-	public void setManagerName(int managerName) {
-		this.managerName = managerName;
-	}
-
-	public String getRole() {
-		return role;
-	}
-
-	public void setRole(String role) {
-		this.role = role;
-	}
-
+	
+	
+	
 }
 
 

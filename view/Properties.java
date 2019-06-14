@@ -179,7 +179,6 @@ public class Properties extends JPanel {
 		cb_sectionType.setBorder(null);
 		cb_sectionType.setBounds(156, 315, 265, 20);
 		panelProperties.add(cb_sectionType);
-//		cb_sectionType.setSelectedItem(View.getStadium().getArenaSection(0/* DO NOT CHANGE 0 VALUE */).getSectionType());
 		cb_sectionType.setRenderer(new DefaultListCellRenderer() { // Send Yoni
 			public void paint(Graphics g) {
 				setForeground(Color.BLACK);
@@ -266,18 +265,16 @@ public class Properties extends JPanel {
 		cb_sectionRanking.setBorder(null);
 		cb_sectionRanking.setBounds(156, 435, 265, 20);
 		panelProperties.add(cb_sectionRanking);
-//		cb_sectionRanking.setSelectedItem(View.getStadium().getArenaSection(0/* DO NOT CHANGE 0 VALUE */).getSectionRanking());
 		cb_sectionRanking.setRenderer(new DefaultListCellRenderer() { // Send Yoni
 			public void paint(Graphics g) {
 				setForeground(Color.BLACK);
 				super.paint(g);
 			}
 		});
-		//
 
-		// Buttons:
-
-		// Button declarations:
+		//---Buttons---//
+		
+		// Buttons declaration:
 		editProperties = new JButton("EDIT");
 		editProperties.setVisible(true);
 		editProperties.setBounds(460, 103, 90, 20);
@@ -351,140 +348,10 @@ public class Properties extends JPanel {
 		panelProperties.add(btnCancelEdit);
 		// end buttons declarations
 
-//		// Actions:
-//		editProperties.addActionListener(new ActionListener() {
-//			public void actionPerformed(ActionEvent arg0) {
-//				editProperties.setVisible(false);
-//				btnCancelEdit.setVisible(true);
-//				finishEditPropertiesButton.setVisible(true);
-//				setProperties(true);
-//				cb_sectionSelection.setEnabled(false);
-//				cb_sectionSelection.setRenderer(new DefaultListCellRenderer() { // Send Yoni
-//					public void paint(Graphics g) {
-//						setForeground(Color.BLACK);
-//						super.paint(g);
-//					}
-//				});
-//			}
-//		});
-//
-//		finishEditPropertiesButton.addActionListener(new ActionListener() {
-//			public void actionPerformed(ActionEvent arg0) {
-//				cb_sectionSelection.setEnabled(true);
-//				finishEditPropertiesButton.setVisible(false);
-//				editProperties.setVisible(true);
-//				btnCancelEdit.setVisible(false);
-//
-//				sectionInedex = cb_sectionSelection.getSelectedIndex(); // Gets the Section we want to edit
-//
-//				View.getStadium().setStadiumName(tf_arenaName.getText());
-//				View.getStadium().setAddress(tf_address.getText());
-//				View.getStadium().setCapacity(Integer.valueOf(tf_arenaNumOfSeats.getText()).intValue());
-//				// -------------//
-//				View.getStadium().getArenaSection(sectionInedex)
-//						.setSectionType(cb_sectionType.getModel().getSelectedItem().toString());
-//				View.getStadium().getArenaSection(sectionInedex)
-//						.setSectionRanking(cb_sectionRanking.getModel().getSelectedItem().toString());
-//				View.getStadium().getArenaSection(sectionInedex)
-//						.setTicketPrice(Float.valueOf(tf_sectionTicketPrice.getText()).floatValue());
-//				View.getStadium().getArenaSection(sectionInedex)
-//						.setNumOfSeats(Integer.valueOf(tf_sectionNumOfSeats.getText()).intValue());
-//				if (rdbtnIsRoofedYes.isSelected()) {
-//					View.getStadium().getArenaSection(sectionInedex).setRoofed(true);
-//				} else {
-//					View.getStadium().getArenaSection(sectionInedex).setRoofed(false);
-//				}
-//				// -------------//
-//				setProperties(false);
-//			}
-//		});
-//
-//		btnCancelEdit.addActionListener(new ActionListener() {
-//			public void actionPerformed(ActionEvent arg0) {
-//				cb_sectionSelection.setEnabled(true);
-//				btnCancelEdit.setVisible(false);
-//				editProperties.setVisible(true);
-//				finishEditPropertiesButton.setVisible(false);
-//
-//				sectionInedex = cb_sectionSelection.getSelectedIndex(); // Gets the Section we want to edit
-//
-//				tf_arenaName.setText(View.getStadium().getStadiumName());
-//				tf_address.setText(View.getStadium().getAddress());
-//				tf_arenaNumOfSeats.setText(String.valueOf(View.getStadium().getCapacity()));
-//				// -------------//
-//
-//				cb_sectionType.setSelectedItem(View.getStadium().getArenaSection(sectionInedex).getSectionType());
-//				cb_sectionRanking.setSelectedItem(View.getStadium().getArenaSection(sectionInedex).getSectionRanking());
-//				tf_sectionTicketPrice.setText(String.valueOf(View.getStadium().getArenaSection(sectionInedex).getTicketPrice()));
-//				tf_sectionNumOfSeats.setText(String.valueOf(View.getStadium().getArenaSection(sectionInedex).getNumOfSeats()));
-//				if (View.getStadium().getArenaSection(sectionInedex).isRoofed()) {
-//					rdbtnIsRoofedYes.setSelected(true);
-//					rdbtnIsRoofedNO.setSelected(false);
-//				} else {
-//					rdbtnIsRoofedYes.setSelected(false);
-//					rdbtnIsRoofedNO.setSelected(true);
-//				}
-//
-//				setProperties(false);
-//			}
-//		});
-//
-//		cb_sectionSelection.addActionListener(new ActionListener() {
-//			public void actionPerformed(ActionEvent arg0) {
-//
-//				displaySectionDetails(cb_sectionSelection.getSelectedIndex()); // function which display the data on a
-//																				// given section
-//			}
-//		});
-//
-//		rdbtnIsRoofedYes.addActionListener(new ActionListener() {
-//			public void actionPerformed(ActionEvent arg0) {
-//				if (!rdbtnIsRoofedYes.isSelected()) {
-//					rdbtnIsRoofedYes.setSelected(true);
-//					rdbtnIsRoofedNO.setSelected(false);
-//				} else {
-//					rdbtnIsRoofedYes.setSelected(true);
-//					rdbtnIsRoofedNO.setSelected(false);
-//				}
-//			}
-//		});
-//
-//		rdbtnIsRoofedNO.addActionListener(new ActionListener() {
-//			public void actionPerformed(ActionEvent arg0) {
-//				if (!rdbtnIsRoofedNO.isSelected()) {
-//					rdbtnIsRoofedNO.setSelected(true);
-//					rdbtnIsRoofedYes.setSelected(false);
-//				} else {
-//					rdbtnIsRoofedNO.setSelected(true);
-//					rdbtnIsRoofedYes.setSelected(false);
-//				}
-//			}
-//		});
-//		// put after cb_sectionRanking
-//		for (int i = 0; i < 15; i++) {
-//			View.getStadium().getArenaSection(i).setSectionType(cb_sectionType.getModel().getSelectedItem().toString());
-//
-//		}
-//		if (View.getStadium().getArenaSection(0).isRoofed()) {
-//			rdbtnIsRoofedYes.setSelected(true);
-//		} else {
-//			rdbtnIsRoofedYes.setSelected(false);
-//		}
-//		if (!View.getStadium().getArenaSection(0).isRoofed()) {
-//			rdbtnIsRoofedNO.setSelected(true);
-//		} else {
-//			rdbtnIsRoofedNO.setSelected(false);
-//		}
-//		for (int i = 0; i < 15; i++) {
-//			View.getStadium().getArenaSection(i).setSectionRanking(cb_sectionRanking.getModel().getSelectedItem().toString());
-//		}
-	
-	
-	
 	}
 
 	// methods:
-	public void setProperties(boolean action) // Function which set the properties page by a given action (true/false)
+	public void setProperties(boolean action) // Function that set the properties page by a given action (true/false)
 	{
 		tf_arenaName.setEnabled(action);
 		tf_arenaName.setEditable(action);
@@ -500,23 +367,6 @@ public class Properties extends JPanel {
 		cb_sectionRanking.setEnabled(action);
 		rdbtnIsRoofedYes.setEnabled(action);
 		rdbtnIsRoofedNO.setEnabled(action);
-	}
-
-//	public void displaySectionDetails(int index) {
-//
-//		cb_sectionType.setSelectedItem(View.getStadium().getArenaSection(index).getSectionType());
-//		cb_sectionRanking.setSelectedItem(View.getStadium().getArenaSection(index).getSectionRanking());
-//		tf_sectionTicketPrice.setText(String.valueOf(View.getStadium().getArenaSection(index).getTicketPrice()));
-//		tf_sectionNumOfSeats.setText(String.valueOf(View.getStadium().getArenaSection(index).getNumOfSeats()));
-//		if (View.getStadium().getArenaSection(index).isRoofed()) {
-//			rdbtnIsRoofedYes.setSelected(true);
-//			rdbtnIsRoofedNO.setSelected(false);
-//		} else {
-//			rdbtnIsRoofedYes.setSelected(false);
-//			rdbtnIsRoofedNO.setSelected(true);
-//		}
-//
-//	}
-	
+	}	
 
 }

@@ -22,9 +22,7 @@ public class Stadium {
 		this.setAddress(address);
 		this.numOfSections=numOfSections;
 		this.arenaSection = arenaSection;
-//		for (int i = 0; i < numOfSections; i++) {
-//			arenaSection[i] = new Section("", 0, true, 0, "");
-//		}
+
 	}
 	public static Stadium getInstance(int stadiumId, String stadiumName, String homeTeam, int capacity, String address, int numOfSections, Section[] arenaSection) {
 		if (instance==null) {

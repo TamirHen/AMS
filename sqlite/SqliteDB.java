@@ -16,7 +16,8 @@ public class SqliteDB {
 	public User signInUser;
 	public Section[] section;
 	public int sectionSize=0;
-
+	
+	//Constructor:
 	private SqliteDB() {
 		//try to connect to DB:
 		try {
@@ -29,16 +30,23 @@ public class SqliteDB {
 		}
 	}
 	
+	// get instance to initialize DB:
+	public static SqliteDB getInstance() {
+		if (instance==null) {
+			instance = new SqliteDB();
+		}
+		return instance;
+	}
+	
+	// Methods:
+	
+	// initialize methods:
 	public void initializeUsers() {
 		
 		try {
 			this.stmt = c.createStatement();
 			ResultSet rs = stmt.executeQuery("select * from User");
 			
-//			while(rs.next()) {
-//				userSize++;
-//			}
-//			rs = stmt.executeQuery("select * from User");
 			user = new User[100];
 			userSize=0;
 			while(rs.next()) {
@@ -49,13 +57,6 @@ public class SqliteDB {
 			System.out.println("Error: " + e.getMessage());
 
 		}
-	}
-	
-	public static SqliteDB getInstance() {
-		if (instance==null) {
-			instance = new SqliteDB();
-		}
-		return instance;
 	}
 	
 	public void initializeStadium () {
@@ -92,15 +93,8 @@ public class SqliteDB {
 
 		}
 	}
-	public void closeConnection() {
-		try {
-			c.close();
-
-		} catch (Exception e) {
-			// error
-		}
-	}
 	
+	//create methods:
 	public void createNewUser(String userName, String firstName, String lastName, char[] pf_password, String email) {
 		try {
 			this.stmt = c.createStatement();
@@ -115,6 +109,7 @@ public class SqliteDB {
 		}
 	}
 	
+	//update methods:
 	public void updateProperties(int stadiumIdToUpdate, String stadiumName, String homeTeam, int capacity, String address, int numOfSections) {
 		try {
 			this.stmt = c.createStatement();
@@ -137,6 +132,7 @@ public class SqliteDB {
 		}
 	}
 	
+	// other methods: 
 	public boolean isUserNameExist(String userName) {
 		for(int i=0; i<userSize; i++) {
 			if (userName.equals(user[i].getUserName())) {
@@ -156,4 +152,15 @@ public class SqliteDB {
 		}
 		return false;
 	}
+	
+	// close connection:
+	public void closeConnection() {
+		try {
+			c.close();
+
+		} catch (Exception e) {
+			System.out.println("Failed to close the connection to DB");
+		}
+	}
+	
 }

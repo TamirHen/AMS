@@ -1,7 +1,5 @@
 package model;
 
-//Not ready, we need to decide if we want to use it (needs to set private and getters/setters)
-
 public class User {
 	private String userName;
 	private String firstName;

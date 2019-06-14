@@ -103,18 +103,6 @@ public class Login extends JPanel {
 
 			}
 		});
-//		btnLogin.addActionListener(new ActionListener() {
-//			@SuppressWarnings("deprecation")
-//			public void actionPerformed(ActionEvent arg0) {
-//				if (SqliteDB.isUserExist(tf_loginUsername.getText(),passwordField_Login.getPassword())) {
-//					View.btnLoginPressed();
-//				}
-//				else
-//					lblLoginFailed.setVisible(true);
-//
-//			}
-//		});
-		
 		panelLogin.add(btnLogin);
 		
 		//---Register---//
@@ -141,20 +129,9 @@ public class Login extends JPanel {
 
 			}
 		});
-//		btnLogin.addActionListener(new ActionListener() {
-//			@SuppressWarnings("deprecation")
-//			public void actionPerformed(ActionEvent arg0) {
-//				if (SqliteDB.isUserExist(tf_loginUsername.getText(),passwordField_Login.getPassword())) {
-//					View.btnLoginPressed();
-//				}
-//				else
-//					lblLoginFailed.setVisible(true);
-//
-//			}
-//		});
-		
 		panelLogin.add(btnSignUp);
 		
+		// first state:
 		panelLogin.setVisible(true);
 
 	} //end of constructor

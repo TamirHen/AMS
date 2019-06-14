@@ -37,7 +37,7 @@ public class SignUp extends JFrame {
 	
 	public SignUp() {
 		//set Frame:
-		setBounds(280, 120, 400, 550);
+		setBounds(385, 55, 400, 550);
 		this.setResizable(false);
 		panelSignUp = new JPanel();
 		panelSignUp.setBorder(new EmptyBorder(5, 5, 5, 5));

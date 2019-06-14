@@ -97,6 +97,5 @@ public class Section {
 		this.sectionType = sectionType;
 	}
 
-	// Methods:
 
 }

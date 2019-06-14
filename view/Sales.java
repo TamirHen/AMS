@@ -26,19 +26,16 @@ public class Sales extends JPanel {
 	private JPanel panelTickets;
 	private JPanel panelSponsorships;
 
-	
 	private JButton btnTickets;
 	private JButton btnConcessions;
 	private JButton btnMerchandise;
 	private JButton btnSponsorships;
-	
 	
 	private JTextField tf_TotalAttendance;
 	private JTextField tf_TotalRevenue;
 	private JTextField tf_TotalNumOfGameTickets;
 	private JTextField tf_TotalRevenueGameTickets;
 	private JTextField tf_TotalNumOfSeasonTickets;
-	
 	
 	private JLabel titleMerchandise;
 	private JLabel titleSales;
@@ -53,10 +50,8 @@ public class Sales extends JPanel {
 	private JLabel titleConcessions;
 	private JLabel titleSponsorships;
 	
-	
 	private JComboBox cb_SalesSeason;
 	private JComboBox cb_SalesGame;
-
 	
 	private JSeparator sprtrTickets1;
 	private JSeparator sprtrTickets2;

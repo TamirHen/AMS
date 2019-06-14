@@ -12,66 +12,17 @@ public class Manager extends Employee {
 		super(id, firstName, lastName, age, department, salary);
 		this.setNumOfMinors(numOfMinors);
 	}
-
-	@Override
-	public boolean add(String e) {
-		// TODO Auto-generated method stub
-		return false;
+	
+	// Data members getters and setters:
+	public int getNumOfMinors() {
+		return numOfMinors;
 	}
 
-	@Override
-	public boolean addAll(Collection<? extends String> c) {
-		// TODO Auto-generated method stub
-		return false;
+	public void setNumOfMinors(int numOfMinors) {
+		this.numOfMinors = numOfMinors;
 	}
 
-	@Override
-	public void clear() {
-		// TODO Auto-generated method stub
-
-	}
-
-	@Override
-	public boolean contains(Object o) {
-		// TODO Auto-generated method stub
-		return false;
-	}
-
-	@Override
-	public boolean containsAll(Collection<?> c) {
-		// TODO Auto-generated method stub
-		return false;
-	}
-
-	@Override
-	public boolean isEmpty() {
-		// TODO Auto-generated method stub
-		return false;
-	}
-
-	@Override
-	public Iterator<String> iterator() {
-		// TODO Auto-generated method stub
-		return null;
-	}
-
-	@Override
-	public boolean remove(Object o) {
-		// TODO Auto-generated method stub
-		return false;
-	}
-
-	@Override
-	public boolean removeAll(Collection<?> c) {
-		// TODO Auto-generated method stub
-		return false;
-	}
-
-	@Override
-	public boolean retainAll(Collection<?> c) {
-		// TODO Auto-generated method stub
-		return false;
-	}
+	//-------------//
 
 	@Override
 	public int size() {
@@ -79,11 +30,34 @@ public class Manager extends Employee {
 		return 0;
 	}
 
+
+	@Override
+	public boolean isEmpty() {
+		// TODO Auto-generated method stub
+		return false;
+	}
+
+
+	@Override
+	public boolean contains(Object o) {
+		// TODO Auto-generated method stub
+		return false;
+	}
+
+
+	@Override
+	public Iterator<String> iterator() {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+
 	@Override
 	public Object[] toArray() {
 		// TODO Auto-generated method stub
 		return null;
 	}
+
 
 	@Override
 	public <T> T[] toArray(T[] a) {
@@ -91,13 +65,53 @@ public class Manager extends Employee {
 		return null;
 	}
 
-	public int getNumOfMinors() {
-		return numOfMinors;
+
+	@Override
+	public boolean add(String e) {
+		// TODO Auto-generated method stub
+		return false;
 	}
 
-	// Data members getters and setters:
-	public void setNumOfMinors(int numOfMinors) {
-		this.numOfMinors = numOfMinors;
+
+	@Override
+	public boolean remove(Object o) {
+		// TODO Auto-generated method stub
+		return false;
+	}
+
+
+	@Override
+	public boolean containsAll(Collection<?> c) {
+		// TODO Auto-generated method stub
+		return false;
+	}
+
+
+	@Override
+	public boolean addAll(Collection<? extends String> c) {
+		// TODO Auto-generated method stub
+		return false;
+	}
+
+
+	@Override
+	public boolean removeAll(Collection<?> c) {
+		// TODO Auto-generated method stub
+		return false;
+	}
+
+
+	@Override
+	public boolean retainAll(Collection<?> c) {
+		// TODO Auto-generated method stub
+		return false;
+	}
+
+
+	@Override
+	public void clear() {
+		// TODO Auto-generated method stub
+		
 	}
 
 }

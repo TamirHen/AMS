@@ -82,7 +82,7 @@ public class Controller {
 		view.menuPanel.btnOverview.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
 				view.overviewPanel.panelOverview.setVisible(true);
-				view.setBackground(UI_Elements.color_menuButtonSelected);
+				view.menuPanel.btnOverview.setBackground(UI_Elements.color_menuButtonSelected);
 				view.propertiesPanel.panelProperties.setVisible(false);
 				view.menuPanel.btnProperties.setBackground(UI_Elements.color_menuBar);
 				view.salesPanel.panelSales.setVisible(false);
@@ -137,7 +137,6 @@ public class Controller {
 		});
 		
 		//button UserName:
-//		view.menuPanel.btnUserName.setText("Welcome "+model.signInUser+"!");
 		view.menuPanel.btnUserName.addActionListener(new ActionListener() {
 		public void actionPerformed(ActionEvent arg0) {
 			if (view.menuPanel.btnUserName.getBackground()==UI_Elements.color_menuButtonSelected) {
@@ -173,16 +172,7 @@ public class Controller {
 		for (int i = 0; i < model.db.sectionSize; i++) {
 			view.propertiesPanel.cb_sectionSelection.addItem(model.db.section[i].getSectionName());
 		}
-		//combo boxes:
-		//need to setText for the combo box
-//		view.propertiesPanel.cb_sectionSelection
-//		.setModel(new DefaultComboBoxModel(new String[] { model.stadium.getArenaSection(0).getSectionName(),
-//				model.stadium.getArenaSection(1).getSectionName(), model.stadium.getArenaSection(2).getSectionName(),
-//				model.stadium.getArenaSection(3).getSectionName(), model.stadium.getArenaSection(4).getSectionName(),
-//				 }));
-//		view.propertiesPanel.cb_sectionType.setSelectedItem(model.stadium.getArenaSection(0/* DO NOT CHANGE 0 VALUE */).getSectionType());
-//		view.propertiesPanel.cb_sectionRanking.setSelectedItem(model.stadium.getArenaSection(0/* DO NOT CHANGE 0 VALUE */).getSectionRanking());
-		//display the first section (section 1):
+		//set the first section in view:
 		displaySectionDetails(0);
 		// Actions:
 		view.propertiesPanel.editProperties.addActionListener(new ActionListener() {
@@ -303,30 +293,10 @@ public class Controller {
 				}
 			}
 		});
-		// set section the sections part of the panel to display first look
-//		for (int i = 0; i < model.db.sectionSize; i++) {
-//			model.stadium.getArenaSection(i).setSectionType(view.propertiesPanel.cb_sectionType.getModel().getSelectedItem().toString());
-//
-//		}
-//		if (model.stadium.getArenaSection(0).isRoofed()) {
-//			view.propertiesPanel.rdbtnIsRoofedYes.setSelected(true);
-//		} else {
-//			view.propertiesPanel.rdbtnIsRoofedYes.setSelected(false);
-//		}
-//		if (!model.stadium.getArenaSection(0).isRoofed()) {
-//			view.propertiesPanel.rdbtnIsRoofedNO.setSelected(true);
-//		} else {
-//			view.propertiesPanel.rdbtnIsRoofedNO.setSelected(false);
-//		}
-//		for (int i = 0; i < model.db.sectionSize; i++) {
-//			model.stadium.getArenaSection(i).setSectionRanking(view.propertiesPanel.cb_sectionRanking.getModel().getSelectedItem().toString());
-//		}
-		
-		
 		
 	}//end of constructor
 	
-	//controller methods:
+	//---controller methods---//
 	
 	//login panel:
 	public void btnLoginPressed() {

@@ -46,30 +46,10 @@ public class View extends JFrame {
 	public Sales salesPanel;
 	public Facilities facilitiesPanel;
 	//-------------------------//
-//
-//	public static void main(String[] args) {
-//
-//		EventQueue.invokeLater(new Runnable() {
-//			public void run() {				
-//				try {
-//					View frame = new View();
-//					frame.setVisible(true);
-//					frame.setMaximumSize(new Dimension(1114, 600));
-//					frame.setMinimumSize(new Dimension(1114, 600));
-//					frame.setResizable(false);
-//					frame.setTitle("AMS - Arena Management System");
-//					
-//				} catch (Exception e) {
-//					e.printStackTrace();
-//				}
-//			}
-//		});
-//	}
 
 	public View() {
 
 		// set main JFrame:
-
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		setBounds(0, 0, 1114, 600);
 		mainPanel = new JPanel();
@@ -91,7 +71,6 @@ public class View extends JFrame {
 		getContentPane().add(propertiesPanel.panelProperties);
 		getContentPane().add(salesPanel.panelSales);
 		getContentPane().add(facilitiesPanel.panelFacilities);
-		
 		getContentPane().add(menuPanel.menuPanel);
 		
 		displayLoginPage();
