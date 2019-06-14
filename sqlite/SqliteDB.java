@@ -35,11 +35,11 @@ public class SqliteDB {
 			this.stmt = c.createStatement();
 			ResultSet rs = stmt.executeQuery("select * from User");
 			
-			while(rs.next()) {
-				userSize++;
-			}
-			rs = stmt.executeQuery("select * from User");
-			user = new User[userSize];
+//			while(rs.next()) {
+//				userSize++;
+//			}
+//			rs = stmt.executeQuery("select * from User");
+			user = new User[100];
 			userSize=0;
 			while(rs.next()) {
 				this.user[userSize]=new User(rs.getString("userName"), rs.getString("firstName"), rs.getString("lastName"), rs.getString("password"), rs.getString("email"));
@@ -101,6 +101,20 @@ public class SqliteDB {
 		}
 	}
 	
+	public void createNewUser(String userName, String firstName, String lastName, char[] pf_password, String email) {
+		try {
+			this.stmt = c.createStatement();
+			String password = new String(pf_password);
+			System.out.println("insert into User values('"+userName+"', '"+firstName+"', '"+lastName+"', '"+password+"', '"+email+"')");
+			stmt.executeUpdate("insert into User values('"+userName+"', '"+firstName+"', '"+lastName+"', '"+password+"', '"+email+"')");
+			this.user[userSize] = new User(userName, firstName, lastName, password, email);
+			userSize++;
+		} catch (Exception e) {
+			System.out.println("Error: " + e.getMessage());
+
+		}
+	}
+	
 	public void updateProperties(int stadiumIdToUpdate, String stadiumName, String homeTeam, int capacity, String address, int numOfSections) {
 		try {
 			this.stmt = c.createStatement();
@@ -122,7 +136,16 @@ public class SqliteDB {
 
 		}
 	}
-
+	
+	public boolean isUserNameExist(String userName) {
+		for(int i=0; i<userSize; i++) {
+			if (userName.equals(user[i].getUserName())) {
+				return true;
+			}
+		}
+		return false;
+	}
+	
 	public boolean isUserExist(String userName, char[] password) {
 		String temp = new String(password);
 		for(int i=0; i<userSize; i++) {

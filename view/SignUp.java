@@ -11,7 +11,9 @@ import java.awt.event.MouseEvent;
 
 import javax.swing.JButton;
 import javax.swing.JFrame;
+import javax.swing.JLabel;
 import javax.swing.JPanel;
+import javax.swing.JPasswordField;
 import javax.swing.JTextField;
 import javax.swing.SwingConstants;
 import javax.swing.border.EmptyBorder;
@@ -20,16 +22,17 @@ public class SignUp extends JFrame {
 
 	private JPanel panelSignUp;
 
-	private JTextField tf_enterUserName;
-	private JTextField tf_enterPassword;
-	private JTextField tf_enterPasswordAgain;
-	private JTextField tf_enterFirstName;
-	private JTextField tf_enterLastName;
-	private JTextField tf_enterEmail;
-	private JTextField tf_userNameAlreadyExist;
-	private JTextField tf_passwordNotMatch;
+	public JTextField tf_enterUserName;
+	public JPasswordField pf_enterPassword;
+	public JPasswordField pf_enterPasswordAgain;
+	public JTextField tf_enterFirstName;
+	public JTextField tf_enterLastName;
+	public JTextField tf_enterEmail;
+	public JLabel lblUserNameAlreadyExist;
+	public JLabel lblPasswordNotMatch;
 	
-	private JButton btnFinishSignUp;
+	public JButton btnFinishSignUp;
+	public JButton btnCancelSignUp;
 
 	
 	public SignUp() {
@@ -49,17 +52,17 @@ public class SignUp extends JFrame {
 		tf_enterUserName.setBounds(90, 150, 220, 30);
 		panelSignUp.add(tf_enterUserName);
 
-		tf_enterPassword = new JTextField("Password");
-		tf_enterPassword.setHorizontalAlignment(SwingConstants.CENTER);
-		tf_enterPassword.setFont(UI_Elements.font_bodyFillText);
-		tf_enterPassword.setBounds(90, 190, 220, 30);
-		panelSignUp.add(tf_enterPassword);
+		pf_enterPassword = new JPasswordField("Password");
+		pf_enterPassword.setHorizontalAlignment(SwingConstants.CENTER);
+		pf_enterPassword.setFont(UI_Elements.font_bodyFillText);
+		pf_enterPassword.setBounds(90, 190, 220, 30);
+		panelSignUp.add(pf_enterPassword);
 		
-		tf_enterPasswordAgain = new JTextField("Verify Password");
-		tf_enterPasswordAgain.setHorizontalAlignment(SwingConstants.CENTER);
-		tf_enterPasswordAgain.setFont(UI_Elements.font_bodyFillText);
-		tf_enterPasswordAgain.setBounds(90, 230, 220, 30);
-		panelSignUp.add(tf_enterPasswordAgain);
+		pf_enterPasswordAgain = new JPasswordField("Password");
+		pf_enterPasswordAgain.setHorizontalAlignment(SwingConstants.CENTER);
+		pf_enterPasswordAgain.setFont(UI_Elements.font_bodyFillText);
+		pf_enterPasswordAgain.setBounds(90, 230, 220, 30);
+		panelSignUp.add(pf_enterPasswordAgain);
 		
 		tf_enterFirstName = new JTextField("First Name");
 		tf_enterFirstName.setHorizontalAlignment(SwingConstants.CENTER);
@@ -79,15 +82,23 @@ public class SignUp extends JFrame {
 		tf_enterEmail.setBounds(90, 350, 220, 30);
 		panelSignUp.add(tf_enterEmail);
 		
-		tf_userNameAlreadyExist = new JTextField("UserName is already exist");tf_userNameAlreadyExist.setHorizontalAlignment(SwingConstants.CENTER);
-		tf_userNameAlreadyExist.setHorizontalAlignment(SwingConstants.CENTER);
-		tf_userNameAlreadyExist.setFont(UI_Elements.font_bodyFillText);
+		lblUserNameAlreadyExist = new JLabel("UserName is already exist");
+		lblUserNameAlreadyExist.setHorizontalAlignment(SwingConstants.CENTER);
+		lblUserNameAlreadyExist.setFont(UI_Elements.font_bodyFillText);
+		lblUserNameAlreadyExist.setForeground(Color.RED);
+		lblUserNameAlreadyExist.setBounds(0, 480, 450, 30);
+		lblUserNameAlreadyExist.setVisible(false);
+		panelSignUp.add(lblUserNameAlreadyExist);
 
-		tf_passwordNotMatch = new JTextField("Passwords not match");
-		tf_passwordNotMatch.setHorizontalAlignment(SwingConstants.CENTER);
-		tf_passwordNotMatch.setFont(UI_Elements.font_bodyFillText);
-		
-		//set button:
+		lblPasswordNotMatch = new JLabel("Passwords not match");
+		lblPasswordNotMatch.setHorizontalAlignment(SwingConstants.CENTER);
+		lblPasswordNotMatch.setFont(UI_Elements.font_bodyFillText);
+		lblPasswordNotMatch.setForeground(Color.RED);
+		lblPasswordNotMatch.setBounds(0, 480, 450, 30);
+		lblPasswordNotMatch.setVisible(false);
+		panelSignUp.add(lblPasswordNotMatch);
+
+		//set buttons:
 		btnFinishSignUp = new JButton("FINISH");
 		btnFinishSignUp.setBounds(140, 400, 120, 35);
 		btnFinishSignUp.setFocusPainted(false);
@@ -110,7 +121,29 @@ public class SignUp extends JFrame {
 			}
 		});
 		panelSignUp.add(btnFinishSignUp);
+		
+		btnCancelSignUp = new JButton("CANCEL");
+		btnCancelSignUp.setBounds(140, 445, 120, 35);
+		btnCancelSignUp.setFocusPainted(false);
+		btnCancelSignUp.setRequestFocusEnabled(false);
+		btnCancelSignUp.setCursor(Cursor.getPredefinedCursor(Cursor.HAND_CURSOR));
+		btnCancelSignUp.setHorizontalAlignment(SwingConstants.CENTER);
+		btnCancelSignUp.setForeground(Color.WHITE);
+		btnCancelSignUp.setOpaque(true);
+		btnCancelSignUp.setBorder(null);
+		btnCancelSignUp.setFont(new Font(UI_Elements.mainFontName, Font.BOLD, 20));
+		btnCancelSignUp.setBackground(UI_Elements.color_panelBodyButtonDefault);
+		btnCancelSignUp.addMouseListener(new MouseAdapter() {
+			public void mouseEntered(MouseEvent e) {
+				btnCancelSignUp.setBackground(UI_Elements.color_panelBodyButtonRollover);
+			}
 
+			public void mouseExited(MouseEvent e) {
+				btnCancelSignUp.setBackground(UI_Elements.color_panelBodyButtonDefault);
+
+			}
+		});
+		panelSignUp.add(btnCancelSignUp);
 		
 	}
 

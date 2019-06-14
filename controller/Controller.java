@@ -19,6 +19,8 @@ import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.ResultSet;
 import java.sql.Statement;
+import java.util.Arrays;
+
 import sqlite.*;
 import model.*;
 import view.*;
@@ -46,8 +48,32 @@ public class Controller {
 		//btnSignUp pressed:
 		view.loginPanel.btnSignUp.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
-				view.signUp.setVisible(true);
+				view.signUpFrame.setVisible(true);
 
+			}	
+		});
+		
+		//---sign up panel---//
+		view.signUpFrame.btnFinishSignUp.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent arg0) {
+				if(model.db.isUserNameExist(view.signUpFrame.tf_enterUserName.getText())) {
+					view.signUpFrame.lblUserNameAlreadyExist.setVisible(true);
+					view.signUpFrame.lblPasswordNotMatch.setVisible(false);
+				}
+				else if(!Arrays.equals(view.signUpFrame.pf_enterPassword.getPassword(),view.signUpFrame.pf_enterPasswordAgain.getPassword())) {
+					view.signUpFrame.lblPasswordNotMatch.setVisible(true);
+					view.signUpFrame.lblUserNameAlreadyExist.setVisible(false);
+				}
+				else {
+					view.signUpFrame.setVisible(false);
+					model.db.createNewUser(view.signUpFrame.tf_enterUserName.getText(), view.signUpFrame.tf_enterFirstName.getText(), view.signUpFrame.tf_enterLastName.getText(), view.signUpFrame.pf_enterPassword.getPassword(), view.signUpFrame.tf_enterEmail.getText());
+				}
+
+			}	
+		});
+		view.signUpFrame.btnCancelSignUp.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent arg0) {
+				view.signUpFrame.setVisible(false);
 			}	
 		});
 		
