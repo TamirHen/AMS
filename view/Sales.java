@@ -20,7 +20,7 @@ import javax.swing.SwingConstants;
 
 public class Sales extends JPanel {
 
-	public JPanel panelSales;
+	public static JPanel panelSales;
 	private JPanel panelConcessions;
 	private JPanel panelMerchandise;
 	private JPanel panelTickets;

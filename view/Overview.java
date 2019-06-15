@@ -11,7 +11,7 @@ import javax.swing.SwingConstants;
 
 public class Overview extends JPanel {
 
-	public JPanel panelOverview;
+	public static JPanel panelOverview;
 	
 	private JLabel titleOverview;
 	private JLabel overviewStadium;

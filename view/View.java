@@ -59,11 +59,11 @@ public class View extends JFrame {
 		signUpFrame = new SignUp();
 		// set all panels:
 		loginPanel = new Login();
-		menuPanel = new Menu();
 		overviewPanel = new Overview();
 		propertiesPanel = new Properties();
 		salesPanel = new Sales();
 		facilitiesPanel= new Facilities();
+		menuPanel = new Menu();
 		// -------------//
 		setContentPane(mainPanel);
 		getContentPane().add(loginPanel.panelLogin);

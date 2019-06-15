@@ -9,7 +9,7 @@ import javax.swing.SwingConstants;
 
 public class Facilities extends JPanel {
 	
-	public  JPanel panelFacilities;
+	public static  JPanel panelFacilities;
 	private  JLabel titleFacilities;
 	
 	public Facilities() {
