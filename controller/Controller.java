@@ -317,6 +317,7 @@ public class Controller {
 	//set the logged in user:
 	model.signInUser=model.db.signInUser;
 	view.menuPanel.btnUserName.setText("Welcome "+model.signInUser.getFirstName()+"!");
+	view.menuPanel.btnUserName.setBorder(null);
 	
 	}
 	
