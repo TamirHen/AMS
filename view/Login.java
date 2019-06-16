@@ -73,8 +73,9 @@ public class Login extends JPanel {
 		
 		//---login failed label---//
 		lblLoginFailed = new JLabel("Failed to login - username or password is incorrect");
-		lblLoginFailed.setFont(UI_Elements.font_bodyFillText);
-		lblLoginFailed.setBounds(lblLoginLogo.getBounds().x+2, 417, 470, 76);
+		lblLoginFailed.setHorizontalAlignment(SwingConstants.CENTER);
+		lblLoginFailed.setFont(new Font("Calibri", Font.PLAIN, 14));
+		lblLoginFailed.setBounds(378, 440, 357, 62);
 		lblLoginFailed.setForeground(Color.RED);
 		lblLoginFailed.setVisible(false);
 		panelLogin.add(lblLoginFailed);

@@ -43,7 +43,7 @@ public class SignUp extends JFrame {
 		this.setResizable(false);
 		panelSignUp = new JPanel();
 		panelSignUp.setBorder(new EmptyBorder(5, 5, 5, 5));
-		panelSignUp.setBackground(Color.DARK_GRAY);
+		panelSignUp.setBackground(UI_Elements.color_mainBackgroundColor);
 		setContentPane(panelSignUp);
 		panelSignUp.setLayout(null);
 		
