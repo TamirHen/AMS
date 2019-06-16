@@ -136,16 +136,18 @@ public class Controller {
 			}
 		});
 		
+		
 		//button UserName:
 		view.menuPanel.btnUserName.addActionListener(new ActionListener() {
 		public void actionPerformed(ActionEvent arg0) {
-			if (view.menuPanel.btnUserName.getBackground()==UI_Elements.color_menuButtonSelected) {
-				view.menuPanel.btnUserName.setBackground(UI_Elements.color_menuBar);
-				view.menuPanel.btnLogout.setVisible(false);
+			if (view.menuPanel.btnLogout.isVisible() == false)
+			{
+				view.menuPanel.btnLogout.setVisible(true);
+				view.menuPanel.btnUserName.setBackground(UI_Elements.color_menuButtonSelected);
 			}
 			else {
-				view.menuPanel.btnUserName.setBackground(UI_Elements.color_menuButtonSelected);
-				view.menuPanel.btnLogout.setVisible(true);
+				view.menuPanel.btnUserName.setBackground(UI_Elements.color_menuBar);
+				view.menuPanel.btnLogout.setVisible(false);
 			}
 
 		}

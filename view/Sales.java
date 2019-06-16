@@ -110,7 +110,7 @@ public class Sales extends JPanel {
 		panelTickets = new JPanel();
 		panelTickets.setBorder(null);
 		panelTickets.setBackground(SystemColor.control);
-		panelTickets.setBounds(320, 0, 600, 617);
+		panelTickets.setBounds(330, 0, 600, 617);
 		panelSales.add(panelTickets);
 		panelTickets.setLayout(null);
 		
@@ -232,7 +232,7 @@ public class Sales extends JPanel {
 		panelConcessions = new JPanel();
 		panelConcessions.setBorder(null);
 		panelConcessions.setBackground(SystemColor.control);
-		panelConcessions.setBounds(320, 0, 600, 617);
+		panelConcessions.setBounds(330, 0, 600, 617);
 		panelSales.add(panelConcessions);
 		panelConcessions.setLayout(null);
 		
@@ -249,7 +249,7 @@ public class Sales extends JPanel {
 		panelMerchandise = new JPanel();
 		panelMerchandise.setBorder(null);
 		panelMerchandise.setBackground(SystemColor.control);
-		panelMerchandise.setBounds(320, 0, 600, 617);
+		panelMerchandise.setBounds(330, 0, 600, 617);
 		panelSales.add(panelMerchandise);
 		panelMerchandise.setLayout(null);
 		
@@ -266,7 +266,7 @@ public class Sales extends JPanel {
 		panelSponsorships = new JPanel();
 		panelSponsorships.setBorder(null);
 		panelSponsorships.setBackground(SystemColor.control);
-		panelSponsorships.setBounds(320, 0, 600, 617);
+		panelSponsorships.setBounds(330, 0, 600, 617);
 		panelSales.add(panelSponsorships);
 		panelSponsorships.setLayout(null);
 		
