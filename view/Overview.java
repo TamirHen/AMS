@@ -36,7 +36,7 @@ public class Overview extends JPanel {
 	private JButton btnStadiumEastGate;
 	private JButton btnStadiumNorthGate;
 	private JButton btnStadiumSouthGate;
-	private JButton btnStadiumPitch;
+	private JLabel btnStadiumPitch;
 	private JSeparator separatorOverview;
 
 	public Overview() {
@@ -149,7 +149,7 @@ public class Overview extends JPanel {
 		    }
 		} );
 		
-		btnStadiumPitch = new JButton();
+		btnStadiumPitch = new JLabel();
 		btnStadiumPitch.setIcon(new ImageIcon(Overview.class.getResource("/Images/Stadium_Default_04.png")));
 		btnStadiumPitch.setBorder(null);
 		btnStadiumPitch.setBounds(btnStadiumNorthGate.getBounds().x, btnStadiumWestGate.getBounds().y+btnStadiumNorthGate.getBounds().height, 259, 175);
