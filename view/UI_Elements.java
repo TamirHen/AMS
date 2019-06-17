@@ -2,6 +2,8 @@ package view;
 import java.awt.Color;
 import java.awt.Font;
 
+import javax.swing.ImageIcon;
+
 public class UI_Elements {
 
 	// COLORS
@@ -20,6 +22,9 @@ public class UI_Elements {
 	public static int textBodyLabelSize = 15;
 	public static int textBodyFillText = 13;
 	public static int textBodySalesData = 17;
+	
+	//Icon
+	public static ImageIcon amsIcon = new ImageIcon("Images/Icon.jpg");
 
 	// FONTS
 

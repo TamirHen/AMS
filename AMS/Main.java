@@ -21,8 +21,7 @@ public class Main {
 					amsView.setVisible(true);
 					amsView.setResizable(false);
 					amsView.setTitle("AMS - Arena Management System");
-					
-					
+					amsView.setIconImage(UI_Elements.amsIcon.getImage());
 					
 				} catch (Exception e) {
 					e.printStackTrace();

@@ -46,6 +46,7 @@ public class SignUp extends JFrame {
 		panelSignUp.setBackground(UI_Elements.color_mainBackgroundColor);
 		setContentPane(panelSignUp);
 		panelSignUp.setLayout(null);
+		this.setIconImage(UI_Elements.amsIcon.getImage());
 		
 		//logo:
 		lblSignUpLogo = new JLabel("");
