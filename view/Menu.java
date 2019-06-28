@@ -57,22 +57,6 @@ public class Menu extends JPanel {
 		btnOverview.setBackground(UI_Elements.color_menuButtonSelected);
 		btnOverview.setBounds(0, 100, 189, 40);
 		menuPanel.add(btnOverview);
-		btnOverview.addMouseListener( new MouseAdapter() {
-		    public void mouseEntered( MouseEvent e ) {
-		    	btnOverview.setBackground(UI_Elements.color_menuButtonRollover);
-		    }
-		    public void mouseExited( MouseEvent e ) {
-		    	if(Overview.panelOverview.isVisible() == true)
-		    	{
-		    		btnOverview.setBackground(UI_Elements.color_menuButtonSelected);
-		    	}
-		    	else
-		    	{
-		    		btnOverview.setBackground(UI_Elements.color_menuBar);
-		    	}
-		    }
-		} );
-
 
 		btnProperties = new JButton("PROPERTIES");
 		btnProperties.setAlignmentY(0.0f);
@@ -87,21 +71,7 @@ public class Menu extends JPanel {
 		btnProperties.setBackground(UI_Elements.color_menuBar);
 		btnProperties.setBounds(0, (btnOverview.getBounds().y) + 40, 189, 40);
 		menuPanel.add(btnProperties);
-		btnProperties.addMouseListener( new MouseAdapter() {
-		    public void mouseEntered( MouseEvent e ) {
-		    	btnProperties.setBackground(UI_Elements.color_menuButtonRollover);
-		    }
-		    public void mouseExited( MouseEvent e ) {
-		    	if(Properties.panelProperties.isVisible() == true)
-		    	{
-		    		btnProperties.setBackground(UI_Elements.color_menuButtonSelected);
-		    	}
-		    	else
-		    	{
-		    		btnProperties.setBackground(UI_Elements.color_menuBar);
-		    	}
-		    }
-		} );
+
 
 		btnSales = new JButton("SALES");
 		btnSales.setAlignmentY(0.0f);
@@ -116,21 +86,6 @@ public class Menu extends JPanel {
 		btnSales.setBackground(UI_Elements.color_menuBar);
 		btnSales.setBounds(0, (btnOverview.getBounds().y) + 40 * 2, 189, 40);
 		menuPanel.add(btnSales);
-		btnSales.addMouseListener( new MouseAdapter() {
-		    public void mouseEntered( MouseEvent e ) {
-		    	btnSales.setBackground(UI_Elements.color_menuButtonRollover);
-		    }
-		    public void mouseExited( MouseEvent e ) {
-		    	if(Sales.panelSales.isVisible() == true)
-		    	{
-		    		btnSales.setBackground(UI_Elements.color_menuButtonSelected);
-		    	}
-		    	else
-		    	{
-		    		btnSales.setBackground(UI_Elements.color_menuBar);
-		    	}
-		    }
-		} );
 
 		btnFacilities = new JButton("FACILITIES");
 		btnFacilities.setAlignmentY(0.0f);
@@ -145,21 +100,7 @@ public class Menu extends JPanel {
 		btnFacilities.setBackground(UI_Elements.color_menuBar);
 		btnFacilities.setBounds(0, (btnOverview.getBounds().y) + 40 * 3, 189, 40);
 		menuPanel.add(btnFacilities);
-		btnFacilities.addMouseListener( new MouseAdapter() {
-		    public void mouseEntered( MouseEvent e ) {
-		    	btnFacilities.setBackground(UI_Elements.color_menuButtonRollover);
-		    }
-		    public void mouseExited( MouseEvent e ) {
-		    	if(Facilities.panelFacilities.isVisible() == true)
-		    	{
-		    		btnFacilities.setBackground(UI_Elements.color_menuButtonSelected);
-		    	}
-		    	else
-		    	{
-		    		btnFacilities.setBackground(UI_Elements.color_menuBar);
-		    	}
-		    }
-		} );
+		
 		
 		btnUserName = new JButton("");
 		btnUserName.setAlignmentY(0.0f);
@@ -189,7 +130,7 @@ public class Menu extends JPanel {
 		    	}
 		    }
 		} );
-		
+
 		
 		btnLogout = new JButton("LOGOUT");
 		btnLogout.setAlignmentY(0.0f);

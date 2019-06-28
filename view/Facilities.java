@@ -17,7 +17,7 @@ import javax.swing.SwingConstants;
 
 public class Facilities extends JPanel {
 	
-	public static  JPanel panelFacilities;
+	public JPanel panelFacilities;
 	private  JLabel titleFacilities;
 	
 	private JPanel panelSecurity;

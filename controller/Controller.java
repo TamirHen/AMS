@@ -13,6 +13,8 @@ import model.Stadium;
 import model.User;
 
 import java.awt.event.ActionListener;
+import java.awt.event.MouseAdapter;
+import java.awt.event.MouseEvent;
 import java.awt.event.ActionEvent;
 import java.sql.*;
 import java.sql.Connection;
@@ -78,7 +80,8 @@ public class Controller {
 		});
 		
 		//---menu panel---//
-		//button overview pressed:
+		//Menu Button behavior//		
+		//btnOverview - press:
 		view.menuPanel.btnOverview.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
 				view.overviewPanel.panelOverview.setVisible(true);
@@ -93,7 +96,24 @@ public class Controller {
 
 			}
 		});
-		//button properties pressed:
+		//btnOverview - Rollover:
+		view.menuPanel.btnOverview.addMouseListener( new MouseAdapter() {
+		    public void mouseEntered( MouseEvent e ) {
+		    	view.menuPanel.btnOverview.setBackground(UI_Elements.color_menuButtonRollover);
+		    }
+		    public void mouseExited( MouseEvent e ) {
+		    	if(view.overviewPanel.panelOverview.isVisible() == true)
+		    	{
+		    		view.menuPanel.btnOverview.setBackground(UI_Elements.color_menuButtonSelected);
+		    	}
+		    	else
+		    	{
+		    		view.menuPanel.btnOverview.setBackground(UI_Elements.color_menuBar);
+		    	}
+		    }
+		} );
+		
+		//btnProperties - press:
 		view.menuPanel.btnProperties.addActionListener(new ActionListener() {
 		public void actionPerformed(ActionEvent arg0) {
 			view.overviewPanel.panelOverview.setVisible(false);
@@ -107,7 +127,24 @@ public class Controller {
 			
 			}
 		});
-		//button sales pressed:
+		//btnProperties - Rollover:
+		view.menuPanel.btnProperties.addMouseListener( new MouseAdapter() {
+		    public void mouseEntered( MouseEvent e ) {
+		    	view.menuPanel.btnProperties.setBackground(UI_Elements.color_menuButtonRollover);
+		    }
+		    public void mouseExited( MouseEvent e ) {
+		    	if(view.propertiesPanel.panelProperties.isVisible() == true)
+		    	{
+		    		view.menuPanel.btnProperties.setBackground(UI_Elements.color_menuButtonSelected);
+		    	}
+		    	else
+		    	{
+		    		view.menuPanel.btnProperties.setBackground(UI_Elements.color_menuBar);
+		    	}
+		    }
+		} );
+		
+		//btnSales - press:
 		view.menuPanel.btnSales.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
 				view.overviewPanel.panelOverview.setVisible(false);
@@ -121,7 +158,24 @@ public class Controller {
 
 			}
 		});
-		// button facilities pressed:
+		//btnSales - Rollover:
+		view.menuPanel.btnSales.addMouseListener( new MouseAdapter() {
+		    public void mouseEntered( MouseEvent e ) {
+		    	view.menuPanel.btnSales.setBackground(UI_Elements.color_menuButtonRollover);
+		    }
+		    public void mouseExited( MouseEvent e ) {
+		    	if(view.salesPanel.panelSales.isVisible() == true)
+		    	{
+		    		view.menuPanel.btnSales.setBackground(UI_Elements.color_menuButtonSelected);
+		    	}
+		    	else
+		    	{
+		    		view.menuPanel.btnSales.setBackground(UI_Elements.color_menuBar);
+		    	}
+		    }
+		} );
+		
+		//btnFacilities - press:
 		view.menuPanel.btnFacilities.addActionListener(new ActionListener() {
 		public void actionPerformed(ActionEvent arg0) {
 			view.overviewPanel.panelOverview.setVisible(false);
@@ -135,6 +189,22 @@ public class Controller {
 			
 			}
 		});
+		//btnFacilities - Rollover:
+		view.menuPanel.btnFacilities.addMouseListener( new MouseAdapter() {
+		    public void mouseEntered( MouseEvent e ) {
+		    	view.menuPanel.btnFacilities.setBackground(UI_Elements.color_menuButtonRollover);
+		    }
+		    public void mouseExited( MouseEvent e ) {
+		    	if(view.facilitiesPanel.panelFacilities.isVisible() == true)
+		    	{
+		    		view.menuPanel.btnFacilities.setBackground(UI_Elements.color_menuButtonSelected);
+		    	}
+		    	else
+		    	{
+		    		view.menuPanel.btnFacilities.setBackground(UI_Elements.color_menuBar);
+		    	}
+		    }
+		} );
 		
 		
 		//button UserName:

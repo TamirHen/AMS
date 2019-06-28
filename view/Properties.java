@@ -23,7 +23,7 @@ import javax.swing.SwingConstants;
 public class Properties extends JPanel {
 
 
-	public static JPanel panelProperties;
+	public JPanel panelProperties;
 
 	public JTextField tf_address;
 	public JTextField tf_arenaName;

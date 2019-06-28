@@ -16,11 +16,11 @@ import javax.swing.SwingConstants;
 
 public class Overview extends JPanel {
 
-	public static JPanel panelOverview;
-	public static JPanel panelWestGate;
-	public static JPanel panelNorthGate;
-	public static JPanel panelEastGate;
-	public static JPanel panelSouthGate;
+	public JPanel panelOverview;
+	public JPanel panelWestGate;
+	public JPanel panelNorthGate;
+	public JPanel panelEastGate;
+	public JPanel panelSouthGate;
 
 	
 	private JLabel titleOverview;
