@@ -84,16 +84,7 @@ public class Controller {
 		//btnOverview - press:
 		view.menuPanel.btnOverview.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
-				view.overviewPanel.panelOverview.setVisible(true);
-				view.menuPanel.btnOverview.setBackground(UI_Elements.color_menuButtonSelected);
-				view.propertiesPanel.panelProperties.setVisible(false);
-				view.menuPanel.btnProperties.setBackground(UI_Elements.color_menuBar);
-				view.salesPanel.panelSales.setVisible(false);
-				view.menuPanel.btnSales.setBackground(UI_Elements.color_menuBar);
-				view.facilitiesPanel.panelFacilities.setVisible(false);
-				view.menuPanel.btnFacilities.setBackground(UI_Elements.color_menuBar);
-				
-
+				switchMainMenuPage(view.menuPanel.btnOverview);
 			}
 		});
 		//btnOverview - Rollover:
@@ -116,14 +107,7 @@ public class Controller {
 		//btnProperties - press:
 		view.menuPanel.btnProperties.addActionListener(new ActionListener() {
 		public void actionPerformed(ActionEvent arg0) {
-			view.overviewPanel.panelOverview.setVisible(false);
-			view.menuPanel.btnOverview.setBackground(UI_Elements.color_menuBar);
-			view.propertiesPanel.panelProperties.setVisible(true);
-			view.menuPanel.btnProperties.setBackground(UI_Elements.color_menuButtonSelected);
-			view.salesPanel.panelSales.setVisible(false);
-			view.menuPanel.btnSales.setBackground(UI_Elements.color_menuBar);
-			view.facilitiesPanel.panelFacilities.setVisible(false);
-			view.menuPanel.btnFacilities.setBackground(UI_Elements.color_menuBar);
+			switchMainMenuPage(view.menuPanel.btnProperties);
 			
 			}
 		});
@@ -147,15 +131,7 @@ public class Controller {
 		//btnSales - press:
 		view.menuPanel.btnSales.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
-				view.overviewPanel.panelOverview.setVisible(false);
-				view.menuPanel.btnOverview.setBackground(UI_Elements.color_menuBar);
-				view.propertiesPanel.panelProperties.setVisible(false);
-				view.menuPanel.btnProperties.setBackground(UI_Elements.color_menuBar);
-				view.salesPanel.panelSales.setVisible(true);
-				view.menuPanel.btnSales.setBackground(UI_Elements.color_menuButtonSelected);
-				view.facilitiesPanel.panelFacilities.setVisible(false);
-				view.menuPanel.btnFacilities.setBackground(UI_Elements.color_menuBar);
-
+				switchMainMenuPage(view.menuPanel.btnSales);
 			}
 		});
 		//btnSales - Rollover:
@@ -178,15 +154,7 @@ public class Controller {
 		//btnFacilities - press:
 		view.menuPanel.btnFacilities.addActionListener(new ActionListener() {
 		public void actionPerformed(ActionEvent arg0) {
-			view.overviewPanel.panelOverview.setVisible(false);
-			view.menuPanel.btnOverview.setBackground(UI_Elements.color_menuBar);
-			view.propertiesPanel.panelProperties.setVisible(false);
-			view.menuPanel.btnProperties.setBackground(UI_Elements.color_menuBar);
-			view.salesPanel.panelSales.setVisible(false);
-			view.menuPanel.btnSales.setBackground(UI_Elements.color_menuBar);
-			view.facilitiesPanel.panelFacilities.setVisible(true);
-			view.menuPanel.btnFacilities.setBackground(UI_Elements.color_menuButtonSelected);
-			
+			switchMainMenuPage(view.menuPanel.btnFacilities);			
 			}
 		});
 		//btnFacilities - Rollover:
@@ -408,5 +376,39 @@ public class Controller {
 			view.propertiesPanel.rdbtnIsRoofedNO.setSelected(true);
 		}
 
+	}
+	
+	public void switchMainMenuPage(JButton i_PressedButton)
+	{
+		view.menuPanel.menuPanel.setVisible(true);
+		//Make all panels invisible and all buttons set to default color
+		view.overviewPanel.panelOverview.setVisible(false);
+		view.menuPanel.btnOverview.setBackground(UI_Elements.color_menuBar);
+		view.propertiesPanel.panelProperties.setVisible(false);
+		view.menuPanel.btnProperties.setBackground(UI_Elements.color_menuBar);
+		view.salesPanel.panelSales.setVisible(false);
+		view.menuPanel.btnSales.setBackground(UI_Elements.color_menuBar);
+		view.facilitiesPanel.panelFacilities.setVisible(false);
+		view.menuPanel.btnFacilities.setBackground(UI_Elements.color_menuBar);
+		//switch page and button color based on the pressed one
+		switch(i_PressedButton.getText())
+		{
+			case "OVERVIEW":
+				view.overviewPanel.panelOverview.setVisible(true);
+				view.menuPanel.btnOverview.setBackground(UI_Elements.color_menuButtonSelected);
+				break;
+			case "PROPERTIES":
+				view.propertiesPanel.panelProperties.setVisible(true);
+				view.menuPanel.btnProperties.setBackground(UI_Elements.color_menuButtonSelected);
+				break;
+			case "SALES":
+				view.salesPanel.panelSales.setVisible(true);
+				view.menuPanel.btnSales.setBackground(UI_Elements.color_menuButtonSelected);
+				break;
+			case "FACILITIES":
+				view.facilitiesPanel.panelFacilities.setVisible(true);
+				view.menuPanel.btnFacilities.setBackground(UI_Elements.color_menuButtonSelected);
+				break;
+		}
 	}
 }
