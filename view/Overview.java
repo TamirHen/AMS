@@ -62,6 +62,7 @@ public class Overview extends JPanel {
 
 		
 		btnStadiumWestGate = new JButton();
+		btnStadiumWestGate.setFocusPainted(false);
 		btnStadiumWestGate.setIcon(new ImageIcon(Overview.class.getResource("/Images/Stadium_Default_01.png")));
 		btnStadiumWestGate.setBorder(null);
 		btnStadiumWestGate.setBounds(25, 110, 132, 380);
@@ -84,6 +85,7 @@ public class Overview extends JPanel {
 		} );
 		
 		btnStadiumNorthGate = new JButton();
+		btnStadiumNorthGate.setFocusPainted(false);
 		btnStadiumNorthGate.setIcon(new ImageIcon(Overview.class.getResource("/Images/Stadium_Default_02.png")));
 		btnStadiumNorthGate.setBorder(null);
 		btnStadiumNorthGate.setBounds(btnStadiumWestGate.getBounds().x+btnStadiumWestGate.getBounds().width, btnStadiumWestGate.getBounds().y, 259, 103);
@@ -106,6 +108,7 @@ public class Overview extends JPanel {
 		} );
 		
 		btnStadiumEastGate = new JButton();
+		btnStadiumEastGate.setFocusPainted(false);
 		btnStadiumEastGate.setIcon(new ImageIcon(Overview.class.getResource("/Images/Stadium_Default_03.png")));
 		btnStadiumEastGate.setBorder(null);
 		btnStadiumEastGate.setBounds(btnStadiumNorthGate.getBounds().x+btnStadiumNorthGate.getBounds().width, btnStadiumWestGate.getBounds().y, 132, 380);
@@ -128,6 +131,7 @@ public class Overview extends JPanel {
 		} );
 		
 		btnStadiumSouthGate = new JButton();
+		btnStadiumSouthGate.setFocusPainted(false);
 		btnStadiumSouthGate.setIcon(new ImageIcon(Overview.class.getResource("/Images/Stadium_Default_05.png")));
 		btnStadiumSouthGate.setBorder(null);
 		btnStadiumSouthGate.setBounds(btnStadiumWestGate.getBounds().x+btnStadiumWestGate.getBounds().width, btnStadiumWestGate.getBounds().y+btnStadiumWestGate.getBounds().height-btnStadiumNorthGate.getBounds().height, 259, 102);
