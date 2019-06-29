@@ -341,16 +341,7 @@ public class Controller {
 	//login panel:
 	public void btnLoginPressed() {
 	view.loginPanel.panelLogin.setVisible(false);
-	view.menuPanel.menuPanel.setVisible(true);
-	view.overviewPanel.panelOverview.setVisible(true);
-	view.overviewPanel.panelOverview.setVisible(true);
-	view.menuPanel.btnOverview.setBackground(UI_Elements.color_menuButtonSelected);
-	view.propertiesPanel.panelProperties.setVisible(false);
-	view.menuPanel.btnProperties.setBackground(UI_Elements.color_menuBar);
-	view.salesPanel.panelSales.setVisible(false);
-	view.menuPanel.btnSales.setBackground(UI_Elements.color_menuBar);
-	view.facilitiesPanel.panelFacilities.setVisible(false);
-	view.menuPanel.btnFacilities.setBackground(UI_Elements.color_menuBar);
+	switchMainMenuPage(view.menuPanel.btnOverview); //Mimics use of btnOverview as startup view
 	
 	view.loginPanel.lblLoginFailed.setVisible(false);
 	
