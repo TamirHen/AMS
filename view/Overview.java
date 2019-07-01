@@ -21,6 +21,7 @@ public class Overview extends JPanel {
 
 	public JPanel panelOverview;
 	private JLabel titleOverview;
+	public OverviewStadium overviewStadiumPanel;
 	
 	private JSeparator separatorOverview;
 
@@ -39,7 +40,7 @@ public class Overview extends JPanel {
 		titleOverview.setFont(new Font(UI_Elements.mainFontName, Font.BOLD, UI_Elements.textPanelTitleSize));
 		panelOverview.add(titleOverview);
 		
-		OverviewStadium overviewStadiumPanel = new OverviewStadium();
+		overviewStadiumPanel = new OverviewStadium();
 		overviewStadiumPanel.setLayout(null);
 		overviewStadiumPanel.setBounds(25, 100, overviewStadiumPanel.overviewStadium.getBounds().width, overviewStadiumPanel.overviewStadium.getBounds().height);
 		overviewStadiumPanel.setVisible(true);
