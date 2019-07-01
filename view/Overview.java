@@ -51,7 +51,7 @@ public class Overview extends JPanel {
 		separatorOverview.setOrientation(SwingConstants.VERTICAL);
 		separatorOverview.setBounds(598, 26, 12, 563);
 		panelOverview.add(separatorOverview);
-
+			
 	}
 
 }
