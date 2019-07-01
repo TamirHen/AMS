@@ -90,6 +90,8 @@ public class OverviewStadium extends JPanel {
 		panelOverviewStadium.setBounds(0, 0, (int)stadiumLblWidth, (int)stadiumLblHeight);		
 		
 		overviewStadium_49 = new JButton();
+		overviewStadium_49.setContentAreaFilled(false);
+		overviewStadium_49.setOpaque(false);
 		overviewStadium_49.setName("49");
 		overviewStadium_49.setCursor(Cursor.getPredefinedCursor(Cursor.HAND_CURSOR));
 		overviewStadium_49.setBorderPainted(false);
@@ -146,6 +148,8 @@ public class OverviewStadium extends JPanel {
 		
 		
 		overviewStadium_19 = new JButton();
+		overviewStadium_19.setContentAreaFilled(false);
+		overviewStadium_19.setOpaque(false);
 		overviewStadium_19.setName("19");
 		overviewStadium_19.setCursor(Cursor.getPredefinedCursor(Cursor.HAND_CURSOR));
 		overviewStadium_19.setBorderPainted(false);
@@ -202,6 +206,8 @@ public class OverviewStadium extends JPanel {
 		
 		
 		overviewStadium_26 = new JButton();
+		overviewStadium_26.setContentAreaFilled(false);
+		overviewStadium_26.setOpaque(false);
 		overviewStadium_26.setName("26");
 		overviewStadium_26.setCursor(Cursor.getPredefinedCursor(Cursor.HAND_CURSOR));
 		overviewStadium_26.setBorderPainted(false);
@@ -258,6 +264,8 @@ public class OverviewStadium extends JPanel {
 		
 		
 		overviewStadium_28 = new JButton();
+		overviewStadium_28.setContentAreaFilled(false);
+		overviewStadium_28.setOpaque(false);
 		overviewStadium_28.setName("28");
 		overviewStadium_28.setCursor(Cursor.getPredefinedCursor(Cursor.HAND_CURSOR));
 		overviewStadium_28.setBorderPainted(false);
@@ -314,6 +322,8 @@ public class OverviewStadium extends JPanel {
 		
 		
 		overviewStadium_51 = new JButton();
+		overviewStadium_51.setContentAreaFilled(false);
+		overviewStadium_51.setOpaque(false);
 		overviewStadium_51.setName("51");
 		overviewStadium_51.setCursor(Cursor.getPredefinedCursor(Cursor.HAND_CURSOR));
 		overviewStadium_51.setBorderPainted(false);
@@ -370,6 +380,8 @@ public class OverviewStadium extends JPanel {
 		
 		
 		overviewStadium_48 = new JButton();
+		overviewStadium_48.setContentAreaFilled(false);
+		overviewStadium_48.setOpaque(false);
 		overviewStadium_48.setName("48");
 		overviewStadium_48.setCursor(Cursor.getPredefinedCursor(Cursor.HAND_CURSOR));
 		overviewStadium_48.setBorderPainted(false);
@@ -426,6 +438,8 @@ public class OverviewStadium extends JPanel {
 		
 		
 		overviewStadium_02 = new JButton();
+		overviewStadium_02.setContentAreaFilled(false);
+		overviewStadium_02.setOpaque(false);
 		overviewStadium_02.setName("2");
 		overviewStadium_02.setCursor(Cursor.getPredefinedCursor(Cursor.HAND_CURSOR));
 		overviewStadium_02.setBorderPainted(false);
@@ -481,6 +495,8 @@ public class OverviewStadium extends JPanel {
 		overviewStadium_02.addMouseListener(ma02);
 		
 		overviewStadium_03 = new JButton();
+		overviewStadium_03.setContentAreaFilled(false);
+		overviewStadium_03.setOpaque(false);
 		overviewStadium_03.setName("3");
 		overviewStadium_03.setCursor(Cursor.getPredefinedCursor(Cursor.HAND_CURSOR));
 		overviewStadium_03.setBorderPainted(false);
@@ -536,6 +552,8 @@ public class OverviewStadium extends JPanel {
 		overviewStadium_03.addMouseListener(ma03);
 		
 		overviewStadium_04 = new JButton();
+		overviewStadium_04.setContentAreaFilled(false);
+		overviewStadium_04.setOpaque(false);
 		overviewStadium_04.setName("4");
 		overviewStadium_04.setCursor(Cursor.getPredefinedCursor(Cursor.HAND_CURSOR));
 		overviewStadium_04.setBorderPainted(false);
@@ -593,6 +611,8 @@ public class OverviewStadium extends JPanel {
 		
 		
 		overviewStadium_05 = new JButton();
+		overviewStadium_05.setContentAreaFilled(false);
+		overviewStadium_05.setOpaque(false);
 		overviewStadium_05.setName("5");
 		overviewStadium_05.setCursor(Cursor.getPredefinedCursor(Cursor.HAND_CURSOR));
 		overviewStadium_05.setBorderPainted(false);
@@ -650,6 +670,8 @@ public class OverviewStadium extends JPanel {
 
 		
 		overviewStadium_06 = new JButton();
+		overviewStadium_06.setContentAreaFilled(false);
+		overviewStadium_06.setOpaque(false);
 		overviewStadium_06.setName("6");
 		overviewStadium_06.setCursor(Cursor.getPredefinedCursor(Cursor.HAND_CURSOR));
 		overviewStadium_06.setBorderPainted(false);
@@ -707,6 +729,8 @@ public class OverviewStadium extends JPanel {
 		
 		
 		overviewStadium_07 = new JButton();
+		overviewStadium_07.setContentAreaFilled(false);
+		overviewStadium_07.setOpaque(false);
 		overviewStadium_07.setName("7");
 		overviewStadium_07.setCursor(Cursor.getPredefinedCursor(Cursor.HAND_CURSOR));
 		overviewStadium_07.setBorderPainted(false);
@@ -763,6 +787,8 @@ public class OverviewStadium extends JPanel {
 		
 		
 		overviewStadium_08 = new JButton();
+		overviewStadium_08.setContentAreaFilled(false);
+		overviewStadium_08.setOpaque(false);
 		overviewStadium_08.setName("8");
 		overviewStadium_08.setCursor(Cursor.getPredefinedCursor(Cursor.HAND_CURSOR));
 		overviewStadium_08.setBorderPainted(false);
@@ -819,6 +845,8 @@ public class OverviewStadium extends JPanel {
 		
 		
 		overviewStadium_10 = new JButton();
+		overviewStadium_10.setContentAreaFilled(false);
+		overviewStadium_10.setOpaque(false);
 		overviewStadium_10.setName("10");
 		overviewStadium_10.setCursor(Cursor.getPredefinedCursor(Cursor.HAND_CURSOR));
 		overviewStadium_10.setBorderPainted(false);
@@ -874,6 +902,8 @@ public class OverviewStadium extends JPanel {
 		overviewStadium_10.addMouseListener(ma10);
 		
 		overviewStadium_11 = new JButton();
+		overviewStadium_11.setContentAreaFilled(false);
+		overviewStadium_11.setOpaque(false);
 		overviewStadium_11.setName("11");
 		overviewStadium_11.setCursor(Cursor.getPredefinedCursor(Cursor.HAND_CURSOR));
 		overviewStadium_11.setBorderPainted(false);
@@ -929,6 +959,8 @@ public class OverviewStadium extends JPanel {
 		overviewStadium_11.addMouseListener(ma11);
 		
 		overviewStadium_12 = new JButton();
+		overviewStadium_12.setContentAreaFilled(false);
+		overviewStadium_12.setOpaque(false);
 		overviewStadium_12.setName("12");
 		overviewStadium_12.setCursor(Cursor.getPredefinedCursor(Cursor.HAND_CURSOR));
 		overviewStadium_12.setBorderPainted(false);
@@ -984,6 +1016,8 @@ public class OverviewStadium extends JPanel {
 		overviewStadium_12.addMouseListener(ma12);
 		
 		overviewStadium_13 = new JButton();
+		overviewStadium_13.setContentAreaFilled(false);
+		overviewStadium_13.setOpaque(false);
 		overviewStadium_13.setName("13");
 		overviewStadium_13.setCursor(Cursor.getPredefinedCursor(Cursor.HAND_CURSOR));
 		overviewStadium_13.setBorderPainted(false);
@@ -1039,6 +1073,8 @@ public class OverviewStadium extends JPanel {
 		overviewStadium_13.addMouseListener(ma13);
 		
 		overviewStadium_14 = new JButton();
+		overviewStadium_14.setContentAreaFilled(false);
+		overviewStadium_14.setOpaque(false);
 		overviewStadium_14.setName("14");
 		overviewStadium_14.setCursor(Cursor.getPredefinedCursor(Cursor.HAND_CURSOR));
 		overviewStadium_14.setBorderPainted(false);
@@ -1094,6 +1130,8 @@ public class OverviewStadium extends JPanel {
 		overviewStadium_14.addMouseListener(ma14);
 		
 		overviewStadium_15 = new JButton();
+		overviewStadium_15.setContentAreaFilled(false);
+		overviewStadium_15.setOpaque(false);
 		overviewStadium_15.setName("15");
 		overviewStadium_15.setCursor(Cursor.getPredefinedCursor(Cursor.HAND_CURSOR));
 		overviewStadium_15.setBorderPainted(false);
@@ -1149,6 +1187,8 @@ public class OverviewStadium extends JPanel {
 		overviewStadium_15.addMouseListener(ma15);
 		
 		overviewStadium_16 = new JButton();
+		overviewStadium_16.setContentAreaFilled(false);
+		overviewStadium_16.setOpaque(false);
 		overviewStadium_16.setName("16");
 		overviewStadium_16.setCursor(Cursor.getPredefinedCursor(Cursor.HAND_CURSOR));
 		overviewStadium_16.setBorderPainted(false);
@@ -1204,6 +1244,8 @@ public class OverviewStadium extends JPanel {
 		overviewStadium_16.addMouseListener(ma16);
 						
 		overviewStadium_55 = new JButton();
+		overviewStadium_55.setContentAreaFilled(false);
+		overviewStadium_55.setOpaque(false);
 		overviewStadium_55.setName("55");
 		overviewStadium_55.setCursor(Cursor.getPredefinedCursor(Cursor.HAND_CURSOR));
 		overviewStadium_55.setBorderPainted(false);
@@ -1259,6 +1301,8 @@ public class OverviewStadium extends JPanel {
 		overviewStadium_55.addMouseListener(ma55);
 		
 		overviewStadium_22 = new JButton();
+		overviewStadium_22.setContentAreaFilled(false);
+		overviewStadium_22.setOpaque(false);
 		overviewStadium_22.setName("22");
 		overviewStadium_22.setCursor(Cursor.getPredefinedCursor(Cursor.HAND_CURSOR));
 		overviewStadium_22.setBorderPainted(false);
@@ -1314,6 +1358,8 @@ public class OverviewStadium extends JPanel {
 		overviewStadium_22.addMouseListener(ma22);
 		
 		overviewStadium_27 = new JButton();
+		overviewStadium_27.setContentAreaFilled(false);
+		overviewStadium_27.setOpaque(false);
 		overviewStadium_27.setName("27");
 		overviewStadium_27.setCursor(Cursor.getPredefinedCursor(Cursor.HAND_CURSOR));
 		overviewStadium_27.setBorderPainted(false);
@@ -1370,6 +1416,8 @@ public class OverviewStadium extends JPanel {
 		
 		
 		overviewStadium_29 = new JButton();
+		overviewStadium_29.setContentAreaFilled(false);
+		overviewStadium_29.setOpaque(false);
 		overviewStadium_29.setName("29");
 		overviewStadium_29.setCursor(Cursor.getPredefinedCursor(Cursor.HAND_CURSOR));
 		overviewStadium_29.setBorderPainted(false);
@@ -1426,6 +1474,8 @@ public class OverviewStadium extends JPanel {
 		
 		
 		overviewStadium_54 = new JButton();
+		overviewStadium_54.setContentAreaFilled(false);
+		overviewStadium_54.setOpaque(false);
 		overviewStadium_54.setName("54");
 		overviewStadium_54.setCursor(Cursor.getPredefinedCursor(Cursor.HAND_CURSOR));
 		overviewStadium_54.setBorderPainted(false);
@@ -1482,6 +1532,8 @@ public class OverviewStadium extends JPanel {
 		
 		
 		overviewStadium_25 = new JButton();
+		overviewStadium_25.setContentAreaFilled(false);
+		overviewStadium_25.setOpaque(false);
 		overviewStadium_25.setName("25");
 		overviewStadium_25.setCursor(Cursor.getPredefinedCursor(Cursor.HAND_CURSOR));
 		overviewStadium_25.setBorderPainted(false);
@@ -1539,6 +1591,8 @@ public class OverviewStadium extends JPanel {
 	
 		
 		overviewStadium_24 = new JButton();
+		overviewStadium_24.setContentAreaFilled(false);
+		overviewStadium_24.setOpaque(false);
 		overviewStadium_24.setName("24");
 		overviewStadium_24.setCursor(Cursor.getPredefinedCursor(Cursor.HAND_CURSOR));
 		overviewStadium_24.setBorderPainted(false);
@@ -1595,6 +1649,8 @@ public class OverviewStadium extends JPanel {
 		
 		
 		overviewStadium_50 = new JButton();
+		overviewStadium_50.setContentAreaFilled(false);
+		overviewStadium_50.setOpaque(false);
 		overviewStadium_50.setName("50");
 		overviewStadium_50.setCursor(Cursor.getPredefinedCursor(Cursor.HAND_CURSOR));
 		overviewStadium_50.setBorderPainted(false);
@@ -1651,6 +1707,8 @@ public class OverviewStadium extends JPanel {
 		
 		
 		overviewStadium_41 = new JButton();
+		overviewStadium_41.setContentAreaFilled(false);
+		overviewStadium_41.setOpaque(false);
 		overviewStadium_41.setName("41");
 		overviewStadium_41.setCursor(Cursor.getPredefinedCursor(Cursor.HAND_CURSOR));
 		overviewStadium_41.setBorderPainted(false);
@@ -1707,6 +1765,8 @@ public class OverviewStadium extends JPanel {
 		
 		
 		overviewStadium_42 = new JButton();
+		overviewStadium_42.setContentAreaFilled(false);
+		overviewStadium_42.setOpaque(false);
 		overviewStadium_42.setName("42");
 		overviewStadium_42.setCursor(Cursor.getPredefinedCursor(Cursor.HAND_CURSOR));
 		overviewStadium_42.setBorderPainted(false);
@@ -1763,6 +1823,8 @@ public class OverviewStadium extends JPanel {
 		
 		
 		overviewStadium_43 = new JButton();
+		overviewStadium_43.setContentAreaFilled(false);
+		overviewStadium_43.setOpaque(false);
 		overviewStadium_43.setName("43");
 		overviewStadium_43.setCursor(Cursor.getPredefinedCursor(Cursor.HAND_CURSOR));
 		overviewStadium_43.setBorderPainted(false);
@@ -1819,6 +1881,8 @@ public class OverviewStadium extends JPanel {
 		
 		
 		overviewStadium_44 = new JButton();
+		overviewStadium_44.setContentAreaFilled(false);
+		overviewStadium_44.setOpaque(false);
 		overviewStadium_44.setName("44");
 		overviewStadium_44.setCursor(Cursor.getPredefinedCursor(Cursor.HAND_CURSOR));
 		overviewStadium_44.setBorderPainted(false);
@@ -1875,6 +1939,8 @@ public class OverviewStadium extends JPanel {
 		
 		
 		overviewStadium_45 = new JButton();
+		overviewStadium_45.setContentAreaFilled(false);
+		overviewStadium_45.setOpaque(false);
 		overviewStadium_45.setName("45");
 		overviewStadium_45.setCursor(Cursor.getPredefinedCursor(Cursor.HAND_CURSOR));
 		overviewStadium_45.setBorderPainted(false);
@@ -1931,6 +1997,8 @@ public class OverviewStadium extends JPanel {
 		
 		
 		overviewStadium_46 = new JButton();
+		overviewStadium_46.setContentAreaFilled(false);
+		overviewStadium_46.setOpaque(false);
 		overviewStadium_46.setName("46");
 		overviewStadium_46.setCursor(Cursor.getPredefinedCursor(Cursor.HAND_CURSOR));
 		overviewStadium_46.setBorderPainted(false);
@@ -1987,6 +2055,8 @@ public class OverviewStadium extends JPanel {
 		
 		
 		overviewStadium_47 = new JButton();
+		overviewStadium_47.setContentAreaFilled(false);
+		overviewStadium_47.setOpaque(false);
 		overviewStadium_47.setName("47");
 		overviewStadium_47.setCursor(Cursor.getPredefinedCursor(Cursor.HAND_CURSOR));
 		overviewStadium_47.setBorderPainted(false);
@@ -2043,6 +2113,8 @@ public class OverviewStadium extends JPanel {
 		
 		
 		overviewStadium_34 = new JButton();
+		overviewStadium_34.setContentAreaFilled(false);
+		overviewStadium_34.setOpaque(false);
 		overviewStadium_34.setName("34");
 		overviewStadium_34.setCursor(Cursor.getPredefinedCursor(Cursor.HAND_CURSOR));
 		overviewStadium_34.setBorderPainted(false);
@@ -2099,6 +2171,8 @@ public class OverviewStadium extends JPanel {
 		
 		
 		overviewStadium_35 = new JButton();
+		overviewStadium_35.setContentAreaFilled(false);
+		overviewStadium_35.setOpaque(false);
 		overviewStadium_35.setName("35");
 		overviewStadium_35.setCursor(Cursor.getPredefinedCursor(Cursor.HAND_CURSOR));
 		overviewStadium_35.setBorderPainted(false);
@@ -2155,6 +2229,8 @@ public class OverviewStadium extends JPanel {
 		
 		
 		overviewStadium_36 = new JButton();
+		overviewStadium_36.setContentAreaFilled(false);
+		overviewStadium_36.setOpaque(false);
 		overviewStadium_36.setName("36");
 		overviewStadium_36.setCursor(Cursor.getPredefinedCursor(Cursor.HAND_CURSOR));
 		overviewStadium_36.setBorderPainted(false);
@@ -2211,6 +2287,8 @@ public class OverviewStadium extends JPanel {
 		
 		
 		overviewStadium_37 = new JButton();
+		overviewStadium_37.setContentAreaFilled(false);
+		overviewStadium_37.setOpaque(false);
 		overviewStadium_37.setName("37");
 		overviewStadium_37.setCursor(Cursor.getPredefinedCursor(Cursor.HAND_CURSOR));
 		overviewStadium_37.setBorderPainted(false);
@@ -2267,6 +2345,8 @@ public class OverviewStadium extends JPanel {
 		
 		
 		overviewStadium_38 = new JButton();
+		overviewStadium_38.setContentAreaFilled(false);
+		overviewStadium_38.setOpaque(false);
 		overviewStadium_38.setName("38");
 		overviewStadium_38.setCursor(Cursor.getPredefinedCursor(Cursor.HAND_CURSOR));
 		overviewStadium_38.setBorderPainted(false);
@@ -2323,6 +2403,8 @@ public class OverviewStadium extends JPanel {
 		
 		
 		overviewStadium_39 = new JButton();
+		overviewStadium_39.setContentAreaFilled(false);
+		overviewStadium_39.setOpaque(false);
 		overviewStadium_39.setName("39");
 		overviewStadium_39.setCursor(Cursor.getPredefinedCursor(Cursor.HAND_CURSOR));
 		overviewStadium_39.setBorderPainted(false);
@@ -2379,6 +2461,8 @@ public class OverviewStadium extends JPanel {
 		
 		
 		overviewStadium_40 = new JButton();
+		overviewStadium_40.setContentAreaFilled(false);
+		overviewStadium_40.setOpaque(false);
 		overviewStadium_40.setName("40");
 		overviewStadium_40.setCursor(Cursor.getPredefinedCursor(Cursor.HAND_CURSOR));
 		overviewStadium_40.setBorderPainted(false);
@@ -2435,6 +2519,8 @@ public class OverviewStadium extends JPanel {
 		
 		
 		overviewStadium_53 = new JButton();
+		overviewStadium_53.setContentAreaFilled(false);
+		overviewStadium_53.setOpaque(false);
 		overviewStadium_53.setName("53");
 		overviewStadium_53.setCursor(Cursor.getPredefinedCursor(Cursor.HAND_CURSOR));
 		overviewStadium_53.setBorderPainted(false);
@@ -2491,6 +2577,8 @@ public class OverviewStadium extends JPanel {
 		
 		
 		overviewStadium_52 = new JButton();
+		overviewStadium_52.setContentAreaFilled(false);
+		overviewStadium_52.setOpaque(false);
 		overviewStadium_52.setName("52");
 		overviewStadium_52.setCursor(Cursor.getPredefinedCursor(Cursor.HAND_CURSOR));
 		overviewStadium_52.setBorderPainted(false);
