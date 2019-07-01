@@ -23,6 +23,7 @@ public class Menu extends JPanel {
 
 
 	public JLabel HeaderBG;
+	public ImageIcon HeaderLogo = new ImageIcon(Menu.class.getResource("/Images/LogoHeader_HighRes.png"));
 	public JButton btnOverview;
 	public JButton btnProperties;
 	public JButton btnSales;
@@ -38,11 +39,12 @@ public class Menu extends JPanel {
 		menuPanel.setLayout(null);
 		
 		HeaderBG = new JLabel();
-		HeaderBG.setIcon(new ImageIcon(Menu.class.getResource("/Images/logoHeader.png")));
+		/*HeaderBG.setIcon(new ImageIcon(Menu.class.getResource("/Images/logoHeader.png")));*/
 		HeaderBG.setBorder(null);
 		HeaderBG.setBackground(new Color(28, 23, 92));
 		HeaderBG.setBounds(0, 0, 190, 100);
 		menuPanel.add(HeaderBG);
+		HeaderBG.setIcon(View.scaleImageTolabel(HeaderLogo, HeaderBG));
 
 		btnOverview = new JButton("OVERVIEW");
 		btnOverview.setAlignmentY(0.0f);

@@ -35,6 +35,8 @@ public class SignUp extends JFrame {
 	
 	public JButton btnFinishSignUp;
 	public JButton btnCancelSignUp;
+	
+	public ImageIcon signupLogo = new ImageIcon(View.class.getResource("/Images/Logo_HighRes.png"));
 
 	
 	public SignUp() {
@@ -51,7 +53,7 @@ public class SignUp extends JFrame {
 		//logo:
 		lblSignUpLogo = new JLabel("");
 		lblSignUpLogo.setBounds(70, 38, 258, 78);
-		lblSignUpLogo.setIcon(new ImageIcon(View.class.getResource("/Images/SignUpLogo.png")));
+		lblSignUpLogo.setIcon(View.scaleImageTolabel(signupLogo, lblSignUpLogo));
 		lblSignUpLogo.setBorder(null);
 		panelSignUp.add(lblSignUpLogo);
 		
