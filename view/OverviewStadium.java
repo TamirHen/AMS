@@ -209,6 +209,7 @@ public class OverviewStadium extends JPanel {
 				else
 				{
 					overviewStadium_02.setSelected(false);
+					numOfSelected--;
 				}
 			}
 		});
@@ -262,6 +263,7 @@ public class OverviewStadium extends JPanel {
 				else
 				{
 					overviewStadium_03.setSelected(false);
+					numOfSelected--;
 				}
 			}
 		});
@@ -315,6 +317,7 @@ public class OverviewStadium extends JPanel {
 				else
 				{
 					overviewStadium_04.setSelected(false);
+					numOfSelected--;
 				}
 			}
 		});
