@@ -42,7 +42,7 @@ public class Overview extends JPanel {
 		
 		overviewStadiumPanel = new OverviewStadium();
 		overviewStadiumPanel.setLayout(null);
-		overviewStadiumPanel.setBounds(25, 100, overviewStadiumPanel.overviewStadium.getBounds().width, overviewStadiumPanel.overviewStadium.getBounds().height);
+		overviewStadiumPanel.setBounds(25, 100, overviewStadiumPanel.panelOverviewStadium.getBounds().width, overviewStadiumPanel.panelOverviewStadium.getBounds().height);
 		overviewStadiumPanel.setVisible(true);
 		panelOverview.add(overviewStadiumPanel);
 		overviewStadiumPanel.add(overviewStadiumPanel.panelOverviewStadium);

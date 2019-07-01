@@ -80,20 +80,14 @@ public class OverviewStadium extends JPanel {
 	{
 	
 		panelOverviewStadium = new JPanel();
+		panelOverviewStadium.setCursor(Cursor.getPredefinedCursor(Cursor.DEFAULT_CURSOR));
 		panelOverviewStadium.setBorder(null);
 		panelOverviewStadium.setLayout(null);
 		panelOverviewStadium.setBackground(UI_Elements.color_mainBackgroundColor);
-		
-		overviewStadium = new JLabel();
-		overviewStadium.setBorder(null);
 		double stadiumLblHeight = 412;
 		double stadiumSizeRatio = (stadiumLblHeight/stadium.getIconHeight());
-		double stadiumLblWidth = ((stadium.getIconWidth())*stadiumSizeRatio);
-		overviewStadium.setBounds(0, 0, (int)stadiumLblWidth , (int)stadiumLblHeight);
-		panelOverviewStadium.add(overviewStadium);
-		overviewStadium.setVisible(true);
-		
-		panelOverviewStadium.setBounds(0, 0, overviewStadium.getBounds().width, overviewStadium.getBounds().height);		
+		double stadiumLblWidth = ((stadium.getIconWidth())*stadiumSizeRatio);		
+		panelOverviewStadium.setBounds(0, 0, (int)stadiumLblWidth, (int)stadiumLblHeight);		
 		
 		overviewStadium_49 = new JButton();
 		overviewStadium_49.setName("49");
@@ -103,7 +97,7 @@ public class OverviewStadium extends JPanel {
 		overviewStadium_49.setBorder(null);
 		String path49 = "/Images/StadiumSlices/Stadium3" + getOverviewSectionType(49) + "_49.png";
 		ImageIcon img49 = new ImageIcon(Overview.class.getResource(path49));
-		overviewStadium_49.setBounds(overviewStadium.getBounds().x + (int)(535*stadiumSizeRatio), overviewStadium.getBounds().y + (int)(451*stadiumSizeRatio) , (int)(img49.getIconWidth()*stadiumSizeRatio), (int)(img49.getIconHeight()*stadiumSizeRatio));
+		overviewStadium_49.setBounds(panelOverviewStadium.getBounds().x + (int)(535*stadiumSizeRatio), panelOverviewStadium.getBounds().y + (int)(451*stadiumSizeRatio) , (int)(img49.getIconWidth()*stadiumSizeRatio), (int)(img49.getIconHeight()*stadiumSizeRatio));
 		overviewStadium_49.setIcon(View.scaleImageToButton(img49, overviewStadium_49));
 		panelOverviewStadium.add(overviewStadium_49);
 		String path49_R = "/Images/StadiumSlices/Stadium3_Rollover_49.png";
@@ -383,7 +377,7 @@ public class OverviewStadium extends JPanel {
 		overviewStadium_48.setBorder(null);
 		String path48 = "/Images/StadiumSlices/Stadium3" + getOverviewSectionType(48) + "_48.png";
 		ImageIcon img48 = new ImageIcon(Overview.class.getResource(path48));
-		overviewStadium_48.setBounds(overviewStadium.getBounds().x, overviewStadium.getBounds().y, (int)(img48.getIconWidth()*stadiumSizeRatio), (int)(img48.getIconHeight()*stadiumSizeRatio));
+		overviewStadium_48.setBounds(panelOverviewStadium.getBounds().x, panelOverviewStadium.getBounds().y, (int)(img48.getIconWidth()*stadiumSizeRatio), (int)(img48.getIconHeight()*stadiumSizeRatio));
 		overviewStadium_48.setIcon(View.scaleImageToButton(img48, overviewStadium_48));
 		panelOverviewStadium.add(overviewStadium_48);
 		String path48_R = "/Images/StadiumSlices/Stadium3_Rollover_48.png";
@@ -439,7 +433,7 @@ public class OverviewStadium extends JPanel {
 		overviewStadium_02.setBorder(null);
 		String path02 = "/Images/StadiumSlices/Stadium3" + getOverviewSectionType(2) + "_02.png";
 		ImageIcon img02 = new ImageIcon(Overview.class.getResource(path02));
-		overviewStadium_02.setBounds(overviewStadium_48.getBounds().x + overviewStadium_48.getBounds().width, overviewStadium.getBounds().y, (int)(img02.getIconWidth()*stadiumSizeRatio), (int)(img02.getIconHeight()*stadiumSizeRatio));
+		overviewStadium_02.setBounds(overviewStadium_48.getBounds().x + overviewStadium_48.getBounds().width, panelOverviewStadium.getBounds().y, (int)(img02.getIconWidth()*stadiumSizeRatio), (int)(img02.getIconHeight()*stadiumSizeRatio));
 		overviewStadium_02.setIcon(View.scaleImageToButton(img02, overviewStadium_02));
 		panelOverviewStadium.add(overviewStadium_02);
 		String path02_R = "/Images/StadiumSlices/Stadium3_Rollover_02.png";
@@ -494,7 +488,7 @@ public class OverviewStadium extends JPanel {
 		overviewStadium_03.setBorder(null);
 		String path03 = "/Images/StadiumSlices/Stadium3" + getOverviewSectionType(3) + "_03.png";
 		ImageIcon img03 = new ImageIcon(Overview.class.getResource(path03));
-		overviewStadium_03.setBounds(overviewStadium_02.getBounds().x + overviewStadium_02.getBounds().width, overviewStadium.getBounds().y, (int)(img03.getIconWidth()*stadiumSizeRatio), (int)(img03.getIconHeight()*stadiumSizeRatio));
+		overviewStadium_03.setBounds(overviewStadium_02.getBounds().x + overviewStadium_02.getBounds().width, panelOverviewStadium.getBounds().y, (int)(img03.getIconWidth()*stadiumSizeRatio), (int)(img03.getIconHeight()*stadiumSizeRatio));
 		overviewStadium_03.setIcon(View.scaleImageToButton(img03, overviewStadium_03));
 		panelOverviewStadium.add(overviewStadium_03);
 		String path03_R = "/Images/StadiumSlices/Stadium3_Rollover_03.png";
@@ -549,7 +543,7 @@ public class OverviewStadium extends JPanel {
 		overviewStadium_04.setBorder(null);
 		String path04 = "/Images/StadiumSlices/Stadium3" + getOverviewSectionType(4) + "_04.png";
 		ImageIcon img04 = new ImageIcon(Overview.class.getResource(path04));
-		overviewStadium_04.setBounds(overviewStadium_03.getBounds().x + overviewStadium_03.getBounds().width, overviewStadium.getBounds().y, (int)(img04.getIconWidth()*stadiumSizeRatio), (int)(img04.getIconHeight()*stadiumSizeRatio));
+		overviewStadium_04.setBounds(overviewStadium_03.getBounds().x + overviewStadium_03.getBounds().width, panelOverviewStadium.getBounds().y, (int)(img04.getIconWidth()*stadiumSizeRatio), (int)(img04.getIconHeight()*stadiumSizeRatio));
 		overviewStadium_04.setIcon(View.scaleImageToButton(img04, overviewStadium_04));
 		panelOverviewStadium.add(overviewStadium_04);
 		String path04_R = "/Images/StadiumSlices/Stadium3_Rollover_04.png";
@@ -606,7 +600,7 @@ public class OverviewStadium extends JPanel {
 		overviewStadium_05.setBorder(null);
 		String path05 = "/Images/StadiumSlices/Stadium3" + getOverviewSectionType(5) + "_05.png";
 		ImageIcon img05 = new ImageIcon(Overview.class.getResource(path05));
-		overviewStadium_05.setBounds(overviewStadium_04.getBounds().x + overviewStadium_04.getBounds().width, overviewStadium.getBounds().y, (int)(img05.getIconWidth()*stadiumSizeRatio), (int)(img05.getIconHeight()*stadiumSizeRatio));
+		overviewStadium_05.setBounds(overviewStadium_04.getBounds().x + overviewStadium_04.getBounds().width, panelOverviewStadium.getBounds().y, (int)(img05.getIconWidth()*stadiumSizeRatio), (int)(img05.getIconHeight()*stadiumSizeRatio));
 		overviewStadium_05.setIcon(View.scaleImageToButton(img05, overviewStadium_05));
 		panelOverviewStadium.add(overviewStadium_05);
 		String path05_R = "/Images/StadiumSlices/Stadium3_Rollover_05.png";
@@ -663,7 +657,7 @@ public class OverviewStadium extends JPanel {
 		overviewStadium_06.setBorder(null);
 		String path06 = "/Images/StadiumSlices/Stadium3" + getOverviewSectionType(6) + "_06.png";
 		ImageIcon img06 = new ImageIcon(Overview.class.getResource(path06));
-		overviewStadium_06.setBounds(overviewStadium_05.getBounds().x + overviewStadium_05.getBounds().width, overviewStadium.getBounds().y, (int)(img06.getIconWidth()*stadiumSizeRatio), (int)(img06.getIconHeight()*stadiumSizeRatio));
+		overviewStadium_06.setBounds(overviewStadium_05.getBounds().x + overviewStadium_05.getBounds().width, panelOverviewStadium.getBounds().y, (int)(img06.getIconWidth()*stadiumSizeRatio), (int)(img06.getIconHeight()*stadiumSizeRatio));
 		overviewStadium_06.setIcon(View.scaleImageToButton(img06, overviewStadium_06));
 		panelOverviewStadium.add(overviewStadium_06);
 		String path06_R = "/Images/StadiumSlices/Stadium3_Rollover_06.png";
@@ -720,7 +714,7 @@ public class OverviewStadium extends JPanel {
 		overviewStadium_07.setBorder(null);
 		String path07 = "/Images/StadiumSlices/Stadium3" + getOverviewSectionType(7) + "_07.png";
 		ImageIcon img07 = new ImageIcon(Overview.class.getResource(path07));
-		overviewStadium_07.setBounds(overviewStadium_06.getBounds().x + overviewStadium_06.getBounds().width, overviewStadium.getBounds().y, (int)(img07.getIconWidth()*stadiumSizeRatio), (int)(img07.getIconHeight()*stadiumSizeRatio));
+		overviewStadium_07.setBounds(overviewStadium_06.getBounds().x + overviewStadium_06.getBounds().width, panelOverviewStadium.getBounds().y, (int)(img07.getIconWidth()*stadiumSizeRatio), (int)(img07.getIconHeight()*stadiumSizeRatio));
 		overviewStadium_07.setIcon(View.scaleImageToButton(img07, overviewStadium_07));
 		panelOverviewStadium.add(overviewStadium_07);
 		String path07_R = "/Images/StadiumSlices/Stadium3_Rollover_07.png";
@@ -776,7 +770,7 @@ public class OverviewStadium extends JPanel {
 		overviewStadium_08.setBorder(null);
 		String path08 = "/Images/StadiumSlices/Stadium3" + getOverviewSectionType(8) + "_08.png";
 		ImageIcon img08 = new ImageIcon(Overview.class.getResource(path08));
-		overviewStadium_08.setBounds(overviewStadium_07.getBounds().x + overviewStadium_07.getBounds().width, overviewStadium.getBounds().y, (int)(img08.getIconWidth()*stadiumSizeRatio), (int)(img08.getIconHeight()*stadiumSizeRatio));
+		overviewStadium_08.setBounds(overviewStadium_07.getBounds().x + overviewStadium_07.getBounds().width, panelOverviewStadium.getBounds().y, (int)(img08.getIconWidth()*stadiumSizeRatio), (int)(img08.getIconHeight()*stadiumSizeRatio));
 		overviewStadium_08.setIcon(View.scaleImageToButton(img08, overviewStadium_08));
 		panelOverviewStadium.add(overviewStadium_08);
 		String path08_R = "/Images/StadiumSlices/Stadium3_Rollover_08.png";
@@ -832,7 +826,7 @@ public class OverviewStadium extends JPanel {
 		overviewStadium_10.setBorder(null);
 		String path10 = "/Images/StadiumSlices/Stadium3" + getOverviewSectionType(10) + "_10.png";
 		ImageIcon img10 = new ImageIcon(Overview.class.getResource(path10));
-		overviewStadium_10.setBounds(overviewStadium.getBounds().x + (int)(1013*stadiumSizeRatio), overviewStadium_02.getBounds().y + overviewStadium_07.getBounds().height, (int)(img10.getIconWidth()*stadiumSizeRatio), (int)(img10.getIconHeight()*stadiumSizeRatio));
+		overviewStadium_10.setBounds(panelOverviewStadium.getBounds().x + (int)(1013*stadiumSizeRatio), overviewStadium_02.getBounds().y + overviewStadium_07.getBounds().height, (int)(img10.getIconWidth()*stadiumSizeRatio), (int)(img10.getIconHeight()*stadiumSizeRatio));
 		overviewStadium_10.setIcon(View.scaleImageToButton(img10, overviewStadium_10));
 		panelOverviewStadium.add(overviewStadium_10);
 		String path10_R = "/Images/StadiumSlices/Stadium3_Rollover_10.png";
@@ -1439,7 +1433,7 @@ public class OverviewStadium extends JPanel {
 		overviewStadium_54.setBorder(null);
 		String path54 = "/Images/StadiumSlices/Stadium3" + getOverviewSectionType(54) + "_54.png";
 		ImageIcon img54 = new ImageIcon(Overview.class.getResource(path54));
-		overviewStadium_54.setBounds(overviewStadium_55.getBounds().x, overviewStadium.getBounds().y, (int)(img54.getIconWidth()*stadiumSizeRatio), (int)(img54.getIconHeight()*stadiumSizeRatio));
+		overviewStadium_54.setBounds(overviewStadium_55.getBounds().x, panelOverviewStadium.getBounds().y, (int)(img54.getIconWidth()*stadiumSizeRatio), (int)(img54.getIconHeight()*stadiumSizeRatio));
 		overviewStadium_54.setIcon(View.scaleImageToButton(img54, overviewStadium_54));
 		panelOverviewStadium.add(overviewStadium_54);
 		String path54_R = "/Images/StadiumSlices/Stadium3_Rollover_54.png";
