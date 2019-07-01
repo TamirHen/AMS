@@ -1,8 +1,11 @@
 package view;
 import java.awt.Color;
 import java.awt.Font;
+import java.awt.Image;
 
 import javax.swing.ImageIcon;
+import javax.swing.JButton;
+import javax.swing.JLabel;
 
 public class UI_Elements {
 
@@ -37,5 +40,23 @@ public class UI_Elements {
 																								// font
 	public static Font font_bodySalesData = new Font("Calibri", Font.PLAIN, textBodySalesData); // Text Field & Combo
 																								// Box font
+	
+	public static ImageIcon scaleImageTolabel(ImageIcon i_Img, JLabel i_label)
+	{
+		ImageIcon scaledImage;
+		
+		scaledImage = new ImageIcon(i_Img.getImage().getScaledInstance(i_label.getWidth(), i_label.getHeight(), Image.SCALE_SMOOTH));
+		
+		return scaledImage;
+	}
+	
+	public static ImageIcon scaleImageToButton(ImageIcon i_Img, JButton i_button)
+	{
+		ImageIcon scaledImage;
+		
+		scaledImage = new ImageIcon(i_Img.getImage().getScaledInstance(i_button.getWidth(), i_button.getHeight(), Image.SCALE_SMOOTH));
+		
+		return scaledImage;
+	}
 
 }

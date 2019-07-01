@@ -44,7 +44,7 @@ public class Menu extends JPanel {
 		HeaderBG.setBackground(new Color(28, 23, 92));
 		HeaderBG.setBounds(0, 0, 190, 100);
 		menuPanel.add(HeaderBG);
-		HeaderBG.setIcon(View.scaleImageTolabel(HeaderLogo, HeaderBG));
+		HeaderBG.setIcon(UI_Elements.scaleImageTolabel(HeaderLogo, HeaderBG));
 
 		btnOverview = new JButton("OVERVIEW");
 		btnOverview.setAlignmentY(0.0f);

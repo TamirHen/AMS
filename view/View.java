@@ -86,24 +86,6 @@ public class View extends JFrame {
 		salesPanel.panelSales.setVisible(false);
 		facilitiesPanel.panelFacilities.setVisible(false);
 	}
-	
-	public static ImageIcon scaleImageTolabel(ImageIcon i_Img, JLabel i_label)
-	{
-		ImageIcon scaledImage;
-		
-		scaledImage = new ImageIcon(i_Img.getImage().getScaledInstance(i_label.getWidth(), i_label.getHeight(), Image.SCALE_SMOOTH));
-		
-		return scaledImage;
-	}
-	
-	public static ImageIcon scaleImageToButton(ImageIcon i_Img, JButton i_button)
-	{
-		ImageIcon scaledImage;
-		
-		scaledImage = new ImageIcon(i_Img.getImage().getScaledInstance(i_button.getWidth(), i_button.getHeight(), Image.SCALE_SMOOTH));
-		
-		return scaledImage;
-	}
 
 
 }

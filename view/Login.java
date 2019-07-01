@@ -52,7 +52,7 @@ public class Login extends JPanel {
 		// ---login logo---//
 		lblLoginLogo = new JLabel("");
 		lblLoginLogo.setBounds(385, 120, 344, 104);
-		lblLoginLogo.setIcon(View.scaleImageTolabel(loginLogo, lblLoginLogo));
+		lblLoginLogo.setIcon(UI_Elements.scaleImageTolabel(loginLogo, lblLoginLogo));
 		lblLoginLogo.setBorder(null);
 		panelLogin.add(lblLoginLogo);
 

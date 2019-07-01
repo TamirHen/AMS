@@ -56,7 +56,7 @@ public class Overview extends JPanel {
 		
 		lblStadiumLegend = new JLabel();
 		lblStadiumLegend.setBounds(20, overviewStadiumPanel.getBounds().y + overviewStadiumPanel.getBounds().height, 555, 60);
-		lblStadiumLegend.setIcon(View.scaleImageTolabel(stadiumLegend, lblStadiumLegend));
+		lblStadiumLegend.setIcon(UI_Elements.scaleImageTolabel(stadiumLegend, lblStadiumLegend));
 		lblStadiumLegend.setOpaque(false);
 		lblStadiumLegend.setBorder(null);
 		panelOverview.add(lblStadiumLegend);
