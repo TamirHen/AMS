@@ -70,11 +70,11 @@ public class OverviewStadium extends JPanel {
 	public JButton overviewStadium_54;
 	public JButton overviewStadium_55;
 	
-	public double stadiumLblHeight = 412;
-	public double stadiumSizeRatio = (stadiumLblHeight/stadium.getIconHeight());
-	public double stadiumLblWidth = ((stadium.getIconWidth())*stadiumSizeRatio);	
+	private double stadiumLblHeight = 412;
+	private double stadiumSizeRatio = (stadiumLblHeight/stadium.getIconHeight());
+	private double stadiumLblWidth = ((stadium.getIconWidth())*stadiumSizeRatio);	
 	
-	private int numOfSelected = 0;
+	public int numOfSelected = 0;
 	public JButton lastSelectedButton;
 	private MouseAdapter lastButtonMouseAdapter;
 	

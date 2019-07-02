@@ -67,7 +67,8 @@ public class Overview extends JPanel {
 		panelSectionDetails.setBounds(596, 0, 329, 617);
 		panelOverview.add(panelSectionDetails);
 		panelSectionDetails.setLayout(null);
-		
+		panelSectionDetails.setVisible(false);
+
 		titleSectionDetails = new JLabel("SECTION DETAILS");
 		titleSectionDetails.setHorizontalAlignment(SwingConstants.CENTER);
 		titleSectionDetails.setAlignmentY(Component.TOP_ALIGNMENT);
@@ -77,6 +78,16 @@ public class Overview extends JPanel {
 		titleSectionDetails.setForeground(UI_Elements.color_mainBackgroundColor);
 		titleSectionDetails.setFont(new Font(UI_Elements.mainFontName, Font.BOLD, UI_Elements.textSubPanelTitleSize));
 		panelSectionDetails.add(titleSectionDetails);
+		
+		panelOverview.addMouseListener(new MouseAdapter(){
+		    public void mouseEntered( MouseEvent e ) {
+				if(overviewStadiumPanel.numOfSelected != 0)
+				{
+					panelSectionDetails.setVisible(true);
+				};
+		    }
+		});
+		
 			
 	}
 
