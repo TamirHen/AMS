@@ -124,25 +124,7 @@ public class OverviewStadium extends JPanel {
 		};
 		overviewStadium_49.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
-				if(overviewStadium_49.isSelected() != true)
-		    	{
-					if(numOfSelected > 0)
-					{
-						lastSelectedButton.setSelected(false);
-						lastButtonMouseAdapter.mouseExited(null);
-						numOfSelected = 0;
-					}
-					overviewStadium_49.setSelected(true);
-		    		overviewStadium_49.setIcon(UI_Elements.scaleImageToButton(img49_S, overviewStadium_49));
-		    		lastSelectedButton = overviewStadium_49;
-		    		lastButtonMouseAdapter = ma49;
-					numOfSelected++;
-		    	}
-				else
-				{
-					overviewStadium_49.setSelected(false);
-					numOfSelected--;
-				}
+				stadiumSectionSelection(overviewStadium_49, ma49, img49_S);
 			}
 		});
 		overviewStadium_49.addMouseListener(ma49);
@@ -182,25 +164,7 @@ public class OverviewStadium extends JPanel {
 		};
 		overviewStadium_19.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
-				if(overviewStadium_19.isSelected() != true)
-		    	{
-					if(numOfSelected > 0)
-					{
-						lastSelectedButton.setSelected(false);
-						lastButtonMouseAdapter.mouseExited(null);
-						numOfSelected = 0;
-					}
-					overviewStadium_19.setSelected(true);
-		    		overviewStadium_19.setIcon(UI_Elements.scaleImageToButton(img19_S, overviewStadium_19));
-		    		lastSelectedButton = overviewStadium_19;
-		    		lastButtonMouseAdapter = ma19;
-					numOfSelected++;
-		    	}
-				else
-				{
-					overviewStadium_19.setSelected(false);
-					numOfSelected--;
-				}
+				stadiumSectionSelection(overviewStadium_19, ma19, img19_S);
 			}
 		});
 		overviewStadium_19.addMouseListener(ma19);
@@ -240,25 +204,7 @@ public class OverviewStadium extends JPanel {
 		};
 		overviewStadium_26.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
-				if(overviewStadium_26.isSelected() != true)
-		    	{
-					if(numOfSelected > 0)
-					{
-						lastSelectedButton.setSelected(false);
-						lastButtonMouseAdapter.mouseExited(null);
-						numOfSelected = 0;
-					}
-					overviewStadium_26.setSelected(true);
-		    		overviewStadium_26.setIcon(UI_Elements.scaleImageToButton(img26_S, overviewStadium_26));
-		    		lastSelectedButton = overviewStadium_26;
-		    		lastButtonMouseAdapter = ma26;
-					numOfSelected++;
-		    	}
-				else
-				{
-					overviewStadium_26.setSelected(false);
-					numOfSelected--;
-				}
+				stadiumSectionSelection(overviewStadium_26, ma26, img26_S);
 			}
 		});
 		overviewStadium_26.addMouseListener(ma26);
@@ -298,25 +244,7 @@ public class OverviewStadium extends JPanel {
 		};
 		overviewStadium_28.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
-				if(overviewStadium_28.isSelected() != true)
-		    	{
-					if(numOfSelected > 0)
-					{
-						lastSelectedButton.setSelected(false);
-						lastButtonMouseAdapter.mouseExited(null);
-						numOfSelected = 0;
-					}
-					overviewStadium_28.setSelected(true);
-		    		overviewStadium_28.setIcon(UI_Elements.scaleImageToButton(img28_S, overviewStadium_28));
-		    		lastSelectedButton = overviewStadium_28;
-		    		lastButtonMouseAdapter = ma28;
-					numOfSelected++;
-		    	}
-				else
-				{
-					overviewStadium_28.setSelected(false);
-					numOfSelected--;
-				}
+				stadiumSectionSelection(overviewStadium_28, ma28, img28_S);
 			}
 		});
 		overviewStadium_28.addMouseListener(ma28);
@@ -356,25 +284,7 @@ public class OverviewStadium extends JPanel {
 		};
 		overviewStadium_51.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
-				if(overviewStadium_51.isSelected() != true)
-		    	{
-					if(numOfSelected > 0)
-					{
-						lastSelectedButton.setSelected(false);
-						lastButtonMouseAdapter.mouseExited(null);
-						numOfSelected = 0;
-					}
-					overviewStadium_51.setSelected(true);
-		    		overviewStadium_51.setIcon(UI_Elements.scaleImageToButton(img51_S, overviewStadium_51));
-		    		lastSelectedButton = overviewStadium_51;
-		    		lastButtonMouseAdapter = ma51;
-					numOfSelected++;
-		    	}
-				else
-				{
-					overviewStadium_51.setSelected(false);
-					numOfSelected--;
-				}
+				stadiumSectionSelection(overviewStadium_51, ma51, img51_S);
 			}
 		});
 		overviewStadium_51.addMouseListener(ma51);
@@ -414,25 +324,7 @@ public class OverviewStadium extends JPanel {
 		};
 		overviewStadium_48.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
-				if(overviewStadium_48.isSelected() != true)
-		    	{
-					if(numOfSelected > 0)
-					{
-						lastSelectedButton.setSelected(false);
-						lastButtonMouseAdapter.mouseExited(null);
-						numOfSelected = 0;
-					}
-					overviewStadium_48.setSelected(true);
-		    		overviewStadium_48.setIcon(UI_Elements.scaleImageToButton(img48_S, overviewStadium_48));
-		    		lastSelectedButton = overviewStadium_48;
-		    		lastButtonMouseAdapter = ma48;
-					numOfSelected++;
-		    	}
-				else
-				{
-					overviewStadium_48.setSelected(false);
-					numOfSelected--;
-				}
+				stadiumSectionSelection(overviewStadium_48, ma48, img48_S);
 			}
 		});
 		overviewStadium_48.addMouseListener(ma48);
@@ -472,25 +364,7 @@ public class OverviewStadium extends JPanel {
 		};
 		overviewStadium_02.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
-				if(overviewStadium_02.isSelected() != true)
-		    	{
-					if(numOfSelected > 0)
-					{
-						lastSelectedButton.setSelected(false);
-						lastButtonMouseAdapter.mouseExited(null);
-						numOfSelected = 0;
-					}
-					overviewStadium_02.setSelected(true);
-		    		overviewStadium_02.setIcon(UI_Elements.scaleImageToButton(img02_S, overviewStadium_02));
-		    		lastSelectedButton = overviewStadium_02;
-		    		lastButtonMouseAdapter = ma02;
-					numOfSelected++;
-		    	}
-				else
-				{
-					overviewStadium_02.setSelected(false);
-					numOfSelected--;
-				}
+				stadiumSectionSelection(overviewStadium_02, ma02, img02_S);
 			}
 		});
 		overviewStadium_02.addMouseListener(ma02);
@@ -529,25 +403,7 @@ public class OverviewStadium extends JPanel {
 		};
 		overviewStadium_03.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
-				if(overviewStadium_03.isSelected() != true)
-		    	{
-					if(numOfSelected > 0)
-					{
-						lastSelectedButton.setSelected(false);
-						lastButtonMouseAdapter.mouseExited(null);
-						numOfSelected = 0;
-					}
-					overviewStadium_03.setSelected(true);
-		    		overviewStadium_03.setIcon(UI_Elements.scaleImageToButton(img03_S, overviewStadium_03));
-					lastSelectedButton = overviewStadium_03;
-		    		lastButtonMouseAdapter = ma03;
-					numOfSelected++;
-		    	}
-				else
-				{
-					overviewStadium_03.setSelected(false);
-					numOfSelected--;
-				}
+				stadiumSectionSelection(overviewStadium_03, ma03, img03_S);
 			}
 		});
 		overviewStadium_03.addMouseListener(ma03);
@@ -586,25 +442,7 @@ public class OverviewStadium extends JPanel {
 		};
 		overviewStadium_04.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
-				if(overviewStadium_04.isSelected() != true)
-		    	{
-					if(numOfSelected > 0)
-					{
-						lastSelectedButton.setSelected(false);
-						lastButtonMouseAdapter.mouseExited(null);
-						numOfSelected = 0;
-					}
-					overviewStadium_04.setSelected(true);
-		    		overviewStadium_04.setIcon(UI_Elements.scaleImageToButton(img04_S, overviewStadium_04));
-					lastSelectedButton = overviewStadium_04;
-		    		lastButtonMouseAdapter = ma04;
-					numOfSelected++;
-		    	}
-				else
-				{
-					overviewStadium_04.setSelected(false);
-					numOfSelected--;
-				}
+				stadiumSectionSelection(overviewStadium_04, ma04, img04_S);
 			}
 		});
 		overviewStadium_04.addMouseListener(ma04);
@@ -645,25 +483,7 @@ public class OverviewStadium extends JPanel {
 		};
 		overviewStadium_05.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
-				if(overviewStadium_05.isSelected() != true)
-		    	{
-					if(numOfSelected > 0)
-					{
-						lastSelectedButton.setSelected(false);
-						lastButtonMouseAdapter.mouseExited(null);
-						numOfSelected = 0;
-					}
-					overviewStadium_05.setSelected(true);
-		    		overviewStadium_05.setIcon(UI_Elements.scaleImageToButton(img05_S, overviewStadium_05));
-		    		lastSelectedButton = overviewStadium_05;
-		    		lastButtonMouseAdapter = ma05;
-					numOfSelected++;
-		    	}
-				else
-				{
-					overviewStadium_05.setSelected(false);
-					numOfSelected--;
-				}
+				stadiumSectionSelection(overviewStadium_05, ma05, img05_S);
 			}
 		});
 		overviewStadium_05.addMouseListener(ma05);
@@ -704,25 +524,7 @@ public class OverviewStadium extends JPanel {
 		};
 		overviewStadium_06.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
-				if(overviewStadium_06.isSelected() != true)
-		    	{
-					if(numOfSelected > 0)
-					{
-						lastSelectedButton.setSelected(false);
-						lastButtonMouseAdapter.mouseExited(null);
-						numOfSelected = 0;
-					}
-					overviewStadium_06.setSelected(true);
-		    		overviewStadium_06.setIcon(UI_Elements.scaleImageToButton(img06_S, overviewStadium_06));
-		    		lastSelectedButton = overviewStadium_06;
-		    		lastButtonMouseAdapter = ma06;
-					numOfSelected++;
-		    	}
-				else
-				{
-					overviewStadium_06.setSelected(false);
-					numOfSelected--;
-				}
+				stadiumSectionSelection(overviewStadium_06, ma06, img06_S);
 			}
 		});
 		overviewStadium_06.addMouseListener(ma06);
@@ -763,25 +565,7 @@ public class OverviewStadium extends JPanel {
 		};
 		overviewStadium_07.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
-				if(overviewStadium_07.isSelected() != true)
-		    	{
-					if(numOfSelected > 0)
-					{
-						lastSelectedButton.setSelected(false);
-						lastButtonMouseAdapter.mouseExited(null);
-						numOfSelected = 0;
-					}
-					overviewStadium_07.setSelected(true);
-		    		overviewStadium_07.setIcon(UI_Elements.scaleImageToButton(img07_S, overviewStadium_07));
-		    		lastSelectedButton = overviewStadium_07;
-		    		lastButtonMouseAdapter = ma07;
-					numOfSelected++;
-		    	}
-				else
-				{
-					overviewStadium_07.setSelected(false);
-					numOfSelected--;
-				}
+				stadiumSectionSelection(overviewStadium_07, ma07, img07_S);
 			}
 		});
 		overviewStadium_07.addMouseListener(ma07);
@@ -821,25 +605,7 @@ public class OverviewStadium extends JPanel {
 		};
 		overviewStadium_08.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
-				if(overviewStadium_08.isSelected() != true)
-		    	{
-					if(numOfSelected > 0)
-					{
-						lastSelectedButton.setSelected(false);
-						lastButtonMouseAdapter.mouseExited(null);
-						numOfSelected = 0;
-					}
-					overviewStadium_08.setSelected(true);
-		    		overviewStadium_08.setIcon(UI_Elements.scaleImageToButton(img08_S, overviewStadium_08));
-		    		lastSelectedButton = overviewStadium_08;
-		    		lastButtonMouseAdapter = ma08;
-					numOfSelected++;
-		    	}
-				else
-				{
-					overviewStadium_08.setSelected(false);
-					numOfSelected--;
-				}
+				stadiumSectionSelection(overviewStadium_08, ma08, img08_S);
 			}
 		});
 		overviewStadium_08.addMouseListener(ma08);
@@ -879,25 +645,7 @@ public class OverviewStadium extends JPanel {
 		};
 		overviewStadium_10.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
-				if(overviewStadium_10.isSelected() != true)
-		    	{
-					if(numOfSelected > 0)
-					{
-						lastSelectedButton.setSelected(false);
-						lastButtonMouseAdapter.mouseExited(null);
-						numOfSelected = 0;
-					}
-					overviewStadium_10.setSelected(true);
-		    		overviewStadium_10.setIcon(UI_Elements.scaleImageToButton(img10_S, overviewStadium_10));
-		    		lastSelectedButton = overviewStadium_10;
-		    		lastButtonMouseAdapter = ma10;
-					numOfSelected++;
-		    	}
-				else
-				{
-					overviewStadium_10.setSelected(false);
-					numOfSelected--;
-				}
+				stadiumSectionSelection(overviewStadium_10, ma10, img10_S);
 			}
 		});
 		overviewStadium_10.addMouseListener(ma10);
@@ -936,25 +684,7 @@ public class OverviewStadium extends JPanel {
 		};
 		overviewStadium_11.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
-				if(overviewStadium_11.isSelected() != true)
-		    	{
-					if(numOfSelected > 0)
-					{
-						lastSelectedButton.setSelected(false);
-						lastButtonMouseAdapter.mouseExited(null);
-						numOfSelected = 0;
-					}
-					overviewStadium_11.setSelected(true);
-		    		overviewStadium_11.setIcon(UI_Elements.scaleImageToButton(img11_S, overviewStadium_11));
-		    		lastSelectedButton = overviewStadium_11;
-		    		lastButtonMouseAdapter = ma11;
-					numOfSelected++;
-		    	}
-				else
-				{
-					overviewStadium_11.setSelected(false);
-					numOfSelected--;
-				}
+				stadiumSectionSelection(overviewStadium_11, ma11, img11_S);
 			}
 		});
 		overviewStadium_11.addMouseListener(ma11);
@@ -993,25 +723,7 @@ public class OverviewStadium extends JPanel {
 		};
 		overviewStadium_12.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
-				if(overviewStadium_12.isSelected() != true)
-		    	{
-					if(numOfSelected > 0)
-					{
-						lastSelectedButton.setSelected(false);
-						lastButtonMouseAdapter.mouseExited(null);
-						numOfSelected = 0;
-					}
-					overviewStadium_12.setSelected(true);
-		    		overviewStadium_12.setIcon(UI_Elements.scaleImageToButton(img12_S, overviewStadium_12));
-		    		lastSelectedButton = overviewStadium_12;
-		    		lastButtonMouseAdapter = ma12;
-					numOfSelected++;
-		    	}
-				else
-				{
-					overviewStadium_12.setSelected(false);
-					numOfSelected--;
-				}
+				stadiumSectionSelection(overviewStadium_12, ma12, img12_S);
 			}
 		});
 		overviewStadium_12.addMouseListener(ma12);
@@ -1050,25 +762,7 @@ public class OverviewStadium extends JPanel {
 		};
 		overviewStadium_13.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
-				if(overviewStadium_13.isSelected() != true)
-		    	{
-					if(numOfSelected > 0)
-					{
-						lastSelectedButton.setSelected(false);
-						lastButtonMouseAdapter.mouseExited(null);
-						numOfSelected = 0;
-					}
-					overviewStadium_13.setSelected(true);
-		    		overviewStadium_13.setIcon(UI_Elements.scaleImageToButton(img13_S, overviewStadium_13));
-		    		lastSelectedButton = overviewStadium_13;
-		    		lastButtonMouseAdapter = ma13;
-					numOfSelected++;
-		    	}
-				else
-				{
-					overviewStadium_13.setSelected(false);
-					numOfSelected--;
-				}
+				stadiumSectionSelection(overviewStadium_13, ma13, img13_S);
 			}
 		});
 		overviewStadium_13.addMouseListener(ma13);
@@ -1107,25 +801,7 @@ public class OverviewStadium extends JPanel {
 		};
 		overviewStadium_14.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
-				if(overviewStadium_14.isSelected() != true)
-		    	{
-					if(numOfSelected > 0)
-					{
-						lastSelectedButton.setSelected(false);
-						lastButtonMouseAdapter.mouseExited(null);
-						numOfSelected = 0;
-					}
-					overviewStadium_14.setSelected(true);
-		    		overviewStadium_14.setIcon(UI_Elements.scaleImageToButton(img14_S, overviewStadium_14));
-		    		lastSelectedButton = overviewStadium_14;
-		    		lastButtonMouseAdapter = ma14;
-					numOfSelected++;
-		    	}
-				else
-				{
-					overviewStadium_14.setSelected(false);
-					numOfSelected--;
-				}
+				stadiumSectionSelection(overviewStadium_14, ma14, img14_S);
 			}
 		});
 		overviewStadium_14.addMouseListener(ma14);
@@ -1164,25 +840,7 @@ public class OverviewStadium extends JPanel {
 		};
 		overviewStadium_15.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
-				if(overviewStadium_15.isSelected() != true)
-		    	{
-					if(numOfSelected > 0)
-					{
-						lastSelectedButton.setSelected(false);
-						lastButtonMouseAdapter.mouseExited(null);
-						numOfSelected = 0;
-					}
-					overviewStadium_15.setSelected(true);
-		    		overviewStadium_15.setIcon(UI_Elements.scaleImageToButton(img15_S, overviewStadium_15));
-		    		lastSelectedButton = overviewStadium_15;
-		    		lastButtonMouseAdapter = ma15;
-					numOfSelected++;
-		    	}
-				else
-				{
-					overviewStadium_15.setSelected(false);
-					numOfSelected--;
-				}
+				stadiumSectionSelection(overviewStadium_15, ma15, img15_S);
 			}
 		});
 		overviewStadium_15.addMouseListener(ma15);
@@ -1221,25 +879,7 @@ public class OverviewStadium extends JPanel {
 		};
 		overviewStadium_16.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
-				if(overviewStadium_16.isSelected() != true)
-		    	{
-					if(numOfSelected > 0)
-					{
-						lastSelectedButton.setSelected(false);
-						lastButtonMouseAdapter.mouseExited(null);
-						numOfSelected = 0;
-					}
-					overviewStadium_16.setSelected(true);
-		    		overviewStadium_16.setIcon(UI_Elements.scaleImageToButton(img16_S, overviewStadium_16));
-		    		lastSelectedButton = overviewStadium_16;
-		    		lastButtonMouseAdapter = ma16;
-					numOfSelected++;
-		    	}
-				else
-				{
-					overviewStadium_16.setSelected(false);
-					numOfSelected--;
-				}
+				stadiumSectionSelection(overviewStadium_16, ma16, img16_S);
 			}
 		});
 		overviewStadium_16.addMouseListener(ma16);
@@ -1278,25 +918,7 @@ public class OverviewStadium extends JPanel {
 		};
 		overviewStadium_55.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
-				if(overviewStadium_55.isSelected() != true)
-		    	{
-					if(numOfSelected > 0)
-					{
-						lastSelectedButton.setSelected(false);
-						lastButtonMouseAdapter.mouseExited(null);
-						numOfSelected = 0;
-					}
-					overviewStadium_55.setSelected(true);
-		    		overviewStadium_55.setIcon(UI_Elements.scaleImageToButton(img55_S, overviewStadium_55));
-		    		lastSelectedButton = overviewStadium_55;
-		    		lastButtonMouseAdapter = ma55;
-					numOfSelected++;
-		    	}
-				else
-				{
-					overviewStadium_55.setSelected(false);
-					numOfSelected--;
-				}
+				stadiumSectionSelection(overviewStadium_55, ma55, img55_S);
 			}
 		});
 		overviewStadium_55.addMouseListener(ma55);
@@ -1335,25 +957,7 @@ public class OverviewStadium extends JPanel {
 		};
 		overviewStadium_22.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
-				if(overviewStadium_22.isSelected() != true)
-		    	{
-					if(numOfSelected > 0)
-					{
-						lastSelectedButton.setSelected(false);
-						lastButtonMouseAdapter.mouseExited(null);
-						numOfSelected = 0;
-					}
-					overviewStadium_22.setSelected(true);
-		    		overviewStadium_22.setIcon(UI_Elements.scaleImageToButton(img22_S, overviewStadium_22));
-		    		lastSelectedButton = overviewStadium_22;
-		    		lastButtonMouseAdapter = ma22;
-					numOfSelected++;
-		    	}
-				else
-				{
-					overviewStadium_22.setSelected(false);
-					numOfSelected--;
-				}
+				stadiumSectionSelection(overviewStadium_22, ma22, img22_S);
 			}
 		});
 		overviewStadium_22.addMouseListener(ma22);
@@ -1392,25 +996,7 @@ public class OverviewStadium extends JPanel {
 		};
 		overviewStadium_27.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
-				if(overviewStadium_27.isSelected() != true)
-		    	{
-					if(numOfSelected > 0)
-					{
-						lastSelectedButton.setSelected(false);
-						lastButtonMouseAdapter.mouseExited(null);
-						numOfSelected = 0;
-					}
-					overviewStadium_27.setSelected(true);
-		    		overviewStadium_27.setIcon(UI_Elements.scaleImageToButton(img27_S, overviewStadium_27));
-		    		lastSelectedButton = overviewStadium_27;
-		    		lastButtonMouseAdapter = ma27;
-					numOfSelected++;
-		    	}
-				else
-				{
-					overviewStadium_27.setSelected(false);
-					numOfSelected--;
-				}
+				stadiumSectionSelection(overviewStadium_27, ma27, img27_S);
 			}
 		});
 		overviewStadium_27.addMouseListener(ma27);
@@ -1450,25 +1036,7 @@ public class OverviewStadium extends JPanel {
 		};
 		overviewStadium_29.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
-				if(overviewStadium_29.isSelected() != true)
-		    	{
-					if(numOfSelected > 0)
-					{
-						lastSelectedButton.setSelected(false);
-						lastButtonMouseAdapter.mouseExited(null);
-						numOfSelected = 0;
-					}
-					overviewStadium_29.setSelected(true);
-		    		overviewStadium_29.setIcon(UI_Elements.scaleImageToButton(img29_S, overviewStadium_29));
-		    		lastSelectedButton = overviewStadium_29;
-		    		lastButtonMouseAdapter = ma29;
-					numOfSelected++;
-		    	}
-				else
-				{
-					overviewStadium_29.setSelected(false);
-					numOfSelected--;
-				}
+				stadiumSectionSelection(overviewStadium_29, ma29, img29_S);
 			}
 		});
 		overviewStadium_29.addMouseListener(ma29);
@@ -1508,25 +1076,7 @@ public class OverviewStadium extends JPanel {
 		};
 		overviewStadium_54.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
-				if(overviewStadium_54.isSelected() != true)
-		    	{
-					if(numOfSelected > 0)
-					{
-						lastSelectedButton.setSelected(false);
-						lastButtonMouseAdapter.mouseExited(null);
-						numOfSelected = 0;
-					}
-					overviewStadium_54.setSelected(true);
-		    		overviewStadium_54.setIcon(UI_Elements.scaleImageToButton(img54_S, overviewStadium_54));
-		    		lastSelectedButton = overviewStadium_54;
-		    		lastButtonMouseAdapter = ma54;
-					numOfSelected++;
-		    	}
-				else
-				{
-					overviewStadium_54.setSelected(false);
-					numOfSelected--;
-				}
+				stadiumSectionSelection(overviewStadium_54, ma54, img54_S);
 			}
 		});
 		overviewStadium_54.addMouseListener(ma54);
@@ -1566,25 +1116,7 @@ public class OverviewStadium extends JPanel {
 		};
 		overviewStadium_25.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
-				if(overviewStadium_25.isSelected() != true)
-		    	{
-					if(numOfSelected > 0)
-					{
-						lastSelectedButton.setSelected(false);
-						lastButtonMouseAdapter.mouseExited(null);
-						numOfSelected = 0;
-					}
-					overviewStadium_25.setSelected(true);
-		    		overviewStadium_25.setIcon(UI_Elements.scaleImageToButton(img25_S, overviewStadium_25));
-		    		lastSelectedButton = overviewStadium_25;
-		    		lastButtonMouseAdapter = ma25;
-					numOfSelected++;
-		    	}
-				else
-				{
-					overviewStadium_25.setSelected(false);
-					numOfSelected--;
-				}
+				stadiumSectionSelection(overviewStadium_25, ma25, img25_S);
 			}
 		});
 		overviewStadium_25.addMouseListener(ma25);
@@ -1625,25 +1157,7 @@ public class OverviewStadium extends JPanel {
 		};
 		overviewStadium_24.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
-				if(overviewStadium_24.isSelected() != true)
-		    	{
-					if(numOfSelected > 0)
-					{
-						lastSelectedButton.setSelected(false);
-						lastButtonMouseAdapter.mouseExited(null);
-						numOfSelected = 0;
-					}
-					overviewStadium_24.setSelected(true);
-		    		overviewStadium_24.setIcon(UI_Elements.scaleImageToButton(img24_S, overviewStadium_24));
-		    		lastSelectedButton = overviewStadium_24;
-		    		lastButtonMouseAdapter = ma24;
-					numOfSelected++;
-		    	}
-				else
-				{
-					overviewStadium_24.setSelected(false);
-					numOfSelected--;
-				}
+				stadiumSectionSelection(overviewStadium_24, ma24, img24_S);
 			}
 		});
 		overviewStadium_24.addMouseListener(ma24);
@@ -1683,25 +1197,7 @@ public class OverviewStadium extends JPanel {
 		};
 		overviewStadium_50.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
-				if(overviewStadium_50.isSelected() != true)
-		    	{
-					if(numOfSelected > 0)
-					{
-						lastSelectedButton.setSelected(false);
-						lastButtonMouseAdapter.mouseExited(null);
-						numOfSelected = 0;
-					}
-					overviewStadium_50.setSelected(true);
-		    		overviewStadium_50.setIcon(UI_Elements.scaleImageToButton(img50_S, overviewStadium_50));
-		    		lastSelectedButton = overviewStadium_50;
-		    		lastButtonMouseAdapter = ma50;
-					numOfSelected++;
-		    	}
-				else
-				{
-					overviewStadium_50.setSelected(false);
-					numOfSelected--;
-				}
+				stadiumSectionSelection(overviewStadium_50, ma50, img50_S);
 			}
 		});
 		overviewStadium_50.addMouseListener(ma50);
@@ -1741,25 +1237,7 @@ public class OverviewStadium extends JPanel {
 		};
 		overviewStadium_41.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
-				if(overviewStadium_41.isSelected() != true)
-		    	{
-					if(numOfSelected > 0)
-					{
-						lastSelectedButton.setSelected(false);
-						lastButtonMouseAdapter.mouseExited(null);
-						numOfSelected = 0;
-					}
-					overviewStadium_41.setSelected(true);
-		    		overviewStadium_41.setIcon(UI_Elements.scaleImageToButton(img41_S, overviewStadium_41));
-		    		lastSelectedButton = overviewStadium_41;
-		    		lastButtonMouseAdapter = ma41;
-					numOfSelected++;
-		    	}
-				else
-				{
-					overviewStadium_41.setSelected(false);
-					numOfSelected--;
-				}
+				stadiumSectionSelection(overviewStadium_41, ma41, img41_S);
 			}
 		});
 		overviewStadium_41.addMouseListener(ma41);
@@ -1799,25 +1277,7 @@ public class OverviewStadium extends JPanel {
 		};
 		overviewStadium_42.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
-				if(overviewStadium_42.isSelected() != true)
-		    	{
-					if(numOfSelected > 0)
-					{
-						lastSelectedButton.setSelected(false);
-						lastButtonMouseAdapter.mouseExited(null);
-						numOfSelected = 0;
-					}
-					overviewStadium_42.setSelected(true);
-		    		overviewStadium_42.setIcon(UI_Elements.scaleImageToButton(img42_S, overviewStadium_42));
-		    		lastSelectedButton = overviewStadium_42;
-		    		lastButtonMouseAdapter = ma42;
-					numOfSelected++;
-		    	}
-				else
-				{
-					overviewStadium_42.setSelected(false);
-					numOfSelected--;
-				}
+				stadiumSectionSelection(overviewStadium_42, ma42, img42_S);
 			}
 		});
 		overviewStadium_42.addMouseListener(ma42);
@@ -1857,25 +1317,7 @@ public class OverviewStadium extends JPanel {
 		};
 		overviewStadium_43.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
-				if(overviewStadium_43.isSelected() != true)
-		    	{
-					if(numOfSelected > 0)
-					{
-						lastSelectedButton.setSelected(false);
-						lastButtonMouseAdapter.mouseExited(null);
-						numOfSelected = 0;
-					}
-					overviewStadium_43.setSelected(true);
-		    		overviewStadium_43.setIcon(UI_Elements.scaleImageToButton(img43_S, overviewStadium_43));
-		    		lastSelectedButton = overviewStadium_43;
-		    		lastButtonMouseAdapter = ma43;
-					numOfSelected++;
-		    	}
-				else
-				{
-					overviewStadium_43.setSelected(false);
-					numOfSelected--;
-				}
+				stadiumSectionSelection(overviewStadium_43, ma43, img43_S);
 			}
 		});
 		overviewStadium_43.addMouseListener(ma43);
@@ -1915,25 +1357,7 @@ public class OverviewStadium extends JPanel {
 		};
 		overviewStadium_44.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
-				if(overviewStadium_44.isSelected() != true)
-		    	{
-					if(numOfSelected > 0)
-					{
-						lastSelectedButton.setSelected(false);
-						lastButtonMouseAdapter.mouseExited(null);
-						numOfSelected = 0;
-					}
-					overviewStadium_44.setSelected(true);
-		    		overviewStadium_44.setIcon(UI_Elements.scaleImageToButton(img44_S, overviewStadium_44));
-		    		lastSelectedButton = overviewStadium_44;
-		    		lastButtonMouseAdapter = ma44;
-					numOfSelected++;
-		    	}
-				else
-				{
-					overviewStadium_44.setSelected(false);
-					numOfSelected--;
-				}
+				stadiumSectionSelection(overviewStadium_44, ma44, img44_S);
 			}
 		});
 		overviewStadium_44.addMouseListener(ma44);
@@ -1973,25 +1397,7 @@ public class OverviewStadium extends JPanel {
 		};
 		overviewStadium_45.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
-				if(overviewStadium_45.isSelected() != true)
-		    	{
-					if(numOfSelected > 0)
-					{
-						lastSelectedButton.setSelected(false);
-						lastButtonMouseAdapter.mouseExited(null);
-						numOfSelected = 0;
-					}
-					overviewStadium_45.setSelected(true);
-		    		overviewStadium_45.setIcon(UI_Elements.scaleImageToButton(img45_S, overviewStadium_45));
-		    		lastSelectedButton = overviewStadium_45;
-		    		lastButtonMouseAdapter = ma45;
-					numOfSelected++;
-		    	}
-				else
-				{
-					overviewStadium_45.setSelected(false);
-					numOfSelected--;
-				}
+				stadiumSectionSelection(overviewStadium_45, ma45, img45_S);
 			}
 		});
 		overviewStadium_45.addMouseListener(ma45);
@@ -2031,25 +1437,7 @@ public class OverviewStadium extends JPanel {
 		};
 		overviewStadium_46.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
-				if(overviewStadium_46.isSelected() != true)
-		    	{
-					if(numOfSelected > 0)
-					{
-						lastSelectedButton.setSelected(false);
-						lastButtonMouseAdapter.mouseExited(null);
-						numOfSelected = 0;
-					}
-					overviewStadium_46.setSelected(true);
-		    		overviewStadium_46.setIcon(UI_Elements.scaleImageToButton(img46_S, overviewStadium_46));
-		    		lastSelectedButton = overviewStadium_46;
-		    		lastButtonMouseAdapter = ma46;
-					numOfSelected++;
-		    	}
-				else
-				{
-					overviewStadium_46.setSelected(false);
-					numOfSelected--;
-				}
+				stadiumSectionSelection(overviewStadium_46, ma46, img46_S);
 			}
 		});
 		overviewStadium_46.addMouseListener(ma46);
@@ -2089,25 +1477,7 @@ public class OverviewStadium extends JPanel {
 		};
 		overviewStadium_47.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
-				if(overviewStadium_47.isSelected() != true)
-		    	{
-					if(numOfSelected > 0)
-					{
-						lastSelectedButton.setSelected(false);
-						lastButtonMouseAdapter.mouseExited(null);
-						numOfSelected = 0;
-					}
-					overviewStadium_47.setSelected(true);
-		    		overviewStadium_47.setIcon(UI_Elements.scaleImageToButton(img47_S, overviewStadium_47));
-		    		lastSelectedButton = overviewStadium_47;
-		    		lastButtonMouseAdapter = ma47;
-					numOfSelected++;
-		    	}
-				else
-				{
-					overviewStadium_47.setSelected(false);
-					numOfSelected--;
-				}
+				stadiumSectionSelection(overviewStadium_47, ma47, img47_S);
 			}
 		});
 		overviewStadium_47.addMouseListener(ma47);
@@ -2147,25 +1517,7 @@ public class OverviewStadium extends JPanel {
 		};
 		overviewStadium_34.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
-				if(overviewStadium_34.isSelected() != true)
-		    	{
-					if(numOfSelected > 0)
-					{
-						lastSelectedButton.setSelected(false);
-						lastButtonMouseAdapter.mouseExited(null);
-						numOfSelected = 0;
-					}
-					overviewStadium_34.setSelected(true);
-		    		overviewStadium_34.setIcon(UI_Elements.scaleImageToButton(img34_S, overviewStadium_34));
-		    		lastSelectedButton = overviewStadium_34;
-		    		lastButtonMouseAdapter = ma34;
-					numOfSelected++;
-		    	}
-				else
-				{
-					overviewStadium_34.setSelected(false);
-					numOfSelected--;
-				}
+				stadiumSectionSelection(overviewStadium_34, ma34, img34_S);
 			}
 		});
 		overviewStadium_34.addMouseListener(ma34);
@@ -2205,25 +1557,7 @@ public class OverviewStadium extends JPanel {
 		};
 		overviewStadium_35.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
-				if(overviewStadium_35.isSelected() != true)
-		    	{
-					if(numOfSelected > 0)
-					{
-						lastSelectedButton.setSelected(false);
-						lastButtonMouseAdapter.mouseExited(null);
-						numOfSelected = 0;
-					}
-					overviewStadium_35.setSelected(true);
-		    		overviewStadium_35.setIcon(UI_Elements.scaleImageToButton(img35_S, overviewStadium_35));
-		    		lastSelectedButton = overviewStadium_35;
-		    		lastButtonMouseAdapter = ma35;
-					numOfSelected++;
-		    	}
-				else
-				{
-					overviewStadium_35.setSelected(false);
-					numOfSelected--;
-				}
+				stadiumSectionSelection(overviewStadium_35, ma35, img35_S);
 			}
 		});
 		overviewStadium_35.addMouseListener(ma35);
@@ -2263,25 +1597,7 @@ public class OverviewStadium extends JPanel {
 		};
 		overviewStadium_36.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
-				if(overviewStadium_36.isSelected() != true)
-		    	{
-					if(numOfSelected > 0)
-					{
-						lastSelectedButton.setSelected(false);
-						lastButtonMouseAdapter.mouseExited(null);
-						numOfSelected = 0;
-					}
-					overviewStadium_36.setSelected(true);
-		    		overviewStadium_36.setIcon(UI_Elements.scaleImageToButton(img36_S, overviewStadium_36));
-		    		lastSelectedButton = overviewStadium_36;
-		    		lastButtonMouseAdapter = ma36;
-					numOfSelected++;
-		    	}
-				else
-				{
-					overviewStadium_36.setSelected(false);
-					numOfSelected--;
-				}
+				stadiumSectionSelection(overviewStadium_36, ma36, img36_S);
 			}
 		});
 		overviewStadium_36.addMouseListener(ma36);
@@ -2321,25 +1637,7 @@ public class OverviewStadium extends JPanel {
 		};
 		overviewStadium_37.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
-				if(overviewStadium_37.isSelected() != true)
-		    	{
-					if(numOfSelected > 0)
-					{
-						lastSelectedButton.setSelected(false);
-						lastButtonMouseAdapter.mouseExited(null);
-						numOfSelected = 0;
-					}
-					overviewStadium_37.setSelected(true);
-		    		overviewStadium_37.setIcon(UI_Elements.scaleImageToButton(img37_S, overviewStadium_37));
-		    		lastSelectedButton = overviewStadium_37;
-		    		lastButtonMouseAdapter = ma37;
-					numOfSelected++;
-		    	}
-				else
-				{
-					overviewStadium_37.setSelected(false);
-					numOfSelected--;
-				}
+				stadiumSectionSelection(overviewStadium_37, ma37, img37_S);
 			}
 		});
 		overviewStadium_37.addMouseListener(ma37);
@@ -2379,25 +1677,7 @@ public class OverviewStadium extends JPanel {
 		};
 		overviewStadium_38.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
-				if(overviewStadium_38.isSelected() != true)
-		    	{
-					if(numOfSelected > 0)
-					{
-						lastSelectedButton.setSelected(false);
-						lastButtonMouseAdapter.mouseExited(null);
-						numOfSelected = 0;
-					}
-					overviewStadium_38.setSelected(true);
-		    		overviewStadium_38.setIcon(UI_Elements.scaleImageToButton(img38_S, overviewStadium_38));
-		    		lastSelectedButton = overviewStadium_38;
-		    		lastButtonMouseAdapter = ma38;
-					numOfSelected++;
-		    	}
-				else
-				{
-					overviewStadium_38.setSelected(false);
-					numOfSelected--;
-				}
+				stadiumSectionSelection(overviewStadium_38, ma38, img38_S);
 			}
 		});
 		overviewStadium_38.addMouseListener(ma38);
@@ -2437,25 +1717,7 @@ public class OverviewStadium extends JPanel {
 		};
 		overviewStadium_39.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
-				if(overviewStadium_39.isSelected() != true)
-		    	{
-					if(numOfSelected > 0)
-					{
-						lastSelectedButton.setSelected(false);
-						lastButtonMouseAdapter.mouseExited(null);
-						numOfSelected = 0;
-					}
-					overviewStadium_39.setSelected(true);
-		    		overviewStadium_39.setIcon(UI_Elements.scaleImageToButton(img39_S, overviewStadium_39));
-		    		lastSelectedButton = overviewStadium_39;
-		    		lastButtonMouseAdapter = ma39;
-					numOfSelected++;
-		    	}
-				else
-				{
-					overviewStadium_39.setSelected(false);
-					numOfSelected--;
-				}
+				stadiumSectionSelection(overviewStadium_39, ma39, img39_S);
 			}
 		});
 		overviewStadium_39.addMouseListener(ma39);
@@ -2495,25 +1757,7 @@ public class OverviewStadium extends JPanel {
 		};
 		overviewStadium_40.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
-				if(overviewStadium_40.isSelected() != true)
-		    	{
-					if(numOfSelected > 0)
-					{
-						lastSelectedButton.setSelected(false);
-						lastButtonMouseAdapter.mouseExited(null);
-						numOfSelected = 0;
-					}
-					overviewStadium_40.setSelected(true);
-		    		overviewStadium_40.setIcon(UI_Elements.scaleImageToButton(img40_S, overviewStadium_40));
-		    		lastSelectedButton = overviewStadium_40;
-		    		lastButtonMouseAdapter = ma40;
-					numOfSelected++;
-		    	}
-				else
-				{
-					overviewStadium_40.setSelected(false);
-					numOfSelected--;
-				}
+				stadiumSectionSelection(overviewStadium_40, ma40, img40_S);
 			}
 		});
 		overviewStadium_40.addMouseListener(ma40);
@@ -2553,25 +1797,7 @@ public class OverviewStadium extends JPanel {
 		};
 		overviewStadium_53.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
-				if(overviewStadium_53.isSelected() != true)
-		    	{
-					if(numOfSelected > 0)
-					{
-						lastSelectedButton.setSelected(false);
-						lastButtonMouseAdapter.mouseExited(null);
-						numOfSelected = 0;
-					}
-					overviewStadium_53.setSelected(true);
-		    		overviewStadium_53.setIcon(UI_Elements.scaleImageToButton(img53_S, overviewStadium_53));
-		    		lastSelectedButton = overviewStadium_53;
-		    		lastButtonMouseAdapter = ma53;
-					numOfSelected++;
-		    	}
-				else
-				{
-					overviewStadium_53.setSelected(false);
-					numOfSelected--;
-				}
+				stadiumSectionSelection(overviewStadium_53, ma53, img53_S);
 			}
 		});
 		overviewStadium_53.addMouseListener(ma53);
@@ -2611,25 +1837,7 @@ public class OverviewStadium extends JPanel {
 		};
 		overviewStadium_52.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
-				if(overviewStadium_52.isSelected() != true)
-		    	{
-					if(numOfSelected > 0)
-					{
-						lastSelectedButton.setSelected(false);
-						lastButtonMouseAdapter.mouseExited(null);
-						numOfSelected = 0;
-					}
-					overviewStadium_52.setSelected(true);
-		    		overviewStadium_52.setIcon(UI_Elements.scaleImageToButton(img52_S, overviewStadium_52));
-		    		lastSelectedButton = overviewStadium_52;
-		    		lastButtonMouseAdapter = ma52;
-					numOfSelected++;
-		    	}
-				else
-				{
-					overviewStadium_52.setSelected(false);
-					numOfSelected--;
-				}
+				stadiumSectionSelection(overviewStadium_52, ma52, img52_S);
 			}
 		});
 		overviewStadium_52.addMouseListener(ma52);
@@ -2671,6 +1879,30 @@ public class OverviewStadium extends JPanel {
 		}*/
 		
 		return type;
+		
+	}
+	
+	public void stadiumSectionSelection(JButton i_Section, MouseAdapter i_SectionAdapter, ImageIcon i_selectedImg)
+	{
+		if(i_Section.isSelected() != true)
+    	{
+			if(numOfSelected > 0)
+			{
+				lastSelectedButton.setSelected(false);
+				lastButtonMouseAdapter.mouseExited(null);
+				numOfSelected = 0;
+			}
+			i_Section.setSelected(true);
+			i_Section.setIcon(UI_Elements.scaleImageToButton(i_selectedImg, i_Section));
+    		lastSelectedButton = i_Section;
+    		lastButtonMouseAdapter = i_SectionAdapter;
+			numOfSelected++;
+    	}
+		else
+		{
+			i_Section.setSelected(false);
+			numOfSelected--;
+		}
 		
 	}
 

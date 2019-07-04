@@ -29,7 +29,7 @@ public class Overview extends JPanel {
 	
 	private ImageIcon stadiumLegend = new ImageIcon(Overview.class.getResource("/Images/StadiumLegend.png"));
 	private JSeparator separatorOverview;
-	private JPanel panelSectionDetails;
+	public JPanel panelSectionDetails;
 	private JLabel titleSectionDetails;
 
 	public Overview() {
