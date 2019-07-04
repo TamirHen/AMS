@@ -1884,7 +1884,7 @@ public class OverviewStadium extends JPanel {
 	
 	public void stadiumSectionSelection(JButton i_Section, MouseAdapter i_SectionAdapter, ImageIcon i_selectedImg)
 	{
-		if(i_Section.isSelected() != true)
+		if(i_Section.isSelected() == false)
     	{
 			if(numOfSelected > 0)
 			{
