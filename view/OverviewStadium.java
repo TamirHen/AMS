@@ -1497,7 +1497,7 @@ public class OverviewStadium extends JPanel {
 		overviewStadium_34.setBorder(null);
 		String path34 = "/Images/StadiumSlices/Stadium" + getOverviewSectionType(34) + "_34.png";
 		ImageIcon img34 = new ImageIcon(Overview.class.getResource(path34));
-		overviewStadium_34.setBounds(overviewStadium_41.getBounds().x, overviewStadium_41.getBounds().y - (int)(img34.getIconHeight()*stadiumSizeRatio), (int)(img34.getIconWidth()*stadiumSizeRatio), (int)(img34.getIconHeight()*stadiumSizeRatio));
+		overviewStadium_34.setBounds(overviewStadium_41.getBounds().x, overviewStadium_41.getBounds().y - (int)(img34.getIconHeight()*stadiumSizeRatio) - 2, (int)(img34.getIconWidth()*stadiumSizeRatio), (int)(img34.getIconHeight()*stadiumSizeRatio));
 		overviewStadium_34.setIcon(UI_Elements.scaleImageToButton(img34, overviewStadium_34));
 		panelOverviewStadium.add(overviewStadium_34);
 		String path34_R = "/Images/StadiumSlices/Stadium_Rollover_34.png";
