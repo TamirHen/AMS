@@ -1853,10 +1853,10 @@ public class OverviewStadium extends JPanel {
 		
 		JLabel overviewStadiumBG = new JLabel();
 		overviewStadiumBG.setBorder(null);
-		overviewStadiumBG.setBounds(0, 0, (int)stadiumLblWidth , (int)stadiumLblHeight);
 		panelOverviewStadium.add(overviewStadiumBG);
 		String pathStadiumBG = "/Images/Stadium_BG.png";
 		ImageIcon imgStadiumBG = new ImageIcon(Overview.class.getResource(pathStadiumBG));
+		overviewStadiumBG.setBounds(2, 2, (int)(imgStadiumBG.getIconWidth()*stadiumSizeRatio)-9 , (int)(imgStadiumBG.getIconHeight()*stadiumSizeRatio)-6);
 		overviewStadiumBG.setIcon(UI_Elements.scaleImageTolabel(imgStadiumBG, overviewStadiumBG));
 		overviewStadiumBG.setVisible(true);
 		

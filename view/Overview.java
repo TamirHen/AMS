@@ -73,7 +73,7 @@ public class Overview extends JPanel {
 		titleSectionDetails.setHorizontalAlignment(SwingConstants.CENTER);
 		titleSectionDetails.setAlignmentY(Component.TOP_ALIGNMENT);
 		titleSectionDetails.setVerticalAlignment(SwingConstants.TOP);
-		titleSectionDetails.setBounds(0, 22, 345, 76);
+		titleSectionDetails.setBounds(0, 22, 329, 76);
 		titleSectionDetails.setCursor(Cursor.getPredefinedCursor(Cursor.DEFAULT_CURSOR));
 		titleSectionDetails.setForeground(UI_Elements.color_mainBackgroundColor);
 		titleSectionDetails.setFont(new Font(UI_Elements.mainFontName, Font.BOLD, UI_Elements.textSubPanelTitleSize));
