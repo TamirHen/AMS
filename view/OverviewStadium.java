@@ -7,6 +7,7 @@ import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.awt.event.MouseAdapter;
 import java.awt.event.MouseEvent;
+import java.util.ArrayList;
 
 import javax.swing.Icon;
 import javax.swing.ImageIcon;
@@ -78,6 +79,8 @@ public class OverviewStadium extends JPanel {
 	public JButton lastSelectedButton;
 	private MouseAdapter lastButtonMouseAdapter;
 	
+	public int totalStadiumHeight = 0;
+	public int totalStaiumWidth = 0;
 	
 	
 	public OverviewStadium()
@@ -128,6 +131,7 @@ public class OverviewStadium extends JPanel {
 			}
 		});
 		overviewStadium_49.addMouseListener(ma49);
+
 		
 		
 		overviewStadium_19 = new JButton();
@@ -1173,7 +1177,7 @@ public class OverviewStadium extends JPanel {
 		overviewStadium_50.setBorder(null);
 		String path50 = "/Images/StadiumSlices/Stadium" + getOverviewSectionType(50) + "_50.png";
 		ImageIcon img50 = new ImageIcon(Overview.class.getResource(path50));
-		overviewStadium_50.setBounds(overviewStadium_24.getBounds().x, overviewStadium_24.getBounds().y + overviewStadium_24.getBounds().height - 2, (int)(img50.getIconWidth()*stadiumSizeRatio), (int)(img50.getIconHeight()*stadiumSizeRatio));
+		overviewStadium_50.setBounds(overviewStadium_24.getBounds().x, overviewStadium_24.getBounds().y + overviewStadium_24.getBounds().height, (int)(img50.getIconWidth()*stadiumSizeRatio), (int)(img50.getIconHeight()*stadiumSizeRatio));
 		overviewStadium_50.setIcon(UI_Elements.scaleImageToButton(img50, overviewStadium_50));
 		panelOverviewStadium.add(overviewStadium_50);
 		String path50_R = "/Images/StadiumSlices/Stadium_Rollover_50.png";
@@ -1856,7 +1860,7 @@ public class OverviewStadium extends JPanel {
 		panelOverviewStadium.add(overviewStadiumBG);
 		String pathStadiumBG = "/Images/Stadium_BG.png";
 		ImageIcon imgStadiumBG = new ImageIcon(Overview.class.getResource(pathStadiumBG));
-		overviewStadiumBG.setBounds(2, 2, (int)(imgStadiumBG.getIconWidth()*stadiumSizeRatio)-9 , (int)(imgStadiumBG.getIconHeight()*stadiumSizeRatio)-6);
+		overviewStadiumBG.setBounds(0, 0, (int)(imgStadiumBG.getIconWidth()*stadiumSizeRatio)-4 , (int)(imgStadiumBG.getIconHeight()*stadiumSizeRatio)-2);
 		overviewStadiumBG.setIcon(UI_Elements.scaleImageTolabel(imgStadiumBG, overviewStadiumBG));
 		overviewStadiumBG.setVisible(true);
 		
@@ -1869,6 +1873,7 @@ public class OverviewStadium extends JPanel {
 		
 	}
 
+	
 	public String getOverviewSectionType(int i_SectionNum) {
 		
 		String type = "";
