@@ -1880,13 +1880,11 @@ public class OverviewStadium extends JPanel {
 	public String getOverviewSectionType(int i_SectionNum) {
 		
 		StringBuilder type = new StringBuilder();
-		type.append("_");
-
 		/*String sectionType = view.model.getArenaSection(i_SectionNum).getSectionType();
 		
 		if(sectionType != null)
 		{
-			type.append(sectionType);
+			type.append("_" + sectionType);
 		}*/
 				
 		return type.toString();
