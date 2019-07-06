@@ -80,8 +80,6 @@ public class OverviewStadium extends JPanel {
 	public JButton lastSelectedButton;
 	private MouseAdapter lastButtonMouseAdapter;
 	
-	public int totalStadiumHeight = 0;
-	public int totalStaiumWidth = 0;
 	
 	public JPanel detailsPanel;
 	
@@ -1871,7 +1869,6 @@ public class OverviewStadium extends JPanel {
 		overviewStadiumImg.setBorder(null);
 		overviewStadiumImg.setBounds(0, 0, (int)stadiumLblWidth , (int)stadiumLblHeight);
 		panelOverviewStadium.add(overviewStadiumImg);
-	//	overviewStadiumImg.setIcon(UI_Elements.scaleImageTolabel(stadium, overviewStadium));
 		overviewStadiumImg.setVisible(true);
 		
 	}
@@ -1906,7 +1903,7 @@ public class OverviewStadium extends JPanel {
 			try {
 				detailsPanel.setVisible(true);
 			}
-			//in case detailsPanek is null
+			//in case detailsPanel is null
 			catch (Exception e) {
 				e.printStackTrace();
 			}

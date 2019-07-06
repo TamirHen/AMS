@@ -10,9 +10,7 @@ import javax.swing.JLabel;
 public class UI_Elements {
 
 	//COLORS
-	//public static Color color_mainBackgroundColor = new Color(12, 20, 44);
 	public static Color color_mainBackgroundColor = new Color(12, 25, 61);
-	//public static Color color_menuBar = new Color(32, 14, 51);
 	public static Color color_menuBar = new Color(40, 19, 68);
 	public static Color color_menuButtonRollover = new Color(67, 54, 111);
 	public static Color color_menuButtonSelected = new Color(38, 27, 77);
@@ -32,16 +30,13 @@ public class UI_Elements {
 	public static ImageIcon amsIcon = new ImageIcon("Images/Icon.jpg");
 
 	//FONTS
-
 	public static String mainFontName = "Agency FB"; // Change string name to change main Menu & Title font
 	public static Font font_menuButtonTextDefault = new Font(mainFontName, Font.PLAIN, 19);
 	public static Font font_menuButtonTextUser = new Font(mainFontName, Font.PLAIN, 16);
-
 	public static Font font_bodyLabel = new Font("Calibri", Font.BOLD, textBodyLabelSize); // Body JLabel font
-	public static Font font_bodyFillText = new Font("Calibri", Font.PLAIN, textBodyFillText); // Text Field & Combo Box
-																								// font
-	public static Font font_bodySalesData = new Font("Calibri", Font.PLAIN, textBodySalesData); // Text Field & Combo
-																								// Box font
+	public static Font font_bodyFillText = new Font("Calibri", Font.PLAIN, textBodyFillText); // Text Field & Combo Box font
+	public static Font font_bodySalesData = new Font("Calibri", Font.PLAIN, textBodySalesData); // Text Field & Combo Box font
+	
 	//UI METHODS
 	public static ImageIcon scaleImageTolabel(ImageIcon i_Img, JLabel i_label)
 	{
