@@ -79,14 +79,7 @@ public class Overview extends JPanel {
 		titleSectionDetails.setFont(new Font(UI_Elements.mainFontName, Font.BOLD, UI_Elements.textSubPanelTitleSize));
 		panelSectionDetails.add(titleSectionDetails);
 		
-		panelOverview.addMouseListener(new MouseAdapter(){ //use observer pattern instead
-		    public void mouseEntered( MouseEvent e ) {
-				if(overviewStadiumPanel.numOfSelected != 0)
-				{
-					panelSectionDetails.setVisible(true);
-				};
-		    }
-		});
+		overviewStadiumPanel.assignDetailsPanel(panelSectionDetails);
 		
 			
 	}

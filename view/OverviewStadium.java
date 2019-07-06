@@ -82,6 +82,8 @@ public class OverviewStadium extends JPanel {
 	public int totalStadiumHeight = 0;
 	public int totalStaiumWidth = 0;
 	
+	public JPanel detailsPanel;
+	
 	
 	public OverviewStadium()
 	{
@@ -1899,6 +1901,7 @@ public class OverviewStadium extends JPanel {
 			}
 			i_Section.setSelected(true);
 			i_Section.setIcon(UI_Elements.scaleImageToButton(i_selectedImg, i_Section));
+			detailsPanel.setVisible(true);
     		lastSelectedButton = i_Section;
     		lastButtonMouseAdapter = i_SectionAdapter;
 			numOfSelected++;
@@ -1909,6 +1912,11 @@ public class OverviewStadium extends JPanel {
 			numOfSelected--;
 		}
 		
+	}
+	
+	public void assignDetailsPanel(JPanel i_Panel)
+	{
+		detailsPanel = i_Panel;
 	}
 
 }
