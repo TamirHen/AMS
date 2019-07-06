@@ -17,6 +17,7 @@ import javax.swing.JPanel;
 import javax.swing.JSeparator;
 import javax.swing.SwingConstants;
 
+import model.Model;
 import model.Stadium;
 
 public class OverviewStadium extends JPanel {
@@ -1878,18 +1879,21 @@ public class OverviewStadium extends JPanel {
 	
 	public String getOverviewSectionType(int i_SectionNum) {
 		
-		String type = "";
+		StringBuilder type = new StringBuilder();
+		type.append("_");
+
+		/*String sectionType = view.model.getArenaSection(i_SectionNum).getSectionType();
 		
-		/*if(model.Stadiumtadium.getArenaSection(i_SectionNum).getSectionType() != null)
+		if(sectionType != null)
 		{
-			type = "_" + Stadium.getArenaSection(i_SectionNum).getSectionType();
+			type.append(sectionType);
 		}*/
-		
-		return type;
+				
+		return type.toString();
 		
 	}
 	
-	public void stadiumSectionSelection(JButton i_Section, MouseAdapter i_SectionAdapter, ImageIcon i_selectedImg)
+	public void stadiumSectionSelection(JButton i_Section, MouseAdapter i_SectionAdapter, ImageIcon i_SelectedImg)
 	{
 		if(i_Section.isSelected() == false)
     	{
@@ -1900,8 +1904,14 @@ public class OverviewStadium extends JPanel {
 				numOfSelected = 0;
 			}
 			i_Section.setSelected(true);
-			i_Section.setIcon(UI_Elements.scaleImageToButton(i_selectedImg, i_Section));
-			detailsPanel.setVisible(true);
+			i_Section.setIcon(UI_Elements.scaleImageToButton(i_SelectedImg, i_Section));
+			try {
+				detailsPanel.setVisible(true);
+			}
+			//in case detailsPanek is null
+			catch (Exception e) {
+				e.printStackTrace();
+			}
     		lastSelectedButton = i_Section;
     		lastButtonMouseAdapter = i_SectionAdapter;
 			numOfSelected++;
