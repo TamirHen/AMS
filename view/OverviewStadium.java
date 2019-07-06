@@ -1910,6 +1910,10 @@ public class OverviewStadium extends JPanel {
 		{
 			i_Section.setSelected(false);
 			numOfSelected--;
+			if(numOfSelected == 0)
+			{
+				detailsPanel.setVisible(false);
+			}
 		}
 		
 	}
