@@ -39,7 +39,7 @@ public class Controller {
 		//	btnLogin pressed:
 		view.loginPanel.btnLogin.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
-				if (model.db.isUserExist(view.loginPanel.tf_loginUsername.getText(),view.loginPanel.passwordField_Login.getPassword())) {
+				if (model.isUserExist(view.loginPanel.tf_loginUsername.getText(),view.loginPanel.passwordField_Login.getPassword())) {
 					btnLoginPressed();
 				}
 				else
@@ -58,7 +58,7 @@ public class Controller {
 		//---sign up panel---//
 		view.signUpFrame.btnFinishSignUp.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
-				if(model.db.isUserNameExist(view.signUpFrame.tf_enterUserName.getText())) {
+				if(model.isUserNameExist(view.signUpFrame.tf_enterUserName.getText())) {
 					view.signUpFrame.lblUserNameAlreadyExist.setVisible(true);
 					view.signUpFrame.lblPasswordNotMatch.setVisible(false);
 				}
@@ -68,7 +68,7 @@ public class Controller {
 				}
 				else {
 					view.signUpFrame.setVisible(false);
-					model.db.createNewUser(view.signUpFrame.tf_enterUserName.getText(), view.signUpFrame.tf_enterFirstName.getText(), view.signUpFrame.tf_enterLastName.getText(), view.signUpFrame.pf_enterPassword.getPassword(), view.signUpFrame.tf_enterEmail.getText());
+					model.addUser(view.signUpFrame.tf_enterUserName.getText(), view.signUpFrame.tf_enterFirstName.getText(), view.signUpFrame.tf_enterLastName.getText(), view.signUpFrame.pf_enterPassword.getPassword(), view.signUpFrame.tf_enterEmail.getText());
 				}
 
 			}	
@@ -346,7 +346,6 @@ public class Controller {
 	view.loginPanel.lblLoginFailed.setVisible(false);
 	
 	//set the logged in user:
-	model.signInUser=model.db.signInUser;
 	view.menuPanel.btnUserName.setText("Welcome "+model.signInUser.getFirstName()+"!");
 	view.menuPanel.btnUserName.setBorder(null);
 	

@@ -11,9 +11,7 @@ public class SqliteDB {
 	Statement stmt = null;
 	
 	public Stadium stadium;
-	public User[] user;
-	private int userSize=0;
-	public User signInUser;
+	public int userSize=0;
 	public Section[] section;
 	public int sectionSize=0;
 	
@@ -41,22 +39,26 @@ public class SqliteDB {
 	// Methods:
 	
 	// initialize methods:
-	public void initializeUsers() {
+	public User[] initializeUsers() {
 		
+		User[] user=null;
+
 		try {
+
 			this.stmt = c.createStatement();
 			ResultSet rs = stmt.executeQuery("select * from User");
 			
 			user = new User[100];
 			userSize=0;
 			while(rs.next()) {
-				this.user[userSize]=new User(rs.getString("userName"), rs.getString("firstName"), rs.getString("lastName"), rs.getString("password"), rs.getString("email"));
+				user[userSize]=new User(rs.getString("userName"), rs.getString("firstName"), rs.getString("lastName"), rs.getString("password"), rs.getString("email"));
 				userSize++;
 			}
 		} catch (Exception e) {
 			System.out.println("Error: " + e.getMessage());
-
 		}
+		return user;
+
 	}
 	
 	public void initializeStadium () {
@@ -95,14 +97,13 @@ public class SqliteDB {
 	}
 	
 	//create methods:
-	public void createNewUser(String userName, String firstName, String lastName, char[] pf_password, String email) {
+	public void createNewUserDB(String userName, String firstName, String lastName, char[] pf_password, String email) {
 		try {
 			this.stmt = c.createStatement();
 			String password = new String(pf_password);
 			System.out.println("insert into User values('"+userName+"', '"+firstName+"', '"+lastName+"', '"+password+"', '"+email+"')");
 			stmt.executeUpdate("insert into User values('"+userName+"', '"+firstName+"', '"+lastName+"', '"+password+"', '"+email+"')");
-			this.user[userSize] = new User(userName, firstName, lastName, password, email);
-			userSize++;
+
 		} catch (Exception e) {
 			System.out.println("Error: " + e.getMessage());
 
@@ -132,26 +133,6 @@ public class SqliteDB {
 		}
 	}
 	
-	// other methods: 
-	public boolean isUserNameExist(String userName) {
-		for(int i=0; i<userSize; i++) {
-			if (userName.equals(user[i].getUserName())) {
-				return true;
-			}
-		}
-		return false;
-	}
-	
-	public boolean isUserExist(String userName, char[] password) {
-		String temp = new String(password);
-		for(int i=0; i<userSize; i++) {
-			if (userName.equals(user[i].getUserName())&&temp.equals(user[i].getPassword())) {
-				this.signInUser=user[i];
-				return true;
-			}
-		}
-		return false;
-	}
 	
 	// close connection:
 	public void closeConnection() {
