@@ -1726,8 +1726,7 @@ public class OverviewStadium extends JPanel {
 			}
 		});
 		overviewStadium_39.addMouseListener(ma39);
-		
-		
+
 		overviewStadium_40 = new JButton();
 		overviewStadium_40.setContentAreaFilled(false);
 		overviewStadium_40.setOpaque(false);
@@ -1877,7 +1876,7 @@ public class OverviewStadium extends JPanel {
 	public String getOverviewSectionType(int i_SectionNum) {
 		
 		StringBuilder type = new StringBuilder();
-		/*String sectionType = view.model.getArenaSection(i_SectionNum).getSectionType();
+		/*String sectionType = view.model.getArenaSection(i_SectionNum).getSectionType(); //copy get method to ctrlr
 		
 		if(sectionType != null)
 		{

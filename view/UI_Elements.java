@@ -38,7 +38,7 @@ public class UI_Elements {
 	public static Font font_bodySalesData = new Font("Calibri", Font.PLAIN, textBodySalesData); // Text Field & Combo Box font
 	
 	//UI METHODS
-	public static ImageIcon scaleImageTolabel(ImageIcon i_Img, JLabel i_label)
+	public static ImageIcon scaleImageTolabel(ImageIcon i_Img, JLabel i_label) //use generics/template
 	{
 		ImageIcon scaledImage;
 		
