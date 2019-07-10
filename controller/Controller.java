@@ -174,6 +174,29 @@ public class Controller {
 		    }
 		} );
 		
+		//btnGames - press:
+		view.menuPanel.btnGames.addActionListener(new ActionListener() {
+		public void actionPerformed(ActionEvent arg0) {
+			switchMainMenuPage(view.menuPanel.btnGames);			
+			}
+		});
+		//btnFacilities - Rollover:
+		view.menuPanel.btnGames.addMouseListener( new MouseAdapter() {
+		    public void mouseEntered( MouseEvent e ) {
+		    	view.menuPanel.btnGames.setBackground(UI_Elements.color_menuButtonRollover);
+		    }
+		    public void mouseExited( MouseEvent e ) {
+		    	if(view.gamesPanel.panelGames.isVisible() == true)
+		    	{
+		    		view.menuPanel.btnGames.setBackground(UI_Elements.color_menuButtonSelected);
+		    	}
+		    	else
+		    	{
+		    		view.menuPanel.btnGames.setBackground(UI_Elements.color_menuBar);
+		    	}
+		    }
+		} );
+		
 		
 		//button UserName:
 		view.menuPanel.btnUserName.addActionListener(new ActionListener() {
@@ -380,6 +403,8 @@ public class Controller {
 		view.menuPanel.btnSales.setBackground(UI_Elements.color_menuBar);
 		view.facilitiesPanel.panelFacilities.setVisible(false);
 		view.menuPanel.btnFacilities.setBackground(UI_Elements.color_menuBar);
+		view.gamesPanel.panelGames.setVisible(false);
+		view.menuPanel.btnGames.setBackground(UI_Elements.color_menuBar);
 		//switch page and button color based on the pressed one
 		switch(i_PressedButton.getText())
 		{
@@ -399,6 +424,11 @@ public class Controller {
 				view.facilitiesPanel.panelFacilities.setVisible(true);
 				view.menuPanel.btnFacilities.setBackground(UI_Elements.color_menuButtonSelected);
 				break;
+			case "GAMES":
+				view.gamesPanel.panelGames.setVisible(true);
+				view.menuPanel.btnGames.setBackground(UI_Elements.color_menuButtonSelected);
+				break;
 		}
 	}
+	
 }

@@ -46,6 +46,7 @@ public class View extends JFrame {
 	public Properties propertiesPanel;
 	public Sales salesPanel;
 	public Facilities facilitiesPanel;
+	public Games gamesPanel;
 	//-------------------------//
 
 	public View() {
@@ -64,6 +65,7 @@ public class View extends JFrame {
 		propertiesPanel = new Properties();
 		salesPanel = new Sales();
 		facilitiesPanel= new Facilities();
+		gamesPanel= new Games();
 		menuPanel = new Menu();
 		// -------------//
 		setContentPane(mainPanel);
@@ -72,6 +74,7 @@ public class View extends JFrame {
 		getContentPane().add(propertiesPanel.panelProperties);
 		getContentPane().add(salesPanel.panelSales);
 		getContentPane().add(facilitiesPanel.panelFacilities);
+		getContentPane().add(gamesPanel.panelGames);
 		getContentPane().add(menuPanel.menuPanel);
 		
 		displayLoginPage();
@@ -85,6 +88,7 @@ public class View extends JFrame {
 		propertiesPanel.panelProperties.setVisible(false);
 		salesPanel.panelSales.setVisible(false);
 		facilitiesPanel.panelFacilities.setVisible(false);
+		gamesPanel.panelGames.setVisible(false);
 	}
 
 
