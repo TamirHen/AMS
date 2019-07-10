@@ -115,21 +115,7 @@ public class ViewStadium extends JPanel {
 		ImageIcon img49_R = new ImageIcon(Overview.class.getResource(path49_R));
 		String path49_S = "/Images/StadiumSlices/Stadium_Selected_49.png";
 		ImageIcon img49_S = new ImageIcon(Overview.class.getResource(path49_S));
-		MouseAdapter ma49 =  new MouseAdapter(){
-		    public void mouseEntered( MouseEvent e ) {
-				viewStadium_49.setIcon(UI_Elements.scaleImageToButton(img49_R, viewStadium_49));
-		    }
-		    public void mouseExited( MouseEvent e ) {
-		    	if(viewStadium_49.isSelected() != true)
-		    	{
-		    		viewStadium_49.setIcon(UI_Elements.scaleImageToButton(img49, viewStadium_49));
-		    	}
-		    	else
-		    	{
-		    		viewStadium_49.setIcon(UI_Elements.scaleImageToButton(img49_S, viewStadium_49));
-		    	}
-		    }
-		};
+		MouseAdapter ma49 = createSectionAdapter(viewStadium_49, img49, img49_R, img49_S);
 		viewStadium_49.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
 				stadiumSectionSelection(viewStadium_49, ma49, img49_S);
@@ -157,21 +143,7 @@ public class ViewStadium extends JPanel {
 		ImageIcon img19_R = new ImageIcon(Overview.class.getResource(path19_R));
 		String path19_S = "/Images/StadiumSlices/Stadium_Selected_19.png";
 		ImageIcon img19_S = new ImageIcon(Overview.class.getResource(path19_S));
-		MouseAdapter ma19 =  new MouseAdapter(){
-		    public void mouseEntered( MouseEvent e ) {
-				viewStadium_19.setIcon(UI_Elements.scaleImageToButton(img19_R, viewStadium_19));
-		    }
-		    public void mouseExited( MouseEvent e ) {
-		    	if(viewStadium_19.isSelected() != true)
-		    	{
-		    		viewStadium_19.setIcon(UI_Elements.scaleImageToButton(img19, viewStadium_19));
-		    	}
-		    	else
-		    	{
-		    		viewStadium_19.setIcon(UI_Elements.scaleImageToButton(img19_S, viewStadium_19));
-		    	}
-		    }
-		};
+		MouseAdapter ma19 = createSectionAdapter(viewStadium_19, img19, img19_R, img19_S);
 		viewStadium_19.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
 				stadiumSectionSelection(viewStadium_19, ma19, img19_S);
@@ -198,21 +170,7 @@ public class ViewStadium extends JPanel {
 		ImageIcon img26_R = new ImageIcon(Overview.class.getResource(path26_R));
 		String path26_S = "/Images/StadiumSlices/Stadium_Selected_26.png";
 		ImageIcon img26_S = new ImageIcon(Overview.class.getResource(path26_S));
-		MouseAdapter ma26 =  new MouseAdapter(){
-		    public void mouseEntered( MouseEvent e ) {
-				viewStadium_26.setIcon(UI_Elements.scaleImageToButton(img26_R, viewStadium_26));
-		    }
-		    public void mouseExited( MouseEvent e ) {
-		    	if(viewStadium_26.isSelected() != true)
-		    	{
-		    		viewStadium_26.setIcon(UI_Elements.scaleImageToButton(img26, viewStadium_26));
-		    	}
-		    	else
-		    	{
-		    		viewStadium_26.setIcon(UI_Elements.scaleImageToButton(img26_S, viewStadium_26));
-		    	}
-		    }
-		};
+		MouseAdapter ma26 = createSectionAdapter(viewStadium_26, img26, img26_R, img26_S);
 		viewStadium_26.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
 				stadiumSectionSelection(viewStadium_26, ma26, img26_S);
@@ -239,21 +197,7 @@ public class ViewStadium extends JPanel {
 		ImageIcon img28_R = new ImageIcon(Overview.class.getResource(path28_R));
 		String path28_S = "/Images/StadiumSlices/Stadium_Selected_28.png";
 		ImageIcon img28_S = new ImageIcon(Overview.class.getResource(path28_S));
-		MouseAdapter ma28 =  new MouseAdapter(){
-		    public void mouseEntered( MouseEvent e ) {
-				viewStadium_28.setIcon(UI_Elements.scaleImageToButton(img28_R, viewStadium_28));
-		    }
-		    public void mouseExited( MouseEvent e ) {
-		    	if(viewStadium_28.isSelected() != true)
-		    	{
-		    		viewStadium_28.setIcon(UI_Elements.scaleImageToButton(img28, viewStadium_28));
-		    	}
-		    	else
-		    	{
-		    		viewStadium_28.setIcon(UI_Elements.scaleImageToButton(img28_S, viewStadium_28));
-		    	}
-		    }
-		};
+		MouseAdapter ma28 = createSectionAdapter(viewStadium_28, img28, img28_R, img28_S);
 		viewStadium_28.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
 				stadiumSectionSelection(viewStadium_28, ma28, img28_S);
@@ -280,21 +224,7 @@ public class ViewStadium extends JPanel {
 		ImageIcon img51_R = new ImageIcon(Overview.class.getResource(path51_R));
 		String path51_S = "/Images/StadiumSlices/Stadium_Selected_51.png";
 		ImageIcon img51_S = new ImageIcon(Overview.class.getResource(path51_S));
-		MouseAdapter ma51 =  new MouseAdapter(){
-		    public void mouseEntered( MouseEvent e ) {
-				viewStadium_51.setIcon(UI_Elements.scaleImageToButton(img51_R, viewStadium_51));
-		    }
-		    public void mouseExited( MouseEvent e ) {
-		    	if(viewStadium_51.isSelected() != true)
-		    	{
-		    		viewStadium_51.setIcon(UI_Elements.scaleImageToButton(img51, viewStadium_51));
-		    	}
-		    	else
-		    	{
-		    		viewStadium_51.setIcon(UI_Elements.scaleImageToButton(img51_S, viewStadium_51));
-		    	}
-		    }
-		};
+		MouseAdapter ma51 = createSectionAdapter(viewStadium_51, img51, img51_R, img51_S);
 		viewStadium_51.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
 				stadiumSectionSelection(viewStadium_51, ma51, img51_S);
@@ -321,21 +251,7 @@ public class ViewStadium extends JPanel {
 		ImageIcon img48_R = new ImageIcon(Overview.class.getResource(path48_R));
 		String path48_S = "/Images/StadiumSlices/Stadium_Selected_48.png";
 		ImageIcon img48_S = new ImageIcon(Overview.class.getResource(path48_S));
-		MouseAdapter ma48 =  new MouseAdapter(){
-		    public void mouseEntered( MouseEvent e ) {
-				viewStadium_48.setIcon(UI_Elements.scaleImageToButton(img48_R, viewStadium_48));
-		    }
-		    public void mouseExited( MouseEvent e ) {
-		    	if(viewStadium_48.isSelected() != true)
-		    	{
-		    		viewStadium_48.setIcon(UI_Elements.scaleImageToButton(img48, viewStadium_48));
-		    	}
-		    	else
-		    	{
-		    		viewStadium_48.setIcon(UI_Elements.scaleImageToButton(img48_S, viewStadium_48));
-		    	}
-		    }
-		};
+		MouseAdapter ma48 = createSectionAdapter(viewStadium_48, img48, img48_R, img48_S);
 		viewStadium_48.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
 				stadiumSectionSelection(viewStadium_48, ma48, img48_S);
@@ -362,21 +278,7 @@ public class ViewStadium extends JPanel {
 		ImageIcon img02_R = new ImageIcon(Overview.class.getResource(path02_R));
 		String path02_S = "/Images/StadiumSlices/Stadium_Selected_02.png";
 		ImageIcon img02_S = new ImageIcon(Overview.class.getResource(path02_S));
-		MouseAdapter ma02 =  new MouseAdapter(){
-		    public void mouseEntered( MouseEvent e ) {
-				viewStadium_02.setIcon(UI_Elements.scaleImageToButton(img02_R, viewStadium_02));
-		    }
-		    public void mouseExited( MouseEvent e ) {
-		    	if(viewStadium_02.isSelected() != true)
-		    	{
-		    		viewStadium_02.setIcon(UI_Elements.scaleImageToButton(img02, viewStadium_02));
-		    	}
-		    	else
-		    	{
-		    		viewStadium_02.setIcon(UI_Elements.scaleImageToButton(img02_S, viewStadium_02));
-		    	}
-		    }
-		};
+		MouseAdapter ma02 = createSectionAdapter(viewStadium_02, img02, img02_R, img02_S);
 		viewStadium_02.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
 				stadiumSectionSelection(viewStadium_02, ma02, img02_S);
@@ -402,21 +304,7 @@ public class ViewStadium extends JPanel {
 		ImageIcon img03_R = new ImageIcon(Overview.class.getResource(path03_R));
 		String path03_S = "/Images/StadiumSlices/Stadium_Selected_03.png";
 		ImageIcon img03_S = new ImageIcon(Overview.class.getResource(path03_S));
-		MouseAdapter ma03 =  new MouseAdapter(){
-			public void mouseEntered( MouseEvent e ) {
-				viewStadium_03.setIcon(UI_Elements.scaleImageToButton(img03_R, viewStadium_03));
-		    }
-		    public void mouseExited( MouseEvent e ) {
-		    	if(viewStadium_03.isSelected() != true)
-		    	{
-		    		viewStadium_03.setIcon(UI_Elements.scaleImageToButton(img03, viewStadium_03));
-		    	}
-		    	else
-		    	{
-		    		viewStadium_03.setIcon(UI_Elements.scaleImageToButton(img03_S, viewStadium_03));
-		    	}
-		    }
-		};
+		MouseAdapter ma03 = createSectionAdapter(viewStadium_03, img03, img03_R, img03_S);
 		viewStadium_03.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
 				stadiumSectionSelection(viewStadium_03, ma03, img03_S);
@@ -442,21 +330,7 @@ public class ViewStadium extends JPanel {
 		ImageIcon img04_R = new ImageIcon(Overview.class.getResource(path04_R));
 		String path04_S = "/Images/StadiumSlices/Stadium_Selected_04.png";
 		ImageIcon img04_S = new ImageIcon(Overview.class.getResource(path04_S));
-		MouseAdapter ma04 =  new MouseAdapter(){
-			public void mouseEntered( MouseEvent e ) {
-				viewStadium_04.setIcon(UI_Elements.scaleImageToButton(img04_R, viewStadium_04));
-		    }
-		    public void mouseExited( MouseEvent e ) {
-		    	if(viewStadium_04.isSelected() != true)
-		    	{
-		    		viewStadium_04.setIcon(UI_Elements.scaleImageToButton(img04, viewStadium_04));
-		    	}
-		    	else
-		    	{
-		    		viewStadium_04.setIcon(UI_Elements.scaleImageToButton(img04_S, viewStadium_04));
-		    	}
-		    }
-		};
+		MouseAdapter ma04 = createSectionAdapter(viewStadium_04, img04, img04_R, img04_S);
 		viewStadium_04.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
 				stadiumSectionSelection(viewStadium_04, ma04, img04_S);
@@ -484,21 +358,7 @@ public class ViewStadium extends JPanel {
 		ImageIcon img05_R = new ImageIcon(Overview.class.getResource(path05_R));
 		String path05_S = "/Images/StadiumSlices/Stadium_Selected_05.png";
 		ImageIcon img05_S = new ImageIcon(Overview.class.getResource(path05_S));
-		MouseAdapter ma05 =  new MouseAdapter(){
-		    public void mouseEntered( MouseEvent e ) {
-				viewStadium_05.setIcon(UI_Elements.scaleImageToButton(img05_R, viewStadium_05));
-		    }
-		    public void mouseExited( MouseEvent e ) {
-		    	if(viewStadium_05.isSelected() != true)
-		    	{
-		    		viewStadium_05.setIcon(UI_Elements.scaleImageToButton(img05, viewStadium_05));
-		    	}
-		    	else
-		    	{
-		    		viewStadium_05.setIcon(UI_Elements.scaleImageToButton(img05_S, viewStadium_05));
-		    	}
-		    }
-		};
+		MouseAdapter ma05 = createSectionAdapter(viewStadium_05, img05, img05_R, img05_S);
 		viewStadium_05.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
 				stadiumSectionSelection(viewStadium_05, ma05, img05_S);
@@ -526,21 +386,7 @@ public class ViewStadium extends JPanel {
 		ImageIcon img06_R = new ImageIcon(Overview.class.getResource(path06_R));
 		String path06_S = "/Images/StadiumSlices/Stadium_Selected_06.png";
 		ImageIcon img06_S = new ImageIcon(Overview.class.getResource(path06_S));
-		MouseAdapter ma06 =  new MouseAdapter(){
-		    public void mouseEntered( MouseEvent e ) {
-				viewStadium_06.setIcon(UI_Elements.scaleImageToButton(img06_R, viewStadium_06));
-		    }
-		    public void mouseExited( MouseEvent e ) {
-		    	if(viewStadium_06.isSelected() != true)
-		    	{
-		    		viewStadium_06.setIcon(UI_Elements.scaleImageToButton(img06, viewStadium_06));
-		    	}
-		    	else
-		    	{
-		    		viewStadium_06.setIcon(UI_Elements.scaleImageToButton(img06_S, viewStadium_06));
-		    	}
-		    }
-		};
+		MouseAdapter ma06 = createSectionAdapter(viewStadium_06, img06, img06_R, img06_S);
 		viewStadium_06.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
 				stadiumSectionSelection(viewStadium_06, ma06, img06_S);
@@ -568,21 +414,7 @@ public class ViewStadium extends JPanel {
 		ImageIcon img07_R = new ImageIcon(Overview.class.getResource(path07_R));
 		String path07_S = "/Images/StadiumSlices/Stadium_Selected_07.png";
 		ImageIcon img07_S = new ImageIcon(Overview.class.getResource(path07_S));
-		MouseAdapter ma07 =  new MouseAdapter(){
-		    public void mouseEntered( MouseEvent e ) {
-				viewStadium_07.setIcon(UI_Elements.scaleImageToButton(img07_R, viewStadium_07));
-		    }
-		    public void mouseExited( MouseEvent e ) {
-		    	if(viewStadium_07.isSelected() != true)
-		    	{
-		    		viewStadium_07.setIcon(UI_Elements.scaleImageToButton(img07, viewStadium_07));
-		    	}
-		    	else
-		    	{
-		    		viewStadium_07.setIcon(UI_Elements.scaleImageToButton(img07_S, viewStadium_07));
-		    	}
-		    }
-		};
+		MouseAdapter ma07 = createSectionAdapter(viewStadium_07, img07, img07_R, img07_S);
 		viewStadium_07.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
 				stadiumSectionSelection(viewStadium_07, ma07, img07_S);
@@ -609,21 +441,7 @@ public class ViewStadium extends JPanel {
 		ImageIcon img08_R = new ImageIcon(Overview.class.getResource(path08_R));
 		String path08_S = "/Images/StadiumSlices/Stadium_Selected_08.png";
 		ImageIcon img08_S = new ImageIcon(Overview.class.getResource(path08_S));
-		MouseAdapter ma08 =  new MouseAdapter(){
-		    public void mouseEntered( MouseEvent e ) {
-				viewStadium_08.setIcon(UI_Elements.scaleImageToButton(img08_R, viewStadium_08));
-		    }
-		    public void mouseExited( MouseEvent e ) {
-		    	if(viewStadium_08.isSelected() != true)
-		    	{
-		    		viewStadium_08.setIcon(UI_Elements.scaleImageToButton(img08, viewStadium_08));
-		    	}
-		    	else
-		    	{
-		    		viewStadium_08.setIcon(UI_Elements.scaleImageToButton(img08_S, viewStadium_08));
-		    	}
-		    }
-		};
+		MouseAdapter ma08 = createSectionAdapter(viewStadium_08, img08, img08_R, img08_S);
 		viewStadium_08.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
 				stadiumSectionSelection(viewStadium_08, ma08, img08_S);
@@ -650,21 +468,7 @@ public class ViewStadium extends JPanel {
 		ImageIcon img10_R = new ImageIcon(Overview.class.getResource(path10_R));
 		String path10_S = "/Images/StadiumSlices/Stadium_Selected_10.png";
 		ImageIcon img10_S = new ImageIcon(Overview.class.getResource(path10_S));
-		MouseAdapter ma10 =  new MouseAdapter(){
-		    public void mouseEntered( MouseEvent e ) {
-				viewStadium_10.setIcon(UI_Elements.scaleImageToButton(img10_R, viewStadium_10));
-		    }
-		    public void mouseExited( MouseEvent e ) {
-		    	if(viewStadium_10.isSelected() != true)
-		    	{
-		    		viewStadium_10.setIcon(UI_Elements.scaleImageToButton(img10, viewStadium_10));
-		    	}
-		    	else
-		    	{
-		    		viewStadium_10.setIcon(UI_Elements.scaleImageToButton(img10_S, viewStadium_10));
-		    	}
-		    }
-		};
+		MouseAdapter ma10 = createSectionAdapter(viewStadium_10, img10, img10_R, img10_S);
 		viewStadium_10.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
 				stadiumSectionSelection(viewStadium_10, ma10, img10_S);
@@ -690,21 +494,7 @@ public class ViewStadium extends JPanel {
 		ImageIcon img11_R = new ImageIcon(Overview.class.getResource(path11_R));
 		String path11_S = "/Images/StadiumSlices/Stadium_Selected_11.png";
 		ImageIcon img11_S = new ImageIcon(Overview.class.getResource(path11_S));
-		MouseAdapter ma11 =  new MouseAdapter(){
-		    public void mouseEntered( MouseEvent e ) {
-				viewStadium_11.setIcon(UI_Elements.scaleImageToButton(img11_R, viewStadium_11));
-		    }
-		    public void mouseExited( MouseEvent e ) {
-		    	if(viewStadium_11.isSelected() != true)
-		    	{
-		    		viewStadium_11.setIcon(UI_Elements.scaleImageToButton(img11, viewStadium_11));
-		    	}
-		    	else
-		    	{
-		    		viewStadium_11.setIcon(UI_Elements.scaleImageToButton(img11_S, viewStadium_11));
-		    	}
-		    }
-		};
+		MouseAdapter ma11 = createSectionAdapter(viewStadium_11, img11, img11_R, img11_S);
 		viewStadium_11.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
 				stadiumSectionSelection(viewStadium_11, ma11, img11_S);
@@ -730,21 +520,7 @@ public class ViewStadium extends JPanel {
 		ImageIcon img12_R = new ImageIcon(Overview.class.getResource(path12_R));
 		String path12_S = "/Images/StadiumSlices/Stadium_Selected_12.png";
 		ImageIcon img12_S = new ImageIcon(Overview.class.getResource(path12_S));
-		MouseAdapter ma12 =  new MouseAdapter(){
-		    public void mouseEntered( MouseEvent e ) {
-				viewStadium_12.setIcon(UI_Elements.scaleImageToButton(img12_R, viewStadium_12));
-		    }
-		    public void mouseExited( MouseEvent e ) {
-		    	if(viewStadium_12.isSelected() != true)
-		    	{
-		    		viewStadium_12.setIcon(UI_Elements.scaleImageToButton(img12, viewStadium_12));
-		    	}
-		    	else
-		    	{
-		    		viewStadium_12.setIcon(UI_Elements.scaleImageToButton(img12_S, viewStadium_12));
-		    	}
-		    }
-		};
+		MouseAdapter ma12 = createSectionAdapter(viewStadium_12, img12, img12_R, img12_S);
 		viewStadium_12.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
 				stadiumSectionSelection(viewStadium_12, ma12, img12_S);
@@ -770,21 +546,7 @@ public class ViewStadium extends JPanel {
 		ImageIcon img13_R = new ImageIcon(Overview.class.getResource(path13_R));
 		String path13_S = "/Images/StadiumSlices/Stadium_Selected_13.png";
 		ImageIcon img13_S = new ImageIcon(Overview.class.getResource(path13_S));
-		MouseAdapter ma13 =  new MouseAdapter(){
-		    public void mouseEntered( MouseEvent e ) {
-				viewStadium_13.setIcon(UI_Elements.scaleImageToButton(img13_R, viewStadium_13));
-		    }
-		    public void mouseExited( MouseEvent e ) {
-		    	if(viewStadium_13.isSelected() != true)
-		    	{
-		    		viewStadium_13.setIcon(UI_Elements.scaleImageToButton(img13, viewStadium_13));
-		    	}
-		    	else
-		    	{
-		    		viewStadium_13.setIcon(UI_Elements.scaleImageToButton(img13_S, viewStadium_13));
-		    	}
-		    }
-		};
+		MouseAdapter ma13 = createSectionAdapter(viewStadium_13, img13, img13_R, img13_S);
 		viewStadium_13.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
 				stadiumSectionSelection(viewStadium_13, ma13, img13_S);
@@ -810,21 +572,7 @@ public class ViewStadium extends JPanel {
 		ImageIcon img14_R = new ImageIcon(Overview.class.getResource(path14_R));
 		String path14_S = "/Images/StadiumSlices/Stadium_Selected_14.png";
 		ImageIcon img14_S = new ImageIcon(Overview.class.getResource(path14_S));
-		MouseAdapter ma14 =  new MouseAdapter(){
-		    public void mouseEntered( MouseEvent e ) {
-				viewStadium_14.setIcon(UI_Elements.scaleImageToButton(img14_R, viewStadium_14));
-		    }
-		    public void mouseExited( MouseEvent e ) {
-		    	if(viewStadium_14.isSelected() != true)
-		    	{
-		    		viewStadium_14.setIcon(UI_Elements.scaleImageToButton(img14, viewStadium_14));
-		    	}
-		    	else
-		    	{
-		    		viewStadium_14.setIcon(UI_Elements.scaleImageToButton(img14_S, viewStadium_14));
-		    	}
-		    }
-		};
+		MouseAdapter ma14 = createSectionAdapter(viewStadium_14, img14, img14_R, img14_S);
 		viewStadium_14.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
 				stadiumSectionSelection(viewStadium_14, ma14, img14_S);
@@ -850,21 +598,7 @@ public class ViewStadium extends JPanel {
 		ImageIcon img15_R = new ImageIcon(Overview.class.getResource(path15_R));
 		String path15_S = "/Images/StadiumSlices/Stadium_Selected_15.png";
 		ImageIcon img15_S = new ImageIcon(Overview.class.getResource(path15_S));
-		MouseAdapter ma15 =  new MouseAdapter(){
-		    public void mouseEntered( MouseEvent e ) {
-				viewStadium_15.setIcon(UI_Elements.scaleImageToButton(img15_R, viewStadium_15));
-		    }
-		    public void mouseExited( MouseEvent e ) {
-		    	if(viewStadium_15.isSelected() != true)
-		    	{
-		    		viewStadium_15.setIcon(UI_Elements.scaleImageToButton(img15, viewStadium_15));
-		    	}
-		    	else
-		    	{
-		    		viewStadium_15.setIcon(UI_Elements.scaleImageToButton(img15_S, viewStadium_15));
-		    	}
-		    }
-		};
+		MouseAdapter ma15 = createSectionAdapter(viewStadium_15, img15, img15_R, img15_S);
 		viewStadium_15.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
 				stadiumSectionSelection(viewStadium_15, ma15, img15_S);
@@ -890,21 +624,7 @@ public class ViewStadium extends JPanel {
 		ImageIcon img16_R = new ImageIcon(Overview.class.getResource(path16_R));
 		String path16_S = "/Images/StadiumSlices/Stadium_Selected_16.png";
 		ImageIcon img16_S = new ImageIcon(Overview.class.getResource(path16_S));
-		MouseAdapter ma16 =  new MouseAdapter(){
-		    public void mouseEntered( MouseEvent e ) {
-				viewStadium_16.setIcon(UI_Elements.scaleImageToButton(img16_R, viewStadium_16));
-		    }
-		    public void mouseExited( MouseEvent e ) {
-		    	if(viewStadium_16.isSelected() != true)
-		    	{
-		    		viewStadium_16.setIcon(UI_Elements.scaleImageToButton(img16, viewStadium_16));
-		    	}
-		    	else
-		    	{
-		    		viewStadium_16.setIcon(UI_Elements.scaleImageToButton(img16_S, viewStadium_16));
-		    	}
-		    }
-		};
+		MouseAdapter ma16 = createSectionAdapter(viewStadium_16, img16, img16_R, img16_S);
 		viewStadium_16.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
 				stadiumSectionSelection(viewStadium_16, ma16, img16_S);
@@ -930,21 +650,7 @@ public class ViewStadium extends JPanel {
 		ImageIcon img55_R = new ImageIcon(Overview.class.getResource(path55_R));
 		String path55_S = "/Images/StadiumSlices/Stadium_Selected_55.png";
 		ImageIcon img55_S = new ImageIcon(Overview.class.getResource(path55_S));
-		MouseAdapter ma55 =  new MouseAdapter(){
-		    public void mouseEntered( MouseEvent e ) {
-				viewStadium_55.setIcon(UI_Elements.scaleImageToButton(img55_R, viewStadium_55));
-		    }
-		    public void mouseExited( MouseEvent e ) {
-		    	if(viewStadium_55.isSelected() != true)
-		    	{
-		    		viewStadium_55.setIcon(UI_Elements.scaleImageToButton(img55, viewStadium_55));
-		    	}
-		    	else
-		    	{
-		    		viewStadium_55.setIcon(UI_Elements.scaleImageToButton(img55_S, viewStadium_55));
-		    	}
-		    }
-		};
+		MouseAdapter ma55 = createSectionAdapter(viewStadium_55, img55, img55_R, img55_S);
 		viewStadium_55.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
 				stadiumSectionSelection(viewStadium_55, ma55, img55_S);
@@ -970,21 +676,7 @@ public class ViewStadium extends JPanel {
 		ImageIcon img22_R = new ImageIcon(Overview.class.getResource(path22_R));
 		String path22_S = "/Images/StadiumSlices/Stadium_Selected_22.png";
 		ImageIcon img22_S = new ImageIcon(Overview.class.getResource(path22_S));
-		MouseAdapter ma22 =  new MouseAdapter(){
-		    public void mouseEntered( MouseEvent e ) {
-				viewStadium_22.setIcon(UI_Elements.scaleImageToButton(img22_R, viewStadium_22));
-		    }
-		    public void mouseExited( MouseEvent e ) {
-		    	if(viewStadium_22.isSelected() != true)
-		    	{
-		    		viewStadium_22.setIcon(UI_Elements.scaleImageToButton(img22, viewStadium_22));
-		    	}
-		    	else
-		    	{
-		    		viewStadium_22.setIcon(UI_Elements.scaleImageToButton(img22_S, viewStadium_22));
-		    	}
-		    }
-		};
+		MouseAdapter ma22 = createSectionAdapter(viewStadium_22, img22, img22_R, img22_S);
 		viewStadium_22.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
 				stadiumSectionSelection(viewStadium_22, ma22, img22_S);
@@ -1010,21 +702,7 @@ public class ViewStadium extends JPanel {
 		ImageIcon img27_R = new ImageIcon(Overview.class.getResource(path27_R));
 		String path27_S = "/Images/StadiumSlices/Stadium_Selected_27.png";
 		ImageIcon img27_S = new ImageIcon(Overview.class.getResource(path27_S));
-		MouseAdapter ma27 =  new MouseAdapter(){
-		    public void mouseEntered( MouseEvent e ) {
-				viewStadium_27.setIcon(UI_Elements.scaleImageToButton(img27_R, viewStadium_27));
-		    }
-		    public void mouseExited( MouseEvent e ) {
-		    	if(viewStadium_27.isSelected() != true)
-		    	{
-		    		viewStadium_27.setIcon(UI_Elements.scaleImageToButton(img27, viewStadium_27));
-		    	}
-		    	else
-		    	{
-		    		viewStadium_27.setIcon(UI_Elements.scaleImageToButton(img27_S, viewStadium_27));
-		    	}
-		    }
-		};
+		MouseAdapter ma27 = createSectionAdapter(viewStadium_27, img27, img27_R, img27_S);
 		viewStadium_27.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
 				stadiumSectionSelection(viewStadium_27, ma27, img27_S);
@@ -1051,21 +729,7 @@ public class ViewStadium extends JPanel {
 		ImageIcon img29_R = new ImageIcon(Overview.class.getResource(path29_R));
 		String path29_S = "/Images/StadiumSlices/Stadium_Selected_29.png";
 		ImageIcon img29_S = new ImageIcon(Overview.class.getResource(path29_S));
-		MouseAdapter ma29 =  new MouseAdapter(){
-		    public void mouseEntered( MouseEvent e ) {
-				viewStadium_29.setIcon(UI_Elements.scaleImageToButton(img29_R, viewStadium_29));
-		    }
-		    public void mouseExited( MouseEvent e ) {
-		    	if(viewStadium_29.isSelected() != true)
-		    	{
-		    		viewStadium_29.setIcon(UI_Elements.scaleImageToButton(img29, viewStadium_29));
-		    	}
-		    	else
-		    	{
-		    		viewStadium_29.setIcon(UI_Elements.scaleImageToButton(img29_S, viewStadium_29));
-		    	}
-		    }
-		};
+		MouseAdapter ma29 = createSectionAdapter(viewStadium_29, img29, img29_R, img29_S);
 		viewStadium_29.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
 				stadiumSectionSelection(viewStadium_29, ma29, img29_S);
@@ -1092,21 +756,7 @@ public class ViewStadium extends JPanel {
 		ImageIcon img54_R = new ImageIcon(Overview.class.getResource(path54_R));
 		String path54_S = "/Images/StadiumSlices/Stadium_Selected_54.png";
 		ImageIcon img54_S = new ImageIcon(Overview.class.getResource(path54_S));
-		MouseAdapter ma54 =  new MouseAdapter(){
-		    public void mouseEntered( MouseEvent e ) {
-				viewStadium_54.setIcon(UI_Elements.scaleImageToButton(img54_R, viewStadium_54));
-		    }
-		    public void mouseExited( MouseEvent e ) {
-		    	if(viewStadium_54.isSelected() != true)
-		    	{
-		    		viewStadium_54.setIcon(UI_Elements.scaleImageToButton(img54, viewStadium_54));
-		    	}
-		    	else
-		    	{
-		    		viewStadium_54.setIcon(UI_Elements.scaleImageToButton(img54_S, viewStadium_54));
-		    	}
-		    }
-		};
+		MouseAdapter ma54 = createSectionAdapter(viewStadium_54, img54, img54_R, img54_S);
 		viewStadium_54.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
 				stadiumSectionSelection(viewStadium_54, ma54, img54_S);
@@ -1133,21 +783,7 @@ public class ViewStadium extends JPanel {
 		ImageIcon img25_R = new ImageIcon(Overview.class.getResource(path25_R));
 		String path25_S = "/Images/StadiumSlices/Stadium_Selected_25.png";
 		ImageIcon img25_S = new ImageIcon(Overview.class.getResource(path25_S));
-		MouseAdapter ma25 =  new MouseAdapter(){
-		    public void mouseEntered( MouseEvent e ) {
-				viewStadium_25.setIcon(UI_Elements.scaleImageToButton(img25_R, viewStadium_25));
-		    }
-		    public void mouseExited( MouseEvent e ) {
-		    	if(viewStadium_25.isSelected() != true)
-		    	{
-		    		viewStadium_25.setIcon(UI_Elements.scaleImageToButton(img25, viewStadium_25));
-		    	}
-		    	else
-		    	{
-		    		viewStadium_25.setIcon(UI_Elements.scaleImageToButton(img25_S, viewStadium_25));
-		    	}
-		    }
-		};
+		MouseAdapter ma25 = createSectionAdapter(viewStadium_25, img25, img25_R, img25_S);
 		viewStadium_25.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
 				stadiumSectionSelection(viewStadium_25, ma25, img25_S);
@@ -1175,21 +811,7 @@ public class ViewStadium extends JPanel {
 		ImageIcon img24_R = new ImageIcon(Overview.class.getResource(path24_R));
 		String path24_S = "/Images/StadiumSlices/Stadium_Selected_24.png";
 		ImageIcon img24_S = new ImageIcon(Overview.class.getResource(path24_S));
-		MouseAdapter ma24 =  new MouseAdapter(){
-		    public void mouseEntered( MouseEvent e ) {
-				viewStadium_24.setIcon(UI_Elements.scaleImageToButton(img24_R, viewStadium_24));
-		    }
-		    public void mouseExited( MouseEvent e ) {
-		    	if(viewStadium_24.isSelected() != true)
-		    	{
-		    		viewStadium_24.setIcon(UI_Elements.scaleImageToButton(img24, viewStadium_24));
-		    	}
-		    	else
-		    	{
-		    		viewStadium_24.setIcon(UI_Elements.scaleImageToButton(img24_S, viewStadium_24));
-		    	}
-		    }
-		};
+		MouseAdapter ma24 = createSectionAdapter(viewStadium_24, img24, img24_R, img24_S);
 		viewStadium_24.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
 				stadiumSectionSelection(viewStadium_24, ma24, img24_S);
@@ -1216,21 +838,7 @@ public class ViewStadium extends JPanel {
 		ImageIcon img50_R = new ImageIcon(Overview.class.getResource(path50_R));
 		String path50_S = "/Images/StadiumSlices/Stadium_Selected_50.png";
 		ImageIcon img50_S = new ImageIcon(Overview.class.getResource(path50_S));
-		MouseAdapter ma50 =  new MouseAdapter(){
-		    public void mouseEntered( MouseEvent e ) {
-				viewStadium_50.setIcon(UI_Elements.scaleImageToButton(img50_R, viewStadium_50));
-		    }
-		    public void mouseExited( MouseEvent e ) {
-		    	if(viewStadium_50.isSelected() != true)
-		    	{
-		    		viewStadium_50.setIcon(UI_Elements.scaleImageToButton(img50, viewStadium_50));
-		    	}
-		    	else
-		    	{
-		    		viewStadium_50.setIcon(UI_Elements.scaleImageToButton(img50_S, viewStadium_50));
-		    	}
-		    }
-		};
+		MouseAdapter ma50 = createSectionAdapter(viewStadium_50, img50, img50_R, img50_S);
 		viewStadium_50.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
 				stadiumSectionSelection(viewStadium_50, ma50, img50_S);
@@ -1257,21 +865,7 @@ public class ViewStadium extends JPanel {
 		ImageIcon img41_R = new ImageIcon(Overview.class.getResource(path41_R));
 		String path41_S = "/Images/StadiumSlices/Stadium_Selected_41.png";
 		ImageIcon img41_S = new ImageIcon(Overview.class.getResource(path41_S));
-		MouseAdapter ma41 =  new MouseAdapter(){
-		    public void mouseEntered( MouseEvent e ) {
-				viewStadium_41.setIcon(UI_Elements.scaleImageToButton(img41_R, viewStadium_41));
-		    }
-		    public void mouseExited( MouseEvent e ) {
-		    	if(viewStadium_41.isSelected() != true)
-		    	{
-		    		viewStadium_41.setIcon(UI_Elements.scaleImageToButton(img41, viewStadium_41));
-		    	}
-		    	else
-		    	{
-		    		viewStadium_41.setIcon(UI_Elements.scaleImageToButton(img41_S, viewStadium_41));
-		    	}
-		    }
-		};
+		MouseAdapter ma41 = createSectionAdapter(viewStadium_41, img41, img41_R, img41_S);
 		viewStadium_41.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
 				stadiumSectionSelection(viewStadium_41, ma41, img41_S);
@@ -1298,21 +892,7 @@ public class ViewStadium extends JPanel {
 		ImageIcon img42_R = new ImageIcon(Overview.class.getResource(path42_R));
 		String path42_S = "/Images/StadiumSlices/Stadium_Selected_42.png";
 		ImageIcon img42_S = new ImageIcon(Overview.class.getResource(path42_S));
-		MouseAdapter ma42 =  new MouseAdapter(){
-		    public void mouseEntered( MouseEvent e ) {
-				viewStadium_42.setIcon(UI_Elements.scaleImageToButton(img42_R, viewStadium_42));
-		    }
-		    public void mouseExited( MouseEvent e ) {
-		    	if(viewStadium_42.isSelected() != true)
-		    	{
-		    		viewStadium_42.setIcon(UI_Elements.scaleImageToButton(img42, viewStadium_42));
-		    	}
-		    	else
-		    	{
-		    		viewStadium_42.setIcon(UI_Elements.scaleImageToButton(img42_S, viewStadium_42));
-		    	}
-		    }
-		};
+		MouseAdapter ma42 = createSectionAdapter(viewStadium_42, img42, img42_R, img42_S);
 		viewStadium_42.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
 				stadiumSectionSelection(viewStadium_42, ma42, img42_S);
@@ -1339,21 +919,7 @@ public class ViewStadium extends JPanel {
 		ImageIcon img43_R = new ImageIcon(Overview.class.getResource(path43_R));
 		String path43_S = "/Images/StadiumSlices/Stadium_Selected_43.png";
 		ImageIcon img43_S = new ImageIcon(Overview.class.getResource(path43_S));
-		MouseAdapter ma43 =  new MouseAdapter(){
-		    public void mouseEntered( MouseEvent e ) {
-				viewStadium_43.setIcon(UI_Elements.scaleImageToButton(img43_R, viewStadium_43));
-		    }
-		    public void mouseExited( MouseEvent e ) {
-		    	if(viewStadium_43.isSelected() != true)
-		    	{
-		    		viewStadium_43.setIcon(UI_Elements.scaleImageToButton(img43, viewStadium_43));
-		    	}
-		    	else
-		    	{
-		    		viewStadium_43.setIcon(UI_Elements.scaleImageToButton(img43_S, viewStadium_43));
-		    	}
-		    }
-		};
+		MouseAdapter ma43 = createSectionAdapter(viewStadium_43, img43, img43_R, img43_S);
 		viewStadium_43.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
 				stadiumSectionSelection(viewStadium_43, ma43, img43_S);
@@ -1380,21 +946,7 @@ public class ViewStadium extends JPanel {
 		ImageIcon img44_R = new ImageIcon(Overview.class.getResource(path44_R));
 		String path44_S = "/Images/StadiumSlices/Stadium_Selected_44.png";
 		ImageIcon img44_S = new ImageIcon(Overview.class.getResource(path44_S));
-		MouseAdapter ma44 =  new MouseAdapter(){
-		    public void mouseEntered( MouseEvent e ) {
-				viewStadium_44.setIcon(UI_Elements.scaleImageToButton(img44_R, viewStadium_44));
-		    }
-		    public void mouseExited( MouseEvent e ) {
-		    	if(viewStadium_44.isSelected() != true)
-		    	{
-		    		viewStadium_44.setIcon(UI_Elements.scaleImageToButton(img44, viewStadium_44));
-		    	}
-		    	else
-		    	{
-		    		viewStadium_44.setIcon(UI_Elements.scaleImageToButton(img44_S, viewStadium_44));
-		    	}
-		    }
-		};
+		MouseAdapter ma44 = createSectionAdapter(viewStadium_44, img44, img44_R, img44_S);
 		viewStadium_44.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
 				stadiumSectionSelection(viewStadium_44, ma44, img44_S);
@@ -1421,21 +973,7 @@ public class ViewStadium extends JPanel {
 		ImageIcon img45_R = new ImageIcon(Overview.class.getResource(path45_R));
 		String path45_S = "/Images/StadiumSlices/Stadium_Selected_45.png";
 		ImageIcon img45_S = new ImageIcon(Overview.class.getResource(path45_S));
-		MouseAdapter ma45 =  new MouseAdapter(){
-		    public void mouseEntered( MouseEvent e ) {
-				viewStadium_45.setIcon(UI_Elements.scaleImageToButton(img45_R, viewStadium_45));
-		    }
-		    public void mouseExited( MouseEvent e ) {
-		    	if(viewStadium_45.isSelected() != true)
-		    	{
-		    		viewStadium_45.setIcon(UI_Elements.scaleImageToButton(img45, viewStadium_45));
-		    	}
-		    	else
-		    	{
-		    		viewStadium_45.setIcon(UI_Elements.scaleImageToButton(img45_S, viewStadium_45));
-		    	}
-		    }
-		};
+		MouseAdapter ma45 = createSectionAdapter(viewStadium_45, img45, img45_R, img45_S);
 		viewStadium_45.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
 				stadiumSectionSelection(viewStadium_45, ma45, img45_S);
@@ -1462,21 +1000,7 @@ public class ViewStadium extends JPanel {
 		ImageIcon img46_R = new ImageIcon(Overview.class.getResource(path46_R));
 		String path46_S = "/Images/StadiumSlices/Stadium_Selected_46.png";
 		ImageIcon img46_S = new ImageIcon(Overview.class.getResource(path46_S));
-		MouseAdapter ma46 =  new MouseAdapter(){
-		    public void mouseEntered( MouseEvent e ) {
-				viewStadium_46.setIcon(UI_Elements.scaleImageToButton(img46_R, viewStadium_46));
-		    }
-		    public void mouseExited( MouseEvent e ) {
-		    	if(viewStadium_46.isSelected() != true)
-		    	{
-		    		viewStadium_46.setIcon(UI_Elements.scaleImageToButton(img46, viewStadium_46));
-		    	}
-		    	else
-		    	{
-		    		viewStadium_46.setIcon(UI_Elements.scaleImageToButton(img46_S, viewStadium_46));
-		    	}
-		    }
-		};
+		MouseAdapter ma46 = createSectionAdapter(viewStadium_46, img46, img46_R, img46_S);
 		viewStadium_46.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
 				stadiumSectionSelection(viewStadium_46, ma46, img46_S);
@@ -1503,21 +1027,7 @@ public class ViewStadium extends JPanel {
 		ImageIcon img47_R = new ImageIcon(Overview.class.getResource(path47_R));
 		String path47_S = "/Images/StadiumSlices/Stadium_Selected_47.png";
 		ImageIcon img47_S = new ImageIcon(Overview.class.getResource(path47_S));
-		MouseAdapter ma47 =  new MouseAdapter(){
-		    public void mouseEntered( MouseEvent e ) {
-				viewStadium_47.setIcon(UI_Elements.scaleImageToButton(img47_R, viewStadium_47));
-		    }
-		    public void mouseExited( MouseEvent e ) {
-		    	if(viewStadium_47.isSelected() != true)
-		    	{
-		    		viewStadium_47.setIcon(UI_Elements.scaleImageToButton(img47, viewStadium_47));
-		    	}
-		    	else
-		    	{
-		    		viewStadium_47.setIcon(UI_Elements.scaleImageToButton(img47_S, viewStadium_47));
-		    	}
-		    }
-		};
+		MouseAdapter ma47 = createSectionAdapter(viewStadium_47, img47, img47_R, img47_S);
 		viewStadium_47.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
 				stadiumSectionSelection(viewStadium_47, ma47, img47_S);
@@ -1544,21 +1054,7 @@ public class ViewStadium extends JPanel {
 		ImageIcon img34_R = new ImageIcon(Overview.class.getResource(path34_R));
 		String path34_S = "/Images/StadiumSlices/Stadium_Selected_34.png";
 		ImageIcon img34_S = new ImageIcon(Overview.class.getResource(path34_S));
-		MouseAdapter ma34 =  new MouseAdapter(){
-		    public void mouseEntered( MouseEvent e ) {
-				viewStadium_34.setIcon(UI_Elements.scaleImageToButton(img34_R, viewStadium_34));
-		    }
-		    public void mouseExited( MouseEvent e ) {
-		    	if(viewStadium_34.isSelected() != true)
-		    	{
-		    		viewStadium_34.setIcon(UI_Elements.scaleImageToButton(img34, viewStadium_34));
-		    	}
-		    	else
-		    	{
-		    		viewStadium_34.setIcon(UI_Elements.scaleImageToButton(img34_S, viewStadium_34));
-		    	}
-		    }
-		};
+		MouseAdapter ma34 = createSectionAdapter(viewStadium_34, img34, img34_R, img34_S);
 		viewStadium_34.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
 				stadiumSectionSelection(viewStadium_34, ma34, img34_S);
@@ -1585,21 +1081,7 @@ public class ViewStadium extends JPanel {
 		ImageIcon img35_R = new ImageIcon(Overview.class.getResource(path35_R));
 		String path35_S = "/Images/StadiumSlices/Stadium_Selected_35.png";
 		ImageIcon img35_S = new ImageIcon(Overview.class.getResource(path35_S));
-		MouseAdapter ma35 =  new MouseAdapter(){
-		    public void mouseEntered( MouseEvent e ) {
-				viewStadium_35.setIcon(UI_Elements.scaleImageToButton(img35_R, viewStadium_35));
-		    }
-		    public void mouseExited( MouseEvent e ) {
-		    	if(viewStadium_35.isSelected() != true)
-		    	{
-		    		viewStadium_35.setIcon(UI_Elements.scaleImageToButton(img35, viewStadium_35));
-		    	}
-		    	else
-		    	{
-		    		viewStadium_35.setIcon(UI_Elements.scaleImageToButton(img35_S, viewStadium_35));
-		    	}
-		    }
-		};
+		MouseAdapter ma35 = createSectionAdapter(viewStadium_35, img35, img35_R, img35_S);
 		viewStadium_35.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
 				stadiumSectionSelection(viewStadium_35, ma35, img35_S);
@@ -1626,21 +1108,7 @@ public class ViewStadium extends JPanel {
 		ImageIcon img36_R = new ImageIcon(Overview.class.getResource(path36_R));
 		String path36_S = "/Images/StadiumSlices/Stadium_Selected_36.png";
 		ImageIcon img36_S = new ImageIcon(Overview.class.getResource(path36_S));
-		MouseAdapter ma36 =  new MouseAdapter(){
-		    public void mouseEntered( MouseEvent e ) {
-				viewStadium_36.setIcon(UI_Elements.scaleImageToButton(img36_R, viewStadium_36));
-		    }
-		    public void mouseExited( MouseEvent e ) {
-		    	if(viewStadium_36.isSelected() != true)
-		    	{
-		    		viewStadium_36.setIcon(UI_Elements.scaleImageToButton(img36, viewStadium_36));
-		    	}
-		    	else
-		    	{
-		    		viewStadium_36.setIcon(UI_Elements.scaleImageToButton(img36_S, viewStadium_36));
-		    	}
-		    }
-		};
+		MouseAdapter ma36 = createSectionAdapter(viewStadium_36, img36, img36_R, img36_S);
 		viewStadium_36.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
 				stadiumSectionSelection(viewStadium_36, ma36, img36_S);
@@ -1667,21 +1135,7 @@ public class ViewStadium extends JPanel {
 		ImageIcon img37_R = new ImageIcon(Overview.class.getResource(path37_R));
 		String path37_S = "/Images/StadiumSlices/Stadium_Selected_37.png";
 		ImageIcon img37_S = new ImageIcon(Overview.class.getResource(path37_S));
-		MouseAdapter ma37 =  new MouseAdapter(){
-		    public void mouseEntered( MouseEvent e ) {
-				viewStadium_37.setIcon(UI_Elements.scaleImageToButton(img37_R, viewStadium_37));
-		    }
-		    public void mouseExited( MouseEvent e ) {
-		    	if(viewStadium_37.isSelected() != true)
-		    	{
-		    		viewStadium_37.setIcon(UI_Elements.scaleImageToButton(img37, viewStadium_37));
-		    	}
-		    	else
-		    	{
-		    		viewStadium_37.setIcon(UI_Elements.scaleImageToButton(img37_S, viewStadium_37));
-		    	}
-		    }
-		};
+		MouseAdapter ma37 = createSectionAdapter(viewStadium_37, img37, img37_R, img37_S);
 		viewStadium_37.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
 				stadiumSectionSelection(viewStadium_37, ma37, img37_S);
@@ -1708,21 +1162,7 @@ public class ViewStadium extends JPanel {
 		ImageIcon img38_R = new ImageIcon(Overview.class.getResource(path38_R));
 		String path38_S = "/Images/StadiumSlices/Stadium_Selected_38.png";
 		ImageIcon img38_S = new ImageIcon(Overview.class.getResource(path38_S));
-		MouseAdapter ma38 =  new MouseAdapter(){
-		    public void mouseEntered( MouseEvent e ) {
-				viewStadium_38.setIcon(UI_Elements.scaleImageToButton(img38_R, viewStadium_38));
-		    }
-		    public void mouseExited( MouseEvent e ) {
-		    	if(viewStadium_38.isSelected() != true)
-		    	{
-		    		viewStadium_38.setIcon(UI_Elements.scaleImageToButton(img38, viewStadium_38));
-		    	}
-		    	else
-		    	{
-		    		viewStadium_38.setIcon(UI_Elements.scaleImageToButton(img38_S, viewStadium_38));
-		    	}
-		    }
-		};
+		MouseAdapter ma38 = createSectionAdapter(viewStadium_38, img38, img38_R, img38_S);
 		viewStadium_38.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
 				stadiumSectionSelection(viewStadium_38, ma38, img38_S);
@@ -1749,21 +1189,7 @@ public class ViewStadium extends JPanel {
 		ImageIcon img39_R = new ImageIcon(Overview.class.getResource(path39_R));
 		String path39_S = "/Images/StadiumSlices/Stadium_Selected_39.png";
 		ImageIcon img39_S = new ImageIcon(Overview.class.getResource(path39_S));
-		MouseAdapter ma39 =  new MouseAdapter(){
-		    public void mouseEntered( MouseEvent e ) {
-				viewStadium_39.setIcon(UI_Elements.scaleImageToButton(img39_R, viewStadium_39));
-		    }
-		    public void mouseExited( MouseEvent e ) {
-		    	if(viewStadium_39.isSelected() != true)
-		    	{
-		    		viewStadium_39.setIcon(UI_Elements.scaleImageToButton(img39, viewStadium_39));
-		    	}
-		    	else
-		    	{
-		    		viewStadium_39.setIcon(UI_Elements.scaleImageToButton(img39_S, viewStadium_39));
-		    	}
-		    }
-		};
+		MouseAdapter ma39 = createSectionAdapter(viewStadium_39, img39, img39_R, img39_S);
 		viewStadium_39.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
 				stadiumSectionSelection(viewStadium_39, ma39, img39_S);
@@ -1789,21 +1215,7 @@ public class ViewStadium extends JPanel {
 		ImageIcon img40_R = new ImageIcon(Overview.class.getResource(path40_R));
 		String path40_S = "/Images/StadiumSlices/Stadium_Selected_40.png";
 		ImageIcon img40_S = new ImageIcon(Overview.class.getResource(path40_S));
-		MouseAdapter ma40 =  new MouseAdapter(){
-		    public void mouseEntered( MouseEvent e ) {
-				viewStadium_40.setIcon(UI_Elements.scaleImageToButton(img40_R, viewStadium_40));
-		    }
-		    public void mouseExited( MouseEvent e ) {
-		    	if(viewStadium_40.isSelected() != true)
-		    	{
-		    		viewStadium_40.setIcon(UI_Elements.scaleImageToButton(img40, viewStadium_40));
-		    	}
-		    	else
-		    	{
-		    		viewStadium_40.setIcon(UI_Elements.scaleImageToButton(img40_S, viewStadium_40));
-		    	}
-		    }
-		};
+		MouseAdapter ma40 = createSectionAdapter(viewStadium_40, img40, img40_R, img40_S);
 		viewStadium_40.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
 				stadiumSectionSelection(viewStadium_40, ma40, img40_S);
@@ -1830,21 +1242,7 @@ public class ViewStadium extends JPanel {
 		ImageIcon img53_R = new ImageIcon(Overview.class.getResource(path53_R));
 		String path53_S = "/Images/StadiumSlices/Stadium_Selected_53.png";
 		ImageIcon img53_S = new ImageIcon(Overview.class.getResource(path53_S));
-		MouseAdapter ma53 =  new MouseAdapter(){
-		    public void mouseEntered( MouseEvent e ) {
-				viewStadium_53.setIcon(UI_Elements.scaleImageToButton(img53_R, viewStadium_53));
-		    }
-		    public void mouseExited( MouseEvent e ) {
-		    	if(viewStadium_53.isSelected() != true)
-		    	{
-		    		viewStadium_53.setIcon(UI_Elements.scaleImageToButton(img53, viewStadium_53));
-		    	}
-		    	else
-		    	{
-		    		viewStadium_53.setIcon(UI_Elements.scaleImageToButton(img53_S, viewStadium_53));
-		    	}
-		    }
-		};
+		MouseAdapter ma53 = createSectionAdapter(viewStadium_53, img53, img53_R, img53_S);
 		viewStadium_53.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
 				stadiumSectionSelection(viewStadium_53, ma53, img53_S);
@@ -1871,22 +1269,7 @@ public class ViewStadium extends JPanel {
 		ImageIcon img52_R = new ImageIcon(Overview.class.getResource(path52_R));
 		String path52_S = "/Images/StadiumSlices/Stadium_Selected_52.png";
 		ImageIcon img52_S = new ImageIcon(Overview.class.getResource(path52_S));
-		viewStadium_52.setDisabledIcon(UI_Elements.scaleImageToButton(img52, viewStadium_52)); //$$ TODO
-		MouseAdapter ma52 =  new MouseAdapter(){
-		    public void mouseEntered( MouseEvent e ) {
-				viewStadium_52.setIcon(UI_Elements.scaleImageToButton(img52_R, viewStadium_52));
-		    }
-		    public void mouseExited( MouseEvent e ) {
-		    	if(viewStadium_52.isSelected() != true)
-		    	{
-		    		viewStadium_52.setIcon(UI_Elements.scaleImageToButton(img52, viewStadium_52));
-		    	}
-		    	else
-		    	{
-		    		viewStadium_52.setIcon(UI_Elements.scaleImageToButton(img52_S, viewStadium_52));
-		    	}
-		    }
-		};
+		MouseAdapter ma52 = createSectionAdapter(viewStadium_52, img52, img52_R, img52_S);
 		viewStadium_52.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
 				stadiumSectionSelection(viewStadium_52, ma52, img52_S);
@@ -2034,6 +1417,49 @@ public class ViewStadium extends JPanel {
 				e.printStackTrace();
 			}
 		}
+	}
+	
+	private MouseAdapter createSectionAdapter(JButton i_Section, ImageIcon i_Img, ImageIcon i_ImgRollover, ImageIcon i_ImgSelected)
+	{
+		i_Section.setDisabledIcon(UI_Elements.scaleImageToButton(i_Img, i_Section));
+		MouseAdapter adapter =  new MouseAdapter(){
+		    public void mouseEntered( MouseEvent e ) {
+		    	if(i_Section.isEnabled() == true)
+		    	{
+		    		i_Section.setIcon(UI_Elements.scaleImageToButton(i_ImgRollover, i_Section));		    		
+		    	}
+		    	/*else
+		    	{
+		    		i_Section.setDisabledIcon(UI_Elements.scaleImageToButton(i_ImgRollover, i_Section));
+		    	}*/
+		    }
+		    public void mouseExited( MouseEvent e ) {
+		    	if(i_Section.isSelected() != true)
+		    	{
+			    	if(i_Section.isEnabled() == true)
+			    	{
+			    		i_Section.setIcon(UI_Elements.scaleImageToButton(i_Img, i_Section));		    		
+			    	}
+			    	/*else
+			    	{
+			    		i_Section.setDisabledIcon(UI_Elements.scaleImageToButton(i_Img, i_Section));
+			    	}*/
+		    	}
+		    	else
+		    	{
+			    	if(i_Section.isEnabled() == true)
+			    	{
+			    		i_Section.setIcon(UI_Elements.scaleImageToButton(i_ImgSelected, i_Section));		    		
+			    	}
+			    	/*else
+			    	{
+			    		i_Section.setDisabledIcon(UI_Elements.scaleImageToButton(i_ImgSelected, i_Section));
+			    	}*/
+		    	}
+		    }
+		};
+		
+		return adapter;
 	}
 
 }
