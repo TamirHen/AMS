@@ -9,12 +9,15 @@ import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.awt.event.MouseAdapter;
 import java.awt.event.MouseEvent;
+import java.util.ArrayList;
+import java.util.List;
 
 import javax.swing.DefaultComboBoxModel;
 import javax.swing.Icon;
 import javax.swing.ImageIcon;
 import javax.swing.JButton;
 import javax.swing.JComboBox;
+import javax.swing.JComponent;
 import javax.swing.JFrame;
 import javax.swing.JLabel;
 import javax.swing.JPanel;
@@ -38,6 +41,9 @@ public class Games extends JPanel {
 	private JButton btnAddGame;
 	private JButton btnAddTicketData;
 	
+	private List<JButton> addSponsorComponents = new ArrayList<JButton>();
+
+	
 	Games(){
 		
 		panelGames = new JPanel();
@@ -56,7 +62,7 @@ public class Games extends JPanel {
 		
 		gamesStadiumPanel = new ViewStadium();
 		gamesStadiumPanel.setLayout(null);
-		gamesStadiumPanel.setBounds((int) (panelGames.getBounds().width-20-gamesStadiumPanel.stadiumLblWidth), 85, gamesStadiumPanel.panelViewStadium.getBounds().width, gamesStadiumPanel.panelViewStadium.getBounds().height);
+		gamesStadiumPanel.setBounds((int) (panelGames.getBounds().width-gamesStadiumPanel.stadiumLblWidth)-30, 85, gamesStadiumPanel.panelViewStadium.getBounds().width, gamesStadiumPanel.panelViewStadium.getBounds().height);
 		gamesStadiumPanel.setVisible(true);
 		panelGames.add(gamesStadiumPanel);
 		gamesStadiumPanel.add(gamesStadiumPanel.panelViewStadium);
@@ -110,16 +116,17 @@ public class Games extends JPanel {
 		btnAddSeason.setBackground(UI_Elements.color_panelBodyButtonDefault);
 		btnAddSeason.setBounds(35, 175, 265, 40);
 		panelGames.add(btnAddSeason);
+		btnAddSeason.setSelected(false);
 		btnAddSeason.addMouseListener( new MouseAdapter() {
 		    public void mouseEntered( MouseEvent e ) {
 		    	btnAddSeason.setBackground(UI_Elements.color_panelBodyButtonRollover);
 		    }
 		    public void mouseExited( MouseEvent e ) {
-		    	/*if(panelTickets.isVisible() == true)
+		    	if(btnAddSeason.isSelected() == true)
 		    	{
 		    		btnAddSeason.setBackground(UI_Elements.color_panelBodyButtonSelected);
 		    	}
-		    	else*/
+		    	else
 		    	{
 		    		btnAddSeason.setBackground(UI_Elements.color_panelBodyButtonDefault);
 		    	}
@@ -139,16 +146,17 @@ public class Games extends JPanel {
 		btnAddGame.setBackground(UI_Elements.color_panelBodyButtonDefault);
 		btnAddGame.setBounds(35, (btnAddSeason.getBounds().y)+55, 265, 40);
 		panelGames.add(btnAddGame);
+		btnAddGame.setSelected(false);
 		btnAddGame.addMouseListener( new MouseAdapter() {
 		    public void mouseEntered( MouseEvent e ) {
 		    	btnAddGame.setBackground(UI_Elements.color_panelBodyButtonRollover);
 		    }
 		    public void mouseExited( MouseEvent e ) {
-		    	/*if(panelConcessions.isVisible() == true)
+		    	if(btnAddGame.isSelected() == true)
 		    	{
 		    		btnAddGame.setBackground(UI_Elements.color_panelBodyButtonSelected);
 		    	}
-		    	else*/
+		    	else
 		    	{
 		    		btnAddGame.setBackground(UI_Elements.color_panelBodyButtonDefault);
 		    	}
@@ -168,22 +176,23 @@ public class Games extends JPanel {
 		btnAddTicketData.setBackground(UI_Elements.color_panelBodyButtonDefault);
 		btnAddTicketData.setBounds(35, (btnAddSeason.getBounds().y)+55*2, 265, 40);
 		panelGames.add(btnAddTicketData);
+		btnAddTicketData.setSelected(false);
 		btnAddTicketData.addMouseListener( new MouseAdapter() {
 		    public void mouseEntered( MouseEvent e ) {
 		    	btnAddTicketData.setBackground(UI_Elements.color_panelBodyButtonRollover);
 		    }
 		    public void mouseExited( MouseEvent e ) {
-		    	/*if(panelMerchandise.isVisible() == true)
+		    	if(btnAddTicketData.isSelected() == true)
 		    	{
 		    		btnAddTicketData.setBackground(UI_Elements.color_panelBodyButtonSelected);
 		    	}
-		    	else*/
+		    	else
 		    	{
 		    		btnAddTicketData.setBackground(UI_Elements.color_panelBodyButtonDefault);
 		    	}
 		    }
 		} );
-	
+		
 		
 		
 	}

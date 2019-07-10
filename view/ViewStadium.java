@@ -1419,6 +1419,21 @@ public class ViewStadium extends JPanel {
 		}
 	}
 	
+	public void removeDetailsPanel(JPanel i_Panel)
+	{
+		detailsPanel = null;
+		for(JButton button : sectionList)
+		{
+			try {
+				button.setEnabled(false);
+				button.setCursor(Cursor.getPredefinedCursor(Cursor.DEFAULT_CURSOR));
+			}
+			catch (Exception e) {
+				e.printStackTrace();
+			}
+		}
+	}
+	
 	private MouseAdapter createSectionAdapter(JButton i_Section, ImageIcon i_Img, ImageIcon i_ImgRollover, ImageIcon i_ImgSelected)
 	{
 		i_Section.setDisabledIcon(UI_Elements.scaleImageToButton(i_Img, i_Section));

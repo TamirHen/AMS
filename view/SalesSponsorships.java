@@ -38,10 +38,11 @@ public class SalesSponsorships extends JPanel {
 	private JTextField tf_ContractLength;
 	private JLabel lblContractValue;
 	private JTextField tf_ContractValue;
-
-	List<JComponent> addSponsorComponents = new ArrayList<JComponent>();
 	private JButton btnAddSponsorFinish;
 	private JButton btnAddSponsorCancel;
+	
+	private List<JComponent> addSponsorComponents = new ArrayList<JComponent>();
+
 	
 	public SalesSponsorships(){
 		
