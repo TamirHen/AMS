@@ -19,7 +19,6 @@ public class Menu extends JPanel {
 	public JPanel menuPanel;
 	public JPanel overviewPanel;
 	//---------------------//
-	
 
 
 	public JLabel HeaderBG;
@@ -30,6 +29,25 @@ public class Menu extends JPanel {
 	public JButton btnFacilities;
 	public JButton btnUserName;
 	public JButton btnLogout;
+	public JButton btnGames;
+	
+	enum Pages{
+		OVERVIEW(0),
+		PROPERTIES(1),
+		SALES(2),
+		FACILITIES(3),
+		GAMES(4);
+		
+		private int value;
+		
+		private Pages(int value) {
+			this.value = value;
+		}
+		
+		public int getValue() {
+			return value;
+		}
+	}
 	
 	public Menu() {
 		
@@ -102,6 +120,20 @@ public class Menu extends JPanel {
 		btnFacilities.setBackground(UI_Elements.color_menuBar);
 		btnFacilities.setBounds(0, (btnOverview.getBounds().y) + 40 * 3, 189, 40);
 		menuPanel.add(btnFacilities);
+		
+		btnGames = new JButton("GAMES");
+		btnGames.setAlignmentY(0.0f);
+		btnGames.setFocusPainted(false);
+		btnGames.setRequestFocusEnabled(false);
+		btnGames.setCursor(Cursor.getPredefinedCursor(Cursor.HAND_CURSOR));
+		btnGames.setHorizontalAlignment(SwingConstants.CENTER);
+		btnGames.setForeground(UI_Elements.color_menuButtonText);
+		btnGames.setOpaque(true);
+		btnGames.setBorder(null);
+		btnGames.setFont(UI_Elements.font_menuButtonTextDefault);
+		btnGames.setBackground(UI_Elements.color_menuBar);
+		btnGames.setBounds(0, (btnOverview.getBounds().y) + 40 * 4, 189, 40);
+		menuPanel.add(btnGames);
 		
 		
 		btnUserName = new JButton("");

@@ -23,7 +23,7 @@ public class Overview extends JPanel {
 
 	public JPanel panelOverview;
 	private JLabel titleOverview;
-	public OverviewStadium overviewStadiumPanel;
+	public ViewStadium overviewStadiumPanel;
 	
 	private JLabel lblStadiumLegend;
 	
@@ -47,15 +47,15 @@ public class Overview extends JPanel {
 		titleOverview.setFont(new Font(UI_Elements.mainFontName, Font.BOLD, UI_Elements.textPanelTitleSize));
 		panelOverview.add(titleOverview);
 		
-		overviewStadiumPanel = new OverviewStadium();
+		overviewStadiumPanel = new ViewStadium();
 		overviewStadiumPanel.setLayout(null);
-		overviewStadiumPanel.setBounds(20, 85, overviewStadiumPanel.panelOverviewStadium.getBounds().width, overviewStadiumPanel.panelOverviewStadium.getBounds().height);
+		overviewStadiumPanel.setBounds(20, 85, overviewStadiumPanel.panelViewStadium.getBounds().width, overviewStadiumPanel.panelViewStadium.getBounds().height);
 		overviewStadiumPanel.setVisible(true);
 		panelOverview.add(overviewStadiumPanel);
-		overviewStadiumPanel.add(overviewStadiumPanel.panelOverviewStadium);
+		overviewStadiumPanel.add(overviewStadiumPanel.panelViewStadium);
 		
 		lblStadiumLegend = new JLabel();
-		lblStadiumLegend.setBounds(20, overviewStadiumPanel.getBounds().y + overviewStadiumPanel.getBounds().height, 555, 60);
+		lblStadiumLegend.setBounds(overviewStadiumPanel.getBounds().x, overviewStadiumPanel.getBounds().y + overviewStadiumPanel.getBounds().height, 555, 60);
 		lblStadiumLegend.setIcon(UI_Elements.scaleImageTolabel(stadiumLegend, lblStadiumLegend));
 		lblStadiumLegend.setOpaque(false);
 		lblStadiumLegend.setBorder(null);
@@ -68,6 +68,7 @@ public class Overview extends JPanel {
 		panelOverview.add(panelSectionDetails);
 		panelSectionDetails.setLayout(null);
 		panelSectionDetails.setVisible(false);
+		overviewStadiumPanel.assignDetailsPanel(panelSectionDetails);
 
 		titleSectionDetails = new JLabel("SECTION DETAILS");
 		titleSectionDetails.setHorizontalAlignment(SwingConstants.CENTER);
@@ -78,9 +79,7 @@ public class Overview extends JPanel {
 		titleSectionDetails.setForeground(UI_Elements.color_mainBackgroundColor);
 		titleSectionDetails.setFont(new Font(UI_Elements.mainFontName, Font.BOLD, UI_Elements.textSubPanelTitleSize));
 		panelSectionDetails.add(titleSectionDetails);
-		
-		overviewStadiumPanel.assignDetailsPanel(panelSectionDetails);
-		
+				
 			
 	}
 
