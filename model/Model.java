@@ -27,6 +27,7 @@ public class Model {
 	}
 	
 	//---methods---//
+	
 	public boolean isUserNameExist(String userName) {
 		for(int i=0; i<userSize; i++) {
 			if (userName.equals(user[i].getUserName())) {
