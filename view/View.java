@@ -21,6 +21,7 @@ import javax.swing.border.EmptyBorder;
 
 import org.sqlite.core.DB;
 
+import model.Model;
 import model.Stadium;
 import model.User;
 
@@ -50,7 +51,6 @@ public class View extends JFrame {
 	//-------------------------//
 
 	public View() {
-
 		// set main JFrame:
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		setBounds(0, 0, 1114, 600);

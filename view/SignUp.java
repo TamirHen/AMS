@@ -53,7 +53,7 @@ public class SignUp extends JFrame {
 		//logo:
 		lblSignUpLogo = new JLabel("");
 		lblSignUpLogo.setBounds(70, 38, 258, 78);
-		lblSignUpLogo.setIcon(UI_Elements.scaleImageTolabel(signupLogo, lblSignUpLogo));
+		lblSignUpLogo.setIcon(UI_Elements.scaleImageToBox(signupLogo, lblSignUpLogo));
 		lblSignUpLogo.setBorder(null);
 		panelSignUp.add(lblSignUpLogo);
 		

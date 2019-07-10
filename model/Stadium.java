@@ -72,7 +72,14 @@ public class Stadium {
 	}
 
 	public Section getArenaSection(int sectionNumber) {
-		return this.arenaSection[sectionNumber];
+		try
+		{
+			return this.arenaSection[sectionNumber];			
+		}
+		catch(Exception e)
+		{
+			return null;
+		}
 	}
 
 	public int getNumOfSections() {

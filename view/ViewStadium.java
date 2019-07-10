@@ -82,14 +82,10 @@ public class ViewStadium extends JPanel {
 	public int numOfSelected = 0;
 	public JButton lastSelectedButton;
 	private MouseAdapter lastButtonMouseAdapter;
-	
-	
 	public JPanel detailsPanel;
-	
-	
+		
 	public ViewStadium()
 	{
-	
 		panelViewStadium = new JPanel();
 		panelViewStadium.setCursor(Cursor.getPredefinedCursor(Cursor.DEFAULT_CURSOR));
 		panelViewStadium.setBorder(null);
@@ -106,10 +102,10 @@ public class ViewStadium extends JPanel {
 		viewStadium_49.setBorderPainted(false);
 		viewStadium_49.setFocusPainted(false);
 		viewStadium_49.setBorder(null);
-		String path49 = "/Images/StadiumSlices/Stadium" + getOverviewSectionType(49) + "_49.png";
+		String path49 = "/Images/StadiumSlices/Stadium" + getViewStadiumSectionType(49) + "_49.png";
 		ImageIcon img49 = new ImageIcon(Overview.class.getResource(path49));
 		viewStadium_49.setBounds(panelViewStadium.getBounds().x + (int)(535*stadiumSizeRatio), panelViewStadium.getBounds().y + (int)(451*stadiumSizeRatio) , (int)(img49.getIconWidth()*stadiumSizeRatio), (int)(img49.getIconHeight()*stadiumSizeRatio));
-		viewStadium_49.setIcon(UI_Elements.scaleImageToButton(img49, viewStadium_49));
+		viewStadium_49.setIcon(UI_Elements.scaleImageToBox(img49, viewStadium_49));
 		panelViewStadium.add(viewStadium_49);
 		String path49_R = "/Images/StadiumSlices/Stadium_Rollover_49.png";
 		ImageIcon img49_R = new ImageIcon(Overview.class.getResource(path49_R));
@@ -134,10 +130,10 @@ public class ViewStadium extends JPanel {
 		viewStadium_19.setBorderPainted(false);
 		viewStadium_19.setFocusPainted(false);
 		viewStadium_19.setBorder(null);
-		String path19 = "/Images/StadiumSlices/Stadium" + getOverviewSectionType(19) + "_19.png";
+		String path19 = "/Images/StadiumSlices/Stadium" + getViewStadiumSectionType(19) + "_19.png";
 		ImageIcon img19 = new ImageIcon(Overview.class.getResource(path19));
 		viewStadium_19.setBounds(viewStadium_49.getBounds().x, viewStadium_49.getBounds().y + viewStadium_49.getBounds().height, (int)(img19.getIconWidth()*stadiumSizeRatio), (int)(img19.getIconHeight()*stadiumSizeRatio));
-		viewStadium_19.setIcon(UI_Elements.scaleImageToButton(img19, viewStadium_19));
+		viewStadium_19.setIcon(UI_Elements.scaleImageToBox(img19, viewStadium_19));
 		panelViewStadium.add(viewStadium_19);
 		String path19_R = "/Images/StadiumSlices/Stadium_Rollover_19.png";
 		ImageIcon img19_R = new ImageIcon(Overview.class.getResource(path19_R));
@@ -161,10 +157,10 @@ public class ViewStadium extends JPanel {
 		viewStadium_26.setBorderPainted(false);
 		viewStadium_26.setFocusPainted(false);
 		viewStadium_26.setBorder(null);
-		String path26 = "/Images/StadiumSlices/Stadium" + getOverviewSectionType(26) + "_26.png";
+		String path26 = "/Images/StadiumSlices/Stadium" + getViewStadiumSectionType(26) + "_26.png";
 		ImageIcon img26 = new ImageIcon(Overview.class.getResource(path26));
 		viewStadium_26.setBounds(viewStadium_19.getBounds().x, viewStadium_19.getBounds().y + viewStadium_19.getBounds().height, (int)(img26.getIconWidth()*stadiumSizeRatio), (int)(img26.getIconHeight()*stadiumSizeRatio));
-		viewStadium_26.setIcon(UI_Elements.scaleImageToButton(img26, viewStadium_26));
+		viewStadium_26.setIcon(UI_Elements.scaleImageToBox(img26, viewStadium_26));
 		panelViewStadium.add(viewStadium_26);
 		String path26_R = "/Images/StadiumSlices/Stadium_Rollover_26.png";
 		ImageIcon img26_R = new ImageIcon(Overview.class.getResource(path26_R));
@@ -188,10 +184,10 @@ public class ViewStadium extends JPanel {
 		viewStadium_28.setBorderPainted(false);
 		viewStadium_28.setFocusPainted(false);
 		viewStadium_28.setBorder(null);
-		String path28 = "/Images/StadiumSlices/Stadium" + getOverviewSectionType(28) + "_28.png";
+		String path28 = "/Images/StadiumSlices/Stadium" + getViewStadiumSectionType(28) + "_28.png";
 		ImageIcon img28 = new ImageIcon(Overview.class.getResource(path28));
 		viewStadium_28.setBounds(viewStadium_26.getBounds().x, viewStadium_26.getBounds().y + viewStadium_26.getBounds().height, (int)(img28.getIconWidth()*stadiumSizeRatio), (int)(img28.getIconHeight()*stadiumSizeRatio));
-		viewStadium_28.setIcon(UI_Elements.scaleImageToButton(img28, viewStadium_28));
+		viewStadium_28.setIcon(UI_Elements.scaleImageToBox(img28, viewStadium_28));
 		panelViewStadium.add(viewStadium_28);
 		String path28_R = "/Images/StadiumSlices/Stadium_Rollover_28.png";
 		ImageIcon img28_R = new ImageIcon(Overview.class.getResource(path28_R));
@@ -215,10 +211,10 @@ public class ViewStadium extends JPanel {
 		viewStadium_51.setBorderPainted(false);
 		viewStadium_51.setFocusPainted(false);
 		viewStadium_51.setBorder(null);
-		String path51 = "/Images/StadiumSlices/Stadium" + getOverviewSectionType(51) + "_51.png";
+		String path51 = "/Images/StadiumSlices/Stadium" + getViewStadiumSectionType(51) + "_51.png";
 		ImageIcon img51 = new ImageIcon(Overview.class.getResource(path51));
 		viewStadium_51.setBounds(viewStadium_26.getBounds().x, viewStadium_28.getBounds().y + viewStadium_28.getBounds().height, (int)(img51.getIconWidth()*stadiumSizeRatio), (int)(img51.getIconHeight()*stadiumSizeRatio));
-		viewStadium_51.setIcon(UI_Elements.scaleImageToButton(img51, viewStadium_51));
+		viewStadium_51.setIcon(UI_Elements.scaleImageToBox(img51, viewStadium_51));
 		panelViewStadium.add(viewStadium_51);
 		String path51_R = "/Images/StadiumSlices/Stadium_Rollover_51.png";
 		ImageIcon img51_R = new ImageIcon(Overview.class.getResource(path51_R));
@@ -242,10 +238,10 @@ public class ViewStadium extends JPanel {
 		viewStadium_48.setBorderPainted(false);
 		viewStadium_48.setFocusPainted(false);
 		viewStadium_48.setBorder(null);
-		String path48 = "/Images/StadiumSlices/Stadium" + getOverviewSectionType(48) + "_48.png";
+		String path48 = "/Images/StadiumSlices/Stadium" + getViewStadiumSectionType(48) + "_48.png";
 		ImageIcon img48 = new ImageIcon(Overview.class.getResource(path48));
 		viewStadium_48.setBounds(panelViewStadium.getBounds().x, panelViewStadium.getBounds().y, (int)(img48.getIconWidth()*stadiumSizeRatio), (int)(img48.getIconHeight()*stadiumSizeRatio));
-		viewStadium_48.setIcon(UI_Elements.scaleImageToButton(img48, viewStadium_48));
+		viewStadium_48.setIcon(UI_Elements.scaleImageToBox(img48, viewStadium_48));
 		panelViewStadium.add(viewStadium_48);
 		String path48_R = "/Images/StadiumSlices/Stadium_Rollover_48.png";
 		ImageIcon img48_R = new ImageIcon(Overview.class.getResource(path48_R));
@@ -269,10 +265,10 @@ public class ViewStadium extends JPanel {
 		viewStadium_02.setBorderPainted(false);
 		viewStadium_02.setFocusPainted(false);
 		viewStadium_02.setBorder(null);
-		String path02 = "/Images/StadiumSlices/Stadium" + getOverviewSectionType(2) + "_02.png";
+		String path02 = "/Images/StadiumSlices/Stadium" + getViewStadiumSectionType(2) + "_02.png";
 		ImageIcon img02 = new ImageIcon(Overview.class.getResource(path02));
 		viewStadium_02.setBounds(viewStadium_48.getBounds().x + viewStadium_48.getBounds().width, panelViewStadium.getBounds().y, (int)(img02.getIconWidth()*stadiumSizeRatio), (int)(img02.getIconHeight()*stadiumSizeRatio));
-		viewStadium_02.setIcon(UI_Elements.scaleImageToButton(img02, viewStadium_02));
+		viewStadium_02.setIcon(UI_Elements.scaleImageToBox(img02, viewStadium_02));
 		panelViewStadium.add(viewStadium_02);
 		String path02_R = "/Images/StadiumSlices/Stadium_Rollover_02.png";
 		ImageIcon img02_R = new ImageIcon(Overview.class.getResource(path02_R));
@@ -295,10 +291,10 @@ public class ViewStadium extends JPanel {
 		viewStadium_03.setBorderPainted(false);
 		viewStadium_03.setFocusPainted(false);
 		viewStadium_03.setBorder(null);
-		String path03 = "/Images/StadiumSlices/Stadium" + getOverviewSectionType(3) + "_03.png";
+		String path03 = "/Images/StadiumSlices/Stadium" + getViewStadiumSectionType(3) + "_03.png";
 		ImageIcon img03 = new ImageIcon(Overview.class.getResource(path03));
 		viewStadium_03.setBounds(viewStadium_02.getBounds().x + viewStadium_02.getBounds().width, panelViewStadium.getBounds().y, (int)(img03.getIconWidth()*stadiumSizeRatio), (int)(img03.getIconHeight()*stadiumSizeRatio));
-		viewStadium_03.setIcon(UI_Elements.scaleImageToButton(img03, viewStadium_03));
+		viewStadium_03.setIcon(UI_Elements.scaleImageToBox(img03, viewStadium_03));
 		panelViewStadium.add(viewStadium_03);
 		String path03_R = "/Images/StadiumSlices/Stadium_Rollover_03.png";
 		ImageIcon img03_R = new ImageIcon(Overview.class.getResource(path03_R));
@@ -321,10 +317,10 @@ public class ViewStadium extends JPanel {
 		viewStadium_04.setBorderPainted(false);
 		viewStadium_04.setFocusPainted(false);
 		viewStadium_04.setBorder(null);
-		String path04 = "/Images/StadiumSlices/Stadium" + getOverviewSectionType(4) + "_04.png";
+		String path04 = "/Images/StadiumSlices/Stadium" + getViewStadiumSectionType(4) + "_04.png";
 		ImageIcon img04 = new ImageIcon(Overview.class.getResource(path04));
 		viewStadium_04.setBounds(viewStadium_03.getBounds().x + viewStadium_03.getBounds().width, panelViewStadium.getBounds().y, (int)(img04.getIconWidth()*stadiumSizeRatio), (int)(img04.getIconHeight()*stadiumSizeRatio));
-		viewStadium_04.setIcon(UI_Elements.scaleImageToButton(img04, viewStadium_04));
+		viewStadium_04.setIcon(UI_Elements.scaleImageToBox(img04, viewStadium_04));
 		panelViewStadium.add(viewStadium_04);
 		String path04_R = "/Images/StadiumSlices/Stadium_Rollover_04.png";
 		ImageIcon img04_R = new ImageIcon(Overview.class.getResource(path04_R));
@@ -349,10 +345,10 @@ public class ViewStadium extends JPanel {
 		viewStadium_05.setBorderPainted(false);
 		viewStadium_05.setFocusPainted(false);
 		viewStadium_05.setBorder(null);
-		String path05 = "/Images/StadiumSlices/Stadium" + getOverviewSectionType(5) + "_05.png";
+		String path05 = "/Images/StadiumSlices/Stadium" + getViewStadiumSectionType(5) + "_05.png";
 		ImageIcon img05 = new ImageIcon(Overview.class.getResource(path05));
 		viewStadium_05.setBounds(viewStadium_04.getBounds().x + viewStadium_04.getBounds().width, panelViewStadium.getBounds().y, (int)(img05.getIconWidth()*stadiumSizeRatio), (int)(img05.getIconHeight()*stadiumSizeRatio));
-		viewStadium_05.setIcon(UI_Elements.scaleImageToButton(img05, viewStadium_05));
+		viewStadium_05.setIcon(UI_Elements.scaleImageToBox(img05, viewStadium_05));
 		panelViewStadium.add(viewStadium_05);
 		String path05_R = "/Images/StadiumSlices/Stadium_Rollover_05.png";
 		ImageIcon img05_R = new ImageIcon(Overview.class.getResource(path05_R));
@@ -377,10 +373,10 @@ public class ViewStadium extends JPanel {
 		viewStadium_06.setBorderPainted(false);
 		viewStadium_06.setFocusPainted(false);
 		viewStadium_06.setBorder(null);
-		String path06 = "/Images/StadiumSlices/Stadium" + getOverviewSectionType(6) + "_06.png";
+		String path06 = "/Images/StadiumSlices/Stadium" + getViewStadiumSectionType(6) + "_06.png";
 		ImageIcon img06 = new ImageIcon(Overview.class.getResource(path06));
 		viewStadium_06.setBounds(viewStadium_05.getBounds().x + viewStadium_05.getBounds().width, panelViewStadium.getBounds().y, (int)(img06.getIconWidth()*stadiumSizeRatio), (int)(img06.getIconHeight()*stadiumSizeRatio));
-		viewStadium_06.setIcon(UI_Elements.scaleImageToButton(img06, viewStadium_06));
+		viewStadium_06.setIcon(UI_Elements.scaleImageToBox(img06, viewStadium_06));
 		panelViewStadium.add(viewStadium_06);
 		String path06_R = "/Images/StadiumSlices/Stadium_Rollover_06.png";
 		ImageIcon img06_R = new ImageIcon(Overview.class.getResource(path06_R));
@@ -405,10 +401,10 @@ public class ViewStadium extends JPanel {
 		viewStadium_07.setBorderPainted(false);
 		viewStadium_07.setFocusPainted(false);
 		viewStadium_07.setBorder(null);
-		String path07 = "/Images/StadiumSlices/Stadium" + getOverviewSectionType(7) + "_07.png";
+		String path07 = "/Images/StadiumSlices/Stadium" + getViewStadiumSectionType(7) + "_07.png";
 		ImageIcon img07 = new ImageIcon(Overview.class.getResource(path07));
 		viewStadium_07.setBounds(viewStadium_06.getBounds().x + viewStadium_06.getBounds().width, panelViewStadium.getBounds().y, (int)(img07.getIconWidth()*stadiumSizeRatio), (int)(img07.getIconHeight()*stadiumSizeRatio));
-		viewStadium_07.setIcon(UI_Elements.scaleImageToButton(img07, viewStadium_07));
+		viewStadium_07.setIcon(UI_Elements.scaleImageToBox(img07, viewStadium_07));
 		panelViewStadium.add(viewStadium_07);
 		String path07_R = "/Images/StadiumSlices/Stadium_Rollover_07.png";
 		ImageIcon img07_R = new ImageIcon(Overview.class.getResource(path07_R));
@@ -432,10 +428,10 @@ public class ViewStadium extends JPanel {
 		viewStadium_08.setBorderPainted(false);
 		viewStadium_08.setFocusPainted(false);
 		viewStadium_08.setBorder(null);
-		String path08 = "/Images/StadiumSlices/Stadium" + getOverviewSectionType(8) + "_08.png";
+		String path08 = "/Images/StadiumSlices/Stadium" + getViewStadiumSectionType(8) + "_08.png";
 		ImageIcon img08 = new ImageIcon(Overview.class.getResource(path08));
 		viewStadium_08.setBounds(viewStadium_07.getBounds().x + viewStadium_07.getBounds().width, panelViewStadium.getBounds().y, (int)(img08.getIconWidth()*stadiumSizeRatio), (int)(img08.getIconHeight()*stadiumSizeRatio));
-		viewStadium_08.setIcon(UI_Elements.scaleImageToButton(img08, viewStadium_08));
+		viewStadium_08.setIcon(UI_Elements.scaleImageToBox(img08, viewStadium_08));
 		panelViewStadium.add(viewStadium_08);
 		String path08_R = "/Images/StadiumSlices/Stadium_Rollover_08.png";
 		ImageIcon img08_R = new ImageIcon(Overview.class.getResource(path08_R));
@@ -459,10 +455,10 @@ public class ViewStadium extends JPanel {
 		viewStadium_10.setBorderPainted(false);
 		viewStadium_10.setFocusPainted(false);
 		viewStadium_10.setBorder(null);
-		String path10 = "/Images/StadiumSlices/Stadium" + getOverviewSectionType(10) + "_10.png";
+		String path10 = "/Images/StadiumSlices/Stadium" + getViewStadiumSectionType(10) + "_10.png";
 		ImageIcon img10 = new ImageIcon(Overview.class.getResource(path10));
 		viewStadium_10.setBounds(panelViewStadium.getBounds().x + (int)(1013*stadiumSizeRatio), viewStadium_02.getBounds().y + viewStadium_07.getBounds().height, (int)(img10.getIconWidth()*stadiumSizeRatio), (int)(img10.getIconHeight()*stadiumSizeRatio));
-		viewStadium_10.setIcon(UI_Elements.scaleImageToButton(img10, viewStadium_10));
+		viewStadium_10.setIcon(UI_Elements.scaleImageToBox(img10, viewStadium_10));
 		panelViewStadium.add(viewStadium_10);
 		String path10_R = "/Images/StadiumSlices/Stadium_Rollover_10.png";
 		ImageIcon img10_R = new ImageIcon(Overview.class.getResource(path10_R));
@@ -485,10 +481,10 @@ public class ViewStadium extends JPanel {
 		viewStadium_11.setBorderPainted(false);
 		viewStadium_11.setFocusPainted(false);
 		viewStadium_11.setBorder(null);
-		String path11 = "/Images/StadiumSlices/Stadium" + getOverviewSectionType(11) + "_11.png";
+		String path11 = "/Images/StadiumSlices/Stadium" + getViewStadiumSectionType(11) + "_11.png";
 		ImageIcon img11 = new ImageIcon(Overview.class.getResource(path11));
 		viewStadium_11.setBounds(viewStadium_10.getBounds().x + viewStadium_10.getBounds().width, viewStadium_02.getBounds().y + viewStadium_07.getBounds().height, (int)(img11.getIconWidth()*stadiumSizeRatio), (int)(img11.getIconHeight()*stadiumSizeRatio));
-		viewStadium_11.setIcon(UI_Elements.scaleImageToButton(img11, viewStadium_11));
+		viewStadium_11.setIcon(UI_Elements.scaleImageToBox(img11, viewStadium_11));
 		panelViewStadium.add(viewStadium_11);
 		String path11_R = "/Images/StadiumSlices/Stadium_Rollover_11.png";
 		ImageIcon img11_R = new ImageIcon(Overview.class.getResource(path11_R));
@@ -511,10 +507,10 @@ public class ViewStadium extends JPanel {
 		viewStadium_12.setBorderPainted(false);
 		viewStadium_12.setFocusPainted(false);
 		viewStadium_12.setBorder(null);
-		String path12 = "/Images/StadiumSlices/Stadium" + getOverviewSectionType(12) + "_12.png";
+		String path12 = "/Images/StadiumSlices/Stadium" + getViewStadiumSectionType(12) + "_12.png";
 		ImageIcon img12 = new ImageIcon(Overview.class.getResource(path12));
 		viewStadium_12.setBounds(viewStadium_11.getBounds().x + viewStadium_11.getBounds().width, viewStadium_02.getBounds().y + viewStadium_07.getBounds().height, (int)(img12.getIconWidth()*stadiumSizeRatio), (int)(img12.getIconHeight()*stadiumSizeRatio));
-		viewStadium_12.setIcon(UI_Elements.scaleImageToButton(img12, viewStadium_12));
+		viewStadium_12.setIcon(UI_Elements.scaleImageToBox(img12, viewStadium_12));
 		panelViewStadium.add(viewStadium_12);
 		String path12_R = "/Images/StadiumSlices/Stadium_Rollover_12.png";
 		ImageIcon img12_R = new ImageIcon(Overview.class.getResource(path12_R));
@@ -537,10 +533,10 @@ public class ViewStadium extends JPanel {
 		viewStadium_13.setBorderPainted(false);
 		viewStadium_13.setFocusPainted(false);
 		viewStadium_13.setBorder(null);
-		String path13 = "/Images/StadiumSlices/Stadium" + getOverviewSectionType(13) + "_13.png";
+		String path13 = "/Images/StadiumSlices/Stadium" + getViewStadiumSectionType(13) + "_13.png";
 		ImageIcon img13 = new ImageIcon(Overview.class.getResource(path13));
 		viewStadium_13.setBounds(viewStadium_12.getBounds().x + viewStadium_12.getBounds().width, viewStadium_02.getBounds().y + viewStadium_07.getBounds().height, (int)(img13.getIconWidth()*stadiumSizeRatio), (int)(img13.getIconHeight()*stadiumSizeRatio));
-		viewStadium_13.setIcon(UI_Elements.scaleImageToButton(img13, viewStadium_13));
+		viewStadium_13.setIcon(UI_Elements.scaleImageToBox(img13, viewStadium_13));
 		panelViewStadium.add(viewStadium_13);
 		String path13_R = "/Images/StadiumSlices/Stadium_Rollover_13.png";
 		ImageIcon img13_R = new ImageIcon(Overview.class.getResource(path13_R));
@@ -563,10 +559,10 @@ public class ViewStadium extends JPanel {
 		viewStadium_14.setBorderPainted(false);
 		viewStadium_14.setFocusPainted(false);
 		viewStadium_14.setBorder(null);
-		String path14 = "/Images/StadiumSlices/Stadium" + getOverviewSectionType(14) + "_14.png";
+		String path14 = "/Images/StadiumSlices/Stadium" + getViewStadiumSectionType(14) + "_14.png";
 		ImageIcon img14 = new ImageIcon(Overview.class.getResource(path14));
 		viewStadium_14.setBounds(viewStadium_13.getBounds().x + viewStadium_13.getBounds().width, viewStadium_02.getBounds().y + viewStadium_07.getBounds().height, (int)(img14.getIconWidth()*stadiumSizeRatio), (int)(img14.getIconHeight()*stadiumSizeRatio));
-		viewStadium_14.setIcon(UI_Elements.scaleImageToButton(img14, viewStadium_14));
+		viewStadium_14.setIcon(UI_Elements.scaleImageToBox(img14, viewStadium_14));
 		panelViewStadium.add(viewStadium_14);
 		String path14_R = "/Images/StadiumSlices/Stadium_Rollover_14.png";
 		ImageIcon img14_R = new ImageIcon(Overview.class.getResource(path14_R));
@@ -589,10 +585,10 @@ public class ViewStadium extends JPanel {
 		viewStadium_15.setBorderPainted(false);
 		viewStadium_15.setFocusPainted(false);
 		viewStadium_15.setBorder(null);
-		String path15 = "/Images/StadiumSlices/Stadium" + getOverviewSectionType(15) + "_15.png";
+		String path15 = "/Images/StadiumSlices/Stadium" + getViewStadiumSectionType(15) + "_15.png";
 		ImageIcon img15 = new ImageIcon(Overview.class.getResource(path15));
 		viewStadium_15.setBounds(viewStadium_14.getBounds().x + viewStadium_14.getBounds().width, viewStadium_02.getBounds().y + viewStadium_07.getBounds().height, (int)(img15.getIconWidth()*stadiumSizeRatio), (int)(img15.getIconHeight()*stadiumSizeRatio));
-		viewStadium_15.setIcon(UI_Elements.scaleImageToButton(img15, viewStadium_15));
+		viewStadium_15.setIcon(UI_Elements.scaleImageToBox(img15, viewStadium_15));
 		panelViewStadium.add(viewStadium_15);
 		String path15_R = "/Images/StadiumSlices/Stadium_Rollover_15.png";
 		ImageIcon img15_R = new ImageIcon(Overview.class.getResource(path15_R));
@@ -615,10 +611,10 @@ public class ViewStadium extends JPanel {
 		viewStadium_16.setBorderPainted(false);
 		viewStadium_16.setFocusPainted(false);
 		viewStadium_16.setBorder(null);
-		String path16 = "/Images/StadiumSlices/Stadium" + getOverviewSectionType(16) + "_16.png";
+		String path16 = "/Images/StadiumSlices/Stadium" + getViewStadiumSectionType(16) + "_16.png";
 		ImageIcon img16 = new ImageIcon(Overview.class.getResource(path16));
 		viewStadium_16.setBounds(viewStadium_15.getBounds().x + viewStadium_15.getBounds().width, viewStadium_02.getBounds().y + viewStadium_07.getBounds().height, (int)(img16.getIconWidth()*stadiumSizeRatio), (int)(img16.getIconHeight()*stadiumSizeRatio));
-		viewStadium_16.setIcon(UI_Elements.scaleImageToButton(img16, viewStadium_16));
+		viewStadium_16.setIcon(UI_Elements.scaleImageToBox(img16, viewStadium_16));
 		panelViewStadium.add(viewStadium_16);
 		String path16_R = "/Images/StadiumSlices/Stadium_Rollover_16.png";
 		ImageIcon img16_R = new ImageIcon(Overview.class.getResource(path16_R));
@@ -641,10 +637,10 @@ public class ViewStadium extends JPanel {
 		viewStadium_55.setBorderPainted(false);
 		viewStadium_55.setFocusPainted(false);
 		viewStadium_55.setBorder(null);
-		String path55 = "/Images/StadiumSlices/Stadium" + getOverviewSectionType(55) + "_55.png";
+		String path55 = "/Images/StadiumSlices/Stadium" + getViewStadiumSectionType(55) + "_55.png";
 		ImageIcon img55 = new ImageIcon(Overview.class.getResource(path55));
 		viewStadium_55.setBounds(viewStadium_08.getBounds().x + viewStadium_08.getBounds().width, viewStadium_49.getBounds().y, (int)(img55.getIconWidth()*stadiumSizeRatio), (int)(img55.getIconHeight()*stadiumSizeRatio));
-		viewStadium_55.setIcon(UI_Elements.scaleImageToButton(img55, viewStadium_55));
+		viewStadium_55.setIcon(UI_Elements.scaleImageToBox(img55, viewStadium_55));
 		panelViewStadium.add(viewStadium_55);
 		String path55_R = "/Images/StadiumSlices/Stadium_Rollover_55.png";
 		ImageIcon img55_R = new ImageIcon(Overview.class.getResource(path55_R));
@@ -667,10 +663,10 @@ public class ViewStadium extends JPanel {
 		viewStadium_22.setBorderPainted(false);
 		viewStadium_22.setFocusPainted(false);
 		viewStadium_22.setBorder(null);
-		String path22 = "/Images/StadiumSlices/Stadium" + getOverviewSectionType(22) + "_22.png";
+		String path22 = "/Images/StadiumSlices/Stadium" + getViewStadiumSectionType(22) + "_22.png";
 		ImageIcon img22 = new ImageIcon(Overview.class.getResource(path22));
 		viewStadium_22.setBounds(viewStadium_55.getBounds().x + viewStadium_55.getBounds().width - (int)(img22.getIconWidth()*stadiumSizeRatio), viewStadium_55.getBounds().y + viewStadium_55.getBounds().height, (int)(img22.getIconWidth()*stadiumSizeRatio), (int)(img22.getIconHeight()*stadiumSizeRatio));
-		viewStadium_22.setIcon(UI_Elements.scaleImageToButton(img22, viewStadium_22));
+		viewStadium_22.setIcon(UI_Elements.scaleImageToBox(img22, viewStadium_22));
 		panelViewStadium.add(viewStadium_22);
 		String path22_R = "/Images/StadiumSlices/Stadium_Rollover_22.png";
 		ImageIcon img22_R = new ImageIcon(Overview.class.getResource(path22_R));
@@ -693,10 +689,10 @@ public class ViewStadium extends JPanel {
 		viewStadium_27.setBorderPainted(false);
 		viewStadium_27.setFocusPainted(false);
 		viewStadium_27.setBorder(null);
-		String path27 = "/Images/StadiumSlices/Stadium" + getOverviewSectionType(27) + "_27.png";
+		String path27 = "/Images/StadiumSlices/Stadium" + getViewStadiumSectionType(27) + "_27.png";
 		ImageIcon img27 = new ImageIcon(Overview.class.getResource(path27));
 		viewStadium_27.setBounds(viewStadium_22.getBounds().x, viewStadium_22.getBounds().y + viewStadium_22.getBounds().height, (int)(img27.getIconWidth()*stadiumSizeRatio), (int)(img27.getIconHeight()*stadiumSizeRatio));
-		viewStadium_27.setIcon(UI_Elements.scaleImageToButton(img27, viewStadium_27));
+		viewStadium_27.setIcon(UI_Elements.scaleImageToBox(img27, viewStadium_27));
 		panelViewStadium.add(viewStadium_27);
 		String path27_R = "/Images/StadiumSlices/Stadium_Rollover_27.png";
 		ImageIcon img27_R = new ImageIcon(Overview.class.getResource(path27_R));
@@ -720,10 +716,10 @@ public class ViewStadium extends JPanel {
 		viewStadium_29.setBorderPainted(false);
 		viewStadium_29.setFocusPainted(false);
 		viewStadium_29.setBorder(null);
-		String path29 = "/Images/StadiumSlices/Stadium" + getOverviewSectionType(29) + "_29.png";
+		String path29 = "/Images/StadiumSlices/Stadium" + getViewStadiumSectionType(29) + "_29.png";
 		ImageIcon img29 = new ImageIcon(Overview.class.getResource(path29));
 		viewStadium_29.setBounds(viewStadium_27.getBounds().x, viewStadium_27.getBounds().y + viewStadium_27.getBounds().height, (int)(img29.getIconWidth()*stadiumSizeRatio), (int)(img29.getIconHeight()*stadiumSizeRatio));
-		viewStadium_29.setIcon(UI_Elements.scaleImageToButton(img29, viewStadium_29));
+		viewStadium_29.setIcon(UI_Elements.scaleImageToBox(img29, viewStadium_29));
 		panelViewStadium.add(viewStadium_29);
 		String path29_R = "/Images/StadiumSlices/Stadium_Rollover_29.png";
 		ImageIcon img29_R = new ImageIcon(Overview.class.getResource(path29_R));
@@ -747,10 +743,10 @@ public class ViewStadium extends JPanel {
 		viewStadium_54.setBorderPainted(false);
 		viewStadium_54.setFocusPainted(false);
 		viewStadium_54.setBorder(null);
-		String path54 = "/Images/StadiumSlices/Stadium" + getOverviewSectionType(54) + "_54.png";
+		String path54 = "/Images/StadiumSlices/Stadium" + getViewStadiumSectionType(54) + "_54.png";
 		ImageIcon img54 = new ImageIcon(Overview.class.getResource(path54));
 		viewStadium_54.setBounds(viewStadium_55.getBounds().x, panelViewStadium.getBounds().y, (int)(img54.getIconWidth()*stadiumSizeRatio), (int)(img54.getIconHeight()*stadiumSizeRatio));
-		viewStadium_54.setIcon(UI_Elements.scaleImageToButton(img54, viewStadium_54));
+		viewStadium_54.setIcon(UI_Elements.scaleImageToBox(img54, viewStadium_54));
 		panelViewStadium.add(viewStadium_54);
 		String path54_R = "/Images/StadiumSlices/Stadium_Rollover_54.png";
 		ImageIcon img54_R = new ImageIcon(Overview.class.getResource(path54_R));
@@ -774,10 +770,10 @@ public class ViewStadium extends JPanel {
 		viewStadium_25.setBorderPainted(false);
 		viewStadium_25.setFocusPainted(false);
 		viewStadium_25.setBorder(null);
-		String path25 = "/Images/StadiumSlices/Stadium" + getOverviewSectionType(25) + "_25.png";
+		String path25 = "/Images/StadiumSlices/Stadium" + getViewStadiumSectionType(25) + "_25.png";
 		ImageIcon img25 = new ImageIcon(Overview.class.getResource(path25));
 		viewStadium_25.setBounds(viewStadium_29.getBounds().x + viewStadium_29.getBounds().width, viewStadium_54.getBounds().y + viewStadium_54.getBounds().height, (int)(img25.getIconWidth()*stadiumSizeRatio), (int)(img25.getIconHeight()*stadiumSizeRatio));
-		viewStadium_25.setIcon(UI_Elements.scaleImageToButton(img25, viewStadium_25));
+		viewStadium_25.setIcon(UI_Elements.scaleImageToBox(img25, viewStadium_25));
 		panelViewStadium.add(viewStadium_25);
 		String path25_R = "/Images/StadiumSlices/Stadium_Rollover_25.png";
 		ImageIcon img25_R = new ImageIcon(Overview.class.getResource(path25_R));
@@ -802,10 +798,10 @@ public class ViewStadium extends JPanel {
 		viewStadium_24.setBorderPainted(false);
 		viewStadium_24.setFocusPainted(false);
 		viewStadium_24.setBorder(null);
-		String path24 = "/Images/StadiumSlices/Stadium" + getOverviewSectionType(24) + "_24.png";
+		String path24 = "/Images/StadiumSlices/Stadium" + getViewStadiumSectionType(24) + "_24.png";
 		ImageIcon img24 = new ImageIcon(Overview.class.getResource(path24));
 		viewStadium_24.setBounds(viewStadium_48.getBounds().x, viewStadium_48.getBounds().y + viewStadium_48.getBounds().height, (int)(img24.getIconWidth()*stadiumSizeRatio), (int)(img24.getIconHeight()*stadiumSizeRatio));
-		viewStadium_24.setIcon(UI_Elements.scaleImageToButton(img24, viewStadium_24));
+		viewStadium_24.setIcon(UI_Elements.scaleImageToBox(img24, viewStadium_24));
 		panelViewStadium.add(viewStadium_24);
 		String path24_R = "/Images/StadiumSlices/Stadium_Rollover_24.png";
 		ImageIcon img24_R = new ImageIcon(Overview.class.getResource(path24_R));
@@ -829,10 +825,10 @@ public class ViewStadium extends JPanel {
 		viewStadium_50.setBorderPainted(false);
 		viewStadium_50.setFocusPainted(false);
 		viewStadium_50.setBorder(null);
-		String path50 = "/Images/StadiumSlices/Stadium" + getOverviewSectionType(50) + "_50.png";
+		String path50 = "/Images/StadiumSlices/Stadium" + getViewStadiumSectionType(50) + "_50.png";
 		ImageIcon img50 = new ImageIcon(Overview.class.getResource(path50));
 		viewStadium_50.setBounds(viewStadium_24.getBounds().x, viewStadium_24.getBounds().y + viewStadium_24.getBounds().height, (int)(img50.getIconWidth()*stadiumSizeRatio), (int)(img50.getIconHeight()*stadiumSizeRatio));
-		viewStadium_50.setIcon(UI_Elements.scaleImageToButton(img50, viewStadium_50));
+		viewStadium_50.setIcon(UI_Elements.scaleImageToBox(img50, viewStadium_50));
 		panelViewStadium.add(viewStadium_50);
 		String path50_R = "/Images/StadiumSlices/Stadium_Rollover_50.png";
 		ImageIcon img50_R = new ImageIcon(Overview.class.getResource(path50_R));
@@ -856,10 +852,10 @@ public class ViewStadium extends JPanel {
 		viewStadium_41.setBorderPainted(false);
 		viewStadium_41.setFocusPainted(false);
 		viewStadium_41.setBorder(null);
-		String path41 = "/Images/StadiumSlices/Stadium" + getOverviewSectionType(41) + "_41.png";
+		String path41 = "/Images/StadiumSlices/Stadium" + getViewStadiumSectionType(41) + "_41.png";
 		ImageIcon img41 = new ImageIcon(Overview.class.getResource(path41));
 		viewStadium_41.setBounds(viewStadium_50.getBounds().x + viewStadium_50.getBounds().width, viewStadium_50.getBounds().y + viewStadium_50.getBounds().height - (int)(img41.getIconHeight()*stadiumSizeRatio), (int)(img41.getIconWidth()*stadiumSizeRatio), (int)(img41.getIconHeight()*stadiumSizeRatio));
-		viewStadium_41.setIcon(UI_Elements.scaleImageToButton(img41, viewStadium_41));
+		viewStadium_41.setIcon(UI_Elements.scaleImageToBox(img41, viewStadium_41));
 		panelViewStadium.add(viewStadium_41);
 		String path41_R = "/Images/StadiumSlices/Stadium_Rollover_41.png";
 		ImageIcon img41_R = new ImageIcon(Overview.class.getResource(path41_R));
@@ -883,10 +879,10 @@ public class ViewStadium extends JPanel {
 		viewStadium_42.setBorderPainted(false);
 		viewStadium_42.setFocusPainted(false);
 		viewStadium_42.setBorder(null);
-		String path42 = "/Images/StadiumSlices/Stadium" + getOverviewSectionType(42) + "_42.png";
+		String path42 = "/Images/StadiumSlices/Stadium" + getViewStadiumSectionType(42) + "_42.png";
 		ImageIcon img42 = new ImageIcon(Overview.class.getResource(path42));
 		viewStadium_42.setBounds(viewStadium_41.getBounds().x + viewStadium_41.getBounds().width, viewStadium_41.getBounds().y, (int)(img42.getIconWidth()*stadiumSizeRatio), (int)(img42.getIconHeight()*stadiumSizeRatio));
-		viewStadium_42.setIcon(UI_Elements.scaleImageToButton(img42, viewStadium_42));
+		viewStadium_42.setIcon(UI_Elements.scaleImageToBox(img42, viewStadium_42));
 		panelViewStadium.add(viewStadium_42);
 		String path42_R = "/Images/StadiumSlices/Stadium_Rollover_42.png";
 		ImageIcon img42_R = new ImageIcon(Overview.class.getResource(path42_R));
@@ -910,10 +906,10 @@ public class ViewStadium extends JPanel {
 		viewStadium_43.setBorderPainted(false);
 		viewStadium_43.setFocusPainted(false);
 		viewStadium_43.setBorder(null);
-		String path43 = "/Images/StadiumSlices/Stadium" + getOverviewSectionType(43) + "_43.png";
+		String path43 = "/Images/StadiumSlices/Stadium" + getViewStadiumSectionType(43) + "_43.png";
 		ImageIcon img43 = new ImageIcon(Overview.class.getResource(path43));
 		viewStadium_43.setBounds(viewStadium_42.getBounds().x + viewStadium_42.getBounds().width, viewStadium_42.getBounds().y, (int)(img43.getIconWidth()*stadiumSizeRatio), (int)(img43.getIconHeight()*stadiumSizeRatio));
-		viewStadium_43.setIcon(UI_Elements.scaleImageToButton(img43, viewStadium_43));
+		viewStadium_43.setIcon(UI_Elements.scaleImageToBox(img43, viewStadium_43));
 		panelViewStadium.add(viewStadium_43);
 		String path43_R = "/Images/StadiumSlices/Stadium_Rollover_43.png";
 		ImageIcon img43_R = new ImageIcon(Overview.class.getResource(path43_R));
@@ -937,10 +933,10 @@ public class ViewStadium extends JPanel {
 		viewStadium_44.setBorderPainted(false);
 		viewStadium_44.setFocusPainted(false);
 		viewStadium_44.setBorder(null);
-		String path44 = "/Images/StadiumSlices/Stadium" + getOverviewSectionType(44) + "_44.png";
+		String path44 = "/Images/StadiumSlices/Stadium" + getViewStadiumSectionType(44) + "_44.png";
 		ImageIcon img44 = new ImageIcon(Overview.class.getResource(path44));
 		viewStadium_44.setBounds(viewStadium_43.getBounds().x + viewStadium_43.getBounds().width, viewStadium_43.getBounds().y, (int)(img44.getIconWidth()*stadiumSizeRatio), (int)(img44.getIconHeight()*stadiumSizeRatio));
-		viewStadium_44.setIcon(UI_Elements.scaleImageToButton(img44, viewStadium_44));
+		viewStadium_44.setIcon(UI_Elements.scaleImageToBox(img44, viewStadium_44));
 		panelViewStadium.add(viewStadium_44);
 		String path44_R = "/Images/StadiumSlices/Stadium_Rollover_44.png";
 		ImageIcon img44_R = new ImageIcon(Overview.class.getResource(path44_R));
@@ -964,10 +960,10 @@ public class ViewStadium extends JPanel {
 		viewStadium_45.setBorderPainted(false);
 		viewStadium_45.setFocusPainted(false);
 		viewStadium_45.setBorder(null);
-		String path45 = "/Images/StadiumSlices/Stadium" + getOverviewSectionType(45) + "_45.png";
+		String path45 = "/Images/StadiumSlices/Stadium" + getViewStadiumSectionType(45) + "_45.png";
 		ImageIcon img45 = new ImageIcon(Overview.class.getResource(path45));
 		viewStadium_45.setBounds(viewStadium_44.getBounds().x + viewStadium_44.getBounds().width, viewStadium_44.getBounds().y, (int)(img45.getIconWidth()*stadiumSizeRatio), (int)(img45.getIconHeight()*stadiumSizeRatio));
-		viewStadium_45.setIcon(UI_Elements.scaleImageToButton(img45, viewStadium_45));
+		viewStadium_45.setIcon(UI_Elements.scaleImageToBox(img45, viewStadium_45));
 		panelViewStadium.add(viewStadium_45);
 		String path45_R = "/Images/StadiumSlices/Stadium_Rollover_45.png";
 		ImageIcon img45_R = new ImageIcon(Overview.class.getResource(path45_R));
@@ -991,10 +987,10 @@ public class ViewStadium extends JPanel {
 		viewStadium_46.setBorderPainted(false);
 		viewStadium_46.setFocusPainted(false);
 		viewStadium_46.setBorder(null);
-		String path46 = "/Images/StadiumSlices/Stadium" + getOverviewSectionType(46) + "_46.png";
+		String path46 = "/Images/StadiumSlices/Stadium" + getViewStadiumSectionType(46) + "_46.png";
 		ImageIcon img46 = new ImageIcon(Overview.class.getResource(path46));
 		viewStadium_46.setBounds(viewStadium_45.getBounds().x + viewStadium_45.getBounds().width, viewStadium_45.getBounds().y, (int)(img46.getIconWidth()*stadiumSizeRatio), (int)(img46.getIconHeight()*stadiumSizeRatio));
-		viewStadium_46.setIcon(UI_Elements.scaleImageToButton(img46, viewStadium_46));
+		viewStadium_46.setIcon(UI_Elements.scaleImageToBox(img46, viewStadium_46));
 		panelViewStadium.add(viewStadium_46);
 		String path46_R = "/Images/StadiumSlices/Stadium_Rollover_46.png";
 		ImageIcon img46_R = new ImageIcon(Overview.class.getResource(path46_R));
@@ -1018,10 +1014,10 @@ public class ViewStadium extends JPanel {
 		viewStadium_47.setBorderPainted(false);
 		viewStadium_47.setFocusPainted(false);
 		viewStadium_47.setBorder(null);
-		String path47 = "/Images/StadiumSlices/Stadium" + getOverviewSectionType(47) + "_47.png";
+		String path47 = "/Images/StadiumSlices/Stadium" + getViewStadiumSectionType(47) + "_47.png";
 		ImageIcon img47 = new ImageIcon(Overview.class.getResource(path47));
 		viewStadium_47.setBounds(viewStadium_46.getBounds().x + viewStadium_46.getBounds().width, viewStadium_46.getBounds().y, (int)(img47.getIconWidth()*stadiumSizeRatio), (int)(img47.getIconHeight()*stadiumSizeRatio));
-		viewStadium_47.setIcon(UI_Elements.scaleImageToButton(img47, viewStadium_47));
+		viewStadium_47.setIcon(UI_Elements.scaleImageToBox(img47, viewStadium_47));
 		panelViewStadium.add(viewStadium_47);
 		String path47_R = "/Images/StadiumSlices/Stadium_Rollover_47.png";
 		ImageIcon img47_R = new ImageIcon(Overview.class.getResource(path47_R));
@@ -1045,10 +1041,10 @@ public class ViewStadium extends JPanel {
 		viewStadium_34.setBorderPainted(false);
 		viewStadium_34.setFocusPainted(false);
 		viewStadium_34.setBorder(null);
-		String path34 = "/Images/StadiumSlices/Stadium" + getOverviewSectionType(34) + "_34.png";
+		String path34 = "/Images/StadiumSlices/Stadium" + getViewStadiumSectionType(34) + "_34.png";
 		ImageIcon img34 = new ImageIcon(Overview.class.getResource(path34));
 		viewStadium_34.setBounds(viewStadium_41.getBounds().x, viewStadium_41.getBounds().y - (int)(img34.getIconHeight()*stadiumSizeRatio) - 2, (int)(img34.getIconWidth()*stadiumSizeRatio), (int)(img34.getIconHeight()*stadiumSizeRatio));
-		viewStadium_34.setIcon(UI_Elements.scaleImageToButton(img34, viewStadium_34));
+		viewStadium_34.setIcon(UI_Elements.scaleImageToBox(img34, viewStadium_34));
 		panelViewStadium.add(viewStadium_34);
 		String path34_R = "/Images/StadiumSlices/Stadium_Rollover_34.png";
 		ImageIcon img34_R = new ImageIcon(Overview.class.getResource(path34_R));
@@ -1072,10 +1068,10 @@ public class ViewStadium extends JPanel {
 		viewStadium_35.setBorderPainted(false);
 		viewStadium_35.setFocusPainted(false);
 		viewStadium_35.setBorder(null);
-		String path35 = "/Images/StadiumSlices/Stadium" + getOverviewSectionType(35) + "_35.png";
+		String path35 = "/Images/StadiumSlices/Stadium" + getViewStadiumSectionType(35) + "_35.png";
 		ImageIcon img35 = new ImageIcon(Overview.class.getResource(path35));
 		viewStadium_35.setBounds(viewStadium_34.getBounds().x + viewStadium_34.getBounds().width, viewStadium_34.getBounds().y, (int)(img35.getIconWidth()*stadiumSizeRatio), (int)(img35.getIconHeight()*stadiumSizeRatio));
-		viewStadium_35.setIcon(UI_Elements.scaleImageToButton(img35, viewStadium_35));
+		viewStadium_35.setIcon(UI_Elements.scaleImageToBox(img35, viewStadium_35));
 		panelViewStadium.add(viewStadium_35);
 		String path35_R = "/Images/StadiumSlices/Stadium_Rollover_35.png";
 		ImageIcon img35_R = new ImageIcon(Overview.class.getResource(path35_R));
@@ -1099,10 +1095,10 @@ public class ViewStadium extends JPanel {
 		viewStadium_36.setBorderPainted(false);
 		viewStadium_36.setFocusPainted(false);
 		viewStadium_36.setBorder(null);
-		String path36 = "/Images/StadiumSlices/Stadium" + getOverviewSectionType(36) + "_36.png";
+		String path36 = "/Images/StadiumSlices/Stadium" + getViewStadiumSectionType(36) + "_36.png";
 		ImageIcon img36 = new ImageIcon(Overview.class.getResource(path36));
 		viewStadium_36.setBounds(viewStadium_35.getBounds().x + viewStadium_35.getBounds().width, viewStadium_35.getBounds().y, (int)(img36.getIconWidth()*stadiumSizeRatio), (int)(img36.getIconHeight()*stadiumSizeRatio));
-		viewStadium_36.setIcon(UI_Elements.scaleImageToButton(img36, viewStadium_36));
+		viewStadium_36.setIcon(UI_Elements.scaleImageToBox(img36, viewStadium_36));
 		panelViewStadium.add(viewStadium_36);
 		String path36_R = "/Images/StadiumSlices/Stadium_Rollover_36.png";
 		ImageIcon img36_R = new ImageIcon(Overview.class.getResource(path36_R));
@@ -1126,10 +1122,10 @@ public class ViewStadium extends JPanel {
 		viewStadium_37.setBorderPainted(false);
 		viewStadium_37.setFocusPainted(false);
 		viewStadium_37.setBorder(null);
-		String path37 = "/Images/StadiumSlices/Stadium" + getOverviewSectionType(37) + "_37.png";
+		String path37 = "/Images/StadiumSlices/Stadium" + getViewStadiumSectionType(37) + "_37.png";
 		ImageIcon img37 = new ImageIcon(Overview.class.getResource(path37));
 		viewStadium_37.setBounds(viewStadium_36.getBounds().x + viewStadium_36.getBounds().width, viewStadium_36.getBounds().y, (int)(img37.getIconWidth()*stadiumSizeRatio), (int)(img37.getIconHeight()*stadiumSizeRatio));
-		viewStadium_37.setIcon(UI_Elements.scaleImageToButton(img37, viewStadium_37));
+		viewStadium_37.setIcon(UI_Elements.scaleImageToBox(img37, viewStadium_37));
 		panelViewStadium.add(viewStadium_37);
 		String path37_R = "/Images/StadiumSlices/Stadium_Rollover_37.png";
 		ImageIcon img37_R = new ImageIcon(Overview.class.getResource(path37_R));
@@ -1153,10 +1149,10 @@ public class ViewStadium extends JPanel {
 		viewStadium_38.setBorderPainted(false);
 		viewStadium_38.setFocusPainted(false);
 		viewStadium_38.setBorder(null);
-		String path38 = "/Images/StadiumSlices/Stadium" + getOverviewSectionType(38) + "_38.png";
+		String path38 = "/Images/StadiumSlices/Stadium" + getViewStadiumSectionType(38) + "_38.png";
 		ImageIcon img38 = new ImageIcon(Overview.class.getResource(path38));
 		viewStadium_38.setBounds(viewStadium_37.getBounds().x + viewStadium_37.getBounds().width, viewStadium_37.getBounds().y, (int)(img38.getIconWidth()*stadiumSizeRatio), (int)(img38.getIconHeight()*stadiumSizeRatio));
-		viewStadium_38.setIcon(UI_Elements.scaleImageToButton(img38, viewStadium_38));
+		viewStadium_38.setIcon(UI_Elements.scaleImageToBox(img38, viewStadium_38));
 		panelViewStadium.add(viewStadium_38);
 		String path38_R = "/Images/StadiumSlices/Stadium_Rollover_38.png";
 		ImageIcon img38_R = new ImageIcon(Overview.class.getResource(path38_R));
@@ -1180,10 +1176,10 @@ public class ViewStadium extends JPanel {
 		viewStadium_39.setBorderPainted(false);
 		viewStadium_39.setFocusPainted(false);
 		viewStadium_39.setBorder(null);
-		String path39 = "/Images/StadiumSlices/Stadium" + getOverviewSectionType(39) + "_39.png";
+		String path39 = "/Images/StadiumSlices/Stadium" + getViewStadiumSectionType(39) + "_39.png";
 		ImageIcon img39 = new ImageIcon(Overview.class.getResource(path39));
 		viewStadium_39.setBounds(viewStadium_38.getBounds().x + viewStadium_38.getBounds().width, viewStadium_38.getBounds().y, (int)(img39.getIconWidth()*stadiumSizeRatio), (int)(img39.getIconHeight()*stadiumSizeRatio));
-		viewStadium_39.setIcon(UI_Elements.scaleImageToButton(img39, viewStadium_39));
+		viewStadium_39.setIcon(UI_Elements.scaleImageToBox(img39, viewStadium_39));
 		panelViewStadium.add(viewStadium_39);
 		String path39_R = "/Images/StadiumSlices/Stadium_Rollover_39.png";
 		ImageIcon img39_R = new ImageIcon(Overview.class.getResource(path39_R));
@@ -1206,10 +1202,10 @@ public class ViewStadium extends JPanel {
 		viewStadium_40.setBorderPainted(false);
 		viewStadium_40.setFocusPainted(false);
 		viewStadium_40.setBorder(null);
-		String path40 = "/Images/StadiumSlices/Stadium" + getOverviewSectionType(40) + "_40.png";
+		String path40 = "/Images/StadiumSlices/Stadium" + getViewStadiumSectionType(40) + "_40.png";
 		ImageIcon img40 = new ImageIcon(Overview.class.getResource(path40));
 		viewStadium_40.setBounds(viewStadium_39.getBounds().x + viewStadium_39.getBounds().width, viewStadium_39.getBounds().y, (int)(img40.getIconWidth()*stadiumSizeRatio), (int)(img40.getIconHeight()*stadiumSizeRatio));
-		viewStadium_40.setIcon(UI_Elements.scaleImageToButton(img40, viewStadium_40));
+		viewStadium_40.setIcon(UI_Elements.scaleImageToBox(img40, viewStadium_40));
 		panelViewStadium.add(viewStadium_40);
 		String path40_R = "/Images/StadiumSlices/Stadium_Rollover_40.png";
 		ImageIcon img40_R = new ImageIcon(Overview.class.getResource(path40_R));
@@ -1233,10 +1229,10 @@ public class ViewStadium extends JPanel {
 		viewStadium_53.setBorderPainted(false);
 		viewStadium_53.setFocusPainted(false);
 		viewStadium_53.setBorder(null);
-		String path53 = "/Images/StadiumSlices/Stadium" + getOverviewSectionType(53) + "_53.png";
+		String path53 = "/Images/StadiumSlices/Stadium" + getViewStadiumSectionType(53) + "_53.png";
 		ImageIcon img53 = new ImageIcon(Overview.class.getResource(path53));
 		viewStadium_53.setBounds(viewStadium_40.getBounds().x + viewStadium_40.getBounds().width, viewStadium_51.getBounds().y, (int)(img53.getIconWidth()*stadiumSizeRatio), (int)(img53.getIconHeight()*stadiumSizeRatio));
-		viewStadium_53.setIcon(UI_Elements.scaleImageToButton(img53, viewStadium_53));
+		viewStadium_53.setIcon(UI_Elements.scaleImageToBox(img53, viewStadium_53));
 		panelViewStadium.add(viewStadium_53);
 		String path53_R = "/Images/StadiumSlices/Stadium_Rollover_53.png";
 		ImageIcon img53_R = new ImageIcon(Overview.class.getResource(path53_R));
@@ -1260,10 +1256,10 @@ public class ViewStadium extends JPanel {
 		viewStadium_52.setBorderPainted(false);
 		viewStadium_52.setFocusPainted(false);
 		viewStadium_52.setBorder(null);
-		String path52 = "/Images/StadiumSlices/Stadium" + getOverviewSectionType(52) + "_52.png";
+		String path52 = "/Images/StadiumSlices/Stadium" + getViewStadiumSectionType(52) + "_52.png";
 		ImageIcon img52 = new ImageIcon(Overview.class.getResource(path52));
 		viewStadium_52.setBounds(viewStadium_40.getBounds().x + viewStadium_40.getBounds().width, viewStadium_50.getBounds().y, (int)(img52.getIconWidth()*stadiumSizeRatio), (int)(img52.getIconHeight()*stadiumSizeRatio));
-		viewStadium_52.setIcon(UI_Elements.scaleImageToButton(img52, viewStadium_52));
+		viewStadium_52.setIcon(UI_Elements.scaleImageToBox(img52, viewStadium_52));
 		panelViewStadium.add(viewStadium_52);
 		String path52_R = "/Images/StadiumSlices/Stadium_Rollover_52.png";
 		ImageIcon img52_R = new ImageIcon(Overview.class.getResource(path52_R));
@@ -1283,7 +1279,7 @@ public class ViewStadium extends JPanel {
 		String pathPitch = "/Images/StadiumSlices/StadiumPitch.png";
 		ImageIcon imgPitch = new ImageIcon(Overview.class.getResource(pathPitch));
 		stadiumPitch.setBounds(93, 81 , (int)(imgPitch.getIconWidth()*stadiumSizeRatio), (int)(imgPitch.getIconHeight()*stadiumSizeRatio));
-		stadiumPitch.setIcon(UI_Elements.scaleImageTolabel(imgPitch, stadiumPitch));
+		stadiumPitch.setIcon(UI_Elements.scaleImageToBox(imgPitch, stadiumPitch));
 		panelViewStadium.add(stadiumPitch);
 		
 		JLabel viewStadiumBG = new JLabel();
@@ -1292,7 +1288,7 @@ public class ViewStadium extends JPanel {
 		String pathStadiumBG = "/Images/Stadium_BG.png";
 		ImageIcon imgStadiumBG = new ImageIcon(Overview.class.getResource(pathStadiumBG));
 		viewStadiumBG.setBounds(0, 0, (int)(imgStadiumBG.getIconWidth()*stadiumSizeRatio)-4 , (int)(imgStadiumBG.getIconHeight()*stadiumSizeRatio)-2);
-		viewStadiumBG.setIcon(UI_Elements.scaleImageTolabel(imgStadiumBG, viewStadiumBG));
+		viewStadiumBG.setIcon(UI_Elements.scaleImageToBox(imgStadiumBG, viewStadiumBG));
 		viewStadiumBG.setVisible(true);
 		
 		JLabel viewStadiumImg = new JLabel();
@@ -1355,19 +1351,29 @@ public class ViewStadium extends JPanel {
 	}
 
 	
-	public String getOverviewSectionType(int i_SectionNum) {
-		
+	public String getViewStadiumSectionType(int i_SectionNum) {
+				
 		StringBuilder type = new StringBuilder();
-		/*String sectionType = view.model.getArenaSection(i_SectionNum).getSectionType(); //copy get method to ctrlr
+		String sectionType = null;//model.stadium.getArenaSection(i_SectionNum).getSectionType();		
 		
 		if(sectionType != null)
 		{
-			type.append("_" + sectionType);
-		}*/
-				
-		return type.toString();
+			if(sectionType == "Club Level")
+			{
+				type.append("_" + "ClubLevel");				
+
+			}
+			else
+			{
+				type.append("_" + sectionType);				
+			}
+		}
 		
+		return type.toString();
 	}
+	
+	
+
 	
 	public void stadiumSectionSelection(JButton i_Section, MouseAdapter i_SectionAdapter, ImageIcon i_SelectedImg)
 	{
@@ -1380,7 +1386,7 @@ public class ViewStadium extends JPanel {
 				numOfSelected = 0;
 			}
 			i_Section.setSelected(true);
-			i_Section.setIcon(UI_Elements.scaleImageToButton(i_SelectedImg, i_Section));
+			i_Section.setIcon(UI_Elements.scaleImageToBox(i_SelectedImg, i_Section));
 			try {
 				detailsPanel.setVisible(true);
 			}
@@ -1436,40 +1442,29 @@ public class ViewStadium extends JPanel {
 	
 	private MouseAdapter createSectionAdapter(JButton i_Section, ImageIcon i_Img, ImageIcon i_ImgRollover, ImageIcon i_ImgSelected)
 	{
-		i_Section.setDisabledIcon(UI_Elements.scaleImageToButton(i_Img, i_Section));
+		i_Section.setDisabledIcon(UI_Elements.scaleImageToBox(i_Img, i_Section));
 		MouseAdapter adapter =  new MouseAdapter(){
 		    public void mouseEntered( MouseEvent e ) {
 		    	if(i_Section.isEnabled() == true)
 		    	{
-		    		i_Section.setIcon(UI_Elements.scaleImageToButton(i_ImgRollover, i_Section));		    		
+		    		i_Section.setIcon(UI_Elements.scaleImageToBox(i_ImgRollover, i_Section));		    		
 		    	}
-		    	/*else
-		    	{
-		    		i_Section.setDisabledIcon(UI_Elements.scaleImageToButton(i_ImgRollover, i_Section));
-		    	}*/
+
 		    }
 		    public void mouseExited( MouseEvent e ) {
 		    	if(i_Section.isSelected() != true)
 		    	{
 			    	if(i_Section.isEnabled() == true)
 			    	{
-			    		i_Section.setIcon(UI_Elements.scaleImageToButton(i_Img, i_Section));		    		
+			    		i_Section.setIcon(UI_Elements.scaleImageToBox(i_Img, i_Section));		    		
 			    	}
-			    	/*else
-			    	{
-			    		i_Section.setDisabledIcon(UI_Elements.scaleImageToButton(i_Img, i_Section));
-			    	}*/
 		    	}
 		    	else
 		    	{
 			    	if(i_Section.isEnabled() == true)
 			    	{
-			    		i_Section.setIcon(UI_Elements.scaleImageToButton(i_ImgSelected, i_Section));		    		
+			    		i_Section.setIcon(UI_Elements.scaleImageToBox(i_ImgSelected, i_Section));		    		
 			    	}
-			    	/*else
-			    	{
-			    		i_Section.setDisabledIcon(UI_Elements.scaleImageToButton(i_ImgSelected, i_Section));
-			    	}*/
 		    	}
 		    }
 		};

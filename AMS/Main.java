@@ -14,8 +14,8 @@ public class Main {
 		EventQueue.invokeLater(new Runnable() {
 			public void run() {				
 				try {
-					View amsView = new View();
 					Model amsModel = new Model();
+					View amsView = new View();
 					Controller amsController = new Controller(amsView, amsModel);
 								
 					amsView.setVisible(true);

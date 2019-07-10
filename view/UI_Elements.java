@@ -5,6 +5,7 @@ import java.awt.Image;
 
 import javax.swing.ImageIcon;
 import javax.swing.JButton;
+import javax.swing.JComponent;
 import javax.swing.JLabel;
 
 public class UI_Elements {
@@ -38,20 +39,11 @@ public class UI_Elements {
 	public static Font font_bodySalesData = new Font("Calibri", Font.PLAIN, textBodySalesData); // Text Field & Combo Box font
 	
 	//UI METHODS
-	public static ImageIcon scaleImageTolabel(ImageIcon i_Img, JLabel i_label) //use generics/template
+	public static ImageIcon scaleImageToBox(ImageIcon i_Img, JComponent i_box)
 	{
 		ImageIcon scaledImage;
 		
-		scaledImage = new ImageIcon(i_Img.getImage().getScaledInstance(i_label.getWidth(), i_label.getHeight(), Image.SCALE_SMOOTH));
-		
-		return scaledImage;
-	}
-	
-	public static ImageIcon scaleImageToButton(ImageIcon i_Img, JButton i_button)
-	{
-		ImageIcon scaledImage;
-		
-		scaledImage = new ImageIcon(i_Img.getImage().getScaledInstance(i_button.getWidth(), i_button.getHeight(), Image.SCALE_SMOOTH));
+		scaledImage = new ImageIcon(i_Img.getImage().getScaledInstance(i_box.getWidth(), i_box.getHeight(), Image.SCALE_SMOOTH));
 		
 		return scaledImage;
 	}
