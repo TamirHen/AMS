@@ -59,8 +59,8 @@ public class Stadium {
 		return capacity;
 	}
 
-	public void setCapacity(int capacity) {
-		this.capacity = capacity;
+	public void setCapacity(int seatAdded) {
+		this.capacity += seatAdded;
 	}
 
 	public String getAddress() {

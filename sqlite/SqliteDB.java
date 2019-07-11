@@ -65,8 +65,12 @@ public class SqliteDB {
 		try {
 			this.stmt = c.createStatement();
 			ResultSet rs = stmt.executeQuery("select * from Stadium");
+			int stadiNumOfSeats=0;
 			initializeSections();
-			this.stadium = Stadium.getInstance(Integer.parseInt(rs.getString("stadiumId")), rs.getString("stadiumName"), rs.getString("homeTeam"), Integer.parseInt(rs.getString("capacity")), rs.getString("address"),Integer.parseInt(rs.getString("numOfSections")), section);
+			for (int i = 0; i < this.sectionSize; i++) {
+				stadiNumOfSeats+=section[i].getNumOfSeats();
+			}
+			this.stadium = Stadium.getInstance(Integer.parseInt(rs.getString("stadiumId")), rs.getString("stadiumName"), rs.getString("homeTeam"), stadiNumOfSeats, rs.getString("address"),Integer.parseInt(rs.getString("numOfSections")), section);
 
 			
 		} catch (Exception e) {

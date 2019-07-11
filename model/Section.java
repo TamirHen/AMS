@@ -4,7 +4,7 @@ public class Section {
 	private int sectionNumber;
 	private String sectionName;
 	private String sectionRanking;
-	private float pricePrice;
+	private float ticketPrice;
 	private boolean isRoofed;
 	private int numOfSeats;
 	private int takenSeats;
@@ -13,15 +13,15 @@ public class Section {
 
 	// Constructor:
 	public Section(int sectionNumber, String sectionName, String sectionRanking, float ticketPrice, boolean isRoofed, int numOfSeats, int takenSeats, int availableSeats, String sectionType) {
-		this.setSectionNumber(sectionNumber);
-		this.setSectionName(sectionName);
-		this.setSectionRanking(sectionRanking);
-		this.setTicketPrice(ticketPrice);
-		this.setRoofed(isRoofed);
-		this.setNumOfSeats(numOfSeats);
-		this.setTakenSeats(takenSeats);
-		this.setAvailableSeats(availableSeats);
-		this.setSectionType(sectionType);
+		this.sectionNumber=sectionNumber;
+		this.sectionName=sectionName;
+		this.sectionRanking=sectionRanking;
+		this.ticketPrice=ticketPrice;
+		this.isRoofed=isRoofed;
+		this.numOfSeats=numOfSeats;
+		this.takenSeats=takenSeats;
+		this.availableSeats=availableSeats;
+		this.sectionType=sectionType;
 	}
 
 	// Data members getters and setters:
@@ -50,11 +50,11 @@ public class Section {
 	}
 
 	public float getTicketPrice() {
-		return pricePrice;
+		return ticketPrice;
 	}
 
 	public void setTicketPrice(float ticketPrice) {
-		this.pricePrice = ticketPrice;
+		this.ticketPrice = ticketPrice;
 	}
 
 	public boolean isRoofed() {
@@ -69,8 +69,12 @@ public class Section {
 		return numOfSeats;
 	}
 
-	public void setNumOfSeats(int numOfSeats) {
-		this.numOfSeats = numOfSeats;
+	public void setNumOfSeats(int newNumOfSeats, Stadium stadium) {
+		
+		stadium.setCapacity(newNumOfSeats-this.numOfSeats); //send only the difference to the stadium
+		this.numOfSeats = newNumOfSeats;
+		//needs to update the DB as well
+		
 	}
 
 	public int getTakenSeats() {

@@ -20,17 +20,18 @@ public class Game {
 	private float clubLevelRevenue;
 	private float bleachersRevenue;
 	private float seasonTicketsRevenue;
-
+	private float totalGameRevenue;
 	//Constructor
 		public Game (String name, String date, int sadiumCapacity, float vipTicketPrice, float clubLevelTicketPrice, float bleachersTicketPrice, float seasonTicketPrice, Stadium stadium) {
 			this.name=name;
 			this.date=date;
 			this.stadiumCapacity=stadiumCapacity;
-			unSoldTickets=stadiumCapacity;
-			vipTicketsSold=0;
-			clubLevelTicketsSold=0;
-			bleachersTicketsSold=0;
-			seasonTicketsSold=0;
+			this.unSoldTickets=stadiumCapacity;
+			this.vipTicketsSold=0;
+			this.clubLevelTicketsSold=0;
+			this.bleachersTicketsSold=0;
+			this.seasonTicketsSold=0;
+			this.totalGameRevenue=0;
 			this.vipTicketPrice=vipTicketPrice;
 			this.clubLevelTicketPrice=clubLevelTicketPrice;
 			this.bleachersTicketPrice=bleachersTicketPrice;
@@ -45,12 +46,14 @@ public class Game {
 		public void setVipTicketsSold(int numOfTicketsSold, int sectionNumber) {
 			this.vipTicketsSold+=numOfTicketsSold;
 			this.vipRevenue+=(numOfTicketsSold*vipTicketPrice);
+			this.totalGameRevenue+=this.vipRevenue;
 			this.unSoldTickets-=numOfTicketsSold;
 			this.gameSections[sectionNumber].setSoldTickets(numOfTicketsSold);
 		}
 		public void setClubLevelTicketsSold(int numOfTicketsSold, int sectionNumber) {
 			this.clubLevelTicketsSold+=numOfTicketsSold;
 			this.clubLevelRevenue+=(numOfTicketsSold*clubLevelTicketPrice);
+			this.totalGameRevenue+=this.clubLevelRevenue;
 			this.unSoldTickets-=numOfTicketsSold;
 			this.gameSections[sectionNumber].setSoldTickets(numOfTicketsSold);
 
@@ -58,6 +61,7 @@ public class Game {
 		public void setBleachersTicketsSold(int numOfTicketsSold, int sectionNumber) {
 			this.bleachersTicketsSold+=numOfTicketsSold;
 			this.bleachersRevenue+=(numOfTicketsSold*bleachersTicketPrice);
+			this.totalGameRevenue+=this.bleachersRevenue;
 			this.unSoldTickets-=numOfTicketsSold;
 			this.gameSections[sectionNumber].setSoldTickets(numOfTicketsSold);
 
@@ -65,6 +69,7 @@ public class Game {
 		public void setSeasonTicketsSold(int numOfTicketsSold, int sectionNumber) {
 			this.seasonTicketsSold+=numOfTicketsSold;
 			this.seasonTicketsRevenue+=(numOfTicketsSold*seasonTicketPrice);
+			this.totalGameRevenue+=this.seasonTicketsRevenue;
 			this.unSoldTickets-=numOfTicketsSold;
 			this.gameSections[sectionNumber].setSoldTickets(numOfTicketsSold);
 
@@ -98,7 +103,10 @@ public class Game {
 		private float getSeasonTicketsRevenue() {
 			return seasonTicketsRevenue;
 		}
-		
-		
+
+		public float getTotalGameRevenue() {
+			return totalGameRevenue;
+		}
+
 		
 }

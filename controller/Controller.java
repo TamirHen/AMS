@@ -265,12 +265,8 @@ public class Controller {
 
 				view.propertiesPanel.sectionInedex = view.propertiesPanel.cb_sectionSelection.getSelectedIndex(); // Gets the Section we want to edit
 				
-				//update changes in DB:
-				model.db.updateProperties(1, view.propertiesPanel.tf_arenaName.getText(), "Real Madrid", Integer.parseInt(view.propertiesPanel.tf_arenaNumOfSeats.getText()), view.propertiesPanel.tf_address.getText(), 5);
-				
 				model.stadium.setStadiumName(view.propertiesPanel.tf_arenaName.getText());
 				model.stadium.setAddress(view.propertiesPanel.tf_address.getText());
-				model.stadium.setCapacity(Integer.valueOf(view.propertiesPanel.tf_arenaNumOfSeats.getText()).intValue());
 				// -------------//
 				model.stadium.getArenaSection(view.propertiesPanel.sectionInedex)
 						.setSectionType(view.propertiesPanel.cb_sectionType.getModel().getSelectedItem().toString());
@@ -279,7 +275,7 @@ public class Controller {
 				model.stadium.getArenaSection(view.propertiesPanel.sectionInedex)
 						.setTicketPrice(Float.valueOf(view.propertiesPanel.tf_sectionTicketPrice.getText()).floatValue());
 				model.stadium.getArenaSection(view.propertiesPanel.sectionInedex)
-						.setNumOfSeats(Integer.valueOf(view.propertiesPanel.tf_sectionNumOfSeats.getText()).intValue());
+						.setNumOfSeats(Integer.valueOf(view.propertiesPanel.tf_sectionNumOfSeats.getText()).intValue(), model.stadium);
 				if (view.propertiesPanel.rdbtnIsRoofedYes.isSelected()) {
 					model.stadium.getArenaSection(view.propertiesPanel.sectionInedex).setRoofed(true);
 					//set new Section properties in DB with "isRoofed" true:
@@ -291,6 +287,12 @@ public class Controller {
 
 				}
 				// -------------//
+				//update changes in DB:
+				model.db.updateProperties(1, view.propertiesPanel.tf_arenaName.getText(), "Real Madrid", model.stadium.getCapacity(), view.propertiesPanel.tf_address.getText(), 5);
+				//--------------//
+
+				view.propertiesPanel.tf_arenaNumOfSeats.setText(String.valueOf(model.stadium.getCapacity())); //changes number of seats according to the section changes
+
 				view.propertiesPanel.setProperties(false);
 			}
 		});
