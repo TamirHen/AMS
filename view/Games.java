@@ -39,14 +39,12 @@ public class Games extends JPanel {
 	private JComboBox cb_SalesGame;
 	private JButton btnAddSeason;
 	private JButton btnAddGame;
-	private JButton btnEditTickets;
 	
 	private List<JPanel> gamesPanelSubPanels = new ArrayList<JPanel>();
 	private List<JButton> gamesPanelButtons = new ArrayList<JButton>();
 	private GamesAddSeason addSeasonPanel;
 	private GamesAddGame addGamePanel;
-	private GamesEditTickets editTicketsPanel;
-
+	private GamesSectionDetails sectionDetailsPanel;
 	
 	Games(){
 		
@@ -83,13 +81,13 @@ public class Games extends JPanel {
 		lblSeason.setForeground(Color.WHITE);
 		lblSeason.setFont(UI_Elements.font_bodyLabel);
 		lblSeason.setBorder(null);
-		lblSeason.setBounds(35, 103, 65, 20);
+		lblSeason.setBounds(35,gamesStadiumPanel.getBounds().y + 5 , 65, 20);
 		panelGames.add(lblSeason);
 		
 		cb_SalesSeason = new JComboBox();
 		cb_SalesSeason.setFont(UI_Elements.font_bodyFillText);
 		cb_SalesSeason.setModel(new DefaultComboBoxModel(new String[] {"2019/2020"}));
-		cb_SalesSeason.setBounds(100, 103, 200, 20);
+		cb_SalesSeason.setBounds(100, lblSeason.getBounds().y, 200, 20);
 		panelGames.add(cb_SalesSeason);
 		
 		lblGame = new JLabel("Game:");
@@ -119,7 +117,7 @@ public class Games extends JPanel {
 		btnAddSeason.setBorder(null);
 		btnAddSeason.setFont(new Font(UI_Elements.mainFontName, Font.PLAIN, 20));
 		btnAddSeason.setBackground(UI_Elements.color_panelBodyButtonDefault);
-		btnAddSeason.setBounds(35, 175, 265, 40);
+		btnAddSeason.setBounds(35, lblGame.getBounds().y + lblGame.getBounds().height + 15, 265, 40);
 		panelGames.add(btnAddSeason);
 		btnAddSeason.setSelected(false);
 		btnAddSeason.addMouseListener( new MouseAdapter() {
@@ -168,141 +166,79 @@ public class Games extends JPanel {
 		    }
 		} );
 		
-		btnEditTickets = new JButton("   EDIT TICKETS");
-		btnEditTickets.setFocusPainted(false);
-		btnEditTickets.setRequestFocusEnabled(false);
-		btnEditTickets.setCursor(Cursor.getPredefinedCursor(Cursor.HAND_CURSOR));
-		btnEditTickets.setHorizontalAlignment(SwingConstants.LEFT);
-		btnEditTickets.setForeground(Color.WHITE);
-		btnEditTickets.setToolTipText("Merchandise");
-		btnEditTickets.setOpaque(true);
-		btnEditTickets.setBorder(null);
-		btnEditTickets.setFont(new Font(UI_Elements.mainFontName, Font.PLAIN, 20));
-		btnEditTickets.setBackground(UI_Elements.color_panelBodyButtonDefault);
-		btnEditTickets.setBounds(35, (btnAddSeason.getBounds().y)+55*2, 265, 40);
-		panelGames.add(btnEditTickets);
-		btnEditTickets.setSelected(false);
-		btnEditTickets.addMouseListener( new MouseAdapter() {
-		    public void mouseEntered( MouseEvent e ) {
-		    	btnEditTickets.setBackground(UI_Elements.color_panelBodyButtonRollover);
-		    }
-		    public void mouseExited( MouseEvent e ) {
-		    	if(btnEditTickets.isSelected() == true)
-		    	{
-		    		btnEditTickets.setBackground(UI_Elements.color_panelBodyButtonSelected);
-		    	}
-		    	else
-		    	{
-		    		btnEditTickets.setBackground(UI_Elements.color_panelBodyButtonDefault);
-		    	}
-		    }
-		} );
-		
 		//Sub-panels
+		sectionDetailsPanel = new GamesSectionDetails();
+		sectionDetailsPanel.setBounds(0, 265, sectionDetailsPanel.panelSectionDetails.getBounds().width, sectionDetailsPanel.panelSectionDetails.getBounds().height);
+		panelGames.add(sectionDetailsPanel);
+		sectionDetailsPanel.add(sectionDetailsPanel.panelSectionDetails);
+		sectionDetailsPanel.setLayout(null);
+		gamesStadiumPanel.assignDetailsPanel(sectionDetailsPanel.panelSectionDetails);
+		
 		addSeasonPanel = new GamesAddSeason();
-		addSeasonPanel.setBounds(0, 345, addSeasonPanel.panelAddSeason.getBounds().width, addSeasonPanel.panelAddSeason.getBounds().height);
+		addSeasonPanel.setBounds(sectionDetailsPanel.getBounds().x, sectionDetailsPanel.getBounds().y, addSeasonPanel.panelAddSeason.getBounds().width, addSeasonPanel.panelAddSeason.getBounds().height);
 		panelGames.add(addSeasonPanel);
 		addSeasonPanel.add(addSeasonPanel.panelAddSeason);
 		addSeasonPanel.setLayout(null);
 		addSeasonPanel.addObserverButton(btnAddSeason);
 		addSeasonPanel.addObserverButton(btnAddGame);
-		addSeasonPanel.addObserverButton(btnEditTickets);
 		
 		addGamePanel = new GamesAddGame();
-		addGamePanel.setBounds(0, 345, addGamePanel.panelAddGame.getBounds().width, addGamePanel.panelAddGame.getBounds().height);
+		addGamePanel.setBounds(addSeasonPanel.getBounds().x, addSeasonPanel.getBounds().y, addGamePanel.panelAddGame.getBounds().width, addGamePanel.panelAddGame.getBounds().height);
 		panelGames.add(addGamePanel);
 		addGamePanel.add(addGamePanel.panelAddGame);
 		addGamePanel.setLayout(null);
 		addGamePanel.addObserverButton(btnAddSeason);
 		addGamePanel.addObserverButton(btnAddGame);
-		addGamePanel.addObserverButton(btnEditTickets);
-		
-		editTicketsPanel = new GamesEditTickets();
-		editTicketsPanel.setBounds(0, 345, editTicketsPanel.panelEditTickets.getBounds().width, editTicketsPanel.panelEditTickets.getBounds().height);
-		panelGames.add(editTicketsPanel);
-		editTicketsPanel.add(editTicketsPanel.panelEditTickets);
-		editTicketsPanel.setLayout(null);
-		editTicketsPanel.addObserverButton(btnAddSeason);
-		editTicketsPanel.addObserverButton(btnAddGame);
-		editTicketsPanel.addObserverButton(btnEditTickets);
 		
 		
 		gamesPanelButtons.add(btnAddSeason);
 		gamesPanelButtons.add(btnAddGame);
-		gamesPanelButtons.add(btnEditTickets);
 		
 		gamesPanelSubPanels.add(addSeasonPanel);
 		gamesPanelSubPanels.add(addSeasonPanel.panelAddSeason);
 		gamesPanelSubPanels.add(addGamePanel);
 		gamesPanelSubPanels.add(addGamePanel.panelAddGame);
-		gamesPanelSubPanels.add(editTicketsPanel);
-		gamesPanelSubPanels.add(editTicketsPanel.panelEditTickets);
+		gamesPanelSubPanels.add(sectionDetailsPanel);
+
 		
 		//Action Listeners
-		btnAddSeason.addActionListener(new ActionListener() {
-			public void actionPerformed(ActionEvent arg0) {
-				if(btnAddSeason.isSelected() == false)
-				{
-					disableAllButtons(gamesPanelButtons);
-					disableAllPanels(gamesPanelSubPanels);
-					btnAddSeason.setSelected(true);
-					btnAddSeason.setEnabled(true);
-					btnAddSeason.setBackground(UI_Elements.color_panelBodyButtonSelected);
-					addSeasonPanel.setVisible(true);
-					addSeasonPanel.panelAddSeason.setVisible(true);
-				}
-				else
-				{
-					disableAllPanels(gamesPanelSubPanels);
-					revertButtonToDefault(btnAddSeason, gamesPanelButtons);
-				}
-			}
-		});
+		btnAddSeason.addActionListener(GamesPanelButtonActions(btnAddSeason,addSeasonPanel,addSeasonPanel.panelAddSeason));
+		btnAddGame.addActionListener(GamesPanelButtonActions(btnAddGame,addGamePanel,addGamePanel.panelAddGame));
 		
-		btnAddGame.addActionListener(new ActionListener() {
-			public void actionPerformed(ActionEvent arg0) {
-				if(btnAddGame.isSelected() == false)
-				{
-					disableAllButtons(gamesPanelButtons);
-					disableAllPanels(gamesPanelSubPanels);
-					btnAddGame.setSelected(true);
-					btnAddGame.setEnabled(true);
-					btnAddGame.setBackground(UI_Elements.color_panelBodyButtonSelected);
-					addGamePanel.setVisible(true);
-					addGamePanel.panelAddGame.setVisible(true);
-				}
-				else
-				{
-					disableAllPanels(gamesPanelSubPanels);
-					revertButtonToDefault(btnAddGame, gamesPanelButtons);
-				}
-			}
-		});
-		
-		btnEditTickets.addActionListener(new ActionListener() {
-			public void actionPerformed(ActionEvent arg0) {
-				if(btnEditTickets.isSelected() == false)
-				{
-					disableAllButtons(gamesPanelButtons);
-					disableAllPanels(gamesPanelSubPanels);
-					btnEditTickets.setSelected(true);
-					btnEditTickets.setEnabled(true);
-					btnEditTickets.setBackground(UI_Elements.color_panelBodyButtonSelected);
-					editTicketsPanel.setVisible(true);
-					editTicketsPanel.panelEditTickets.setVisible(true);
-					gamesStadiumPanel.assignDetailsPanel(null);
-				}
-				else
-				{
-					disableAllPanels(gamesPanelSubPanels);
-					revertButtonToDefault(btnEditTickets, gamesPanelButtons);
-					gamesStadiumPanel.removeDetailsPanel(null);
-				}
-			}
-		});
+	}
 	
+	
+	private ActionListener GamesPanelButtonActions(JButton i_Button, JPanel i_OuterPanel, JPanel i_InnerPanel)
+	{
+		ActionListener ac = new ActionListener() {
+			public void actionPerformed(ActionEvent arg0) {
+				if(i_Button.isSelected() == false)
+				{
+					disableAllButtons(gamesPanelButtons);
+					disableAllPanels(gamesPanelSubPanels);
+					i_Button.setSelected(true);
+					i_Button.setEnabled(true);
+					i_Button.setBackground(UI_Elements.color_panelBodyButtonSelected);
+					i_OuterPanel.setVisible(true);
+					i_InnerPanel.setVisible(true);
+					gamesStadiumPanel.detailsPanel.setVisible(false);
+					gamesStadiumPanel.removeDetailsPanel(sectionDetailsPanel.panelSectionDetails);
+				}
+				else
+				{
+					disableAllPanels(gamesPanelSubPanels);
+					revertButtonToDefault(i_Button, gamesPanelButtons);
+					sectionDetailsPanel.setVisible(true);
+					gamesStadiumPanel.assignDetailsPanel(sectionDetailsPanel.panelSectionDetails);
+					if(gamesStadiumPanel.numOfSelected>0)
+					{
+						gamesStadiumPanel.detailsPanel.setVisible(true);
+					}
+				}
+			}
+		};
 		
-		
+		return ac;
 	}
 	
 	public void disableAllButtons(List<JButton> i_ButtonList)

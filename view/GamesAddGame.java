@@ -44,7 +44,7 @@ public class GamesAddGame extends JPanel {
 		panelAddGame = new JPanel();
 		panelAddGame.setBorder(null);
 		panelAddGame.setBackground(UI_Elements.color_mainBackgroundColor);
-		panelAddGame.setBounds(0, 5, 300, 272);
+		panelAddGame.setBounds(0, 5, 340, 352);
 		panelAddGame.setLayout(null);
 		panelAddGame.setVisible(false);
 		
@@ -69,7 +69,7 @@ public class GamesAddGame extends JPanel {
 		tf_GameName.setEditable(true);
 		tf_GameName.setHorizontalAlignment(SwingConstants.LEFT);
 		tf_GameName.setFont(UI_Elements.font_bodyFillText);
-		tf_GameName.setBounds(lblGameName.getBounds().x, lblGameName.getBounds().y+lblGameName.getBounds().height, panelAddGame.getBounds().width, 30);
+		tf_GameName.setBounds(lblGameName.getBounds().x, lblGameName.getBounds().y+lblGameName.getBounds().height, panelAddGame.getBounds().width-titleAddGame.getBounds().x-5, 30);
 		panelAddGame.add(tf_GameName);
 		tf_GameName.setColumns(10);
 		
@@ -86,7 +86,7 @@ public class GamesAddGame extends JPanel {
 		tf_SeasonName.setEditable(true);
 		tf_SeasonName.setHorizontalAlignment(SwingConstants.LEFT);
 		tf_SeasonName.setFont(UI_Elements.font_bodyFillText);
-		tf_SeasonName.setBounds(lblSeasonName.getBounds().x, lblSeasonName.getBounds().y+lblSeasonName.getBounds().height, panelAddGame.getBounds().width, 30);
+		tf_SeasonName.setBounds(lblSeasonName.getBounds().x, lblSeasonName.getBounds().y+lblSeasonName.getBounds().height, panelAddGame.getBounds().width-titleAddGame.getBounds().x-5, 30);
 		panelAddGame.add(tf_SeasonName);
 		tf_SeasonName.setColumns(10);
 		
