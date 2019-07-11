@@ -8,7 +8,6 @@ import java.awt.Font;
 import java.awt.Graphics;
 
 import javax.swing.*;
-
 import model.Stadium;
 import model.User;
 

@@ -7,20 +7,16 @@ public class Section {
 	private float ticketPrice;
 	private boolean isRoofed;
 	private int numOfSeats;
-	private int takenSeats;
-	private int availableSeats;
 	private String sectionType;
 
 	// Constructor:
-	public Section(int sectionNumber, String sectionName, String sectionRanking, float ticketPrice, boolean isRoofed, int numOfSeats, int takenSeats, int availableSeats, String sectionType) {
+	public Section(int sectionNumber, String sectionName, String sectionRanking, float ticketPrice, boolean isRoofed, int numOfSeats, String sectionType) {
 		this.sectionNumber=sectionNumber;
 		this.sectionName=sectionName;
 		this.sectionRanking=sectionRanking;
 		this.ticketPrice=ticketPrice;
 		this.isRoofed=isRoofed;
 		this.numOfSeats=numOfSeats;
-		this.takenSeats=takenSeats;
-		this.availableSeats=availableSeats;
 		this.sectionType=sectionType;
 	}
 
@@ -77,21 +73,6 @@ public class Section {
 		
 	}
 
-	public int getTakenSeats() {
-		return takenSeats;
-	}
-
-	public void setTakenSeats(int takenSeats) {
-		this.takenSeats = takenSeats;
-	}
-
-	public int getAvailableSeats() {
-		return availableSeats;
-	}
-
-	public void setAvailableSeats(int availableSeats) {
-		this.availableSeats = availableSeats;
-	}
 
 	public String getSectionType() {
 		return sectionType;

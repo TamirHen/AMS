@@ -91,7 +91,7 @@ public class SqliteDB {
 			section = new Section[sectionSize];
 			sectionSize=0;
 			while(rs.next()) {
-				this.section[sectionSize]=new Section(Integer.parseInt(rs.getString("sectionNumber")), rs.getString("sectionName"), rs.getString("sectionRanking"), Float.parseFloat(rs.getString("ticketPrice")), Boolean.parseBoolean(rs.getString("isRoofed")), Integer.parseInt(rs.getString("numOfSeats")), Integer.parseInt(rs.getString("takenSeats")), Integer.parseInt(rs.getString("availableSeats")), rs.getString("sectionType"));
+				this.section[sectionSize]=new Section(Integer.parseInt(rs.getString("sectionNumber")), rs.getString("sectionName"), rs.getString("sectionRanking"), Float.parseFloat(rs.getString("ticketPrice")), rs.getBoolean("isRoofed"), Integer.parseInt(rs.getString("numOfSeats")), rs.getString("sectionType"));
 				sectionSize++;
 			}
 		} catch (Exception e) {
