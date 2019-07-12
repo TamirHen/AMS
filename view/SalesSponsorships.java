@@ -28,18 +28,18 @@ public class SalesSponsorships extends JPanel {
 	public JPanel panelSponsorships;
 	private JLabel titleSponsorships;
 	
-	private JScrollPane sponsorTableScrollPane;
-	private JTable sponsorTable;
-	private JButton btnAddSponsor;
-	private JButton btnRemoveSponsor;
+	public JScrollPane sponsorTableScrollPane;
+	public JTable sponsorTable;
+	public JButton btnAddSponsor;
+	public JButton btnRemoveSponsor;
 	private JLabel lblSponsorName;
-	private JTextField tf_SponsorName;
+	public JTextField tf_SponsorName;
 	private JLabel lblContractLength;
-	private JTextField tf_ContractLength;
+	public JTextField tf_ContractLength;
 	private JLabel lblContractValue;
-	private JTextField tf_ContractValue;
-	private JButton btnAddSponsorFinish;
-	private JButton btnAddSponsorCancel;
+	public JTextField tf_ContractValue;
+	public JButton btnAddSponsorFinish;
+	public JButton btnAddSponsorCancel;
 	
 	private List<JComponent> addSponsorComponents = new ArrayList<JComponent>();
 
@@ -245,6 +245,10 @@ public class SalesSponsorships extends JPanel {
 		//Action Listeners
 		btnAddSponsor.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
+				tf_SponsorName.setEditable(true);
+				tf_ContractLength.setEditable(true);
+				tf_ContractValue.setEditable(true);
+				
 				if(btnAddSponsor.isSelected() == false)
 				{
 					btnAddSponsor.setSelected(true);
