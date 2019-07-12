@@ -25,7 +25,6 @@ public class Game {
 		public Game (String name, String date, int sadiumCapacity, float vipTicketPrice, float clubLevelTicketPrice, float bleachersTicketPrice, float seasonTicketPrice, Stadium stadium) {
 			this.name=name;
 			this.date=date;
-			this.stadiumCapacity=stadiumCapacity;
 			this.unSoldTickets=stadiumCapacity;
 			this.vipTicketsSold=0;
 			this.clubLevelTicketsSold=0;
@@ -36,6 +35,7 @@ public class Game {
 			this.clubLevelTicketPrice=clubLevelTicketPrice;
 			this.bleachersTicketPrice=bleachersTicketPrice;
 			this.seasonTicketPrice=seasonTicketPrice;
+			this.gameSections=new GameSection[stadium.getNumOfSections()];
 			for (int i = 0; i < stadium.getNumOfSections(); i++) {
 				gameSections[i] = new GameSection(stadium.getArenaSection(i+1));
 			}
@@ -74,7 +74,9 @@ public class Game {
 			this.gameSections[sectionNumber].setSoldTickets(numOfTicketsSold);
 
 		}
-		
+		public String getName() {
+			return this.name;
+		}
 		public int getVipTicketsSold() {
 			return this.vipTicketsSold;
 		}

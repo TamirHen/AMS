@@ -12,7 +12,10 @@ public class Model {
 	public User signInUser;
 	private int userSize;
 	//---------------//
-	 
+	//---set seasons---//
+	public Season season[];
+	private int seasonSize;
+	//---------------//
 	
 	public Model() {
 		//set DB:
@@ -23,7 +26,9 @@ public class Model {
 		//set users:
 		user=db.initializeUsers();
 		userSize=db.userSize;
-		
+		//set seasons:
+		season=db.initializeSeasons();
+		seasonSize=db.seasonSize;
 	}
 	
 	//---methods---//
@@ -55,5 +60,12 @@ public class Model {
 		db.createNewUserDB(userName, firstName, lastName, pf_password, email);
 		
 	}
-	
+	public void createNewSeason(String name, String leagueName) {
+		this.season[seasonSize]=new Season(name, leagueName);
+		this.seasonSize++;
+		db.createNewSeasonDB(name, leagueName);
+	}
+	//when calling create new game via controller need to remember to update DB (to call createGameDB method)
+	//when calling updateGameSectionsoldTickets need to remember to update DB (to call updateGameSectionSoldTicketsDB method)
+
 }

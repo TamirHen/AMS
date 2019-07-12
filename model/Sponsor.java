@@ -1,30 +1,20 @@
 package model;
+import java.util.Date;
 
-public class Sponsor extends Department {
-	private String sponsorName;
-	private float annualRevenue;
+public class Sponsor {
+	private String name;
+	private Date contractStartDate;
+	private Date contractEndDate;
+	private int contractLength;
+	private float totalContractValue;
 
 	// Constructor:
-	public Sponsor(String departmentName, String sponsorName) {
-		super(departmentName);
-		this.setSponsorName(sponsorName);
-	}
-
-	// Data members getters and setters:
-	public String getSponsorName() {
-		return sponsorName;
-	}
-
-	public void setSponsorName(String sponsorName) {
-		this.sponsorName = sponsorName;
-	}
-
-	public float getAnnualRevenue() {
-		return annualRevenue;
-	}
-
-	public void setAnnualRevenue(float annualRevenue) {
-		this.annualRevenue = annualRevenue;
+	public Sponsor(String name, Date contractStartDate, Date contractEndDate, float totalContractValue) {
+		this.name=name;
+		this.contractStartDate=contractStartDate;
+		this.contractEndDate=contractEndDate;
+		this.totalContractValue=totalContractValue;
+		//contractLength= //need to work on it
 	}
 
 }

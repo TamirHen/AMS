@@ -4,7 +4,7 @@ public class Season {
 	private String name;
 	private String leagueName;
 	
-	private Game[] games;
+	public Game[] games;
 	private int numOfGames;
 	private float seasonRevenue;
 	
@@ -17,6 +17,9 @@ public class Season {
 	//methods:
 	public int getNumOfGames() {
 		return numOfGames;
+	}
+	public void setNumOfGames(int numOfGames) {
+		this.numOfGames=numOfGames;
 	}
 	public String getName() {
 		return name;
