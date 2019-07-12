@@ -213,7 +213,7 @@ public class ViewStadium extends JPanel {
 	public double stadiumSizeRatio = (stadiumLblHeight/stadium.getIconHeight());
 	public double stadiumLblWidth = ((stadium.getIconWidth())*stadiumSizeRatio);	
 	
-	public static int numOfSelected = 0;
+	public int numOfSelected = 0;
 	public JButton lastSelectedButton;
 	private MouseAdapter lastButtonMouseAdapter;
 	public JPanel detailsPanel;
