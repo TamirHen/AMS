@@ -213,7 +213,7 @@ public class ViewStadium extends JPanel {
 	public double stadiumSizeRatio = (stadiumLblHeight/stadium.getIconHeight());
 	public double stadiumLblWidth = ((stadium.getIconWidth())*stadiumSizeRatio);	
 	
-	public static int numOfSelected = 0;
+	public int numOfSelected = 0;
 	public JButton lastSelectedButton;
 	private MouseAdapter lastButtonMouseAdapter;
 	public JPanel detailsPanel;
@@ -499,7 +499,7 @@ public class ViewStadium extends JPanel {
 	}
 
 	
-	public String getViewStadiumSectionType(int i_SectionNum) {
+	/*public String getViewStadiumSectionType(int i_SectionNum) {
 				
 		StringBuilder type = new StringBuilder();
 		String sectionType = null;//model.stadium.getArenaSection(i_SectionNum).getSectionType();		
@@ -518,7 +518,7 @@ public class ViewStadium extends JPanel {
 		}
 		
 		return type.toString();
-	}
+	}*/
 	
 	
 
