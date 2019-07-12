@@ -499,7 +499,7 @@ public class ViewStadium extends JPanel {
 	}
 
 	
-	public String getViewStadiumSectionType(int i_SectionNum) {
+	/*public String getViewStadiumSectionType(int i_SectionNum) {
 				
 		StringBuilder type = new StringBuilder();
 		String sectionType = null;//model.stadium.getArenaSection(i_SectionNum).getSectionType();		
@@ -518,7 +518,7 @@ public class ViewStadium extends JPanel {
 		}
 		
 		return type.toString();
-	}
+	}*/
 	
 	
 
