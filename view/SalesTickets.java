@@ -29,25 +29,25 @@ public class SalesTickets extends JPanel {
 	private JLabel titleTickets;
 	private JLabel lblTotalAttendance;
 	
-	private JTextField tf_TotalAttendance;
+	public JTextField tf_TotalAttendance;
 	private JLabel lblTotalRevenue;
-	private JTextField tf_TotalRevenue;
+	public JTextField tf_TotalRevenue;
 	private JSeparator sprtrTickets1;
 	private JLabel lblTotalNumOfGameTickets;
-	private JTextField tf_TotalNumOfGameTickets;
+	public JTextField tf_TotalNumOfGameTickets;
 	private JLabel lblTotalGameTicketRevenue;
-	private JTextField tf_TotalRevenueGameTickets;
+	public JTextField tf_TotalRevenueGameTickets;
 	private JLabel lblTotalSingleVIP;
-	private JTextField tf_TotalSingleVIP;
+	public JTextField tf_TotalSingleVIP;
 	private JLabel lblTotalSingleClubLevel;
-	private JTextField tf_TotalSingleClubLevel;
+	public JTextField tf_TotalSingleClubLevel;
 	private JLabel lblTotalSingleBleachers;
-	private JTextField tf_TotalSingleBleachers;
+	public JTextField tf_TotalSingleBleachers;
 	private JSeparator sprtrTickets2;
 	private JLabel lblTotalNumOfSeasonTickets;
-	private JTextField tf_TotalNumOfSeasonTickets;
+	public JTextField tf_TotalNumOfSeasonTickets;
 	private JLabel lblTotalSeasonTicketRevenue;
-	private JTextField tf_TotalSeasonTicketRevenue;
+	public JTextField tf_TotalSeasonTicketRevenue;
 
 	SalesTickets(){
 		panelTickets = new JPanel();

@@ -497,6 +497,24 @@ public class Controller {
 			}
 		});
 		
+		//---Sales Panel (in view)---//
+		view.salesPanel.cb_SalesSeason.removeAllItems();
+		for (int i = 0; i < model.seasonSize; i++) {
+			view.salesPanel.cb_SalesSeason.addItem(model.season[i].getName());
+		}
+		displayAllGamesInGivenSeasonSalePanel();//set up default
+		view.salesPanel.cb_SalesSeason.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent arg0) {
+				displayAllGamesInGivenSeasonSalePanel();
+			}
+		});
+		
+		view.salesPanel.btnTickets.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent arg0) {
+				displayGameRevenue(view.salesPanel.cb_SalesSeason.getSelectedIndex(),view.salesPanel.cb_SalesGame.getSelectedIndex());
+				
+			}
+		});
 		//---Game Panel (in view)---//
 		for (int i = 0; i < model.seasonSize; i++) {
 			view.gamesPanel.cb_SalesSeason.addItem(model.season[i].getName());
@@ -1760,7 +1778,26 @@ public class Controller {
 	}//end of constructor
 	
 	//---controller methods---//
+	//sale panel:
+	private void displayAllGamesInGivenSeasonSalePanel() {
+		view.salesPanel.cb_SalesGame.removeAllItems();
+		for (int i = 0; i < model.season[view.salesPanel.cb_SalesSeason.getSelectedIndex()].getNumOfGames(); i++) {
+			view.salesPanel.cb_SalesGame.addItem(model.season[view.salesPanel.cb_SalesSeason.getSelectedIndex()].games[i].getName());
+		}
+	}
 	
+	public void displayGameRevenue(int seasonIndex, int gameIndex) {
+		view.salesPanel.ticketsPanel.tf_TotalAttendance.setText(String.valueOf(model.season[seasonIndex].games[gameIndex].getSoldTickets()));
+		view.salesPanel.ticketsPanel.tf_TotalRevenue.setText(String.valueOf(model.season[seasonIndex].games[gameIndex].getTotalGameRevenue()));
+		view.salesPanel.ticketsPanel.tf_TotalNumOfGameTickets.setText(String.valueOf(model.season[seasonIndex].games[gameIndex].getTotalSingleTickes()));
+		view.salesPanel.ticketsPanel.tf_TotalRevenueGameTickets.setText(String.valueOf(model.season[seasonIndex].games[gameIndex].getSingleTicketsRevenue()));
+		view.salesPanel.ticketsPanel.tf_TotalSingleVIP.setText(String.valueOf(model.season[seasonIndex].games[gameIndex].getVipRevenue()));
+		view.salesPanel.ticketsPanel.tf_TotalSingleClubLevel.setText(String.valueOf(model.season[seasonIndex].games[gameIndex].getClubLevelRevenue()));
+		view.salesPanel.ticketsPanel.tf_TotalSingleBleachers.setText(String.valueOf(model.season[seasonIndex].games[gameIndex].getBleachersRevenue()));
+		view.salesPanel.ticketsPanel.tf_TotalNumOfSeasonTickets.setText(String.valueOf(model.season[seasonIndex].games[gameIndex].getSeasonTicketsSold()));
+		view.salesPanel.ticketsPanel.tf_TotalSeasonTicketRevenue.setText(String.valueOf(model.season[seasonIndex].games[gameIndex].getSeasonTicketsRevenue()));
+
+	}
 	//games panel:
 	private void displayAllGamesInGivenSeason() {
 		view.gamesPanel.cb_SalesGame.removeAllItems();

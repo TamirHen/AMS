@@ -23,10 +23,10 @@ import javax.swing.JScrollPane;
 public class Sales extends JPanel {
 
 	public JPanel panelSales;
-	private SalesTickets ticketsPanel;
+	public SalesTickets ticketsPanel;
 	private SalesSponsorships sponsorshipsPanel;
 
-	private JButton btnTickets;
+	public JButton btnTickets;
 	private JButton btnSponsorships;
 	
 	private JTextField tf_TotalAttendance;
@@ -46,8 +46,8 @@ public class Sales extends JPanel {
 	private JLabel lblTotalNumOfSeasonTickets;
 	private JLabel titleSponsorships;
 	
-	private JComboBox cb_SalesSeason;
-	private JComboBox cb_SalesGame;
+	public JComboBox cb_SalesSeason;
+	public JComboBox cb_SalesGame;
 	
 	private JSeparator sprtrTickets1;
 	private JSeparator sprtrTickets2;
