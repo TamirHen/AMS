@@ -30,6 +30,7 @@ public class Controller {
 	private View view;
 	private Model model;
 	
+	
 	public Controller(View amsView, Model amsModel) {
 		this.view = amsView;
 		this.model = amsModel;
@@ -358,9 +359,31 @@ public class Controller {
 			}
 		});
 		
+		//---Game Panel (in view)---//
+		for (int i = 0; i < model.seasonSize; i++) {
+			view.gamesPanel.cb_SalesSeason.addItem(model.season[i].getName());
+		}
+		displayAllGamesInGivenSeason();//set up default
+		view.gamesPanel.cb_SalesSeason.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent arg0) {
+				displayAllGamesInGivenSeason();
+				
+			}
+		});
+		//--------------------------//
+		
+		
 	}//end of constructor
 	
 	//---controller methods---//
+	
+	//games panel:
+	private void displayAllGamesInGivenSeason() {
+		view.gamesPanel.cb_SalesGame.removeAllItems();
+		for (int i = 0; i < model.season[view.gamesPanel.cb_SalesSeason.getSelectedIndex()].getNumOfGames(); i++) {
+			view.gamesPanel.cb_SalesGame.addItem(model.season[view.gamesPanel.cb_SalesSeason.getSelectedIndex()].games[i].getName());
+		}
+	}
 	
 	//login panel:
 	public void btnLoginPressed() {

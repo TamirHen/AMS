@@ -14,7 +14,7 @@ public class Model {
 	//---------------//
 	//---set seasons---//
 	public Season season[];
-	private int seasonSize;
+	public int seasonSize;
 	//---------------//
 	
 	public Model() {
