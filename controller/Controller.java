@@ -505,7 +505,7 @@ public class Controller {
 		displayAllGamesInGivenSeasonSalePanel();//set up default
 		view.salesPanel.cb_SalesSeason.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
-				displayAllGamesInGivenSeasonSalePanel();
+				displayAllGamesInGivenSeasonSalePanel(); //
 			}
 		});
 		
