@@ -357,8 +357,8 @@ public class Properties extends JPanel {
 		tf_arenaName.setEditable(action);
 		tf_address.setEnabled(action);
 		tf_address.setEditable(action);
-		tf_sectionTicketPrice.setEnabled(action);
-		tf_sectionTicketPrice.setEditable(action);
+//		tf_sectionTicketPrice.setEnabled(action);
+//		tf_sectionTicketPrice.setEditable(action); ticket price should be change for all the same section type so it's from different area
 		tf_sectionNumOfSeats.setEnabled(action);
 		tf_sectionNumOfSeats.setEditable(action);
 		cb_sectionType.setEnabled(action);
