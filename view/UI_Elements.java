@@ -26,6 +26,7 @@ public class UI_Elements {
 	public static int textBodyLabelSize = 15;
 	public static int textBodyFillText = 13;
 	public static int textBodySalesData = 17;
+	public static int textOverviewSectionDetails = 18;
 	
 	//ICON
 	public static ImageIcon amsIcon = new ImageIcon("Images/Icon.jpg");
@@ -37,6 +38,9 @@ public class UI_Elements {
 	public static Font font_bodyLabel = new Font("Calibri", Font.BOLD, textBodyLabelSize); // Body JLabel font
 	public static Font font_bodyFillText = new Font("Calibri", Font.PLAIN, textBodyFillText); // Text Field & Combo Box font
 	public static Font font_bodySalesData = new Font("Calibri", Font.PLAIN, textBodySalesData); // Text Field & Combo Box font
+	public static Font font_bodyOverviewSectionDetails = new Font("Calibri", Font.PLAIN, textOverviewSectionDetails); 
+	public static Font font_bodyOverviewSectionDetailsBold = new Font("Calibri", Font.BOLD, textOverviewSectionDetails);
+
 	
 	//UI METHODS
 	public static ImageIcon scaleImageToBox(ImageIcon i_Img, JComponent i_box)

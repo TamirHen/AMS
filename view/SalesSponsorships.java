@@ -202,7 +202,6 @@ public class SalesSponsorships extends JPanel {
 		panelSponsorships.add(tf_ContractEnd);
 		tf_ContractEnd.setColumns(10);
 		
-		
 		btnAddSponsorFinish = new JButton("FINISH");
 		btnAddSponsorFinish.setFocusPainted(false);
 		btnAddSponsorFinish.setRequestFocusEnabled(false);
@@ -252,6 +251,8 @@ public class SalesSponsorships extends JPanel {
 		addSponsorComponents.add(tf_SponsorName);
 		addSponsorComponents.add(lblContractStart);
 		addSponsorComponents.add(tf_ContractStart);
+		addSponsorComponents.add(lblContractEnd);
+		addSponsorComponents.add(tf_ContractEnd);
 		addSponsorComponents.add(lblContractValue);
 		addSponsorComponents.add(tf_ContractValue);
 		addSponsorComponents.add(btnAddSponsorFinish);
@@ -266,8 +267,9 @@ public class SalesSponsorships extends JPanel {
 		btnAddSponsor.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
 				tf_SponsorName.setEditable(true);
-				tf_ContractStart.setEditable(true);
 				tf_ContractValue.setEditable(true);
+				tf_ContractStart.setEditable(true);
+				tf_ContractEnd.setEditable(true);
 				
 				if(btnAddSponsor.isSelected() == false)
 				{

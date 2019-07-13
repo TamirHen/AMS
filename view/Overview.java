@@ -28,9 +28,8 @@ public class Overview extends JPanel {
 	private JLabel lblStadiumLegend;
 	
 	private ImageIcon stadiumLegend = new ImageIcon(Overview.class.getResource("/Images/StadiumLegend.png"));
-	private JSeparator separatorOverview;
-	public JPanel panelSectionDetails;
-	private JLabel titleSectionDetails;
+
+	public OverviewSectionDetails sectionDetailsPanel;
 
 	public Overview() {
 		panelOverview = new JPanel();
@@ -60,25 +59,23 @@ public class Overview extends JPanel {
 		lblStadiumLegend.setOpaque(false);
 		lblStadiumLegend.setBorder(null);
 		panelOverview.add(lblStadiumLegend);
+		
+		sectionDetailsPanel = new OverviewSectionDetails();
+		sectionDetailsPanel.setBounds(596, 0, sectionDetailsPanel.panelSectionDetails.getBounds().width, sectionDetailsPanel.panelSectionDetails.getBounds().height);
+		sectionDetailsPanel.add(sectionDetailsPanel.panelSectionDetails);
+		sectionDetailsPanel.setLayout(null);
+		panelOverview.add(sectionDetailsPanel);
+		overviewStadiumPanel.assignDetailsPanel(sectionDetailsPanel.panelSectionDetails);
 
-		panelSectionDetails = new JPanel();
+		/*panelSectionDetails = new JPanel();
 		panelSectionDetails.setBorder(null);
 		panelSectionDetails.setBackground(SystemColor.control);
 		panelSectionDetails.setBounds(596, 0, 329, 617);
 		panelOverview.add(panelSectionDetails);
 		panelSectionDetails.setLayout(null);
-		panelSectionDetails.setVisible(false);
-		overviewStadiumPanel.assignDetailsPanel(panelSectionDetails);
+		panelSectionDetails.setVisible(false);*/
 
-		titleSectionDetails = new JLabel("SECTION DETAILS");
-		titleSectionDetails.setHorizontalAlignment(SwingConstants.CENTER);
-		titleSectionDetails.setAlignmentY(Component.TOP_ALIGNMENT);
-		titleSectionDetails.setVerticalAlignment(SwingConstants.TOP);
-		titleSectionDetails.setBounds(0, 22, 329, 76);
-		titleSectionDetails.setCursor(Cursor.getPredefinedCursor(Cursor.DEFAULT_CURSOR));
-		titleSectionDetails.setForeground(UI_Elements.color_mainBackgroundColor);
-		titleSectionDetails.setFont(new Font(UI_Elements.mainFontName, Font.BOLD, UI_Elements.textSubPanelTitleSize));
-		panelSectionDetails.add(titleSectionDetails);
+
 				
 			
 	}

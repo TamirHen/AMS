@@ -197,12 +197,12 @@ public class Controller {
 		view.signUpFrame.btnFinishSignUp.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
 				if(model.isUserNameExist(view.signUpFrame.tf_enterUserName.getText())) {
-					view.signUpFrame.lblUserNameAlreadyExist.setVisible(true);
-					view.signUpFrame.lblPasswordNotMatch.setVisible(false);
+					view.signUpFrame.lblUsernameAlreadyExist.setVisible(true);
+					view.signUpFrame.lblPasswordMismatch.setVisible(false);
 				}
 				else if(!Arrays.equals(view.signUpFrame.pf_enterPassword.getPassword(),view.signUpFrame.pf_enterPasswordAgain.getPassword())) {
-					view.signUpFrame.lblPasswordNotMatch.setVisible(true);
-					view.signUpFrame.lblUserNameAlreadyExist.setVisible(false);
+					view.signUpFrame.lblPasswordMismatch.setVisible(true);
+					view.signUpFrame.lblUsernameAlreadyExist.setVisible(false);
 				}
 				else {
 					view.signUpFrame.setVisible(false);

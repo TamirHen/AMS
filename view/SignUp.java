@@ -30,8 +30,8 @@ public class SignUp extends JFrame {
 	public JTextField tf_enterLastName;
 	public JTextField tf_enterEmail;
 	public JLabel lblSignUpLogo;
-	public JLabel lblUserNameAlreadyExist;
-	public JLabel lblPasswordNotMatch;
+	public JLabel lblUsernameAlreadyExist;
+	public JLabel lblPasswordMismatch;
 	
 	public JButton btnFinishSignUp;
 	public JButton btnCancelSignUp;
@@ -94,21 +94,21 @@ public class SignUp extends JFrame {
 		tf_enterEmail.setFont(UI_Elements.font_bodyFillText);
 		panelSignUp.add(tf_enterEmail);
 		
-		lblUserNameAlreadyExist = new JLabel("UserName is already exist");
-		lblUserNameAlreadyExist.setBounds(-26, 480, 450, 30);
-		lblUserNameAlreadyExist.setHorizontalAlignment(SwingConstants.CENTER);
-		lblUserNameAlreadyExist.setFont(UI_Elements.font_bodyFillText);
-		lblUserNameAlreadyExist.setForeground(Color.RED);
-		lblUserNameAlreadyExist.setVisible(false);
-		panelSignUp.add(lblUserNameAlreadyExist);
+		lblUsernameAlreadyExist = new JLabel("Username already exists"); 
+		lblUsernameAlreadyExist.setBounds(-26, 480, 450, 30);
+		lblUsernameAlreadyExist.setHorizontalAlignment(SwingConstants.CENTER);
+		lblUsernameAlreadyExist.setFont(UI_Elements.font_bodyFillText);
+		lblUsernameAlreadyExist.setForeground(Color.RED);
+		lblUsernameAlreadyExist.setVisible(false);
+		panelSignUp.add(lblUsernameAlreadyExist);
 
-		lblPasswordNotMatch = new JLabel("Passwords not match");
-		lblPasswordNotMatch.setBounds(-26, 480, 450, 30);
-		lblPasswordNotMatch.setHorizontalAlignment(SwingConstants.CENTER);
-		lblPasswordNotMatch.setFont(UI_Elements.font_bodyFillText);
-		lblPasswordNotMatch.setForeground(Color.RED);
-		lblPasswordNotMatch.setVisible(false);
-		panelSignUp.add(lblPasswordNotMatch);
+		lblPasswordMismatch = new JLabel("Passwords do not match");
+		lblPasswordMismatch.setBounds(-26, 480, 450, 30);
+		lblPasswordMismatch.setHorizontalAlignment(SwingConstants.CENTER);
+		lblPasswordMismatch.setFont(UI_Elements.font_bodyFillText);
+		lblPasswordMismatch.setForeground(Color.RED);
+		lblPasswordMismatch.setVisible(false);
+		panelSignUp.add(lblPasswordMismatch);
 
 		//set buttons:
 		btnFinishSignUp = new JButton("FINISH");

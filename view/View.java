@@ -58,7 +58,7 @@ public class View extends JFrame {
 		mainPanel.setLayout(null);
 		
 		// set sign up frame:
-		signUpFrame = new SignUp();
+		signUpFrame = new SignUp(); //TODO - every signup should be a new instance of the object
 		// set all panels:
 		loginPanel = new Login();
 		overviewPanel = new Overview();
