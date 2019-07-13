@@ -516,6 +516,34 @@ public class Controller {
 				
 			}
 		});
+		
+//		view.salesPanel.btnSponsorships.addActionListener(new ActionListener() {
+//			public void actionPerformed(ActionEvent arg0) {
+//				view.salesPanel.sponsorshipsPanel.sponsorTable.setVisible(true);
+//				view.salesPanel.sponsorshipsPanel.sponsorTableScrollPane.setVisible(true);
+//				view.salesPanel.sponsorshipsPanel.sponsorTable.setEnabled(true);
+//				view.salesPanel.sponsorshipsPanel.sponsorTableScrollPane.setEnabled(true);
+//				
+//				
+//			}
+//		});
+		
+	
+//		
+//		for (int i = 0; i < model.sponsorsSize; i++) {
+//			view.salesPanel.sponsorshipsPanel.sponsorTable.add(model.season[i].getName());
+//			
+//		view.salesPanel.sponsorshipsPanel.btnAddSponsorFinish.addActionListener(new ActionListener() {
+//			public void actionPerformed(ActionEvent arg0) {
+//				model.sponsors[1].setName(view.salesPanel.sponsorshipsPanel.tf_SponsorName.getText());
+//				model.sponsors[1].setContractLength(Integer.parseInt(view.salesPanel.sponsorshipsPanel.tf_SponsorName.getText()));
+//				model.sponsors[1].setName(view.salesPanel.sponsorshipsPanel.tf_SponsorName.getText());
+//				
+//				
+//			}
+//		});
+		//-----------------------------------------//
+		
 		//---Game Panel (in view)---//
 		for (int i = 0; i < model.seasonSize; i++) {
 			view.gamesPanel.cb_SalesSeason.addItem(model.season.get(i).getName() + " - " + model.season.get(i).getLeagueName());

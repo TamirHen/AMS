@@ -7,6 +7,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 import javax.swing.JPanel;
+import java.util.Date;
 
 import model.*;
 
@@ -20,6 +21,7 @@ public class SqliteDB {
 	public Section[] section;
 	public int sectionSize=0;
 	public int seasonSize=0;
+	public int sponsorsSize=0;
 	//Constructor:
 	private SqliteDB() {
 		//try to connect to DB:
@@ -129,6 +131,28 @@ public class SqliteDB {
 		return season;
 	}
 	
+	public Sponsor[] initializeSponsors() {
+		Sponsor[] sponsors=null;
+		try {
+			this.stmt=c.createStatement();
+			ResultSet rs=stmt.executeQuery("select * from Sponsor");
+			while(rs.next()) {
+				sponsorsSize++;
+			}
+			rs=stmt.executeQuery("select * from Sponsor");
+			sponsors=new Sponsor[sponsorsSize];
+			sponsorsSize=0;
+			while(rs.next()) {
+				sponsors[sponsorsSize]=new Sponsor(rs.getString("name"), rs.getDate("contractStartDate"),rs.getDate("contractEndDate"),rs.getFloat("totalContractValue"));
+				sponsorsSize++;
+			}
+		} catch (Exception e) {
+			System.out.println("Error: " + e.getMessage());
+
+		}
+		return sponsors;
+	}
+	
 	public ArrayList<Game> initializeGames(Season season) {
 		ArrayList<Game> game=null;
 		int index=0;
@@ -202,6 +226,19 @@ public class SqliteDB {
 
 		}
 	}
+	
+	public void createNewSponsorDB(String name, Date contractStartDate, Date contractEndDate, float totalContractValue) {
+		try {
+			this.stmt = c.createStatement();
+			System.out.println("insert into Sponsor values('"+name+"', '"+contractStartDate+"', "+contractEndDate+", "+0+")");
+			stmt.executeUpdate("insert into Sponsor values('"+name+"', '"+contractStartDate+"', "+contractEndDate+", "+0+")");
+
+		} catch (Exception e) {
+			System.out.println("Error: " + e.getMessage());
+
+		}
+	}
+	
 	
 	public void createGameDB(String name, String date, Season season) {
 		try {

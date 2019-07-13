@@ -3,6 +3,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 import javax.swing.JPanel;
+import java.util.Date;
 
 import sqlite.*;
 
@@ -22,6 +23,11 @@ public class Model {
 //	public Season season[];
 	public int seasonSize;
 	//---------------//
+	//---set sponsors---//
+	public Sponsor sponsors[];
+	public int sponsorsSize;
+	//-----------------//
+	
 	
 	public Model() {
 		//set DB:
@@ -35,6 +41,9 @@ public class Model {
 		//set seasons:
 		this.season=db.initializeSeasons();
 		seasonSize=db.seasonSize;
+		
+		sponsors=db.initializeSponsors();
+		sponsorsSize=db.sponsorsSize;
 	}
 	
 	//---methods---//
@@ -76,7 +85,10 @@ public class Model {
 		db.createGameDB(name, date, this.season.get(seasonIndex));
 	}
 
-	//when calling create new game via controller need to remember to update DB (to call createGameDB method)
-	//when calling updateGameSectionsoldTickets need to remember to update DB (to call updateGameSectionSoldTicketsDB method)
-
+	
+	public void createNewSponsor(String name, Date contractStartDate, Date contractEndDate, float totalContractValue) {
+		this.sponsors[sponsorsSize]=new Sponsor(name, contractStartDate, contractEndDate, totalContractValue);
+		this.sponsorsSize++;
+		db.createNewSponsorDB(name, contractStartDate,contractEndDate,totalContractValue);
+	}
 }

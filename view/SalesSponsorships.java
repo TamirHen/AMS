@@ -28,20 +28,22 @@ public class SalesSponsorships extends JPanel {
 	public JPanel panelSponsorships;
 	private JLabel titleSponsorships;
 	
-	private JScrollPane sponsorTableScrollPane;
-	private JTable sponsorTable;
-	private JButton btnAddSponsor;
-	private JButton btnRemoveSponsor;
+	public JScrollPane sponsorTableScrollPane;
+	public JTable sponsorTable;
+	public JButton btnAddSponsor;
+	public JButton btnRemoveSponsor;
 	private JLabel lblSponsorName;
-	private JTextField tf_SponsorName;
-	private JLabel lblContractLength;
-	private JTextField tf_ContractLength;
+	public JTextField tf_SponsorName;
+	private JLabel lblContractStart;
+	public JTextField tf_ContractStart;
 	private JLabel lblContractValue;
-	private JTextField tf_ContractValue;
-	private JButton btnAddSponsorFinish;
-	private JButton btnAddSponsorCancel;
+	public JTextField tf_ContractValue;
+	public JButton btnAddSponsorFinish;
+	public JButton btnAddSponsorCancel;
 	
 	private List<JComponent> addSponsorComponents = new ArrayList<JComponent>();
+	private JLabel lblContractEnd;
+	private JTextField tf_ContractEnd;
 
 	
 	public SalesSponsorships(){
@@ -145,32 +147,15 @@ public class SalesSponsorships extends JPanel {
 		tf_SponsorName.setEditable(false);
 		tf_SponsorName.setHorizontalAlignment(SwingConstants.LEFT);
 		tf_SponsorName.setFont(UI_Elements.font_bodyFillText);
-		tf_SponsorName.setBounds(lblSponsorName.getBounds().x + lblSponsorName.getBounds().width + 10, lblSponsorName.getBounds().y, sponsorTableScrollPane.getBounds().width-10-lblSponsorName.getBounds().width, 20);
+		tf_SponsorName.setBounds(lblSponsorName.getBounds().x + lblSponsorName.getBounds().width + 12, lblSponsorName.getBounds().y, sponsorTableScrollPane.getBounds().width-12-lblSponsorName.getBounds().width, 20);
 		panelSponsorships.add(tf_SponsorName);
 		tf_SponsorName.setColumns(10);
-		
-		lblContractLength = new JLabel("Contract Length:");
-		lblContractLength.setBorder(null);
-		lblContractLength.setForeground(UI_Elements.color_mainBackgroundColor);
-		lblContractLength.setFont(UI_Elements.font_bodyLabel);
-		lblContractLength.setBounds(lblSponsorName.getBounds().x, lblSponsorName.getBounds().y+lblSponsorName.getBounds().height+7, 109, 26);
-		panelSponsorships.add(lblContractLength);
-
-		tf_ContractLength = new JTextField();
-		tf_ContractLength.setDisabledTextColor(Color.BLACK);
-		tf_ContractLength.setEnabled(true);
-		tf_ContractLength.setEditable(false);
-		tf_ContractLength.setHorizontalAlignment(SwingConstants.LEFT);
-		tf_ContractLength.setFont(UI_Elements.font_bodyFillText);
-		tf_ContractLength.setBounds(tf_SponsorName.getBounds().x, lblContractLength.getBounds().y , tf_SponsorName.getBounds().width, tf_SponsorName.getBounds().height);
-		panelSponsorships.add(tf_ContractLength);
-		tf_ContractLength.setColumns(10);
 		
 		lblContractValue = new JLabel("Contract Value:");
 		lblContractValue.setBorder(null);
 		lblContractValue.setForeground(UI_Elements.color_mainBackgroundColor);
 		lblContractValue.setFont(UI_Elements.font_bodyLabel);
-		lblContractValue.setBounds(lblContractLength.getBounds().x, lblContractLength.getBounds().y+lblContractLength.getBounds().height+7, 109, 26);
+		lblContractValue.setBounds(lblSponsorName.getBounds().x, lblSponsorName.getBounds().y+lblSponsorName.getBounds().height+7, 109, 26);
 		panelSponsorships.add(lblContractValue);
 
 		tf_ContractValue = new JTextField();
@@ -179,9 +164,44 @@ public class SalesSponsorships extends JPanel {
 		tf_ContractValue.setEditable(false);
 		tf_ContractValue.setHorizontalAlignment(SwingConstants.LEFT);
 		tf_ContractValue.setFont(UI_Elements.font_bodyFillText);
-		tf_ContractValue.setBounds(tf_ContractLength.getBounds().x, lblContractValue.getBounds().y , tf_ContractLength.getBounds().width, tf_ContractLength.getBounds().height);
+		tf_ContractValue.setBounds(tf_SponsorName.getBounds().x, lblContractValue.getBounds().y , tf_SponsorName.getBounds().width, tf_SponsorName.getBounds().height);
 		panelSponsorships.add(tf_ContractValue);
 		tf_ContractValue.setColumns(10);
+		
+		lblContractStart = new JLabel("Contract Start Date:");
+		lblContractStart.setBorder(null);
+		lblContractStart.setForeground(UI_Elements.color_mainBackgroundColor);
+		lblContractStart.setFont(UI_Elements.font_bodyLabel);
+		lblContractStart.setBounds(lblContractValue.getBounds().x, lblContractValue.getBounds().y+lblContractValue.getBounds().height+7, 135, 26);
+		panelSponsorships.add(lblContractStart);
+	
+		tf_ContractStart = new JTextField();
+		tf_ContractStart.setDisabledTextColor(Color.BLACK);
+		tf_ContractStart.setEnabled(true);
+		tf_ContractStart.setEditable(false);
+		tf_ContractStart.setHorizontalAlignment(SwingConstants.LEFT);
+		tf_ContractStart.setFont(UI_Elements.font_bodyFillText);
+		tf_ContractStart.setBounds(tf_SponsorName.getBounds().x, lblContractStart.getBounds().y , 141, 20);
+		panelSponsorships.add(tf_ContractStart);
+		tf_ContractStart.setColumns(10);
+		
+		lblContractEnd = new JLabel("Contract End Date:");
+		lblContractEnd.setBorder(null);
+		lblContractEnd.setForeground(UI_Elements.color_mainBackgroundColor);
+		lblContractEnd.setFont(UI_Elements.font_bodyLabel);
+		lblContractEnd.setBounds(btnRemoveSponsor.getBounds().x, tf_ContractStart.getBounds().y, 119, 26);
+		panelSponsorships.add(lblContractEnd);
+
+		tf_ContractEnd = new JTextField();
+		tf_ContractEnd.setDisabledTextColor(Color.BLACK);
+		tf_ContractEnd.setEnabled(true);
+		tf_ContractEnd.setEditable(false);
+		tf_ContractEnd.setHorizontalAlignment(SwingConstants.LEFT);
+		tf_ContractEnd.setFont(UI_Elements.font_bodyFillText);
+		tf_ContractEnd.setBounds(lblContractEnd.getBounds().x+lblContractEnd.getBounds().width, lblContractEnd.getBounds().y , 141, 20);
+		panelSponsorships.add(tf_ContractEnd);
+		tf_ContractEnd.setColumns(10);
+		
 		
 		btnAddSponsorFinish = new JButton("FINISH");
 		btnAddSponsorFinish.setFocusPainted(false);
@@ -193,7 +213,7 @@ public class SalesSponsorships extends JPanel {
 		btnAddSponsorFinish.setBorder(null);
 		btnAddSponsorFinish.setFont(new Font(UI_Elements.mainFontName, Font.PLAIN, 18));
 		btnAddSponsorFinish.setBackground(UI_Elements.color_mainBackgroundColor);
-		btnAddSponsorFinish.setBounds(221, lblContractValue.getBounds().y+lblContractValue.getBounds().height+7, 75, 25);
+		btnAddSponsorFinish.setBounds(221, lblContractStart.getBounds().y+lblContractStart.getBounds().height+12, 75, 25);
 		btnAddSponsorFinish.setSelected(false);
 		panelSponsorships.add(btnAddSponsorFinish);
 		btnAddSponsorFinish.addMouseListener( new MouseAdapter() {
@@ -230,8 +250,8 @@ public class SalesSponsorships extends JPanel {
 		
 		addSponsorComponents.add(lblSponsorName);
 		addSponsorComponents.add(tf_SponsorName);
-		addSponsorComponents.add(lblContractLength);
-		addSponsorComponents.add(tf_ContractLength);
+		addSponsorComponents.add(lblContractStart);
+		addSponsorComponents.add(tf_ContractStart);
 		addSponsorComponents.add(lblContractValue);
 		addSponsorComponents.add(tf_ContractValue);
 		addSponsorComponents.add(btnAddSponsorFinish);
@@ -245,6 +265,10 @@ public class SalesSponsorships extends JPanel {
 		//Action Listeners
 		btnAddSponsor.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
+				tf_SponsorName.setEditable(true);
+				tf_ContractStart.setEditable(true);
+				tf_ContractValue.setEditable(true);
+				
 				if(btnAddSponsor.isSelected() == false)
 				{
 					btnAddSponsor.setSelected(true);
