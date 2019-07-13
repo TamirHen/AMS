@@ -411,8 +411,8 @@ public class Controller {
 						.setSectionType(view.propertiesPanel.cb_sectionType.getModel().getSelectedItem().toString());
 				model.stadium.getArenaSection(view.propertiesPanel.sectionInedex)
 						.setSectionRanking(view.propertiesPanel.cb_sectionRanking.getModel().getSelectedItem().toString());
-				model.stadium.getArenaSection(view.propertiesPanel.sectionInedex)
-						.setTicketPrice(Float.valueOf(view.propertiesPanel.tf_sectionTicketPrice.getText()).floatValue());
+//				model.stadium.getArenaSection(view.propertiesPanel.sectionInedex)
+//						.setTicketPrice(Float.valueOf(view.propertiesPanel.tf_sectionTicketPrice.getText()).floatValue());
 				model.stadium.getArenaSection(view.propertiesPanel.sectionInedex)
 						.setNumOfSeats(Integer.valueOf(view.propertiesPanel.tf_sectionNumOfSeats.getText()).intValue(), model.stadium);
 				if (view.propertiesPanel.rdbtnIsRoofedYes.isSelected()) {
