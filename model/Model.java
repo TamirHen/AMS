@@ -76,7 +76,5 @@ public class Model {
 		db.createGameDB(name, date, this.season.get(seasonIndex));
 	}
 
-	//when calling create new game via controller need to remember to update DB (to call createGameDB method)
-	//when calling updateGameSectionsoldTickets need to remember to update DB (to call updateGameSectionSoldTicketsDB method)
 
 }

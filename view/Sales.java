@@ -24,10 +24,10 @@ public class Sales extends JPanel {
 
 	public JPanel panelSales;
 	public SalesTickets ticketsPanel;
-	private SalesSponsorships sponsorshipsPanel;
+	public SalesSponsorships sponsorshipsPanel;
 
 	public JButton btnTickets;
-	private JButton btnSponsorships;
+	public JButton btnSponsorships;
 	
 	private JTextField tf_TotalAttendance;
 	private JTextField tf_TotalRevenue;
