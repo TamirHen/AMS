@@ -1,14 +1,17 @@
 package model;
 
+import java.util.ArrayList;
+
 public class Season {
 	private String name;
 	private String leagueName;
 	
-	public Game[] games;
+	public ArrayList<Game> games;
 	private int numOfGames;
 	private float seasonRevenue;
 	
 	public Season(String name, String leagueName) {
+		games=new ArrayList<Game>();
 		this.name=name;
 		this.leagueName=leagueName;
 		this.numOfGames=0;
@@ -24,20 +27,20 @@ public class Season {
 	public String getName() {
 		return name;
 	}
-	public String leagueName() {
+	public String getLeagueName() {
 		return leagueName;
 	}
 	public void createGame(String name, String date, int sadiumCapacity, float vipTicketPrice, float clubLevelTicketPrice, float bleachersTicketPrice, float seasonTicketPrice, Stadium stadium) {
-		games[numOfGames]=new Game(name, date, sadiumCapacity, vipTicketPrice, clubLevelTicketPrice, bleachersTicketPrice, seasonTicketPrice, stadium);
+		games.add(new Game(name, date, sadiumCapacity, vipTicketPrice, clubLevelTicketPrice, bleachersTicketPrice, seasonTicketPrice, stadium));
 		numOfGames++;
 	}
 	public float getGamesRevenue() {
 		for (int i = 0; i < numOfGames; i++) {
-			this.seasonRevenue+=games[i].getTotalGameRevenue();
+			this.seasonRevenue+=games.get(i).getTotalGameRevenue();
 		}
 		return this.seasonRevenue;
 	}
 	public Game getGame(int gameNumber){
-		return this.games[gameNumber];		
+		return this.games.get(gameNumber);		
 	}
 }

@@ -1,4 +1,9 @@
 package model;
+import java.util.ArrayList;
+import java.util.List;
+
+import javax.swing.JPanel;
+
 import sqlite.*;
 
 public class Model {
@@ -13,7 +18,8 @@ public class Model {
 	private int userSize;
 	//---------------//
 	//---set seasons---//
-	public Season season[];
+	public ArrayList<Season> season = new ArrayList<Season>();
+//	public Season season[];
 	public int seasonSize;
 	//---------------//
 	
@@ -27,7 +33,7 @@ public class Model {
 		user=db.initializeUsers();
 		userSize=db.userSize;
 		//set seasons:
-		season=db.initializeSeasons();
+		this.season=db.initializeSeasons();
 		seasonSize=db.seasonSize;
 	}
 	
@@ -61,10 +67,15 @@ public class Model {
 		
 	}
 	public void createNewSeason(String name, String leagueName) {
-		this.season[seasonSize]=new Season(name, leagueName);
+		this.season.add(new Season(name, leagueName));
 		this.seasonSize++;
 		db.createNewSeasonDB(name, leagueName);
 	}
+	public void createNewGame(String name, String date,int seasonIndex, int sadiumCapacity, float vipTicketPrice, float clubLevelTicketPrice, float bleachersTicketPrice, float seasonTicketPrice, Stadium stadium) {
+		this.season.get(seasonIndex).createGame(name, date, sadiumCapacity, vipTicketPrice, clubLevelTicketPrice, bleachersTicketPrice, seasonTicketPrice, stadium);
+		db.createGameDB(name, date, this.season.get(seasonIndex));
+	}
+
 	//when calling create new game via controller need to remember to update DB (to call createGameDB method)
 	//when calling updateGameSectionsoldTickets need to remember to update DB (to call updateGameSectionSoldTicketsDB method)
 

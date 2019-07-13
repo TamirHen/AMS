@@ -42,8 +42,8 @@ public class Games extends JPanel {
 	
 	private List<JPanel> gamesPanelSubPanels = new ArrayList<JPanel>();
 	private List<JButton> gamesPanelButtons = new ArrayList<JButton>();
-	private GamesAddSeason addSeasonPanel;
-	private GamesAddGame addGamePanel;
+	public GamesAddSeason addSeasonPanel;
+	public GamesAddGame addGamePanel;
 	private GamesSectionDetails sectionDetailsPanel;
 	
 	Games(){

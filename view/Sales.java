@@ -46,8 +46,8 @@ public class Sales extends JPanel {
 	private JLabel lblTotalNumOfSeasonTickets;
 	private JLabel titleSponsorships;
 	
-	public JComboBox cb_SalesSeason;
-	public JComboBox cb_SalesGame;
+	public JComboBox<String> cb_SalesSeason;
+	public JComboBox<String> cb_SalesGame;
 	
 	private JSeparator sprtrTickets1;
 	private JSeparator sprtrTickets2;

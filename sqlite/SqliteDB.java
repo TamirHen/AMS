@@ -3,6 +3,11 @@ import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.ResultSet;
 import java.sql.Statement;
+import java.util.ArrayList;
+import java.util.List;
+
+import javax.swing.JPanel;
+
 import model.*;
 
 public class SqliteDB {
@@ -100,8 +105,9 @@ public class SqliteDB {
 		}
 	}
 	
-	public Season[] initializeSeasons() {
-		Season[] season=null;
+	public ArrayList<Season> initializeSeasons() {
+		ArrayList<Season> season=null;
+//		Season[] season=null;
 		try {
 			this.stmt = c.createStatement();
 			ResultSet rs = stmt.executeQuery("select * from Season");
@@ -109,11 +115,11 @@ public class SqliteDB {
 				seasonSize++;
 			}
 			rs = stmt.executeQuery("select * from Season");
-			season = new Season[seasonSize];
+			season = new ArrayList<Season>();
 			seasonSize=0;
 			while(rs.next()) {
-				season[seasonSize]=new Season(rs.getString("name"), rs.getString("leagueName"));
-				season[seasonSize].games=initializeGames(season[seasonSize]);
+				season.add(new Season(rs.getString("name"), rs.getString("leagueName")));
+				season.get(seasonSize).games=initializeGames(season.get(seasonSize));
 				seasonSize++;
 			}
 		} catch (Exception e) {
@@ -123,8 +129,8 @@ public class SqliteDB {
 		return season;
 	}
 	
-	public Game[] initializeGames(Season season) {
-		Game[] game=null;
+	public ArrayList<Game> initializeGames(Season season) {
+		ArrayList<Game> game=null;
 		int index=0;
 		try {
 			this.stmt = c.createStatement();
@@ -135,11 +141,11 @@ public class SqliteDB {
 			season.setNumOfGames(index);
 			rs = stmt.executeQuery("select * from Game where season='"+season.getName()+"'");
 //			System.out.println("select * from Game where season.name="+season.getName());
-			game = new Game[index];
+			game = new ArrayList<Game>();
 			index=0;
 			while(rs.next()) {
-				game[index]=new Game(rs.getString("name"), rs.getString("date"),this.stadium.getCapacity(), 100, 50, 20, 300, this.stadium);//need to create class for the ticket prices and changed it here
-				game[index].gameSections=initializeGameSections(game[index]);
+				game.add(new Game(rs.getString("name"), rs.getString("date"),this.stadium.getCapacity(), 100, 50, 20, 300, this.stadium));//need to create class for the ticket prices and changed it here
+				game.get(index).gameSections=initializeGameSections(game.get(index));
 				index++;
 			}
 		} catch (Exception e) {
@@ -148,8 +154,8 @@ public class SqliteDB {
 		}
 		return game;
 	}
-	public GameSection[] initializeGameSections(Game game) {
-		GameSection[] gameSection=null;
+	public ArrayList<GameSection> initializeGameSections(Game game) {
+		ArrayList<GameSection> gameSection=null;
 		int index=0;
 		try {
 			this.stmt = c.createStatement();
@@ -158,10 +164,10 @@ public class SqliteDB {
 				index++;
 			}
 			rs = stmt.executeQuery("select * from GameSection where game='"+game.getName()+"'");
-			gameSection = new GameSection[index];
+			gameSection = new ArrayList<GameSection>();
 			index=0;
 			while(rs.next()) {
-				gameSection[index]=new GameSection(stadium.getArenaSection(rs.getInt("sectionNumber")));
+				gameSection.add(new GameSection(stadium.getArenaSection(rs.getInt("sectionNumber"))));
 				index++;
 			}
 		} catch (Exception e) {
@@ -197,11 +203,11 @@ public class SqliteDB {
 		}
 	}
 	
-	public void createGameDB(String name, String date, int sadiumCapacity, float vipTicketPrice, float clubLevelTicketPrice, float bleachersTicketPrice, float seasonTicketPrice, Stadium stadium) {
+	public void createGameDB(String name, String date, Season season) {
 		try {
 			this.stmt = c.createStatement();
-			System.out.println("insert into Game values('"+name+"', '"+date+"', "+0+", "+0+", "+0+", "+0+", "+0+", "+0+", "+0+", "+0+", "+0+")");
-			stmt.executeUpdate("insert into Game values('"+name+"', '"+date+"', "+0+", "+0+", "+0+", "+0+", "+0+", "+0+", "+0+", "+0+", "+0+")");
+			System.out.println("insert into Game values('"+name+"', '"+date+"', "+0+", "+0+", "+0+", "+0+", "+0+", "+0+", "+0+", "+0+", "+0+", '"+season.getName()+"')");
+			stmt.executeUpdate("insert into Game values('"+name+"', '"+date+"', "+0+", "+0+", "+0+", "+0+", "+0+", "+0+", "+0+", "+0+", "+0+", '"+season.getName()+"')");
 
 		} catch (Exception e) {
 			System.out.println("Error: " + e.getMessage());
