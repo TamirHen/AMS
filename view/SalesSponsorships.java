@@ -32,6 +32,7 @@ public class SalesSponsorships extends JPanel {
 	public JTable sponsorTable;
 	public JButton btnAddSponsor;
 	public JButton btnRemoveSponsor;
+	
 	private JLabel lblSponsorName;
 	public JTextField tf_SponsorName;
 	private JLabel lblContractStart;

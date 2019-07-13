@@ -19,16 +19,11 @@ public class Facilities extends JPanel {
 	
 	public JPanel panelFacilities;
 	private  JLabel titleFacilities;
-	
-	private JPanel panelSecurity;
-	private JPanel panelMaintenance;
-	
-	private JLabel titleSecurity;
-	private JLabel titleMaintenance;
 
 	private JButton btnSecurity;
 	private JButton btnMaintenance;
-	
+	private FacilitiesSecurity securityPanel;
+	private FacilitiesMaintenance maintenancePanel;
 	
 	
 	public Facilities() {
@@ -48,7 +43,25 @@ public class Facilities extends JPanel {
 		titleFacilities.setFont(new Font(UI_Elements.mainFontName, Font.BOLD, UI_Elements.textPanelTitleSize));
 		panelFacilities.add(titleFacilities);
 		
+		
 		//Security sub-panel
+		securityPanel = new FacilitiesSecurity();
+		securityPanel.setBounds(330, 0, securityPanel.panelSecurity.getBounds().width, securityPanel.panelSecurity.getBounds().height);
+		panelFacilities.add(securityPanel);
+		securityPanel.add(securityPanel.panelSecurity);
+		securityPanel.setLayout(null);
+		securityPanel.setVisible(false);
+		
+		//Maintenance sub-panel
+		maintenancePanel = new FacilitiesMaintenance();
+		maintenancePanel.setBounds(330, 0, maintenancePanel.panelMaintenance.getBounds().width, maintenancePanel.panelMaintenance.getBounds().height);
+		panelFacilities.add(maintenancePanel);
+		maintenancePanel.add(maintenancePanel.panelMaintenance);
+		maintenancePanel.setLayout(null);
+		maintenancePanel.setVisible(false);
+		
+		
+		/*
 		panelSecurity = new JPanel();
 		panelSecurity.setBorder(null);
 		panelSecurity.setBackground(SystemColor.control);
@@ -65,7 +78,6 @@ public class Facilities extends JPanel {
 		titleSecurity.setFont(new Font(UI_Elements.mainFontName, Font.BOLD, UI_Elements.textSubPanelTitleSize));
 		panelSecurity.add(titleSecurity);
 		
-		//Maintenance sub-panel
 		panelMaintenance = new JPanel();
 		panelMaintenance.setBorder(null);
 		panelMaintenance.setBackground(SystemColor.control);
@@ -80,7 +92,7 @@ public class Facilities extends JPanel {
 		titleMaintenance.setCursor(Cursor.getPredefinedCursor(Cursor.DEFAULT_CURSOR));
 		titleMaintenance.setForeground(UI_Elements.color_mainBackgroundColor);
 		titleMaintenance.setFont(new Font(UI_Elements.mainFontName, Font.BOLD, UI_Elements.textSubPanelTitleSize));
-		panelMaintenance.add(titleMaintenance);
+		panelMaintenance.add(titleMaintenance);*/
 		
 		
 		//Buttons
@@ -102,7 +114,7 @@ public class Facilities extends JPanel {
 		    	btnSecurity.setBackground(UI_Elements.color_panelBodyButtonRollover);
 		    }
 		    public void mouseExited( MouseEvent e ) {
-		    	if(panelSecurity.isVisible() == true)
+		    	if(securityPanel.isVisible() == true)
 		    	{
 		    		btnSecurity.setBackground(UI_Elements.color_panelBodyButtonSelected);
 		    	}
@@ -131,7 +143,7 @@ public class Facilities extends JPanel {
 		    	btnMaintenance.setBackground(UI_Elements.color_panelBodyButtonRollover);
 		    }
 		    public void mouseExited( MouseEvent e ) {
-		    	if(panelMaintenance.isVisible() == true)
+		    	if(maintenancePanel.isVisible() == true)
 		    	{
 		    		btnMaintenance.setBackground(UI_Elements.color_panelBodyButtonSelected);
 		    	}
@@ -145,34 +157,34 @@ public class Facilities extends JPanel {
 		//Action listeners
 		btnSecurity.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
-				panelSecurity.setVisible(true);
+				securityPanel.setVisible(true);
 				btnSecurity.setBackground(UI_Elements.color_panelBodyButtonSelected);
 				
-				panelMaintenance.setVisible(false);
+				maintenancePanel.setVisible(false);
 				btnMaintenance.setBackground(UI_Elements.color_panelBodyButtonDefault);
 				
 				
-				panelSecurity.revalidate();
+				securityPanel.revalidate();
 			}
 		});
 		
 		btnMaintenance.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
-				panelSecurity.setVisible(false);
+				securityPanel.setVisible(false);
 				btnSecurity.setBackground(UI_Elements.color_panelBodyButtonDefault);
 				
-				panelMaintenance.setVisible(true);
+				maintenancePanel.setVisible(true);
 				btnMaintenance.setBackground(UI_Elements.color_panelBodyButtonSelected);
 				
 				
-				panelMaintenance.revalidate();
+				maintenancePanel.revalidate();
 			}
 		});
 		
 		//STARTUP STATE
 		panelFacilities.setVisible(false);
-		panelSecurity.setVisible(false);
-		panelMaintenance.setVisible(false);
+		securityPanel.setVisible(false);
+		maintenancePanel.setVisible(false);
 						
 	}
 
