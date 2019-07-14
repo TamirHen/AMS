@@ -91,7 +91,7 @@ public class Sales extends JPanel {
 		
 		cb_SalesSeason = new JComboBox();
 		cb_SalesSeason.setFont(UI_Elements.font_bodyFillText);
-		cb_SalesSeason.setModel(new DefaultComboBoxModel(new String[] {"2019/2020"}));
+		cb_SalesSeason.setModel(new DefaultComboBoxModel(new String[] {}));
 		cb_SalesSeason.setBounds(100, 103, 200, 20);
 		panelSales.add(cb_SalesSeason);
 		
@@ -105,7 +105,7 @@ public class Sales extends JPanel {
 		
 		cb_SalesGame = new JComboBox();
 		cb_SalesGame.setFont(UI_Elements.font_bodyFillText);
-		cb_SalesGame.setModel(new DefaultComboBoxModel(new String[] {"Tamir vs. Yoni - 01/09/2019"}));
+		cb_SalesGame.setModel(new DefaultComboBoxModel(new String[] {}));
 		cb_SalesGame.setBounds(100, (cb_SalesSeason.getBounds().y)+30, 200, 20);
 		panelSales.add(cb_SalesGame);
 		

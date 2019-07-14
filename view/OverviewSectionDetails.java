@@ -28,19 +28,19 @@ public class OverviewSectionDetails extends JPanel {
 	
 	public JPanel panelSectionDetails;
 	private JLabel titleSectionDetails;
-	private JLabel lblSectionNumber;
+	public JLabel lblSectionNumber;
 	private JLabel lblSectionRanking;
-	private JTextField tf_SectionRanking;
+	public JTextField tf_SectionRanking;
 	private JLabel lblSectionType;
-	private JTextField tf_SectionType;
+	public JTextField tf_SectionType;
 	private JLabel lblTicketPrice;
-	private JTextField tf_TicketPrice;
+	public JTextField tf_TicketPrice;
 	private JLabel lblCapacity;
-	private JTextField tf_Capacity;
+	public JTextField tf_Capacity;
 	private JLabel lblIsRoofed;
+	public JTextField tf_IsRoofed;
 
 	private int lineSpacing = 11;
-	private JTextField tf_IsRoofed;
 	
 	public OverviewSectionDetails() {
 		setBackground(UI_Elements.color_mainBackgroundColor);

@@ -616,6 +616,7 @@ public class Controller {
 		view.overviewPanel.overviewStadiumPanel.viewStadium_44.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
 				view.overviewPanel.overviewStadiumPanel.stadiumSectionSelection(view.overviewPanel.overviewStadiumPanel.viewStadium_44, ma44_Overview, img_44_S);
+				viewSectionDetails(view.gamesPanel.cb_SalesSeason.getSelectedIndex(), view.gamesPanel.cb_SalesGame.getSelectedIndex(), 43, false);
 			}
 		});
 		view.overviewPanel.overviewStadiumPanel.viewStadium_44.addMouseListener(ma44_Overview);
@@ -1914,12 +1915,33 @@ public class Controller {
 	}
 	
 	//ViewStadium
-	public void viewSectionDetails(int sectionToDisplay, boolean viewStadiumToDisplayIn/*  1=viewStadium in overview panel, 0=viewStadium in games panel  */) {
+	public void viewSectionDetails(int seasonIndex, int gameIndex, int sectionToDisplay, boolean viewStadiumToDisplayIn/*  1=viewStadium in overview panel, 0=viewStadium in games panel  */) {
 		if (viewStadiumToDisplayIn==true) {
-//			view.gamesPanel.sectionDetailsPanel.tf_SectionNumber.setText(String.valueOf(model.stadium.getArenaSection(sectionToDisplay).getSectionNumber())));
+			view.gamesPanel.sectionDetailsPanel.tf_SectionNumber.setText(String.valueOf(model.stadium.getArenaSection(sectionToDisplay).getSectionNumber()));
+			view.gamesPanel.sectionDetailsPanel.tf_SectionName.setText(String.valueOf(model.stadium.getArenaSection(sectionToDisplay).getSectionName()));
+			view.gamesPanel.sectionDetailsPanel.tf_SectionRanking.setText(String.valueOf(model.stadium.getArenaSection(sectionToDisplay).getSectionRanking()));
+			view.gamesPanel.sectionDetailsPanel.tf_SectionType.setText(String.valueOf(model.stadium.getArenaSection(sectionToDisplay).getSectionType()));
+			view.gamesPanel.sectionDetailsPanel.tf_TicketPrice.setText(String.valueOf(model.stadium.getArenaSection(sectionToDisplay).getTicketPrice()));
+			view.gamesPanel.sectionDetailsPanel.tf_Attendance.setText(String.valueOf(model.season.get(seasonIndex).games.get(gameIndex).gameSections.get(sectionToDisplay).getSoldTickets()) + "/" + String.valueOf(model.stadium.getArenaSection(sectionToDisplay).getNumOfSeats()));
+			//if for isRoofed:
+			if (model.stadium.getArenaSection(sectionToDisplay).isRoofed()==true) {
+				view.gamesPanel.sectionDetailsPanel.tf_IsRoofed.setText("Yes");
+			} else {
+				view.gamesPanel.sectionDetailsPanel.tf_IsRoofed.setText("No");
+			}
 		}
 		else {
-			
+			view.overviewPanel.sectionDetailsPanel.lblSectionNumber.setText(String.valueOf(model.stadium.getArenaSection(sectionToDisplay).getSectionName()));
+			view.overviewPanel.sectionDetailsPanel.tf_SectionRanking.setText(String.valueOf(model.stadium.getArenaSection(sectionToDisplay).getSectionRanking()));
+			view.overviewPanel.sectionDetailsPanel.tf_SectionType.setText(String.valueOf(model.stadium.getArenaSection(sectionToDisplay).getSectionType()));
+			view.overviewPanel.sectionDetailsPanel.tf_TicketPrice.setText(String.valueOf(model.stadium.getArenaSection(sectionToDisplay).getTicketPrice()));
+			view.overviewPanel.sectionDetailsPanel.tf_Capacity.setText(String.valueOf(model.stadium.getArenaSection(sectionToDisplay).getNumOfSeats()));
+			//if for isRoofed:
+			if (model.stadium.getArenaSection(sectionToDisplay).isRoofed()==true) {
+				view.overviewPanel.sectionDetailsPanel.tf_IsRoofed.setText("Yes");
+			} else {
+				view.overviewPanel.sectionDetailsPanel.tf_IsRoofed.setText("No");
+			}
 		}
 	}
 	public String getViewStadiumSectionType(int i_SectionNum) {
