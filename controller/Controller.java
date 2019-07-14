@@ -499,6 +499,7 @@ public class Controller {
 		});
 		
 		//---Sales Panel (in view)---//
+		displayAllGamesInGivenSeasonSalePanel();
 		view.salesPanel.cb_SalesSeason.removeAllItems();
 		for (int i = 0; i < model.seasonSize; i++) {
 			view.salesPanel.cb_SalesSeason.addItem(model.season.get(i).getName());
@@ -517,28 +518,25 @@ public class Controller {
 			}
 		});
 		
-//		view.salesPanel.btnSponsorships.addActionListener(new ActionListener() {
-//			public void actionPerformed(ActionEvent arg0) {
-//				view.salesPanel.sponsorshipsPanel.sponsorTable.setVisible(true);
-//				view.salesPanel.sponsorshipsPanel.sponsorTableScrollPane.setVisible(true);
-//				view.salesPanel.sponsorshipsPanel.sponsorTable.setEnabled(true);
-//				view.salesPanel.sponsorshipsPanel.sponsorTableScrollPane.setEnabled(true);
-//				
-//				
-//			}
-//		});
+		view.salesPanel.btnSponsorships.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent arg0) {
+				view.salesPanel.sponsorshipsPanel.sponsorTable.setVisible(true);
+		        view.salesPanel.sponsorshipsPanel.sponsorTableScrollPane.setVisible(true);
+				view.salesPanel.sponsorshipsPanel.sponsorTable.setEnabled(true);
+				view.salesPanel.sponsorshipsPanel.sponsorTableScrollPane.setEnabled(true);
+				
+				
+			}
+		});
 		
 	
-//		
+		
 //		for (int i = 0; i < model.sponsorsSize; i++) {
-//			view.salesPanel.sponsorshipsPanel.sponsorTable.add(model.season[i].getName());
+//			view.salesPanel.sponsorshipsPanel.sponsorTable.add(model.sponsors.get(i));
 //			
 //		view.salesPanel.sponsorshipsPanel.btnAddSponsorFinish.addActionListener(new ActionListener() {
 //			public void actionPerformed(ActionEvent arg0) {
-//				model.sponsors[1].setName(view.salesPanel.sponsorshipsPanel.tf_SponsorName.getText());
-//				model.sponsors[1].setContractLength(Integer.parseInt(view.salesPanel.sponsorshipsPanel.tf_SponsorName.getText()));
-//				model.sponsors[1].setName(view.salesPanel.sponsorshipsPanel.tf_SponsorName.getText());
-//				
+//				model.createNewSponsor(view.salesPanel.sponsorshipsPanel.tf_SponsorName.getText(), view.salesPanel.sponsorshipsPanel.tf_ContractStart.getText(), view.salesPanel.sponsorshipsPanel.tf_ContractEnd.getText(), view.salesPanel.sponsorshipsPanel.tf_ContractValue.getText());
 //				
 //			}
 //		});

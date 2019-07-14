@@ -130,8 +130,8 @@ public class SqliteDB {
 		return season;
 	}
 	
-	public Sponsor[] initializeSponsors() {
-		Sponsor[] sponsors=null;
+	public ArrayList<Sponsor> initializeSponsors() {
+		ArrayList<Sponsor> sponsors=null;
 		try {
 			this.stmt=c.createStatement();
 			ResultSet rs=stmt.executeQuery("select * from Sponsor");
@@ -139,10 +139,10 @@ public class SqliteDB {
 				sponsorsSize++;
 			}
 			rs=stmt.executeQuery("select * from Sponsor");
-			sponsors=new Sponsor[sponsorsSize];
+			sponsors=new ArrayList<Sponsor>();
 			sponsorsSize=0;
 			while(rs.next()) {
-				sponsors[sponsorsSize]=new Sponsor(rs.getString("name"), rs.getDate("contractStartDate"),rs.getDate("contractEndDate"),rs.getFloat("totalContractValue"));
+				sponsors.add(new Sponsor(rs.getString("name"), rs.getDate("contractStartDate"),rs.getDate("contractEndDate"),rs.getFloat("totalContractValue")));
 				sponsorsSize++;
 			}
 		} catch (Exception e) {

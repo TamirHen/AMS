@@ -24,7 +24,7 @@ public class Model {
 	public int seasonSize;
 	//---------------//
 	//---set sponsors---//
-	public Sponsor sponsors[];
+	public ArrayList<Sponsor> sponsors = new ArrayList<Sponsor>();
 	public int sponsorsSize;
 	//-----------------//
 	
@@ -42,7 +42,7 @@ public class Model {
 		this.season=db.initializeSeasons();
 		seasonSize=db.seasonSize;
 		
-		sponsors=db.initializeSponsors();
+		this.sponsors=db.initializeSponsors();
 		sponsorsSize=db.sponsorsSize;
 	}
 	
@@ -87,7 +87,7 @@ public class Model {
 
 	
 	public void createNewSponsor(String name, Date contractStartDate, Date contractEndDate, float totalContractValue) {
-		this.sponsors[sponsorsSize]=new Sponsor(name, contractStartDate, contractEndDate, totalContractValue);
+		this.sponsors.add(new Sponsor(name, contractStartDate, contractEndDate, totalContractValue));
 		this.sponsorsSize++;
 		db.createNewSponsorDB(name, contractStartDate,contractEndDate,totalContractValue);
 	}

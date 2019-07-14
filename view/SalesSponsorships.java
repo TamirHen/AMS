@@ -43,7 +43,7 @@ public class SalesSponsorships extends JPanel {
 	
 	private List<JComponent> addSponsorComponents = new ArrayList<JComponent>();
 	private JLabel lblContractEnd;
-	private JTextField tf_ContractEnd;
+	public JTextField tf_ContractEnd;
 
 	
 	public SalesSponsorships(){
@@ -267,6 +267,7 @@ public class SalesSponsorships extends JPanel {
 			public void actionPerformed(ActionEvent arg0) {
 				tf_SponsorName.setEditable(true);
 				tf_ContractStart.setEditable(true);
+				//tf_ContractEnd.setEditable(true);
 				tf_ContractValue.setEditable(true);
 				
 				if(btnAddSponsor.isSelected() == false)
