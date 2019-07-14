@@ -12,7 +12,7 @@ public class Game {
 	private int vipTicketsSold;
 	private int clubLevelTicketsSold;
 	private int bleachersTicketsSold;
-	private int totalSingleTickes;        // club+bleach+vip
+	private int totalSingleTickes;        // club+bleachers+vip
 	private int seasonTicketsSold;
 	
 	private float vipTicketPrice;
@@ -23,7 +23,7 @@ public class Game {
 	private float vipRevenue;
 	private float clubLevelRevenue;
 	private float bleachersRevenue;
-	private float singleTicketsRevenue; // club+bleach+vip revenue
+	private float singleTicketsRevenue; // club+bleachers+vip revenue
 	private float seasonTicketsRevenue;
 	private float totalGameRevenue;
 	//Constructor
