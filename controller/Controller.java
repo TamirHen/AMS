@@ -367,7 +367,7 @@ public class Controller {
 		view.propertiesPanel.tf_ArenaName.setText(model.stadium.getStadiumName());
 		view.propertiesPanel.tf_Address.setText(model.stadium.getAddress());
 		view.propertiesPanel.tf_ArenaNumOfSeats.setText(String.valueOf(model.stadium.getCapacity()));
-		view.propertiesPanel.tf_SectionTicketPrice.setText(String.valueOf(model.stadium.getArenaSection(0).getTicketPrice()));
+		//ToRemove - view.propertiesPanel.tf_SectionTicketPrice.setText(String.valueOf(model.stadium.getArenaSection(0).getTicketPrice()));
 		view.propertiesPanel.tf_SectionNumOfSeats.setText(String.valueOf(model.stadium.getArenaSection(1).getNumOfSeats()));
 		//set sections in the combobox:
 		for (int i = 0; i < model.db.sectionSize; i++) {
@@ -381,7 +381,7 @@ public class Controller {
 				view.propertiesPanel.btnEditProperties.setVisible(false);
 				view.propertiesPanel.btnCancelEditing.setVisible(true);
 				view.propertiesPanel.btnFinishEditingProperties.setVisible(true);
-				view.propertiesPanel.btnEditSectionTypeTicketPrice.setVisible(true);
+				view.propertiesPanel.btnEditTicketPrices.setVisible(true);
 				view.propertiesPanel.setProperties(true);
 				view.propertiesPanel.cb_SectionSelection.setEnabled(false);
 				view.propertiesPanel.cb_SectionSelection.setRenderer(new DefaultListCellRenderer() { // Send Yoni
@@ -400,7 +400,7 @@ public class Controller {
 				view.propertiesPanel.btnFinishEditingProperties.setVisible(false);
 				view.propertiesPanel.btnEditProperties.setVisible(true);
 				view.propertiesPanel.btnCancelEditing.setVisible(false);
-				view.propertiesPanel.btnEditSectionTypeTicketPrice.setVisible(false);
+				view.propertiesPanel.btnEditTicketPrices.setVisible(false);
 
 				view.propertiesPanel.sectionInedex = view.propertiesPanel.cb_SectionSelection.getSelectedIndex(); // Gets the Section we want to edit
 				
@@ -411,18 +411,16 @@ public class Controller {
 						.setSectionType(view.propertiesPanel.cb_SectionType.getModel().getSelectedItem().toString());
 				model.stadium.getArenaSection(view.propertiesPanel.sectionInedex)
 						.setSectionRanking(view.propertiesPanel.cb_SectionRanking.getModel().getSelectedItem().toString());
-				model.stadium.getArenaSection(view.propertiesPanel.sectionInedex)
-						.setTicketPrice(Float.valueOf(view.propertiesPanel.tf_SectionTicketPrice.getText()).floatValue());
-				model.stadium.getArenaSection(view.propertiesPanel.sectionInedex)
-						.setNumOfSeats(Integer.valueOf(view.propertiesPanel.tf_SectionNumOfSeats.getText()).intValue(), model.stadium);
+				//ToRemove - 	model.stadium.getArenaSection(view.propertiesPanel.sectionInedex).setTicketPrice(Float.valueOf(view.propertiesPanel.tf_SectionTicketPrice.getText()).floatValue());
+				model.stadium.getArenaSection(view.propertiesPanel.sectionInedex).setNumOfSeats(Integer.valueOf(view.propertiesPanel.tf_SectionNumOfSeats.getText()).intValue(), model.stadium);
 				if (view.propertiesPanel.rdbtnIsRoofedYes.isSelected()) {
 					model.stadium.getArenaSection(view.propertiesPanel.sectionInedex).setRoofed(true);
 					//set new Section properties in DB with "isRoofed" true:
-					model.db.updateSections(view.propertiesPanel.sectionInedex+1, view.propertiesPanel.cb_SectionType.getModel().getSelectedItem().toString(), Float.valueOf(view.propertiesPanel.tf_SectionTicketPrice.getText()).floatValue(), Integer.valueOf(view.propertiesPanel.tf_SectionNumOfSeats.getText()).intValue(), "true", view.propertiesPanel.cb_SectionRanking.getModel().getSelectedItem().toString());
+					//ToRemove - model.db.updateSections(view.propertiesPanel.sectionInedex+1, view.propertiesPanel.cb_SectionType.getModel().getSelectedItem().toString(), Float.valueOf(view.propertiesPanel.tf_SectionTicketPrice.getText()).floatValue(), Integer.valueOf(view.propertiesPanel.tf_SectionNumOfSeats.getText()).intValue(), "true", view.propertiesPanel.cb_SectionRanking.getModel().getSelectedItem().toString());
 				} else {
 					model.stadium.getArenaSection(view.propertiesPanel.sectionInedex).setRoofed(false);
 					//set new Section properties in DB with "isRoofed" false:
-					model.db.updateSections(view.propertiesPanel.sectionInedex+1, view.propertiesPanel.cb_SectionType.getModel().getSelectedItem().toString(), Float.valueOf(view.propertiesPanel.tf_SectionTicketPrice.getText()).floatValue(), Integer.valueOf(view.propertiesPanel.tf_SectionNumOfSeats.getText()).intValue(), "false", view.propertiesPanel.cb_SectionRanking.getModel().getSelectedItem().toString());
+					//ToRemove - model.db.updateSections(view.propertiesPanel.sectionInedex+1, view.propertiesPanel.cb_SectionType.getModel().getSelectedItem().toString(), Float.valueOf(view.propertiesPanel.tf_SectionTicketPrice.getText()).floatValue(), Integer.valueOf(view.propertiesPanel.tf_SectionNumOfSeats.getText()).intValue(), "false", view.propertiesPanel.cb_SectionRanking.getModel().getSelectedItem().toString());
 
 				}
 				// -------------//
@@ -442,7 +440,7 @@ public class Controller {
 				view.propertiesPanel.btnCancelEditing.setVisible(false);
 				view.propertiesPanel.btnEditProperties.setVisible(true);
 				view.propertiesPanel.btnFinishEditingProperties.setVisible(false);
-				view.propertiesPanel.btnEditSectionTypeTicketPrice.setVisible(false);
+				view.propertiesPanel.btnEditTicketPrices.setVisible(false);
 
 				view.propertiesPanel.sectionInedex = view.propertiesPanel.cb_SectionSelection.getSelectedIndex(); // Gets the Section we want to edit
 
@@ -453,7 +451,7 @@ public class Controller {
 
 				view.propertiesPanel.cb_SectionType.setSelectedItem(model.stadium.getArenaSection(view.propertiesPanel.sectionInedex).getSectionType());
 				view.propertiesPanel.cb_SectionRanking.setSelectedItem(model.stadium.getArenaSection(view.propertiesPanel.sectionInedex).getSectionRanking());
-				view.propertiesPanel.tf_SectionTicketPrice.setText(String.valueOf(model.stadium.getArenaSection(view.propertiesPanel.sectionInedex).getTicketPrice()));
+				//view.propertiesPanel.tf_SectionTicketPrice.setText(String.valueOf(model.stadium.getArenaSection(view.propertiesPanel.sectionInedex).getTicketPrice()));
 				view.propertiesPanel.tf_SectionNumOfSeats.setText(String.valueOf(model.stadium.getArenaSection(view.propertiesPanel.sectionInedex).getNumOfSeats()));
 				if (model.stadium.getArenaSection(view.propertiesPanel.sectionInedex).isRoofed()) {
 					view.propertiesPanel.rdbtnIsRoofedYes.setSelected(true);
@@ -467,18 +465,9 @@ public class Controller {
 			}
 		});
 		
-		view.propertiesPanel.btnEditSectionTypeTicketPrice.addActionListener(new ActionListener() {
+		view.propertiesPanel.btnEditTicketPrices.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
-				if(view.propertiesPanel.tf_SectionTicketPrice.isEnabled() == false)
-				{
-					view.propertiesPanel.tf_SectionTicketPrice.setEnabled(true);
-					view.propertiesPanel.tf_SectionTicketPrice.setEditable(true);
-				}
-				else
-				{
-					view.propertiesPanel.tf_SectionTicketPrice.setEnabled(false);
-					view.propertiesPanel.tf_SectionTicketPrice.setEditable(false);
-				}
+				view.propertiesPanel.frameEditTicketPrices.setVisible(true);
 			}
 		});
 		
@@ -1869,7 +1858,7 @@ public class Controller {
 
 		view.propertiesPanel.cb_SectionType.setSelectedItem(model.stadium.getArenaSection(index).getSectionType());
 		view.propertiesPanel.cb_SectionRanking.setSelectedItem(model.stadium.getArenaSection(index).getSectionRanking());
-		view.propertiesPanel.tf_SectionTicketPrice.setText(String.valueOf(model.stadium.getArenaSection(index).getTicketPrice()));
+		//ToRemove - view.propertiesPanel.tf_SectionTicketPrice.setText(String.valueOf(model.stadium.getArenaSection(index).getTicketPrice()));
 		view.propertiesPanel.tf_SectionNumOfSeats.setText(String.valueOf(model.stadium.getArenaSection(index).getNumOfSeats()));
 		if (model.stadium.getArenaSection(index).isRoofed()) {
 			view.propertiesPanel.rdbtnIsRoofedYes.setSelected(true);

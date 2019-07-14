@@ -27,7 +27,7 @@ public class Properties extends JPanel {
 
 	public JTextField tf_Address;
 	public JTextField tf_ArenaName;
-	public JTextField tf_SectionTicketPrice;
+	//public JTextField tf_SectionTicketPrice;
 	public JTextField tf_SectionNumOfSeats;
 	public JTextField tf_ArenaNumOfSeats;
 	public JTextField tf_TotalAttendance;
@@ -56,7 +56,7 @@ public class Properties extends JPanel {
 	public  JLabel lblArenaNumOfSeats;
 	public  JLabel lblSectionManagement;
 	public  JLabel lblSectionType;
-	public  JLabel lblSectionTicketPrice;
+	//public  JLabel lblSectionTicketPrice;
 	public  JLabel lblSectionNumOfSeats;
 	public  JLabel lblIsRoofed;
 	public  JLabel lblSectionRanking;
@@ -65,8 +65,9 @@ public class Properties extends JPanel {
 	
 	private int lineSpacing = 5;
 
-	public JButton btnEditSectionTypeTicketPrice;
+	public JButton btnEditTicketPrices;
 
+	public PropertiesEditTicketPrices frameEditTicketPrices;
 	
 	
 	public Properties() {
@@ -190,7 +191,7 @@ public class Properties extends JPanel {
 			}
 		});
 
-		lblSectionTicketPrice = new JLabel("Ticket Price:");
+		/*lblSectionTicketPrice = new JLabel("Ticket Price:");
 		lblSectionTicketPrice.setBorder(null);
 		lblSectionTicketPrice.setForeground(Color.WHITE);
 		lblSectionTicketPrice.setFont(UI_Elements.font_bodyLabel);
@@ -205,13 +206,13 @@ public class Properties extends JPanel {
 		tf_SectionTicketPrice.setFont(UI_Elements.font_bodyFillText);
 		tf_SectionTicketPrice.setBounds(cb_SectionType.getBounds().x, lblSectionTicketPrice.getBounds().y, cb_SectionType.getBounds().width, cb_SectionType.getBounds().height);
 		panelProperties.add(tf_SectionTicketPrice);
-		tf_SectionTicketPrice.setColumns(10);
+		tf_SectionTicketPrice.setColumns(10);*/
 
 		lblSectionNumOfSeats = new JLabel("Num. of Seats:");
 		lblSectionNumOfSeats.setBorder(null);
 		lblSectionNumOfSeats.setForeground(Color.WHITE);
 		lblSectionNumOfSeats.setFont(UI_Elements.font_bodyLabel);
-		lblSectionNumOfSeats.setBounds(lblSectionTicketPrice.getBounds().x, lblSectionTicketPrice.getBounds().y+lblSectionTicketPrice.getBounds().height+lineSpacing, lblSectionTicketPrice.getBounds().width, lblSectionTicketPrice.getBounds().height);
+		lblSectionNumOfSeats.setBounds(lblSectionType.getBounds().x, lblSectionType.getBounds().y+lblSectionType.getBounds().height+lineSpacing, lblSectionType.getBounds().width, lblSectionType.getBounds().height);
 		panelProperties.add(lblSectionNumOfSeats);
 
 		tf_SectionNumOfSeats = new JTextField();
@@ -220,7 +221,7 @@ public class Properties extends JPanel {
 		tf_SectionNumOfSeats.setEditable(false);
 		tf_SectionNumOfSeats.setHorizontalAlignment(SwingConstants.LEFT);
 		tf_SectionNumOfSeats.setFont(UI_Elements.font_bodyFillText);
-		tf_SectionNumOfSeats.setBounds(tf_SectionTicketPrice.getBounds().x, lblSectionNumOfSeats.getBounds().y, tf_SectionTicketPrice.getBounds().width, tf_SectionTicketPrice.getBounds().height);
+		tf_SectionNumOfSeats.setBounds(cb_SectionType.getBounds().x, lblSectionNumOfSeats.getBounds().y, cb_SectionType.getBounds().width, cb_SectionType.getBounds().height);
 		panelProperties.add(tf_SectionNumOfSeats);
 		tf_SectionNumOfSeats.setColumns(10);
 
@@ -281,7 +282,7 @@ public class Properties extends JPanel {
 		// Buttons declaration:
 		btnEditProperties = new JButton("EDIT");
 		btnEditProperties.setVisible(true);
-		btnEditProperties.setBounds(460, lblArenaName.getBounds().y-2, 120, 22);
+		btnEditProperties.setBounds(460, lblArenaName.getBounds().y-2, 112, 25);
 		btnEditProperties.setFocusPainted(false);
 		btnEditProperties.setRequestFocusEnabled(false);
 		btnEditProperties.setCursor(Cursor.getPredefinedCursor(Cursor.HAND_CURSOR));
@@ -305,7 +306,7 @@ public class Properties extends JPanel {
 
 		btnFinishEditingProperties = new JButton("FINISH");
 		btnFinishEditingProperties.setVisible(false);
-		btnFinishEditingProperties.setBounds(btnEditProperties.getBounds().x, 485, btnEditProperties.getBounds().width, btnEditProperties.getBounds().height);
+		btnFinishEditingProperties.setBounds(btnEditProperties.getBounds().x, cb_SectionRanking.getBounds().y+cb_SectionRanking.getBounds().height+lineSpacing*4, btnEditProperties.getBounds().width, btnEditProperties.getBounds().height);
 		btnFinishEditingProperties.setFocusPainted(false);
 		btnFinishEditingProperties.setRequestFocusEnabled(false);
 		btnFinishEditingProperties.setCursor(Cursor.getPredefinedCursor(Cursor.HAND_CURSOR));
@@ -351,29 +352,32 @@ public class Properties extends JPanel {
 		});
 		panelProperties.add(btnCancelEditing);
 		
-		btnEditSectionTypeTicketPrice = new JButton("EDIT TICKET PRICE");
-		btnEditSectionTypeTicketPrice.setVisible(false);
-		btnEditSectionTypeTicketPrice.setBounds(btnEditProperties.getBounds().x, lblSectionTicketPrice.getBounds().y-1, btnEditProperties.getBounds().width, btnEditProperties.getBounds().height);
-		btnEditSectionTypeTicketPrice.setFocusPainted(false);
-		btnEditSectionTypeTicketPrice.setRequestFocusEnabled(false);
-		btnEditSectionTypeTicketPrice.setCursor(Cursor.getPredefinedCursor(Cursor.HAND_CURSOR));
-		btnEditSectionTypeTicketPrice.setHorizontalAlignment(SwingConstants.CENTER);
-		btnEditSectionTypeTicketPrice.setForeground(Color.WHITE);
-		btnEditSectionTypeTicketPrice.setOpaque(true);
-		btnEditSectionTypeTicketPrice.setBorder(null);
-		btnEditSectionTypeTicketPrice.setFont(new Font(UI_Elements.mainFontName, Font.PLAIN, 17));
-		btnEditSectionTypeTicketPrice.setBackground(UI_Elements.color_panelBodyButtonDefault);
-		btnEditSectionTypeTicketPrice.addMouseListener(new MouseAdapter() {
+		btnEditTicketPrices = new JButton("EDIT TICKET PRICES");
+		btnEditTicketPrices.setVisible(false);
+		btnEditTicketPrices.setBounds(cb_SectionSelection.getBounds().x + cb_SectionSelection.getBounds().width+lineSpacing, cb_SectionSelection.getBounds().y-3, btnEditProperties.getBounds().width, btnEditProperties.getBounds().height);
+		btnEditTicketPrices.setFocusPainted(false);
+		btnEditTicketPrices.setRequestFocusEnabled(false);
+		btnEditTicketPrices.setCursor(Cursor.getPredefinedCursor(Cursor.HAND_CURSOR));
+		btnEditTicketPrices.setHorizontalAlignment(SwingConstants.CENTER);
+		btnEditTicketPrices.setForeground(Color.WHITE);
+		btnEditTicketPrices.setOpaque(true);
+		btnEditTicketPrices.setBorder(null);
+		btnEditTicketPrices.setFont(new Font(UI_Elements.mainFontName, Font.PLAIN, 17));
+		btnEditTicketPrices.setBackground(UI_Elements.color_panelBodyButtonDefault);
+		btnEditTicketPrices.addMouseListener(new MouseAdapter() {
 			public void mouseEntered(MouseEvent e) {
-				btnEditSectionTypeTicketPrice.setBackground(UI_Elements.color_panelBodyButtonRollover);
+				btnEditTicketPrices.setBackground(UI_Elements.color_panelBodyButtonRollover);
 			}
 
 			public void mouseExited(MouseEvent e) {
-				btnEditSectionTypeTicketPrice.setBackground(UI_Elements.color_panelBodyButtonDefault);
+				btnEditTicketPrices.setBackground(UI_Elements.color_panelBodyButtonDefault);
 
 			}
 		});
-		panelProperties.add(btnEditSectionTypeTicketPrice);
+		panelProperties.add(btnEditTicketPrices);
+		
+		frameEditTicketPrices = new PropertiesEditTicketPrices();
+		
 		// end buttons declarations
 
 	}
@@ -385,8 +389,8 @@ public class Properties extends JPanel {
 		tf_ArenaName.setEditable(action);
 		tf_Address.setEnabled(action);
 		tf_Address.setEditable(action);
-		tf_SectionTicketPrice.setEnabled(false); //
-		tf_SectionTicketPrice.setEditable(false); //
+		//tf_SectionTicketPrice.setEnabled(false); //
+		//tf_SectionTicketPrice.setEditable(false); //
 		tf_SectionNumOfSeats.setEnabled(action);
 		tf_SectionNumOfSeats.setEditable(action);
 		cb_SectionType.setEnabled(action);
