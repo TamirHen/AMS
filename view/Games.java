@@ -221,7 +221,10 @@ public class Games extends JPanel {
 					i_Button.setBackground(UI_Elements.color_panelBodyButtonSelected);
 					i_OuterPanel.setVisible(true);
 					i_InnerPanel.setVisible(true);
-					gamesStadiumPanel.detailsPanel.setVisible(false);
+					if(gamesStadiumPanel.detailsPanel != null)
+					{
+						gamesStadiumPanel.detailsPanel.setVisible(false);
+					}
 					gamesStadiumPanel.removeDetailsPanel(sectionDetailsPanel.panelSectionDetails);
 				}
 				else

@@ -36,7 +36,7 @@ public class Properties extends JPanel {
 	public JTextField tf_TotalNumOfSeasonTickets;
 	public JTextField tf_TotalRevenueGameTickets;
 	
-	public int sectionInedex;
+	public int sectionIndex;
 	public JComboBox<String> cb_SectionType;
 	public JComboBox<String> cb_SectionRanking;
 	public JComboBox<String> cb_SectionSelection;

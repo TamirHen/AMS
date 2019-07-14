@@ -21,6 +21,7 @@ import java.sql.DriverManager;
 import java.sql.ResultSet;
 import java.sql.Statement;
 import java.util.Arrays;
+import java.util.Iterator;
 import java.util.ArrayList;
 
 import sqlite.*;
@@ -31,7 +32,57 @@ public class Controller {
 	private View view;
 	private Model model;
 	
-	//--ViewStadium Images--//
+	//--ViewStadium Elements--//
+	public ArrayList<JButton> stadiumButtonsOverview = new ArrayList<JButton>();
+	public ArrayList<JButton> stadiumButtonsGames = new ArrayList<JButton>();
+	public ArrayList<ImageIcon> stadiumImages = new ArrayList<ImageIcon>();
+	public ArrayList<String> stadiumImagePaths = new ArrayList<String>();
+	
+	private String path1;
+	private String path2;
+	private String path3;
+	private String path4;
+	private String path5;
+	private String path6;
+	private String path7;
+	private String path8;
+	private String path9;
+	private String path10;
+	private String path11;
+	private String path12;
+	private String path13;
+	private String path14;
+	private String path15;
+	private String path16;
+	private String path17;
+	private String path18;
+	private String path19;
+	private String path20;
+	private String path21;
+	private String path22;
+	private String path23;
+	private String path24;
+	private String path25;
+	private String path26;
+	private String path27;
+	private String path28;
+	private String path29;
+	private String path30;
+	private String path31;
+	private String path32;
+	private String path33;
+	private String path34;
+	private String path35;
+	private String path36;
+	private String path37;
+	private String path38;
+	private String path39;
+	private String path40;
+	private String path41;
+	private String path42;
+	private String path43;
+	private String path44;
+	
 	public ImageIcon img_1;
 	public ImageIcon img_2;
 	public ImageIcon img_3;
@@ -403,23 +454,26 @@ public class Controller {
 				view.propertiesPanel.btnCancelEditing.setVisible(false);
 				view.propertiesPanel.btnEditTicketPrices.setVisible(false);
 
-				view.propertiesPanel.sectionInedex = view.propertiesPanel.cb_SectionSelection.getSelectedIndex(); // Gets the Section we want to edit
+				view.propertiesPanel.sectionIndex = view.propertiesPanel.cb_SectionSelection.getSelectedIndex(); // Gets the Section we want to edit
 				
 				model.stadium.setStadiumName(view.propertiesPanel.tf_ArenaName.getText());
 				model.stadium.setAddress(view.propertiesPanel.tf_Address.getText());
 				// -------------//
-				model.stadium.getArenaSection(view.propertiesPanel.sectionInedex).setSectionType(view.propertiesPanel.cb_SectionType.getModel().getSelectedItem().toString());
-				model.stadium.getArenaSection(view.propertiesPanel.sectionInedex).setSectionRanking(view.propertiesPanel.cb_SectionRanking.getModel().getSelectedItem().toString());
-				//ToRemove - 	model.stadium.getArenaSection(view.propertiesPanel.sectionInedex).setTicketPrice(Float.valueOf(view.propertiesPanel.tf_SectionTicketPrice.getText()).floatValue());
-				model.stadium.getArenaSection(view.propertiesPanel.sectionInedex).setNumOfSeats(Integer.valueOf(view.propertiesPanel.tf_SectionNumOfSeats.getText()).intValue(), model.stadium);
+				String currentSectionType = model.stadium.getArenaSection(view.propertiesPanel.sectionIndex).getSectionType();
+				String newSectionType = view.propertiesPanel.cb_SectionType.getModel().getSelectedItem().toString();
+				
+				model.stadium.getArenaSection(view.propertiesPanel.sectionIndex).setSectionType(view.propertiesPanel.cb_SectionType.getModel().getSelectedItem().toString());				
+				//model.stadium.getArenaSection(view.propertiesPanel.sectionInedex).setSectionType(view.propertiesPanel.cb_SectionType.getModel().getSelectedItem().toString());
+				model.stadium.getArenaSection(view.propertiesPanel.sectionIndex).setSectionRanking(view.propertiesPanel.cb_SectionRanking.getModel().getSelectedItem().toString());
+				model.stadium.getArenaSection(view.propertiesPanel.sectionIndex).setNumOfSeats(Integer.valueOf(view.propertiesPanel.tf_SectionNumOfSeats.getText()).intValue(), model.stadium);
 				if (view.propertiesPanel.rdbtnIsRoofedYes.isSelected()) {
-					model.stadium.getArenaSection(view.propertiesPanel.sectionInedex).setRoofed(true);
+					model.stadium.getArenaSection(view.propertiesPanel.sectionIndex).setRoofed(true);
 					//set new Section properties in DB with "isRoofed" true:
-					model.db.updateSections(view.propertiesPanel.sectionInedex+1, view.propertiesPanel.cb_SectionType.getModel().getSelectedItem().toString(),Integer.valueOf(view.propertiesPanel.tf_SectionNumOfSeats.getText()).intValue(), "true", view.propertiesPanel.cb_SectionRanking.getModel().getSelectedItem().toString());
+					model.db.updateSections(view.propertiesPanel.sectionIndex+1, view.propertiesPanel.cb_SectionType.getModel().getSelectedItem().toString(),Integer.valueOf(view.propertiesPanel.tf_SectionNumOfSeats.getText()).intValue(), "true", view.propertiesPanel.cb_SectionRanking.getModel().getSelectedItem().toString());
 				} else {
-					model.stadium.getArenaSection(view.propertiesPanel.sectionInedex).setRoofed(false);
+					model.stadium.getArenaSection(view.propertiesPanel.sectionIndex).setRoofed(false);
 					//set new Section properties in DB with "isRoofed" false:
-					model.db.updateSections(view.propertiesPanel.sectionInedex+1, view.propertiesPanel.cb_SectionType.getModel().getSelectedItem().toString(), Integer.valueOf(view.propertiesPanel.tf_SectionNumOfSeats.getText()).intValue(), "false", view.propertiesPanel.cb_SectionRanking.getModel().getSelectedItem().toString());
+					model.db.updateSections(view.propertiesPanel.sectionIndex+1, view.propertiesPanel.cb_SectionType.getModel().getSelectedItem().toString(), Integer.valueOf(view.propertiesPanel.tf_SectionNumOfSeats.getText()).intValue(), "false", view.propertiesPanel.cb_SectionRanking.getModel().getSelectedItem().toString());
 
 				}
 				// -------------//
@@ -430,6 +484,11 @@ public class Controller {
 				view.propertiesPanel.tf_ArenaNumOfSeats.setText(String.valueOf(model.stadium.getCapacity())); //changes number of seats according to the section changes
 
 				view.propertiesPanel.setProperties(false);
+				
+				if(currentSectionType.equals(newSectionType) == false)
+				{
+					redrawStadium();
+				}
 			}
 		});
 
@@ -441,7 +500,7 @@ public class Controller {
 				view.propertiesPanel.btnFinishEditingProperties.setVisible(false);
 				view.propertiesPanel.btnEditTicketPrices.setVisible(false);
 
-				view.propertiesPanel.sectionInedex = view.propertiesPanel.cb_SectionSelection.getSelectedIndex(); // Gets the Section we want to edit
+				view.propertiesPanel.sectionIndex = view.propertiesPanel.cb_SectionSelection.getSelectedIndex(); // Gets the Section we want to edit
 
 				view.propertiesPanel.tf_ArenaName.setText(model.stadium.getStadiumName());
 				view.propertiesPanel.tf_Address.setText(model.stadium.getAddress());
@@ -449,11 +508,11 @@ public class Controller {
 				// -------------//
 
 
-				view.propertiesPanel.cb_SectionType.setSelectedItem(model.stadium.getArenaSection(view.propertiesPanel.sectionInedex).getSectionType());
-				view.propertiesPanel.cb_SectionRanking.setSelectedItem(model.stadium.getArenaSection(view.propertiesPanel.sectionInedex).getSectionRanking());
+				view.propertiesPanel.cb_SectionType.setSelectedItem(model.stadium.getArenaSection(view.propertiesPanel.sectionIndex).getSectionType());
+				view.propertiesPanel.cb_SectionRanking.setSelectedItem(model.stadium.getArenaSection(view.propertiesPanel.sectionIndex).getSectionRanking());
 				//ToRemove - view.propertiesPanel.tf_SectionTicketPrice.setText(String.valueOf(model.stadium.getArenaSection(view.propertiesPanel.sectionInedex).getTicketPrice()));
-				view.propertiesPanel.tf_SectionNumOfSeats.setText(String.valueOf(model.stadium.getArenaSection(view.propertiesPanel.sectionInedex).getNumOfSeats()));
-				if (model.stadium.getArenaSection(view.propertiesPanel.sectionInedex).isRoofed()) {
+				view.propertiesPanel.tf_SectionNumOfSeats.setText(String.valueOf(model.stadium.getArenaSection(view.propertiesPanel.sectionIndex).getNumOfSeats()));
+				if (model.stadium.getArenaSection(view.propertiesPanel.sectionIndex).isRoofed()) {
 					view.propertiesPanel.rdbtnIsRoofedYes.setSelected(true);
 					view.propertiesPanel.rdbtnIsRoofedNO.setSelected(false);
 				} else {
@@ -602,9 +661,102 @@ public class Controller {
 			}
 		});
 		//---ViewStadium Image Manipulations---//
+		//WORK IN PROGRESS - IDAN//
+		stadiumImagePaths.add(path1);
+		stadiumImagePaths.add(path2);
+		stadiumImagePaths.add(path3);
+		stadiumImagePaths.add(path4);
+		stadiumImagePaths.add(path5);
+		stadiumImagePaths.add(path6);
+		stadiumImagePaths.add(path7);
+		stadiumImagePaths.add(path8);
+		stadiumImagePaths.add(path9);
+		stadiumImagePaths.add(path10);
+		stadiumImagePaths.add(path11);
+		stadiumImagePaths.add(path12);
+		stadiumImagePaths.add(path13);
+		stadiumImagePaths.add(path14);
+		stadiumImagePaths.add(path15);
+		stadiumImagePaths.add(path16);
+		stadiumImagePaths.add(path17);
+		stadiumImagePaths.add(path18);
+		stadiumImagePaths.add(path19);
+		stadiumImagePaths.add(path20);
+		stadiumImagePaths.add(path21);
+		stadiumImagePaths.add(path22);
+		stadiumImagePaths.add(path23);
+		stadiumImagePaths.add(path24);
+		stadiumImagePaths.add(path25);
+		stadiumImagePaths.add(path26);
+		stadiumImagePaths.add(path27);
+		stadiumImagePaths.add(path28);
+		stadiumImagePaths.add(path29);
+		stadiumImagePaths.add(path30);
+		stadiumImagePaths.add(path31);
+		stadiumImagePaths.add(path32);
+		stadiumImagePaths.add(path33);
+		stadiumImagePaths.add(path34);
+		stadiumImagePaths.add(path35);
+		stadiumImagePaths.add(path36);
+		stadiumImagePaths.add(path37);
+		stadiumImagePaths.add(path38);
+		stadiumImagePaths.add(path39);
+		stadiumImagePaths.add(path40);
+		stadiumImagePaths.add(path41);
+		stadiumImagePaths.add(path42);
+		stadiumImagePaths.add(path43);
+		stadiumImagePaths.add(path44);
 		
-		String path44 = "/Images/StadiumSlices/Stadium" + getViewStadiumSectionType(44) + "_44.png"; //TODO
-		img_44 = new ImageIcon(Overview.class.getResource(path44));
+		stadiumImages.add(img_1);
+		stadiumImages.add(img_2);
+		stadiumImages.add(img_3);
+		stadiumImages.add(img_4);
+		stadiumImages.add(img_5);
+		stadiumImages.add(img_6);
+		stadiumImages.add(img_7);
+		stadiumImages.add(img_8);
+		stadiumImages.add(img_9);
+		stadiumImages.add(img_10);
+		stadiumImages.add(img_11);
+		stadiumImages.add(img_12);
+		stadiumImages.add(img_13);
+		stadiumImages.add(img_14);
+		stadiumImages.add(img_15);
+		stadiumImages.add(img_16);
+		stadiumImages.add(img_17);
+		stadiumImages.add(img_18);
+		stadiumImages.add(img_19);
+		stadiumImages.add(img_20);
+		stadiumImages.add(img_21);
+		stadiumImages.add(img_22);
+		stadiumImages.add(img_23);
+		stadiumImages.add(img_24);
+		stadiumImages.add(img_25);
+		stadiumImages.add(img_26);
+		stadiumImages.add(img_27);
+		stadiumImages.add(img_28);
+		stadiumImages.add(img_29);
+		stadiumImages.add(img_30);
+		stadiumImages.add(img_31);
+		stadiumImages.add(img_32);
+		stadiumImages.add(img_33);
+		stadiumImages.add(img_34);
+		stadiumImages.add(img_35);
+		stadiumImages.add(img_36);
+		stadiumImages.add(img_37);
+		stadiumImages.add(img_38);
+		stadiumImages.add(img_39);
+		stadiumImages.add(img_40);
+		stadiumImages.add(img_41);
+		stadiumImages.add(img_42);
+		stadiumImages.add(img_43);
+		stadiumImages.add(img_44);
+		
+		setStadiumImagePaths();
+		setStadiumImages();
+		//
+		//String path44 = "/Images/StadiumSlices/Stadium" + getViewStadiumSectionType(44) + "_44.png"; //TODO
+		//img_44 = new ImageIcon(Overview.class.getResource(path44));
 		String path44_R = "/Images/StadiumSlices/Stadium_Rollover_44.png";
 		img_44_R = new ImageIcon(Overview.class.getResource(path44_R));
 		String path44_S = "/Images/StadiumSlices/Stadium_Selected_44.png";
@@ -1843,6 +1995,97 @@ public class Controller {
 			}
 		});
 		view.gamesPanel.gamesStadiumPanel.viewStadium_10.addMouseListener(ma10_Games);
+		
+		//add all buttons to list		
+		stadiumButtonsOverview.add(view.overviewPanel.overviewStadiumPanel.viewStadium_1);
+		stadiumButtonsOverview.add(view.overviewPanel.overviewStadiumPanel.viewStadium_2);
+		stadiumButtonsOverview.add(view.overviewPanel.overviewStadiumPanel.viewStadium_3);
+		stadiumButtonsOverview.add(view.overviewPanel.overviewStadiumPanel.viewStadium_4);
+		stadiumButtonsOverview.add(view.overviewPanel.overviewStadiumPanel.viewStadium_5);
+		stadiumButtonsOverview.add(view.overviewPanel.overviewStadiumPanel.viewStadium_6);
+		stadiumButtonsOverview.add(view.overviewPanel.overviewStadiumPanel.viewStadium_7);
+		stadiumButtonsOverview.add(view.overviewPanel.overviewStadiumPanel.viewStadium_8);
+		stadiumButtonsOverview.add(view.overviewPanel.overviewStadiumPanel.viewStadium_9);
+		stadiumButtonsOverview.add(view.overviewPanel.overviewStadiumPanel.viewStadium_10);
+		stadiumButtonsOverview.add(view.overviewPanel.overviewStadiumPanel.viewStadium_11);
+		stadiumButtonsOverview.add(view.overviewPanel.overviewStadiumPanel.viewStadium_12);
+		stadiumButtonsOverview.add(view.overviewPanel.overviewStadiumPanel.viewStadium_13);
+		stadiumButtonsOverview.add(view.overviewPanel.overviewStadiumPanel.viewStadium_14);
+		stadiumButtonsOverview.add(view.overviewPanel.overviewStadiumPanel.viewStadium_15);
+		stadiumButtonsOverview.add(view.overviewPanel.overviewStadiumPanel.viewStadium_16);
+		stadiumButtonsOverview.add(view.overviewPanel.overviewStadiumPanel.viewStadium_17);
+		stadiumButtonsOverview.add(view.overviewPanel.overviewStadiumPanel.viewStadium_18);
+		stadiumButtonsOverview.add(view.overviewPanel.overviewStadiumPanel.viewStadium_19);
+		stadiumButtonsOverview.add(view.overviewPanel.overviewStadiumPanel.viewStadium_20);
+		stadiumButtonsOverview.add(view.overviewPanel.overviewStadiumPanel.viewStadium_21);
+		stadiumButtonsOverview.add(view.overviewPanel.overviewStadiumPanel.viewStadium_22);
+		stadiumButtonsOverview.add(view.overviewPanel.overviewStadiumPanel.viewStadium_23);
+		stadiumButtonsOverview.add(view.overviewPanel.overviewStadiumPanel.viewStadium_24);
+		stadiumButtonsOverview.add(view.overviewPanel.overviewStadiumPanel.viewStadium_25);
+		stadiumButtonsOverview.add(view.overviewPanel.overviewStadiumPanel.viewStadium_26);
+		stadiumButtonsOverview.add(view.overviewPanel.overviewStadiumPanel.viewStadium_27);
+		stadiumButtonsOverview.add(view.overviewPanel.overviewStadiumPanel.viewStadium_28);
+		stadiumButtonsOverview.add(view.overviewPanel.overviewStadiumPanel.viewStadium_29);
+		stadiumButtonsOverview.add(view.overviewPanel.overviewStadiumPanel.viewStadium_30);
+		stadiumButtonsOverview.add(view.overviewPanel.overviewStadiumPanel.viewStadium_31);
+		stadiumButtonsOverview.add(view.overviewPanel.overviewStadiumPanel.viewStadium_32);
+		stadiumButtonsOverview.add(view.overviewPanel.overviewStadiumPanel.viewStadium_33);
+		stadiumButtonsOverview.add(view.overviewPanel.overviewStadiumPanel.viewStadium_34);
+		stadiumButtonsOverview.add(view.overviewPanel.overviewStadiumPanel.viewStadium_35);
+		stadiumButtonsOverview.add(view.overviewPanel.overviewStadiumPanel.viewStadium_36);
+		stadiumButtonsOverview.add(view.overviewPanel.overviewStadiumPanel.viewStadium_37);
+		stadiumButtonsOverview.add(view.overviewPanel.overviewStadiumPanel.viewStadium_38);
+		stadiumButtonsOverview.add(view.overviewPanel.overviewStadiumPanel.viewStadium_39);
+		stadiumButtonsOverview.add(view.overviewPanel.overviewStadiumPanel.viewStadium_40);
+		stadiumButtonsOverview.add(view.overviewPanel.overviewStadiumPanel.viewStadium_41);
+		stadiumButtonsOverview.add(view.overviewPanel.overviewStadiumPanel.viewStadium_42);
+		stadiumButtonsOverview.add(view.overviewPanel.overviewStadiumPanel.viewStadium_43);
+		stadiumButtonsOverview.add(view.overviewPanel.overviewStadiumPanel.viewStadium_44);
+		
+		stadiumButtonsGames.add(view.gamesPanel.gamesStadiumPanel.viewStadium_1);
+		stadiumButtonsGames.add(view.gamesPanel.gamesStadiumPanel.viewStadium_2);
+		stadiumButtonsGames.add(view.gamesPanel.gamesStadiumPanel.viewStadium_3);
+		stadiumButtonsGames.add(view.gamesPanel.gamesStadiumPanel.viewStadium_4);
+		stadiumButtonsGames.add(view.gamesPanel.gamesStadiumPanel.viewStadium_5);
+		stadiumButtonsGames.add(view.gamesPanel.gamesStadiumPanel.viewStadium_6);
+		stadiumButtonsGames.add(view.gamesPanel.gamesStadiumPanel.viewStadium_7);
+		stadiumButtonsGames.add(view.gamesPanel.gamesStadiumPanel.viewStadium_8);
+		stadiumButtonsGames.add(view.gamesPanel.gamesStadiumPanel.viewStadium_9);
+		stadiumButtonsGames.add(view.gamesPanel.gamesStadiumPanel.viewStadium_10);
+		stadiumButtonsGames.add(view.gamesPanel.gamesStadiumPanel.viewStadium_11);
+		stadiumButtonsGames.add(view.gamesPanel.gamesStadiumPanel.viewStadium_12);
+		stadiumButtonsGames.add(view.gamesPanel.gamesStadiumPanel.viewStadium_13);
+		stadiumButtonsGames.add(view.gamesPanel.gamesStadiumPanel.viewStadium_14);
+		stadiumButtonsGames.add(view.gamesPanel.gamesStadiumPanel.viewStadium_15);
+		stadiumButtonsGames.add(view.gamesPanel.gamesStadiumPanel.viewStadium_16);
+		stadiumButtonsGames.add(view.gamesPanel.gamesStadiumPanel.viewStadium_17);
+		stadiumButtonsGames.add(view.gamesPanel.gamesStadiumPanel.viewStadium_18);
+		stadiumButtonsGames.add(view.gamesPanel.gamesStadiumPanel.viewStadium_19);
+		stadiumButtonsGames.add(view.gamesPanel.gamesStadiumPanel.viewStadium_20);
+		stadiumButtonsGames.add(view.gamesPanel.gamesStadiumPanel.viewStadium_21);
+		stadiumButtonsGames.add(view.gamesPanel.gamesStadiumPanel.viewStadium_22);
+		stadiumButtonsGames.add(view.gamesPanel.gamesStadiumPanel.viewStadium_23);
+		stadiumButtonsGames.add(view.gamesPanel.gamesStadiumPanel.viewStadium_24);
+		stadiumButtonsGames.add(view.gamesPanel.gamesStadiumPanel.viewStadium_25);
+		stadiumButtonsGames.add(view.gamesPanel.gamesStadiumPanel.viewStadium_26);
+		stadiumButtonsGames.add(view.gamesPanel.gamesStadiumPanel.viewStadium_27);
+		stadiumButtonsGames.add(view.gamesPanel.gamesStadiumPanel.viewStadium_28);
+		stadiumButtonsGames.add(view.gamesPanel.gamesStadiumPanel.viewStadium_29);
+		stadiumButtonsGames.add(view.gamesPanel.gamesStadiumPanel.viewStadium_30);
+		stadiumButtonsGames.add(view.gamesPanel.gamesStadiumPanel.viewStadium_31);
+		stadiumButtonsGames.add(view.gamesPanel.gamesStadiumPanel.viewStadium_32);
+		stadiumButtonsGames.add(view.gamesPanel.gamesStadiumPanel.viewStadium_33);
+		stadiumButtonsGames.add(view.gamesPanel.gamesStadiumPanel.viewStadium_34);
+		stadiumButtonsGames.add(view.gamesPanel.gamesStadiumPanel.viewStadium_35);
+		stadiumButtonsGames.add(view.gamesPanel.gamesStadiumPanel.viewStadium_36);
+		stadiumButtonsGames.add(view.gamesPanel.gamesStadiumPanel.viewStadium_37);
+		stadiumButtonsGames.add(view.gamesPanel.gamesStadiumPanel.viewStadium_38);
+		stadiumButtonsGames.add(view.gamesPanel.gamesStadiumPanel.viewStadium_39);
+		stadiumButtonsGames.add(view.gamesPanel.gamesStadiumPanel.viewStadium_40);
+		stadiumButtonsGames.add(view.gamesPanel.gamesStadiumPanel.viewStadium_41);
+		stadiumButtonsGames.add(view.gamesPanel.gamesStadiumPanel.viewStadium_42);
+		stadiumButtonsGames.add(view.gamesPanel.gamesStadiumPanel.viewStadium_43);
+		stadiumButtonsGames.add(view.gamesPanel.gamesStadiumPanel.viewStadium_44);
 
 		//--------------------------//
 
@@ -1933,6 +2176,50 @@ public class Controller {
 		
 		return type.toString();
 	}
+	
+	//WIP - IDAN
+	private void setStadiumImagePaths()
+	{
+		String path = "";
+		
+		for(int i=1;i<=stadiumImagePaths.size();i++)
+		{
+			path = "/Images/StadiumSlices/Stadium" + getViewStadiumSectionType(i) + "_" + i + ".png";
+			stadiumImagePaths.set(i-1, path);
+		}
+	}
+	private void setStadiumImages()
+	{
+		ImageIcon img;
+		
+		setStadiumImagePaths();
+		for(int i=1;i<=stadiumImages.size();i++)
+		{
+			img = new ImageIcon(Overview.class.getResource(stadiumImagePaths.get(i-1)));
+			stadiumImages.set(i-1, img);
+		}
+	}
+	
+	public void redrawStadium()
+	{
+		ImageIcon img;
+		
+		setStadiumImagePaths();
+		for(int i=1;i<=stadiumImages.size();i++)
+		{
+			img = new ImageIcon(Overview.class.getResource(stadiumImagePaths.get(i-1)));
+			stadiumImages.set(i-1, img);
+		}
+		
+		
+		for(int i=0;i<stadiumButtonsOverview.size();i++)
+		{
+			stadiumButtonsOverview.get(i).setIcon(UI_Elements.scaleImageToBox(stadiumImages.get(i), stadiumButtonsOverview.get(i)));
+			stadiumButtonsGames.get(i).setIcon(UI_Elements.scaleImageToBox(stadiumImages.get(i), stadiumButtonsGames.get(i)));
+		}
+		
+		
+	}
 	///
 	
 	public void switchMainMenuPage(JButton i_PressedButton)
@@ -1974,5 +2261,6 @@ public class Controller {
 				break;
 		}
 	}
+	
 	
 }

@@ -631,5 +631,7 @@ public class ViewStadium extends JPanel {
 		i_Section.setFocusPainted(false);
 		i_Section.setBorder(null);
 	}
+	
+	
 
 }
