@@ -30,20 +30,20 @@ public class GamesSectionDetails extends JPanel {
 	public JPanel panelSectionDetails;
 	private JLabel titleSectionDetails;
 	private JLabel lblSectionNumber;
-	private JTextField tf_SectionNumber;
+	public JTextField tf_SectionNumber;
 	private JLabel lblSectionName;
-	private JTextField tf_SectionName;
+	public JTextField tf_SectionName;
 	private JLabel lblSectionRanking;
-	private JTextField tf_SectionRanking;
+	public JTextField tf_SectionRanking;
 	private int lineSpacing = 7;
 	private JLabel lblSectionType;
-	private JTextField tf_SectionType;
+	public JTextField tf_SectionType;
 	private JLabel lblTicketPrice;
-	private JTextField tf_TicketPrice;
+	public JTextField tf_TicketPrice;
 	private JLabel lblAttendance;
-	private JTextField tf_Attendance;
+	public JTextField tf_Attendance;
 	private JLabel lblIsRoofed;
-	private JTextField tf_IsRoofed;
+	public JTextField tf_IsRoofed;
 	private JButton btnAddTicketSale;
 	private GamesAddTicketSale frameAddTicketSale;
 
