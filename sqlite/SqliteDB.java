@@ -259,11 +259,22 @@ public class SqliteDB {
 		}
 	}
 	
-	public void updateSections(int sectionNumToUpdate, String newSectionType, Float newTicketPrice, int newNumOfSeats, String newIsRoofed, String newSectionRanking) {
+	/*public void updateSections(int sectionNumToUpdate, String newSectionType, Float newTicketPrice, int newNumOfSeats, String newIsRoofed, String newSectionRanking) {
 		try {
 			this.stmt = c.createStatement();
 			System.out.println("update Section set sectionType='"+newSectionType+"', ticketPrice="+newTicketPrice+", numOfSeats="+newNumOfSeats+", isRoofed='"+newIsRoofed+"', sectionRanking='"+newSectionRanking+"' where sectionNumber="+sectionNumToUpdate);
 			stmt.executeUpdate("update Section set sectionType='"+newSectionType+"', ticketPrice="+newTicketPrice+", numOfSeats="+newNumOfSeats+", isRoofed='"+newIsRoofed+"', sectionRanking='"+newSectionRanking+"' where sectionNumber="+sectionNumToUpdate);
+		} catch (Exception e) {
+			System.out.println("Error: " + e.getMessage());
+
+		}
+	}*/
+	
+	public void updateSections(int sectionNumToUpdate, String newSectionType, int newNumOfSeats, String newIsRoofed, String newSectionRanking) {
+		try {
+			this.stmt = c.createStatement();
+			System.out.println("update Section set sectionType='"+newSectionType+"', numOfSeats="+newNumOfSeats+", isRoofed='"+newIsRoofed+"', sectionRanking='"+newSectionRanking+"' where sectionNumber="+sectionNumToUpdate);
+			stmt.executeUpdate("update Section set sectionType='"+newSectionType+"', numOfSeats="+newNumOfSeats+", isRoofed='"+newIsRoofed+"', sectionRanking='"+newSectionRanking+"' where sectionNumber="+sectionNumToUpdate);
 		} catch (Exception e) {
 			System.out.println("Error: " + e.getMessage());
 
