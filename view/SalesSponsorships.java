@@ -33,18 +33,23 @@ public class SalesSponsorships extends JPanel {
 	public JButton btnAddSponsor;
 	public JButton btnRemoveSponsor;
 	
-	private JLabel lblSponsorName;
-	public JTextField tf_SponsorName;
-	private JLabel lblContractStart;
-	public JTextField tf_ContractStart;
-	private JLabel lblContractValue;
-	public JTextField tf_ContractValue;
+	private JLabel lblAddSponsorSponsorName;
+	public JTextField tf_AddSponsorSponsorName;
+	private JLabel lblAddSponsorContractStart;
+	public JTextField tf_AddSponsorContractStart;
+	private JLabel lblAddSponsorContractValue;
+	public JTextField tf_AddSponsorContractValue;
 	public JButton btnAddSponsorFinish;
 	public JButton btnAddSponsorCancel;
 	
 	private List<JComponent> addSponsorComponents = new ArrayList<JComponent>();
+	private List<JComponent> removeSponsorComponents = new ArrayList<JComponent>();
 	private JLabel lblContractEnd;
 	private JTextField tf_ContractEnd;
+	private JLabel lblRemoveSponsorSponsorName;
+	private JComboBox<String> cb_RemoveSponsorSponsorName;
+	private JButton btnRemoveSponsorFinish;
+	private JButton btnRemoveSponsorCancel;
 
 	
 	public SalesSponsorships(){
@@ -135,62 +140,62 @@ public class SalesSponsorships extends JPanel {
 		    }
 		} );
 		
-		lblSponsorName = new JLabel("Sponsor Name:");
-		lblSponsorName.setBorder(null);
-		lblSponsorName.setForeground(UI_Elements.color_mainBackgroundColor);
-		lblSponsorName.setFont(UI_Elements.font_bodyLabel);
-		lblSponsorName.setBounds(btnAddSponsor.getBounds().x, btnAddSponsor.getBounds().y+btnAddSponsor.getBounds().height+20, 109, 26);
-		panelSponsorships.add(lblSponsorName);
+		lblAddSponsorSponsorName = new JLabel("Sponsor Name:");
+		lblAddSponsorSponsorName.setBorder(null);
+		lblAddSponsorSponsorName.setForeground(UI_Elements.color_mainBackgroundColor);
+		lblAddSponsorSponsorName.setFont(UI_Elements.font_bodyLabel);
+		lblAddSponsorSponsorName.setBounds(btnAddSponsor.getBounds().x, btnAddSponsor.getBounds().y+btnAddSponsor.getBounds().height+20, 109, 26);
+		panelSponsorships.add(lblAddSponsorSponsorName);
 
-		tf_SponsorName = new JTextField();
-		tf_SponsorName.setDisabledTextColor(Color.BLACK);
-		tf_SponsorName.setEnabled(true);
-		tf_SponsorName.setEditable(false);
-		tf_SponsorName.setHorizontalAlignment(SwingConstants.LEFT);
-		tf_SponsorName.setFont(UI_Elements.font_bodyFillText);
-		tf_SponsorName.setBounds(lblSponsorName.getBounds().x + lblSponsorName.getBounds().width + 12, lblSponsorName.getBounds().y, sponsorTableScrollPane.getBounds().width-12-lblSponsorName.getBounds().width, 20);
-		panelSponsorships.add(tf_SponsorName);
-		tf_SponsorName.setColumns(10);
+		tf_AddSponsorSponsorName = new JTextField();
+		tf_AddSponsorSponsorName.setDisabledTextColor(Color.BLACK);
+		tf_AddSponsorSponsorName.setEnabled(true);
+		tf_AddSponsorSponsorName.setEditable(false);
+		tf_AddSponsorSponsorName.setHorizontalAlignment(SwingConstants.LEFT);
+		tf_AddSponsorSponsorName.setFont(UI_Elements.font_bodyFillText);
+		tf_AddSponsorSponsorName.setBounds(lblAddSponsorSponsorName.getBounds().x + lblAddSponsorSponsorName.getBounds().width + 12, lblAddSponsorSponsorName.getBounds().y, sponsorTableScrollPane.getBounds().width-12-lblAddSponsorSponsorName.getBounds().width, 20);
+		panelSponsorships.add(tf_AddSponsorSponsorName);
+		tf_AddSponsorSponsorName.setColumns(10);
 		
-		lblContractValue = new JLabel("Contract Value:");
-		lblContractValue.setBorder(null);
-		lblContractValue.setForeground(UI_Elements.color_mainBackgroundColor);
-		lblContractValue.setFont(UI_Elements.font_bodyLabel);
-		lblContractValue.setBounds(lblSponsorName.getBounds().x, lblSponsorName.getBounds().y+lblSponsorName.getBounds().height+7, 109, 26);
-		panelSponsorships.add(lblContractValue);
+		lblAddSponsorContractValue = new JLabel("Contract Value:");
+		lblAddSponsorContractValue.setBorder(null);
+		lblAddSponsorContractValue.setForeground(UI_Elements.color_mainBackgroundColor);
+		lblAddSponsorContractValue.setFont(UI_Elements.font_bodyLabel);
+		lblAddSponsorContractValue.setBounds(lblAddSponsorSponsorName.getBounds().x, lblAddSponsorSponsorName.getBounds().y+lblAddSponsorSponsorName.getBounds().height+7, 109, 26);
+		panelSponsorships.add(lblAddSponsorContractValue);
 
-		tf_ContractValue = new JTextField();
-		tf_ContractValue.setDisabledTextColor(Color.BLACK);
-		tf_ContractValue.setEnabled(true);
-		tf_ContractValue.setEditable(false);
-		tf_ContractValue.setHorizontalAlignment(SwingConstants.LEFT);
-		tf_ContractValue.setFont(UI_Elements.font_bodyFillText);
-		tf_ContractValue.setBounds(tf_SponsorName.getBounds().x, lblContractValue.getBounds().y , tf_SponsorName.getBounds().width, tf_SponsorName.getBounds().height);
-		panelSponsorships.add(tf_ContractValue);
-		tf_ContractValue.setColumns(10);
+		tf_AddSponsorContractValue = new JTextField();
+		tf_AddSponsorContractValue.setDisabledTextColor(Color.BLACK);
+		tf_AddSponsorContractValue.setEnabled(true);
+		tf_AddSponsorContractValue.setEditable(false);
+		tf_AddSponsorContractValue.setHorizontalAlignment(SwingConstants.LEFT);
+		tf_AddSponsorContractValue.setFont(UI_Elements.font_bodyFillText);
+		tf_AddSponsorContractValue.setBounds(tf_AddSponsorSponsorName.getBounds().x, lblAddSponsorContractValue.getBounds().y , tf_AddSponsorSponsorName.getBounds().width, tf_AddSponsorSponsorName.getBounds().height);
+		panelSponsorships.add(tf_AddSponsorContractValue);
+		tf_AddSponsorContractValue.setColumns(10);
 		
-		lblContractStart = new JLabel("Contract Start Date:");
-		lblContractStart.setBorder(null);
-		lblContractStart.setForeground(UI_Elements.color_mainBackgroundColor);
-		lblContractStart.setFont(UI_Elements.font_bodyLabel);
-		lblContractStart.setBounds(lblContractValue.getBounds().x, lblContractValue.getBounds().y+lblContractValue.getBounds().height+7, 135, 26);
-		panelSponsorships.add(lblContractStart);
+		lblAddSponsorContractStart = new JLabel("Contract Start Date:");
+		lblAddSponsorContractStart.setBorder(null);
+		lblAddSponsorContractStart.setForeground(UI_Elements.color_mainBackgroundColor);
+		lblAddSponsorContractStart.setFont(UI_Elements.font_bodyLabel);
+		lblAddSponsorContractStart.setBounds(lblAddSponsorContractValue.getBounds().x, lblAddSponsorContractValue.getBounds().y+lblAddSponsorContractValue.getBounds().height+7, 135, 26);
+		panelSponsorships.add(lblAddSponsorContractStart);
 	
-		tf_ContractStart = new JTextField();
-		tf_ContractStart.setDisabledTextColor(Color.BLACK);
-		tf_ContractStart.setEnabled(true);
-		tf_ContractStart.setEditable(false);
-		tf_ContractStart.setHorizontalAlignment(SwingConstants.LEFT);
-		tf_ContractStart.setFont(UI_Elements.font_bodyFillText);
-		tf_ContractStart.setBounds(tf_SponsorName.getBounds().x, lblContractStart.getBounds().y , 141, 20);
-		panelSponsorships.add(tf_ContractStart);
-		tf_ContractStart.setColumns(10);
+		tf_AddSponsorContractStart = new JTextField();
+		tf_AddSponsorContractStart.setDisabledTextColor(Color.BLACK);
+		tf_AddSponsorContractStart.setEnabled(true);
+		tf_AddSponsorContractStart.setEditable(false);
+		tf_AddSponsorContractStart.setHorizontalAlignment(SwingConstants.LEFT);
+		tf_AddSponsorContractStart.setFont(UI_Elements.font_bodyFillText);
+		tf_AddSponsorContractStart.setBounds(tf_AddSponsorSponsorName.getBounds().x, lblAddSponsorContractStart.getBounds().y , 141, 20);
+		panelSponsorships.add(tf_AddSponsorContractStart);
+		tf_AddSponsorContractStart.setColumns(10);
 		
 		lblContractEnd = new JLabel("Contract End Date:");
 		lblContractEnd.setBorder(null);
 		lblContractEnd.setForeground(UI_Elements.color_mainBackgroundColor);
 		lblContractEnd.setFont(UI_Elements.font_bodyLabel);
-		lblContractEnd.setBounds(btnRemoveSponsor.getBounds().x, tf_ContractStart.getBounds().y, 119, 26);
+		lblContractEnd.setBounds(btnRemoveSponsor.getBounds().x, tf_AddSponsorContractStart.getBounds().y, 119, 26);
 		panelSponsorships.add(lblContractEnd);
 
 		tf_ContractEnd = new JTextField();
@@ -213,7 +218,7 @@ public class SalesSponsorships extends JPanel {
 		btnAddSponsorFinish.setBorder(null);
 		btnAddSponsorFinish.setFont(new Font(UI_Elements.mainFontName, Font.PLAIN, 18));
 		btnAddSponsorFinish.setBackground(UI_Elements.color_mainBackgroundColor);
-		btnAddSponsorFinish.setBounds(221, lblContractStart.getBounds().y+lblContractStart.getBounds().height+12, 75, 25);
+		btnAddSponsorFinish.setBounds(221, lblAddSponsorContractStart.getBounds().y+lblAddSponsorContractStart.getBounds().height+12, 75, 25);
 		btnAddSponsorFinish.setSelected(false);
 		panelSponsorships.add(btnAddSponsorFinish);
 		btnAddSponsorFinish.addMouseListener( new MouseAdapter() {
@@ -246,30 +251,98 @@ public class SalesSponsorships extends JPanel {
 		    	btnAddSponsorCancel.setBackground(UI_Elements.color_mainBackgroundColor);
 		    }
 		} );
-
 		
-		addSponsorComponents.add(lblSponsorName);
-		addSponsorComponents.add(tf_SponsorName);
-		addSponsorComponents.add(lblContractStart);
-		addSponsorComponents.add(tf_ContractStart);
+		addSponsorComponents.add(lblAddSponsorSponsorName);
+		addSponsorComponents.add(tf_AddSponsorSponsorName);
+		addSponsorComponents.add(lblAddSponsorContractStart);
+		addSponsorComponents.add(tf_AddSponsorContractStart);
 		addSponsorComponents.add(lblContractEnd);
 		addSponsorComponents.add(tf_ContractEnd);
-		addSponsorComponents.add(lblContractValue);
-		addSponsorComponents.add(tf_ContractValue);
+		addSponsorComponents.add(lblAddSponsorContractValue);
+		addSponsorComponents.add(tf_AddSponsorContractValue);
 		addSponsorComponents.add(btnAddSponsorFinish);
 		addSponsorComponents.add(btnAddSponsorCancel);
 		for(JComponent component : addSponsorComponents)
 		{
 			component.setVisible(false);
 		}
+		
+		//Remove Sponsor
+		lblRemoveSponsorSponsorName = new JLabel("Sponsor Name:");
+		lblRemoveSponsorSponsorName.setBorder(null);
+		lblRemoveSponsorSponsorName.setForeground(UI_Elements.color_mainBackgroundColor);
+		lblRemoveSponsorSponsorName.setFont(UI_Elements.font_bodyLabel);
+		lblRemoveSponsorSponsorName.setBounds(btnAddSponsor.getBounds().x, btnAddSponsor.getBounds().y+btnAddSponsor.getBounds().height+20, 109, 26);
+		panelSponsorships.add(lblRemoveSponsorSponsorName);
+
+		cb_RemoveSponsorSponsorName = new JComboBox<String>();
+		cb_RemoveSponsorSponsorName.setEnabled(true);
+		cb_RemoveSponsorSponsorName.setEditable(false);
+		cb_RemoveSponsorSponsorName.setFont(UI_Elements.font_bodyFillText);
+		cb_RemoveSponsorSponsorName.setBounds(lblAddSponsorSponsorName.getBounds().x + lblAddSponsorSponsorName.getBounds().width + 12, lblAddSponsorSponsorName.getBounds().y, sponsorTableScrollPane.getBounds().width-12-lblAddSponsorSponsorName.getBounds().width, 25);
+		panelSponsorships.add(cb_RemoveSponsorSponsorName);
+
+		btnRemoveSponsorFinish = new JButton("FINISH");
+		btnRemoveSponsorFinish.setFocusPainted(false);
+		btnRemoveSponsorFinish.setRequestFocusEnabled(false);
+		btnRemoveSponsorFinish.setCursor(Cursor.getPredefinedCursor(Cursor.HAND_CURSOR));
+		btnRemoveSponsorFinish.setHorizontalAlignment(SwingConstants.CENTER);
+		btnRemoveSponsorFinish.setForeground(Color.WHITE);
+		btnRemoveSponsorFinish.setOpaque(true);
+		btnRemoveSponsorFinish.setBorder(null);
+		btnRemoveSponsorFinish.setFont(new Font(UI_Elements.mainFontName, Font.PLAIN, 18));
+		btnRemoveSponsorFinish.setBackground(UI_Elements.color_mainBackgroundColor);
+		btnRemoveSponsorFinish.setBounds(221, lblRemoveSponsorSponsorName.getBounds().y+lblRemoveSponsorSponsorName.getBounds().height+12, 75, 25);
+		btnRemoveSponsorFinish.setSelected(false);
+		panelSponsorships.add(btnRemoveSponsorFinish);
+		btnRemoveSponsorFinish.addMouseListener( new MouseAdapter() {
+		    public void mouseEntered( MouseEvent e ) {
+		    	btnRemoveSponsorFinish.setBackground(UI_Elements.color_panelBodyButtonRollover);
+		    }
+		    public void mouseExited( MouseEvent e ) {
+		    	btnRemoveSponsorFinish.setBackground(UI_Elements.color_mainBackgroundColor);
+		    }
+		} );
+		
+		btnRemoveSponsorCancel = new JButton("CANCEL");
+		btnRemoveSponsorCancel.setFocusPainted(false);
+		btnRemoveSponsorCancel.setRequestFocusEnabled(false);
+		btnRemoveSponsorCancel.setCursor(Cursor.getPredefinedCursor(Cursor.HAND_CURSOR));
+		btnRemoveSponsorCancel.setHorizontalAlignment(SwingConstants.CENTER);
+		btnRemoveSponsorCancel.setForeground(Color.WHITE);
+		btnRemoveSponsorCancel.setOpaque(true);
+		btnRemoveSponsorCancel.setBorder(null);
+		btnRemoveSponsorCancel.setFont(new Font(UI_Elements.mainFontName, Font.PLAIN, 18));
+		btnRemoveSponsorCancel.setBackground(UI_Elements.color_mainBackgroundColor);
+		btnRemoveSponsorCancel.setBounds(btnAddSponsorFinish.getBounds().x + btnAddSponsorFinish.getBounds().width + 7, btnRemoveSponsorFinish.getBounds().y, 75, 25);
+		btnRemoveSponsorCancel.setSelected(false);
+		panelSponsorships.add(btnRemoveSponsorCancel);
+		btnRemoveSponsorCancel.addMouseListener( new MouseAdapter() {
+		    public void mouseEntered( MouseEvent e ) {
+		    	btnRemoveSponsorCancel.setBackground(UI_Elements.color_panelBodyButtonRollover);
+		    }
+		    public void mouseExited( MouseEvent e ) {
+		    	btnRemoveSponsorCancel.setBackground(UI_Elements.color_mainBackgroundColor);
+		    }
+		} );
+
+		removeSponsorComponents.add(lblRemoveSponsorSponsorName);
+		removeSponsorComponents.add(cb_RemoveSponsorSponsorName);
+		removeSponsorComponents.add(btnRemoveSponsorFinish);
+		removeSponsorComponents.add(btnRemoveSponsorCancel);
+		for(JComponent component : removeSponsorComponents)
+		{
+			component.setVisible(false);
+		}
+		
 
 		
 		//Action Listeners
 		btnAddSponsor.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
-				tf_SponsorName.setEditable(true);
-				tf_ContractValue.setEditable(true);
-				tf_ContractStart.setEditable(true);
+				tf_AddSponsorSponsorName.setEditable(true);
+				tf_AddSponsorContractValue.setEditable(true);
+				tf_AddSponsorContractStart.setEditable(true);
 				tf_ContractEnd.setEditable(true);
 				
 				if(btnAddSponsor.isSelected() == false)
@@ -279,6 +352,10 @@ public class SalesSponsorships extends JPanel {
 					for(JComponent component : addSponsorComponents)
 					{
 						component.setVisible(true);
+					}
+					for(JComponent component : removeSponsorComponents)
+					{
+						component.setVisible(false);
 					}
 					btnAddSponsor.setBackground(UI_Elements.color_panelBodyButtonSelected);
 					
@@ -307,11 +384,19 @@ public class SalesSponsorships extends JPanel {
 					{
 						component.setVisible(false);
 					}
+					for(JComponent component : removeSponsorComponents)
+					{
+						component.setVisible(true);
+					}
 					btnAddSponsor.setBackground(UI_Elements.color_mainBackgroundColor);
 					btnRemoveSponsor.setBackground(UI_Elements.color_panelBodyButtonSelected);
 				}
 				else
 				{
+					for(JComponent component : removeSponsorComponents)
+					{
+						component.setVisible(false);
+					}
 					btnRemoveSponsor.setSelected(false);
 					btnAddSponsor.setBackground(UI_Elements.color_mainBackgroundColor);
 					btnRemoveSponsor.setBackground(UI_Elements.color_mainBackgroundColor);
@@ -325,6 +410,8 @@ public class SalesSponsorships extends JPanel {
 				{
 					component.setVisible(false);
 				}
+				btnAddSponsor.setSelected(false);
+				btnRemoveSponsor.setSelected(false);
 				btnAddSponsor.setBackground(UI_Elements.color_mainBackgroundColor);
 				btnRemoveSponsor.setBackground(UI_Elements.color_mainBackgroundColor);
 			}
@@ -336,6 +423,34 @@ public class SalesSponsorships extends JPanel {
 				{
 					component.setVisible(false);
 				}
+				btnAddSponsor.setSelected(false);
+				btnRemoveSponsor.setSelected(false);
+				btnAddSponsor.setBackground(UI_Elements.color_mainBackgroundColor);
+				btnRemoveSponsor.setBackground(UI_Elements.color_mainBackgroundColor);
+			}
+		});
+		
+		btnRemoveSponsorFinish.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent arg0) {
+				for(JComponent component : removeSponsorComponents)
+				{
+					component.setVisible(false);
+				}
+				btnAddSponsor.setSelected(false);
+				btnRemoveSponsor.setSelected(false);
+				btnAddSponsor.setBackground(UI_Elements.color_mainBackgroundColor);
+				btnRemoveSponsor.setBackground(UI_Elements.color_mainBackgroundColor);
+			}
+		});
+		
+		btnRemoveSponsorCancel.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent arg0) {
+				for(JComponent component : removeSponsorComponents)
+				{
+					component.setVisible(false);
+				}
+				btnAddSponsor.setSelected(false);
+				btnRemoveSponsor.setSelected(false);
 				btnAddSponsor.setBackground(UI_Elements.color_mainBackgroundColor);
 				btnRemoveSponsor.setBackground(UI_Elements.color_mainBackgroundColor);
 			}
