@@ -389,8 +389,6 @@ public class Properties extends JPanel {
 		tf_ArenaName.setEditable(action);
 		tf_Address.setEnabled(action);
 		tf_Address.setEditable(action);
-		//tf_SectionTicketPrice.setEnabled(false); //
-		//tf_SectionTicketPrice.setEditable(false); //
 		tf_SectionNumOfSeats.setEnabled(action);
 		tf_SectionNumOfSeats.setEditable(action);
 		cb_SectionType.setEnabled(action);

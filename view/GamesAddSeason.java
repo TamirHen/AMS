@@ -28,10 +28,10 @@ public class GamesAddSeason extends JPanel {
 	public JPanel panelAddSeason;
 	private JLabel titleAddSeason;
 	private JLabel lblSeasonName;
-	private JTextField tf_SeasonName;
+	public JTextField tf_SeasonName;
 	private JLabel lblLeagueName;
-	private JTextField tf_LeagueName;
-	private JButton btnAddSeasonFinish;
+	public JTextField tf_LeagueName;
+	public JButton btnAddSeasonFinish;
 	private JButton btnAddSeasonCancel;
 	
 	private List<JButton> observerButtons = new ArrayList<JButton>();
@@ -134,12 +134,6 @@ public class GamesAddSeason extends JPanel {
 		
 		
 		//Action Listeners
-		btnAddSeasonFinish.addActionListener(new ActionListener() {
-			public void actionPerformed(ActionEvent arg0) {
-				panelAddSeason.setVisible(false);
-				setButtonsToDefault();
-			}
-		});
 		
 		btnAddSeasonCancel.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {

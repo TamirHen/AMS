@@ -37,6 +37,8 @@ public class SalesSponsorships extends JPanel {
 	public JTextField tf_AddSponsorSponsorName;
 	private JLabel lblAddSponsorContractStart;
 	public JTextField tf_AddSponsorContractStart;
+	private JLabel lblAddSponsorContractEnd;
+	private JTextField tf_AddSponsorContractEnd;
 	private JLabel lblAddSponsorContractValue;
 	public JTextField tf_AddSponsorContractValue;
 	public JButton btnAddSponsorFinish;
@@ -44,12 +46,11 @@ public class SalesSponsorships extends JPanel {
 	
 	private List<JComponent> addSponsorComponents = new ArrayList<JComponent>();
 	private List<JComponent> removeSponsorComponents = new ArrayList<JComponent>();
-	private JLabel lblContractEnd;
-	private JTextField tf_ContractEnd;
 	private JLabel lblRemoveSponsorSponsorName;
 	private JComboBox<String> cb_RemoveSponsorSponsorName;
 	private JButton btnRemoveSponsorFinish;
 	private JButton btnRemoveSponsorCancel;
+
 
 	
 	public SalesSponsorships(){
@@ -191,22 +192,22 @@ public class SalesSponsorships extends JPanel {
 		panelSponsorships.add(tf_AddSponsorContractStart);
 		tf_AddSponsorContractStart.setColumns(10);
 		
-		lblContractEnd = new JLabel("Contract End Date:");
-		lblContractEnd.setBorder(null);
-		lblContractEnd.setForeground(UI_Elements.color_mainBackgroundColor);
-		lblContractEnd.setFont(UI_Elements.font_bodyLabel);
-		lblContractEnd.setBounds(btnRemoveSponsor.getBounds().x, tf_AddSponsorContractStart.getBounds().y, 119, 26);
-		panelSponsorships.add(lblContractEnd);
+		lblAddSponsorContractEnd = new JLabel("Contract End Date:");
+		lblAddSponsorContractEnd.setBorder(null);
+		lblAddSponsorContractEnd.setForeground(UI_Elements.color_mainBackgroundColor);
+		lblAddSponsorContractEnd.setFont(UI_Elements.font_bodyLabel);
+		lblAddSponsorContractEnd.setBounds(btnRemoveSponsor.getBounds().x, tf_AddSponsorContractStart.getBounds().y, 119, 26);
+		panelSponsorships.add(lblAddSponsorContractEnd);
 
-		tf_ContractEnd = new JTextField();
-		tf_ContractEnd.setDisabledTextColor(Color.BLACK);
-		tf_ContractEnd.setEnabled(true);
-		tf_ContractEnd.setEditable(false);
-		tf_ContractEnd.setHorizontalAlignment(SwingConstants.LEFT);
-		tf_ContractEnd.setFont(UI_Elements.font_bodyFillText);
-		tf_ContractEnd.setBounds(lblContractEnd.getBounds().x+lblContractEnd.getBounds().width, lblContractEnd.getBounds().y , 141, 20);
-		panelSponsorships.add(tf_ContractEnd);
-		tf_ContractEnd.setColumns(10);
+		tf_AddSponsorContractEnd = new JTextField();
+		tf_AddSponsorContractEnd.setDisabledTextColor(Color.BLACK);
+		tf_AddSponsorContractEnd.setEnabled(true);
+		tf_AddSponsorContractEnd.setEditable(false);
+		tf_AddSponsorContractEnd.setHorizontalAlignment(SwingConstants.LEFT);
+		tf_AddSponsorContractEnd.setFont(UI_Elements.font_bodyFillText);
+		tf_AddSponsorContractEnd.setBounds(lblAddSponsorContractEnd.getBounds().x+lblAddSponsorContractEnd.getBounds().width, lblAddSponsorContractEnd.getBounds().y , 141, 20);
+		panelSponsorships.add(tf_AddSponsorContractEnd);
+		tf_AddSponsorContractEnd.setColumns(10);
 		
 		btnAddSponsorFinish = new JButton("FINISH");
 		btnAddSponsorFinish.setFocusPainted(false);
@@ -256,8 +257,8 @@ public class SalesSponsorships extends JPanel {
 		addSponsorComponents.add(tf_AddSponsorSponsorName);
 		addSponsorComponents.add(lblAddSponsorContractStart);
 		addSponsorComponents.add(tf_AddSponsorContractStart);
-		addSponsorComponents.add(lblContractEnd);
-		addSponsorComponents.add(tf_ContractEnd);
+		addSponsorComponents.add(lblAddSponsorContractEnd);
+		addSponsorComponents.add(tf_AddSponsorContractEnd);
 		addSponsorComponents.add(lblAddSponsorContractValue);
 		addSponsorComponents.add(tf_AddSponsorContractValue);
 		addSponsorComponents.add(btnAddSponsorFinish);
@@ -343,7 +344,7 @@ public class SalesSponsorships extends JPanel {
 				tf_AddSponsorSponsorName.setEditable(true);
 				tf_AddSponsorContractValue.setEditable(true);
 				tf_AddSponsorContractStart.setEditable(true);
-				tf_ContractEnd.setEditable(true);
+				tf_AddSponsorContractEnd.setEditable(true);
 				
 				if(btnAddSponsor.isSelected() == false)
 				{

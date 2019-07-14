@@ -1,4 +1,7 @@
 package model;
+import java.util.ArrayList;
+import java.util.List;
+import javax.swing.JPanel;
 import java.util.Date;
 
 import sqlite.*;
@@ -15,11 +18,12 @@ public class Model {
 	private int userSize;
 	//---------------//
 	//---set seasons---//
-	public Season season[];
+	public ArrayList<Season> season = new ArrayList<Season>();
+//	public Season season[];
 	public int seasonSize;
 	//---------------//
 	//---set sponsors---//
-	public Sponsor sponsors[];
+	public ArrayList<Sponsor> sponsors = new ArrayList<Sponsor>();
 	public int sponsorsSize;
 	//-----------------//
 	
@@ -34,10 +38,10 @@ public class Model {
 		user=db.initializeUsers();
 		userSize=db.userSize;
 		//set seasons:
-		season=db.initializeSeasons();
+		this.season=db.initializeSeasons();
 		seasonSize=db.seasonSize;
 		
-		sponsors=db.initializeSponsors();
+		this.sponsors=db.initializeSponsors();
 		sponsorsSize=db.sponsorsSize;
 	}
 	
@@ -71,17 +75,20 @@ public class Model {
 		
 	}
 	public void createNewSeason(String name, String leagueName) {
-		this.season[seasonSize]=new Season(name, leagueName);
+		this.season.add(new Season(name, leagueName));
 		this.seasonSize++;
 		db.createNewSeasonDB(name, leagueName);
 	}
+
+	public void createNewGame(String name, String date,int seasonIndex, int sadiumCapacity, float vipTicketPrice, float clubLevelTicketPrice, float bleachersTicketPrice, float seasonTicketPrice, Stadium stadium) {
+		this.season.get(seasonIndex).createGame(name, date, sadiumCapacity, vipTicketPrice, clubLevelTicketPrice, bleachersTicketPrice, seasonTicketPrice, stadium);
+		db.createGameDB(name, date, this.season.get(seasonIndex));
+	}
+
 	
 	public void createNewSponsor(String name, Date contractStartDate, Date contractEndDate, float totalContractValue) {
-		this.sponsors[sponsorsSize]=new Sponsor(name, contractStartDate, contractEndDate, totalContractValue);
+		this.sponsors.add(new Sponsor(name, contractStartDate, contractEndDate, totalContractValue));
 		this.sponsorsSize++;
 		db.createNewSponsorDB(name, contractStartDate,contractEndDate,totalContractValue);
 	}
-	//when calling create new game via controller need to remember to update DB (to call createGameDB method)
-	//when calling updateGameSectionsoldTickets need to remember to update DB (to call updateGameSectionSoldTicketsDB method)
-
 }

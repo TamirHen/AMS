@@ -28,10 +28,10 @@ public class GamesAddGame extends JPanel {
 	public JPanel panelAddGame;
 	private JLabel titleAddGame;
 	private JLabel lblGameName;
-	private JTextField tf_GameName;
-	private JLabel lblSeasonName;
-	private JTextField tf_SeasonName;
-	private JButton btnAddGameFinish;
+	public JTextField tf_GameName;
+	private JLabel lblDate;
+	public JTextField tf_Date;
+	public JButton btnAddGameFinish;
 	private JButton btnAddGameCancel;
 	
 	private List<JButton> observerButtons = new ArrayList<JButton>();
@@ -54,7 +54,7 @@ public class GamesAddGame extends JPanel {
 		titleAddGame.setFont(new Font(UI_Elements.mainFontName, Font.BOLD, 20));
 		panelAddGame.add(titleAddGame);
 		
-		lblGameName = new JLabel("Game Name (e. Name - Date):");
+		lblGameName = new JLabel("Game Name:");
 		lblGameName.setBorder(null);
 		lblGameName.setForeground(Color.WHITE);
 		lblGameName.setFont(UI_Elements.font_bodyLabel);
@@ -71,22 +71,22 @@ public class GamesAddGame extends JPanel {
 		panelAddGame.add(tf_GameName);
 		tf_GameName.setColumns(10);
 		
-		lblSeasonName = new JLabel("Season Name:");
-		lblSeasonName.setBorder(null);
-		lblSeasonName.setForeground(Color.WHITE);
-		lblSeasonName.setFont(UI_Elements.font_bodyLabel);
-		lblSeasonName.setBounds(lblGameName.getBounds().x, tf_GameName.getBounds().y+tf_GameName.getBounds().height+10, 250, 22);
-		panelAddGame.add(lblSeasonName);
+		lblDate = new JLabel("Date:");
+		lblDate.setBorder(null);
+		lblDate.setForeground(Color.WHITE);
+		lblDate.setFont(UI_Elements.font_bodyLabel);
+		lblDate.setBounds(lblGameName.getBounds().x, tf_GameName.getBounds().y+tf_GameName.getBounds().height+10, 250, 22);
+		panelAddGame.add(lblDate);
 		
-		tf_SeasonName = new JTextField(); //TODO - add name validation
-		tf_SeasonName.setDisabledTextColor(Color.BLACK);
-		tf_SeasonName.setEnabled(true);
-		tf_SeasonName.setEditable(true);
-		tf_SeasonName.setHorizontalAlignment(SwingConstants.LEFT);
-		tf_SeasonName.setFont(UI_Elements.font_bodyFillText);
-		tf_SeasonName.setBounds(lblSeasonName.getBounds().x, lblSeasonName.getBounds().y+lblSeasonName.getBounds().height, panelAddGame.getBounds().width-titleAddGame.getBounds().x-5, 30);
-		panelAddGame.add(tf_SeasonName);
-		tf_SeasonName.setColumns(10);
+		tf_Date = new JTextField(); //TODO - add name validation
+		tf_Date.setDisabledTextColor(Color.BLACK);
+		tf_Date.setEnabled(true);
+		tf_Date.setEditable(true);
+		tf_Date.setHorizontalAlignment(SwingConstants.LEFT);
+		tf_Date.setFont(UI_Elements.font_bodyFillText);
+		tf_Date.setBounds(lblDate.getBounds().x, lblDate.getBounds().y+lblDate.getBounds().height, panelAddGame.getBounds().width-titleAddGame.getBounds().x-5, 30);
+		panelAddGame.add(tf_Date);
+		tf_Date.setColumns(10);
 		
 		btnAddGameFinish = new JButton("FINISH");
 		btnAddGameFinish.setFocusPainted(false);
@@ -98,7 +98,7 @@ public class GamesAddGame extends JPanel {
 		btnAddGameFinish.setBorder(null);
 		btnAddGameFinish.setFont(new Font(UI_Elements.mainFontName, Font.PLAIN, 18));
 		btnAddGameFinish.setBackground(UI_Elements.color_panelBodyButtonDefault);
-		btnAddGameFinish.setBounds(35, tf_SeasonName.getBounds().y+tf_SeasonName.getBounds().height+12, 75, 25);
+		btnAddGameFinish.setBounds(35, tf_Date.getBounds().y+tf_Date.getBounds().height+12, 75, 25);
 		btnAddGameFinish.setSelected(false);
 		panelAddGame.add(btnAddGameFinish);
 		btnAddGameFinish.addMouseListener( new MouseAdapter() {
