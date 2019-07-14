@@ -31,10 +31,8 @@ public class GamesAddGame extends JPanel {
 	private JTextField tf_GameName;
 	private JLabel lblSeasonName;
 	private JTextField tf_SeasonName;
-	private JLabel lblLeagueName;
-	private JTextField tf_LeagueName;
-	private JButton btnAddSeasonFinish;
-	private JButton btnAddSeasonCancel;
+	private JButton btnAddGameFinish;
+	private JButton btnAddGameCancel;
 	
 	private List<JButton> observerButtons = new ArrayList<JButton>();
 	
@@ -90,60 +88,60 @@ public class GamesAddGame extends JPanel {
 		panelAddGame.add(tf_SeasonName);
 		tf_SeasonName.setColumns(10);
 		
-		btnAddSeasonFinish = new JButton("FINISH");
-		btnAddSeasonFinish.setFocusPainted(false);
-		btnAddSeasonFinish.setRequestFocusEnabled(false);
-		btnAddSeasonFinish.setCursor(Cursor.getPredefinedCursor(Cursor.HAND_CURSOR));
-		btnAddSeasonFinish.setHorizontalAlignment(SwingConstants.CENTER);
-		btnAddSeasonFinish.setForeground(Color.WHITE);
-		btnAddSeasonFinish.setOpaque(true);
-		btnAddSeasonFinish.setBorder(null);
-		btnAddSeasonFinish.setFont(new Font(UI_Elements.mainFontName, Font.PLAIN, 18));
-		btnAddSeasonFinish.setBackground(UI_Elements.color_panelBodyButtonDefault);
-		btnAddSeasonFinish.setBounds(35, tf_SeasonName.getBounds().y+tf_SeasonName.getBounds().height+12, 75, 25);
-		btnAddSeasonFinish.setSelected(false);
-		panelAddGame.add(btnAddSeasonFinish);
-		btnAddSeasonFinish.addMouseListener( new MouseAdapter() {
+		btnAddGameFinish = new JButton("FINISH");
+		btnAddGameFinish.setFocusPainted(false);
+		btnAddGameFinish.setRequestFocusEnabled(false);
+		btnAddGameFinish.setCursor(Cursor.getPredefinedCursor(Cursor.HAND_CURSOR));
+		btnAddGameFinish.setHorizontalAlignment(SwingConstants.CENTER);
+		btnAddGameFinish.setForeground(Color.WHITE);
+		btnAddGameFinish.setOpaque(true);
+		btnAddGameFinish.setBorder(null);
+		btnAddGameFinish.setFont(new Font(UI_Elements.mainFontName, Font.PLAIN, 18));
+		btnAddGameFinish.setBackground(UI_Elements.color_panelBodyButtonDefault);
+		btnAddGameFinish.setBounds(35, tf_SeasonName.getBounds().y+tf_SeasonName.getBounds().height+12, 75, 25);
+		btnAddGameFinish.setSelected(false);
+		panelAddGame.add(btnAddGameFinish);
+		btnAddGameFinish.addMouseListener( new MouseAdapter() {
 		    public void mouseEntered( MouseEvent e ) {
-		    	btnAddSeasonFinish.setBackground(UI_Elements.color_panelBodyButtonRollover);
+		    	btnAddGameFinish.setBackground(UI_Elements.color_panelBodyButtonRollover);
 		    }
 		    public void mouseExited( MouseEvent e ) {
-		    	btnAddSeasonFinish.setBackground(UI_Elements.color_panelBodyButtonDefault);
+		    	btnAddGameFinish.setBackground(UI_Elements.color_panelBodyButtonDefault);
 		    }
 		} );
 		
-		btnAddSeasonCancel = new JButton("CANCEL");
-		btnAddSeasonCancel.setFocusPainted(false);
-		btnAddSeasonCancel.setRequestFocusEnabled(false);
-		btnAddSeasonCancel.setCursor(Cursor.getPredefinedCursor(Cursor.HAND_CURSOR));
-		btnAddSeasonCancel.setHorizontalAlignment(SwingConstants.CENTER);
-		btnAddSeasonCancel.setForeground(Color.WHITE);
-		btnAddSeasonCancel.setOpaque(true);
-		btnAddSeasonCancel.setBorder(null);
-		btnAddSeasonCancel.setFont(new Font(UI_Elements.mainFontName, Font.PLAIN, 18));
-		btnAddSeasonCancel.setBackground(UI_Elements.color_panelBodyButtonDefault);
-		btnAddSeasonCancel.setBounds(btnAddSeasonFinish.getBounds().x + btnAddSeasonFinish.getBounds().width + 15, btnAddSeasonFinish.getBounds().y, 75, 25);
-		btnAddSeasonCancel.setSelected(false);
-		panelAddGame.add(btnAddSeasonCancel);
-		btnAddSeasonCancel.addMouseListener( new MouseAdapter() {
+		btnAddGameCancel = new JButton("CANCEL");
+		btnAddGameCancel.setFocusPainted(false);
+		btnAddGameCancel.setRequestFocusEnabled(false);
+		btnAddGameCancel.setCursor(Cursor.getPredefinedCursor(Cursor.HAND_CURSOR));
+		btnAddGameCancel.setHorizontalAlignment(SwingConstants.CENTER);
+		btnAddGameCancel.setForeground(Color.WHITE);
+		btnAddGameCancel.setOpaque(true);
+		btnAddGameCancel.setBorder(null);
+		btnAddGameCancel.setFont(new Font(UI_Elements.mainFontName, Font.PLAIN, 18));
+		btnAddGameCancel.setBackground(UI_Elements.color_panelBodyButtonDefault);
+		btnAddGameCancel.setBounds(btnAddGameFinish.getBounds().x + btnAddGameFinish.getBounds().width + 15, btnAddGameFinish.getBounds().y, 75, 25);
+		btnAddGameCancel.setSelected(false);
+		panelAddGame.add(btnAddGameCancel);
+		btnAddGameCancel.addMouseListener( new MouseAdapter() {
 		    public void mouseEntered( MouseEvent e ) {
-		    	btnAddSeasonCancel.setBackground(UI_Elements.color_panelBodyButtonRollover);
+		    	btnAddGameCancel.setBackground(UI_Elements.color_panelBodyButtonRollover);
 		    }
 		    public void mouseExited( MouseEvent e ) {
-		    	btnAddSeasonCancel.setBackground(UI_Elements.color_panelBodyButtonDefault);
+		    	btnAddGameCancel.setBackground(UI_Elements.color_panelBodyButtonDefault);
 		    }
 		} );
 		
 		
 		//Action Listeners
-		btnAddSeasonFinish.addActionListener(new ActionListener() {
+		btnAddGameFinish.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
 				panelAddGame.setVisible(false);
 				setButtonsToDefault();
 			}
 		});
 		
-		btnAddSeasonCancel.addActionListener(new ActionListener() {
+		btnAddGameCancel.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
 				panelAddGame.setVisible(false);
 				setButtonsToDefault();
