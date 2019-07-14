@@ -1914,6 +1914,14 @@ public class Controller {
 	}
 	
 	//ViewStadium
+	public void viewSectionDetails(int sectionToDisplay, boolean viewStadiumToDisplayIn/*  1=viewStadium in overview panel, 0=viewStadium in games panel  */) {
+		if (viewStadiumToDisplayIn==true) {
+//			view.gamesPanel.sectionDetailsPanel.tf_SectionNumber.setText(String.valueOf(model.stadium.getArenaSection(sectionToDisplay).getSectionNumber())));
+		}
+		else {
+			
+		}
+	}
 	public String getViewStadiumSectionType(int i_SectionNum) {
 		
 		StringBuilder type = new StringBuilder();
