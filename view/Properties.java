@@ -25,11 +25,11 @@ public class Properties extends JPanel {
 
 	public JPanel panelProperties;
 
-	public JTextField tf_address;
-	public JTextField tf_arenaName;
-	public JTextField tf_sectionTicketPrice;
-	public JTextField tf_sectionNumOfSeats;
-	public JTextField tf_arenaNumOfSeats;
+	public JTextField tf_Address;
+	public JTextField tf_ArenaName;
+	public JTextField tf_SectionTicketPrice;
+	public JTextField tf_SectionNumOfSeats;
+	public JTextField tf_ArenaNumOfSeats;
 	public JTextField tf_TotalAttendance;
 	public JTextField tf_TotalRevenue;
 	public JTextField tf_TotalNumOfGameTickets;
@@ -37,17 +37,17 @@ public class Properties extends JPanel {
 	public JTextField tf_TotalRevenueGameTickets;
 	
 	public int sectionInedex;
-	public JComboBox<String> cb_sectionType;
-	public JComboBox<String> cb_sectionRanking;
-	public JComboBox<String> cb_sectionSelection;
-	public JComboBox<String> cb_arenaType;
+	public JComboBox<String> cb_SectionType;
+	public JComboBox<String> cb_SectionRanking;
+	public JComboBox<String> cb_SectionSelection;
+	public JComboBox<String> cb_ArenaType;
 
 	public JRadioButton rdbtnIsRoofedYes;
 	public JRadioButton rdbtnIsRoofedNO;
 
-	public JButton editProperties;
-	public JButton finishEditPropertiesButton;
-	public JButton btnCancelEdit;
+	public JButton btnEditProperties;
+	public JButton btnFinishEditingProperties;
+	public JButton btnCancelEditing;
 	
 	public  JLabel titleProperties;
 	public JLabel lblArenaName;
@@ -62,6 +62,10 @@ public class Properties extends JPanel {
 	public  JLabel lblSectionRanking;
 	
 	public  JSeparator separatorProperties;
+	
+	private int lineSpacing = 5;
+
+	public JButton btnEditSectionTypeTicketPrice;
 
 	
 	
@@ -87,99 +91,99 @@ public class Properties extends JPanel {
 		lblArenaName.setBorder(null);
 		lblArenaName.setForeground(Color.WHITE);
 		lblArenaName.setFont(UI_Elements.font_bodyLabel);
-		lblArenaName.setBounds(35, 103, 109, 26);
+		lblArenaName.setBounds(35, 103, 109, 25);
 		panelProperties.add(lblArenaName);
 
-		tf_arenaName = new JTextField();
-		tf_arenaName.setDisabledTextColor(Color.BLACK);
-		tf_arenaName.setEnabled(false);
-		tf_arenaName.setEditable(false);
-		tf_arenaName.setHorizontalAlignment(SwingConstants.LEFT);
-		tf_arenaName.setFont(UI_Elements.font_bodyFillText);
-		tf_arenaName.setBounds(156, 103, 265, 20);
-		panelProperties.add(tf_arenaName);
-		tf_arenaName.setColumns(10);
+		tf_ArenaName = new JTextField();
+		tf_ArenaName.setDisabledTextColor(Color.BLACK);
+		tf_ArenaName.setEnabled(false);
+		tf_ArenaName.setEditable(false);
+		tf_ArenaName.setHorizontalAlignment(SwingConstants.LEFT);
+		tf_ArenaName.setFont(UI_Elements.font_bodyFillText);
+		tf_ArenaName.setBounds(lblArenaName.getBounds().x+120, lblArenaName.getBounds().y, 265, 20);
+		panelProperties.add(tf_ArenaName);
+		tf_ArenaName.setColumns(10);
 
 		lblArenaType = new JLabel("Arena Type:");
 		lblArenaType.setBorder(null);
 		lblArenaType.setForeground(Color.WHITE);
 		lblArenaType.setFont(UI_Elements.font_bodyLabel);
-		lblArenaType.setBounds(35, 133, 109, 26);
+		lblArenaType.setBounds(lblArenaName.getBounds().x, lblArenaName.getBounds().y+lblArenaName.getBounds().height+lineSpacing, lblArenaName.getBounds().width, lblArenaName.getBounds().height);
 		panelProperties.add(lblArenaType);
 
-		cb_arenaType = new JComboBox();
-		cb_arenaType.setModel(new DefaultComboBoxModel(new String[] { "Stadium" }));
-		cb_arenaType.setBounds(156, 133, 265, 20);
-		cb_arenaType.setFont(UI_Elements.font_bodyFillText);
-		panelProperties.add(cb_arenaType);
+		cb_ArenaType = new JComboBox();
+		cb_ArenaType.setModel(new DefaultComboBoxModel(new String[] { "Stadium" }));
+		cb_ArenaType.setBounds(tf_ArenaName.getBounds().x, lblArenaType.getBounds().y, tf_ArenaName.getBounds().width, tf_ArenaName.getBounds().height);
+		cb_ArenaType.setFont(UI_Elements.font_bodyFillText);
+		panelProperties.add(cb_ArenaType);
 
 		lblAddress = new JLabel("Address:");
 		lblAddress.setBorder(null);
 		lblAddress.setForeground(Color.WHITE);
 		lblAddress.setFont(UI_Elements.font_bodyLabel);
-		lblAddress.setBounds(35, 163, 109, 26);
+		lblAddress.setBounds(lblArenaType.getBounds().x, lblArenaType.getBounds().y+lblArenaType.getBounds().height+lineSpacing, lblArenaType.getBounds().width, lblArenaType.getBounds().height);
 		panelProperties.add(lblAddress);
 
-		tf_address = new JTextField();
-		tf_address.setDisabledTextColor(Color.BLACK);
-		tf_address.setEnabled(false);
-		tf_address.setEditable(false);
-		tf_address.setHorizontalAlignment(SwingConstants.LEFT);
-		tf_address.setFont(UI_Elements.font_bodyFillText);
-		tf_address.setBounds(156, 163, 265, 20);
-		panelProperties.add(tf_address);
-		tf_address.setColumns(10);
+		tf_Address = new JTextField();
+		tf_Address.setDisabledTextColor(Color.BLACK);
+		tf_Address.setEnabled(false);
+		tf_Address.setEditable(false);
+		tf_Address.setHorizontalAlignment(SwingConstants.LEFT);
+		tf_Address.setFont(UI_Elements.font_bodyFillText);
+		tf_Address.setBounds(cb_ArenaType.getBounds().x, lblAddress.getBounds().y, cb_ArenaType.getBounds().width, cb_ArenaType.getBounds().height);
+		panelProperties.add(tf_Address);
+		tf_Address.setColumns(10);
 
 		lblArenaNumOfSeats = new JLabel("Num. of Seats:");
 		lblArenaNumOfSeats.setBorder(null);
 		lblArenaNumOfSeats.setForeground(Color.WHITE);
 		lblArenaNumOfSeats.setFont(UI_Elements.font_bodyLabel);
-		lblArenaNumOfSeats.setBounds(35, 193, 109, 26);
+		lblArenaNumOfSeats.setBounds(lblAddress.getBounds().x, lblAddress.getBounds().y+lblAddress.getBounds().height+lineSpacing, lblAddress.getBounds().width, lblAddress.getBounds().height);
 		panelProperties.add(lblArenaNumOfSeats);
 
-		tf_arenaNumOfSeats = new JTextField();
-		tf_arenaNumOfSeats.setDisabledTextColor(Color.BLACK);
-		tf_arenaNumOfSeats.setEnabled(false);
-		tf_arenaNumOfSeats.setEditable(false);
-		tf_arenaNumOfSeats.setHorizontalAlignment(SwingConstants.LEFT);
-		tf_arenaNumOfSeats.setFont(UI_Elements.font_bodyFillText);
-		tf_arenaNumOfSeats.setBounds(156, 193, 265, 20);
-		panelProperties.add(tf_arenaNumOfSeats);
-		tf_arenaNumOfSeats.setColumns(10);
+		tf_ArenaNumOfSeats = new JTextField();
+		tf_ArenaNumOfSeats.setDisabledTextColor(Color.BLACK);
+		tf_ArenaNumOfSeats.setEnabled(false);
+		tf_ArenaNumOfSeats.setEditable(false);
+		tf_ArenaNumOfSeats.setHorizontalAlignment(SwingConstants.LEFT);
+		tf_ArenaNumOfSeats.setFont(UI_Elements.font_bodyFillText);
+		tf_ArenaNumOfSeats.setBounds(tf_Address.getBounds().x, lblArenaNumOfSeats.getBounds().y, tf_Address.getBounds().width, tf_Address.getBounds().height);
+		panelProperties.add(tf_ArenaNumOfSeats);
+		tf_ArenaNumOfSeats.setColumns(10);
 
 		separatorProperties = new JSeparator();
-		separatorProperties.setBounds(35, 230, 384, 10);
+		separatorProperties.setBounds(lblArenaNumOfSeats.getBounds().x,lblArenaNumOfSeats.getBounds().y+lblArenaNumOfSeats.getBounds().height+lineSpacing*2, 384, 10);
 		panelProperties.add(separatorProperties);
 
 		lblSectionManagement = new JLabel("SECTION MANAGEMENT");
 		lblSectionManagement.setForeground(Color.WHITE);
 		lblSectionManagement.setFont(UI_Elements.font_bodyLabel);
 		lblSectionManagement.setBorder(null);
-		lblSectionManagement.setBounds(35, 250, 167, 26);
+		lblSectionManagement.setBounds(separatorProperties.getBounds().x, separatorProperties.getBounds().y+separatorProperties.getBounds().height+lineSpacing*2, 170, lblArenaNumOfSeats.getBounds().height);
 		panelProperties.add(lblSectionManagement);
 
-		cb_sectionSelection = new JComboBox();
-		cb_sectionSelection.setModel(new DefaultComboBoxModel(new String[] {}));
-		cb_sectionSelection.setFont(UI_Elements.font_bodyFillText);
-		cb_sectionSelection.setBorder(null);
-		cb_sectionSelection.setBounds(35, 275, 265, 20);
-		panelProperties.add(cb_sectionSelection);
+		cb_SectionSelection = new JComboBox();
+		cb_SectionSelection.setModel(new DefaultComboBoxModel(new String[] {}));
+		cb_SectionSelection.setFont(UI_Elements.font_bodyFillText);
+		cb_SectionSelection.setBorder(null);
+		cb_SectionSelection.setBounds(lblSectionManagement.getBounds().x, lblSectionManagement.getBounds().y+lblSectionManagement.getBounds().height+lineSpacing*2, tf_ArenaNumOfSeats.getBounds().width, tf_ArenaNumOfSeats.getBounds().height);
+		panelProperties.add(cb_SectionSelection);
 
 		lblSectionType = new JLabel("Section Type:");
 		lblSectionType.setForeground(Color.WHITE);
 		lblSectionType.setFont(UI_Elements.font_bodyLabel);
 		lblSectionType.setBorder(null);
-		lblSectionType.setBounds(35, 315, 109, 26);
+		lblSectionType.setBounds(cb_SectionSelection.getBounds().x, cb_SectionSelection.getBounds().y+cb_SectionSelection.getBounds().height+lineSpacing*2, lblArenaNumOfSeats.getBounds().width, lblArenaNumOfSeats.getBounds().height);
 		panelProperties.add(lblSectionType);
 
-		cb_sectionType = new JComboBox();
-		cb_sectionType.setEnabled(false);
-		cb_sectionType.setModel(new DefaultComboBoxModel(new String[] { "Club Level", "Bleachers", "VIP" }));
-		cb_sectionType.setFont(UI_Elements.font_bodyFillText);
-		cb_sectionType.setBorder(null);
-		cb_sectionType.setBounds(156, 315, 265, 20);
-		panelProperties.add(cb_sectionType);
-		cb_sectionType.setRenderer(new DefaultListCellRenderer() { // Send Yoni
+		cb_SectionType = new JComboBox();
+		cb_SectionType.setEnabled(false);
+		cb_SectionType.setModel(new DefaultComboBoxModel(new String[] { "Club Level", "Bleachers", "VIP" }));
+		cb_SectionType.setFont(UI_Elements.font_bodyFillText);
+		cb_SectionType.setBorder(null);
+		cb_SectionType.setBounds(tf_ArenaNumOfSeats.getBounds().x, lblSectionType.getBounds().y, cb_SectionSelection.getBounds().width, cb_SectionSelection.getBounds().height);
+		panelProperties.add(cb_SectionType);
+		cb_SectionType.setRenderer(new DefaultListCellRenderer() { 
 			public void paint(Graphics g) {
 				setForeground(Color.BLACK);
 				super.paint(g);
@@ -190,41 +194,41 @@ public class Properties extends JPanel {
 		lblSectionTicketPrice.setBorder(null);
 		lblSectionTicketPrice.setForeground(Color.WHITE);
 		lblSectionTicketPrice.setFont(UI_Elements.font_bodyLabel);
-		lblSectionTicketPrice.setBounds(35, 345, 109, 26);
+		lblSectionTicketPrice.setBounds(lblSectionType.getBounds().x, lblSectionType.getBounds().y+lblSectionType.getBounds().height+lineSpacing, lblSectionType.getBounds().width, lblSectionType.getBounds().height);
 		panelProperties.add(lblSectionTicketPrice);
 
-		tf_sectionTicketPrice = new JTextField();
-		tf_sectionTicketPrice.setDisabledTextColor(Color.BLACK);
-		tf_sectionTicketPrice.setEnabled(false);
-		tf_sectionTicketPrice.setEditable(false);
-		tf_sectionTicketPrice.setHorizontalAlignment(SwingConstants.LEFT);
-		tf_sectionTicketPrice.setFont(UI_Elements.font_bodyFillText);
-		tf_sectionTicketPrice.setBounds(156, 345, 265, 20);
-		panelProperties.add(tf_sectionTicketPrice);
-		tf_sectionTicketPrice.setColumns(10);
+		tf_SectionTicketPrice = new JTextField();
+		tf_SectionTicketPrice.setDisabledTextColor(Color.BLACK);
+		tf_SectionTicketPrice.setEnabled(false);
+		tf_SectionTicketPrice.setEditable(false);
+		tf_SectionTicketPrice.setHorizontalAlignment(SwingConstants.LEFT);
+		tf_SectionTicketPrice.setFont(UI_Elements.font_bodyFillText);
+		tf_SectionTicketPrice.setBounds(cb_SectionType.getBounds().x, lblSectionTicketPrice.getBounds().y, cb_SectionType.getBounds().width, cb_SectionType.getBounds().height);
+		panelProperties.add(tf_SectionTicketPrice);
+		tf_SectionTicketPrice.setColumns(10);
 
 		lblSectionNumOfSeats = new JLabel("Num. of Seats:");
 		lblSectionNumOfSeats.setBorder(null);
 		lblSectionNumOfSeats.setForeground(Color.WHITE);
 		lblSectionNumOfSeats.setFont(UI_Elements.font_bodyLabel);
-		lblSectionNumOfSeats.setBounds(35, 375, 109, 26);
+		lblSectionNumOfSeats.setBounds(lblSectionTicketPrice.getBounds().x, lblSectionTicketPrice.getBounds().y+lblSectionTicketPrice.getBounds().height+lineSpacing, lblSectionTicketPrice.getBounds().width, lblSectionTicketPrice.getBounds().height);
 		panelProperties.add(lblSectionNumOfSeats);
 
-		tf_sectionNumOfSeats = new JTextField();
-		tf_sectionNumOfSeats.setDisabledTextColor(Color.BLACK);
-		tf_sectionNumOfSeats.setEnabled(false);
-		tf_sectionNumOfSeats.setEditable(false);
-		tf_sectionNumOfSeats.setHorizontalAlignment(SwingConstants.LEFT);
-		tf_sectionNumOfSeats.setFont(UI_Elements.font_bodyFillText);
-		tf_sectionNumOfSeats.setBounds(156, 375, 265, 20);
-		panelProperties.add(tf_sectionNumOfSeats);
-		tf_sectionNumOfSeats.setColumns(10);
+		tf_SectionNumOfSeats = new JTextField();
+		tf_SectionNumOfSeats.setDisabledTextColor(Color.BLACK);
+		tf_SectionNumOfSeats.setEnabled(false);
+		tf_SectionNumOfSeats.setEditable(false);
+		tf_SectionNumOfSeats.setHorizontalAlignment(SwingConstants.LEFT);
+		tf_SectionNumOfSeats.setFont(UI_Elements.font_bodyFillText);
+		tf_SectionNumOfSeats.setBounds(tf_SectionTicketPrice.getBounds().x, lblSectionNumOfSeats.getBounds().y, tf_SectionTicketPrice.getBounds().width, tf_SectionTicketPrice.getBounds().height);
+		panelProperties.add(tf_SectionNumOfSeats);
+		tf_SectionNumOfSeats.setColumns(10);
 
 		lblIsRoofed = new JLabel("Is Roofed?:");
 		lblIsRoofed.setBorder(null);
 		lblIsRoofed.setForeground(Color.WHITE);
 		lblIsRoofed.setFont(UI_Elements.font_bodyLabel);
-		lblIsRoofed.setBounds(35, 405, 109, 26);
+		lblIsRoofed.setBounds(lblSectionNumOfSeats.getBounds().x, lblSectionNumOfSeats.getBounds().y+lblSectionNumOfSeats.getBounds().height+lineSpacing, lblSectionNumOfSeats.getBounds().width, lblSectionNumOfSeats.getBounds().height);
 		panelProperties.add(lblIsRoofed);
 
 		rdbtnIsRoofedYes = new JRadioButton("Yes");
@@ -236,7 +240,7 @@ public class Properties extends JPanel {
 		rdbtnIsRoofedYes.setCursor(Cursor.getPredefinedCursor(Cursor.HAND_CURSOR));
 		rdbtnIsRoofedYes.setForeground(Color.WHITE);
 		rdbtnIsRoofedYes.setFont(UI_Elements.font_bodyFillText);
-		rdbtnIsRoofedYes.setBounds(156, 405, 65, 26);
+		rdbtnIsRoofedYes.setBounds(tf_SectionNumOfSeats.getBounds().x, lblIsRoofed.getBounds().y, 65, 26);
 		panelProperties.add(rdbtnIsRoofedYes);
 
 		rdbtnIsRoofedNO = new JRadioButton("No");
@@ -248,24 +252,24 @@ public class Properties extends JPanel {
 		rdbtnIsRoofedNO.setCursor(Cursor.getPredefinedCursor(Cursor.HAND_CURSOR));
 		rdbtnIsRoofedNO.setForeground(Color.WHITE);
 		rdbtnIsRoofedNO.setFont(UI_Elements.font_bodyFillText);
-		rdbtnIsRoofedNO.setBounds(230, 405, 65, 26);
+		rdbtnIsRoofedNO.setBounds(rdbtnIsRoofedYes.getBounds().x+rdbtnIsRoofedYes.getBounds().width, rdbtnIsRoofedYes.getBounds().y, rdbtnIsRoofedYes.getBounds().width, rdbtnIsRoofedYes.getBounds().height);
 		panelProperties.add(rdbtnIsRoofedNO);
 
 		lblSectionRanking = new JLabel("Section Ranking:");
 		lblSectionRanking.setForeground(Color.WHITE);
 		lblSectionRanking.setFont(UI_Elements.font_bodyLabel);
 		lblSectionRanking.setBorder(null);
-		lblSectionRanking.setBounds(35, 435, 109, 26);
+		lblSectionRanking.setBounds(lblIsRoofed.getBounds().x, lblIsRoofed.getBounds().y+lblIsRoofed.getBounds().height+lineSpacing, lblIsRoofed.getBounds().width, lblIsRoofed.getBounds().height);
 		panelProperties.add(lblSectionRanking);
 
-		cb_sectionRanking = new JComboBox();
-		cb_sectionRanking.setEnabled(false);
-		cb_sectionRanking.setModel(new DefaultComboBoxModel(new String[] { "High", "Medium", "Low" }));
-		cb_sectionRanking.setFont(UI_Elements.font_bodyFillText);
-		cb_sectionRanking.setBorder(null);
-		cb_sectionRanking.setBounds(156, 435, 265, 20);
-		panelProperties.add(cb_sectionRanking);
-		cb_sectionRanking.setRenderer(new DefaultListCellRenderer() { // Send Yoni
+		cb_SectionRanking = new JComboBox();
+		cb_SectionRanking.setEnabled(false);
+		cb_SectionRanking.setModel(new DefaultComboBoxModel(new String[] { "High", "Medium", "Low" }));
+		cb_SectionRanking.setFont(UI_Elements.font_bodyFillText);
+		cb_SectionRanking.setBorder(null);
+		cb_SectionRanking.setBounds(tf_SectionNumOfSeats.getBounds().x, lblSectionRanking.getBounds().y, tf_SectionNumOfSeats.getBounds().width, tf_SectionNumOfSeats.getBounds().height);
+		panelProperties.add(cb_SectionRanking);
+		cb_SectionRanking.setRenderer(new DefaultListCellRenderer() {
 			public void paint(Graphics g) {
 				setForeground(Color.BLACK);
 				super.paint(g);
@@ -275,77 +279,101 @@ public class Properties extends JPanel {
 		//---Buttons---//
 		
 		// Buttons declaration:
-		editProperties = new JButton("EDIT");
-		editProperties.setVisible(true);
-		editProperties.setBounds(460, 103, 90, 20);
-		editProperties.setFocusPainted(false);
-		editProperties.setRequestFocusEnabled(false);
-		editProperties.setCursor(Cursor.getPredefinedCursor(Cursor.HAND_CURSOR));
-		editProperties.setHorizontalAlignment(SwingConstants.CENTER);
-		editProperties.setForeground(Color.WHITE);
-		editProperties.setOpaque(true);
-		editProperties.setBorder(null);
-		editProperties.setFont(new Font(UI_Elements.mainFontName, Font.PLAIN, 17));
-		editProperties.setBackground(UI_Elements.color_panelBodyButtonDefault);
-		editProperties.addMouseListener(new MouseAdapter() {
+		btnEditProperties = new JButton("EDIT");
+		btnEditProperties.setVisible(true);
+		btnEditProperties.setBounds(460, lblArenaName.getBounds().y-2, 120, 22);
+		btnEditProperties.setFocusPainted(false);
+		btnEditProperties.setRequestFocusEnabled(false);
+		btnEditProperties.setCursor(Cursor.getPredefinedCursor(Cursor.HAND_CURSOR));
+		btnEditProperties.setHorizontalAlignment(SwingConstants.CENTER);
+		btnEditProperties.setForeground(Color.WHITE);
+		btnEditProperties.setOpaque(true);
+		btnEditProperties.setBorder(null);
+		btnEditProperties.setFont(new Font(UI_Elements.mainFontName, Font.PLAIN, 17));
+		btnEditProperties.setBackground(UI_Elements.color_panelBodyButtonDefault);
+		btnEditProperties.addMouseListener(new MouseAdapter() {
 			public void mouseEntered(MouseEvent e) {
-				editProperties.setBackground(UI_Elements.color_panelBodyButtonRollover);
+				btnEditProperties.setBackground(UI_Elements.color_panelBodyButtonRollover);
 			}
 
 			public void mouseExited(MouseEvent e) {
-				editProperties.setBackground(UI_Elements.color_panelBodyButtonDefault);
+				btnEditProperties.setBackground(UI_Elements.color_panelBodyButtonDefault);
 
 			}
 		});
-		panelProperties.add(editProperties);
+		panelProperties.add(btnEditProperties);
 
-		finishEditPropertiesButton = new JButton("FINISH");
-		finishEditPropertiesButton.setVisible(false);
-		finishEditPropertiesButton.setBounds(460, 485, 90, 20);
-		finishEditPropertiesButton.setFocusPainted(false);
-		finishEditPropertiesButton.setRequestFocusEnabled(false);
-		finishEditPropertiesButton.setCursor(Cursor.getPredefinedCursor(Cursor.HAND_CURSOR));
-		finishEditPropertiesButton.setHorizontalAlignment(SwingConstants.CENTER);
-		finishEditPropertiesButton.setForeground(Color.WHITE);
-		finishEditPropertiesButton.setOpaque(true);
-		finishEditPropertiesButton.setBorder(null);
-		finishEditPropertiesButton.setFont(new Font(UI_Elements.mainFontName, Font.PLAIN, 17));
-		finishEditPropertiesButton.setBackground(UI_Elements.color_panelBodyButtonDefault);
-		finishEditPropertiesButton.addMouseListener(new MouseAdapter() {
+		btnFinishEditingProperties = new JButton("FINISH");
+		btnFinishEditingProperties.setVisible(false);
+		btnFinishEditingProperties.setBounds(btnEditProperties.getBounds().x, 485, btnEditProperties.getBounds().width, btnEditProperties.getBounds().height);
+		btnFinishEditingProperties.setFocusPainted(false);
+		btnFinishEditingProperties.setRequestFocusEnabled(false);
+		btnFinishEditingProperties.setCursor(Cursor.getPredefinedCursor(Cursor.HAND_CURSOR));
+		btnFinishEditingProperties.setHorizontalAlignment(SwingConstants.CENTER);
+		btnFinishEditingProperties.setForeground(Color.WHITE);
+		btnFinishEditingProperties.setOpaque(true);
+		btnFinishEditingProperties.setBorder(null);
+		btnFinishEditingProperties.setFont(new Font(UI_Elements.mainFontName, Font.PLAIN, 17));
+		btnFinishEditingProperties.setBackground(UI_Elements.color_panelBodyButtonDefault);
+		btnFinishEditingProperties.addMouseListener(new MouseAdapter() {
 			public void mouseEntered(MouseEvent e) {
-				finishEditPropertiesButton.setBackground(UI_Elements.color_panelBodyButtonRollover);
+				btnFinishEditingProperties.setBackground(UI_Elements.color_panelBodyButtonRollover);
 			}
 
 			public void mouseExited(MouseEvent e) {
-				finishEditPropertiesButton.setBackground(UI_Elements.color_panelBodyButtonDefault);
+				btnFinishEditingProperties.setBackground(UI_Elements.color_panelBodyButtonDefault);
 
 			}
 		});
-		panelProperties.add(finishEditPropertiesButton);
+		panelProperties.add(btnFinishEditingProperties);
 
-		btnCancelEdit = new JButton("CANCEL");
-		btnCancelEdit.setVisible(false);
-		btnCancelEdit.setBounds(460, 103, 90, 20);
-		btnCancelEdit.setFocusPainted(false);
-		btnCancelEdit.setRequestFocusEnabled(false);
-		btnCancelEdit.setCursor(Cursor.getPredefinedCursor(Cursor.HAND_CURSOR));
-		btnCancelEdit.setHorizontalAlignment(SwingConstants.CENTER);
-		btnCancelEdit.setForeground(Color.WHITE);
-		btnCancelEdit.setOpaque(true);
-		btnCancelEdit.setBorder(null);
-		btnCancelEdit.setFont(new Font(UI_Elements.mainFontName, Font.PLAIN, 17));
-		btnCancelEdit.setBackground(UI_Elements.color_panelBodyButtonDefault);
-		btnCancelEdit.addMouseListener(new MouseAdapter() {
+		btnCancelEditing = new JButton("CANCEL");
+		btnCancelEditing.setVisible(false);
+		btnCancelEditing.setBounds(btnEditProperties.getBounds());
+		btnCancelEditing.setFocusPainted(false);
+		btnCancelEditing.setRequestFocusEnabled(false);
+		btnCancelEditing.setCursor(Cursor.getPredefinedCursor(Cursor.HAND_CURSOR));
+		btnCancelEditing.setHorizontalAlignment(SwingConstants.CENTER);
+		btnCancelEditing.setForeground(Color.WHITE);
+		btnCancelEditing.setOpaque(true);
+		btnCancelEditing.setBorder(null);
+		btnCancelEditing.setFont(new Font(UI_Elements.mainFontName, Font.PLAIN, 17));
+		btnCancelEditing.setBackground(UI_Elements.color_panelBodyButtonDefault);
+		btnCancelEditing.addMouseListener(new MouseAdapter() {
 			public void mouseEntered(MouseEvent e) {
-				btnCancelEdit.setBackground(UI_Elements.color_panelBodyButtonRollover);
+				btnCancelEditing.setBackground(UI_Elements.color_panelBodyButtonRollover);
 			}
 
 			public void mouseExited(MouseEvent e) {
-				btnCancelEdit.setBackground(UI_Elements.color_panelBodyButtonDefault);
+				btnCancelEditing.setBackground(UI_Elements.color_panelBodyButtonDefault);
 
 			}
 		});
-		panelProperties.add(btnCancelEdit);
+		panelProperties.add(btnCancelEditing);
+		
+		btnEditSectionTypeTicketPrice = new JButton("EDIT TICKET PRICE");
+		btnEditSectionTypeTicketPrice.setVisible(false);
+		btnEditSectionTypeTicketPrice.setBounds(btnEditProperties.getBounds().x, lblSectionTicketPrice.getBounds().y-1, btnEditProperties.getBounds().width, btnEditProperties.getBounds().height);
+		btnEditSectionTypeTicketPrice.setFocusPainted(false);
+		btnEditSectionTypeTicketPrice.setRequestFocusEnabled(false);
+		btnEditSectionTypeTicketPrice.setCursor(Cursor.getPredefinedCursor(Cursor.HAND_CURSOR));
+		btnEditSectionTypeTicketPrice.setHorizontalAlignment(SwingConstants.CENTER);
+		btnEditSectionTypeTicketPrice.setForeground(Color.WHITE);
+		btnEditSectionTypeTicketPrice.setOpaque(true);
+		btnEditSectionTypeTicketPrice.setBorder(null);
+		btnEditSectionTypeTicketPrice.setFont(new Font(UI_Elements.mainFontName, Font.PLAIN, 17));
+		btnEditSectionTypeTicketPrice.setBackground(UI_Elements.color_panelBodyButtonDefault);
+		btnEditSectionTypeTicketPrice.addMouseListener(new MouseAdapter() {
+			public void mouseEntered(MouseEvent e) {
+				btnEditSectionTypeTicketPrice.setBackground(UI_Elements.color_panelBodyButtonRollover);
+			}
+
+			public void mouseExited(MouseEvent e) {
+				btnEditSectionTypeTicketPrice.setBackground(UI_Elements.color_panelBodyButtonDefault);
+
+			}
+		});
+		panelProperties.add(btnEditSectionTypeTicketPrice);
 		// end buttons declarations
 
 	}
@@ -353,16 +381,16 @@ public class Properties extends JPanel {
 	// methods:
 	public void setProperties(boolean action) // Function that set the properties page by a given action (true/false)
 	{
-		tf_arenaName.setEnabled(action);
-		tf_arenaName.setEditable(action);
-		tf_address.setEnabled(action);
-		tf_address.setEditable(action);
-		tf_sectionTicketPrice.setEnabled(action);
-		tf_sectionTicketPrice.setEditable(action);
-		tf_sectionNumOfSeats.setEnabled(action);
-		tf_sectionNumOfSeats.setEditable(action);
-		cb_sectionType.setEnabled(action);
-		cb_sectionRanking.setEnabled(action);
+		tf_ArenaName.setEnabled(action);
+		tf_ArenaName.setEditable(action);
+		tf_Address.setEnabled(action);
+		tf_Address.setEditable(action);
+		tf_SectionTicketPrice.setEnabled(false); //
+		tf_SectionTicketPrice.setEditable(false); //
+		tf_SectionNumOfSeats.setEnabled(action);
+		tf_SectionNumOfSeats.setEditable(action);
+		cb_SectionType.setEnabled(action);
+		cb_SectionRanking.setEnabled(action);
 		rdbtnIsRoofedYes.setEnabled(action);
 		rdbtnIsRoofedNO.setEnabled(action);
 	}	
