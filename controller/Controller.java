@@ -604,11 +604,33 @@ public class Controller {
 				view.gamesPanel.sectionDetailsPanel.frameAddTicketSale.setVisible(true);
 				
 				view.gamesPanel.sectionDetailsPanel.frameAddTicketSale.lblSectionNumber.setText(model.stadium.getArenaSection(Integer.parseInt(view.gamesPanel.gamesStadiumPanel.lastSelectedButton.getName())-1).getSectionName());
-				view.gamesPanel.sectionDetailsPanel.frameAddTicketSale.lblSectionTypeValue.setText(model.stadium.getArenaSection(Integer.parseInt(view.gamesPanel.gamesStadiumPanel.lastSelectedButton.getName())-1).getSectionType());
-				view.gamesPanel.sectionDetailsPanel.frameAddTicketSale.lblTicketPriceValue.setText(String.valueOf(model.stadium.getArenaSection(Integer.parseInt(view.gamesPanel.gamesStadiumPanel.lastSelectedButton.getName())-1).getTicketPrice()));
-				//error here:
-				view.gamesPanel.sectionDetailsPanel.frameAddTicketSale.lblAvailableTicketsValue.setText(String.valueOf(model.season.get(view.gamesPanel.cb_SalesSeason.getSelectedIndex()).games.get(view.gamesPanel.cb_SalesGame.getSelectedIndex()).gameSections.get(Integer.valueOf(view.gamesPanel.gamesStadiumPanel.lastSelectedButton.getName())-1).getUnsoldTickets()));
+				view.gamesPanel.sectionDetailsPanel.frameAddTicketSale.lblSectionTypeValue.setText(model.stadium.getArenaSection(Integer.parseInt(view.gamesPanel.gamesStadiumPanel.lastSelectedButton.getName())).getSectionType());
+				view.gamesPanel.sectionDetailsPanel.frameAddTicketSale.lblTicketPriceValue.setText(String.valueOf(model.stadium.getArenaSection(Integer.parseInt(view.gamesPanel.gamesStadiumPanel.lastSelectedButton.getName())).getTicketPrice()));
+				view.gamesPanel.sectionDetailsPanel.frameAddTicketSale.lblAvailableTicketsValue.setText(String.valueOf(model.season.get(view.gamesPanel.cb_SalesSeason.getSelectedIndex()).games.get(view.gamesPanel.cb_SalesGame.getSelectedIndex()).gameSections.get(Integer.valueOf(view.gamesPanel.gamesStadiumPanel.lastSelectedButton.getName())).getUnsoldTickets()));
 
+			}
+		});
+		view.gamesPanel.sectionDetailsPanel.frameAddTicketSale.btnFinish.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent arg0) {
+				if(model.season.get(view.gamesPanel.cb_SalesSeason.getSelectedIndex()).games.get(view.gamesPanel.cb_SalesGame.getSelectedIndex()).gameSections.get(Integer.valueOf(view.gamesPanel.gamesStadiumPanel.lastSelectedButton.getName())).getUnsoldTickets()<Integer.valueOf(view.gamesPanel.sectionDetailsPanel.frameAddTicketSale.tf_DesiredAmount.getText())) {
+					view.gamesPanel.sectionDetailsPanel.frameAddTicketSale.lblErrorMessage_ValueOutOfRange.setVisible(true);
+				}
+				else {
+				view.gamesPanel.sectionDetailsPanel.frameAddTicketSale.setVisible(false);
+				model.season.get(view.gamesPanel.cb_SalesSeason.getSelectedIndex()).games.get(view.gamesPanel.cb_SalesGame.getSelectedIndex()).gameSections.get(Integer.valueOf(view.gamesPanel.gamesStadiumPanel.lastSelectedButton.getName())).setSoldTickets(Integer.valueOf(view.gamesPanel.sectionDetailsPanel.frameAddTicketSale.tf_DesiredAmount.getText()));				
+				//update attendance in real time:
+				view.gamesPanel.sectionDetailsPanel.tf_Attendance.setText(String.valueOf(model.season.get(view.gamesPanel.cb_SalesSeason.getSelectedIndex()).games.get(view.gamesPanel.cb_SalesGame.getSelectedIndex()).gameSections.get(Integer.valueOf(view.gamesPanel.gamesStadiumPanel.lastSelectedButton.getName())).getSoldTickets() + "/" + String.valueOf(model.stadium.getArenaSection(Integer.valueOf(view.gamesPanel.gamesStadiumPanel.lastSelectedButton.getName())).getNumOfSeats())));
+				view.gamesPanel.sectionDetailsPanel.frameAddTicketSale.tf_DesiredAmount.setText("");
+				view.gamesPanel.sectionDetailsPanel.frameAddTicketSale.lblErrorMessage_ValueOutOfRange.setVisible(false);
+				}
+
+			}
+		});
+		view.gamesPanel.sectionDetailsPanel.frameAddTicketSale.btnCancel.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent arg0) {
+				view.gamesPanel.sectionDetailsPanel.frameAddTicketSale.setVisible(false);
+				view.gamesPanel.sectionDetailsPanel.frameAddTicketSale.tf_DesiredAmount.setText("");
+				view.gamesPanel.sectionDetailsPanel.frameAddTicketSale.lblErrorMessage_ValueOutOfRange.setVisible(false);
 			}
 		});
 		//---ViewStadium Image Manipulations---//

@@ -38,10 +38,10 @@ public class GamesAddTicketSale extends JFrame {
 	public JLabel lblAvailableTicketsValue;
 	private JLabel lblDesiredAmount;
 	public JTextField tf_DesiredAmount;
-	private JButton btnFinish;
-	private JButton btnCancel;
-	private JLabel lblErrorMessage_InavlidValue;
-	private JLabel lblErrorMessage_ValueOutOfRange;
+	public JButton btnFinish;
+	public JButton btnCancel;
+	public JLabel lblErrorMessage_InavlidValue;
+	public JLabel lblErrorMessage_ValueOutOfRange;
 
 	
 	public GamesAddTicketSale() {
@@ -195,7 +195,7 @@ public class GamesAddTicketSale extends JFrame {
 		lblErrorMessage_InavlidValue.setVisible(false);
 		panelAddTicketSale.add(lblErrorMessage_InavlidValue);
 		
-		lblErrorMessage_ValueOutOfRange = new JLabel("Value out of range! Pleas enter a value between 0 and X"); //x = available tickets
+		lblErrorMessage_ValueOutOfRange = new JLabel("Not enough tickets left in this section"); 
 		lblErrorMessage_ValueOutOfRange.setBounds(btnFinish.getBounds().x, btnFinish.getBounds().y+btnFinish.getBounds().height+lineSpacing+5, 325, 30);
 		lblErrorMessage_ValueOutOfRange.setHorizontalAlignment(SwingConstants.LEFT);
 		lblErrorMessage_ValueOutOfRange.setFont(UI_Elements.font_bodyFillText);

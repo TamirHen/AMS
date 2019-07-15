@@ -15,11 +15,11 @@ public class Stadium {
 
 	// Constructor:
 	private Stadium(int stadiumId, String stadiumName, String homeTeam, int capacity, String address, int numOfSections, Section[] arenaSection) {
-		this.setStadiumId(stadiumId);
-		this.setStadiumName(stadiumName);
-		this.setHomeTeam(homeTeam);
-		this.setCapacity(capacity);
-		this.setAddress(address);
+		this.stadiumId=stadiumId;
+		this.stadiumName=stadiumName;
+		this.homeTeam=homeTeam;
+		this.capacity=capacity;
+		this.address=address;
 		this.numOfSections=numOfSections;
 		this.arenaSection = arenaSection;
 

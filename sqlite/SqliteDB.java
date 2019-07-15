@@ -239,11 +239,25 @@ public class SqliteDB {
 	}
 	
 	
-	public void createGameDB(String name, String date, Season season) {
+	public void createGameDB(String name, String date, Season season, Game game) {
 		try {
 			this.stmt = c.createStatement();
 			System.out.println("insert into Game values('"+name+"', '"+date+"', "+0+", "+0+", "+0+", "+0+", "+0+", "+0+", "+0+", "+0+", "+0+", '"+season.getName()+"')"); //Initialize values to 0 in the DB
 			stmt.executeUpdate("insert into Game values('"+name+"', '"+date+"', "+0+", "+0+", "+0+", "+0+", "+0+", "+0+", "+0+", "+0+", "+0+", '"+season.getName()+"')");
+			createGameSectionsDB(game);
+		} catch (Exception e) {
+			System.out.println("Error: " + e.getMessage());
+
+		}
+	}
+	public void createGameSectionsDB(Game game) {
+		try {
+			this.stmt = c.createStatement();
+			for (int i = 0; i < stadium.getNumOfSections(); i++) {
+				System.out.println("insert into GameSection values("+(i+1)+", '"+game.getName()+"', "+game.gameSections.get(i).getSoldTickets()+")");
+				stmt.executeUpdate("insert into GameSection values("+(i+1)+", '"+game.getName()+"', "+game.gameSections.get(i).getSoldTickets()+")");
+
+			}
 
 		} catch (Exception e) {
 			System.out.println("Error: " + e.getMessage());
