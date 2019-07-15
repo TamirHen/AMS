@@ -499,30 +499,6 @@ public class ViewStadium extends JPanel {
 	}
 
 	
-	/*public String getViewStadiumSectionType(int i_SectionNum) {
-				
-		StringBuilder type = new StringBuilder();
-		String sectionType = null;//model.stadium.getArenaSection(i_SectionNum).getSectionType();		
-		
-		if(sectionType != null)
-		{
-			if(sectionType == "Club Level")
-			{
-				type.append("_" + "ClubLevel");				
-
-			}
-			else
-			{
-				type.append("_" + sectionType);				
-			}
-		}
-		
-		return type.toString();
-	}*/
-	
-	
-
-	
 	public void stadiumSectionSelection(JButton i_Section, MouseAdapter i_SectionAdapter, ImageIcon i_Selectedimg_)
 	{
 		if(i_Section.isSelected() == false)

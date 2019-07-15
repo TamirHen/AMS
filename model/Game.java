@@ -27,7 +27,7 @@ public class Game {
 	private float seasonTicketsRevenue;
 	private float totalGameRevenue;
 	//Constructor
-		public Game (String name, String date, int sadiumCapacity, float vipTicketPrice, float clubLevelTicketPrice, float bleachersTicketPrice, float seasonTicketPrice, Stadium stadium) {
+		public Game (String name, String date, int stadiumCapacity, float vipTicketPrice, float clubLevelTicketPrice, float bleachersTicketPrice, float seasonTicketPrice, Stadium stadium) {
 			this.name=name;
 			this.date=date;
 			this.unsoldTickets=stadiumCapacity;
