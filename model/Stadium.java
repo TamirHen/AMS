@@ -10,7 +10,7 @@ public class Stadium {
 	private String homeTeam;
 	private int capacity;
 	private String address;
-	private Section[] arenaSection;
+	private Section[] arenaSection; //should we change it to list?
 	private int numOfSections;
 
 	// Constructor:

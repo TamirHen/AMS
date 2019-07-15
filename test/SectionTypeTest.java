@@ -11,14 +11,28 @@ import model.Stadium;
 
 public class SectionTypeTest extends TestCase {
 	
-	Stadium stadium;
-	Section[] sectionArray;
-	Section section;
+	private Stadium stadium;
+	private Section[] sectionArray;
+	private Section section1;
+	private Section section2;
+	private Section section3;
+	private String[] expectedSectionTypes;
+	
 	@BeforeEach
 	protected void setUp() throws Exception {
-		sectionArray = new Section[44];
-		section = new Section(1, "1", "High", 20, false, 300, "Club Level");
-		sectionArray[0] = section;
+		sectionArray = new Section[3];
+		section1 = new Section(1, "1", "High", 20, false, 300, "VIP");
+		section2 = new Section(2, "2", "Medium", 20, false, 300, "Club Level");
+		section3 = new Section(3, "3", "Low", 20, false, 300, "Bleachers");
+		sectionArray[0] = section1;
+		sectionArray[1] = section2;
+		sectionArray[2] = section3;
+		
+		expectedSectionTypes = new String[3];
+		expectedSectionTypes[0] = "VIP";
+		expectedSectionTypes[1] = "Club Level";
+		expectedSectionTypes[2] = "Bleachers";
+		
 		stadium = Stadium.getInstance(1, "stadiumName", "homeTeam", 12000, "address",10, sectionArray);
 		super.setUp();
 	}
@@ -29,10 +43,27 @@ public class SectionTypeTest extends TestCase {
 	}
 
 	@Test
-	public void testGetArenaSection() {
-		String expectedSection = "Club Level";
-		String actualSection = stadium.getArenaSection(0).getSectionType();
-		assertEquals(expectedSection, actualSection);
+	public void testGetArenaSections() {
+		
+		for(int i=0 ; i<sectionArray.length ; i++)
+		{
+			String actualSectionType = stadium.getArenaSection(i).getSectionType();
+			if(actualSectionType != null)
+			{
+				try
+				{
+					assertEquals(expectedSectionTypes[i], actualSectionType);
+				}
+				catch(AssertionError e)
+				{
+					fail("Returned sectionType does not match expected");
+				}
+			}
+			else
+			{
+				fail("Returned sectionType is null");
+			}
+		}
 	}
 
 }
