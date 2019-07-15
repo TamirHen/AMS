@@ -9,7 +9,7 @@ import java.awt.event.MouseAdapter;
 import java.awt.event.MouseEvent;
 import java.util.ArrayList;
 import java.util.List;
-
+import javax.swing.ToolTipManager;
 import javax.swing.Icon;
 import javax.swing.ImageIcon;
 import javax.swing.JButton;
@@ -566,6 +566,7 @@ public class ViewStadium extends JPanel {
 			try {
 				button.setEnabled(true);
 				button.setCursor(Cursor.getPredefinedCursor(Cursor.HAND_CURSOR));
+				ToolTipManager.sharedInstance().setEnabled(true);
 			}
 			catch (Exception e) {
 				e.printStackTrace();
@@ -581,6 +582,7 @@ public class ViewStadium extends JPanel {
 			try {
 				button.setEnabled(false);
 				button.setCursor(Cursor.getPredefinedCursor(Cursor.DEFAULT_CURSOR));
+				ToolTipManager.sharedInstance().setEnabled(false);
 			}
 			catch (Exception e) {
 				e.printStackTrace();
