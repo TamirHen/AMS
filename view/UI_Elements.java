@@ -2,7 +2,6 @@ package view;
 import java.awt.Color;
 import java.awt.Font;
 import java.awt.Image;
-
 import javax.swing.ImageIcon;
 import javax.swing.JButton;
 import javax.swing.JComponent;
@@ -51,5 +50,7 @@ public class UI_Elements {
 		
 		return scaledImage;
 	}
+
+	
 
 }

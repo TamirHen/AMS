@@ -630,6 +630,7 @@ public class ViewStadium extends JPanel {
 		i_Section.setBorderPainted(false);
 		i_Section.setFocusPainted(false);
 		i_Section.setBorder(null);
+		i_Section.setToolTipText(i_SectionName);
 	}
 	
 	
