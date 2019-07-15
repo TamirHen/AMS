@@ -83,6 +83,7 @@ public class Model {
 	public void createNewGame(String name, String date,int seasonIndex, int sadiumCapacity, float vipTicketPrice, float clubLevelTicketPrice, float bleachersTicketPrice, float seasonTicketPrice, Stadium stadium) {
 		this.season.get(seasonIndex).createGame(name, date, sadiumCapacity, vipTicketPrice, clubLevelTicketPrice, bleachersTicketPrice, seasonTicketPrice, stadium);
 		db.createGameDB(name, date, this.season.get(seasonIndex));
+		//need to add the inistialize of gameSection arrayList
 	}
 
 	

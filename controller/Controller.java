@@ -556,9 +556,7 @@ public class Controller {
 				
 			}
 		});
-		
-	
-		
+				
 //		for (int i = 0; i < model.sponsorsSize; i++) {
 //			view.salesPanel.sponsorshipsPanel.sponsorTable.add(model.sponsors.get(i));
 //			
@@ -570,7 +568,7 @@ public class Controller {
 //		});
 		//-----------------------------------------//
 		
-		//---Game Panel (in view)---//
+		//---Games Panel (in view)---//
 		for (int i = 0; i < model.seasonSize; i++) {
 			view.gamesPanel.cb_SalesSeason.addItem(model.season.get(i).getName() + " - " + model.season.get(i).getLeagueName());
 		}
@@ -601,6 +599,18 @@ public class Controller {
 				view.gamesPanel.addSeasonPanel.tf_LeagueName.setText("");
 			}
 		});
+		view.gamesPanel.sectionDetailsPanel.btnAddTicketSale.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent arg0) {
+				view.gamesPanel.sectionDetailsPanel.frameAddTicketSale.setVisible(true);
+				
+				view.gamesPanel.sectionDetailsPanel.frameAddTicketSale.lblSectionNumber.setText(model.stadium.getArenaSection(Integer.parseInt(view.gamesPanel.gamesStadiumPanel.lastSelectedButton.getName())-1).getSectionName());
+				view.gamesPanel.sectionDetailsPanel.frameAddTicketSale.lblSectionTypeValue.setText(model.stadium.getArenaSection(Integer.parseInt(view.gamesPanel.gamesStadiumPanel.lastSelectedButton.getName())-1).getSectionType());
+				view.gamesPanel.sectionDetailsPanel.frameAddTicketSale.lblTicketPriceValue.setText(String.valueOf(model.stadium.getArenaSection(Integer.parseInt(view.gamesPanel.gamesStadiumPanel.lastSelectedButton.getName())-1).getTicketPrice()));
+				//error here:
+				view.gamesPanel.sectionDetailsPanel.frameAddTicketSale.lblAvailableTicketsValue.setText(String.valueOf(model.season.get(view.gamesPanel.cb_SalesSeason.getSelectedIndex()).games.get(view.gamesPanel.cb_SalesGame.getSelectedIndex()).gameSections.get(Integer.valueOf(view.gamesPanel.gamesStadiumPanel.lastSelectedButton.getName())-1).getUnsoldTickets()));
+
+			}
+		});
 		//---ViewStadium Image Manipulations---//
 		
 		String path44 = "/Images/StadiumSlices/Stadium" + getViewStadiumSectionType(44) + "_44.png"; //TODO
@@ -628,6 +638,8 @@ public class Controller {
 		view.gamesPanel.gamesStadiumPanel.viewStadium_44.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
 				view.gamesPanel.gamesStadiumPanel.stadiumSectionSelection(view.gamesPanel.gamesStadiumPanel.viewStadium_44, ma44_Games, img_44_S);
+				viewSectionDetails(view.gamesPanel.cb_SalesSeason.getSelectedIndex(), view.gamesPanel.cb_SalesGame.getSelectedIndex(), 43, true);
+
 			}
 		});
 		view.gamesPanel.gamesStadiumPanel.viewStadium_44.addMouseListener(ma44_Games);
@@ -646,6 +658,8 @@ public class Controller {
 		view.overviewPanel.overviewStadiumPanel.viewStadium_43.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
 				view.overviewPanel.overviewStadiumPanel.stadiumSectionSelection(view.overviewPanel.overviewStadiumPanel.viewStadium_43, ma43_Overview, img_43_S);
+				viewSectionDetails(view.gamesPanel.cb_SalesSeason.getSelectedIndex(), view.gamesPanel.cb_SalesGame.getSelectedIndex(), 42, false);
+
 			}
 		});
 		view.overviewPanel.overviewStadiumPanel.viewStadium_43.addMouseListener(ma43_Overview);
@@ -656,6 +670,8 @@ public class Controller {
 		view.gamesPanel.gamesStadiumPanel.viewStadium_43.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
 				view.gamesPanel.gamesStadiumPanel.stadiumSectionSelection(view.gamesPanel.gamesStadiumPanel.viewStadium_43, ma43_Games, img_43_S);
+				viewSectionDetails(view.gamesPanel.cb_SalesSeason.getSelectedIndex(), view.gamesPanel.cb_SalesGame.getSelectedIndex(), 42, true);
+
 			}
 		});
 		view.gamesPanel.gamesStadiumPanel.viewStadium_43.addMouseListener(ma43_Games);
@@ -675,6 +691,8 @@ public class Controller {
 		view.overviewPanel.overviewStadiumPanel.viewStadium_42.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
 				view.overviewPanel.overviewStadiumPanel.stadiumSectionSelection(view.overviewPanel.overviewStadiumPanel.viewStadium_42, ma42_Overview, img_42_S);
+				viewSectionDetails(view.gamesPanel.cb_SalesSeason.getSelectedIndex(), view.gamesPanel.cb_SalesGame.getSelectedIndex(), 41, false);
+
 			}
 		});
 		view.overviewPanel.overviewStadiumPanel.viewStadium_42.addMouseListener(ma42_Overview);
@@ -685,6 +703,8 @@ public class Controller {
 		view.gamesPanel.gamesStadiumPanel.viewStadium_42.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
 				view.gamesPanel.gamesStadiumPanel.stadiumSectionSelection(view.gamesPanel.gamesStadiumPanel.viewStadium_42, ma42_Games, img_42_S);
+				viewSectionDetails(view.gamesPanel.cb_SalesSeason.getSelectedIndex(), view.gamesPanel.cb_SalesGame.getSelectedIndex(), 41, true);
+
 			}
 		});
 		view.gamesPanel.gamesStadiumPanel.viewStadium_42.addMouseListener(ma42_Games);
@@ -704,6 +724,8 @@ public class Controller {
 		view.overviewPanel.overviewStadiumPanel.viewStadium_41.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
 				view.overviewPanel.overviewStadiumPanel.stadiumSectionSelection(view.overviewPanel.overviewStadiumPanel.viewStadium_41, ma41_Overview, img_41_S);
+				viewSectionDetails(view.gamesPanel.cb_SalesSeason.getSelectedIndex(), view.gamesPanel.cb_SalesGame.getSelectedIndex(), 40, false);
+
 			}
 		});
 		view.overviewPanel.overviewStadiumPanel.viewStadium_41.addMouseListener(ma41_Overview);
@@ -714,6 +736,8 @@ public class Controller {
 		view.gamesPanel.gamesStadiumPanel.viewStadium_41.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
 				view.gamesPanel.gamesStadiumPanel.stadiumSectionSelection(view.gamesPanel.gamesStadiumPanel.viewStadium_41, ma41_Games, img_41_S);
+				viewSectionDetails(view.gamesPanel.cb_SalesSeason.getSelectedIndex(), view.gamesPanel.cb_SalesGame.getSelectedIndex(), 40, true);
+
 			}
 		});
 		view.gamesPanel.gamesStadiumPanel.viewStadium_41.addMouseListener(ma41_Games);
@@ -733,6 +757,8 @@ public class Controller {
 		view.overviewPanel.overviewStadiumPanel.viewStadium_40.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
 				view.overviewPanel.overviewStadiumPanel.stadiumSectionSelection(view.overviewPanel.overviewStadiumPanel.viewStadium_40, ma40_Overview, img_40_S);
+				viewSectionDetails(view.gamesPanel.cb_SalesSeason.getSelectedIndex(), view.gamesPanel.cb_SalesGame.getSelectedIndex(), 39, false);
+
 			}
 		});
 		view.overviewPanel.overviewStadiumPanel.viewStadium_40.addMouseListener(ma40_Overview);
@@ -743,6 +769,9 @@ public class Controller {
 		view.gamesPanel.gamesStadiumPanel.viewStadium_40.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
 				view.gamesPanel.gamesStadiumPanel.stadiumSectionSelection(view.gamesPanel.gamesStadiumPanel.viewStadium_40, ma40_Games, img_40_S);
+				viewSectionDetails(view.gamesPanel.cb_SalesSeason.getSelectedIndex(), view.gamesPanel.cb_SalesGame.getSelectedIndex(), 39, true);
+
+
 			}
 		});
 		view.gamesPanel.gamesStadiumPanel.viewStadium_40.addMouseListener(ma40_Games);
@@ -761,6 +790,8 @@ public class Controller {
 		view.overviewPanel.overviewStadiumPanel.viewStadium_20.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
 				view.overviewPanel.overviewStadiumPanel.stadiumSectionSelection(view.overviewPanel.overviewStadiumPanel.viewStadium_20, ma20_Overview, img_20_S);
+				viewSectionDetails(view.gamesPanel.cb_SalesSeason.getSelectedIndex(), view.gamesPanel.cb_SalesGame.getSelectedIndex(), 19, false);
+
 			}
 		});
 		view.overviewPanel.overviewStadiumPanel.viewStadium_20.addMouseListener(ma20_Overview);
@@ -771,6 +802,8 @@ public class Controller {
 		view.gamesPanel.gamesStadiumPanel.viewStadium_20.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
 				view.gamesPanel.gamesStadiumPanel.stadiumSectionSelection(view.gamesPanel.gamesStadiumPanel.viewStadium_20, ma20_Games, img_20_S);
+				viewSectionDetails(view.gamesPanel.cb_SalesSeason.getSelectedIndex(), view.gamesPanel.cb_SalesGame.getSelectedIndex(), 19, true);
+
 			}
 		});
 		view.gamesPanel.gamesStadiumPanel.viewStadium_20.addMouseListener(ma20_Games);
@@ -789,6 +822,8 @@ public class Controller {
 		view.overviewPanel.overviewStadiumPanel.viewStadium_1.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
 				view.overviewPanel.overviewStadiumPanel.stadiumSectionSelection(view.overviewPanel.overviewStadiumPanel.viewStadium_1, ma1_Overview, img_1_S);
+				viewSectionDetails(view.gamesPanel.cb_SalesSeason.getSelectedIndex(), view.gamesPanel.cb_SalesGame.getSelectedIndex(), 0, false);
+
 			}
 		});
 		view.overviewPanel.overviewStadiumPanel.viewStadium_1.addMouseListener(ma1_Overview);
@@ -799,6 +834,8 @@ public class Controller {
 		view.gamesPanel.gamesStadiumPanel.viewStadium_1.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
 				view.gamesPanel.gamesStadiumPanel.stadiumSectionSelection(view.gamesPanel.gamesStadiumPanel.viewStadium_1, ma1_Games, img_1_S);
+				viewSectionDetails(view.gamesPanel.cb_SalesSeason.getSelectedIndex(), view.gamesPanel.cb_SalesGame.getSelectedIndex(), 0, true);
+
 			}
 		});
 		view.gamesPanel.gamesStadiumPanel.viewStadium_1.addMouseListener(ma1_Games);
@@ -817,6 +854,7 @@ public class Controller {
 		view.overviewPanel.overviewStadiumPanel.viewStadium_2.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
 				view.overviewPanel.overviewStadiumPanel.stadiumSectionSelection(view.overviewPanel.overviewStadiumPanel.viewStadium_2, ma2_Overview, img_2_S);
+				viewSectionDetails(view.gamesPanel.cb_SalesSeason.getSelectedIndex(), view.gamesPanel.cb_SalesGame.getSelectedIndex(), 1, false);
 			}
 		});
 		view.overviewPanel.overviewStadiumPanel.viewStadium_2.addMouseListener(ma2_Overview);
@@ -827,6 +865,8 @@ public class Controller {
 		view.gamesPanel.gamesStadiumPanel.viewStadium_2.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
 				view.gamesPanel.gamesStadiumPanel.stadiumSectionSelection(view.gamesPanel.gamesStadiumPanel.viewStadium_2, ma2_Games, img_2_S);
+				viewSectionDetails(view.gamesPanel.cb_SalesSeason.getSelectedIndex(), view.gamesPanel.cb_SalesGame.getSelectedIndex(), 1, true);
+
 			}
 		});
 		view.gamesPanel.gamesStadiumPanel.viewStadium_2.addMouseListener(ma2_Games);
@@ -845,6 +885,8 @@ public class Controller {
 		view.overviewPanel.overviewStadiumPanel.viewStadium_3.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
 				view.overviewPanel.overviewStadiumPanel.stadiumSectionSelection(view.overviewPanel.overviewStadiumPanel.viewStadium_3, ma3_Overview, img_3_S);
+				viewSectionDetails(view.gamesPanel.cb_SalesSeason.getSelectedIndex(), view.gamesPanel.cb_SalesGame.getSelectedIndex(), 2, false);
+
 			}
 		});
 		view.overviewPanel.overviewStadiumPanel.viewStadium_3.addMouseListener(ma3_Overview);
@@ -855,6 +897,8 @@ public class Controller {
 		view.gamesPanel.gamesStadiumPanel.viewStadium_3.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
 				view.gamesPanel.gamesStadiumPanel.stadiumSectionSelection(view.gamesPanel.gamesStadiumPanel.viewStadium_3, ma3_Games, img_3_S);
+				viewSectionDetails(view.gamesPanel.cb_SalesSeason.getSelectedIndex(), view.gamesPanel.cb_SalesGame.getSelectedIndex(), 2, true);
+
 			}
 		});
 		view.gamesPanel.gamesStadiumPanel.viewStadium_3.addMouseListener(ma3_Games);
@@ -873,6 +917,8 @@ public class Controller {
 		view.overviewPanel.overviewStadiumPanel.viewStadium_4.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
 				view.overviewPanel.overviewStadiumPanel.stadiumSectionSelection(view.overviewPanel.overviewStadiumPanel.viewStadium_4, ma4_Overview, img_4_S);
+				viewSectionDetails(view.gamesPanel.cb_SalesSeason.getSelectedIndex(), view.gamesPanel.cb_SalesGame.getSelectedIndex(), 3, false);
+
 			}
 		});
 		view.overviewPanel.overviewStadiumPanel.viewStadium_4.addMouseListener(ma4_Overview);
@@ -883,6 +929,8 @@ public class Controller {
 		view.gamesPanel.gamesStadiumPanel.viewStadium_4.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
 				view.gamesPanel.gamesStadiumPanel.stadiumSectionSelection(view.gamesPanel.gamesStadiumPanel.viewStadium_4, ma4_Games, img_4_S);
+				viewSectionDetails(view.gamesPanel.cb_SalesSeason.getSelectedIndex(), view.gamesPanel.cb_SalesGame.getSelectedIndex(), 3, true);
+
 			}
 		});
 		view.gamesPanel.gamesStadiumPanel.viewStadium_4.addMouseListener(ma4_Games);
@@ -903,6 +951,8 @@ public class Controller {
 		view.overviewPanel.overviewStadiumPanel.viewStadium_5.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
 				view.overviewPanel.overviewStadiumPanel.stadiumSectionSelection(view.overviewPanel.overviewStadiumPanel.viewStadium_5, ma5_Overview, img_5_S);
+				viewSectionDetails(view.gamesPanel.cb_SalesSeason.getSelectedIndex(), view.gamesPanel.cb_SalesGame.getSelectedIndex(), 4, false);
+
 			}
 		});
 		view.overviewPanel.overviewStadiumPanel.viewStadium_5.addMouseListener(ma5_Overview);
@@ -913,6 +963,8 @@ public class Controller {
 		view.gamesPanel.gamesStadiumPanel.viewStadium_5.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
 				view.gamesPanel.gamesStadiumPanel.stadiumSectionSelection(view.gamesPanel.gamesStadiumPanel.viewStadium_5, ma5_Games, img_5_S);
+				viewSectionDetails(view.gamesPanel.cb_SalesSeason.getSelectedIndex(), view.gamesPanel.cb_SalesGame.getSelectedIndex(), 4, true);
+
 			}
 		});
 		view.gamesPanel.gamesStadiumPanel.viewStadium_5.addMouseListener(ma5_Games);
@@ -933,6 +985,8 @@ public class Controller {
 		view.overviewPanel.overviewStadiumPanel.viewStadium_6.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
 				view.overviewPanel.overviewStadiumPanel.stadiumSectionSelection(view.overviewPanel.overviewStadiumPanel.viewStadium_6, ma6_Overview, img_6_S);
+				viewSectionDetails(view.gamesPanel.cb_SalesSeason.getSelectedIndex(), view.gamesPanel.cb_SalesGame.getSelectedIndex(), 5, false);
+
 			}
 		});
 		view.overviewPanel.overviewStadiumPanel.viewStadium_6.addMouseListener(ma6_Overview);
@@ -943,6 +997,9 @@ public class Controller {
 		view.gamesPanel.gamesStadiumPanel.viewStadium_6.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
 				view.gamesPanel.gamesStadiumPanel.stadiumSectionSelection(view.gamesPanel.gamesStadiumPanel.viewStadium_6, ma6_Games, img_6_S);
+				viewSectionDetails(view.gamesPanel.cb_SalesSeason.getSelectedIndex(), view.gamesPanel.cb_SalesGame.getSelectedIndex(), 5, true);
+
+
 			}
 		});
 		view.gamesPanel.gamesStadiumPanel.viewStadium_6.addMouseListener(ma6_Games);
@@ -962,6 +1019,8 @@ public class Controller {
 		view.overviewPanel.overviewStadiumPanel.viewStadium_7.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
 				view.overviewPanel.overviewStadiumPanel.stadiumSectionSelection(view.overviewPanel.overviewStadiumPanel.viewStadium_7, ma7_Overview, img_7_S);
+				viewSectionDetails(view.gamesPanel.cb_SalesSeason.getSelectedIndex(), view.gamesPanel.cb_SalesGame.getSelectedIndex(), 6, false);
+
 			}
 		});
 		view.overviewPanel.overviewStadiumPanel.viewStadium_7.addMouseListener(ma7_Overview);
@@ -972,6 +1031,8 @@ public class Controller {
 		view.gamesPanel.gamesStadiumPanel.viewStadium_7.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
 				view.gamesPanel.gamesStadiumPanel.stadiumSectionSelection(view.gamesPanel.gamesStadiumPanel.viewStadium_7, ma7_Games, img_7_S);
+				viewSectionDetails(view.gamesPanel.cb_SalesSeason.getSelectedIndex(), view.gamesPanel.cb_SalesGame.getSelectedIndex(), 6, true);
+
 			}
 		});
 		view.gamesPanel.gamesStadiumPanel.viewStadium_7.addMouseListener(ma7_Games);
@@ -990,6 +1051,7 @@ public class Controller {
 		view.overviewPanel.overviewStadiumPanel.viewStadium_21.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
 				view.overviewPanel.overviewStadiumPanel.stadiumSectionSelection(view.overviewPanel.overviewStadiumPanel.viewStadium_21, ma21_Overview, img_21_S);
+				viewSectionDetails(view.gamesPanel.cb_SalesSeason.getSelectedIndex(), view.gamesPanel.cb_SalesGame.getSelectedIndex(), 20, false);
 			}
 		});
 		view.overviewPanel.overviewStadiumPanel.viewStadium_21.addMouseListener(ma21_Overview);
@@ -1000,6 +1062,7 @@ public class Controller {
 		view.gamesPanel.gamesStadiumPanel.viewStadium_21.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
 				view.gamesPanel.gamesStadiumPanel.stadiumSectionSelection(view.gamesPanel.gamesStadiumPanel.viewStadium_21, ma21_Games, img_21_S);
+				viewSectionDetails(view.gamesPanel.cb_SalesSeason.getSelectedIndex(), view.gamesPanel.cb_SalesGame.getSelectedIndex(), 20, true);
 			}
 		});
 		view.gamesPanel.gamesStadiumPanel.viewStadium_21.addMouseListener(ma21_Games);
@@ -1018,6 +1081,7 @@ public class Controller {
 		view.overviewPanel.overviewStadiumPanel.viewStadium_22.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
 				view.overviewPanel.overviewStadiumPanel.stadiumSectionSelection(view.overviewPanel.overviewStadiumPanel.viewStadium_22, ma22_Overview, img_22_S);
+				viewSectionDetails(view.gamesPanel.cb_SalesSeason.getSelectedIndex(), view.gamesPanel.cb_SalesGame.getSelectedIndex(), 21, false);
 			}
 		});
 		view.overviewPanel.overviewStadiumPanel.viewStadium_22.addMouseListener(ma22_Overview);
@@ -1028,6 +1092,7 @@ public class Controller {
 		view.gamesPanel.gamesStadiumPanel.viewStadium_22.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
 				view.gamesPanel.gamesStadiumPanel.stadiumSectionSelection(view.gamesPanel.gamesStadiumPanel.viewStadium_22, ma22_Games, img_22_S);
+				viewSectionDetails(view.gamesPanel.cb_SalesSeason.getSelectedIndex(), view.gamesPanel.cb_SalesGame.getSelectedIndex(), 21, true);
 			}
 		});
 		view.gamesPanel.gamesStadiumPanel.viewStadium_22.addMouseListener(ma22_Games);
@@ -1046,6 +1111,7 @@ public class Controller {
 		view.overviewPanel.overviewStadiumPanel.viewStadium_23.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
 				view.overviewPanel.overviewStadiumPanel.stadiumSectionSelection(view.overviewPanel.overviewStadiumPanel.viewStadium_23, ma23_Overview, img_23_S);
+				viewSectionDetails(view.gamesPanel.cb_SalesSeason.getSelectedIndex(), view.gamesPanel.cb_SalesGame.getSelectedIndex(), 22, false);
 			}
 		});
 		view.overviewPanel.overviewStadiumPanel.viewStadium_23.addMouseListener(ma23_Overview);
@@ -1056,6 +1122,7 @@ public class Controller {
 		view.gamesPanel.gamesStadiumPanel.viewStadium_23.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
 				view.gamesPanel.gamesStadiumPanel.stadiumSectionSelection(view.gamesPanel.gamesStadiumPanel.viewStadium_23, ma23_Games, img_23_S);
+				viewSectionDetails(view.gamesPanel.cb_SalesSeason.getSelectedIndex(), view.gamesPanel.cb_SalesGame.getSelectedIndex(), 22, true);
 			}
 		});
 		view.gamesPanel.gamesStadiumPanel.viewStadium_23.addMouseListener(ma23_Games);
@@ -1074,6 +1141,7 @@ public class Controller {
 		view.overviewPanel.overviewStadiumPanel.viewStadium_24.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
 				view.overviewPanel.overviewStadiumPanel.stadiumSectionSelection(view.overviewPanel.overviewStadiumPanel.viewStadium_24, ma24_Overview, img_24_S);
+				viewSectionDetails(view.gamesPanel.cb_SalesSeason.getSelectedIndex(), view.gamesPanel.cb_SalesGame.getSelectedIndex(), 23, false);
 			}
 		});
 		view.overviewPanel.overviewStadiumPanel.viewStadium_24.addMouseListener(ma24_Overview);
@@ -1084,6 +1152,7 @@ public class Controller {
 		view.gamesPanel.gamesStadiumPanel.viewStadium_24.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
 				view.gamesPanel.gamesStadiumPanel.stadiumSectionSelection(view.gamesPanel.gamesStadiumPanel.viewStadium_24, ma24_Games, img_24_S);
+				viewSectionDetails(view.gamesPanel.cb_SalesSeason.getSelectedIndex(), view.gamesPanel.cb_SalesGame.getSelectedIndex(), 23, true);
 			}
 		});
 		view.gamesPanel.gamesStadiumPanel.viewStadium_24.addMouseListener(ma24_Games);
@@ -1101,6 +1170,7 @@ public class Controller {
 		view.overviewPanel.overviewStadiumPanel.viewStadium_25.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
 				view.overviewPanel.overviewStadiumPanel.stadiumSectionSelection(view.overviewPanel.overviewStadiumPanel.viewStadium_25, ma25_Overview, img_25_S);
+				viewSectionDetails(view.gamesPanel.cb_SalesSeason.getSelectedIndex(), view.gamesPanel.cb_SalesGame.getSelectedIndex(), 24, false);
 			}
 		});
 		view.overviewPanel.overviewStadiumPanel.viewStadium_25.addMouseListener(ma25_Overview);
@@ -1111,6 +1181,7 @@ public class Controller {
 		view.gamesPanel.gamesStadiumPanel.viewStadium_25.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
 				view.gamesPanel.gamesStadiumPanel.stadiumSectionSelection(view.gamesPanel.gamesStadiumPanel.viewStadium_25, ma25_Games, img_25_S);
+				viewSectionDetails(view.gamesPanel.cb_SalesSeason.getSelectedIndex(), view.gamesPanel.cb_SalesGame.getSelectedIndex(), 24, true);
 			}
 		});
 		view.gamesPanel.gamesStadiumPanel.viewStadium_25.addMouseListener(ma25_Games);
@@ -1129,6 +1200,7 @@ public class Controller {
 		view.overviewPanel.overviewStadiumPanel.viewStadium_26.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
 				view.overviewPanel.overviewStadiumPanel.stadiumSectionSelection(view.overviewPanel.overviewStadiumPanel.viewStadium_26, ma26_Overview, img_26_S);
+				viewSectionDetails(view.gamesPanel.cb_SalesSeason.getSelectedIndex(), view.gamesPanel.cb_SalesGame.getSelectedIndex(), 25, false);
 			}
 		});
 		view.overviewPanel.overviewStadiumPanel.viewStadium_26.addMouseListener(ma26_Overview);
@@ -1139,6 +1211,7 @@ public class Controller {
 		view.gamesPanel.gamesStadiumPanel.viewStadium_26.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
 				view.gamesPanel.gamesStadiumPanel.stadiumSectionSelection(view.gamesPanel.gamesStadiumPanel.viewStadium_26, ma26_Games, img_26_S);
+				viewSectionDetails(view.gamesPanel.cb_SalesSeason.getSelectedIndex(), view.gamesPanel.cb_SalesGame.getSelectedIndex(), 25, true);
 			}
 		});
 		view.gamesPanel.gamesStadiumPanel.viewStadium_26.addMouseListener(ma26_Games);
@@ -1156,6 +1229,7 @@ public class Controller {
 		view.overviewPanel.overviewStadiumPanel.viewStadium_27.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
 				view.overviewPanel.overviewStadiumPanel.stadiumSectionSelection(view.overviewPanel.overviewStadiumPanel.viewStadium_27, ma27_Overview, img_27_S);
+				viewSectionDetails(view.gamesPanel.cb_SalesSeason.getSelectedIndex(), view.gamesPanel.cb_SalesGame.getSelectedIndex(), 26, false);
 			}
 		});
 		view.overviewPanel.overviewStadiumPanel.viewStadium_27.addMouseListener(ma27_Overview);
@@ -1166,6 +1240,7 @@ public class Controller {
 		view.gamesPanel.gamesStadiumPanel.viewStadium_27.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
 				view.gamesPanel.gamesStadiumPanel.stadiumSectionSelection(view.gamesPanel.gamesStadiumPanel.viewStadium_27, ma27_Games, img_27_S);
+				viewSectionDetails(view.gamesPanel.cb_SalesSeason.getSelectedIndex(), view.gamesPanel.cb_SalesGame.getSelectedIndex(), 26, true);
 			}
 		});
 		view.gamesPanel.gamesStadiumPanel.viewStadium_27.addMouseListener(ma27_Games);
@@ -1184,6 +1259,7 @@ public class Controller {
 		view.overviewPanel.overviewStadiumPanel.viewStadium_28.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
 				view.overviewPanel.overviewStadiumPanel.stadiumSectionSelection(view.overviewPanel.overviewStadiumPanel.viewStadium_28, ma28_Overview, img_28_S);
+				viewSectionDetails(view.gamesPanel.cb_SalesSeason.getSelectedIndex(), view.gamesPanel.cb_SalesGame.getSelectedIndex(), 27, false);
 			}
 		});
 		view.overviewPanel.overviewStadiumPanel.viewStadium_28.addMouseListener(ma28_Overview);
@@ -1194,6 +1270,7 @@ public class Controller {
 		view.gamesPanel.gamesStadiumPanel.viewStadium_28.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
 				view.gamesPanel.gamesStadiumPanel.stadiumSectionSelection(view.gamesPanel.gamesStadiumPanel.viewStadium_28, ma28_Games, img_28_S);
+				viewSectionDetails(view.gamesPanel.cb_SalesSeason.getSelectedIndex(), view.gamesPanel.cb_SalesGame.getSelectedIndex(), 27, true);
 			}
 		});
 		view.gamesPanel.gamesStadiumPanel.viewStadium_28.addMouseListener(ma28_Games);
@@ -1212,6 +1289,7 @@ public class Controller {
 		view.overviewPanel.overviewStadiumPanel.viewStadium_29.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
 				view.overviewPanel.overviewStadiumPanel.stadiumSectionSelection(view.overviewPanel.overviewStadiumPanel.viewStadium_29, ma29_Overview, img_29_S);
+				viewSectionDetails(view.gamesPanel.cb_SalesSeason.getSelectedIndex(), view.gamesPanel.cb_SalesGame.getSelectedIndex(), 28, false);
 			}
 		});
 		view.overviewPanel.overviewStadiumPanel.viewStadium_29.addMouseListener(ma29_Overview);
@@ -1222,6 +1300,7 @@ public class Controller {
 		view.gamesPanel.gamesStadiumPanel.viewStadium_29.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
 				view.gamesPanel.gamesStadiumPanel.stadiumSectionSelection(view.gamesPanel.gamesStadiumPanel.viewStadium_29, ma29_Games, img_29_S);
+				viewSectionDetails(view.gamesPanel.cb_SalesSeason.getSelectedIndex(), view.gamesPanel.cb_SalesGame.getSelectedIndex(), 28, true);
 			}
 		});
 		view.gamesPanel.gamesStadiumPanel.viewStadium_29.addMouseListener(ma29_Games);
@@ -1240,6 +1319,7 @@ public class Controller {
 		view.overviewPanel.overviewStadiumPanel.viewStadium_30.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
 				view.overviewPanel.overviewStadiumPanel.stadiumSectionSelection(view.overviewPanel.overviewStadiumPanel.viewStadium_30, ma30_Overview, img_30_S);
+				viewSectionDetails(view.gamesPanel.cb_SalesSeason.getSelectedIndex(), view.gamesPanel.cb_SalesGame.getSelectedIndex(), 29, false);
 			}
 		});
 		view.overviewPanel.overviewStadiumPanel.viewStadium_30.addMouseListener(ma30_Overview);
@@ -1250,6 +1330,7 @@ public class Controller {
 		view.gamesPanel.gamesStadiumPanel.viewStadium_30.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
 				view.gamesPanel.gamesStadiumPanel.stadiumSectionSelection(view.gamesPanel.gamesStadiumPanel.viewStadium_30, ma30_Games, img_30_S);
+				viewSectionDetails(view.gamesPanel.cb_SalesSeason.getSelectedIndex(), view.gamesPanel.cb_SalesGame.getSelectedIndex(), 29, true);
 			}
 		});
 		view.gamesPanel.gamesStadiumPanel.viewStadium_30.addMouseListener(ma30_Games);
@@ -1268,6 +1349,7 @@ public class Controller {
 		view.overviewPanel.overviewStadiumPanel.viewStadium_31.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
 				view.overviewPanel.overviewStadiumPanel.stadiumSectionSelection(view.overviewPanel.overviewStadiumPanel.viewStadium_31, ma31_Overview, img_31_S);
+				viewSectionDetails(view.gamesPanel.cb_SalesSeason.getSelectedIndex(), view.gamesPanel.cb_SalesGame.getSelectedIndex(), 30, false);
 			}
 		});
 		view.overviewPanel.overviewStadiumPanel.viewStadium_31.addMouseListener(ma31_Overview);
@@ -1278,6 +1360,7 @@ public class Controller {
 		view.gamesPanel.gamesStadiumPanel.viewStadium_31.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
 				view.gamesPanel.gamesStadiumPanel.stadiumSectionSelection(view.gamesPanel.gamesStadiumPanel.viewStadium_31, ma31_Games, img_31_S);
+				viewSectionDetails(view.gamesPanel.cb_SalesSeason.getSelectedIndex(), view.gamesPanel.cb_SalesGame.getSelectedIndex(), 30, true);
 			}
 		});
 		view.gamesPanel.gamesStadiumPanel.viewStadium_31.addMouseListener(ma31_Games);		
@@ -1295,6 +1378,7 @@ public class Controller {
 		view.overviewPanel.overviewStadiumPanel.viewStadium_8.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
 				view.overviewPanel.overviewStadiumPanel.stadiumSectionSelection(view.overviewPanel.overviewStadiumPanel.viewStadium_8, ma8_Overview, img_8_S);
+				viewSectionDetails(view.gamesPanel.cb_SalesSeason.getSelectedIndex(), view.gamesPanel.cb_SalesGame.getSelectedIndex(), 7, false);
 			}
 		});
 		view.overviewPanel.overviewStadiumPanel.viewStadium_8.addMouseListener(ma8_Overview);
@@ -1305,6 +1389,7 @@ public class Controller {
 		view.gamesPanel.gamesStadiumPanel.viewStadium_8.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
 				view.gamesPanel.gamesStadiumPanel.stadiumSectionSelection(view.gamesPanel.gamesStadiumPanel.viewStadium_8, ma8_Games, img_8_S);
+				viewSectionDetails(view.gamesPanel.cb_SalesSeason.getSelectedIndex(), view.gamesPanel.cb_SalesGame.getSelectedIndex(), 7, true);
 			}
 		});
 		view.gamesPanel.gamesStadiumPanel.viewStadium_8.addMouseListener(ma8_Games);
@@ -1323,6 +1408,7 @@ public class Controller {
 		view.overviewPanel.overviewStadiumPanel.viewStadium_9.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
 				view.overviewPanel.overviewStadiumPanel.stadiumSectionSelection(view.overviewPanel.overviewStadiumPanel.viewStadium_9, ma9_Overview, img_9_S);
+				viewSectionDetails(view.gamesPanel.cb_SalesSeason.getSelectedIndex(), view.gamesPanel.cb_SalesGame.getSelectedIndex(), 8, false);
 			}
 		});
 		view.overviewPanel.overviewStadiumPanel.viewStadium_9.addMouseListener(ma9_Overview);
@@ -1333,6 +1419,7 @@ public class Controller {
 		view.gamesPanel.gamesStadiumPanel.viewStadium_9.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
 				view.gamesPanel.gamesStadiumPanel.stadiumSectionSelection(view.gamesPanel.gamesStadiumPanel.viewStadium_9, ma9_Games, img_9_S);
+				viewSectionDetails(view.gamesPanel.cb_SalesSeason.getSelectedIndex(), view.gamesPanel.cb_SalesGame.getSelectedIndex(), 8, true);
 			}
 		});
 		view.gamesPanel.gamesStadiumPanel.viewStadium_9.addMouseListener(ma9_Games);
@@ -1351,6 +1438,7 @@ public class Controller {
 		view.overviewPanel.overviewStadiumPanel.viewStadium_19.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
 				view.overviewPanel.overviewStadiumPanel.stadiumSectionSelection(view.overviewPanel.overviewStadiumPanel.viewStadium_19, ma19_Overview, img_19_S);
+				viewSectionDetails(view.gamesPanel.cb_SalesSeason.getSelectedIndex(), view.gamesPanel.cb_SalesGame.getSelectedIndex(), 18, false);
 			}
 		});
 		view.overviewPanel.overviewStadiumPanel.viewStadium_19.addMouseListener(ma19_Overview);
@@ -1361,6 +1449,7 @@ public class Controller {
 		view.gamesPanel.gamesStadiumPanel.viewStadium_19.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
 				view.gamesPanel.gamesStadiumPanel.stadiumSectionSelection(view.gamesPanel.gamesStadiumPanel.viewStadium_19, ma19_Games, img_19_S);
+				viewSectionDetails(view.gamesPanel.cb_SalesSeason.getSelectedIndex(), view.gamesPanel.cb_SalesGame.getSelectedIndex(), 18, true);
 			}
 		});
 		view.gamesPanel.gamesStadiumPanel.viewStadium_19.addMouseListener(ma19_Games);
@@ -1379,6 +1468,7 @@ public class Controller {
 		view.overviewPanel.overviewStadiumPanel.viewStadium_18.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
 				view.overviewPanel.overviewStadiumPanel.stadiumSectionSelection(view.overviewPanel.overviewStadiumPanel.viewStadium_18, ma18_Overview, img_18_S);
+				viewSectionDetails(view.gamesPanel.cb_SalesSeason.getSelectedIndex(), view.gamesPanel.cb_SalesGame.getSelectedIndex(), 17, false);
 			}
 		});
 		view.overviewPanel.overviewStadiumPanel.viewStadium_18.addMouseListener(ma18_Overview);
@@ -1389,6 +1479,7 @@ public class Controller {
 		view.gamesPanel.gamesStadiumPanel.viewStadium_18.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
 				view.gamesPanel.gamesStadiumPanel.stadiumSectionSelection(view.gamesPanel.gamesStadiumPanel.viewStadium_18, ma18_Games, img_18_S);
+				viewSectionDetails(view.gamesPanel.cb_SalesSeason.getSelectedIndex(), view.gamesPanel.cb_SalesGame.getSelectedIndex(), 17, true);
 			}
 		});
 		view.gamesPanel.gamesStadiumPanel.viewStadium_18.addMouseListener(ma18_Games);
@@ -1407,6 +1498,7 @@ public class Controller {
 		view.overviewPanel.overviewStadiumPanel.viewStadium_17.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
 				view.overviewPanel.overviewStadiumPanel.stadiumSectionSelection(view.overviewPanel.overviewStadiumPanel.viewStadium_17, ma17_Overview, img_17_S);
+				viewSectionDetails(view.gamesPanel.cb_SalesSeason.getSelectedIndex(), view.gamesPanel.cb_SalesGame.getSelectedIndex(), 16, false);
 			}
 		});
 		view.overviewPanel.overviewStadiumPanel.viewStadium_17.addMouseListener(ma17_Overview);
@@ -1417,6 +1509,7 @@ public class Controller {
 		view.gamesPanel.gamesStadiumPanel.viewStadium_17.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
 				view.gamesPanel.gamesStadiumPanel.stadiumSectionSelection(view.gamesPanel.gamesStadiumPanel.viewStadium_17, ma17_Games, img_17_S);
+				viewSectionDetails(view.gamesPanel.cb_SalesSeason.getSelectedIndex(), view.gamesPanel.cb_SalesGame.getSelectedIndex(), 16, true);
 			}
 		});
 		view.gamesPanel.gamesStadiumPanel.viewStadium_17.addMouseListener(ma17_Games);
@@ -1435,6 +1528,7 @@ public class Controller {
 		view.overviewPanel.overviewStadiumPanel.viewStadium_16.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
 				view.overviewPanel.overviewStadiumPanel.stadiumSectionSelection(view.overviewPanel.overviewStadiumPanel.viewStadium_16, ma16_Overview, img_16_S);
+				viewSectionDetails(view.gamesPanel.cb_SalesSeason.getSelectedIndex(), view.gamesPanel.cb_SalesGame.getSelectedIndex(), 15, false);
 			}
 		});
 		view.overviewPanel.overviewStadiumPanel.viewStadium_16.addMouseListener(ma16_Overview);
@@ -1445,6 +1539,7 @@ public class Controller {
 		view.gamesPanel.gamesStadiumPanel.viewStadium_16.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
 				view.gamesPanel.gamesStadiumPanel.stadiumSectionSelection(view.gamesPanel.gamesStadiumPanel.viewStadium_16, ma16_Games, img_16_S);
+				viewSectionDetails(view.gamesPanel.cb_SalesSeason.getSelectedIndex(), view.gamesPanel.cb_SalesGame.getSelectedIndex(), 15, true);
 			}
 		});
 		view.gamesPanel.gamesStadiumPanel.viewStadium_16.addMouseListener(ma16_Games);
@@ -1463,6 +1558,7 @@ public class Controller {
 		view.overviewPanel.overviewStadiumPanel.viewStadium_15.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
 				view.overviewPanel.overviewStadiumPanel.stadiumSectionSelection(view.overviewPanel.overviewStadiumPanel.viewStadium_15, ma15_Overview, img_15_S);
+				viewSectionDetails(view.gamesPanel.cb_SalesSeason.getSelectedIndex(), view.gamesPanel.cb_SalesGame.getSelectedIndex(), 14, false);
 			}
 		});
 		view.overviewPanel.overviewStadiumPanel.viewStadium_15.addMouseListener(ma15_Overview);
@@ -1473,6 +1569,7 @@ public class Controller {
 		view.gamesPanel.gamesStadiumPanel.viewStadium_15.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
 				view.gamesPanel.gamesStadiumPanel.stadiumSectionSelection(view.gamesPanel.gamesStadiumPanel.viewStadium_15, ma15_Games, img_15_S);
+				viewSectionDetails(view.gamesPanel.cb_SalesSeason.getSelectedIndex(), view.gamesPanel.cb_SalesGame.getSelectedIndex(), 14, true);
 			}
 		});
 		view.gamesPanel.gamesStadiumPanel.viewStadium_15.addMouseListener(ma15_Games);
@@ -1491,6 +1588,7 @@ public class Controller {
 		view.overviewPanel.overviewStadiumPanel.viewStadium_14.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
 				view.overviewPanel.overviewStadiumPanel.stadiumSectionSelection(view.overviewPanel.overviewStadiumPanel.viewStadium_14, ma14_Overview, img_14_S);
+				viewSectionDetails(view.gamesPanel.cb_SalesSeason.getSelectedIndex(), view.gamesPanel.cb_SalesGame.getSelectedIndex(), 13, false);
 			}
 		});
 		view.overviewPanel.overviewStadiumPanel.viewStadium_14.addMouseListener(ma14_Overview);
@@ -1501,6 +1599,7 @@ public class Controller {
 		view.gamesPanel.gamesStadiumPanel.viewStadium_14.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
 				view.gamesPanel.gamesStadiumPanel.stadiumSectionSelection(view.gamesPanel.gamesStadiumPanel.viewStadium_14, ma14_Games, img_14_S);
+				viewSectionDetails(view.gamesPanel.cb_SalesSeason.getSelectedIndex(), view.gamesPanel.cb_SalesGame.getSelectedIndex(), 13, true);
 			}
 		});
 		view.gamesPanel.gamesStadiumPanel.viewStadium_14.addMouseListener(ma14_Games);
@@ -1520,6 +1619,7 @@ public class Controller {
 		view.overviewPanel.overviewStadiumPanel.viewStadium_13.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
 				view.overviewPanel.overviewStadiumPanel.stadiumSectionSelection(view.overviewPanel.overviewStadiumPanel.viewStadium_13, ma13_Overview, img_13_S);
+				viewSectionDetails(view.gamesPanel.cb_SalesSeason.getSelectedIndex(), view.gamesPanel.cb_SalesGame.getSelectedIndex(), 12, false);
 			}
 		});
 		view.overviewPanel.overviewStadiumPanel.viewStadium_13.addMouseListener(ma13_Overview);
@@ -1530,6 +1630,7 @@ public class Controller {
 		view.gamesPanel.gamesStadiumPanel.viewStadium_13.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
 				view.gamesPanel.gamesStadiumPanel.stadiumSectionSelection(view.gamesPanel.gamesStadiumPanel.viewStadium_13, ma13_Games, img_13_S);
+				viewSectionDetails(view.gamesPanel.cb_SalesSeason.getSelectedIndex(), view.gamesPanel.cb_SalesGame.getSelectedIndex(), 12, true);
 			}
 		});
 		view.gamesPanel.gamesStadiumPanel.viewStadium_13.addMouseListener(ma13_Games);
@@ -1548,6 +1649,7 @@ public class Controller {
 		view.overviewPanel.overviewStadiumPanel.viewStadium_12.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
 				view.overviewPanel.overviewStadiumPanel.stadiumSectionSelection(view.overviewPanel.overviewStadiumPanel.viewStadium_12, ma12_Overview, img_12_S);
+				viewSectionDetails(view.gamesPanel.cb_SalesSeason.getSelectedIndex(), view.gamesPanel.cb_SalesGame.getSelectedIndex(), 11, false);
 			}
 		});
 		view.overviewPanel.overviewStadiumPanel.viewStadium_12.addMouseListener(ma12_Overview);
@@ -1558,6 +1660,7 @@ public class Controller {
 		view.gamesPanel.gamesStadiumPanel.viewStadium_12.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
 				view.gamesPanel.gamesStadiumPanel.stadiumSectionSelection(view.gamesPanel.gamesStadiumPanel.viewStadium_12, ma12_Games, img_12_S);
+				viewSectionDetails(view.gamesPanel.cb_SalesSeason.getSelectedIndex(), view.gamesPanel.cb_SalesGame.getSelectedIndex(), 11, true);
 			}
 		});
 		view.gamesPanel.gamesStadiumPanel.viewStadium_12.addMouseListener(ma12_Games);
@@ -1576,6 +1679,7 @@ public class Controller {
 		view.overviewPanel.overviewStadiumPanel.viewStadium_11.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
 				view.overviewPanel.overviewStadiumPanel.stadiumSectionSelection(view.overviewPanel.overviewStadiumPanel.viewStadium_11, ma11_Overview, img_11_S);
+				viewSectionDetails(view.gamesPanel.cb_SalesSeason.getSelectedIndex(), view.gamesPanel.cb_SalesGame.getSelectedIndex(), 10, false);
 			}
 		});
 		view.overviewPanel.overviewStadiumPanel.viewStadium_11.addMouseListener(ma11_Overview);
@@ -1586,6 +1690,7 @@ public class Controller {
 		view.gamesPanel.gamesStadiumPanel.viewStadium_11.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
 				view.gamesPanel.gamesStadiumPanel.stadiumSectionSelection(view.gamesPanel.gamesStadiumPanel.viewStadium_11, ma11_Games, img_11_S);
+				viewSectionDetails(view.gamesPanel.cb_SalesSeason.getSelectedIndex(), view.gamesPanel.cb_SalesGame.getSelectedIndex(), 10, true);
 			}
 		});
 		view.gamesPanel.gamesStadiumPanel.viewStadium_11.addMouseListener(ma11_Games);
@@ -1604,6 +1709,7 @@ public class Controller {
 		view.overviewPanel.overviewStadiumPanel.viewStadium_39.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
 				view.overviewPanel.overviewStadiumPanel.stadiumSectionSelection(view.overviewPanel.overviewStadiumPanel.viewStadium_39, ma39_Overview, img_39_S);
+				viewSectionDetails(view.gamesPanel.cb_SalesSeason.getSelectedIndex(), view.gamesPanel.cb_SalesGame.getSelectedIndex(), 38, false);
 			}
 		});
 		view.overviewPanel.overviewStadiumPanel.viewStadium_39.addMouseListener(ma39_Overview);
@@ -1614,6 +1720,7 @@ public class Controller {
 		view.gamesPanel.gamesStadiumPanel.viewStadium_39.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
 				view.gamesPanel.gamesStadiumPanel.stadiumSectionSelection(view.gamesPanel.gamesStadiumPanel.viewStadium_39, ma39_Games, img_39_S);
+				viewSectionDetails(view.gamesPanel.cb_SalesSeason.getSelectedIndex(), view.gamesPanel.cb_SalesGame.getSelectedIndex(), 38, true);
 			}
 		});
 		view.gamesPanel.gamesStadiumPanel.viewStadium_39.addMouseListener(ma39_Games);
@@ -1633,6 +1740,7 @@ public class Controller {
 		view.overviewPanel.overviewStadiumPanel.viewStadium_38.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
 				view.overviewPanel.overviewStadiumPanel.stadiumSectionSelection(view.overviewPanel.overviewStadiumPanel.viewStadium_38, ma38_Overview, img_38_S);
+				viewSectionDetails(view.gamesPanel.cb_SalesSeason.getSelectedIndex(), view.gamesPanel.cb_SalesGame.getSelectedIndex(), 37, false);
 			}
 		});
 		view.overviewPanel.overviewStadiumPanel.viewStadium_38.addMouseListener(ma38_Overview);
@@ -1643,6 +1751,7 @@ public class Controller {
 		view.gamesPanel.gamesStadiumPanel.viewStadium_38.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
 				view.gamesPanel.gamesStadiumPanel.stadiumSectionSelection(view.gamesPanel.gamesStadiumPanel.viewStadium_38, ma38_Games, img_38_S);
+				viewSectionDetails(view.gamesPanel.cb_SalesSeason.getSelectedIndex(), view.gamesPanel.cb_SalesGame.getSelectedIndex(), 37, true);
 			}
 		});
 		view.gamesPanel.gamesStadiumPanel.viewStadium_38.addMouseListener(ma38_Games);
@@ -1661,6 +1770,7 @@ public class Controller {
 		view.overviewPanel.overviewStadiumPanel.viewStadium_37.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
 				view.overviewPanel.overviewStadiumPanel.stadiumSectionSelection(view.overviewPanel.overviewStadiumPanel.viewStadium_37, ma37_Overview, img_37_S);
+				viewSectionDetails(view.gamesPanel.cb_SalesSeason.getSelectedIndex(), view.gamesPanel.cb_SalesGame.getSelectedIndex(), 36, false);
 			}
 		});
 		view.overviewPanel.overviewStadiumPanel.viewStadium_37.addMouseListener(ma37_Overview);
@@ -1671,6 +1781,7 @@ public class Controller {
 		view.gamesPanel.gamesStadiumPanel.viewStadium_37.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
 				view.gamesPanel.gamesStadiumPanel.stadiumSectionSelection(view.gamesPanel.gamesStadiumPanel.viewStadium_37, ma37_Games, img_37_S);
+				viewSectionDetails(view.gamesPanel.cb_SalesSeason.getSelectedIndex(), view.gamesPanel.cb_SalesGame.getSelectedIndex(), 36, true);
 			}
 		});
 		view.gamesPanel.gamesStadiumPanel.viewStadium_37.addMouseListener(ma37_Games);
@@ -1689,6 +1800,7 @@ public class Controller {
 		view.overviewPanel.overviewStadiumPanel.viewStadium_36.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
 				view.overviewPanel.overviewStadiumPanel.stadiumSectionSelection(view.overviewPanel.overviewStadiumPanel.viewStadium_36, ma36_Overview, img_36_S);
+				viewSectionDetails(view.gamesPanel.cb_SalesSeason.getSelectedIndex(), view.gamesPanel.cb_SalesGame.getSelectedIndex(), 35, false);
 			}
 		});
 		view.overviewPanel.overviewStadiumPanel.viewStadium_36.addMouseListener(ma36_Overview);
@@ -1699,6 +1811,7 @@ public class Controller {
 		view.gamesPanel.gamesStadiumPanel.viewStadium_36.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
 				view.gamesPanel.gamesStadiumPanel.stadiumSectionSelection(view.gamesPanel.gamesStadiumPanel.viewStadium_36, ma36_Games, img_36_S);
+				viewSectionDetails(view.gamesPanel.cb_SalesSeason.getSelectedIndex(), view.gamesPanel.cb_SalesGame.getSelectedIndex(), 35, true);
 			}
 		});
 		view.gamesPanel.gamesStadiumPanel.viewStadium_36.addMouseListener(ma36_Games);
@@ -1718,6 +1831,7 @@ public class Controller {
 		view.overviewPanel.overviewStadiumPanel.viewStadium_35.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
 				view.overviewPanel.overviewStadiumPanel.stadiumSectionSelection(view.overviewPanel.overviewStadiumPanel.viewStadium_35, ma35_Overview, img_35_S);
+				viewSectionDetails(view.gamesPanel.cb_SalesSeason.getSelectedIndex(), view.gamesPanel.cb_SalesGame.getSelectedIndex(), 34, false);
 			}
 		});
 		view.overviewPanel.overviewStadiumPanel.viewStadium_35.addMouseListener(ma35_Overview);
@@ -1728,6 +1842,7 @@ public class Controller {
 		view.gamesPanel.gamesStadiumPanel.viewStadium_35.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
 				view.gamesPanel.gamesStadiumPanel.stadiumSectionSelection(view.gamesPanel.gamesStadiumPanel.viewStadium_35, ma35_Games, img_35_S);
+				viewSectionDetails(view.gamesPanel.cb_SalesSeason.getSelectedIndex(), view.gamesPanel.cb_SalesGame.getSelectedIndex(), 34, true);
 			}
 		});
 		view.gamesPanel.gamesStadiumPanel.viewStadium_35.addMouseListener(ma35_Games);
@@ -1747,6 +1862,7 @@ public class Controller {
 		view.overviewPanel.overviewStadiumPanel.viewStadium_34.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
 				view.overviewPanel.overviewStadiumPanel.stadiumSectionSelection(view.overviewPanel.overviewStadiumPanel.viewStadium_34, ma34_Overview, img_34_S);
+				viewSectionDetails(view.gamesPanel.cb_SalesSeason.getSelectedIndex(), view.gamesPanel.cb_SalesGame.getSelectedIndex(), 33, false);
 			}
 		});
 		view.overviewPanel.overviewStadiumPanel.viewStadium_34.addMouseListener(ma34_Overview);
@@ -1757,6 +1873,7 @@ public class Controller {
 		view.gamesPanel.gamesStadiumPanel.viewStadium_34.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
 				view.gamesPanel.gamesStadiumPanel.stadiumSectionSelection(view.gamesPanel.gamesStadiumPanel.viewStadium_34, ma34_Games, img_34_S);
+				viewSectionDetails(view.gamesPanel.cb_SalesSeason.getSelectedIndex(), view.gamesPanel.cb_SalesGame.getSelectedIndex(), 33, true);
 			}
 		});
 		view.gamesPanel.gamesStadiumPanel.viewStadium_34.addMouseListener(ma34_Games);
@@ -1776,6 +1893,7 @@ public class Controller {
 		view.overviewPanel.overviewStadiumPanel.viewStadium_33.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
 				view.overviewPanel.overviewStadiumPanel.stadiumSectionSelection(view.overviewPanel.overviewStadiumPanel.viewStadium_33, ma33_Overview, img_33_S);
+				viewSectionDetails(view.gamesPanel.cb_SalesSeason.getSelectedIndex(), view.gamesPanel.cb_SalesGame.getSelectedIndex(), 32, false);
 			}
 		});
 		view.overviewPanel.overviewStadiumPanel.viewStadium_33.addMouseListener(ma33_Overview);
@@ -1786,6 +1904,7 @@ public class Controller {
 		view.gamesPanel.gamesStadiumPanel.viewStadium_33.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
 				view.gamesPanel.gamesStadiumPanel.stadiumSectionSelection(view.gamesPanel.gamesStadiumPanel.viewStadium_33, ma33_Games, img_33_S);
+				viewSectionDetails(view.gamesPanel.cb_SalesSeason.getSelectedIndex(), view.gamesPanel.cb_SalesGame.getSelectedIndex(), 32, true);
 			}
 		});
 		view.gamesPanel.gamesStadiumPanel.viewStadium_33.addMouseListener(ma33_Games);
@@ -1803,6 +1922,7 @@ public class Controller {
 		view.overviewPanel.overviewStadiumPanel.viewStadium_32.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
 				view.overviewPanel.overviewStadiumPanel.stadiumSectionSelection(view.overviewPanel.overviewStadiumPanel.viewStadium_32, ma32_Overview, img_32_S);
+				viewSectionDetails(view.gamesPanel.cb_SalesSeason.getSelectedIndex(), view.gamesPanel.cb_SalesGame.getSelectedIndex(), 31, false);
 			}
 		});
 		view.overviewPanel.overviewStadiumPanel.viewStadium_32.addMouseListener(ma32_Overview);
@@ -1813,6 +1933,7 @@ public class Controller {
 		view.gamesPanel.gamesStadiumPanel.viewStadium_32.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
 				view.gamesPanel.gamesStadiumPanel.stadiumSectionSelection(view.gamesPanel.gamesStadiumPanel.viewStadium_32, ma32_Games, img_32_S);
+				viewSectionDetails(view.gamesPanel.cb_SalesSeason.getSelectedIndex(), view.gamesPanel.cb_SalesGame.getSelectedIndex(), 31, true);
 			}
 		});
 		view.gamesPanel.gamesStadiumPanel.viewStadium_32.addMouseListener(ma32_Games);
@@ -1831,6 +1952,7 @@ public class Controller {
 		view.overviewPanel.overviewStadiumPanel.viewStadium_10.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
 				view.overviewPanel.overviewStadiumPanel.stadiumSectionSelection(view.overviewPanel.overviewStadiumPanel.viewStadium_10, ma10_Overview, img_10_S);
+				viewSectionDetails(view.gamesPanel.cb_SalesSeason.getSelectedIndex(), view.gamesPanel.cb_SalesGame.getSelectedIndex(), 9, false);
 			}
 		});
 		view.overviewPanel.overviewStadiumPanel.viewStadium_10.addMouseListener(ma10_Overview);
@@ -1841,6 +1963,7 @@ public class Controller {
 		view.gamesPanel.gamesStadiumPanel.viewStadium_10.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
 				view.gamesPanel.gamesStadiumPanel.stadiumSectionSelection(view.gamesPanel.gamesStadiumPanel.viewStadium_10, ma10_Games, img_10_S);
+				viewSectionDetails(view.gamesPanel.cb_SalesSeason.getSelectedIndex(), view.gamesPanel.cb_SalesGame.getSelectedIndex(), 9, true);
 			}
 		});
 		view.gamesPanel.gamesStadiumPanel.viewStadium_10.addMouseListener(ma10_Games);
