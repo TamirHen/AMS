@@ -35,7 +35,11 @@ public class Controller {
 	//--ViewStadium Elements--//
 	public ArrayList<JButton> stadiumButtonsOverview = new ArrayList<JButton>();
 	public ArrayList<JButton> stadiumButtonsGames = new ArrayList<JButton>();
+	public ArrayList<MouseAdapter> mouseAdaptersOverview = new ArrayList<MouseAdapter>();
+	public ArrayList<MouseAdapter> mouseAdaptersGames = new ArrayList<MouseAdapter>();
 	public ArrayList<ImageIcon> stadiumImages = new ArrayList<ImageIcon>();
+	public ArrayList<ImageIcon> stadiumImagesRollover = new ArrayList<ImageIcon>();
+	public ArrayList<ImageIcon> stadiumImagesSelected = new ArrayList<ImageIcon>();
 	public ArrayList<String> stadiumImagePaths = new ArrayList<String>();
 	
 	private String path1;
@@ -217,6 +221,96 @@ public class Controller {
 	public ImageIcon img_42_S;
 	public ImageIcon img_43_S;
 	public ImageIcon img_44_S;
+	
+	private MouseAdapter ma1_Overview;
+	private MouseAdapter ma2_Overview;
+	private MouseAdapter ma3_Overview;
+	private MouseAdapter ma4_Overview;
+	private MouseAdapter ma5_Overview;
+	private MouseAdapter ma6_Overview;
+	private MouseAdapter ma7_Overview;
+	private MouseAdapter ma8_Overview;
+	private MouseAdapter ma9_Overview;
+	private MouseAdapter ma10_Overview;
+	private MouseAdapter ma11_Overview;
+	private MouseAdapter ma12_Overview;
+	private MouseAdapter ma13_Overview;
+	private MouseAdapter ma14_Overview;
+	private MouseAdapter ma15_Overview;
+	private MouseAdapter ma16_Overview;
+	private MouseAdapter ma17_Overview;
+	private MouseAdapter ma18_Overview;
+	private MouseAdapter ma19_Overview;
+	private MouseAdapter ma20_Overview;
+	private MouseAdapter ma21_Overview;
+	private MouseAdapter ma22_Overview;
+	private MouseAdapter ma23_Overview;
+	private MouseAdapter ma24_Overview;
+	private MouseAdapter ma25_Overview;
+	private MouseAdapter ma26_Overview;
+	private MouseAdapter ma27_Overview;
+	private MouseAdapter ma28_Overview;
+	private MouseAdapter ma29_Overview;
+	private MouseAdapter ma30_Overview;
+	private MouseAdapter ma31_Overview;
+	private MouseAdapter ma32_Overview;
+	private MouseAdapter ma33_Overview;
+	private MouseAdapter ma34_Overview;
+	private MouseAdapter ma35_Overview;
+	private MouseAdapter ma36_Overview;
+	private MouseAdapter ma37_Overview;
+	private MouseAdapter ma38_Overview;
+	private MouseAdapter ma39_Overview;
+	private MouseAdapter ma40_Overview;
+	private MouseAdapter ma41_Overview;
+	private MouseAdapter ma42_Overview;
+	private MouseAdapter ma43_Overview;
+	private MouseAdapter ma44_Overview;
+	
+	private MouseAdapter ma1_Games;
+	private MouseAdapter ma2_Games;
+	private MouseAdapter ma3_Games;
+	private MouseAdapter ma4_Games;
+	private MouseAdapter ma5_Games;
+	private MouseAdapter ma6_Games;
+	private MouseAdapter ma7_Games;
+	private MouseAdapter ma8_Games;
+	private MouseAdapter ma9_Games;
+	private MouseAdapter ma10_Games;
+	private MouseAdapter ma11_Games;
+	private MouseAdapter ma12_Games;
+	private MouseAdapter ma13_Games;
+	private MouseAdapter ma14_Games;
+	private MouseAdapter ma15_Games;
+	private MouseAdapter ma16_Games;
+	private MouseAdapter ma17_Games;
+	private MouseAdapter ma18_Games;
+	private MouseAdapter ma19_Games;
+	private MouseAdapter ma20_Games;
+	private MouseAdapter ma21_Games;
+	private MouseAdapter ma22_Games;
+	private MouseAdapter ma23_Games;
+	private MouseAdapter ma24_Games;
+	private MouseAdapter ma25_Games;
+	private MouseAdapter ma26_Games;
+	private MouseAdapter ma27_Games;
+	private MouseAdapter ma28_Games;
+	private MouseAdapter ma29_Games;
+	private MouseAdapter ma30_Games;
+	private MouseAdapter ma31_Games;
+	private MouseAdapter ma32_Games;
+	private MouseAdapter ma33_Games;
+	private MouseAdapter ma34_Games;
+	private MouseAdapter ma35_Games;
+	private MouseAdapter ma36_Games;
+	private MouseAdapter ma37_Games;
+	private MouseAdapter ma38_Games;
+	private MouseAdapter ma39_Games;
+	private MouseAdapter ma40_Games;
+	private MouseAdapter ma41_Games;
+	private MouseAdapter ma42_Games;
+	private MouseAdapter ma43_Games;
+	private MouseAdapter ma44_Games;
 	//---------------------//
 	
 	
@@ -487,7 +581,7 @@ public class Controller {
 				
 				if(currentSectionType.equals(newSectionType) == false)
 				{
-					redrawStadium();
+					redrawStadium(0);
 				}
 			}
 		});
@@ -661,1432 +755,324 @@ public class Controller {
 			}
 		});
 		//---ViewStadium Image Manipulations---//
-		//WORK IN PROGRESS - IDAN//
-		stadiumImagePaths.add(path1);
-		stadiumImagePaths.add(path2);
-		stadiumImagePaths.add(path3);
-		stadiumImagePaths.add(path4);
-		stadiumImagePaths.add(path5);
-		stadiumImagePaths.add(path6);
-		stadiumImagePaths.add(path7);
-		stadiumImagePaths.add(path8);
-		stadiumImagePaths.add(path9);
-		stadiumImagePaths.add(path10);
-		stadiumImagePaths.add(path11);
-		stadiumImagePaths.add(path12);
-		stadiumImagePaths.add(path13);
-		stadiumImagePaths.add(path14);
-		stadiumImagePaths.add(path15);
-		stadiumImagePaths.add(path16);
-		stadiumImagePaths.add(path17);
-		stadiumImagePaths.add(path18);
-		stadiumImagePaths.add(path19);
-		stadiumImagePaths.add(path20);
-		stadiumImagePaths.add(path21);
-		stadiumImagePaths.add(path22);
-		stadiumImagePaths.add(path23);
-		stadiumImagePaths.add(path24);
-		stadiumImagePaths.add(path25);
-		stadiumImagePaths.add(path26);
-		stadiumImagePaths.add(path27);
-		stadiumImagePaths.add(path28);
-		stadiumImagePaths.add(path29);
-		stadiumImagePaths.add(path30);
-		stadiumImagePaths.add(path31);
-		stadiumImagePaths.add(path32);
-		stadiumImagePaths.add(path33);
-		stadiumImagePaths.add(path34);
-		stadiumImagePaths.add(path35);
-		stadiumImagePaths.add(path36);
-		stadiumImagePaths.add(path37);
-		stadiumImagePaths.add(path38);
-		stadiumImagePaths.add(path39);
-		stadiumImagePaths.add(path40);
-		stadiumImagePaths.add(path41);
-		stadiumImagePaths.add(path42);
-		stadiumImagePaths.add(path43);
-		stadiumImagePaths.add(path44);
 		
-		stadiumImages.add(img_1);
-		stadiumImages.add(img_2);
-		stadiumImages.add(img_3);
-		stadiumImages.add(img_4);
-		stadiumImages.add(img_5);
-		stadiumImages.add(img_6);
-		stadiumImages.add(img_7);
-		stadiumImages.add(img_8);
-		stadiumImages.add(img_9);
-		stadiumImages.add(img_10);
-		stadiumImages.add(img_11);
-		stadiumImages.add(img_12);
-		stadiumImages.add(img_13);
-		stadiumImages.add(img_14);
-		stadiumImages.add(img_15);
-		stadiumImages.add(img_16);
-		stadiumImages.add(img_17);
-		stadiumImages.add(img_18);
-		stadiumImages.add(img_19);
-		stadiumImages.add(img_20);
-		stadiumImages.add(img_21);
-		stadiumImages.add(img_22);
-		stadiumImages.add(img_23);
-		stadiumImages.add(img_24);
-		stadiumImages.add(img_25);
-		stadiumImages.add(img_26);
-		stadiumImages.add(img_27);
-		stadiumImages.add(img_28);
-		stadiumImages.add(img_29);
-		stadiumImages.add(img_30);
-		stadiumImages.add(img_31);
-		stadiumImages.add(img_32);
-		stadiumImages.add(img_33);
-		stadiumImages.add(img_34);
-		stadiumImages.add(img_35);
-		stadiumImages.add(img_36);
-		stadiumImages.add(img_37);
-		stadiumImages.add(img_38);
-		stadiumImages.add(img_39);
-		stadiumImages.add(img_40);
-		stadiumImages.add(img_41);
-		stadiumImages.add(img_42);
-		stadiumImages.add(img_43);
-		stadiumImages.add(img_44);
+		addMouseAdaptersToArrayList();
+		addImagePathsToArrayList();
+		addImageIconsToArrayList();
 		
-		setStadiumImagePaths();
-		setStadiumImages();
+		setStadiumImages(0);
+		
+		//Section 44
+		view.overviewPanel.overviewStadiumPanel.viewStadium_44.setBounds(view.overviewPanel.overviewStadiumPanel.panelViewStadium.getBounds().x + (int)(535*view.overviewPanel.overviewStadiumPanel.stadiumSizeRatio), view.overviewPanel.overviewStadiumPanel.panelViewStadium.getBounds().y + (int)(451*view.overviewPanel.overviewStadiumPanel.stadiumSizeRatio) , (int)(stadiumImages.get(44).getIconWidth()*view.overviewPanel.overviewStadiumPanel.stadiumSizeRatio), (int)(stadiumImages.get(44).getIconHeight()*view.overviewPanel.overviewStadiumPanel.stadiumSizeRatio));
+		view.overviewPanel.overviewStadiumPanel.viewStadium_44.setIcon(UI_Elements.scaleImageToBox(stadiumImages.get(44), view.overviewPanel.overviewStadiumPanel.viewStadium_44));
+		view.gamesPanel.gamesStadiumPanel.viewStadium_44.setBounds(view.gamesPanel.gamesStadiumPanel.panelViewStadium.getBounds().x + (int)(535*view.gamesPanel.gamesStadiumPanel.stadiumSizeRatio), view.gamesPanel.gamesStadiumPanel.panelViewStadium.getBounds().y + (int)(451*view.gamesPanel.gamesStadiumPanel.stadiumSizeRatio) , (int)(stadiumImages.get(44).getIconWidth()*view.gamesPanel.gamesStadiumPanel.stadiumSizeRatio), (int)(stadiumImages.get(44).getIconHeight()*view.gamesPanel.gamesStadiumPanel.stadiumSizeRatio));
+		view.gamesPanel.gamesStadiumPanel.viewStadium_44.setIcon(UI_Elements.scaleImageToBox(stadiumImages.get(44), view.gamesPanel.gamesStadiumPanel.viewStadium_44));
 		//
-		//String path44 = "/Images/StadiumSlices/Stadium" + getViewStadiumSectionType(44) + "_44.png"; //TODO
-		//img_44 = new ImageIcon(Overview.class.getResource(path44));
-		String path44_R = "/Images/StadiumSlices/Stadium_Rollover_44.png";
-		img_44_R = new ImageIcon(Overview.class.getResource(path44_R));
-		String path44_S = "/Images/StadiumSlices/Stadium_Selected_44.png";
-		img_44_S = new ImageIcon(Overview.class.getResource(path44_S));
-		
-		view.overviewPanel.overviewStadiumPanel.viewStadium_44.setBounds(view.overviewPanel.overviewStadiumPanel.panelViewStadium.getBounds().x + (int)(535*view.overviewPanel.overviewStadiumPanel.stadiumSizeRatio), view.overviewPanel.overviewStadiumPanel.panelViewStadium.getBounds().y + (int)(451*view.overviewPanel.overviewStadiumPanel.stadiumSizeRatio) , (int)(img_44.getIconWidth()*view.overviewPanel.overviewStadiumPanel.stadiumSizeRatio), (int)(img_44.getIconHeight()*view.overviewPanel.overviewStadiumPanel.stadiumSizeRatio));
-		view.overviewPanel.overviewStadiumPanel.viewStadium_44.setIcon(UI_Elements.scaleImageToBox(img_44, view.overviewPanel.overviewStadiumPanel.viewStadium_44));
-		MouseAdapter ma44_Overview = view.overviewPanel.overviewStadiumPanel.createSectionAdapter(view.overviewPanel.overviewStadiumPanel.viewStadium_44, img_44, img_44_R, img_44_S);
-		view.overviewPanel.overviewStadiumPanel.viewStadium_44.addActionListener(new ActionListener() {
-			public void actionPerformed(ActionEvent arg0) {
-				view.overviewPanel.overviewStadiumPanel.stadiumSectionSelection(view.overviewPanel.overviewStadiumPanel.viewStadium_44, ma44_Overview, img_44_S);
-			}
-		});
-		view.overviewPanel.overviewStadiumPanel.viewStadium_44.addMouseListener(ma44_Overview);
-		
-		
-		view.gamesPanel.gamesStadiumPanel.viewStadium_44.setBounds(view.gamesPanel.gamesStadiumPanel.panelViewStadium.getBounds().x + (int)(535*view.gamesPanel.gamesStadiumPanel.stadiumSizeRatio), view.gamesPanel.gamesStadiumPanel.panelViewStadium.getBounds().y + (int)(451*view.gamesPanel.gamesStadiumPanel.stadiumSizeRatio) , (int)(img_44.getIconWidth()*view.gamesPanel.gamesStadiumPanel.stadiumSizeRatio), (int)(img_44.getIconHeight()*view.gamesPanel.gamesStadiumPanel.stadiumSizeRatio));
-		view.gamesPanel.gamesStadiumPanel.viewStadium_44.setIcon(UI_Elements.scaleImageToBox(img_44, view.gamesPanel.gamesStadiumPanel.viewStadium_44));
-		MouseAdapter ma44_Games = view.gamesPanel.gamesStadiumPanel.createSectionAdapter(view.gamesPanel.gamesStadiumPanel.viewStadium_44, img_44, img_44_R, img_44_S);
-		view.gamesPanel.gamesStadiumPanel.viewStadium_44.addActionListener(new ActionListener() {
-			public void actionPerformed(ActionEvent arg0) {
-				view.gamesPanel.gamesStadiumPanel.stadiumSectionSelection(view.gamesPanel.gamesStadiumPanel.viewStadium_44, ma44_Games, img_44_S);
-			}
-		});
-		view.gamesPanel.gamesStadiumPanel.viewStadium_44.addMouseListener(ma44_Games);
-
-		
-		String path43 = "/Images/StadiumSlices/Stadium" + getViewStadiumSectionType(43) + "_43.png";
-		img_43 = new ImageIcon(Overview.class.getResource(path43));
-		String path43_R = "/Images/StadiumSlices/Stadium_Rollover_43.png";
-		img_43_R = new ImageIcon(Overview.class.getResource(path43_R));
-		String path43_S = "/Images/StadiumSlices/Stadium_Selected_43.png";
-		img_43_S = new ImageIcon(Overview.class.getResource(path43_S));
-		
-		view.overviewPanel.overviewStadiumPanel.viewStadium_43.setBounds(view.overviewPanel.overviewStadiumPanel.viewStadium_44.getBounds().x, view.overviewPanel.overviewStadiumPanel.viewStadium_44.getBounds().y + view.overviewPanel.overviewStadiumPanel.viewStadium_44.getBounds().height, (int)(img_43.getIconWidth()*view.overviewPanel.overviewStadiumPanel.stadiumSizeRatio), (int)(img_43.getIconHeight()*view.overviewPanel.overviewStadiumPanel.stadiumSizeRatio));
-		view.overviewPanel.overviewStadiumPanel.viewStadium_43.setIcon(UI_Elements.scaleImageToBox(img_43, view.overviewPanel.overviewStadiumPanel.viewStadium_43));
-		MouseAdapter ma43_Overview = view.overviewPanel.overviewStadiumPanel.createSectionAdapter(view.overviewPanel.overviewStadiumPanel.viewStadium_43, img_43, img_43_R, img_43_S);
-		view.overviewPanel.overviewStadiumPanel.viewStadium_43.addActionListener(new ActionListener() {
-			public void actionPerformed(ActionEvent arg0) {
-				view.overviewPanel.overviewStadiumPanel.stadiumSectionSelection(view.overviewPanel.overviewStadiumPanel.viewStadium_43, ma43_Overview, img_43_S);
-			}
-		});
-		view.overviewPanel.overviewStadiumPanel.viewStadium_43.addMouseListener(ma43_Overview);
-		
-		view.gamesPanel.gamesStadiumPanel.viewStadium_43.setBounds(view.gamesPanel.gamesStadiumPanel.viewStadium_44.getBounds().x, view.gamesPanel.gamesStadiumPanel.viewStadium_44.getBounds().y + view.gamesPanel.gamesStadiumPanel.viewStadium_44.getBounds().height, (int)(img_43.getIconWidth()*view.gamesPanel.gamesStadiumPanel.stadiumSizeRatio), (int)(img_43.getIconHeight()*view.gamesPanel.gamesStadiumPanel.stadiumSizeRatio));
-		view.gamesPanel.gamesStadiumPanel.viewStadium_43.setIcon(UI_Elements.scaleImageToBox(img_43, view.gamesPanel.gamesStadiumPanel.viewStadium_43));
-		MouseAdapter ma43_Games = view.gamesPanel.gamesStadiumPanel.createSectionAdapter(view.gamesPanel.gamesStadiumPanel.viewStadium_43, img_43, img_43_R, img_43_S);
-		view.gamesPanel.gamesStadiumPanel.viewStadium_43.addActionListener(new ActionListener() {
-			public void actionPerformed(ActionEvent arg0) {
-				view.gamesPanel.gamesStadiumPanel.stadiumSectionSelection(view.gamesPanel.gamesStadiumPanel.viewStadium_43, ma43_Games, img_43_S);
-			}
-		});
-		view.gamesPanel.gamesStadiumPanel.viewStadium_43.addMouseListener(ma43_Games);
-		
-		
-
-		String path42 = "/Images/StadiumSlices/Stadium" + getViewStadiumSectionType(42) + "_42.png";
-		img_42 = new ImageIcon(Overview.class.getResource(path42));
-		String path42_R = "/Images/StadiumSlices/Stadium_Rollover_42.png";
-		img_42_R = new ImageIcon(Overview.class.getResource(path42_R));
-		String path42_S = "/Images/StadiumSlices/Stadium_Selected_42.png";
-		img_42_S = new ImageIcon(Overview.class.getResource(path42_S));
-		
-		view.overviewPanel.overviewStadiumPanel.viewStadium_42.setBounds(view.overviewPanel.overviewStadiumPanel.viewStadium_43.getBounds().x, view.overviewPanel.overviewStadiumPanel.viewStadium_43.getBounds().y + view.overviewPanel.overviewStadiumPanel.viewStadium_43.getBounds().height, (int)(img_42.getIconWidth()*view.overviewPanel.overviewStadiumPanel.stadiumSizeRatio), (int)(img_42.getIconHeight()*view.overviewPanel.overviewStadiumPanel.stadiumSizeRatio));
-		view.overviewPanel.overviewStadiumPanel.viewStadium_42.setIcon(UI_Elements.scaleImageToBox(img_42, view.overviewPanel.overviewStadiumPanel.viewStadium_42));
-		MouseAdapter ma42_Overview = view.overviewPanel.overviewStadiumPanel.createSectionAdapter(view.overviewPanel.overviewStadiumPanel.viewStadium_42, img_42, img_42_R, img_42_S);
-		view.overviewPanel.overviewStadiumPanel.viewStadium_42.addActionListener(new ActionListener() {
-			public void actionPerformed(ActionEvent arg0) {
-				view.overviewPanel.overviewStadiumPanel.stadiumSectionSelection(view.overviewPanel.overviewStadiumPanel.viewStadium_42, ma42_Overview, img_42_S);
-			}
-		});
-		view.overviewPanel.overviewStadiumPanel.viewStadium_42.addMouseListener(ma42_Overview);
-		
-		view.gamesPanel.gamesStadiumPanel.viewStadium_42.setBounds(view.gamesPanel.gamesStadiumPanel.viewStadium_43.getBounds().x, view.gamesPanel.gamesStadiumPanel.viewStadium_43.getBounds().y + view.gamesPanel.gamesStadiumPanel.viewStadium_43.getBounds().height, (int)(img_42.getIconWidth()*view.gamesPanel.gamesStadiumPanel.stadiumSizeRatio), (int)(img_42.getIconHeight()*view.gamesPanel.gamesStadiumPanel.stadiumSizeRatio));
-		view.gamesPanel.gamesStadiumPanel.viewStadium_42.setIcon(UI_Elements.scaleImageToBox(img_42, view.gamesPanel.gamesStadiumPanel.viewStadium_42));
-		MouseAdapter ma42_Games = view.gamesPanel.gamesStadiumPanel.createSectionAdapter(view.gamesPanel.gamesStadiumPanel.viewStadium_42, img_42, img_42_R, img_42_S);
-		view.gamesPanel.gamesStadiumPanel.viewStadium_42.addActionListener(new ActionListener() {
-			public void actionPerformed(ActionEvent arg0) {
-				view.gamesPanel.gamesStadiumPanel.stadiumSectionSelection(view.gamesPanel.gamesStadiumPanel.viewStadium_42, ma42_Games, img_42_S);
-			}
-		});
-		view.gamesPanel.gamesStadiumPanel.viewStadium_42.addMouseListener(ma42_Games);
-		
-		
-
-		String path41 = "/Images/StadiumSlices/Stadium" + getViewStadiumSectionType(41) + "_41.png";
-		img_41 = new ImageIcon(Overview.class.getResource(path41));
-		String path41_R = "/Images/StadiumSlices/Stadium_Rollover_41.png";
-		img_41_R = new ImageIcon(Overview.class.getResource(path41_R));
-		String path41_S = "/Images/StadiumSlices/Stadium_Selected_41.png";
-		img_41_S = new ImageIcon(Overview.class.getResource(path41_S));
-		
-		view.overviewPanel.overviewStadiumPanel.viewStadium_41.setBounds(view.overviewPanel.overviewStadiumPanel.viewStadium_42.getBounds().x, view.overviewPanel.overviewStadiumPanel.viewStadium_42.getBounds().y + view.overviewPanel.overviewStadiumPanel.viewStadium_42.getBounds().height, (int)(img_41.getIconWidth()*view.overviewPanel.overviewStadiumPanel.stadiumSizeRatio), (int)(img_41.getIconHeight()*view.overviewPanel.overviewStadiumPanel.stadiumSizeRatio));
-		view.overviewPanel.overviewStadiumPanel.viewStadium_41.setIcon(UI_Elements.scaleImageToBox(img_41, view.overviewPanel.overviewStadiumPanel.viewStadium_41));
-		MouseAdapter ma41_Overview = view.overviewPanel.overviewStadiumPanel.createSectionAdapter(view.overviewPanel.overviewStadiumPanel.viewStadium_41, img_41, img_41_R, img_41_S);
-		view.overviewPanel.overviewStadiumPanel.viewStadium_41.addActionListener(new ActionListener() {
-			public void actionPerformed(ActionEvent arg0) {
-				view.overviewPanel.overviewStadiumPanel.stadiumSectionSelection(view.overviewPanel.overviewStadiumPanel.viewStadium_41, ma41_Overview, img_41_S);
-			}
-		});
-		view.overviewPanel.overviewStadiumPanel.viewStadium_41.addMouseListener(ma41_Overview);
-		
-		view.gamesPanel.gamesStadiumPanel.viewStadium_41.setBounds(view.gamesPanel.gamesStadiumPanel.viewStadium_42.getBounds().x, view.gamesPanel.gamesStadiumPanel.viewStadium_42.getBounds().y + view.gamesPanel.gamesStadiumPanel.viewStadium_42.getBounds().height, (int)(img_41.getIconWidth()*view.gamesPanel.gamesStadiumPanel.stadiumSizeRatio), (int)(img_41.getIconHeight()*view.gamesPanel.gamesStadiumPanel.stadiumSizeRatio));
-		view.gamesPanel.gamesStadiumPanel.viewStadium_41.setIcon(UI_Elements.scaleImageToBox(img_41, view.gamesPanel.gamesStadiumPanel.viewStadium_41));
-		MouseAdapter ma41_Games = view.gamesPanel.gamesStadiumPanel.createSectionAdapter(view.gamesPanel.gamesStadiumPanel.viewStadium_41, img_41, img_41_R, img_41_S);
-		view.gamesPanel.gamesStadiumPanel.viewStadium_41.addActionListener(new ActionListener() {
-			public void actionPerformed(ActionEvent arg0) {
-				view.gamesPanel.gamesStadiumPanel.stadiumSectionSelection(view.gamesPanel.gamesStadiumPanel.viewStadium_41, ma41_Games, img_41_S);
-			}
-		});
-		view.gamesPanel.gamesStadiumPanel.viewStadium_41.addMouseListener(ma41_Games);
-		
-		
-
-		String path40 = "/Images/StadiumSlices/Stadium" + getViewStadiumSectionType(40) + "_40.png";
-		img_40 = new ImageIcon(Overview.class.getResource(path40));
-		String path40_R = "/Images/StadiumSlices/Stadium_Rollover_40.png";
-		img_40_R = new ImageIcon(Overview.class.getResource(path40_R));
-		String path40_S = "/Images/StadiumSlices/Stadium_Selected_40.png";
-		img_40_S = new ImageIcon(Overview.class.getResource(path40_S));
-		
-		view.overviewPanel.overviewStadiumPanel.viewStadium_40.setBounds(view.overviewPanel.overviewStadiumPanel.viewStadium_42.getBounds().x, view.overviewPanel.overviewStadiumPanel.viewStadium_41.getBounds().y + view.overviewPanel.overviewStadiumPanel.viewStadium_41.getBounds().height, (int)(img_40.getIconWidth()*view.overviewPanel.overviewStadiumPanel.stadiumSizeRatio), (int)(img_40.getIconHeight()*view.overviewPanel.overviewStadiumPanel.stadiumSizeRatio));
-		view.overviewPanel.overviewStadiumPanel.viewStadium_40.setIcon(UI_Elements.scaleImageToBox(img_40, view.overviewPanel.overviewStadiumPanel.viewStadium_40));
-		MouseAdapter ma40_Overview = view.overviewPanel.overviewStadiumPanel.createSectionAdapter(view.overviewPanel.overviewStadiumPanel.viewStadium_40, img_40, img_40_R, img_40_S);
-		view.overviewPanel.overviewStadiumPanel.viewStadium_40.addActionListener(new ActionListener() {
-			public void actionPerformed(ActionEvent arg0) {
-				view.overviewPanel.overviewStadiumPanel.stadiumSectionSelection(view.overviewPanel.overviewStadiumPanel.viewStadium_40, ma40_Overview, img_40_S);
-			}
-		});
-		view.overviewPanel.overviewStadiumPanel.viewStadium_40.addMouseListener(ma40_Overview);
-		
-		view.gamesPanel.gamesStadiumPanel.viewStadium_40.setBounds(view.gamesPanel.gamesStadiumPanel.viewStadium_42.getBounds().x, view.gamesPanel.gamesStadiumPanel.viewStadium_41.getBounds().y + view.gamesPanel.gamesStadiumPanel.viewStadium_41.getBounds().height, (int)(img_40.getIconWidth()*view.gamesPanel.gamesStadiumPanel.stadiumSizeRatio), (int)(img_40.getIconHeight()*view.gamesPanel.gamesStadiumPanel.stadiumSizeRatio));
-		view.gamesPanel.gamesStadiumPanel.viewStadium_40.setIcon(UI_Elements.scaleImageToBox(img_40, view.gamesPanel.gamesStadiumPanel.viewStadium_40));
-		MouseAdapter ma40_Games = view.gamesPanel.gamesStadiumPanel.createSectionAdapter(view.gamesPanel.gamesStadiumPanel.viewStadium_40, img_40, img_40_R, img_40_S);
-		view.gamesPanel.gamesStadiumPanel.viewStadium_40.addActionListener(new ActionListener() {
-			public void actionPerformed(ActionEvent arg0) {
-				view.gamesPanel.gamesStadiumPanel.stadiumSectionSelection(view.gamesPanel.gamesStadiumPanel.viewStadium_40, ma40_Games, img_40_S);
-			}
-		});
-		view.gamesPanel.gamesStadiumPanel.viewStadium_40.addMouseListener(ma40_Games);
-		
-		
-		String path20 = "/Images/StadiumSlices/Stadium" + getViewStadiumSectionType(20) + "_20.png";
-		img_20 = new ImageIcon(Overview.class.getResource(path20));
-		String path20_R = "/Images/StadiumSlices/Stadium_Rollover_20.png";
-		img_20_R = new ImageIcon(Overview.class.getResource(path20_R));
-		String path20_S = "/Images/StadiumSlices/Stadium_Selected_20.png";
-		img_20_S = new ImageIcon(Overview.class.getResource(path20_S));
-		
-		view.overviewPanel.overviewStadiumPanel.viewStadium_20.setBounds(view.overviewPanel.overviewStadiumPanel.panelViewStadium.getBounds().x, view.overviewPanel.overviewStadiumPanel.panelViewStadium.getBounds().y, (int)(img_20.getIconWidth()*view.overviewPanel.overviewStadiumPanel.stadiumSizeRatio), (int)(img_20.getIconHeight()*view.overviewPanel.overviewStadiumPanel.stadiumSizeRatio));
-		view.overviewPanel.overviewStadiumPanel.viewStadium_20.setIcon(UI_Elements.scaleImageToBox(img_20, view.overviewPanel.overviewStadiumPanel.viewStadium_20));
-		MouseAdapter ma20_Overview = view.overviewPanel.overviewStadiumPanel.createSectionAdapter(view.overviewPanel.overviewStadiumPanel.viewStadium_20, img_20, img_20_R, img_20_S);
-		view.overviewPanel.overviewStadiumPanel.viewStadium_20.addActionListener(new ActionListener() {
-			public void actionPerformed(ActionEvent arg0) {
-				view.overviewPanel.overviewStadiumPanel.stadiumSectionSelection(view.overviewPanel.overviewStadiumPanel.viewStadium_20, ma20_Overview, img_20_S);
-			}
-		});
-		view.overviewPanel.overviewStadiumPanel.viewStadium_20.addMouseListener(ma20_Overview);
-		
-		view.gamesPanel.gamesStadiumPanel.viewStadium_20.setBounds(view.gamesPanel.gamesStadiumPanel.panelViewStadium.getBounds().x, view.gamesPanel.gamesStadiumPanel.panelViewStadium.getBounds().y, (int)(img_20.getIconWidth()*view.gamesPanel.gamesStadiumPanel.stadiumSizeRatio), (int)(img_20.getIconHeight()*view.gamesPanel.gamesStadiumPanel.stadiumSizeRatio));
-		view.gamesPanel.gamesStadiumPanel.viewStadium_20.setIcon(UI_Elements.scaleImageToBox(img_20, view.gamesPanel.gamesStadiumPanel.viewStadium_20));
-		MouseAdapter ma20_Games = view.gamesPanel.gamesStadiumPanel.createSectionAdapter(view.gamesPanel.gamesStadiumPanel.viewStadium_20, img_20, img_20_R, img_20_S);
-		view.gamesPanel.gamesStadiumPanel.viewStadium_20.addActionListener(new ActionListener() {
-			public void actionPerformed(ActionEvent arg0) {
-				view.gamesPanel.gamesStadiumPanel.stadiumSectionSelection(view.gamesPanel.gamesStadiumPanel.viewStadium_20, ma20_Games, img_20_S);
-			}
-		});
-		view.gamesPanel.gamesStadiumPanel.viewStadium_20.addMouseListener(ma20_Games);
-		
-		
-		String path1 = "/Images/StadiumSlices/Stadium" + getViewStadiumSectionType(2) + "_1.png";
-		img_1 = new ImageIcon(Overview.class.getResource(path1));
-		String path1_R = "/Images/StadiumSlices/Stadium_Rollover_1.png";
-		img_1_R = new ImageIcon(Overview.class.getResource(path1_R));
-		String path1_S = "/Images/StadiumSlices/Stadium_Selected_1.png";
-		img_1_S = new ImageIcon(Overview.class.getResource(path1_S));
-		
-		view.overviewPanel.overviewStadiumPanel.viewStadium_1.setBounds(view.overviewPanel.overviewStadiumPanel.viewStadium_20.getBounds().x + view.overviewPanel.overviewStadiumPanel.viewStadium_20.getBounds().width, view.overviewPanel.overviewStadiumPanel.panelViewStadium.getBounds().y, (int)(img_1.getIconWidth()*view.overviewPanel.overviewStadiumPanel.stadiumSizeRatio), (int)(img_1.getIconHeight()*view.overviewPanel.overviewStadiumPanel.stadiumSizeRatio));
-		view.overviewPanel.overviewStadiumPanel.viewStadium_1.setIcon(UI_Elements.scaleImageToBox(img_1, view.overviewPanel.overviewStadiumPanel.viewStadium_1));
-		MouseAdapter ma1_Overview = view.overviewPanel.overviewStadiumPanel.createSectionAdapter(view.overviewPanel.overviewStadiumPanel.viewStadium_1, img_1, img_1_R, img_1_S);
-		view.overviewPanel.overviewStadiumPanel.viewStadium_1.addActionListener(new ActionListener() {
-			public void actionPerformed(ActionEvent arg0) {
-				view.overviewPanel.overviewStadiumPanel.stadiumSectionSelection(view.overviewPanel.overviewStadiumPanel.viewStadium_1, ma1_Overview, img_1_S);
-			}
-		});
-		view.overviewPanel.overviewStadiumPanel.viewStadium_1.addMouseListener(ma1_Overview);
-		
-		view.gamesPanel.gamesStadiumPanel.viewStadium_1.setBounds(view.gamesPanel.gamesStadiumPanel.viewStadium_20.getBounds().x + view.gamesPanel.gamesStadiumPanel.viewStadium_20.getBounds().width, view.gamesPanel.gamesStadiumPanel.panelViewStadium.getBounds().y, (int)(img_1.getIconWidth()*view.gamesPanel.gamesStadiumPanel.stadiumSizeRatio), (int)(img_1.getIconHeight()*view.gamesPanel.gamesStadiumPanel.stadiumSizeRatio));
-		view.gamesPanel.gamesStadiumPanel.viewStadium_1.setIcon(UI_Elements.scaleImageToBox(img_1, view.gamesPanel.gamesStadiumPanel.viewStadium_1));
-		MouseAdapter ma1_Games = view.gamesPanel.gamesStadiumPanel.createSectionAdapter(view.gamesPanel.gamesStadiumPanel.viewStadium_1, img_1, img_1_R, img_1_S);
-		view.gamesPanel.gamesStadiumPanel.viewStadium_1.addActionListener(new ActionListener() {
-			public void actionPerformed(ActionEvent arg0) {
-				view.gamesPanel.gamesStadiumPanel.stadiumSectionSelection(view.gamesPanel.gamesStadiumPanel.viewStadium_1, ma1_Games, img_1_S);
-			}
-		});
-		view.gamesPanel.gamesStadiumPanel.viewStadium_1.addMouseListener(ma1_Games);
-		
-
-		String path2 = "/Images/StadiumSlices/Stadium" + getViewStadiumSectionType(3) + "_2.png";
-		img_2 = new ImageIcon(Overview.class.getResource(path2));
-		String path2_R = "/Images/StadiumSlices/Stadium_Rollover_2.png";
-		img_2_R = new ImageIcon(Overview.class.getResource(path2_R));
-		String path2_S = "/Images/StadiumSlices/Stadium_Selected_2.png";
-		img_2_S = new ImageIcon(Overview.class.getResource(path2_S));
-		
-		view.overviewPanel.overviewStadiumPanel.viewStadium_2.setBounds(view.overviewPanel.overviewStadiumPanel.viewStadium_1.getBounds().x + view.overviewPanel.overviewStadiumPanel.viewStadium_1.getBounds().width, view.overviewPanel.overviewStadiumPanel.panelViewStadium.getBounds().y, (int)(img_2.getIconWidth()*view.overviewPanel.overviewStadiumPanel.stadiumSizeRatio), (int)(img_2.getIconHeight()*view.overviewPanel.overviewStadiumPanel.stadiumSizeRatio));
-		view.overviewPanel.overviewStadiumPanel.viewStadium_2.setIcon(UI_Elements.scaleImageToBox(img_2, view.overviewPanel.overviewStadiumPanel.viewStadium_2));
-		MouseAdapter ma2_Overview = view.overviewPanel.overviewStadiumPanel.createSectionAdapter(view.overviewPanel.overviewStadiumPanel.viewStadium_2, img_2, img_2_R, img_2_S);
-		view.overviewPanel.overviewStadiumPanel.viewStadium_2.addActionListener(new ActionListener() {
-			public void actionPerformed(ActionEvent arg0) {
-				view.overviewPanel.overviewStadiumPanel.stadiumSectionSelection(view.overviewPanel.overviewStadiumPanel.viewStadium_2, ma2_Overview, img_2_S);
-			}
-		});
-		view.overviewPanel.overviewStadiumPanel.viewStadium_2.addMouseListener(ma2_Overview);
-		
-		view.gamesPanel.gamesStadiumPanel.viewStadium_2.setBounds(view.gamesPanel.gamesStadiumPanel.viewStadium_1.getBounds().x + view.gamesPanel.gamesStadiumPanel.viewStadium_1.getBounds().width, view.gamesPanel.gamesStadiumPanel.panelViewStadium.getBounds().y, (int)(img_2.getIconWidth()*view.gamesPanel.gamesStadiumPanel.stadiumSizeRatio), (int)(img_2.getIconHeight()*view.gamesPanel.gamesStadiumPanel.stadiumSizeRatio));
-		view.gamesPanel.gamesStadiumPanel.viewStadium_2.setIcon(UI_Elements.scaleImageToBox(img_2, view.gamesPanel.gamesStadiumPanel.viewStadium_2));
-		MouseAdapter ma2_Games = view.gamesPanel.gamesStadiumPanel.createSectionAdapter(view.gamesPanel.gamesStadiumPanel.viewStadium_2, img_2, img_2_R, img_2_S);
-		view.gamesPanel.gamesStadiumPanel.viewStadium_2.addActionListener(new ActionListener() {
-			public void actionPerformed(ActionEvent arg0) {
-				view.gamesPanel.gamesStadiumPanel.stadiumSectionSelection(view.gamesPanel.gamesStadiumPanel.viewStadium_2, ma2_Games, img_2_S);
-			}
-		});
-		view.gamesPanel.gamesStadiumPanel.viewStadium_2.addMouseListener(ma2_Games);
-		
-
-		String path3 = "/Images/StadiumSlices/Stadium" + getViewStadiumSectionType(4) + "_3.png";
-		img_3 = new ImageIcon(Overview.class.getResource(path3));
-		String path3_R = "/Images/StadiumSlices/Stadium_Rollover_3.png";
-		img_3_R = new ImageIcon(Overview.class.getResource(path3_R));
-		String path3_S = "/Images/StadiumSlices/Stadium_Selected_3.png";
-		img_3_S = new ImageIcon(Overview.class.getResource(path3_S));
-		
-		view.overviewPanel.overviewStadiumPanel.viewStadium_3.setBounds(view.overviewPanel.overviewStadiumPanel.viewStadium_2.getBounds().x + view.overviewPanel.overviewStadiumPanel.viewStadium_2.getBounds().width, view.overviewPanel.overviewStadiumPanel.panelViewStadium.getBounds().y, (int)(img_3.getIconWidth()*view.overviewPanel.overviewStadiumPanel.stadiumSizeRatio), (int)(img_3.getIconHeight()*view.overviewPanel.overviewStadiumPanel.stadiumSizeRatio));
-		view.overviewPanel.overviewStadiumPanel.viewStadium_3.setIcon(UI_Elements.scaleImageToBox(img_3, view.overviewPanel.overviewStadiumPanel.viewStadium_3));
-		MouseAdapter ma3_Overview = view.overviewPanel.overviewStadiumPanel.createSectionAdapter(view.overviewPanel.overviewStadiumPanel.viewStadium_3, img_3, img_3_R, img_3_S);
-		view.overviewPanel.overviewStadiumPanel.viewStadium_3.addActionListener(new ActionListener() {
-			public void actionPerformed(ActionEvent arg0) {
-				view.overviewPanel.overviewStadiumPanel.stadiumSectionSelection(view.overviewPanel.overviewStadiumPanel.viewStadium_3, ma3_Overview, img_3_S);
-			}
-		});
-		view.overviewPanel.overviewStadiumPanel.viewStadium_3.addMouseListener(ma3_Overview);
-		
-		view.gamesPanel.gamesStadiumPanel.viewStadium_3.setBounds(view.gamesPanel.gamesStadiumPanel.viewStadium_2.getBounds().x + view.gamesPanel.gamesStadiumPanel.viewStadium_2.getBounds().width, view.gamesPanel.gamesStadiumPanel.panelViewStadium.getBounds().y, (int)(img_3.getIconWidth()*view.gamesPanel.gamesStadiumPanel.stadiumSizeRatio), (int)(img_3.getIconHeight()*view.gamesPanel.gamesStadiumPanel.stadiumSizeRatio));
-		view.gamesPanel.gamesStadiumPanel.viewStadium_3.setIcon(UI_Elements.scaleImageToBox(img_3, view.gamesPanel.gamesStadiumPanel.viewStadium_3));
-		MouseAdapter ma3_Games = view.gamesPanel.gamesStadiumPanel.createSectionAdapter(view.gamesPanel.gamesStadiumPanel.viewStadium_3, img_3, img_3_R, img_3_S);
-		view.gamesPanel.gamesStadiumPanel.viewStadium_3.addActionListener(new ActionListener() {
-			public void actionPerformed(ActionEvent arg0) {
-				view.gamesPanel.gamesStadiumPanel.stadiumSectionSelection(view.gamesPanel.gamesStadiumPanel.viewStadium_3, ma3_Games, img_3_S);
-			}
-		});
-		view.gamesPanel.gamesStadiumPanel.viewStadium_3.addMouseListener(ma3_Games);
-		
-		
-		String path4 = "/Images/StadiumSlices/Stadium" + getViewStadiumSectionType(5) + "_4.png";
-		img_4 = new ImageIcon(Overview.class.getResource(path4));
-		String path4_R = "/Images/StadiumSlices/Stadium_Rollover_4.png";
-		img_4_R = new ImageIcon(Overview.class.getResource(path4_R));
-		String path4_S = "/Images/StadiumSlices/Stadium_Selected_4.png";
-		img_4_S = new ImageIcon(Overview.class.getResource(path4_S));
-		
-		view.overviewPanel.overviewStadiumPanel.viewStadium_4.setBounds(view.overviewPanel.overviewStadiumPanel.viewStadium_3.getBounds().x + view.overviewPanel.overviewStadiumPanel.viewStadium_3.getBounds().width, view.overviewPanel.overviewStadiumPanel.panelViewStadium.getBounds().y, (int)(img_4.getIconWidth()*view.overviewPanel.overviewStadiumPanel.stadiumSizeRatio), (int)(img_4.getIconHeight()*view.overviewPanel.overviewStadiumPanel.stadiumSizeRatio));
-		view.overviewPanel.overviewStadiumPanel.viewStadium_4.setIcon(UI_Elements.scaleImageToBox(img_4, view.overviewPanel.overviewStadiumPanel.viewStadium_4));
-		MouseAdapter ma4_Overview = view.overviewPanel.overviewStadiumPanel.createSectionAdapter(view.overviewPanel.overviewStadiumPanel.viewStadium_4, img_4, img_4_R, img_4_S);
-		view.overviewPanel.overviewStadiumPanel.viewStadium_4.addActionListener(new ActionListener() {
-			public void actionPerformed(ActionEvent arg0) {
-				view.overviewPanel.overviewStadiumPanel.stadiumSectionSelection(view.overviewPanel.overviewStadiumPanel.viewStadium_4, ma4_Overview, img_4_S);
-			}
-		});
-		view.overviewPanel.overviewStadiumPanel.viewStadium_4.addMouseListener(ma4_Overview);
-		
-		view.gamesPanel.gamesStadiumPanel.viewStadium_4.setBounds(view.gamesPanel.gamesStadiumPanel.viewStadium_3.getBounds().x + view.gamesPanel.gamesStadiumPanel.viewStadium_3.getBounds().width, view.gamesPanel.gamesStadiumPanel.panelViewStadium.getBounds().y, (int)(img_4.getIconWidth()*view.gamesPanel.gamesStadiumPanel.stadiumSizeRatio), (int)(img_4.getIconHeight()*view.gamesPanel.gamesStadiumPanel.stadiumSizeRatio));
-		view.gamesPanel.gamesStadiumPanel.viewStadium_4.setIcon(UI_Elements.scaleImageToBox(img_4, view.gamesPanel.gamesStadiumPanel.viewStadium_4));
-		MouseAdapter ma4_Games = view.gamesPanel.gamesStadiumPanel.createSectionAdapter(view.gamesPanel.gamesStadiumPanel.viewStadium_4, img_4, img_4_R, img_4_S);
-		view.gamesPanel.gamesStadiumPanel.viewStadium_4.addActionListener(new ActionListener() {
-			public void actionPerformed(ActionEvent arg0) {
-				view.gamesPanel.gamesStadiumPanel.stadiumSectionSelection(view.gamesPanel.gamesStadiumPanel.viewStadium_4, ma4_Games, img_4_S);
-			}
-		});
-		view.gamesPanel.gamesStadiumPanel.viewStadium_4.addMouseListener(ma4_Games);
-		
-
-		
-
-		String path5 = "/Images/StadiumSlices/Stadium" + getViewStadiumSectionType(6) + "_5.png";
-		img_5 = new ImageIcon(Overview.class.getResource(path5));
-		String path5_R = "/Images/StadiumSlices/Stadium_Rollover_5.png";
-		img_5_R = new ImageIcon(Overview.class.getResource(path5_R));
-		String path5_S = "/Images/StadiumSlices/Stadium_Selected_5.png";
-		img_5_S = new ImageIcon(Overview.class.getResource(path5_S));
-		
-		view.overviewPanel.overviewStadiumPanel.viewStadium_5.setBounds(view.overviewPanel.overviewStadiumPanel.viewStadium_4.getBounds().x + view.overviewPanel.overviewStadiumPanel.viewStadium_4.getBounds().width, view.overviewPanel.overviewStadiumPanel.panelViewStadium.getBounds().y, (int)(img_5.getIconWidth()*view.overviewPanel.overviewStadiumPanel.stadiumSizeRatio), (int)(img_5.getIconHeight()*view.overviewPanel.overviewStadiumPanel.stadiumSizeRatio));
-		view.overviewPanel.overviewStadiumPanel.viewStadium_5.setIcon(UI_Elements.scaleImageToBox(img_5, view.overviewPanel.overviewStadiumPanel.viewStadium_5));
-		MouseAdapter ma5_Overview = view.overviewPanel.overviewStadiumPanel.createSectionAdapter(view.overviewPanel.overviewStadiumPanel.viewStadium_5, img_5, img_5_R, img_5_S);
-		view.overviewPanel.overviewStadiumPanel.viewStadium_5.addActionListener(new ActionListener() {
-			public void actionPerformed(ActionEvent arg0) {
-				view.overviewPanel.overviewStadiumPanel.stadiumSectionSelection(view.overviewPanel.overviewStadiumPanel.viewStadium_5, ma5_Overview, img_5_S);
-			}
-		});
-		view.overviewPanel.overviewStadiumPanel.viewStadium_5.addMouseListener(ma5_Overview);
-		
-		view.gamesPanel.gamesStadiumPanel.viewStadium_5.setBounds(view.gamesPanel.gamesStadiumPanel.viewStadium_4.getBounds().x + view.gamesPanel.gamesStadiumPanel.viewStadium_4.getBounds().width, view.gamesPanel.gamesStadiumPanel.panelViewStadium.getBounds().y, (int)(img_5.getIconWidth()*view.gamesPanel.gamesStadiumPanel.stadiumSizeRatio), (int)(img_5.getIconHeight()*view.gamesPanel.gamesStadiumPanel.stadiumSizeRatio));
-		view.gamesPanel.gamesStadiumPanel.viewStadium_5.setIcon(UI_Elements.scaleImageToBox(img_5, view.gamesPanel.gamesStadiumPanel.viewStadium_5));
-		MouseAdapter ma5_Games = view.gamesPanel.gamesStadiumPanel.createSectionAdapter(view.gamesPanel.gamesStadiumPanel.viewStadium_5, img_5, img_5_R, img_5_S);
-		view.gamesPanel.gamesStadiumPanel.viewStadium_5.addActionListener(new ActionListener() {
-			public void actionPerformed(ActionEvent arg0) {
-				view.gamesPanel.gamesStadiumPanel.stadiumSectionSelection(view.gamesPanel.gamesStadiumPanel.viewStadium_5, ma5_Games, img_5_S);
-			}
-		});
-		view.gamesPanel.gamesStadiumPanel.viewStadium_5.addMouseListener(ma5_Games);
-		
-		
-		
-
-		String path6 = "/Images/StadiumSlices/Stadium" + getViewStadiumSectionType(7) + "_6.png";
-		img_6 = new ImageIcon(Overview.class.getResource(path6));
-		String path6_R = "/Images/StadiumSlices/Stadium_Rollover_6.png";
-		img_6_R = new ImageIcon(Overview.class.getResource(path6_R));
-		String path6_S = "/Images/StadiumSlices/Stadium_Selected_6.png";
-		img_6_S = new ImageIcon(Overview.class.getResource(path6_S));
-		
-		view.overviewPanel.overviewStadiumPanel.viewStadium_6.setBounds(view.overviewPanel.overviewStadiumPanel.viewStadium_5.getBounds().x + view.overviewPanel.overviewStadiumPanel.viewStadium_5.getBounds().width, view.overviewPanel.overviewStadiumPanel.panelViewStadium.getBounds().y, (int)(img_6.getIconWidth()*view.overviewPanel.overviewStadiumPanel.stadiumSizeRatio), (int)(img_6.getIconHeight()*view.overviewPanel.overviewStadiumPanel.stadiumSizeRatio));
-		view.overviewPanel.overviewStadiumPanel.viewStadium_6.setIcon(UI_Elements.scaleImageToBox(img_6, view.overviewPanel.overviewStadiumPanel.viewStadium_6));
-		MouseAdapter ma6_Overview = view.overviewPanel.overviewStadiumPanel.createSectionAdapter(view.overviewPanel.overviewStadiumPanel.viewStadium_6, img_6, img_6_R, img_6_S);
-		view.overviewPanel.overviewStadiumPanel.viewStadium_6.addActionListener(new ActionListener() {
-			public void actionPerformed(ActionEvent arg0) {
-				view.overviewPanel.overviewStadiumPanel.stadiumSectionSelection(view.overviewPanel.overviewStadiumPanel.viewStadium_6, ma6_Overview, img_6_S);
-			}
-		});
-		view.overviewPanel.overviewStadiumPanel.viewStadium_6.addMouseListener(ma6_Overview);
-		
-		view.gamesPanel.gamesStadiumPanel.viewStadium_6.setBounds(view.gamesPanel.gamesStadiumPanel.viewStadium_5.getBounds().x + view.gamesPanel.gamesStadiumPanel.viewStadium_5.getBounds().width, view.gamesPanel.gamesStadiumPanel.panelViewStadium.getBounds().y, (int)(img_6.getIconWidth()*view.gamesPanel.gamesStadiumPanel.stadiumSizeRatio), (int)(img_6.getIconHeight()*view.gamesPanel.gamesStadiumPanel.stadiumSizeRatio));
-		view.gamesPanel.gamesStadiumPanel.viewStadium_6.setIcon(UI_Elements.scaleImageToBox(img_6, view.gamesPanel.gamesStadiumPanel.viewStadium_6));
-		MouseAdapter ma6_Games = view.gamesPanel.gamesStadiumPanel.createSectionAdapter(view.gamesPanel.gamesStadiumPanel.viewStadium_6, img_6, img_6_R, img_6_S);
-		view.gamesPanel.gamesStadiumPanel.viewStadium_6.addActionListener(new ActionListener() {
-			public void actionPerformed(ActionEvent arg0) {
-				view.gamesPanel.gamesStadiumPanel.stadiumSectionSelection(view.gamesPanel.gamesStadiumPanel.viewStadium_6, ma6_Games, img_6_S);
-			}
-		});
-		view.gamesPanel.gamesStadiumPanel.viewStadium_6.addMouseListener(ma6_Games);
-		
-		
-
-		String path7 = "/Images/StadiumSlices/Stadium" + getViewStadiumSectionType(7) + "_7.png";
-		img_7 = new ImageIcon(Overview.class.getResource(path7));
-		String path7_R = "/Images/StadiumSlices/Stadium_Rollover_7.png";
-		img_7_R = new ImageIcon(Overview.class.getResource(path7_R));
-		String path7_S = "/Images/StadiumSlices/Stadium_Selected_7.png";
-		img_7_S = new ImageIcon(Overview.class.getResource(path7_S));
-		
-		view.overviewPanel.overviewStadiumPanel.viewStadium_7.setBounds(view.overviewPanel.overviewStadiumPanel.viewStadium_6.getBounds().x + view.overviewPanel.overviewStadiumPanel.viewStadium_6.getBounds().width, view.overviewPanel.overviewStadiumPanel.panelViewStadium.getBounds().y, (int)(img_7.getIconWidth()*view.overviewPanel.overviewStadiumPanel.stadiumSizeRatio), (int)(img_7.getIconHeight()*view.overviewPanel.overviewStadiumPanel.stadiumSizeRatio));
-		view.overviewPanel.overviewStadiumPanel.viewStadium_7.setIcon(UI_Elements.scaleImageToBox(img_7, view.overviewPanel.overviewStadiumPanel.viewStadium_7));
-		MouseAdapter ma7_Overview = view.overviewPanel.overviewStadiumPanel.createSectionAdapter(view.overviewPanel.overviewStadiumPanel.viewStadium_7, img_7, img_7_R, img_7_S);
-		view.overviewPanel.overviewStadiumPanel.viewStadium_7.addActionListener(new ActionListener() {
-			public void actionPerformed(ActionEvent arg0) {
-				view.overviewPanel.overviewStadiumPanel.stadiumSectionSelection(view.overviewPanel.overviewStadiumPanel.viewStadium_7, ma7_Overview, img_7_S);
-			}
-		});
-		view.overviewPanel.overviewStadiumPanel.viewStadium_7.addMouseListener(ma7_Overview);
-		
-		view.gamesPanel.gamesStadiumPanel.viewStadium_7.setBounds(view.gamesPanel.gamesStadiumPanel.viewStadium_6.getBounds().x + view.gamesPanel.gamesStadiumPanel.viewStadium_6.getBounds().width, view.gamesPanel.gamesStadiumPanel.panelViewStadium.getBounds().y, (int)(img_7.getIconWidth()*view.gamesPanel.gamesStadiumPanel.stadiumSizeRatio), (int)(img_7.getIconHeight()*view.gamesPanel.gamesStadiumPanel.stadiumSizeRatio));
-		view.gamesPanel.gamesStadiumPanel.viewStadium_7.setIcon(UI_Elements.scaleImageToBox(img_7, view.gamesPanel.gamesStadiumPanel.viewStadium_7));
-		MouseAdapter ma7_Games = view.gamesPanel.gamesStadiumPanel.createSectionAdapter(view.gamesPanel.gamesStadiumPanel.viewStadium_7, img_7, img_7_R, img_7_S);
-		view.gamesPanel.gamesStadiumPanel.viewStadium_7.addActionListener(new ActionListener() {
-			public void actionPerformed(ActionEvent arg0) {
-				view.gamesPanel.gamesStadiumPanel.stadiumSectionSelection(view.gamesPanel.gamesStadiumPanel.viewStadium_7, ma7_Games, img_7_S);
-			}
-		});
-		view.gamesPanel.gamesStadiumPanel.viewStadium_7.addMouseListener(ma7_Games);
-		
-		
-		String path21 = "/Images/StadiumSlices/Stadium" + getViewStadiumSectionType(21) + "_21.png";
-		img_21 = new ImageIcon(Overview.class.getResource(path21));
-		String path21_R = "/Images/StadiumSlices/Stadium_Rollover_21.png";
-		img_21_R = new ImageIcon(Overview.class.getResource(path21_R));
-		String path21_S = "/Images/StadiumSlices/Stadium_Selected_21.png";
-		img_21_S = new ImageIcon(Overview.class.getResource(path21_S));
-		
-		view.overviewPanel.overviewStadiumPanel.viewStadium_21.setBounds(view.overviewPanel.overviewStadiumPanel.panelViewStadium.getBounds().x + (int)(1013*view.overviewPanel.overviewStadiumPanel.stadiumSizeRatio), view.overviewPanel.overviewStadiumPanel.viewStadium_1.getBounds().y + view.overviewPanel.overviewStadiumPanel.viewStadium_6.getBounds().height, (int)(img_21.getIconWidth()*view.overviewPanel.overviewStadiumPanel.stadiumSizeRatio), (int)(img_21.getIconHeight()*view.overviewPanel.overviewStadiumPanel.stadiumSizeRatio));
-		view.overviewPanel.overviewStadiumPanel.viewStadium_21.setIcon(UI_Elements.scaleImageToBox(img_21, view.overviewPanel.overviewStadiumPanel.viewStadium_21));
-		MouseAdapter ma21_Overview = view.overviewPanel.overviewStadiumPanel.createSectionAdapter(view.overviewPanel.overviewStadiumPanel.viewStadium_21, img_21, img_21_R, img_21_S);
-		view.overviewPanel.overviewStadiumPanel.viewStadium_21.addActionListener(new ActionListener() {
-			public void actionPerformed(ActionEvent arg0) {
-				view.overviewPanel.overviewStadiumPanel.stadiumSectionSelection(view.overviewPanel.overviewStadiumPanel.viewStadium_21, ma21_Overview, img_21_S);
-			}
-		});
-		view.overviewPanel.overviewStadiumPanel.viewStadium_21.addMouseListener(ma21_Overview);
-		
-		view.gamesPanel.gamesStadiumPanel.viewStadium_21.setBounds(view.gamesPanel.gamesStadiumPanel.panelViewStadium.getBounds().x + (int)(1013*view.gamesPanel.gamesStadiumPanel.stadiumSizeRatio), view.gamesPanel.gamesStadiumPanel.viewStadium_1.getBounds().y + view.gamesPanel.gamesStadiumPanel.viewStadium_6.getBounds().height, (int)(img_21.getIconWidth()*view.gamesPanel.gamesStadiumPanel.stadiumSizeRatio), (int)(img_21.getIconHeight()*view.gamesPanel.gamesStadiumPanel.stadiumSizeRatio));
-		view.gamesPanel.gamesStadiumPanel.viewStadium_21.setIcon(UI_Elements.scaleImageToBox(img_21, view.gamesPanel.gamesStadiumPanel.viewStadium_21));
-		MouseAdapter ma21_Games = view.gamesPanel.gamesStadiumPanel.createSectionAdapter(view.gamesPanel.gamesStadiumPanel.viewStadium_21, img_21, img_21_R, img_21_S);
-		view.gamesPanel.gamesStadiumPanel.viewStadium_21.addActionListener(new ActionListener() {
-			public void actionPerformed(ActionEvent arg0) {
-				view.gamesPanel.gamesStadiumPanel.stadiumSectionSelection(view.gamesPanel.gamesStadiumPanel.viewStadium_21, ma21_Games, img_21_S);
-			}
-		});
-		view.gamesPanel.gamesStadiumPanel.viewStadium_21.addMouseListener(ma21_Games);
-		
-
-		String path22 = "/Images/StadiumSlices/Stadium" + getViewStadiumSectionType(22) + "_22.png";
-		img_22 = new ImageIcon(Overview.class.getResource(path22));
-		String path22_R = "/Images/StadiumSlices/Stadium_Rollover_22.png";
-		img_22_R = new ImageIcon(Overview.class.getResource(path22_R));
-		String path22_S = "/Images/StadiumSlices/Stadium_Selected_22.png";
-		img_22_S = new ImageIcon(Overview.class.getResource(path22_S));
-		
-		view.overviewPanel.overviewStadiumPanel.viewStadium_22.setBounds(view.overviewPanel.overviewStadiumPanel.viewStadium_21.getBounds().x + view.overviewPanel.overviewStadiumPanel.viewStadium_21.getBounds().width, view.overviewPanel.overviewStadiumPanel.viewStadium_1.getBounds().y + view.overviewPanel.overviewStadiumPanel.viewStadium_6.getBounds().height, (int)(img_22.getIconWidth()*view.overviewPanel.overviewStadiumPanel.stadiumSizeRatio), (int)(img_22.getIconHeight()*view.overviewPanel.overviewStadiumPanel.stadiumSizeRatio));
-		view.overviewPanel.overviewStadiumPanel.viewStadium_22.setIcon(UI_Elements.scaleImageToBox(img_22, view.overviewPanel.overviewStadiumPanel.viewStadium_22));
-		MouseAdapter ma22_Overview = view.overviewPanel.overviewStadiumPanel.createSectionAdapter(view.overviewPanel.overviewStadiumPanel.viewStadium_22, img_22, img_22_R, img_22_S);
-		view.overviewPanel.overviewStadiumPanel.viewStadium_22.addActionListener(new ActionListener() {
-			public void actionPerformed(ActionEvent arg0) {
-				view.overviewPanel.overviewStadiumPanel.stadiumSectionSelection(view.overviewPanel.overviewStadiumPanel.viewStadium_22, ma22_Overview, img_22_S);
-			}
-		});
-		view.overviewPanel.overviewStadiumPanel.viewStadium_22.addMouseListener(ma22_Overview);
-		
-		view.gamesPanel.gamesStadiumPanel.viewStadium_22.setBounds(view.gamesPanel.gamesStadiumPanel.viewStadium_21.getBounds().x + view.gamesPanel.gamesStadiumPanel.viewStadium_21.getBounds().width, view.gamesPanel.gamesStadiumPanel.viewStadium_1.getBounds().y + view.gamesPanel.gamesStadiumPanel.viewStadium_6.getBounds().height, (int)(img_22.getIconWidth()*view.gamesPanel.gamesStadiumPanel.stadiumSizeRatio), (int)(img_22.getIconHeight()*view.gamesPanel.gamesStadiumPanel.stadiumSizeRatio));
-		view.gamesPanel.gamesStadiumPanel.viewStadium_22.setIcon(UI_Elements.scaleImageToBox(img_22, view.gamesPanel.gamesStadiumPanel.viewStadium_22));
-		MouseAdapter ma22_Games = view.gamesPanel.gamesStadiumPanel.createSectionAdapter(view.gamesPanel.gamesStadiumPanel.viewStadium_22, img_22, img_22_R, img_22_S);
-		view.gamesPanel.gamesStadiumPanel.viewStadium_22.addActionListener(new ActionListener() {
-			public void actionPerformed(ActionEvent arg0) {
-				view.gamesPanel.gamesStadiumPanel.stadiumSectionSelection(view.gamesPanel.gamesStadiumPanel.viewStadium_22, ma22_Games, img_22_S);
-			}
-		});
-		view.gamesPanel.gamesStadiumPanel.viewStadium_22.addMouseListener(ma22_Games);
-		
-
-		String path23 = "/Images/StadiumSlices/Stadium" + getViewStadiumSectionType(23) + "_23.png";
-		img_23 = new ImageIcon(Overview.class.getResource(path23));
-		String path23_R = "/Images/StadiumSlices/Stadium_Rollover_23.png";
-		img_23_R = new ImageIcon(Overview.class.getResource(path23_R));
-		String path23_S = "/Images/StadiumSlices/Stadium_Selected_23.png";
-		img_23_S = new ImageIcon(Overview.class.getResource(path23_S));
-		
-		view.overviewPanel.overviewStadiumPanel.viewStadium_23.setBounds(view.overviewPanel.overviewStadiumPanel.viewStadium_22.getBounds().x + view.overviewPanel.overviewStadiumPanel.viewStadium_22.getBounds().width, view.overviewPanel.overviewStadiumPanel.viewStadium_1.getBounds().y + view.overviewPanel.overviewStadiumPanel.viewStadium_6.getBounds().height, (int)(img_23.getIconWidth()*view.overviewPanel.overviewStadiumPanel.stadiumSizeRatio), (int)(img_23.getIconHeight()*view.overviewPanel.overviewStadiumPanel.stadiumSizeRatio));
-		view.overviewPanel.overviewStadiumPanel.viewStadium_23.setIcon(UI_Elements.scaleImageToBox(img_23, view.overviewPanel.overviewStadiumPanel.viewStadium_23));
-		MouseAdapter ma23_Overview = view.overviewPanel.overviewStadiumPanel.createSectionAdapter(view.overviewPanel.overviewStadiumPanel.viewStadium_23, img_23, img_23_R, img_23_S);
-		view.overviewPanel.overviewStadiumPanel.viewStadium_23.addActionListener(new ActionListener() {
-			public void actionPerformed(ActionEvent arg0) {
-				view.overviewPanel.overviewStadiumPanel.stadiumSectionSelection(view.overviewPanel.overviewStadiumPanel.viewStadium_23, ma23_Overview, img_23_S);
-			}
-		});
-		view.overviewPanel.overviewStadiumPanel.viewStadium_23.addMouseListener(ma23_Overview);
-		
-		view.gamesPanel.gamesStadiumPanel.viewStadium_23.setBounds(view.gamesPanel.gamesStadiumPanel.viewStadium_22.getBounds().x + view.gamesPanel.gamesStadiumPanel.viewStadium_22.getBounds().width, view.gamesPanel.gamesStadiumPanel.viewStadium_1.getBounds().y + view.gamesPanel.gamesStadiumPanel.viewStadium_6.getBounds().height, (int)(img_23.getIconWidth()*view.gamesPanel.gamesStadiumPanel.stadiumSizeRatio), (int)(img_23.getIconHeight()*view.gamesPanel.gamesStadiumPanel.stadiumSizeRatio));
-		view.gamesPanel.gamesStadiumPanel.viewStadium_23.setIcon(UI_Elements.scaleImageToBox(img_23, view.gamesPanel.gamesStadiumPanel.viewStadium_23));
-		MouseAdapter ma23_Games = view.gamesPanel.gamesStadiumPanel.createSectionAdapter(view.gamesPanel.gamesStadiumPanel.viewStadium_23, img_23, img_23_R, img_23_S);
-		view.gamesPanel.gamesStadiumPanel.viewStadium_23.addActionListener(new ActionListener() {
-			public void actionPerformed(ActionEvent arg0) {
-				view.gamesPanel.gamesStadiumPanel.stadiumSectionSelection(view.gamesPanel.gamesStadiumPanel.viewStadium_23, ma23_Games, img_23_S);
-			}
-		});
-		view.gamesPanel.gamesStadiumPanel.viewStadium_23.addMouseListener(ma23_Games);
-		
-
-		String path24 = "/Images/StadiumSlices/Stadium" + getViewStadiumSectionType(24) + "_24.png";
-		img_24 = new ImageIcon(Overview.class.getResource(path24));
-		String path24_R = "/Images/StadiumSlices/Stadium_Rollover_24.png";
-		img_24_R = new ImageIcon(Overview.class.getResource(path24_R));
-		String path24_S = "/Images/StadiumSlices/Stadium_Selected_24.png";
-		img_24_S = new ImageIcon(Overview.class.getResource(path24_S));
-		
-		view.overviewPanel.overviewStadiumPanel.viewStadium_24.setBounds(view.overviewPanel.overviewStadiumPanel.viewStadium_23.getBounds().x + view.overviewPanel.overviewStadiumPanel.viewStadium_23.getBounds().width, view.overviewPanel.overviewStadiumPanel.viewStadium_1.getBounds().y + view.overviewPanel.overviewStadiumPanel.viewStadium_6.getBounds().height, (int)(img_24.getIconWidth()*view.overviewPanel.overviewStadiumPanel.stadiumSizeRatio), (int)(img_24.getIconHeight()*view.overviewPanel.overviewStadiumPanel.stadiumSizeRatio));
-		view.overviewPanel.overviewStadiumPanel.viewStadium_24.setIcon(UI_Elements.scaleImageToBox(img_24, view.overviewPanel.overviewStadiumPanel.viewStadium_24));
-		MouseAdapter ma24_Overview = view.overviewPanel.overviewStadiumPanel.createSectionAdapter(view.overviewPanel.overviewStadiumPanel.viewStadium_24, img_24, img_24_R, img_24_S);
-		view.overviewPanel.overviewStadiumPanel.viewStadium_24.addActionListener(new ActionListener() {
-			public void actionPerformed(ActionEvent arg0) {
-				view.overviewPanel.overviewStadiumPanel.stadiumSectionSelection(view.overviewPanel.overviewStadiumPanel.viewStadium_24, ma24_Overview, img_24_S);
-			}
-		});
-		view.overviewPanel.overviewStadiumPanel.viewStadium_24.addMouseListener(ma24_Overview);
-		
-		view.gamesPanel.gamesStadiumPanel.viewStadium_24.setBounds(view.gamesPanel.gamesStadiumPanel.viewStadium_23.getBounds().x + view.gamesPanel.gamesStadiumPanel.viewStadium_23.getBounds().width, view.gamesPanel.gamesStadiumPanel.viewStadium_1.getBounds().y + view.gamesPanel.gamesStadiumPanel.viewStadium_6.getBounds().height, (int)(img_24.getIconWidth()*view.gamesPanel.gamesStadiumPanel.stadiumSizeRatio), (int)(img_24.getIconHeight()*view.gamesPanel.gamesStadiumPanel.stadiumSizeRatio));
-		view.gamesPanel.gamesStadiumPanel.viewStadium_24.setIcon(UI_Elements.scaleImageToBox(img_24, view.gamesPanel.gamesStadiumPanel.viewStadium_24));
-		MouseAdapter ma24_Games = view.gamesPanel.gamesStadiumPanel.createSectionAdapter(view.gamesPanel.gamesStadiumPanel.viewStadium_24, img_24, img_24_R, img_24_S);
-		view.gamesPanel.gamesStadiumPanel.viewStadium_24.addActionListener(new ActionListener() {
-			public void actionPerformed(ActionEvent arg0) {
-				view.gamesPanel.gamesStadiumPanel.stadiumSectionSelection(view.gamesPanel.gamesStadiumPanel.viewStadium_24, ma24_Games, img_24_S);
-			}
-		});
-		view.gamesPanel.gamesStadiumPanel.viewStadium_24.addMouseListener(ma24_Games);
-		
-		String path25 = "/Images/StadiumSlices/Stadium" + getViewStadiumSectionType(25) + "_25.png";
-		img_25 = new ImageIcon(Overview.class.getResource(path25));
-		String path25_R = "/Images/StadiumSlices/Stadium_Rollover_25.png";
-		img_25_R = new ImageIcon(Overview.class.getResource(path25_R));
-		String path25_S = "/Images/StadiumSlices/Stadium_Selected_25.png";
-		img_25_S = new ImageIcon(Overview.class.getResource(path25_S));
-		
-		view.overviewPanel.overviewStadiumPanel.viewStadium_25.setBounds(view.overviewPanel.overviewStadiumPanel.viewStadium_24.getBounds().x + view.overviewPanel.overviewStadiumPanel.viewStadium_24.getBounds().width, view.overviewPanel.overviewStadiumPanel.viewStadium_1.getBounds().y + view.overviewPanel.overviewStadiumPanel.viewStadium_6.getBounds().height, (int)(img_25.getIconWidth()*view.overviewPanel.overviewStadiumPanel.stadiumSizeRatio), (int)(img_25.getIconHeight()*view.overviewPanel.overviewStadiumPanel.stadiumSizeRatio));
-		view.overviewPanel.overviewStadiumPanel.viewStadium_25.setIcon(UI_Elements.scaleImageToBox(img_25, view.overviewPanel.overviewStadiumPanel.viewStadium_25));
-		MouseAdapter ma25_Overview = view.overviewPanel.overviewStadiumPanel.createSectionAdapter(view.overviewPanel.overviewStadiumPanel.viewStadium_25, img_25, img_25_R, img_25_S);
-		view.overviewPanel.overviewStadiumPanel.viewStadium_25.addActionListener(new ActionListener() {
-			public void actionPerformed(ActionEvent arg0) {
-				view.overviewPanel.overviewStadiumPanel.stadiumSectionSelection(view.overviewPanel.overviewStadiumPanel.viewStadium_25, ma25_Overview, img_25_S);
-			}
-		});
-		view.overviewPanel.overviewStadiumPanel.viewStadium_25.addMouseListener(ma25_Overview);
-		
-		view.gamesPanel.gamesStadiumPanel.viewStadium_25.setBounds(view.gamesPanel.gamesStadiumPanel.viewStadium_24.getBounds().x + view.gamesPanel.gamesStadiumPanel.viewStadium_24.getBounds().width, view.gamesPanel.gamesStadiumPanel.viewStadium_1.getBounds().y + view.gamesPanel.gamesStadiumPanel.viewStadium_6.getBounds().height, (int)(img_25.getIconWidth()*view.gamesPanel.gamesStadiumPanel.stadiumSizeRatio), (int)(img_25.getIconHeight()*view.gamesPanel.gamesStadiumPanel.stadiumSizeRatio));
-		view.gamesPanel.gamesStadiumPanel.viewStadium_25.setIcon(UI_Elements.scaleImageToBox(img_25, view.gamesPanel.gamesStadiumPanel.viewStadium_25));
-		MouseAdapter ma25_Games = view.gamesPanel.gamesStadiumPanel.createSectionAdapter(view.gamesPanel.gamesStadiumPanel.viewStadium_25, img_25, img_25_R, img_25_S);
-		view.gamesPanel.gamesStadiumPanel.viewStadium_25.addActionListener(new ActionListener() {
-			public void actionPerformed(ActionEvent arg0) {
-				view.gamesPanel.gamesStadiumPanel.stadiumSectionSelection(view.gamesPanel.gamesStadiumPanel.viewStadium_25, ma25_Games, img_25_S);
-			}
-		});
-		view.gamesPanel.gamesStadiumPanel.viewStadium_25.addMouseListener(ma25_Games);
-		
-		
-		String path26 = "/Images/StadiumSlices/Stadium" + getViewStadiumSectionType(26) + "_26.png";
-		img_26 = new ImageIcon(Overview.class.getResource(path26));
-		String path26_R = "/Images/StadiumSlices/Stadium_Rollover_26.png";
-		img_26_R = new ImageIcon(Overview.class.getResource(path26_R));
-		String path26_S = "/Images/StadiumSlices/Stadium_Selected_26.png";
-		img_26_S = new ImageIcon(Overview.class.getResource(path26_S));
-		
-		view.overviewPanel.overviewStadiumPanel.viewStadium_26.setBounds(view.overviewPanel.overviewStadiumPanel.viewStadium_25.getBounds().x + view.overviewPanel.overviewStadiumPanel.viewStadium_25.getBounds().width, view.overviewPanel.overviewStadiumPanel.viewStadium_1.getBounds().y + view.overviewPanel.overviewStadiumPanel.viewStadium_6.getBounds().height, (int)(img_26.getIconWidth()*view.overviewPanel.overviewStadiumPanel.stadiumSizeRatio), (int)(img_26.getIconHeight()*view.overviewPanel.overviewStadiumPanel.stadiumSizeRatio));
-		view.overviewPanel.overviewStadiumPanel.viewStadium_26.setIcon(UI_Elements.scaleImageToBox(img_26, view.overviewPanel.overviewStadiumPanel.viewStadium_26));
-		MouseAdapter ma26_Overview = view.overviewPanel.overviewStadiumPanel.createSectionAdapter(view.overviewPanel.overviewStadiumPanel.viewStadium_26, img_26, img_26_R, img_26_S);
-		view.overviewPanel.overviewStadiumPanel.viewStadium_26.addActionListener(new ActionListener() {
-			public void actionPerformed(ActionEvent arg0) {
-				view.overviewPanel.overviewStadiumPanel.stadiumSectionSelection(view.overviewPanel.overviewStadiumPanel.viewStadium_26, ma26_Overview, img_26_S);
-			}
-		});
-		view.overviewPanel.overviewStadiumPanel.viewStadium_26.addMouseListener(ma26_Overview);
-		
-		view.gamesPanel.gamesStadiumPanel.viewStadium_26.setBounds(view.gamesPanel.gamesStadiumPanel.viewStadium_25.getBounds().x + view.gamesPanel.gamesStadiumPanel.viewStadium_25.getBounds().width, view.gamesPanel.gamesStadiumPanel.viewStadium_1.getBounds().y + view.gamesPanel.gamesStadiumPanel.viewStadium_6.getBounds().height, (int)(img_26.getIconWidth()*view.gamesPanel.gamesStadiumPanel.stadiumSizeRatio), (int)(img_26.getIconHeight()*view.gamesPanel.gamesStadiumPanel.stadiumSizeRatio));
-		view.gamesPanel.gamesStadiumPanel.viewStadium_26.setIcon(UI_Elements.scaleImageToBox(img_26, view.gamesPanel.gamesStadiumPanel.viewStadium_26));
-		MouseAdapter ma26_Games = view.gamesPanel.gamesStadiumPanel.createSectionAdapter(view.gamesPanel.gamesStadiumPanel.viewStadium_26, img_26, img_26_R, img_26_S);
-		view.gamesPanel.gamesStadiumPanel.viewStadium_26.addActionListener(new ActionListener() {
-			public void actionPerformed(ActionEvent arg0) {
-				view.gamesPanel.gamesStadiumPanel.stadiumSectionSelection(view.gamesPanel.gamesStadiumPanel.viewStadium_26, ma26_Games, img_26_S);
-			}
-		});
-		view.gamesPanel.gamesStadiumPanel.viewStadium_26.addMouseListener(ma26_Games);
-		
-		String path27 = "/Images/StadiumSlices/Stadium" + getViewStadiumSectionType(27) + "_27.png";
-		img_27 = new ImageIcon(Overview.class.getResource(path27));
-		String path27_R = "/Images/StadiumSlices/Stadium_Rollover_27.png";
-		img_27_R = new ImageIcon(Overview.class.getResource(path27_R));
-		String path27_S = "/Images/StadiumSlices/Stadium_Selected_27.png";
-		img_27_S = new ImageIcon(Overview.class.getResource(path27_S));
-		
-		view.overviewPanel.overviewStadiumPanel.viewStadium_27.setBounds(view.overviewPanel.overviewStadiumPanel.viewStadium_26.getBounds().x + view.overviewPanel.overviewStadiumPanel.viewStadium_26.getBounds().width, view.overviewPanel.overviewStadiumPanel.viewStadium_1.getBounds().y + view.overviewPanel.overviewStadiumPanel.viewStadium_6.getBounds().height, (int)(img_27.getIconWidth()*view.overviewPanel.overviewStadiumPanel.stadiumSizeRatio), (int)(img_27.getIconHeight()*view.overviewPanel.overviewStadiumPanel.stadiumSizeRatio));
-		view.overviewPanel.overviewStadiumPanel.viewStadium_27.setIcon(UI_Elements.scaleImageToBox(img_27, view.overviewPanel.overviewStadiumPanel.viewStadium_27));
-		MouseAdapter ma27_Overview = view.overviewPanel.overviewStadiumPanel.createSectionAdapter(view.overviewPanel.overviewStadiumPanel.viewStadium_27, img_27, img_27_R, img_27_S);
-		view.overviewPanel.overviewStadiumPanel.viewStadium_27.addActionListener(new ActionListener() {
-			public void actionPerformed(ActionEvent arg0) {
-				view.overviewPanel.overviewStadiumPanel.stadiumSectionSelection(view.overviewPanel.overviewStadiumPanel.viewStadium_27, ma27_Overview, img_27_S);
-			}
-		});
-		view.overviewPanel.overviewStadiumPanel.viewStadium_27.addMouseListener(ma27_Overview);
-						
-		view.gamesPanel.gamesStadiumPanel.viewStadium_27.setBounds(view.gamesPanel.gamesStadiumPanel.viewStadium_26.getBounds().x + view.gamesPanel.gamesStadiumPanel.viewStadium_26.getBounds().width, view.gamesPanel.gamesStadiumPanel.viewStadium_1.getBounds().y + view.gamesPanel.gamesStadiumPanel.viewStadium_6.getBounds().height, (int)(img_27.getIconWidth()*view.gamesPanel.gamesStadiumPanel.stadiumSizeRatio), (int)(img_27.getIconHeight()*view.gamesPanel.gamesStadiumPanel.stadiumSizeRatio));
-		view.gamesPanel.gamesStadiumPanel.viewStadium_27.setIcon(UI_Elements.scaleImageToBox(img_27, view.gamesPanel.gamesStadiumPanel.viewStadium_27));
-		MouseAdapter ma27_Games = view.gamesPanel.gamesStadiumPanel.createSectionAdapter(view.gamesPanel.gamesStadiumPanel.viewStadium_27, img_27, img_27_R, img_27_S);
-		view.gamesPanel.gamesStadiumPanel.viewStadium_27.addActionListener(new ActionListener() {
-			public void actionPerformed(ActionEvent arg0) {
-				view.gamesPanel.gamesStadiumPanel.stadiumSectionSelection(view.gamesPanel.gamesStadiumPanel.viewStadium_27, ma27_Games, img_27_S);
-			}
-		});
-		view.gamesPanel.gamesStadiumPanel.viewStadium_27.addMouseListener(ma27_Games);
-		
-
-		String path28 = "/Images/StadiumSlices/Stadium" + getViewStadiumSectionType(28) + "_28.png";
-		img_28 = new ImageIcon(Overview.class.getResource(path28));
-		String path28_R = "/Images/StadiumSlices/Stadium_Rollover_28.png";
-		img_28_R = new ImageIcon(Overview.class.getResource(path28_R));
-		String path28_S = "/Images/StadiumSlices/Stadium_Selected_28.png";
-		img_28_S = new ImageIcon(Overview.class.getResource(path28_S));
-		
-		view.overviewPanel.overviewStadiumPanel.viewStadium_28.setBounds(view.overviewPanel.overviewStadiumPanel.viewStadium_7.getBounds().x + view.overviewPanel.overviewStadiumPanel.viewStadium_7.getBounds().width, view.overviewPanel.overviewStadiumPanel.viewStadium_44.getBounds().y, (int)(img_28.getIconWidth()*view.overviewPanel.overviewStadiumPanel.stadiumSizeRatio), (int)(img_28.getIconHeight()*view.overviewPanel.overviewStadiumPanel.stadiumSizeRatio));
-		view.overviewPanel.overviewStadiumPanel.viewStadium_28.setIcon(UI_Elements.scaleImageToBox(img_28, view.overviewPanel.overviewStadiumPanel.viewStadium_28));
-		MouseAdapter ma28_Overview = view.overviewPanel.overviewStadiumPanel.createSectionAdapter(view.overviewPanel.overviewStadiumPanel.viewStadium_28, img_28, img_28_R, img_28_S);
-		view.overviewPanel.overviewStadiumPanel.viewStadium_28.addActionListener(new ActionListener() {
-			public void actionPerformed(ActionEvent arg0) {
-				view.overviewPanel.overviewStadiumPanel.stadiumSectionSelection(view.overviewPanel.overviewStadiumPanel.viewStadium_28, ma28_Overview, img_28_S);
-			}
-		});
-		view.overviewPanel.overviewStadiumPanel.viewStadium_28.addMouseListener(ma28_Overview);
-		
-		view.gamesPanel.gamesStadiumPanel.viewStadium_28.setBounds(view.gamesPanel.gamesStadiumPanel.viewStadium_7.getBounds().x + view.gamesPanel.gamesStadiumPanel.viewStadium_7.getBounds().width, view.gamesPanel.gamesStadiumPanel.viewStadium_44.getBounds().y, (int)(img_28.getIconWidth()*view.gamesPanel.gamesStadiumPanel.stadiumSizeRatio), (int)(img_28.getIconHeight()*view.gamesPanel.gamesStadiumPanel.stadiumSizeRatio));
-		view.gamesPanel.gamesStadiumPanel.viewStadium_28.setIcon(UI_Elements.scaleImageToBox(img_28, view.gamesPanel.gamesStadiumPanel.viewStadium_28));
-		MouseAdapter ma28_Games = view.gamesPanel.gamesStadiumPanel.createSectionAdapter(view.gamesPanel.gamesStadiumPanel.viewStadium_28, img_28, img_28_R, img_28_S);
-		view.gamesPanel.gamesStadiumPanel.viewStadium_28.addActionListener(new ActionListener() {
-			public void actionPerformed(ActionEvent arg0) {
-				view.gamesPanel.gamesStadiumPanel.stadiumSectionSelection(view.gamesPanel.gamesStadiumPanel.viewStadium_28, ma28_Games, img_28_S);
-			}
-		});
-		view.gamesPanel.gamesStadiumPanel.viewStadium_28.addMouseListener(ma28_Games);
-		
-
-		String path29 = "/Images/StadiumSlices/Stadium" + getViewStadiumSectionType(29) + "_29.png";
-		img_29 = new ImageIcon(Overview.class.getResource(path29));
-		String path29_R = "/Images/StadiumSlices/Stadium_Rollover_29.png";
-		img_29_R = new ImageIcon(Overview.class.getResource(path29_R));
-		String path29_S = "/Images/StadiumSlices/Stadium_Selected_29.png";
-		img_29_S = new ImageIcon(Overview.class.getResource(path29_S));
-		
-		view.overviewPanel.overviewStadiumPanel.viewStadium_29.setBounds(view.overviewPanel.overviewStadiumPanel.viewStadium_28.getBounds().x + view.overviewPanel.overviewStadiumPanel.viewStadium_28.getBounds().width - (int)(img_29.getIconWidth()*view.overviewPanel.overviewStadiumPanel.stadiumSizeRatio), view.overviewPanel.overviewStadiumPanel.viewStadium_28.getBounds().y + view.overviewPanel.overviewStadiumPanel.viewStadium_28.getBounds().height, (int)(img_29.getIconWidth()*view.overviewPanel.overviewStadiumPanel.stadiumSizeRatio), (int)(img_29.getIconHeight()*view.overviewPanel.overviewStadiumPanel.stadiumSizeRatio));
-		view.overviewPanel.overviewStadiumPanel.viewStadium_29.setIcon(UI_Elements.scaleImageToBox(img_29, view.overviewPanel.overviewStadiumPanel.viewStadium_29));
-		MouseAdapter ma29_Overview = view.overviewPanel.overviewStadiumPanel.createSectionAdapter(view.overviewPanel.overviewStadiumPanel.viewStadium_29, img_29, img_29_R, img_29_S);
-		view.overviewPanel.overviewStadiumPanel.viewStadium_29.addActionListener(new ActionListener() {
-			public void actionPerformed(ActionEvent arg0) {
-				view.overviewPanel.overviewStadiumPanel.stadiumSectionSelection(view.overviewPanel.overviewStadiumPanel.viewStadium_29, ma29_Overview, img_29_S);
-			}
-		});
-		view.overviewPanel.overviewStadiumPanel.viewStadium_29.addMouseListener(ma29_Overview);
-		
-		view.gamesPanel.gamesStadiumPanel.viewStadium_29.setBounds(view.gamesPanel.gamesStadiumPanel.viewStadium_28.getBounds().x + view.gamesPanel.gamesStadiumPanel.viewStadium_28.getBounds().width - (int)(img_29.getIconWidth()*view.gamesPanel.gamesStadiumPanel.stadiumSizeRatio), view.gamesPanel.gamesStadiumPanel.viewStadium_28.getBounds().y + view.gamesPanel.gamesStadiumPanel.viewStadium_28.getBounds().height, (int)(img_29.getIconWidth()*view.gamesPanel.gamesStadiumPanel.stadiumSizeRatio), (int)(img_29.getIconHeight()*view.gamesPanel.gamesStadiumPanel.stadiumSizeRatio));
-		view.gamesPanel.gamesStadiumPanel.viewStadium_29.setIcon(UI_Elements.scaleImageToBox(img_29, view.gamesPanel.gamesStadiumPanel.viewStadium_29));
-		MouseAdapter ma29_Games = view.gamesPanel.gamesStadiumPanel.createSectionAdapter(view.gamesPanel.gamesStadiumPanel.viewStadium_29, img_29, img_29_R, img_29_S);
-		view.gamesPanel.gamesStadiumPanel.viewStadium_29.addActionListener(new ActionListener() {
-			public void actionPerformed(ActionEvent arg0) {
-				view.gamesPanel.gamesStadiumPanel.stadiumSectionSelection(view.gamesPanel.gamesStadiumPanel.viewStadium_29, ma29_Games, img_29_S);
-			}
-		});
-		view.gamesPanel.gamesStadiumPanel.viewStadium_29.addMouseListener(ma29_Games);
-		
-
-		String path30 = "/Images/StadiumSlices/Stadium" + getViewStadiumSectionType(30) + "_30.png";
-		img_30 = new ImageIcon(Overview.class.getResource(path30));
-		String path30_R = "/Images/StadiumSlices/Stadium_Rollover_30.png";
-		img_30_R = new ImageIcon(Overview.class.getResource(path30_R));
-		String path30_S = "/Images/StadiumSlices/Stadium_Selected_30.png";
-		img_30_S = new ImageIcon(Overview.class.getResource(path30_S));
-		
-		view.overviewPanel.overviewStadiumPanel.viewStadium_30.setBounds(view.overviewPanel.overviewStadiumPanel.viewStadium_29.getBounds().x, view.overviewPanel.overviewStadiumPanel.viewStadium_29.getBounds().y + view.overviewPanel.overviewStadiumPanel.viewStadium_29.getBounds().height, (int)(img_30.getIconWidth()*view.overviewPanel.overviewStadiumPanel.stadiumSizeRatio), (int)(img_30.getIconHeight()*view.overviewPanel.overviewStadiumPanel.stadiumSizeRatio));
-		view.overviewPanel.overviewStadiumPanel.viewStadium_30.setIcon(UI_Elements.scaleImageToBox(img_30, view.overviewPanel.overviewStadiumPanel.viewStadium_30));
-		MouseAdapter ma30_Overview = view.overviewPanel.overviewStadiumPanel.createSectionAdapter(view.overviewPanel.overviewStadiumPanel.viewStadium_30, img_30, img_30_R, img_30_S);
-		view.overviewPanel.overviewStadiumPanel.viewStadium_30.addActionListener(new ActionListener() {
-			public void actionPerformed(ActionEvent arg0) {
-				view.overviewPanel.overviewStadiumPanel.stadiumSectionSelection(view.overviewPanel.overviewStadiumPanel.viewStadium_30, ma30_Overview, img_30_S);
-			}
-		});
-		view.overviewPanel.overviewStadiumPanel.viewStadium_30.addMouseListener(ma30_Overview);
-		
-		view.gamesPanel.gamesStadiumPanel.viewStadium_30.setBounds(view.gamesPanel.gamesStadiumPanel.viewStadium_29.getBounds().x, view.gamesPanel.gamesStadiumPanel.viewStadium_29.getBounds().y + view.gamesPanel.gamesStadiumPanel.viewStadium_29.getBounds().height, (int)(img_30.getIconWidth()*view.gamesPanel.gamesStadiumPanel.stadiumSizeRatio), (int)(img_30.getIconHeight()*view.gamesPanel.gamesStadiumPanel.stadiumSizeRatio));
-		view.gamesPanel.gamesStadiumPanel.viewStadium_30.setIcon(UI_Elements.scaleImageToBox(img_30, view.gamesPanel.gamesStadiumPanel.viewStadium_30));
-		MouseAdapter ma30_Games = view.gamesPanel.gamesStadiumPanel.createSectionAdapter(view.gamesPanel.gamesStadiumPanel.viewStadium_30, img_30, img_30_R, img_30_S);
-		view.gamesPanel.gamesStadiumPanel.viewStadium_30.addActionListener(new ActionListener() {
-			public void actionPerformed(ActionEvent arg0) {
-				view.gamesPanel.gamesStadiumPanel.stadiumSectionSelection(view.gamesPanel.gamesStadiumPanel.viewStadium_30, ma30_Games, img_30_S);
-			}
-		});
-		view.gamesPanel.gamesStadiumPanel.viewStadium_30.addMouseListener(ma30_Games);
-		
-		
-		String path31 = "/Images/StadiumSlices/Stadium" + getViewStadiumSectionType(31) + "_31.png";
-		img_31 = new ImageIcon(Overview.class.getResource(path31));
-		String path31_R = "/Images/StadiumSlices/Stadium_Rollover_31.png";
-		img_31_R = new ImageIcon(Overview.class.getResource(path31_R));
-		String path31_S = "/Images/StadiumSlices/Stadium_Selected_31.png";
-		img_31_S = new ImageIcon(Overview.class.getResource(path31_S));
-		
-		view.overviewPanel.overviewStadiumPanel.viewStadium_31.setBounds(view.overviewPanel.overviewStadiumPanel.viewStadium_30.getBounds().x, view.overviewPanel.overviewStadiumPanel.viewStadium_30.getBounds().y + view.overviewPanel.overviewStadiumPanel.viewStadium_30.getBounds().height, (int)(img_31.getIconWidth()*view.overviewPanel.overviewStadiumPanel.stadiumSizeRatio), (int)(img_31.getIconHeight()*view.overviewPanel.overviewStadiumPanel.stadiumSizeRatio));
-		view.overviewPanel.overviewStadiumPanel.viewStadium_31.setIcon(UI_Elements.scaleImageToBox(img_31, view.overviewPanel.overviewStadiumPanel.viewStadium_31));
-		MouseAdapter ma31_Overview = view.overviewPanel.overviewStadiumPanel.createSectionAdapter(view.overviewPanel.overviewStadiumPanel.viewStadium_31, img_31, img_31_R, img_31_S);
-		view.overviewPanel.overviewStadiumPanel.viewStadium_31.addActionListener(new ActionListener() {
-			public void actionPerformed(ActionEvent arg0) {
-				view.overviewPanel.overviewStadiumPanel.stadiumSectionSelection(view.overviewPanel.overviewStadiumPanel.viewStadium_31, ma31_Overview, img_31_S);
-			}
-		});
-		view.overviewPanel.overviewStadiumPanel.viewStadium_31.addMouseListener(ma31_Overview);
-		
-		view.gamesPanel.gamesStadiumPanel.viewStadium_31.setBounds(view.gamesPanel.gamesStadiumPanel.viewStadium_30.getBounds().x, view.gamesPanel.gamesStadiumPanel.viewStadium_30.getBounds().y + view.gamesPanel.gamesStadiumPanel.viewStadium_30.getBounds().height, (int)(img_31.getIconWidth()*view.gamesPanel.gamesStadiumPanel.stadiumSizeRatio), (int)(img_31.getIconHeight()*view.gamesPanel.gamesStadiumPanel.stadiumSizeRatio));
-		view.gamesPanel.gamesStadiumPanel.viewStadium_31.setIcon(UI_Elements.scaleImageToBox(img_31, view.gamesPanel.gamesStadiumPanel.viewStadium_31));
-		MouseAdapter ma31_Games = view.gamesPanel.gamesStadiumPanel.createSectionAdapter(view.gamesPanel.gamesStadiumPanel.viewStadium_31, img_31, img_31_R, img_31_S);
-		view.gamesPanel.gamesStadiumPanel.viewStadium_31.addActionListener(new ActionListener() {
-			public void actionPerformed(ActionEvent arg0) {
-				view.gamesPanel.gamesStadiumPanel.stadiumSectionSelection(view.gamesPanel.gamesStadiumPanel.viewStadium_31, ma31_Games, img_31_S);
-			}
-		});
-		view.gamesPanel.gamesStadiumPanel.viewStadium_31.addMouseListener(ma31_Games);		
-
-		String path8 = "/Images/StadiumSlices/Stadium" + getViewStadiumSectionType(8) + "_8.png";
-		img_8 = new ImageIcon(Overview.class.getResource(path8));
-		String path8_R = "/Images/StadiumSlices/Stadium_Rollover_8.png";
-		img_8_R = new ImageIcon(Overview.class.getResource(path8_R));
-		String path8_S = "/Images/StadiumSlices/Stadium_Selected_8.png";
-		img_8_S = new ImageIcon(Overview.class.getResource(path8_S));
-		
-		view.overviewPanel.overviewStadiumPanel.viewStadium_8.setBounds(view.overviewPanel.overviewStadiumPanel.viewStadium_28.getBounds().x, view.overviewPanel.overviewStadiumPanel.panelViewStadium.getBounds().y, (int)(img_8.getIconWidth()*view.overviewPanel.overviewStadiumPanel.stadiumSizeRatio), (int)(img_8.getIconHeight()*view.overviewPanel.overviewStadiumPanel.stadiumSizeRatio));
-		view.overviewPanel.overviewStadiumPanel.viewStadium_8.setIcon(UI_Elements.scaleImageToBox(img_8, view.overviewPanel.overviewStadiumPanel.viewStadium_8));
-		MouseAdapter ma8_Overview = view.overviewPanel.overviewStadiumPanel.createSectionAdapter(view.overviewPanel.overviewStadiumPanel.viewStadium_8, img_8, img_8_R, img_8_S);
-		view.overviewPanel.overviewStadiumPanel.viewStadium_8.addActionListener(new ActionListener() {
-			public void actionPerformed(ActionEvent arg0) {
-				view.overviewPanel.overviewStadiumPanel.stadiumSectionSelection(view.overviewPanel.overviewStadiumPanel.viewStadium_8, ma8_Overview, img_8_S);
-			}
-		});
-		view.overviewPanel.overviewStadiumPanel.viewStadium_8.addMouseListener(ma8_Overview);
-		
-		view.gamesPanel.gamesStadiumPanel.viewStadium_8.setBounds(view.gamesPanel.gamesStadiumPanel.viewStadium_28.getBounds().x, view.gamesPanel.gamesStadiumPanel.panelViewStadium.getBounds().y, (int)(img_8.getIconWidth()*view.gamesPanel.gamesStadiumPanel.stadiumSizeRatio), (int)(img_8.getIconHeight()*view.gamesPanel.gamesStadiumPanel.stadiumSizeRatio));
-		view.gamesPanel.gamesStadiumPanel.viewStadium_8.setIcon(UI_Elements.scaleImageToBox(img_8, view.gamesPanel.gamesStadiumPanel.viewStadium_8));
-		MouseAdapter ma8_Games = view.gamesPanel.gamesStadiumPanel.createSectionAdapter(view.gamesPanel.gamesStadiumPanel.viewStadium_8, img_8, img_8_R, img_8_S);
-		view.gamesPanel.gamesStadiumPanel.viewStadium_8.addActionListener(new ActionListener() {
-			public void actionPerformed(ActionEvent arg0) {
-				view.gamesPanel.gamesStadiumPanel.stadiumSectionSelection(view.gamesPanel.gamesStadiumPanel.viewStadium_8, ma8_Games, img_8_S);
-			}
-		});
-		view.gamesPanel.gamesStadiumPanel.viewStadium_8.addMouseListener(ma8_Games);
-		
-		
-		String path9 = "/Images/StadiumSlices/Stadium" + getViewStadiumSectionType(9) + "_9.png";
-		img_9 = new ImageIcon(Overview.class.getResource(path9));
-		String path9_R = "/Images/StadiumSlices/Stadium_Rollover_9.png";
-		img_9_R = new ImageIcon(Overview.class.getResource(path9_R));
-		String path9_S = "/Images/StadiumSlices/Stadium_Selected_9.png";
-		img_9_S = new ImageIcon(Overview.class.getResource(path9_S));
-
-		view.overviewPanel.overviewStadiumPanel.viewStadium_9.setBounds(view.overviewPanel.overviewStadiumPanel.viewStadium_31.getBounds().x + view.overviewPanel.overviewStadiumPanel.viewStadium_31.getBounds().width, view.overviewPanel.overviewStadiumPanel.viewStadium_8.getBounds().y + view.overviewPanel.overviewStadiumPanel.viewStadium_8.getBounds().height, (int)(img_9.getIconWidth()*view.overviewPanel.overviewStadiumPanel.stadiumSizeRatio), (int)(img_9.getIconHeight()*view.overviewPanel.overviewStadiumPanel.stadiumSizeRatio));
-		view.overviewPanel.overviewStadiumPanel.viewStadium_9.setIcon(UI_Elements.scaleImageToBox(img_9, view.overviewPanel.overviewStadiumPanel.viewStadium_9));
-		MouseAdapter ma9_Overview = view.overviewPanel.overviewStadiumPanel.createSectionAdapter(view.overviewPanel.overviewStadiumPanel.viewStadium_9, img_9, img_9_R, img_9_S);
-		view.overviewPanel.overviewStadiumPanel.viewStadium_9.addActionListener(new ActionListener() {
-			public void actionPerformed(ActionEvent arg0) {
-				view.overviewPanel.overviewStadiumPanel.stadiumSectionSelection(view.overviewPanel.overviewStadiumPanel.viewStadium_9, ma9_Overview, img_9_S);
-			}
-		});
-		view.overviewPanel.overviewStadiumPanel.viewStadium_9.addMouseListener(ma9_Overview);
-		
-		view.gamesPanel.gamesStadiumPanel.viewStadium_9.setBounds(view.gamesPanel.gamesStadiumPanel.viewStadium_31.getBounds().x + view.gamesPanel.gamesStadiumPanel.viewStadium_31.getBounds().width, view.gamesPanel.gamesStadiumPanel.viewStadium_8.getBounds().y + view.gamesPanel.gamesStadiumPanel.viewStadium_8.getBounds().height, (int)(img_9.getIconWidth()*view.gamesPanel.gamesStadiumPanel.stadiumSizeRatio), (int)(img_9.getIconHeight()*view.gamesPanel.gamesStadiumPanel.stadiumSizeRatio));
-		view.gamesPanel.gamesStadiumPanel.viewStadium_9.setIcon(UI_Elements.scaleImageToBox(img_9, view.gamesPanel.gamesStadiumPanel.viewStadium_9));
-		MouseAdapter ma9_Games = view.gamesPanel.gamesStadiumPanel.createSectionAdapter(view.gamesPanel.gamesStadiumPanel.viewStadium_9, img_9, img_9_R, img_9_S);
-		view.gamesPanel.gamesStadiumPanel.viewStadium_9.addActionListener(new ActionListener() {
-			public void actionPerformed(ActionEvent arg0) {
-				view.gamesPanel.gamesStadiumPanel.stadiumSectionSelection(view.gamesPanel.gamesStadiumPanel.viewStadium_9, ma9_Games, img_9_S);
-			}
-		});
-		view.gamesPanel.gamesStadiumPanel.viewStadium_9.addMouseListener(ma9_Games);
-		
-	
-		String path19 = "/Images/StadiumSlices/Stadium" + getViewStadiumSectionType(19) + "_19.png";
-		img_19 = new ImageIcon(Overview.class.getResource(path19));
-		String path19_R = "/Images/StadiumSlices/Stadium_Rollover_19.png";
-		img_19_R = new ImageIcon(Overview.class.getResource(path19_R));
-		String path19_S = "/Images/StadiumSlices/Stadium_Selected_19.png";
-		img_19_S = new ImageIcon(Overview.class.getResource(path19_S));
-		
-		view.overviewPanel.overviewStadiumPanel.viewStadium_19.setBounds(view.overviewPanel.overviewStadiumPanel.viewStadium_20.getBounds().x, view.overviewPanel.overviewStadiumPanel.viewStadium_20.getBounds().y + view.overviewPanel.overviewStadiumPanel.viewStadium_20.getBounds().height, (int)(img_19.getIconWidth()*view.overviewPanel.overviewStadiumPanel.stadiumSizeRatio), (int)(img_19.getIconHeight()*view.overviewPanel.overviewStadiumPanel.stadiumSizeRatio));
-		view.overviewPanel.overviewStadiumPanel.viewStadium_19.setIcon(UI_Elements.scaleImageToBox(img_19, view.overviewPanel.overviewStadiumPanel.viewStadium_19));
-		MouseAdapter ma19_Overview = view.overviewPanel.overviewStadiumPanel.createSectionAdapter(view.overviewPanel.overviewStadiumPanel.viewStadium_19, img_19, img_19_R, img_19_S);
-		view.overviewPanel.overviewStadiumPanel.viewStadium_19.addActionListener(new ActionListener() {
-			public void actionPerformed(ActionEvent arg0) {
-				view.overviewPanel.overviewStadiumPanel.stadiumSectionSelection(view.overviewPanel.overviewStadiumPanel.viewStadium_19, ma19_Overview, img_19_S);
-			}
-		});
-		view.overviewPanel.overviewStadiumPanel.viewStadium_19.addMouseListener(ma19_Overview);
-		
-		view.gamesPanel.gamesStadiumPanel.viewStadium_19.setBounds(view.gamesPanel.gamesStadiumPanel.viewStadium_20.getBounds().x, view.gamesPanel.gamesStadiumPanel.viewStadium_20.getBounds().y + view.gamesPanel.gamesStadiumPanel.viewStadium_20.getBounds().height, (int)(img_19.getIconWidth()*view.gamesPanel.gamesStadiumPanel.stadiumSizeRatio), (int)(img_19.getIconHeight()*view.gamesPanel.gamesStadiumPanel.stadiumSizeRatio));
-		view.gamesPanel.gamesStadiumPanel.viewStadium_19.setIcon(UI_Elements.scaleImageToBox(img_19, view.gamesPanel.gamesStadiumPanel.viewStadium_19));
-		MouseAdapter ma19_Games = view.gamesPanel.gamesStadiumPanel.createSectionAdapter(view.gamesPanel.gamesStadiumPanel.viewStadium_19, img_19, img_19_R, img_19_S);
-		view.gamesPanel.gamesStadiumPanel.viewStadium_19.addActionListener(new ActionListener() {
-			public void actionPerformed(ActionEvent arg0) {
-				view.gamesPanel.gamesStadiumPanel.stadiumSectionSelection(view.gamesPanel.gamesStadiumPanel.viewStadium_19, ma19_Games, img_19_S);
-			}
-		});
-		view.gamesPanel.gamesStadiumPanel.viewStadium_19.addMouseListener(ma19_Games);
-		
-		
-		String path18 = "/Images/StadiumSlices/Stadium" + getViewStadiumSectionType(18) + "_18.png";
-		img_18 = new ImageIcon(Overview.class.getResource(path18));
-		String path18_R = "/Images/StadiumSlices/Stadium_Rollover_18.png";
-		img_18_R = new ImageIcon(Overview.class.getResource(path18_R));
-		String path18_S = "/Images/StadiumSlices/Stadium_Selected_18.png";
-		img_18_S = new ImageIcon(Overview.class.getResource(path18_S));
-		
-		view.overviewPanel.overviewStadiumPanel.viewStadium_18.setBounds(view.overviewPanel.overviewStadiumPanel.viewStadium_19.getBounds().x, view.overviewPanel.overviewStadiumPanel.viewStadium_19.getBounds().y + view.overviewPanel.overviewStadiumPanel.viewStadium_19.getBounds().height, (int)(img_18.getIconWidth()*view.overviewPanel.overviewStadiumPanel.stadiumSizeRatio), (int)(img_18.getIconHeight()*view.overviewPanel.overviewStadiumPanel.stadiumSizeRatio));
-		view.overviewPanel.overviewStadiumPanel.viewStadium_18.setIcon(UI_Elements.scaleImageToBox(img_18, view.overviewPanel.overviewStadiumPanel.viewStadium_18));
-		MouseAdapter ma18_Overview = view.overviewPanel.overviewStadiumPanel.createSectionAdapter(view.overviewPanel.overviewStadiumPanel.viewStadium_18, img_18, img_18_R, img_18_S);
-		view.overviewPanel.overviewStadiumPanel.viewStadium_18.addActionListener(new ActionListener() {
-			public void actionPerformed(ActionEvent arg0) {
-				view.overviewPanel.overviewStadiumPanel.stadiumSectionSelection(view.overviewPanel.overviewStadiumPanel.viewStadium_18, ma18_Overview, img_18_S);
-			}
-		});
-		view.overviewPanel.overviewStadiumPanel.viewStadium_18.addMouseListener(ma18_Overview);
-		
-		view.gamesPanel.gamesStadiumPanel.viewStadium_18.setBounds(view.gamesPanel.gamesStadiumPanel.viewStadium_19.getBounds().x, view.gamesPanel.gamesStadiumPanel.viewStadium_19.getBounds().y + view.gamesPanel.gamesStadiumPanel.viewStadium_19.getBounds().height, (int)(img_18.getIconWidth()*view.gamesPanel.gamesStadiumPanel.stadiumSizeRatio), (int)(img_18.getIconHeight()*view.gamesPanel.gamesStadiumPanel.stadiumSizeRatio));
-		view.gamesPanel.gamesStadiumPanel.viewStadium_18.setIcon(UI_Elements.scaleImageToBox(img_18, view.gamesPanel.gamesStadiumPanel.viewStadium_18));
-		MouseAdapter ma18_Games = view.gamesPanel.gamesStadiumPanel.createSectionAdapter(view.gamesPanel.gamesStadiumPanel.viewStadium_18, img_18, img_18_R, img_18_S);
-		view.gamesPanel.gamesStadiumPanel.viewStadium_18.addActionListener(new ActionListener() {
-			public void actionPerformed(ActionEvent arg0) {
-				view.gamesPanel.gamesStadiumPanel.stadiumSectionSelection(view.gamesPanel.gamesStadiumPanel.viewStadium_18, ma18_Games, img_18_S);
-			}
-		});
-		view.gamesPanel.gamesStadiumPanel.viewStadium_18.addMouseListener(ma18_Games);
-		
-		
-		String path17 = "/Images/StadiumSlices/Stadium" + getViewStadiumSectionType(17) + "_17.png";
-		img_17 = new ImageIcon(Overview.class.getResource(path17));
-		String path17_R = "/Images/StadiumSlices/Stadium_Rollover_17.png";
-		img_17_R = new ImageIcon(Overview.class.getResource(path17_R));
-		String path17_S = "/Images/StadiumSlices/Stadium_Selected_17.png";
-		img_17_S = new ImageIcon(Overview.class.getResource(path17_S));
-		
-		view.overviewPanel.overviewStadiumPanel.viewStadium_17.setBounds(view.overviewPanel.overviewStadiumPanel.viewStadium_18.getBounds().x + view.overviewPanel.overviewStadiumPanel.viewStadium_18.getBounds().width, view.overviewPanel.overviewStadiumPanel.viewStadium_18.getBounds().y + view.overviewPanel.overviewStadiumPanel.viewStadium_18.getBounds().height - (int)(img_17.getIconHeight()*view.overviewPanel.overviewStadiumPanel.stadiumSizeRatio), (int)(img_17.getIconWidth()*view.overviewPanel.overviewStadiumPanel.stadiumSizeRatio), (int)(img_17.getIconHeight()*view.overviewPanel.overviewStadiumPanel.stadiumSizeRatio));
-		view.overviewPanel.overviewStadiumPanel.viewStadium_17.setIcon(UI_Elements.scaleImageToBox(img_17, view.overviewPanel.overviewStadiumPanel.viewStadium_17));
-		MouseAdapter ma17_Overview = view.overviewPanel.overviewStadiumPanel.createSectionAdapter(view.overviewPanel.overviewStadiumPanel.viewStadium_17, img_17, img_17_R, img_17_S);
-		view.overviewPanel.overviewStadiumPanel.viewStadium_17.addActionListener(new ActionListener() {
-			public void actionPerformed(ActionEvent arg0) {
-				view.overviewPanel.overviewStadiumPanel.stadiumSectionSelection(view.overviewPanel.overviewStadiumPanel.viewStadium_17, ma17_Overview, img_17_S);
-			}
-		});
-		view.overviewPanel.overviewStadiumPanel.viewStadium_17.addMouseListener(ma17_Overview);
-		
-		view.gamesPanel.gamesStadiumPanel.viewStadium_17.setBounds(view.gamesPanel.gamesStadiumPanel.viewStadium_18.getBounds().x + view.gamesPanel.gamesStadiumPanel.viewStadium_18.getBounds().width, view.gamesPanel.gamesStadiumPanel.viewStadium_18.getBounds().y + view.gamesPanel.gamesStadiumPanel.viewStadium_18.getBounds().height - (int)(img_17.getIconHeight()*view.gamesPanel.gamesStadiumPanel.stadiumSizeRatio), (int)(img_17.getIconWidth()*view.gamesPanel.gamesStadiumPanel.stadiumSizeRatio), (int)(img_17.getIconHeight()*view.gamesPanel.gamesStadiumPanel.stadiumSizeRatio));
-		view.gamesPanel.gamesStadiumPanel.viewStadium_17.setIcon(UI_Elements.scaleImageToBox(img_17, view.gamesPanel.gamesStadiumPanel.viewStadium_17));
-		MouseAdapter ma17_Games = view.gamesPanel.gamesStadiumPanel.createSectionAdapter(view.gamesPanel.gamesStadiumPanel.viewStadium_17, img_17, img_17_R, img_17_S);
-		view.gamesPanel.gamesStadiumPanel.viewStadium_17.addActionListener(new ActionListener() {
-			public void actionPerformed(ActionEvent arg0) {
-				view.gamesPanel.gamesStadiumPanel.stadiumSectionSelection(view.gamesPanel.gamesStadiumPanel.viewStadium_17, ma17_Games, img_17_S);
-			}
-		});
-		view.gamesPanel.gamesStadiumPanel.viewStadium_17.addMouseListener(ma17_Games);
-		
-		
-		String path16 = "/Images/StadiumSlices/Stadium" + getViewStadiumSectionType(16) + "_16.png";
-		img_16 = new ImageIcon(Overview.class.getResource(path16));
-		String path16_R = "/Images/StadiumSlices/Stadium_Rollover_16.png";
-		img_16_R = new ImageIcon(Overview.class.getResource(path16_R));
-		String path16_S = "/Images/StadiumSlices/Stadium_Selected_16.png";
-		img_16_S = new ImageIcon(Overview.class.getResource(path16_S));
-		
-		view.overviewPanel.overviewStadiumPanel.viewStadium_16.setBounds(view.overviewPanel.overviewStadiumPanel.viewStadium_17.getBounds().x + view.overviewPanel.overviewStadiumPanel.viewStadium_17.getBounds().width, view.overviewPanel.overviewStadiumPanel.viewStadium_17.getBounds().y, (int)(img_16.getIconWidth()*view.overviewPanel.overviewStadiumPanel.stadiumSizeRatio), (int)(img_16.getIconHeight()*view.overviewPanel.overviewStadiumPanel.stadiumSizeRatio));
-		view.overviewPanel.overviewStadiumPanel.viewStadium_16.setIcon(UI_Elements.scaleImageToBox(img_16, view.overviewPanel.overviewStadiumPanel.viewStadium_16));
-		MouseAdapter ma16_Overview = view.overviewPanel.overviewStadiumPanel.createSectionAdapter(view.overviewPanel.overviewStadiumPanel.viewStadium_16, img_16, img_16_R, img_16_S);
-		view.overviewPanel.overviewStadiumPanel.viewStadium_16.addActionListener(new ActionListener() {
-			public void actionPerformed(ActionEvent arg0) {
-				view.overviewPanel.overviewStadiumPanel.stadiumSectionSelection(view.overviewPanel.overviewStadiumPanel.viewStadium_16, ma16_Overview, img_16_S);
-			}
-		});
-		view.overviewPanel.overviewStadiumPanel.viewStadium_16.addMouseListener(ma16_Overview);
-		
-		view.gamesPanel.gamesStadiumPanel.viewStadium_16.setBounds(view.gamesPanel.gamesStadiumPanel.viewStadium_17.getBounds().x + view.gamesPanel.gamesStadiumPanel.viewStadium_17.getBounds().width, view.gamesPanel.gamesStadiumPanel.viewStadium_17.getBounds().y, (int)(img_16.getIconWidth()*view.gamesPanel.gamesStadiumPanel.stadiumSizeRatio), (int)(img_16.getIconHeight()*view.gamesPanel.gamesStadiumPanel.stadiumSizeRatio));
-		view.gamesPanel.gamesStadiumPanel.viewStadium_16.setIcon(UI_Elements.scaleImageToBox(img_16, view.gamesPanel.gamesStadiumPanel.viewStadium_16));
-		MouseAdapter ma16_Games = view.gamesPanel.gamesStadiumPanel.createSectionAdapter(view.gamesPanel.gamesStadiumPanel.viewStadium_16, img_16, img_16_R, img_16_S);
-		view.gamesPanel.gamesStadiumPanel.viewStadium_16.addActionListener(new ActionListener() {
-			public void actionPerformed(ActionEvent arg0) {
-				view.gamesPanel.gamesStadiumPanel.stadiumSectionSelection(view.gamesPanel.gamesStadiumPanel.viewStadium_16, ma16_Games, img_16_S);
-			}
-		});
-		view.gamesPanel.gamesStadiumPanel.viewStadium_16.addMouseListener(ma16_Games);
-				
-		
-		String path15 = "/Images/StadiumSlices/Stadium" + getViewStadiumSectionType(15) + "_15.png";
-		img_15 = new ImageIcon(Overview.class.getResource(path15));
-		String path15_R = "/Images/StadiumSlices/Stadium_Rollover_15.png";
-		img_15_R = new ImageIcon(Overview.class.getResource(path15_R));
-		String path15_S = "/Images/StadiumSlices/Stadium_Selected_15.png";
-		img_15_S = new ImageIcon(Overview.class.getResource(path15_S));
-		
-		view.overviewPanel.overviewStadiumPanel.viewStadium_15.setBounds(view.overviewPanel.overviewStadiumPanel.viewStadium_16.getBounds().x + view.overviewPanel.overviewStadiumPanel.viewStadium_16.getBounds().width, view.overviewPanel.overviewStadiumPanel.viewStadium_16.getBounds().y, (int)(img_15.getIconWidth()*view.overviewPanel.overviewStadiumPanel.stadiumSizeRatio), (int)(img_15.getIconHeight()*view.overviewPanel.overviewStadiumPanel.stadiumSizeRatio));
-		view.overviewPanel.overviewStadiumPanel.viewStadium_15.setIcon(UI_Elements.scaleImageToBox(img_15, view.overviewPanel.overviewStadiumPanel.viewStadium_15));
-		MouseAdapter ma15_Overview = view.overviewPanel.overviewStadiumPanel.createSectionAdapter(view.overviewPanel.overviewStadiumPanel.viewStadium_15, img_15, img_15_R, img_15_S);
-		view.overviewPanel.overviewStadiumPanel.viewStadium_15.addActionListener(new ActionListener() {
-			public void actionPerformed(ActionEvent arg0) {
-				view.overviewPanel.overviewStadiumPanel.stadiumSectionSelection(view.overviewPanel.overviewStadiumPanel.viewStadium_15, ma15_Overview, img_15_S);
-			}
-		});
-		view.overviewPanel.overviewStadiumPanel.viewStadium_15.addMouseListener(ma15_Overview);
-		
-		view.gamesPanel.gamesStadiumPanel.viewStadium_15.setBounds(view.gamesPanel.gamesStadiumPanel.viewStadium_16.getBounds().x + view.gamesPanel.gamesStadiumPanel.viewStadium_16.getBounds().width, view.gamesPanel.gamesStadiumPanel.viewStadium_16.getBounds().y, (int)(img_15.getIconWidth()*view.gamesPanel.gamesStadiumPanel.stadiumSizeRatio), (int)(img_15.getIconHeight()*view.gamesPanel.gamesStadiumPanel.stadiumSizeRatio));
-		view.gamesPanel.gamesStadiumPanel.viewStadium_15.setIcon(UI_Elements.scaleImageToBox(img_15, view.gamesPanel.gamesStadiumPanel.viewStadium_15));
-		MouseAdapter ma15_Games = view.gamesPanel.gamesStadiumPanel.createSectionAdapter(view.gamesPanel.gamesStadiumPanel.viewStadium_15, img_15, img_15_R, img_15_S);
-		view.gamesPanel.gamesStadiumPanel.viewStadium_15.addActionListener(new ActionListener() {
-			public void actionPerformed(ActionEvent arg0) {
-				view.gamesPanel.gamesStadiumPanel.stadiumSectionSelection(view.gamesPanel.gamesStadiumPanel.viewStadium_15, ma15_Games, img_15_S);
-			}
-		});
-		view.gamesPanel.gamesStadiumPanel.viewStadium_15.addMouseListener(ma15_Games);
-		
-		
-		String path14 = "/Images/StadiumSlices/Stadium" + getViewStadiumSectionType(14) + "_14.png";
-		img_14 = new ImageIcon(Overview.class.getResource(path14));
-		String path14_R = "/Images/StadiumSlices/Stadium_Rollover_14.png";
-		img_14_R = new ImageIcon(Overview.class.getResource(path14_R));
-		String path14_S = "/Images/StadiumSlices/Stadium_Selected_14.png";
-		img_14_S = new ImageIcon(Overview.class.getResource(path14_S));
-		
-		view.overviewPanel.overviewStadiumPanel.viewStadium_14.setBounds(view.overviewPanel.overviewStadiumPanel.viewStadium_15.getBounds().x + view.overviewPanel.overviewStadiumPanel.viewStadium_15.getBounds().width, view.overviewPanel.overviewStadiumPanel.viewStadium_15.getBounds().y, (int)(img_14.getIconWidth()*view.overviewPanel.overviewStadiumPanel.stadiumSizeRatio), (int)(img_14.getIconHeight()*view.overviewPanel.overviewStadiumPanel.stadiumSizeRatio));
-		view.overviewPanel.overviewStadiumPanel.viewStadium_14.setIcon(UI_Elements.scaleImageToBox(img_14, view.overviewPanel.overviewStadiumPanel.viewStadium_14));
-		MouseAdapter ma14_Overview = view.overviewPanel.overviewStadiumPanel.createSectionAdapter(view.overviewPanel.overviewStadiumPanel.viewStadium_14, img_14, img_14_R, img_14_S);
-		view.overviewPanel.overviewStadiumPanel.viewStadium_14.addActionListener(new ActionListener() {
-			public void actionPerformed(ActionEvent arg0) {
-				view.overviewPanel.overviewStadiumPanel.stadiumSectionSelection(view.overviewPanel.overviewStadiumPanel.viewStadium_14, ma14_Overview, img_14_S);
-			}
-		});
-		view.overviewPanel.overviewStadiumPanel.viewStadium_14.addMouseListener(ma14_Overview);
-		
-		view.gamesPanel.gamesStadiumPanel.viewStadium_14.setBounds(view.gamesPanel.gamesStadiumPanel.viewStadium_15.getBounds().x + view.gamesPanel.gamesStadiumPanel.viewStadium_15.getBounds().width, view.gamesPanel.gamesStadiumPanel.viewStadium_15.getBounds().y, (int)(img_14.getIconWidth()*view.gamesPanel.gamesStadiumPanel.stadiumSizeRatio), (int)(img_14.getIconHeight()*view.gamesPanel.gamesStadiumPanel.stadiumSizeRatio));
-		view.gamesPanel.gamesStadiumPanel.viewStadium_14.setIcon(UI_Elements.scaleImageToBox(img_14, view.gamesPanel.gamesStadiumPanel.viewStadium_14));
-		MouseAdapter ma14_Games = view.gamesPanel.gamesStadiumPanel.createSectionAdapter(view.gamesPanel.gamesStadiumPanel.viewStadium_14, img_14, img_14_R, img_14_S);
-		view.gamesPanel.gamesStadiumPanel.viewStadium_14.addActionListener(new ActionListener() {
-			public void actionPerformed(ActionEvent arg0) {
-				view.gamesPanel.gamesStadiumPanel.stadiumSectionSelection(view.gamesPanel.gamesStadiumPanel.viewStadium_14, ma14_Games, img_14_S);
-			}
-		});
-		view.gamesPanel.gamesStadiumPanel.viewStadium_14.addMouseListener(ma14_Games);
-		
-		
-		
-		String path13 = "/Images/StadiumSlices/Stadium" + getViewStadiumSectionType(13) + "_13.png";
-		img_13 = new ImageIcon(Overview.class.getResource(path13));
-		String path13_R = "/Images/StadiumSlices/Stadium_Rollover_13.png";
-		img_13_R = new ImageIcon(Overview.class.getResource(path13_R));
-		String path13_S = "/Images/StadiumSlices/Stadium_Selected_13.png";
-		img_13_S = new ImageIcon(Overview.class.getResource(path13_S));
-		
-		view.overviewPanel.overviewStadiumPanel.viewStadium_13.setBounds(view.overviewPanel.overviewStadiumPanel.viewStadium_14.getBounds().x + view.overviewPanel.overviewStadiumPanel.viewStadium_14.getBounds().width, view.overviewPanel.overviewStadiumPanel.viewStadium_14.getBounds().y, (int)(img_13.getIconWidth()*view.overviewPanel.overviewStadiumPanel.stadiumSizeRatio), (int)(img_13.getIconHeight()*view.overviewPanel.overviewStadiumPanel.stadiumSizeRatio));
-		view.overviewPanel.overviewStadiumPanel.viewStadium_13.setIcon(UI_Elements.scaleImageToBox(img_13, view.overviewPanel.overviewStadiumPanel.viewStadium_13));
-		MouseAdapter ma13_Overview = view.overviewPanel.overviewStadiumPanel.createSectionAdapter(view.overviewPanel.overviewStadiumPanel.viewStadium_13, img_13, img_13_R, img_13_S);
-		view.overviewPanel.overviewStadiumPanel.viewStadium_13.addActionListener(new ActionListener() {
-			public void actionPerformed(ActionEvent arg0) {
-				view.overviewPanel.overviewStadiumPanel.stadiumSectionSelection(view.overviewPanel.overviewStadiumPanel.viewStadium_13, ma13_Overview, img_13_S);
-			}
-		});
-		view.overviewPanel.overviewStadiumPanel.viewStadium_13.addMouseListener(ma13_Overview);
-		
-		view.gamesPanel.gamesStadiumPanel.viewStadium_13.setBounds(view.gamesPanel.gamesStadiumPanel.viewStadium_14.getBounds().x + view.gamesPanel.gamesStadiumPanel.viewStadium_14.getBounds().width, view.gamesPanel.gamesStadiumPanel.viewStadium_14.getBounds().y, (int)(img_13.getIconWidth()*view.gamesPanel.gamesStadiumPanel.stadiumSizeRatio), (int)(img_13.getIconHeight()*view.gamesPanel.gamesStadiumPanel.stadiumSizeRatio));
-		view.gamesPanel.gamesStadiumPanel.viewStadium_13.setIcon(UI_Elements.scaleImageToBox(img_13, view.gamesPanel.gamesStadiumPanel.viewStadium_13));
-		MouseAdapter ma13_Games = view.gamesPanel.gamesStadiumPanel.createSectionAdapter(view.gamesPanel.gamesStadiumPanel.viewStadium_13, img_13, img_13_R, img_13_S);
-		view.gamesPanel.gamesStadiumPanel.viewStadium_13.addActionListener(new ActionListener() {
-			public void actionPerformed(ActionEvent arg0) {
-				view.gamesPanel.gamesStadiumPanel.stadiumSectionSelection(view.gamesPanel.gamesStadiumPanel.viewStadium_13, ma13_Games, img_13_S);
-			}
-		});
-		view.gamesPanel.gamesStadiumPanel.viewStadium_13.addMouseListener(ma13_Games);
-		
-		
-		String path12 = "/Images/StadiumSlices/Stadium" + getViewStadiumSectionType(12) + "_12.png";
-		img_12 = new ImageIcon(Overview.class.getResource(path12));
-		String path12_R = "/Images/StadiumSlices/Stadium_Rollover_12.png";
-		img_12_R = new ImageIcon(Overview.class.getResource(path12_R));
-		String path12_S = "/Images/StadiumSlices/Stadium_Selected_12.png";
-		img_12_S = new ImageIcon(Overview.class.getResource(path12_S));
-		
-		view.overviewPanel.overviewStadiumPanel.viewStadium_12.setBounds(view.overviewPanel.overviewStadiumPanel.viewStadium_13.getBounds().x + view.overviewPanel.overviewStadiumPanel.viewStadium_13.getBounds().width, view.overviewPanel.overviewStadiumPanel.viewStadium_13.getBounds().y, (int)(img_12.getIconWidth()*view.overviewPanel.overviewStadiumPanel.stadiumSizeRatio), (int)(img_12.getIconHeight()*view.overviewPanel.overviewStadiumPanel.stadiumSizeRatio));
-		view.overviewPanel.overviewStadiumPanel.viewStadium_12.setIcon(UI_Elements.scaleImageToBox(img_12, view.overviewPanel.overviewStadiumPanel.viewStadium_12));
-		MouseAdapter ma12_Overview = view.overviewPanel.overviewStadiumPanel.createSectionAdapter(view.overviewPanel.overviewStadiumPanel.viewStadium_12, img_12, img_12_R, img_12_S);
-		view.overviewPanel.overviewStadiumPanel.viewStadium_12.addActionListener(new ActionListener() {
-			public void actionPerformed(ActionEvent arg0) {
-				view.overviewPanel.overviewStadiumPanel.stadiumSectionSelection(view.overviewPanel.overviewStadiumPanel.viewStadium_12, ma12_Overview, img_12_S);
-			}
-		});
-		view.overviewPanel.overviewStadiumPanel.viewStadium_12.addMouseListener(ma12_Overview);
-		
-		view.gamesPanel.gamesStadiumPanel.viewStadium_12.setBounds(view.gamesPanel.gamesStadiumPanel.viewStadium_13.getBounds().x + view.gamesPanel.gamesStadiumPanel.viewStadium_13.getBounds().width, view.gamesPanel.gamesStadiumPanel.viewStadium_13.getBounds().y, (int)(img_12.getIconWidth()*view.gamesPanel.gamesStadiumPanel.stadiumSizeRatio), (int)(img_12.getIconHeight()*view.gamesPanel.gamesStadiumPanel.stadiumSizeRatio));
-		view.gamesPanel.gamesStadiumPanel.viewStadium_12.setIcon(UI_Elements.scaleImageToBox(img_12, view.gamesPanel.gamesStadiumPanel.viewStadium_12));
-		MouseAdapter ma12_Games = view.gamesPanel.gamesStadiumPanel.createSectionAdapter(view.gamesPanel.gamesStadiumPanel.viewStadium_12, img_12, img_12_R, img_12_S);
-		view.gamesPanel.gamesStadiumPanel.viewStadium_12.addActionListener(new ActionListener() {
-			public void actionPerformed(ActionEvent arg0) {
-				view.gamesPanel.gamesStadiumPanel.stadiumSectionSelection(view.gamesPanel.gamesStadiumPanel.viewStadium_12, ma12_Games, img_12_S);
-			}
-		});
-		view.gamesPanel.gamesStadiumPanel.viewStadium_12.addMouseListener(ma12_Games);
-		
-		
-		String path11 = "/Images/StadiumSlices/Stadium" + getViewStadiumSectionType(11) + "_11.png";
-		img_11 = new ImageIcon(Overview.class.getResource(path11));
-		String path11_R = "/Images/StadiumSlices/Stadium_Rollover_11.png";
-		img_11_R = new ImageIcon(Overview.class.getResource(path11_R));
-		String path11_S = "/Images/StadiumSlices/Stadium_Selected_11.png";
-		img_11_S = new ImageIcon(Overview.class.getResource(path11_S));
-		
-		view.overviewPanel.overviewStadiumPanel.viewStadium_11.setBounds(view.overviewPanel.overviewStadiumPanel.viewStadium_12.getBounds().x + view.overviewPanel.overviewStadiumPanel.viewStadium_12.getBounds().width, view.overviewPanel.overviewStadiumPanel.viewStadium_12.getBounds().y, (int)(img_11.getIconWidth()*view.overviewPanel.overviewStadiumPanel.stadiumSizeRatio), (int)(img_11.getIconHeight()*view.overviewPanel.overviewStadiumPanel.stadiumSizeRatio));
-		view.overviewPanel.overviewStadiumPanel.viewStadium_11.setIcon(UI_Elements.scaleImageToBox(img_11, view.overviewPanel.overviewStadiumPanel.viewStadium_11));
-		MouseAdapter ma11_Overview = view.overviewPanel.overviewStadiumPanel.createSectionAdapter(view.overviewPanel.overviewStadiumPanel.viewStadium_11, img_11, img_11_R, img_11_S);
-		view.overviewPanel.overviewStadiumPanel.viewStadium_11.addActionListener(new ActionListener() {
-			public void actionPerformed(ActionEvent arg0) {
-				view.overviewPanel.overviewStadiumPanel.stadiumSectionSelection(view.overviewPanel.overviewStadiumPanel.viewStadium_11, ma11_Overview, img_11_S);
-			}
-		});
-		view.overviewPanel.overviewStadiumPanel.viewStadium_11.addMouseListener(ma11_Overview);
-		
-		view.gamesPanel.gamesStadiumPanel.viewStadium_11.setBounds(view.gamesPanel.gamesStadiumPanel.viewStadium_12.getBounds().x + view.gamesPanel.gamesStadiumPanel.viewStadium_12.getBounds().width, view.gamesPanel.gamesStadiumPanel.viewStadium_12.getBounds().y, (int)(img_11.getIconWidth()*view.gamesPanel.gamesStadiumPanel.stadiumSizeRatio), (int)(img_11.getIconHeight()*view.gamesPanel.gamesStadiumPanel.stadiumSizeRatio));
-		view.gamesPanel.gamesStadiumPanel.viewStadium_11.setIcon(UI_Elements.scaleImageToBox(img_11, view.gamesPanel.gamesStadiumPanel.viewStadium_11));
-		MouseAdapter ma11_Games = view.gamesPanel.gamesStadiumPanel.createSectionAdapter(view.gamesPanel.gamesStadiumPanel.viewStadium_11, img_11, img_11_R, img_11_S);
-		view.gamesPanel.gamesStadiumPanel.viewStadium_11.addActionListener(new ActionListener() {
-			public void actionPerformed(ActionEvent arg0) {
-				view.gamesPanel.gamesStadiumPanel.stadiumSectionSelection(view.gamesPanel.gamesStadiumPanel.viewStadium_11, ma11_Games, img_11_S);
-			}
-		});
-		view.gamesPanel.gamesStadiumPanel.viewStadium_11.addMouseListener(ma11_Games);
-		
-		
-		String path39 = "/Images/StadiumSlices/Stadium" + getViewStadiumSectionType(39) + "_39.png";
-		img_39 = new ImageIcon(Overview.class.getResource(path39));
-		String path39_R = "/Images/StadiumSlices/Stadium_Rollover_39.png";
-		img_39_R = new ImageIcon(Overview.class.getResource(path39_R));
-		String path39_S = "/Images/StadiumSlices/Stadium_Selected_39.png";
-		img_39_S = new ImageIcon(Overview.class.getResource(path39_S));
-		
-		view.overviewPanel.overviewStadiumPanel.viewStadium_39.setBounds(view.overviewPanel.overviewStadiumPanel.viewStadium_17.getBounds().x, view.overviewPanel.overviewStadiumPanel.viewStadium_17.getBounds().y - (int)(img_39.getIconHeight()*view.overviewPanel.overviewStadiumPanel.stadiumSizeRatio) - 2, (int)(img_39.getIconWidth()*view.overviewPanel.overviewStadiumPanel.stadiumSizeRatio), (int)(img_39.getIconHeight()*view.overviewPanel.overviewStadiumPanel.stadiumSizeRatio));
-		view.overviewPanel.overviewStadiumPanel.viewStadium_39.setIcon(UI_Elements.scaleImageToBox(img_39, view.overviewPanel.overviewStadiumPanel.viewStadium_39));
-		MouseAdapter ma39_Overview = view.overviewPanel.overviewStadiumPanel.createSectionAdapter(view.overviewPanel.overviewStadiumPanel.viewStadium_39, img_39, img_39_R, img_39_S);
-		view.overviewPanel.overviewStadiumPanel.viewStadium_39.addActionListener(new ActionListener() {
-			public void actionPerformed(ActionEvent arg0) {
-				view.overviewPanel.overviewStadiumPanel.stadiumSectionSelection(view.overviewPanel.overviewStadiumPanel.viewStadium_39, ma39_Overview, img_39_S);
-			}
-		});
-		view.overviewPanel.overviewStadiumPanel.viewStadium_39.addMouseListener(ma39_Overview);
-		
-		view.gamesPanel.gamesStadiumPanel.viewStadium_39.setBounds(view.gamesPanel.gamesStadiumPanel.viewStadium_17.getBounds().x, view.gamesPanel.gamesStadiumPanel.viewStadium_17.getBounds().y - (int)(img_39.getIconHeight()*view.gamesPanel.gamesStadiumPanel.stadiumSizeRatio) - 2, (int)(img_39.getIconWidth()*view.gamesPanel.gamesStadiumPanel.stadiumSizeRatio), (int)(img_39.getIconHeight()*view.gamesPanel.gamesStadiumPanel.stadiumSizeRatio));
-		view.gamesPanel.gamesStadiumPanel.viewStadium_39.setIcon(UI_Elements.scaleImageToBox(img_39, view.gamesPanel.gamesStadiumPanel.viewStadium_39));
-		MouseAdapter ma39_Games = view.gamesPanel.gamesStadiumPanel.createSectionAdapter(view.gamesPanel.gamesStadiumPanel.viewStadium_39, img_39, img_39_R, img_39_S);
-		view.gamesPanel.gamesStadiumPanel.viewStadium_39.addActionListener(new ActionListener() {
-			public void actionPerformed(ActionEvent arg0) {
-				view.gamesPanel.gamesStadiumPanel.stadiumSectionSelection(view.gamesPanel.gamesStadiumPanel.viewStadium_39, ma39_Games, img_39_S);
-			}
-		});
-		view.gamesPanel.gamesStadiumPanel.viewStadium_39.addMouseListener(ma39_Games);
-		
-
-
-		String path38 = "/Images/StadiumSlices/Stadium" + getViewStadiumSectionType(38) + "_38.png";
-		img_38 = new ImageIcon(Overview.class.getResource(path38));
-		String path38_R = "/Images/StadiumSlices/Stadium_Rollover_38.png";
-		img_38_R = new ImageIcon(Overview.class.getResource(path38_R));
-		String path38_S = "/Images/StadiumSlices/Stadium_Selected_38.png";
-		img_38_S = new ImageIcon(Overview.class.getResource(path38_S));
-		
-		view.overviewPanel.overviewStadiumPanel.viewStadium_38.setBounds(view.overviewPanel.overviewStadiumPanel.viewStadium_39.getBounds().x + view.overviewPanel.overviewStadiumPanel.viewStadium_39.getBounds().width, view.overviewPanel.overviewStadiumPanel.viewStadium_39.getBounds().y, (int)(img_38.getIconWidth()*view.overviewPanel.overviewStadiumPanel.stadiumSizeRatio), (int)(img_38.getIconHeight()*view.overviewPanel.overviewStadiumPanel.stadiumSizeRatio));
-		view.overviewPanel.overviewStadiumPanel.viewStadium_38.setIcon(UI_Elements.scaleImageToBox(img_38, view.overviewPanel.overviewStadiumPanel.viewStadium_38));
-		MouseAdapter ma38_Overview = view.overviewPanel.overviewStadiumPanel.createSectionAdapter(view.overviewPanel.overviewStadiumPanel.viewStadium_38, img_38, img_38_R, img_38_S);
-		view.overviewPanel.overviewStadiumPanel.viewStadium_38.addActionListener(new ActionListener() {
-			public void actionPerformed(ActionEvent arg0) {
-				view.overviewPanel.overviewStadiumPanel.stadiumSectionSelection(view.overviewPanel.overviewStadiumPanel.viewStadium_38, ma38_Overview, img_38_S);
-			}
-		});
-		view.overviewPanel.overviewStadiumPanel.viewStadium_38.addMouseListener(ma38_Overview);
-		
-		view.gamesPanel.gamesStadiumPanel.viewStadium_38.setBounds(view.gamesPanel.gamesStadiumPanel.viewStadium_39.getBounds().x + view.gamesPanel.gamesStadiumPanel.viewStadium_39.getBounds().width, view.gamesPanel.gamesStadiumPanel.viewStadium_39.getBounds().y, (int)(img_38.getIconWidth()*view.gamesPanel.gamesStadiumPanel.stadiumSizeRatio), (int)(img_38.getIconHeight()*view.gamesPanel.gamesStadiumPanel.stadiumSizeRatio));
-		view.gamesPanel.gamesStadiumPanel.viewStadium_38.setIcon(UI_Elements.scaleImageToBox(img_38, view.gamesPanel.gamesStadiumPanel.viewStadium_38));
-		MouseAdapter ma38_Games = view.gamesPanel.gamesStadiumPanel.createSectionAdapter(view.gamesPanel.gamesStadiumPanel.viewStadium_38, img_38, img_38_R, img_38_S);
-		view.gamesPanel.gamesStadiumPanel.viewStadium_38.addActionListener(new ActionListener() {
-			public void actionPerformed(ActionEvent arg0) {
-				view.gamesPanel.gamesStadiumPanel.stadiumSectionSelection(view.gamesPanel.gamesStadiumPanel.viewStadium_38, ma38_Games, img_38_S);
-			}
-		});
-		view.gamesPanel.gamesStadiumPanel.viewStadium_38.addMouseListener(ma38_Games);
-		
-
-		String path37 = "/Images/StadiumSlices/Stadium" + getViewStadiumSectionType(37) + "_37.png";
-		img_37 = new ImageIcon(Overview.class.getResource(path37));
-		String path37_R = "/Images/StadiumSlices/Stadium_Rollover_37.png";
-		img_37_R = new ImageIcon(Overview.class.getResource(path37_R));
-		String path37_S = "/Images/StadiumSlices/Stadium_Selected_37.png";
-		img_37_S = new ImageIcon(Overview.class.getResource(path37_S));
-		
-		view.overviewPanel.overviewStadiumPanel.viewStadium_37.setBounds(view.overviewPanel.overviewStadiumPanel.viewStadium_38.getBounds().x + view.overviewPanel.overviewStadiumPanel.viewStadium_38.getBounds().width, view.overviewPanel.overviewStadiumPanel.viewStadium_38.getBounds().y, (int)(img_37.getIconWidth()*view.overviewPanel.overviewStadiumPanel.stadiumSizeRatio), (int)(img_37.getIconHeight()*view.overviewPanel.overviewStadiumPanel.stadiumSizeRatio));
-		view.overviewPanel.overviewStadiumPanel.viewStadium_37.setIcon(UI_Elements.scaleImageToBox(img_37, view.overviewPanel.overviewStadiumPanel.viewStadium_37));
-		MouseAdapter ma37_Overview = view.overviewPanel.overviewStadiumPanel.createSectionAdapter(view.overviewPanel.overviewStadiumPanel.viewStadium_37, img_37, img_37_R, img_37_S);
-		view.overviewPanel.overviewStadiumPanel.viewStadium_37.addActionListener(new ActionListener() {
-			public void actionPerformed(ActionEvent arg0) {
-				view.overviewPanel.overviewStadiumPanel.stadiumSectionSelection(view.overviewPanel.overviewStadiumPanel.viewStadium_37, ma37_Overview, img_37_S);
-			}
-		});
-		view.overviewPanel.overviewStadiumPanel.viewStadium_37.addMouseListener(ma37_Overview);
-		
-		view.gamesPanel.gamesStadiumPanel.viewStadium_37.setBounds(view.gamesPanel.gamesStadiumPanel.viewStadium_38.getBounds().x + view.gamesPanel.gamesStadiumPanel.viewStadium_38.getBounds().width, view.gamesPanel.gamesStadiumPanel.viewStadium_38.getBounds().y, (int)(img_37.getIconWidth()*view.gamesPanel.gamesStadiumPanel.stadiumSizeRatio), (int)(img_37.getIconHeight()*view.gamesPanel.gamesStadiumPanel.stadiumSizeRatio));
-		view.gamesPanel.gamesStadiumPanel.viewStadium_37.setIcon(UI_Elements.scaleImageToBox(img_37, view.gamesPanel.gamesStadiumPanel.viewStadium_37));
-		MouseAdapter ma37_Games = view.gamesPanel.gamesStadiumPanel.createSectionAdapter(view.gamesPanel.gamesStadiumPanel.viewStadium_37, img_37, img_37_R, img_37_S);
-		view.gamesPanel.gamesStadiumPanel.viewStadium_37.addActionListener(new ActionListener() {
-			public void actionPerformed(ActionEvent arg0) {
-				view.gamesPanel.gamesStadiumPanel.stadiumSectionSelection(view.gamesPanel.gamesStadiumPanel.viewStadium_37, ma37_Games, img_37_S);
-			}
-		});
-		view.gamesPanel.gamesStadiumPanel.viewStadium_37.addMouseListener(ma37_Games);
-		
-		
-		String path36 = "/Images/StadiumSlices/Stadium" + getViewStadiumSectionType(36) + "_36.png";
-		img_36 = new ImageIcon(Overview.class.getResource(path36));
-		String path36_R = "/Images/StadiumSlices/Stadium_Rollover_36.png";
-		img_36_R = new ImageIcon(Overview.class.getResource(path36_R));
-		String path36_S = "/Images/StadiumSlices/Stadium_Selected_36.png";
-		img_36_S = new ImageIcon(Overview.class.getResource(path36_S));
-		
-		view.overviewPanel.overviewStadiumPanel.viewStadium_36.setBounds(view.overviewPanel.overviewStadiumPanel.viewStadium_37.getBounds().x + view.overviewPanel.overviewStadiumPanel.viewStadium_37.getBounds().width, view.overviewPanel.overviewStadiumPanel.viewStadium_37.getBounds().y, (int)(img_36.getIconWidth()*view.overviewPanel.overviewStadiumPanel.stadiumSizeRatio), (int)(img_36.getIconHeight()*view.overviewPanel.overviewStadiumPanel.stadiumSizeRatio));
-		view.overviewPanel.overviewStadiumPanel.viewStadium_36.setIcon(UI_Elements.scaleImageToBox(img_36, view.overviewPanel.overviewStadiumPanel.viewStadium_36));
-		MouseAdapter ma36_Overview = view.overviewPanel.overviewStadiumPanel.createSectionAdapter(view.overviewPanel.overviewStadiumPanel.viewStadium_36, img_36, img_36_R, img_36_S);
-		view.overviewPanel.overviewStadiumPanel.viewStadium_36.addActionListener(new ActionListener() {
-			public void actionPerformed(ActionEvent arg0) {
-				view.overviewPanel.overviewStadiumPanel.stadiumSectionSelection(view.overviewPanel.overviewStadiumPanel.viewStadium_36, ma36_Overview, img_36_S);
-			}
-		});
-		view.overviewPanel.overviewStadiumPanel.viewStadium_36.addMouseListener(ma36_Overview);
-		
-		view.gamesPanel.gamesStadiumPanel.viewStadium_36.setBounds(view.gamesPanel.gamesStadiumPanel.viewStadium_37.getBounds().x + view.gamesPanel.gamesStadiumPanel.viewStadium_37.getBounds().width, view.gamesPanel.gamesStadiumPanel.viewStadium_37.getBounds().y, (int)(img_36.getIconWidth()*view.gamesPanel.gamesStadiumPanel.stadiumSizeRatio), (int)(img_36.getIconHeight()*view.gamesPanel.gamesStadiumPanel.stadiumSizeRatio));
-		view.gamesPanel.gamesStadiumPanel.viewStadium_36.setIcon(UI_Elements.scaleImageToBox(img_36, view.gamesPanel.gamesStadiumPanel.viewStadium_36));
-		MouseAdapter ma36_Games = view.gamesPanel.gamesStadiumPanel.createSectionAdapter(view.gamesPanel.gamesStadiumPanel.viewStadium_36, img_36, img_36_R, img_36_S);
-		view.gamesPanel.gamesStadiumPanel.viewStadium_36.addActionListener(new ActionListener() {
-			public void actionPerformed(ActionEvent arg0) {
-				view.gamesPanel.gamesStadiumPanel.stadiumSectionSelection(view.gamesPanel.gamesStadiumPanel.viewStadium_36, ma36_Games, img_36_S);
-			}
-		});
-		view.gamesPanel.gamesStadiumPanel.viewStadium_36.addMouseListener(ma36_Games);
-		
-		
-
-		String path35 = "/Images/StadiumSlices/Stadium" + getViewStadiumSectionType(35) + "_35.png";
-		img_35 = new ImageIcon(Overview.class.getResource(path35));
-		String path35_R = "/Images/StadiumSlices/Stadium_Rollover_35.png";
-		img_35_R = new ImageIcon(Overview.class.getResource(path35_R));
-		String path35_S = "/Images/StadiumSlices/Stadium_Selected_35.png";
-		img_35_S = new ImageIcon(Overview.class.getResource(path35_S));
-		
-		view.overviewPanel.overviewStadiumPanel.viewStadium_35.setBounds(view.overviewPanel.overviewStadiumPanel.viewStadium_36.getBounds().x + view.overviewPanel.overviewStadiumPanel.viewStadium_36.getBounds().width, view.overviewPanel.overviewStadiumPanel.viewStadium_36.getBounds().y, (int)(img_35.getIconWidth()*view.overviewPanel.overviewStadiumPanel.stadiumSizeRatio), (int)(img_35.getIconHeight()*view.overviewPanel.overviewStadiumPanel.stadiumSizeRatio));
-		view.overviewPanel.overviewStadiumPanel.viewStadium_35.setIcon(UI_Elements.scaleImageToBox(img_35, view.overviewPanel.overviewStadiumPanel.viewStadium_35));
-		MouseAdapter ma35_Overview = view.overviewPanel.overviewStadiumPanel.createSectionAdapter(view.overviewPanel.overviewStadiumPanel.viewStadium_35, img_35, img_35_R, img_35_S);
-		view.overviewPanel.overviewStadiumPanel.viewStadium_35.addActionListener(new ActionListener() {
-			public void actionPerformed(ActionEvent arg0) {
-				view.overviewPanel.overviewStadiumPanel.stadiumSectionSelection(view.overviewPanel.overviewStadiumPanel.viewStadium_35, ma35_Overview, img_35_S);
-			}
-		});
-		view.overviewPanel.overviewStadiumPanel.viewStadium_35.addMouseListener(ma35_Overview);
-		
-		view.gamesPanel.gamesStadiumPanel.viewStadium_35.setBounds(view.gamesPanel.gamesStadiumPanel.viewStadium_36.getBounds().x + view.gamesPanel.gamesStadiumPanel.viewStadium_36.getBounds().width, view.gamesPanel.gamesStadiumPanel.viewStadium_36.getBounds().y, (int)(img_35.getIconWidth()*view.gamesPanel.gamesStadiumPanel.stadiumSizeRatio), (int)(img_35.getIconHeight()*view.gamesPanel.gamesStadiumPanel.stadiumSizeRatio));
-		view.gamesPanel.gamesStadiumPanel.viewStadium_35.setIcon(UI_Elements.scaleImageToBox(img_35, view.gamesPanel.gamesStadiumPanel.viewStadium_35));
-		MouseAdapter ma35_Games = view.gamesPanel.gamesStadiumPanel.createSectionAdapter(view.gamesPanel.gamesStadiumPanel.viewStadium_35, img_35, img_35_R, img_35_S);
-		view.gamesPanel.gamesStadiumPanel.viewStadium_35.addActionListener(new ActionListener() {
-			public void actionPerformed(ActionEvent arg0) {
-				view.gamesPanel.gamesStadiumPanel.stadiumSectionSelection(view.gamesPanel.gamesStadiumPanel.viewStadium_35, ma35_Games, img_35_S);
-			}
-		});
-		view.gamesPanel.gamesStadiumPanel.viewStadium_35.addMouseListener(ma35_Games);
-		
-		
-
-		String path34 = "/Images/StadiumSlices/Stadium" + getViewStadiumSectionType(34) + "_34.png";
-		img_34 = new ImageIcon(Overview.class.getResource(path34));
-		String path34_R = "/Images/StadiumSlices/Stadium_Rollover_34.png";
-		img_34_R = new ImageIcon(Overview.class.getResource(path34_R));
-		String path34_S = "/Images/StadiumSlices/Stadium_Selected_34.png";
-		img_34_S = new ImageIcon(Overview.class.getResource(path34_S));
-		
-		view.overviewPanel.overviewStadiumPanel.viewStadium_34.setBounds(view.overviewPanel.overviewStadiumPanel.viewStadium_35.getBounds().x + view.overviewPanel.overviewStadiumPanel.viewStadium_35.getBounds().width, view.overviewPanel.overviewStadiumPanel.viewStadium_35.getBounds().y, (int)(img_34.getIconWidth()*view.overviewPanel.overviewStadiumPanel.stadiumSizeRatio), (int)(img_34.getIconHeight()*view.overviewPanel.overviewStadiumPanel.stadiumSizeRatio));
-		view.overviewPanel.overviewStadiumPanel.viewStadium_34.setIcon(UI_Elements.scaleImageToBox(img_34, view.overviewPanel.overviewStadiumPanel.viewStadium_34));
-		MouseAdapter ma34_Overview = view.overviewPanel.overviewStadiumPanel.createSectionAdapter(view.overviewPanel.overviewStadiumPanel.viewStadium_34, img_34, img_34_R, img_34_S);
-		view.overviewPanel.overviewStadiumPanel.viewStadium_34.addActionListener(new ActionListener() {
-			public void actionPerformed(ActionEvent arg0) {
-				view.overviewPanel.overviewStadiumPanel.stadiumSectionSelection(view.overviewPanel.overviewStadiumPanel.viewStadium_34, ma34_Overview, img_34_S);
-			}
-		});
-		view.overviewPanel.overviewStadiumPanel.viewStadium_34.addMouseListener(ma34_Overview);
-		
-		view.gamesPanel.gamesStadiumPanel.viewStadium_34.setBounds(view.gamesPanel.gamesStadiumPanel.viewStadium_35.getBounds().x + view.gamesPanel.gamesStadiumPanel.viewStadium_35.getBounds().width, view.gamesPanel.gamesStadiumPanel.viewStadium_35.getBounds().y, (int)(img_34.getIconWidth()*view.gamesPanel.gamesStadiumPanel.stadiumSizeRatio), (int)(img_34.getIconHeight()*view.gamesPanel.gamesStadiumPanel.stadiumSizeRatio));
-		view.gamesPanel.gamesStadiumPanel.viewStadium_34.setIcon(UI_Elements.scaleImageToBox(img_34, view.gamesPanel.gamesStadiumPanel.viewStadium_34));
-		MouseAdapter ma34_Games = view.gamesPanel.gamesStadiumPanel.createSectionAdapter(view.gamesPanel.gamesStadiumPanel.viewStadium_34, img_34, img_34_R, img_34_S);
-		view.gamesPanel.gamesStadiumPanel.viewStadium_34.addActionListener(new ActionListener() {
-			public void actionPerformed(ActionEvent arg0) {
-				view.gamesPanel.gamesStadiumPanel.stadiumSectionSelection(view.gamesPanel.gamesStadiumPanel.viewStadium_34, ma34_Games, img_34_S);
-			}
-		});
-		view.gamesPanel.gamesStadiumPanel.viewStadium_34.addMouseListener(ma34_Games);
-
-
-
-		String path33 = "/Images/StadiumSlices/Stadium" + getViewStadiumSectionType(33) + "_33.png";
-		img_33 = new ImageIcon(Overview.class.getResource(path33));
-		String path33_R = "/Images/StadiumSlices/Stadium_Rollover_33.png";
-		img_33_R = new ImageIcon(Overview.class.getResource(path33_R));
-		String path33_S = "/Images/StadiumSlices/Stadium_Selected_33.png";
-		img_33_S = new ImageIcon(Overview.class.getResource(path33_S));
-		
-		view.overviewPanel.overviewStadiumPanel.viewStadium_33.setBounds(view.overviewPanel.overviewStadiumPanel.viewStadium_34.getBounds().x + view.overviewPanel.overviewStadiumPanel.viewStadium_34.getBounds().width, view.overviewPanel.overviewStadiumPanel.viewStadium_34.getBounds().y, (int)(img_33.getIconWidth()*view.overviewPanel.overviewStadiumPanel.stadiumSizeRatio), (int)(img_33.getIconHeight()*view.overviewPanel.overviewStadiumPanel.stadiumSizeRatio));
-		view.overviewPanel.overviewStadiumPanel.viewStadium_33.setIcon(UI_Elements.scaleImageToBox(img_33, view.overviewPanel.overviewStadiumPanel.viewStadium_33));
-		MouseAdapter ma33_Overview = view.overviewPanel.overviewStadiumPanel.createSectionAdapter(view.overviewPanel.overviewStadiumPanel.viewStadium_33, img_33, img_33_R, img_33_S);
-		view.overviewPanel.overviewStadiumPanel.viewStadium_33.addActionListener(new ActionListener() {
-			public void actionPerformed(ActionEvent arg0) {
-				view.overviewPanel.overviewStadiumPanel.stadiumSectionSelection(view.overviewPanel.overviewStadiumPanel.viewStadium_33, ma33_Overview, img_33_S);
-			}
-		});
-		view.overviewPanel.overviewStadiumPanel.viewStadium_33.addMouseListener(ma33_Overview);
-		
-		view.gamesPanel.gamesStadiumPanel.viewStadium_33.setBounds(view.gamesPanel.gamesStadiumPanel.viewStadium_34.getBounds().x + view.gamesPanel.gamesStadiumPanel.viewStadium_34.getBounds().width, view.gamesPanel.gamesStadiumPanel.viewStadium_34.getBounds().y, (int)(img_33.getIconWidth()*view.gamesPanel.gamesStadiumPanel.stadiumSizeRatio), (int)(img_33.getIconHeight()*view.gamesPanel.gamesStadiumPanel.stadiumSizeRatio));
-		view.gamesPanel.gamesStadiumPanel.viewStadium_33.setIcon(UI_Elements.scaleImageToBox(img_33, view.gamesPanel.gamesStadiumPanel.viewStadium_33));
-		MouseAdapter ma33_Games = view.gamesPanel.gamesStadiumPanel.createSectionAdapter(view.gamesPanel.gamesStadiumPanel.viewStadium_33, img_33, img_33_R, img_33_S);
-		view.gamesPanel.gamesStadiumPanel.viewStadium_33.addActionListener(new ActionListener() {
-			public void actionPerformed(ActionEvent arg0) {
-				view.gamesPanel.gamesStadiumPanel.stadiumSectionSelection(view.gamesPanel.gamesStadiumPanel.viewStadium_33, ma33_Games, img_33_S);
-			}
-		});
-		view.gamesPanel.gamesStadiumPanel.viewStadium_33.addMouseListener(ma33_Games);
-		
-		String path32 = "/Images/StadiumSlices/Stadium" + getViewStadiumSectionType(32) + "_32.png";
-		img_32 = new ImageIcon(Overview.class.getResource(path32));
-		String path32_R = "/Images/StadiumSlices/Stadium_Rollover_32.png";
-		img_32_R = new ImageIcon(Overview.class.getResource(path32_R));
-		String path32_S = "/Images/StadiumSlices/Stadium_Selected_32.png";
-		img_32_S = new ImageIcon(Overview.class.getResource(path32_S));
-		
-		view.overviewPanel.overviewStadiumPanel.viewStadium_32.setBounds(view.overviewPanel.overviewStadiumPanel.viewStadium_33.getBounds().x + view.overviewPanel.overviewStadiumPanel.viewStadium_33.getBounds().width, view.overviewPanel.overviewStadiumPanel.viewStadium_40.getBounds().y, (int)(img_32.getIconWidth()*view.overviewPanel.overviewStadiumPanel.stadiumSizeRatio), (int)(img_32.getIconHeight()*view.overviewPanel.overviewStadiumPanel.stadiumSizeRatio));
-		view.overviewPanel.overviewStadiumPanel.viewStadium_32.setIcon(UI_Elements.scaleImageToBox(img_32, view.overviewPanel.overviewStadiumPanel.viewStadium_32));
-		MouseAdapter ma32_Overview = view.overviewPanel.overviewStadiumPanel.createSectionAdapter(view.overviewPanel.overviewStadiumPanel.viewStadium_32, img_32, img_32_R, img_32_S);
-		view.overviewPanel.overviewStadiumPanel.viewStadium_32.addActionListener(new ActionListener() {
-			public void actionPerformed(ActionEvent arg0) {
-				view.overviewPanel.overviewStadiumPanel.stadiumSectionSelection(view.overviewPanel.overviewStadiumPanel.viewStadium_32, ma32_Overview, img_32_S);
-			}
-		});
-		view.overviewPanel.overviewStadiumPanel.viewStadium_32.addMouseListener(ma32_Overview);
-		
-		view.gamesPanel.gamesStadiumPanel.viewStadium_32.setBounds(view.gamesPanel.gamesStadiumPanel.viewStadium_33.getBounds().x + view.gamesPanel.gamesStadiumPanel.viewStadium_33.getBounds().width, view.gamesPanel.gamesStadiumPanel.viewStadium_40.getBounds().y, (int)(img_32.getIconWidth()*view.gamesPanel.gamesStadiumPanel.stadiumSizeRatio), (int)(img_32.getIconHeight()*view.gamesPanel.gamesStadiumPanel.stadiumSizeRatio));
-		view.gamesPanel.gamesStadiumPanel.viewStadium_32.setIcon(UI_Elements.scaleImageToBox(img_32, view.gamesPanel.gamesStadiumPanel.viewStadium_32));
-		MouseAdapter ma32_Games = view.gamesPanel.gamesStadiumPanel.createSectionAdapter(view.gamesPanel.gamesStadiumPanel.viewStadium_32, img_32, img_32_R, img_32_S);
-		view.gamesPanel.gamesStadiumPanel.viewStadium_32.addActionListener(new ActionListener() {
-			public void actionPerformed(ActionEvent arg0) {
-				view.gamesPanel.gamesStadiumPanel.stadiumSectionSelection(view.gamesPanel.gamesStadiumPanel.viewStadium_32, ma32_Games, img_32_S);
-			}
-		});
-		view.gamesPanel.gamesStadiumPanel.viewStadium_32.addMouseListener(ma32_Games);
-		
-		String path10 = "/Images/StadiumSlices/Stadium" + getViewStadiumSectionType(10) + "_10.png";
-		img_10 = new ImageIcon(Controller.class.getResource(path10));
-		String path10_R = "/Images/StadiumSlices/Stadium_Rollover_10.png";
-		img_10_R = new ImageIcon(Controller.class.getResource(path10_R));
-		String path10_S = "/Images/StadiumSlices/Stadium_Selected_10.png";
-		img_10_S = new ImageIcon(Controller.class.getResource(path10_S));
-		
-		
-		view.overviewPanel.overviewStadiumPanel.viewStadium_10.setBounds(view.overviewPanel.overviewStadiumPanel.viewStadium_33.getBounds().x + view.overviewPanel.overviewStadiumPanel.viewStadium_33.getBounds().width, view.overviewPanel.overviewStadiumPanel.viewStadium_18.getBounds().y, (int)(img_10.getIconWidth()*view.overviewPanel.overviewStadiumPanel.stadiumSizeRatio), (int)(img_10.getIconHeight()*view.overviewPanel.overviewStadiumPanel.stadiumSizeRatio));
-		view.overviewPanel.overviewStadiumPanel.viewStadium_10.setIcon(UI_Elements.scaleImageToBox(img_10, view.overviewPanel.overviewStadiumPanel.viewStadium_10));
-		MouseAdapter ma10_Overview = view.overviewPanel.overviewStadiumPanel.createSectionAdapter(view.overviewPanel.overviewStadiumPanel.viewStadium_10, img_10, img_10_R, img_10_S);
-		view.overviewPanel.overviewStadiumPanel.viewStadium_10.addActionListener(new ActionListener() {
-			public void actionPerformed(ActionEvent arg0) {
-				view.overviewPanel.overviewStadiumPanel.stadiumSectionSelection(view.overviewPanel.overviewStadiumPanel.viewStadium_10, ma10_Overview, img_10_S);
-			}
-		});
-		view.overviewPanel.overviewStadiumPanel.viewStadium_10.addMouseListener(ma10_Overview);
-		
-		view.gamesPanel.gamesStadiumPanel.viewStadium_10.setBounds(view.gamesPanel.gamesStadiumPanel.viewStadium_33.getBounds().x + view.gamesPanel.gamesStadiumPanel.viewStadium_33.getBounds().width, view.gamesPanel.gamesStadiumPanel.viewStadium_18.getBounds().y, (int)(img_10.getIconWidth()*view.gamesPanel.gamesStadiumPanel.stadiumSizeRatio), (int)(img_10.getIconHeight()*view.gamesPanel.gamesStadiumPanel.stadiumSizeRatio));
-		view.gamesPanel.gamesStadiumPanel.viewStadium_10.setIcon(UI_Elements.scaleImageToBox(img_10, view.gamesPanel.gamesStadiumPanel.viewStadium_10));
-		MouseAdapter ma10_Games = view.gamesPanel.gamesStadiumPanel.createSectionAdapter(view.gamesPanel.gamesStadiumPanel.viewStadium_10, img_10, img_10_R, img_10_S);
-		view.gamesPanel.gamesStadiumPanel.viewStadium_10.addActionListener(new ActionListener() {
-			public void actionPerformed(ActionEvent arg0) {
-				view.gamesPanel.gamesStadiumPanel.stadiumSectionSelection(view.gamesPanel.gamesStadiumPanel.viewStadium_10, ma10_Games, img_10_S);
-			}
-		});
-		view.gamesPanel.gamesStadiumPanel.viewStadium_10.addMouseListener(ma10_Games);
-		
-		//add all buttons to list		
-		stadiumButtonsOverview.add(view.overviewPanel.overviewStadiumPanel.viewStadium_1);
-		stadiumButtonsOverview.add(view.overviewPanel.overviewStadiumPanel.viewStadium_2);
-		stadiumButtonsOverview.add(view.overviewPanel.overviewStadiumPanel.viewStadium_3);
-		stadiumButtonsOverview.add(view.overviewPanel.overviewStadiumPanel.viewStadium_4);
-		stadiumButtonsOverview.add(view.overviewPanel.overviewStadiumPanel.viewStadium_5);
-		stadiumButtonsOverview.add(view.overviewPanel.overviewStadiumPanel.viewStadium_6);
-		stadiumButtonsOverview.add(view.overviewPanel.overviewStadiumPanel.viewStadium_7);
-		stadiumButtonsOverview.add(view.overviewPanel.overviewStadiumPanel.viewStadium_8);
-		stadiumButtonsOverview.add(view.overviewPanel.overviewStadiumPanel.viewStadium_9);
-		stadiumButtonsOverview.add(view.overviewPanel.overviewStadiumPanel.viewStadium_10);
-		stadiumButtonsOverview.add(view.overviewPanel.overviewStadiumPanel.viewStadium_11);
-		stadiumButtonsOverview.add(view.overviewPanel.overviewStadiumPanel.viewStadium_12);
-		stadiumButtonsOverview.add(view.overviewPanel.overviewStadiumPanel.viewStadium_13);
-		stadiumButtonsOverview.add(view.overviewPanel.overviewStadiumPanel.viewStadium_14);
-		stadiumButtonsOverview.add(view.overviewPanel.overviewStadiumPanel.viewStadium_15);
-		stadiumButtonsOverview.add(view.overviewPanel.overviewStadiumPanel.viewStadium_16);
-		stadiumButtonsOverview.add(view.overviewPanel.overviewStadiumPanel.viewStadium_17);
-		stadiumButtonsOverview.add(view.overviewPanel.overviewStadiumPanel.viewStadium_18);
-		stadiumButtonsOverview.add(view.overviewPanel.overviewStadiumPanel.viewStadium_19);
-		stadiumButtonsOverview.add(view.overviewPanel.overviewStadiumPanel.viewStadium_20);
-		stadiumButtonsOverview.add(view.overviewPanel.overviewStadiumPanel.viewStadium_21);
-		stadiumButtonsOverview.add(view.overviewPanel.overviewStadiumPanel.viewStadium_22);
-		stadiumButtonsOverview.add(view.overviewPanel.overviewStadiumPanel.viewStadium_23);
-		stadiumButtonsOverview.add(view.overviewPanel.overviewStadiumPanel.viewStadium_24);
-		stadiumButtonsOverview.add(view.overviewPanel.overviewStadiumPanel.viewStadium_25);
-		stadiumButtonsOverview.add(view.overviewPanel.overviewStadiumPanel.viewStadium_26);
-		stadiumButtonsOverview.add(view.overviewPanel.overviewStadiumPanel.viewStadium_27);
-		stadiumButtonsOverview.add(view.overviewPanel.overviewStadiumPanel.viewStadium_28);
-		stadiumButtonsOverview.add(view.overviewPanel.overviewStadiumPanel.viewStadium_29);
-		stadiumButtonsOverview.add(view.overviewPanel.overviewStadiumPanel.viewStadium_30);
-		stadiumButtonsOverview.add(view.overviewPanel.overviewStadiumPanel.viewStadium_31);
-		stadiumButtonsOverview.add(view.overviewPanel.overviewStadiumPanel.viewStadium_32);
-		stadiumButtonsOverview.add(view.overviewPanel.overviewStadiumPanel.viewStadium_33);
-		stadiumButtonsOverview.add(view.overviewPanel.overviewStadiumPanel.viewStadium_34);
-		stadiumButtonsOverview.add(view.overviewPanel.overviewStadiumPanel.viewStadium_35);
-		stadiumButtonsOverview.add(view.overviewPanel.overviewStadiumPanel.viewStadium_36);
-		stadiumButtonsOverview.add(view.overviewPanel.overviewStadiumPanel.viewStadium_37);
-		stadiumButtonsOverview.add(view.overviewPanel.overviewStadiumPanel.viewStadium_38);
-		stadiumButtonsOverview.add(view.overviewPanel.overviewStadiumPanel.viewStadium_39);
-		stadiumButtonsOverview.add(view.overviewPanel.overviewStadiumPanel.viewStadium_40);
-		stadiumButtonsOverview.add(view.overviewPanel.overviewStadiumPanel.viewStadium_41);
-		stadiumButtonsOverview.add(view.overviewPanel.overviewStadiumPanel.viewStadium_42);
-		stadiumButtonsOverview.add(view.overviewPanel.overviewStadiumPanel.viewStadium_43);
-		stadiumButtonsOverview.add(view.overviewPanel.overviewStadiumPanel.viewStadium_44);
-		
-		stadiumButtonsGames.add(view.gamesPanel.gamesStadiumPanel.viewStadium_1);
-		stadiumButtonsGames.add(view.gamesPanel.gamesStadiumPanel.viewStadium_2);
-		stadiumButtonsGames.add(view.gamesPanel.gamesStadiumPanel.viewStadium_3);
-		stadiumButtonsGames.add(view.gamesPanel.gamesStadiumPanel.viewStadium_4);
-		stadiumButtonsGames.add(view.gamesPanel.gamesStadiumPanel.viewStadium_5);
-		stadiumButtonsGames.add(view.gamesPanel.gamesStadiumPanel.viewStadium_6);
-		stadiumButtonsGames.add(view.gamesPanel.gamesStadiumPanel.viewStadium_7);
-		stadiumButtonsGames.add(view.gamesPanel.gamesStadiumPanel.viewStadium_8);
-		stadiumButtonsGames.add(view.gamesPanel.gamesStadiumPanel.viewStadium_9);
-		stadiumButtonsGames.add(view.gamesPanel.gamesStadiumPanel.viewStadium_10);
-		stadiumButtonsGames.add(view.gamesPanel.gamesStadiumPanel.viewStadium_11);
-		stadiumButtonsGames.add(view.gamesPanel.gamesStadiumPanel.viewStadium_12);
-		stadiumButtonsGames.add(view.gamesPanel.gamesStadiumPanel.viewStadium_13);
-		stadiumButtonsGames.add(view.gamesPanel.gamesStadiumPanel.viewStadium_14);
-		stadiumButtonsGames.add(view.gamesPanel.gamesStadiumPanel.viewStadium_15);
-		stadiumButtonsGames.add(view.gamesPanel.gamesStadiumPanel.viewStadium_16);
-		stadiumButtonsGames.add(view.gamesPanel.gamesStadiumPanel.viewStadium_17);
-		stadiumButtonsGames.add(view.gamesPanel.gamesStadiumPanel.viewStadium_18);
-		stadiumButtonsGames.add(view.gamesPanel.gamesStadiumPanel.viewStadium_19);
-		stadiumButtonsGames.add(view.gamesPanel.gamesStadiumPanel.viewStadium_20);
-		stadiumButtonsGames.add(view.gamesPanel.gamesStadiumPanel.viewStadium_21);
-		stadiumButtonsGames.add(view.gamesPanel.gamesStadiumPanel.viewStadium_22);
-		stadiumButtonsGames.add(view.gamesPanel.gamesStadiumPanel.viewStadium_23);
-		stadiumButtonsGames.add(view.gamesPanel.gamesStadiumPanel.viewStadium_24);
-		stadiumButtonsGames.add(view.gamesPanel.gamesStadiumPanel.viewStadium_25);
-		stadiumButtonsGames.add(view.gamesPanel.gamesStadiumPanel.viewStadium_26);
-		stadiumButtonsGames.add(view.gamesPanel.gamesStadiumPanel.viewStadium_27);
-		stadiumButtonsGames.add(view.gamesPanel.gamesStadiumPanel.viewStadium_28);
-		stadiumButtonsGames.add(view.gamesPanel.gamesStadiumPanel.viewStadium_29);
-		stadiumButtonsGames.add(view.gamesPanel.gamesStadiumPanel.viewStadium_30);
-		stadiumButtonsGames.add(view.gamesPanel.gamesStadiumPanel.viewStadium_31);
-		stadiumButtonsGames.add(view.gamesPanel.gamesStadiumPanel.viewStadium_32);
-		stadiumButtonsGames.add(view.gamesPanel.gamesStadiumPanel.viewStadium_33);
-		stadiumButtonsGames.add(view.gamesPanel.gamesStadiumPanel.viewStadium_34);
-		stadiumButtonsGames.add(view.gamesPanel.gamesStadiumPanel.viewStadium_35);
-		stadiumButtonsGames.add(view.gamesPanel.gamesStadiumPanel.viewStadium_36);
-		stadiumButtonsGames.add(view.gamesPanel.gamesStadiumPanel.viewStadium_37);
-		stadiumButtonsGames.add(view.gamesPanel.gamesStadiumPanel.viewStadium_38);
-		stadiumButtonsGames.add(view.gamesPanel.gamesStadiumPanel.viewStadium_39);
-		stadiumButtonsGames.add(view.gamesPanel.gamesStadiumPanel.viewStadium_40);
-		stadiumButtonsGames.add(view.gamesPanel.gamesStadiumPanel.viewStadium_41);
-		stadiumButtonsGames.add(view.gamesPanel.gamesStadiumPanel.viewStadium_42);
-		stadiumButtonsGames.add(view.gamesPanel.gamesStadiumPanel.viewStadium_43);
-		stadiumButtonsGames.add(view.gamesPanel.gamesStadiumPanel.viewStadium_44);
-
+		
+		//Section 43
+		view.overviewPanel.overviewStadiumPanel.viewStadium_43.setBounds(view.overviewPanel.overviewStadiumPanel.viewStadium_44.getBounds().x, view.overviewPanel.overviewStadiumPanel.viewStadium_44.getBounds().y + view.overviewPanel.overviewStadiumPanel.viewStadium_44.getBounds().height, (int)(stadiumImages.get(43).getIconWidth()*view.overviewPanel.overviewStadiumPanel.stadiumSizeRatio), (int)(stadiumImages.get(43).getIconHeight()*view.overviewPanel.overviewStadiumPanel.stadiumSizeRatio));
+		view.overviewPanel.overviewStadiumPanel.viewStadium_43.setIcon(UI_Elements.scaleImageToBox(stadiumImages.get(43), view.overviewPanel.overviewStadiumPanel.viewStadium_43));
+		view.gamesPanel.gamesStadiumPanel.viewStadium_43.setBounds(view.gamesPanel.gamesStadiumPanel.viewStadium_44.getBounds().x, view.gamesPanel.gamesStadiumPanel.viewStadium_44.getBounds().y + view.gamesPanel.gamesStadiumPanel.viewStadium_44.getBounds().height, (int)(stadiumImages.get(43).getIconWidth()*view.gamesPanel.gamesStadiumPanel.stadiumSizeRatio), (int)(stadiumImages.get(43).getIconHeight()*view.gamesPanel.gamesStadiumPanel.stadiumSizeRatio));
+		view.gamesPanel.gamesStadiumPanel.viewStadium_43.setIcon(UI_Elements.scaleImageToBox(stadiumImages.get(43), view.gamesPanel.gamesStadiumPanel.viewStadium_43));
+		//
+		
+		//Section 42
+		view.overviewPanel.overviewStadiumPanel.viewStadium_42.setBounds(view.overviewPanel.overviewStadiumPanel.viewStadium_43.getBounds().x, view.overviewPanel.overviewStadiumPanel.viewStadium_43.getBounds().y + view.overviewPanel.overviewStadiumPanel.viewStadium_43.getBounds().height, (int)(stadiumImages.get(42).getIconWidth()*view.overviewPanel.overviewStadiumPanel.stadiumSizeRatio), (int)(stadiumImages.get(42).getIconHeight()*view.overviewPanel.overviewStadiumPanel.stadiumSizeRatio));
+		view.overviewPanel.overviewStadiumPanel.viewStadium_42.setIcon(UI_Elements.scaleImageToBox(stadiumImages.get(42), view.overviewPanel.overviewStadiumPanel.viewStadium_42));
+		view.gamesPanel.gamesStadiumPanel.viewStadium_42.setBounds(view.gamesPanel.gamesStadiumPanel.viewStadium_43.getBounds().x, view.gamesPanel.gamesStadiumPanel.viewStadium_43.getBounds().y + view.gamesPanel.gamesStadiumPanel.viewStadium_43.getBounds().height, (int)(stadiumImages.get(42).getIconWidth()*view.gamesPanel.gamesStadiumPanel.stadiumSizeRatio), (int)(stadiumImages.get(42).getIconHeight()*view.gamesPanel.gamesStadiumPanel.stadiumSizeRatio));
+		view.gamesPanel.gamesStadiumPanel.viewStadium_42.setIcon(UI_Elements.scaleImageToBox(stadiumImages.get(42), view.gamesPanel.gamesStadiumPanel.viewStadium_42));
+		//
+		
+		//Section 41
+		view.overviewPanel.overviewStadiumPanel.viewStadium_41.setBounds(view.overviewPanel.overviewStadiumPanel.viewStadium_42.getBounds().x, view.overviewPanel.overviewStadiumPanel.viewStadium_42.getBounds().y + view.overviewPanel.overviewStadiumPanel.viewStadium_42.getBounds().height, (int)(stadiumImages.get(41).getIconWidth()*view.overviewPanel.overviewStadiumPanel.stadiumSizeRatio), (int)(stadiumImages.get(41).getIconHeight()*view.overviewPanel.overviewStadiumPanel.stadiumSizeRatio));
+		view.overviewPanel.overviewStadiumPanel.viewStadium_41.setIcon(UI_Elements.scaleImageToBox(stadiumImages.get(41), view.overviewPanel.overviewStadiumPanel.viewStadium_41));
+		view.gamesPanel.gamesStadiumPanel.viewStadium_41.setBounds(view.gamesPanel.gamesStadiumPanel.viewStadium_42.getBounds().x, view.gamesPanel.gamesStadiumPanel.viewStadium_42.getBounds().y + view.gamesPanel.gamesStadiumPanel.viewStadium_42.getBounds().height, (int)(stadiumImages.get(41).getIconWidth()*view.gamesPanel.gamesStadiumPanel.stadiumSizeRatio), (int)(stadiumImages.get(41).getIconHeight()*view.gamesPanel.gamesStadiumPanel.stadiumSizeRatio));
+		view.gamesPanel.gamesStadiumPanel.viewStadium_41.setIcon(UI_Elements.scaleImageToBox(stadiumImages.get(41), view.gamesPanel.gamesStadiumPanel.viewStadium_41));
+		//
+		
+		//Section 40
+		view.overviewPanel.overviewStadiumPanel.viewStadium_40.setBounds(view.overviewPanel.overviewStadiumPanel.viewStadium_42.getBounds().x, view.overviewPanel.overviewStadiumPanel.viewStadium_41.getBounds().y + view.overviewPanel.overviewStadiumPanel.viewStadium_41.getBounds().height, (int)(stadiumImages.get(40).getIconWidth()*view.overviewPanel.overviewStadiumPanel.stadiumSizeRatio), (int)(stadiumImages.get(40).getIconHeight()*view.overviewPanel.overviewStadiumPanel.stadiumSizeRatio));
+		view.overviewPanel.overviewStadiumPanel.viewStadium_40.setIcon(UI_Elements.scaleImageToBox(stadiumImages.get(40), view.overviewPanel.overviewStadiumPanel.viewStadium_40));
+		view.gamesPanel.gamesStadiumPanel.viewStadium_40.setBounds(view.gamesPanel.gamesStadiumPanel.viewStadium_42.getBounds().x, view.gamesPanel.gamesStadiumPanel.viewStadium_41.getBounds().y + view.gamesPanel.gamesStadiumPanel.viewStadium_41.getBounds().height, (int)(stadiumImages.get(40).getIconWidth()*view.gamesPanel.gamesStadiumPanel.stadiumSizeRatio), (int)(stadiumImages.get(40).getIconHeight()*view.gamesPanel.gamesStadiumPanel.stadiumSizeRatio));
+		view.gamesPanel.gamesStadiumPanel.viewStadium_40.setIcon(UI_Elements.scaleImageToBox(stadiumImages.get(40), view.gamesPanel.gamesStadiumPanel.viewStadium_40));
+		//
+		
+		//Section 20
+		view.overviewPanel.overviewStadiumPanel.viewStadium_20.setBounds(view.overviewPanel.overviewStadiumPanel.panelViewStadium.getBounds().x, view.overviewPanel.overviewStadiumPanel.panelViewStadium.getBounds().y, (int)(stadiumImages.get(20).getIconWidth()*view.overviewPanel.overviewStadiumPanel.stadiumSizeRatio), (int)(stadiumImages.get(20).getIconHeight()*view.overviewPanel.overviewStadiumPanel.stadiumSizeRatio));
+		view.overviewPanel.overviewStadiumPanel.viewStadium_20.setIcon(UI_Elements.scaleImageToBox(stadiumImages.get(20), view.overviewPanel.overviewStadiumPanel.viewStadium_20));
+		view.gamesPanel.gamesStadiumPanel.viewStadium_20.setBounds(view.gamesPanel.gamesStadiumPanel.panelViewStadium.getBounds().x, view.gamesPanel.gamesStadiumPanel.panelViewStadium.getBounds().y, (int)(stadiumImages.get(20).getIconWidth()*view.gamesPanel.gamesStadiumPanel.stadiumSizeRatio), (int)(stadiumImages.get(20).getIconHeight()*view.gamesPanel.gamesStadiumPanel.stadiumSizeRatio));
+		view.gamesPanel.gamesStadiumPanel.viewStadium_20.setIcon(UI_Elements.scaleImageToBox(stadiumImages.get(20), view.gamesPanel.gamesStadiumPanel.viewStadium_20));
+		//
+		
+		//Section 1
+		view.overviewPanel.overviewStadiumPanel.viewStadium_1.setBounds(view.overviewPanel.overviewStadiumPanel.viewStadium_20.getBounds().x + view.overviewPanel.overviewStadiumPanel.viewStadium_20.getBounds().width, view.overviewPanel.overviewStadiumPanel.panelViewStadium.getBounds().y, (int)(stadiumImages.get(1).getIconWidth()*view.overviewPanel.overviewStadiumPanel.stadiumSizeRatio), (int)(stadiumImages.get(1).getIconHeight()*view.overviewPanel.overviewStadiumPanel.stadiumSizeRatio));
+		view.overviewPanel.overviewStadiumPanel.viewStadium_1.setIcon(UI_Elements.scaleImageToBox(stadiumImages.get(1), view.overviewPanel.overviewStadiumPanel.viewStadium_1));
+		view.gamesPanel.gamesStadiumPanel.viewStadium_1.setBounds(view.gamesPanel.gamesStadiumPanel.viewStadium_20.getBounds().x + view.gamesPanel.gamesStadiumPanel.viewStadium_20.getBounds().width, view.gamesPanel.gamesStadiumPanel.panelViewStadium.getBounds().y, (int)(stadiumImages.get(1).getIconWidth()*view.gamesPanel.gamesStadiumPanel.stadiumSizeRatio), (int)(stadiumImages.get(1).getIconHeight()*view.gamesPanel.gamesStadiumPanel.stadiumSizeRatio));
+		view.gamesPanel.gamesStadiumPanel.viewStadium_1.setIcon(UI_Elements.scaleImageToBox(stadiumImages.get(1), view.gamesPanel.gamesStadiumPanel.viewStadium_1));
+		//
+		
+		//Section 2
+		view.overviewPanel.overviewStadiumPanel.viewStadium_2.setBounds(view.overviewPanel.overviewStadiumPanel.viewStadium_1.getBounds().x + view.overviewPanel.overviewStadiumPanel.viewStadium_1.getBounds().width, view.overviewPanel.overviewStadiumPanel.panelViewStadium.getBounds().y, (int)(stadiumImages.get(2).getIconWidth()*view.overviewPanel.overviewStadiumPanel.stadiumSizeRatio), (int)(stadiumImages.get(2).getIconHeight()*view.overviewPanel.overviewStadiumPanel.stadiumSizeRatio));
+		view.overviewPanel.overviewStadiumPanel.viewStadium_2.setIcon(UI_Elements.scaleImageToBox(stadiumImages.get(2), view.overviewPanel.overviewStadiumPanel.viewStadium_2));
+		view.gamesPanel.gamesStadiumPanel.viewStadium_2.setBounds(view.gamesPanel.gamesStadiumPanel.viewStadium_1.getBounds().x + view.gamesPanel.gamesStadiumPanel.viewStadium_1.getBounds().width, view.gamesPanel.gamesStadiumPanel.panelViewStadium.getBounds().y, (int)(stadiumImages.get(2).getIconWidth()*view.gamesPanel.gamesStadiumPanel.stadiumSizeRatio), (int)(stadiumImages.get(2).getIconHeight()*view.gamesPanel.gamesStadiumPanel.stadiumSizeRatio));
+		view.gamesPanel.gamesStadiumPanel.viewStadium_2.setIcon(UI_Elements.scaleImageToBox(stadiumImages.get(2), view.gamesPanel.gamesStadiumPanel.viewStadium_2));
+		//
+		
+		//Section 3
+		view.overviewPanel.overviewStadiumPanel.viewStadium_3.setBounds(view.overviewPanel.overviewStadiumPanel.viewStadium_2.getBounds().x + view.overviewPanel.overviewStadiumPanel.viewStadium_2.getBounds().width, view.overviewPanel.overviewStadiumPanel.panelViewStadium.getBounds().y, (int)(stadiumImages.get(3).getIconWidth()*view.overviewPanel.overviewStadiumPanel.stadiumSizeRatio), (int)(stadiumImages.get(3).getIconHeight()*view.overviewPanel.overviewStadiumPanel.stadiumSizeRatio));
+		view.overviewPanel.overviewStadiumPanel.viewStadium_3.setIcon(UI_Elements.scaleImageToBox(stadiumImages.get(3), view.overviewPanel.overviewStadiumPanel.viewStadium_3));
+		view.gamesPanel.gamesStadiumPanel.viewStadium_3.setBounds(view.gamesPanel.gamesStadiumPanel.viewStadium_2.getBounds().x + view.gamesPanel.gamesStadiumPanel.viewStadium_2.getBounds().width, view.gamesPanel.gamesStadiumPanel.panelViewStadium.getBounds().y, (int)(stadiumImages.get(3).getIconWidth()*view.gamesPanel.gamesStadiumPanel.stadiumSizeRatio), (int)(stadiumImages.get(3).getIconHeight()*view.gamesPanel.gamesStadiumPanel.stadiumSizeRatio));
+		view.gamesPanel.gamesStadiumPanel.viewStadium_3.setIcon(UI_Elements.scaleImageToBox(stadiumImages.get(3), view.gamesPanel.gamesStadiumPanel.viewStadium_3));
+		//
+		
+		//Section 4
+		view.overviewPanel.overviewStadiumPanel.viewStadium_4.setBounds(view.overviewPanel.overviewStadiumPanel.viewStadium_3.getBounds().x + view.overviewPanel.overviewStadiumPanel.viewStadium_3.getBounds().width, view.overviewPanel.overviewStadiumPanel.panelViewStadium.getBounds().y, (int)(stadiumImages.get(4).getIconWidth()*view.overviewPanel.overviewStadiumPanel.stadiumSizeRatio), (int)(stadiumImages.get(4).getIconHeight()*view.overviewPanel.overviewStadiumPanel.stadiumSizeRatio));
+		view.overviewPanel.overviewStadiumPanel.viewStadium_4.setIcon(UI_Elements.scaleImageToBox(stadiumImages.get(4), view.overviewPanel.overviewStadiumPanel.viewStadium_4));
+		view.gamesPanel.gamesStadiumPanel.viewStadium_4.setBounds(view.gamesPanel.gamesStadiumPanel.viewStadium_3.getBounds().x + view.gamesPanel.gamesStadiumPanel.viewStadium_3.getBounds().width, view.gamesPanel.gamesStadiumPanel.panelViewStadium.getBounds().y, (int)(stadiumImages.get(4).getIconWidth()*view.gamesPanel.gamesStadiumPanel.stadiumSizeRatio), (int)(stadiumImages.get(4).getIconHeight()*view.gamesPanel.gamesStadiumPanel.stadiumSizeRatio));
+		view.gamesPanel.gamesStadiumPanel.viewStadium_4.setIcon(UI_Elements.scaleImageToBox(stadiumImages.get(4), view.gamesPanel.gamesStadiumPanel.viewStadium_4));
+		//
+		
+		//Section 5
+		view.overviewPanel.overviewStadiumPanel.viewStadium_5.setBounds(view.overviewPanel.overviewStadiumPanel.viewStadium_4.getBounds().x + view.overviewPanel.overviewStadiumPanel.viewStadium_4.getBounds().width, view.overviewPanel.overviewStadiumPanel.panelViewStadium.getBounds().y, (int)(stadiumImages.get(5).getIconWidth()*view.overviewPanel.overviewStadiumPanel.stadiumSizeRatio), (int)(stadiumImages.get(5).getIconHeight()*view.overviewPanel.overviewStadiumPanel.stadiumSizeRatio));
+		view.overviewPanel.overviewStadiumPanel.viewStadium_5.setIcon(UI_Elements.scaleImageToBox(stadiumImages.get(5), view.overviewPanel.overviewStadiumPanel.viewStadium_5));
+		view.gamesPanel.gamesStadiumPanel.viewStadium_5.setBounds(view.gamesPanel.gamesStadiumPanel.viewStadium_4.getBounds().x + view.gamesPanel.gamesStadiumPanel.viewStadium_4.getBounds().width, view.gamesPanel.gamesStadiumPanel.panelViewStadium.getBounds().y, (int)(stadiumImages.get(5).getIconWidth()*view.gamesPanel.gamesStadiumPanel.stadiumSizeRatio), (int)(stadiumImages.get(5).getIconHeight()*view.gamesPanel.gamesStadiumPanel.stadiumSizeRatio));
+		view.gamesPanel.gamesStadiumPanel.viewStadium_5.setIcon(UI_Elements.scaleImageToBox(stadiumImages.get(5), view.gamesPanel.gamesStadiumPanel.viewStadium_5));
+		//
+		
+		//Section 6
+		view.overviewPanel.overviewStadiumPanel.viewStadium_6.setBounds(view.overviewPanel.overviewStadiumPanel.viewStadium_5.getBounds().x + view.overviewPanel.overviewStadiumPanel.viewStadium_5.getBounds().width, view.overviewPanel.overviewStadiumPanel.panelViewStadium.getBounds().y, (int)(stadiumImages.get(6).getIconWidth()*view.overviewPanel.overviewStadiumPanel.stadiumSizeRatio), (int)(stadiumImages.get(6).getIconHeight()*view.overviewPanel.overviewStadiumPanel.stadiumSizeRatio));
+		view.overviewPanel.overviewStadiumPanel.viewStadium_6.setIcon(UI_Elements.scaleImageToBox(stadiumImages.get(6), view.overviewPanel.overviewStadiumPanel.viewStadium_6));
+		view.gamesPanel.gamesStadiumPanel.viewStadium_6.setBounds(view.gamesPanel.gamesStadiumPanel.viewStadium_5.getBounds().x + view.gamesPanel.gamesStadiumPanel.viewStadium_5.getBounds().width, view.gamesPanel.gamesStadiumPanel.panelViewStadium.getBounds().y, (int)(stadiumImages.get(6).getIconWidth()*view.gamesPanel.gamesStadiumPanel.stadiumSizeRatio), (int)(stadiumImages.get(6).getIconHeight()*view.gamesPanel.gamesStadiumPanel.stadiumSizeRatio));
+		view.gamesPanel.gamesStadiumPanel.viewStadium_6.setIcon(UI_Elements.scaleImageToBox(stadiumImages.get(6), view.gamesPanel.gamesStadiumPanel.viewStadium_6));
+		//
+		
+		//Section 7
+		view.overviewPanel.overviewStadiumPanel.viewStadium_7.setBounds(view.overviewPanel.overviewStadiumPanel.viewStadium_6.getBounds().x + view.overviewPanel.overviewStadiumPanel.viewStadium_6.getBounds().width, view.overviewPanel.overviewStadiumPanel.panelViewStadium.getBounds().y, (int)(stadiumImages.get(7).getIconWidth()*view.overviewPanel.overviewStadiumPanel.stadiumSizeRatio), (int)(stadiumImages.get(7).getIconHeight()*view.overviewPanel.overviewStadiumPanel.stadiumSizeRatio));
+		view.overviewPanel.overviewStadiumPanel.viewStadium_7.setIcon(UI_Elements.scaleImageToBox(stadiumImages.get(7), view.overviewPanel.overviewStadiumPanel.viewStadium_7));
+		view.gamesPanel.gamesStadiumPanel.viewStadium_7.setBounds(view.gamesPanel.gamesStadiumPanel.viewStadium_6.getBounds().x + view.gamesPanel.gamesStadiumPanel.viewStadium_6.getBounds().width, view.gamesPanel.gamesStadiumPanel.panelViewStadium.getBounds().y, (int)(stadiumImages.get(7).getIconWidth()*view.gamesPanel.gamesStadiumPanel.stadiumSizeRatio), (int)(stadiumImages.get(7).getIconHeight()*view.gamesPanel.gamesStadiumPanel.stadiumSizeRatio));
+		view.gamesPanel.gamesStadiumPanel.viewStadium_7.setIcon(UI_Elements.scaleImageToBox(stadiumImages.get(7), view.gamesPanel.gamesStadiumPanel.viewStadium_7));
+		//
+		
+		//Section 21
+		view.overviewPanel.overviewStadiumPanel.viewStadium_21.setBounds(view.overviewPanel.overviewStadiumPanel.panelViewStadium.getBounds().x + (int)(1013*view.overviewPanel.overviewStadiumPanel.stadiumSizeRatio), view.overviewPanel.overviewStadiumPanel.viewStadium_1.getBounds().y + view.overviewPanel.overviewStadiumPanel.viewStadium_6.getBounds().height, (int)(stadiumImages.get(21).getIconWidth()*view.overviewPanel.overviewStadiumPanel.stadiumSizeRatio), (int)(stadiumImages.get(21).getIconHeight()*view.overviewPanel.overviewStadiumPanel.stadiumSizeRatio));
+		view.overviewPanel.overviewStadiumPanel.viewStadium_21.setIcon(UI_Elements.scaleImageToBox(stadiumImages.get(21), view.overviewPanel.overviewStadiumPanel.viewStadium_21));
+		view.gamesPanel.gamesStadiumPanel.viewStadium_21.setBounds(view.gamesPanel.gamesStadiumPanel.panelViewStadium.getBounds().x + (int)(1013*view.gamesPanel.gamesStadiumPanel.stadiumSizeRatio), view.gamesPanel.gamesStadiumPanel.viewStadium_1.getBounds().y + view.gamesPanel.gamesStadiumPanel.viewStadium_6.getBounds().height, (int)(stadiumImages.get(21).getIconWidth()*view.gamesPanel.gamesStadiumPanel.stadiumSizeRatio), (int)(stadiumImages.get(21).getIconHeight()*view.gamesPanel.gamesStadiumPanel.stadiumSizeRatio));
+		view.gamesPanel.gamesStadiumPanel.viewStadium_21.setIcon(UI_Elements.scaleImageToBox(stadiumImages.get(21), view.gamesPanel.gamesStadiumPanel.viewStadium_21));
+		//
+		
+		//Section 22
+		view.overviewPanel.overviewStadiumPanel.viewStadium_22.setBounds(view.overviewPanel.overviewStadiumPanel.viewStadium_21.getBounds().x + view.overviewPanel.overviewStadiumPanel.viewStadium_21.getBounds().width, view.overviewPanel.overviewStadiumPanel.viewStadium_1.getBounds().y + view.overviewPanel.overviewStadiumPanel.viewStadium_6.getBounds().height, (int)(stadiumImages.get(22).getIconWidth()*view.overviewPanel.overviewStadiumPanel.stadiumSizeRatio), (int)(stadiumImages.get(22).getIconHeight()*view.overviewPanel.overviewStadiumPanel.stadiumSizeRatio));
+		view.overviewPanel.overviewStadiumPanel.viewStadium_22.setIcon(UI_Elements.scaleImageToBox(stadiumImages.get(22), view.overviewPanel.overviewStadiumPanel.viewStadium_22));
+		view.gamesPanel.gamesStadiumPanel.viewStadium_22.setBounds(view.gamesPanel.gamesStadiumPanel.viewStadium_21.getBounds().x + view.gamesPanel.gamesStadiumPanel.viewStadium_21.getBounds().width, view.gamesPanel.gamesStadiumPanel.viewStadium_1.getBounds().y + view.gamesPanel.gamesStadiumPanel.viewStadium_6.getBounds().height, (int)(stadiumImages.get(22).getIconWidth()*view.gamesPanel.gamesStadiumPanel.stadiumSizeRatio), (int)(stadiumImages.get(22).getIconHeight()*view.gamesPanel.gamesStadiumPanel.stadiumSizeRatio));
+		view.gamesPanel.gamesStadiumPanel.viewStadium_22.setIcon(UI_Elements.scaleImageToBox(stadiumImages.get(22), view.gamesPanel.gamesStadiumPanel.viewStadium_22));
+		//
+		
+		//Section 23
+		view.overviewPanel.overviewStadiumPanel.viewStadium_23.setBounds(view.overviewPanel.overviewStadiumPanel.viewStadium_22.getBounds().x + view.overviewPanel.overviewStadiumPanel.viewStadium_22.getBounds().width, view.overviewPanel.overviewStadiumPanel.viewStadium_1.getBounds().y + view.overviewPanel.overviewStadiumPanel.viewStadium_6.getBounds().height, (int)(stadiumImages.get(23).getIconWidth()*view.overviewPanel.overviewStadiumPanel.stadiumSizeRatio), (int)(stadiumImages.get(23).getIconHeight()*view.overviewPanel.overviewStadiumPanel.stadiumSizeRatio));
+		view.overviewPanel.overviewStadiumPanel.viewStadium_23.setIcon(UI_Elements.scaleImageToBox(stadiumImages.get(23), view.overviewPanel.overviewStadiumPanel.viewStadium_23));
+		view.gamesPanel.gamesStadiumPanel.viewStadium_23.setBounds(view.gamesPanel.gamesStadiumPanel.viewStadium_22.getBounds().x + view.gamesPanel.gamesStadiumPanel.viewStadium_22.getBounds().width, view.gamesPanel.gamesStadiumPanel.viewStadium_1.getBounds().y + view.gamesPanel.gamesStadiumPanel.viewStadium_6.getBounds().height, (int)(stadiumImages.get(23).getIconWidth()*view.gamesPanel.gamesStadiumPanel.stadiumSizeRatio), (int)(stadiumImages.get(23).getIconHeight()*view.gamesPanel.gamesStadiumPanel.stadiumSizeRatio));
+		view.gamesPanel.gamesStadiumPanel.viewStadium_23.setIcon(UI_Elements.scaleImageToBox(stadiumImages.get(23), view.gamesPanel.gamesStadiumPanel.viewStadium_23));
+		//
+		
+		//Section 24
+		view.overviewPanel.overviewStadiumPanel.viewStadium_24.setBounds(view.overviewPanel.overviewStadiumPanel.viewStadium_23.getBounds().x + view.overviewPanel.overviewStadiumPanel.viewStadium_23.getBounds().width, view.overviewPanel.overviewStadiumPanel.viewStadium_1.getBounds().y + view.overviewPanel.overviewStadiumPanel.viewStadium_6.getBounds().height, (int)(stadiumImages.get(24).getIconWidth()*view.overviewPanel.overviewStadiumPanel.stadiumSizeRatio), (int)(stadiumImages.get(24).getIconHeight()*view.overviewPanel.overviewStadiumPanel.stadiumSizeRatio));
+		view.overviewPanel.overviewStadiumPanel.viewStadium_24.setIcon(UI_Elements.scaleImageToBox(stadiumImages.get(24), view.overviewPanel.overviewStadiumPanel.viewStadium_24));
+		view.gamesPanel.gamesStadiumPanel.viewStadium_24.setBounds(view.gamesPanel.gamesStadiumPanel.viewStadium_23.getBounds().x + view.gamesPanel.gamesStadiumPanel.viewStadium_23.getBounds().width, view.gamesPanel.gamesStadiumPanel.viewStadium_1.getBounds().y + view.gamesPanel.gamesStadiumPanel.viewStadium_6.getBounds().height, (int)(stadiumImages.get(24).getIconWidth()*view.gamesPanel.gamesStadiumPanel.stadiumSizeRatio), (int)(stadiumImages.get(24).getIconHeight()*view.gamesPanel.gamesStadiumPanel.stadiumSizeRatio));
+		view.gamesPanel.gamesStadiumPanel.viewStadium_24.setIcon(UI_Elements.scaleImageToBox(stadiumImages.get(24), view.gamesPanel.gamesStadiumPanel.viewStadium_24));
+		//
+		
+		//Section 25
+		view.overviewPanel.overviewStadiumPanel.viewStadium_25.setBounds(view.overviewPanel.overviewStadiumPanel.viewStadium_24.getBounds().x + view.overviewPanel.overviewStadiumPanel.viewStadium_24.getBounds().width, view.overviewPanel.overviewStadiumPanel.viewStadium_1.getBounds().y + view.overviewPanel.overviewStadiumPanel.viewStadium_6.getBounds().height, (int)(stadiumImages.get(25).getIconWidth()*view.overviewPanel.overviewStadiumPanel.stadiumSizeRatio), (int)(stadiumImages.get(25).getIconHeight()*view.overviewPanel.overviewStadiumPanel.stadiumSizeRatio));
+		view.overviewPanel.overviewStadiumPanel.viewStadium_25.setIcon(UI_Elements.scaleImageToBox(stadiumImages.get(25), view.overviewPanel.overviewStadiumPanel.viewStadium_25));
+		view.gamesPanel.gamesStadiumPanel.viewStadium_25.setBounds(view.gamesPanel.gamesStadiumPanel.viewStadium_24.getBounds().x + view.gamesPanel.gamesStadiumPanel.viewStadium_24.getBounds().width, view.gamesPanel.gamesStadiumPanel.viewStadium_1.getBounds().y + view.gamesPanel.gamesStadiumPanel.viewStadium_6.getBounds().height, (int)(stadiumImages.get(25).getIconWidth()*view.gamesPanel.gamesStadiumPanel.stadiumSizeRatio), (int)(stadiumImages.get(25).getIconHeight()*view.gamesPanel.gamesStadiumPanel.stadiumSizeRatio));
+		view.gamesPanel.gamesStadiumPanel.viewStadium_25.setIcon(UI_Elements.scaleImageToBox(stadiumImages.get(25), view.gamesPanel.gamesStadiumPanel.viewStadium_25));
+		//
+		
+		//Section 26
+		view.overviewPanel.overviewStadiumPanel.viewStadium_26.setBounds(view.overviewPanel.overviewStadiumPanel.viewStadium_25.getBounds().x + view.overviewPanel.overviewStadiumPanel.viewStadium_25.getBounds().width, view.overviewPanel.overviewStadiumPanel.viewStadium_1.getBounds().y + view.overviewPanel.overviewStadiumPanel.viewStadium_6.getBounds().height, (int)(stadiumImages.get(26).getIconWidth()*view.overviewPanel.overviewStadiumPanel.stadiumSizeRatio), (int)(stadiumImages.get(26).getIconHeight()*view.overviewPanel.overviewStadiumPanel.stadiumSizeRatio));
+		view.overviewPanel.overviewStadiumPanel.viewStadium_26.setIcon(UI_Elements.scaleImageToBox(stadiumImages.get(26), view.overviewPanel.overviewStadiumPanel.viewStadium_26));	
+		view.gamesPanel.gamesStadiumPanel.viewStadium_26.setBounds(view.gamesPanel.gamesStadiumPanel.viewStadium_25.getBounds().x + view.gamesPanel.gamesStadiumPanel.viewStadium_25.getBounds().width, view.gamesPanel.gamesStadiumPanel.viewStadium_1.getBounds().y + view.gamesPanel.gamesStadiumPanel.viewStadium_6.getBounds().height, (int)(stadiumImages.get(26).getIconWidth()*view.gamesPanel.gamesStadiumPanel.stadiumSizeRatio), (int)(stadiumImages.get(26).getIconHeight()*view.gamesPanel.gamesStadiumPanel.stadiumSizeRatio));
+		view.gamesPanel.gamesStadiumPanel.viewStadium_26.setIcon(UI_Elements.scaleImageToBox(stadiumImages.get(26), view.gamesPanel.gamesStadiumPanel.viewStadium_26));
+		//
+		
+		//Section 27
+		view.overviewPanel.overviewStadiumPanel.viewStadium_27.setBounds(view.overviewPanel.overviewStadiumPanel.viewStadium_26.getBounds().x + view.overviewPanel.overviewStadiumPanel.viewStadium_26.getBounds().width, view.overviewPanel.overviewStadiumPanel.viewStadium_1.getBounds().y + view.overviewPanel.overviewStadiumPanel.viewStadium_6.getBounds().height, (int)(stadiumImages.get(27).getIconWidth()*view.overviewPanel.overviewStadiumPanel.stadiumSizeRatio), (int)(stadiumImages.get(27).getIconHeight()*view.overviewPanel.overviewStadiumPanel.stadiumSizeRatio));
+		view.overviewPanel.overviewStadiumPanel.viewStadium_27.setIcon(UI_Elements.scaleImageToBox(stadiumImages.get(27), view.overviewPanel.overviewStadiumPanel.viewStadium_27));	
+		view.gamesPanel.gamesStadiumPanel.viewStadium_27.setBounds(view.gamesPanel.gamesStadiumPanel.viewStadium_26.getBounds().x + view.gamesPanel.gamesStadiumPanel.viewStadium_26.getBounds().width, view.gamesPanel.gamesStadiumPanel.viewStadium_1.getBounds().y + view.gamesPanel.gamesStadiumPanel.viewStadium_6.getBounds().height, (int)(stadiumImages.get(27).getIconWidth()*view.gamesPanel.gamesStadiumPanel.stadiumSizeRatio), (int)(stadiumImages.get(27).getIconHeight()*view.gamesPanel.gamesStadiumPanel.stadiumSizeRatio));
+		view.gamesPanel.gamesStadiumPanel.viewStadium_27.setIcon(UI_Elements.scaleImageToBox(stadiumImages.get(27), view.gamesPanel.gamesStadiumPanel.viewStadium_27));
+		//
+		
+		//Section 28
+		view.overviewPanel.overviewStadiumPanel.viewStadium_28.setBounds(view.overviewPanel.overviewStadiumPanel.viewStadium_7.getBounds().x + view.overviewPanel.overviewStadiumPanel.viewStadium_7.getBounds().width, view.overviewPanel.overviewStadiumPanel.viewStadium_44.getBounds().y, (int)(stadiumImages.get(28).getIconWidth()*view.overviewPanel.overviewStadiumPanel.stadiumSizeRatio), (int)(stadiumImages.get(28).getIconHeight()*view.overviewPanel.overviewStadiumPanel.stadiumSizeRatio));
+		view.overviewPanel.overviewStadiumPanel.viewStadium_28.setIcon(UI_Elements.scaleImageToBox(stadiumImages.get(28), view.overviewPanel.overviewStadiumPanel.viewStadium_28));
+		view.gamesPanel.gamesStadiumPanel.viewStadium_28.setBounds(view.gamesPanel.gamesStadiumPanel.viewStadium_7.getBounds().x + view.gamesPanel.gamesStadiumPanel.viewStadium_7.getBounds().width, view.gamesPanel.gamesStadiumPanel.viewStadium_44.getBounds().y, (int)(stadiumImages.get(28).getIconWidth()*view.gamesPanel.gamesStadiumPanel.stadiumSizeRatio), (int)(stadiumImages.get(28).getIconHeight()*view.gamesPanel.gamesStadiumPanel.stadiumSizeRatio));
+		view.gamesPanel.gamesStadiumPanel.viewStadium_28.setIcon(UI_Elements.scaleImageToBox(stadiumImages.get(28), view.gamesPanel.gamesStadiumPanel.viewStadium_28));
+		//
+		
+		//Section 29
+		view.overviewPanel.overviewStadiumPanel.viewStadium_29.setBounds(view.overviewPanel.overviewStadiumPanel.viewStadium_28.getBounds().x + view.overviewPanel.overviewStadiumPanel.viewStadium_28.getBounds().width - (int)(stadiumImages.get(29).getIconWidth()*view.overviewPanel.overviewStadiumPanel.stadiumSizeRatio), view.overviewPanel.overviewStadiumPanel.viewStadium_28.getBounds().y + view.overviewPanel.overviewStadiumPanel.viewStadium_28.getBounds().height, (int)(stadiumImages.get(29).getIconWidth()*view.overviewPanel.overviewStadiumPanel.stadiumSizeRatio), (int)(stadiumImages.get(29).getIconHeight()*view.overviewPanel.overviewStadiumPanel.stadiumSizeRatio));
+		view.overviewPanel.overviewStadiumPanel.viewStadium_29.setIcon(UI_Elements.scaleImageToBox(stadiumImages.get(29), view.overviewPanel.overviewStadiumPanel.viewStadium_29));
+		view.gamesPanel.gamesStadiumPanel.viewStadium_29.setBounds(view.gamesPanel.gamesStadiumPanel.viewStadium_28.getBounds().x + view.gamesPanel.gamesStadiumPanel.viewStadium_28.getBounds().width - (int)(stadiumImages.get(29).getIconWidth()*view.gamesPanel.gamesStadiumPanel.stadiumSizeRatio), view.gamesPanel.gamesStadiumPanel.viewStadium_28.getBounds().y + view.gamesPanel.gamesStadiumPanel.viewStadium_28.getBounds().height, (int)(stadiumImages.get(29).getIconWidth()*view.gamesPanel.gamesStadiumPanel.stadiumSizeRatio), (int)(stadiumImages.get(29).getIconHeight()*view.gamesPanel.gamesStadiumPanel.stadiumSizeRatio));
+		view.gamesPanel.gamesStadiumPanel.viewStadium_29.setIcon(UI_Elements.scaleImageToBox(stadiumImages.get(29), view.gamesPanel.gamesStadiumPanel.viewStadium_29));
+		//
+		
+		//Section 30
+		view.overviewPanel.overviewStadiumPanel.viewStadium_30.setBounds(view.overviewPanel.overviewStadiumPanel.viewStadium_29.getBounds().x, view.overviewPanel.overviewStadiumPanel.viewStadium_29.getBounds().y + view.overviewPanel.overviewStadiumPanel.viewStadium_29.getBounds().height, (int)(stadiumImages.get(30).getIconWidth()*view.overviewPanel.overviewStadiumPanel.stadiumSizeRatio), (int)(stadiumImages.get(30).getIconHeight()*view.overviewPanel.overviewStadiumPanel.stadiumSizeRatio));
+		view.overviewPanel.overviewStadiumPanel.viewStadium_30.setIcon(UI_Elements.scaleImageToBox(stadiumImages.get(30), view.overviewPanel.overviewStadiumPanel.viewStadium_30));
+		view.gamesPanel.gamesStadiumPanel.viewStadium_30.setBounds(view.gamesPanel.gamesStadiumPanel.viewStadium_29.getBounds().x, view.gamesPanel.gamesStadiumPanel.viewStadium_29.getBounds().y + view.gamesPanel.gamesStadiumPanel.viewStadium_29.getBounds().height, (int)(stadiumImages.get(30).getIconWidth()*view.gamesPanel.gamesStadiumPanel.stadiumSizeRatio), (int)(stadiumImages.get(30).getIconHeight()*view.gamesPanel.gamesStadiumPanel.stadiumSizeRatio));
+		view.gamesPanel.gamesStadiumPanel.viewStadium_30.setIcon(UI_Elements.scaleImageToBox(stadiumImages.get(30), view.gamesPanel.gamesStadiumPanel.viewStadium_30));
+		//
+		
+		//Section 31
+		view.overviewPanel.overviewStadiumPanel.viewStadium_31.setBounds(view.overviewPanel.overviewStadiumPanel.viewStadium_30.getBounds().x, view.overviewPanel.overviewStadiumPanel.viewStadium_30.getBounds().y + view.overviewPanel.overviewStadiumPanel.viewStadium_30.getBounds().height, (int)(stadiumImages.get(31).getIconWidth()*view.overviewPanel.overviewStadiumPanel.stadiumSizeRatio), (int)(stadiumImages.get(31).getIconHeight()*view.overviewPanel.overviewStadiumPanel.stadiumSizeRatio));
+		view.overviewPanel.overviewStadiumPanel.viewStadium_31.setIcon(UI_Elements.scaleImageToBox(stadiumImages.get(31), view.overviewPanel.overviewStadiumPanel.viewStadium_31));
+		view.gamesPanel.gamesStadiumPanel.viewStadium_31.setBounds(view.gamesPanel.gamesStadiumPanel.viewStadium_30.getBounds().x, view.gamesPanel.gamesStadiumPanel.viewStadium_30.getBounds().y + view.gamesPanel.gamesStadiumPanel.viewStadium_30.getBounds().height, (int)(stadiumImages.get(31).getIconWidth()*view.gamesPanel.gamesStadiumPanel.stadiumSizeRatio), (int)(stadiumImages.get(31).getIconHeight()*view.gamesPanel.gamesStadiumPanel.stadiumSizeRatio));
+		view.gamesPanel.gamesStadiumPanel.viewStadium_31.setIcon(UI_Elements.scaleImageToBox(stadiumImages.get(31), view.gamesPanel.gamesStadiumPanel.viewStadium_31));
+		//
+		
+		//Section 8
+		view.overviewPanel.overviewStadiumPanel.viewStadium_8.setBounds(view.overviewPanel.overviewStadiumPanel.viewStadium_28.getBounds().x, view.overviewPanel.overviewStadiumPanel.panelViewStadium.getBounds().y, (int)(stadiumImages.get(8).getIconWidth()*view.overviewPanel.overviewStadiumPanel.stadiumSizeRatio), (int)(stadiumImages.get(8).getIconHeight()*view.overviewPanel.overviewStadiumPanel.stadiumSizeRatio));
+		view.overviewPanel.overviewStadiumPanel.viewStadium_8.setIcon(UI_Elements.scaleImageToBox(stadiumImages.get(8), view.overviewPanel.overviewStadiumPanel.viewStadium_8));
+		view.gamesPanel.gamesStadiumPanel.viewStadium_8.setBounds(view.gamesPanel.gamesStadiumPanel.viewStadium_28.getBounds().x, view.gamesPanel.gamesStadiumPanel.panelViewStadium.getBounds().y, (int)(stadiumImages.get(8).getIconWidth()*view.gamesPanel.gamesStadiumPanel.stadiumSizeRatio), (int)(stadiumImages.get(8).getIconHeight()*view.gamesPanel.gamesStadiumPanel.stadiumSizeRatio));
+		view.gamesPanel.gamesStadiumPanel.viewStadium_8.setIcon(UI_Elements.scaleImageToBox(stadiumImages.get(8), view.gamesPanel.gamesStadiumPanel.viewStadium_8));
+		//
+		
+		//Section 9
+		view.overviewPanel.overviewStadiumPanel.viewStadium_9.setBounds(view.overviewPanel.overviewStadiumPanel.viewStadium_31.getBounds().x + view.overviewPanel.overviewStadiumPanel.viewStadium_31.getBounds().width, view.overviewPanel.overviewStadiumPanel.viewStadium_8.getBounds().y + view.overviewPanel.overviewStadiumPanel.viewStadium_8.getBounds().height, (int)(stadiumImages.get(9).getIconWidth()*view.overviewPanel.overviewStadiumPanel.stadiumSizeRatio), (int)(stadiumImages.get(9).getIconHeight()*view.overviewPanel.overviewStadiumPanel.stadiumSizeRatio));
+		view.overviewPanel.overviewStadiumPanel.viewStadium_9.setIcon(UI_Elements.scaleImageToBox(stadiumImages.get(9), view.overviewPanel.overviewStadiumPanel.viewStadium_9));
+		view.gamesPanel.gamesStadiumPanel.viewStadium_9.setBounds(view.gamesPanel.gamesStadiumPanel.viewStadium_31.getBounds().x + view.gamesPanel.gamesStadiumPanel.viewStadium_31.getBounds().width, view.gamesPanel.gamesStadiumPanel.viewStadium_8.getBounds().y + view.gamesPanel.gamesStadiumPanel.viewStadium_8.getBounds().height, (int)(stadiumImages.get(9).getIconWidth()*view.gamesPanel.gamesStadiumPanel.stadiumSizeRatio), (int)(stadiumImages.get(9).getIconHeight()*view.gamesPanel.gamesStadiumPanel.stadiumSizeRatio));
+		view.gamesPanel.gamesStadiumPanel.viewStadium_9.setIcon(UI_Elements.scaleImageToBox(stadiumImages.get(9), view.gamesPanel.gamesStadiumPanel.viewStadium_9));
+		//
+		
+		//Section 19
+		view.overviewPanel.overviewStadiumPanel.viewStadium_19.setBounds(view.overviewPanel.overviewStadiumPanel.viewStadium_20.getBounds().x, view.overviewPanel.overviewStadiumPanel.viewStadium_20.getBounds().y + view.overviewPanel.overviewStadiumPanel.viewStadium_20.getBounds().height, (int)(stadiumImages.get(19).getIconWidth()*view.overviewPanel.overviewStadiumPanel.stadiumSizeRatio), (int)(stadiumImages.get(19).getIconHeight()*view.overviewPanel.overviewStadiumPanel.stadiumSizeRatio));
+		view.overviewPanel.overviewStadiumPanel.viewStadium_19.setIcon(UI_Elements.scaleImageToBox(stadiumImages.get(19), view.overviewPanel.overviewStadiumPanel.viewStadium_19));
+		view.gamesPanel.gamesStadiumPanel.viewStadium_19.setBounds(view.gamesPanel.gamesStadiumPanel.viewStadium_20.getBounds().x, view.gamesPanel.gamesStadiumPanel.viewStadium_20.getBounds().y + view.gamesPanel.gamesStadiumPanel.viewStadium_20.getBounds().height, (int)(stadiumImages.get(19).getIconWidth()*view.gamesPanel.gamesStadiumPanel.stadiumSizeRatio), (int)(stadiumImages.get(19).getIconHeight()*view.gamesPanel.gamesStadiumPanel.stadiumSizeRatio));
+		view.gamesPanel.gamesStadiumPanel.viewStadium_19.setIcon(UI_Elements.scaleImageToBox(stadiumImages.get(19), view.gamesPanel.gamesStadiumPanel.viewStadium_19));
+		//
+		
+		//Section 18
+		view.overviewPanel.overviewStadiumPanel.viewStadium_18.setBounds(view.overviewPanel.overviewStadiumPanel.viewStadium_19.getBounds().x, view.overviewPanel.overviewStadiumPanel.viewStadium_19.getBounds().y + view.overviewPanel.overviewStadiumPanel.viewStadium_19.getBounds().height, (int)(stadiumImages.get(18).getIconWidth()*view.overviewPanel.overviewStadiumPanel.stadiumSizeRatio), (int)(stadiumImages.get(18).getIconHeight()*view.overviewPanel.overviewStadiumPanel.stadiumSizeRatio));
+		view.overviewPanel.overviewStadiumPanel.viewStadium_18.setIcon(UI_Elements.scaleImageToBox(stadiumImages.get(18), view.overviewPanel.overviewStadiumPanel.viewStadium_18));
+		view.gamesPanel.gamesStadiumPanel.viewStadium_18.setBounds(view.gamesPanel.gamesStadiumPanel.viewStadium_19.getBounds().x, view.gamesPanel.gamesStadiumPanel.viewStadium_19.getBounds().y + view.gamesPanel.gamesStadiumPanel.viewStadium_19.getBounds().height, (int)(stadiumImages.get(18).getIconWidth()*view.gamesPanel.gamesStadiumPanel.stadiumSizeRatio), (int)(stadiumImages.get(18).getIconHeight()*view.gamesPanel.gamesStadiumPanel.stadiumSizeRatio));
+		view.gamesPanel.gamesStadiumPanel.viewStadium_18.setIcon(UI_Elements.scaleImageToBox(stadiumImages.get(18), view.gamesPanel.gamesStadiumPanel.viewStadium_18));
+		//
+		
+		//Section 17
+		view.overviewPanel.overviewStadiumPanel.viewStadium_17.setBounds(view.overviewPanel.overviewStadiumPanel.viewStadium_18.getBounds().x + view.overviewPanel.overviewStadiumPanel.viewStadium_18.getBounds().width, view.overviewPanel.overviewStadiumPanel.viewStadium_18.getBounds().y + view.overviewPanel.overviewStadiumPanel.viewStadium_18.getBounds().height - (int)(stadiumImages.get(17).getIconHeight()*view.overviewPanel.overviewStadiumPanel.stadiumSizeRatio), (int)(stadiumImages.get(17).getIconWidth()*view.overviewPanel.overviewStadiumPanel.stadiumSizeRatio), (int)(stadiumImages.get(17).getIconHeight()*view.overviewPanel.overviewStadiumPanel.stadiumSizeRatio));
+		view.overviewPanel.overviewStadiumPanel.viewStadium_17.setIcon(UI_Elements.scaleImageToBox(stadiumImages.get(17), view.overviewPanel.overviewStadiumPanel.viewStadium_17));
+		view.gamesPanel.gamesStadiumPanel.viewStadium_17.setBounds(view.gamesPanel.gamesStadiumPanel.viewStadium_18.getBounds().x + view.gamesPanel.gamesStadiumPanel.viewStadium_18.getBounds().width, view.gamesPanel.gamesStadiumPanel.viewStadium_18.getBounds().y + view.gamesPanel.gamesStadiumPanel.viewStadium_18.getBounds().height - (int)(stadiumImages.get(17).getIconHeight()*view.gamesPanel.gamesStadiumPanel.stadiumSizeRatio), (int)(stadiumImages.get(17).getIconWidth()*view.gamesPanel.gamesStadiumPanel.stadiumSizeRatio), (int)(stadiumImages.get(17).getIconHeight()*view.gamesPanel.gamesStadiumPanel.stadiumSizeRatio));
+		view.gamesPanel.gamesStadiumPanel.viewStadium_17.setIcon(UI_Elements.scaleImageToBox(stadiumImages.get(17), view.gamesPanel.gamesStadiumPanel.viewStadium_17));
+		//
+		
+		//Section 16
+		view.overviewPanel.overviewStadiumPanel.viewStadium_16.setBounds(view.overviewPanel.overviewStadiumPanel.viewStadium_17.getBounds().x + view.overviewPanel.overviewStadiumPanel.viewStadium_17.getBounds().width, view.overviewPanel.overviewStadiumPanel.viewStadium_17.getBounds().y, (int)(stadiumImages.get(16).getIconWidth()*view.overviewPanel.overviewStadiumPanel.stadiumSizeRatio), (int)(stadiumImages.get(16).getIconHeight()*view.overviewPanel.overviewStadiumPanel.stadiumSizeRatio));
+		view.overviewPanel.overviewStadiumPanel.viewStadium_16.setIcon(UI_Elements.scaleImageToBox(stadiumImages.get(16), view.overviewPanel.overviewStadiumPanel.viewStadium_16));
+		view.gamesPanel.gamesStadiumPanel.viewStadium_16.setBounds(view.gamesPanel.gamesStadiumPanel.viewStadium_17.getBounds().x + view.gamesPanel.gamesStadiumPanel.viewStadium_17.getBounds().width, view.gamesPanel.gamesStadiumPanel.viewStadium_17.getBounds().y, (int)(stadiumImages.get(16).getIconWidth()*view.gamesPanel.gamesStadiumPanel.stadiumSizeRatio), (int)(stadiumImages.get(16).getIconHeight()*view.gamesPanel.gamesStadiumPanel.stadiumSizeRatio));
+		view.gamesPanel.gamesStadiumPanel.viewStadium_16.setIcon(UI_Elements.scaleImageToBox(stadiumImages.get(16), view.gamesPanel.gamesStadiumPanel.viewStadium_16));
+		//
+		
+		//Section 15
+		view.overviewPanel.overviewStadiumPanel.viewStadium_15.setBounds(view.overviewPanel.overviewStadiumPanel.viewStadium_16.getBounds().x + view.overviewPanel.overviewStadiumPanel.viewStadium_16.getBounds().width, view.overviewPanel.overviewStadiumPanel.viewStadium_16.getBounds().y, (int)(stadiumImages.get(15).getIconWidth()*view.overviewPanel.overviewStadiumPanel.stadiumSizeRatio), (int)(stadiumImages.get(15).getIconHeight()*view.overviewPanel.overviewStadiumPanel.stadiumSizeRatio));
+		view.overviewPanel.overviewStadiumPanel.viewStadium_15.setIcon(UI_Elements.scaleImageToBox(stadiumImages.get(15), view.overviewPanel.overviewStadiumPanel.viewStadium_15));
+		view.gamesPanel.gamesStadiumPanel.viewStadium_15.setBounds(view.gamesPanel.gamesStadiumPanel.viewStadium_16.getBounds().x + view.gamesPanel.gamesStadiumPanel.viewStadium_16.getBounds().width, view.gamesPanel.gamesStadiumPanel.viewStadium_16.getBounds().y, (int)(stadiumImages.get(15).getIconWidth()*view.gamesPanel.gamesStadiumPanel.stadiumSizeRatio), (int)(stadiumImages.get(15).getIconHeight()*view.gamesPanel.gamesStadiumPanel.stadiumSizeRatio));
+		view.gamesPanel.gamesStadiumPanel.viewStadium_15.setIcon(UI_Elements.scaleImageToBox(stadiumImages.get(15), view.gamesPanel.gamesStadiumPanel.viewStadium_15));
+		//
+		
+		//Section 14
+		view.overviewPanel.overviewStadiumPanel.viewStadium_14.setBounds(view.overviewPanel.overviewStadiumPanel.viewStadium_15.getBounds().x + view.overviewPanel.overviewStadiumPanel.viewStadium_15.getBounds().width, view.overviewPanel.overviewStadiumPanel.viewStadium_15.getBounds().y, (int)(stadiumImages.get(14).getIconWidth()*view.overviewPanel.overviewStadiumPanel.stadiumSizeRatio), (int)(stadiumImages.get(14).getIconHeight()*view.overviewPanel.overviewStadiumPanel.stadiumSizeRatio));
+		view.overviewPanel.overviewStadiumPanel.viewStadium_14.setIcon(UI_Elements.scaleImageToBox(stadiumImages.get(14), view.overviewPanel.overviewStadiumPanel.viewStadium_14));
+		view.gamesPanel.gamesStadiumPanel.viewStadium_14.setBounds(view.gamesPanel.gamesStadiumPanel.viewStadium_15.getBounds().x + view.gamesPanel.gamesStadiumPanel.viewStadium_15.getBounds().width, view.gamesPanel.gamesStadiumPanel.viewStadium_15.getBounds().y, (int)(stadiumImages.get(14).getIconWidth()*view.gamesPanel.gamesStadiumPanel.stadiumSizeRatio), (int)(stadiumImages.get(14).getIconHeight()*view.gamesPanel.gamesStadiumPanel.stadiumSizeRatio));
+		view.gamesPanel.gamesStadiumPanel.viewStadium_14.setIcon(UI_Elements.scaleImageToBox(stadiumImages.get(14), view.gamesPanel.gamesStadiumPanel.viewStadium_14));
+		//
+		
+		//Section 13
+		view.overviewPanel.overviewStadiumPanel.viewStadium_13.setBounds(view.overviewPanel.overviewStadiumPanel.viewStadium_14.getBounds().x + view.overviewPanel.overviewStadiumPanel.viewStadium_14.getBounds().width, view.overviewPanel.overviewStadiumPanel.viewStadium_14.getBounds().y, (int)(stadiumImages.get(13).getIconWidth()*view.overviewPanel.overviewStadiumPanel.stadiumSizeRatio), (int)(stadiumImages.get(13).getIconHeight()*view.overviewPanel.overviewStadiumPanel.stadiumSizeRatio));
+		view.overviewPanel.overviewStadiumPanel.viewStadium_13.setIcon(UI_Elements.scaleImageToBox(stadiumImages.get(13), view.overviewPanel.overviewStadiumPanel.viewStadium_13));
+		view.gamesPanel.gamesStadiumPanel.viewStadium_13.setBounds(view.gamesPanel.gamesStadiumPanel.viewStadium_14.getBounds().x + view.gamesPanel.gamesStadiumPanel.viewStadium_14.getBounds().width, view.gamesPanel.gamesStadiumPanel.viewStadium_14.getBounds().y, (int)(stadiumImages.get(13).getIconWidth()*view.gamesPanel.gamesStadiumPanel.stadiumSizeRatio), (int)(stadiumImages.get(13).getIconHeight()*view.gamesPanel.gamesStadiumPanel.stadiumSizeRatio));
+		view.gamesPanel.gamesStadiumPanel.viewStadium_13.setIcon(UI_Elements.scaleImageToBox(stadiumImages.get(13), view.gamesPanel.gamesStadiumPanel.viewStadium_13));
+		//
+		
+		//Section 12
+		view.overviewPanel.overviewStadiumPanel.viewStadium_12.setBounds(view.overviewPanel.overviewStadiumPanel.viewStadium_13.getBounds().x + view.overviewPanel.overviewStadiumPanel.viewStadium_13.getBounds().width, view.overviewPanel.overviewStadiumPanel.viewStadium_13.getBounds().y, (int)(stadiumImages.get(12).getIconWidth()*view.overviewPanel.overviewStadiumPanel.stadiumSizeRatio), (int)(stadiumImages.get(12).getIconHeight()*view.overviewPanel.overviewStadiumPanel.stadiumSizeRatio));
+		view.overviewPanel.overviewStadiumPanel.viewStadium_12.setIcon(UI_Elements.scaleImageToBox(stadiumImages.get(12), view.overviewPanel.overviewStadiumPanel.viewStadium_12));
+		view.gamesPanel.gamesStadiumPanel.viewStadium_12.setBounds(view.gamesPanel.gamesStadiumPanel.viewStadium_13.getBounds().x + view.gamesPanel.gamesStadiumPanel.viewStadium_13.getBounds().width, view.gamesPanel.gamesStadiumPanel.viewStadium_13.getBounds().y, (int)(stadiumImages.get(12).getIconWidth()*view.gamesPanel.gamesStadiumPanel.stadiumSizeRatio), (int)(stadiumImages.get(12).getIconHeight()*view.gamesPanel.gamesStadiumPanel.stadiumSizeRatio));
+		view.gamesPanel.gamesStadiumPanel.viewStadium_12.setIcon(UI_Elements.scaleImageToBox(stadiumImages.get(12), view.gamesPanel.gamesStadiumPanel.viewStadium_12));
+		//
+		
+		//Section 11
+		view.overviewPanel.overviewStadiumPanel.viewStadium_11.setBounds(view.overviewPanel.overviewStadiumPanel.viewStadium_12.getBounds().x + view.overviewPanel.overviewStadiumPanel.viewStadium_12.getBounds().width, view.overviewPanel.overviewStadiumPanel.viewStadium_12.getBounds().y, (int)(stadiumImages.get(11).getIconWidth()*view.overviewPanel.overviewStadiumPanel.stadiumSizeRatio), (int)(stadiumImages.get(11).getIconHeight()*view.overviewPanel.overviewStadiumPanel.stadiumSizeRatio));
+		view.overviewPanel.overviewStadiumPanel.viewStadium_11.setIcon(UI_Elements.scaleImageToBox(stadiumImages.get(11), view.overviewPanel.overviewStadiumPanel.viewStadium_11));
+		view.gamesPanel.gamesStadiumPanel.viewStadium_11.setBounds(view.gamesPanel.gamesStadiumPanel.viewStadium_12.getBounds().x + view.gamesPanel.gamesStadiumPanel.viewStadium_12.getBounds().width, view.gamesPanel.gamesStadiumPanel.viewStadium_12.getBounds().y, (int)(stadiumImages.get(11).getIconWidth()*view.gamesPanel.gamesStadiumPanel.stadiumSizeRatio), (int)(stadiumImages.get(11).getIconHeight()*view.gamesPanel.gamesStadiumPanel.stadiumSizeRatio));
+		view.gamesPanel.gamesStadiumPanel.viewStadium_11.setIcon(UI_Elements.scaleImageToBox(stadiumImages.get(11), view.gamesPanel.gamesStadiumPanel.viewStadium_11));
+		//
+		
+		//Section 39
+		view.overviewPanel.overviewStadiumPanel.viewStadium_39.setBounds(view.overviewPanel.overviewStadiumPanel.viewStadium_17.getBounds().x, view.overviewPanel.overviewStadiumPanel.viewStadium_17.getBounds().y - (int)(stadiumImages.get(39).getIconHeight()*view.overviewPanel.overviewStadiumPanel.stadiumSizeRatio) - 2, (int)(stadiumImages.get(39).getIconWidth()*view.overviewPanel.overviewStadiumPanel.stadiumSizeRatio), (int)(stadiumImages.get(39).getIconHeight()*view.overviewPanel.overviewStadiumPanel.stadiumSizeRatio));
+		view.overviewPanel.overviewStadiumPanel.viewStadium_39.setIcon(UI_Elements.scaleImageToBox(stadiumImages.get(39), view.overviewPanel.overviewStadiumPanel.viewStadium_39));
+		view.gamesPanel.gamesStadiumPanel.viewStadium_39.setBounds(view.gamesPanel.gamesStadiumPanel.viewStadium_17.getBounds().x, view.gamesPanel.gamesStadiumPanel.viewStadium_17.getBounds().y - (int)(stadiumImages.get(39).getIconHeight()*view.gamesPanel.gamesStadiumPanel.stadiumSizeRatio) - 2, (int)(stadiumImages.get(39).getIconWidth()*view.gamesPanel.gamesStadiumPanel.stadiumSizeRatio), (int)(stadiumImages.get(39).getIconHeight()*view.gamesPanel.gamesStadiumPanel.stadiumSizeRatio));
+		view.gamesPanel.gamesStadiumPanel.viewStadium_39.setIcon(UI_Elements.scaleImageToBox(stadiumImages.get(39), view.gamesPanel.gamesStadiumPanel.viewStadium_39));
+		//
+		
+		//Section 38
+		view.overviewPanel.overviewStadiumPanel.viewStadium_38.setBounds(view.overviewPanel.overviewStadiumPanel.viewStadium_39.getBounds().x + view.overviewPanel.overviewStadiumPanel.viewStadium_39.getBounds().width, view.overviewPanel.overviewStadiumPanel.viewStadium_39.getBounds().y, (int)(stadiumImages.get(38).getIconWidth()*view.overviewPanel.overviewStadiumPanel.stadiumSizeRatio), (int)(stadiumImages.get(38).getIconHeight()*view.overviewPanel.overviewStadiumPanel.stadiumSizeRatio));
+		view.overviewPanel.overviewStadiumPanel.viewStadium_38.setIcon(UI_Elements.scaleImageToBox(stadiumImages.get(38), view.overviewPanel.overviewStadiumPanel.viewStadium_38));
+		view.gamesPanel.gamesStadiumPanel.viewStadium_38.setBounds(view.gamesPanel.gamesStadiumPanel.viewStadium_39.getBounds().x + view.gamesPanel.gamesStadiumPanel.viewStadium_39.getBounds().width, view.gamesPanel.gamesStadiumPanel.viewStadium_39.getBounds().y, (int)(stadiumImages.get(38).getIconWidth()*view.gamesPanel.gamesStadiumPanel.stadiumSizeRatio), (int)(stadiumImages.get(38).getIconHeight()*view.gamesPanel.gamesStadiumPanel.stadiumSizeRatio));
+		view.gamesPanel.gamesStadiumPanel.viewStadium_38.setIcon(UI_Elements.scaleImageToBox(stadiumImages.get(38), view.gamesPanel.gamesStadiumPanel.viewStadium_38));
+		//
+		
+		//Section 37
+		view.overviewPanel.overviewStadiumPanel.viewStadium_37.setBounds(view.overviewPanel.overviewStadiumPanel.viewStadium_38.getBounds().x + view.overviewPanel.overviewStadiumPanel.viewStadium_38.getBounds().width, view.overviewPanel.overviewStadiumPanel.viewStadium_38.getBounds().y, (int)(stadiumImages.get(37).getIconWidth()*view.overviewPanel.overviewStadiumPanel.stadiumSizeRatio), (int)(stadiumImages.get(37).getIconHeight()*view.overviewPanel.overviewStadiumPanel.stadiumSizeRatio));
+		view.overviewPanel.overviewStadiumPanel.viewStadium_37.setIcon(UI_Elements.scaleImageToBox(stadiumImages.get(37), view.overviewPanel.overviewStadiumPanel.viewStadium_37));
+		view.gamesPanel.gamesStadiumPanel.viewStadium_37.setBounds(view.gamesPanel.gamesStadiumPanel.viewStadium_38.getBounds().x + view.gamesPanel.gamesStadiumPanel.viewStadium_38.getBounds().width, view.gamesPanel.gamesStadiumPanel.viewStadium_38.getBounds().y, (int)(stadiumImages.get(37).getIconWidth()*view.gamesPanel.gamesStadiumPanel.stadiumSizeRatio), (int)(stadiumImages.get(37).getIconHeight()*view.gamesPanel.gamesStadiumPanel.stadiumSizeRatio));
+		view.gamesPanel.gamesStadiumPanel.viewStadium_37.setIcon(UI_Elements.scaleImageToBox(stadiumImages.get(37), view.gamesPanel.gamesStadiumPanel.viewStadium_37));
+		//
+		
+		//Section 36
+		view.overviewPanel.overviewStadiumPanel.viewStadium_36.setBounds(view.overviewPanel.overviewStadiumPanel.viewStadium_37.getBounds().x + view.overviewPanel.overviewStadiumPanel.viewStadium_37.getBounds().width, view.overviewPanel.overviewStadiumPanel.viewStadium_37.getBounds().y, (int)(stadiumImages.get(36).getIconWidth()*view.overviewPanel.overviewStadiumPanel.stadiumSizeRatio), (int)(stadiumImages.get(36).getIconHeight()*view.overviewPanel.overviewStadiumPanel.stadiumSizeRatio));
+		view.overviewPanel.overviewStadiumPanel.viewStadium_36.setIcon(UI_Elements.scaleImageToBox(stadiumImages.get(36), view.overviewPanel.overviewStadiumPanel.viewStadium_36));
+		view.gamesPanel.gamesStadiumPanel.viewStadium_36.setBounds(view.gamesPanel.gamesStadiumPanel.viewStadium_37.getBounds().x + view.gamesPanel.gamesStadiumPanel.viewStadium_37.getBounds().width, view.gamesPanel.gamesStadiumPanel.viewStadium_37.getBounds().y, (int)(stadiumImages.get(36).getIconWidth()*view.gamesPanel.gamesStadiumPanel.stadiumSizeRatio), (int)(stadiumImages.get(36).getIconHeight()*view.gamesPanel.gamesStadiumPanel.stadiumSizeRatio));
+		view.gamesPanel.gamesStadiumPanel.viewStadium_36.setIcon(UI_Elements.scaleImageToBox(stadiumImages.get(36), view.gamesPanel.gamesStadiumPanel.viewStadium_36));
+		//
+		
+		//Section 35
+		view.overviewPanel.overviewStadiumPanel.viewStadium_35.setBounds(view.overviewPanel.overviewStadiumPanel.viewStadium_36.getBounds().x + view.overviewPanel.overviewStadiumPanel.viewStadium_36.getBounds().width, view.overviewPanel.overviewStadiumPanel.viewStadium_36.getBounds().y, (int)(stadiumImages.get(35).getIconWidth()*view.overviewPanel.overviewStadiumPanel.stadiumSizeRatio), (int)(stadiumImages.get(35).getIconHeight()*view.overviewPanel.overviewStadiumPanel.stadiumSizeRatio));
+		view.overviewPanel.overviewStadiumPanel.viewStadium_35.setIcon(UI_Elements.scaleImageToBox(stadiumImages.get(35), view.overviewPanel.overviewStadiumPanel.viewStadium_35));
+		view.gamesPanel.gamesStadiumPanel.viewStadium_35.setBounds(view.gamesPanel.gamesStadiumPanel.viewStadium_36.getBounds().x + view.gamesPanel.gamesStadiumPanel.viewStadium_36.getBounds().width, view.gamesPanel.gamesStadiumPanel.viewStadium_36.getBounds().y, (int)(stadiumImages.get(35).getIconWidth()*view.gamesPanel.gamesStadiumPanel.stadiumSizeRatio), (int)(stadiumImages.get(35).getIconHeight()*view.gamesPanel.gamesStadiumPanel.stadiumSizeRatio));
+		view.gamesPanel.gamesStadiumPanel.viewStadium_35.setIcon(UI_Elements.scaleImageToBox(stadiumImages.get(35), view.gamesPanel.gamesStadiumPanel.viewStadium_35));
+		//
+		
+		//Section 34
+		view.overviewPanel.overviewStadiumPanel.viewStadium_34.setBounds(view.overviewPanel.overviewStadiumPanel.viewStadium_35.getBounds().x + view.overviewPanel.overviewStadiumPanel.viewStadium_35.getBounds().width, view.overviewPanel.overviewStadiumPanel.viewStadium_35.getBounds().y, (int)(stadiumImages.get(34).getIconWidth()*view.overviewPanel.overviewStadiumPanel.stadiumSizeRatio), (int)(stadiumImages.get(34).getIconHeight()*view.overviewPanel.overviewStadiumPanel.stadiumSizeRatio));
+		view.overviewPanel.overviewStadiumPanel.viewStadium_34.setIcon(UI_Elements.scaleImageToBox(stadiumImages.get(34), view.overviewPanel.overviewStadiumPanel.viewStadium_34));
+		view.gamesPanel.gamesStadiumPanel.viewStadium_34.setBounds(view.gamesPanel.gamesStadiumPanel.viewStadium_35.getBounds().x + view.gamesPanel.gamesStadiumPanel.viewStadium_35.getBounds().width, view.gamesPanel.gamesStadiumPanel.viewStadium_35.getBounds().y, (int)(stadiumImages.get(34).getIconWidth()*view.gamesPanel.gamesStadiumPanel.stadiumSizeRatio), (int)(stadiumImages.get(34).getIconHeight()*view.gamesPanel.gamesStadiumPanel.stadiumSizeRatio));
+		view.gamesPanel.gamesStadiumPanel.viewStadium_34.setIcon(UI_Elements.scaleImageToBox(stadiumImages.get(34), view.gamesPanel.gamesStadiumPanel.viewStadium_34));
+		//
+		
+		//Section 33
+		view.overviewPanel.overviewStadiumPanel.viewStadium_33.setBounds(view.overviewPanel.overviewStadiumPanel.viewStadium_34.getBounds().x + view.overviewPanel.overviewStadiumPanel.viewStadium_34.getBounds().width, view.overviewPanel.overviewStadiumPanel.viewStadium_34.getBounds().y, (int)(stadiumImages.get(33).getIconWidth()*view.overviewPanel.overviewStadiumPanel.stadiumSizeRatio), (int)(stadiumImages.get(33).getIconHeight()*view.overviewPanel.overviewStadiumPanel.stadiumSizeRatio));
+		view.overviewPanel.overviewStadiumPanel.viewStadium_33.setIcon(UI_Elements.scaleImageToBox(stadiumImages.get(33), view.overviewPanel.overviewStadiumPanel.viewStadium_33));
+		view.gamesPanel.gamesStadiumPanel.viewStadium_33.setBounds(view.gamesPanel.gamesStadiumPanel.viewStadium_34.getBounds().x + view.gamesPanel.gamesStadiumPanel.viewStadium_34.getBounds().width, view.gamesPanel.gamesStadiumPanel.viewStadium_34.getBounds().y, (int)(stadiumImages.get(33).getIconWidth()*view.gamesPanel.gamesStadiumPanel.stadiumSizeRatio), (int)(stadiumImages.get(33).getIconHeight()*view.gamesPanel.gamesStadiumPanel.stadiumSizeRatio));
+		view.gamesPanel.gamesStadiumPanel.viewStadium_33.setIcon(UI_Elements.scaleImageToBox(stadiumImages.get(33), view.gamesPanel.gamesStadiumPanel.viewStadium_33));
+		//
+		
+		//Section 32
+		view.overviewPanel.overviewStadiumPanel.viewStadium_32.setBounds(view.overviewPanel.overviewStadiumPanel.viewStadium_33.getBounds().x + view.overviewPanel.overviewStadiumPanel.viewStadium_33.getBounds().width, view.overviewPanel.overviewStadiumPanel.viewStadium_40.getBounds().y, (int)(stadiumImages.get(32).getIconWidth()*view.overviewPanel.overviewStadiumPanel.stadiumSizeRatio), (int)(stadiumImages.get(32).getIconHeight()*view.overviewPanel.overviewStadiumPanel.stadiumSizeRatio));
+		view.overviewPanel.overviewStadiumPanel.viewStadium_32.setIcon(UI_Elements.scaleImageToBox(stadiumImages.get(32), view.overviewPanel.overviewStadiumPanel.viewStadium_32));
+		view.gamesPanel.gamesStadiumPanel.viewStadium_32.setBounds(view.gamesPanel.gamesStadiumPanel.viewStadium_33.getBounds().x + view.gamesPanel.gamesStadiumPanel.viewStadium_33.getBounds().width, view.gamesPanel.gamesStadiumPanel.viewStadium_40.getBounds().y, (int)(stadiumImages.get(32).getIconWidth()*view.gamesPanel.gamesStadiumPanel.stadiumSizeRatio), (int)(stadiumImages.get(32).getIconHeight()*view.gamesPanel.gamesStadiumPanel.stadiumSizeRatio));
+		view.gamesPanel.gamesStadiumPanel.viewStadium_32.setIcon(UI_Elements.scaleImageToBox(stadiumImages.get(32), view.gamesPanel.gamesStadiumPanel.viewStadium_32));
+		//
+		
+		//Section 10
+		view.overviewPanel.overviewStadiumPanel.viewStadium_10.setBounds(view.overviewPanel.overviewStadiumPanel.viewStadium_33.getBounds().x + view.overviewPanel.overviewStadiumPanel.viewStadium_33.getBounds().width, view.overviewPanel.overviewStadiumPanel.viewStadium_18.getBounds().y, (int)(stadiumImages.get(10).getIconWidth()*view.overviewPanel.overviewStadiumPanel.stadiumSizeRatio), (int)(stadiumImages.get(10).getIconHeight()*view.overviewPanel.overviewStadiumPanel.stadiumSizeRatio));
+		view.overviewPanel.overviewStadiumPanel.viewStadium_10.setIcon(UI_Elements.scaleImageToBox(stadiumImages.get(10), view.overviewPanel.overviewStadiumPanel.viewStadium_10));
+		view.gamesPanel.gamesStadiumPanel.viewStadium_10.setBounds(view.gamesPanel.gamesStadiumPanel.viewStadium_33.getBounds().x + view.gamesPanel.gamesStadiumPanel.viewStadium_33.getBounds().width, view.gamesPanel.gamesStadiumPanel.viewStadium_18.getBounds().y, (int)(stadiumImages.get(10).getIconWidth()*view.gamesPanel.gamesStadiumPanel.stadiumSizeRatio), (int)(stadiumImages.get(10).getIconHeight()*view.gamesPanel.gamesStadiumPanel.stadiumSizeRatio));
+		view.gamesPanel.gamesStadiumPanel.viewStadium_10.setIcon(UI_Elements.scaleImageToBox(stadiumImages.get(10), view.gamesPanel.gamesStadiumPanel.viewStadium_10));
+		//
+		
+		addSectionButtonsToArrayList();
+		setStadiumMouseAdapters(0);
+		setButtonListeners(0);
 		//--------------------------//
 
 		
@@ -2165,6 +1151,7 @@ public class Controller {
 			
 		}
 	}
+	
 	public String getViewStadiumSectionType(int i_SectionNum) {
 		
 		StringBuilder type = new StringBuilder();
@@ -2185,48 +1172,456 @@ public class Controller {
 		return type.toString();
 	}
 	
-	//WIP - IDAN
-	private void setStadiumImagePaths()
+	private void addMouseAdaptersToArrayList()
 	{
-		String path = "";
+		mouseAdaptersOverview.add(ma1_Overview); //dummy
+		mouseAdaptersOverview.add(ma1_Overview);
+		mouseAdaptersOverview.add(ma2_Overview);
+		mouseAdaptersOverview.add(ma3_Overview);
+		mouseAdaptersOverview.add(ma4_Overview);
+		mouseAdaptersOverview.add(ma5_Overview);
+		mouseAdaptersOverview.add(ma6_Overview);
+		mouseAdaptersOverview.add(ma7_Overview);
+		mouseAdaptersOverview.add(ma8_Overview);
+		mouseAdaptersOverview.add(ma9_Overview);
+		mouseAdaptersOverview.add(ma10_Overview);
+		mouseAdaptersOverview.add(ma11_Overview);
+		mouseAdaptersOverview.add(ma12_Overview);
+		mouseAdaptersOverview.add(ma13_Overview);
+		mouseAdaptersOverview.add(ma14_Overview);
+		mouseAdaptersOverview.add(ma15_Overview);
+		mouseAdaptersOverview.add(ma16_Overview);
+		mouseAdaptersOverview.add(ma17_Overview);
+		mouseAdaptersOverview.add(ma18_Overview);
+		mouseAdaptersOverview.add(ma19_Overview);
+		mouseAdaptersOverview.add(ma20_Overview);
+		mouseAdaptersOverview.add(ma21_Overview);
+		mouseAdaptersOverview.add(ma22_Overview);
+		mouseAdaptersOverview.add(ma23_Overview);
+		mouseAdaptersOverview.add(ma24_Overview);
+		mouseAdaptersOverview.add(ma25_Overview);
+		mouseAdaptersOverview.add(ma26_Overview);
+		mouseAdaptersOverview.add(ma27_Overview);
+		mouseAdaptersOverview.add(ma28_Overview);
+		mouseAdaptersOverview.add(ma29_Overview);
+		mouseAdaptersOverview.add(ma30_Overview);
+		mouseAdaptersOverview.add(ma31_Overview);
+		mouseAdaptersOverview.add(ma32_Overview);
+		mouseAdaptersOverview.add(ma33_Overview);
+		mouseAdaptersOverview.add(ma34_Overview);
+		mouseAdaptersOverview.add(ma35_Overview);
+		mouseAdaptersOverview.add(ma36_Overview);
+		mouseAdaptersOverview.add(ma37_Overview);
+		mouseAdaptersOverview.add(ma38_Overview);
+		mouseAdaptersOverview.add(ma39_Overview);
+		mouseAdaptersOverview.add(ma40_Overview);
+		mouseAdaptersOverview.add(ma41_Overview);
+		mouseAdaptersOverview.add(ma42_Overview);
+		mouseAdaptersOverview.add(ma43_Overview);
+		mouseAdaptersOverview.add(ma44_Overview);
 		
-		for(int i=1;i<=stadiumImagePaths.size();i++)
-		{
-			path = "/Images/StadiumSlices/Stadium" + getViewStadiumSectionType(i) + "_" + i + ".png";
-			stadiumImagePaths.set(i-1, path);
-		}
+		mouseAdaptersGames.add(ma1_Games); //dummy
+		mouseAdaptersGames.add(ma1_Games);
+		mouseAdaptersGames.add(ma2_Games);
+		mouseAdaptersGames.add(ma3_Games);
+		mouseAdaptersGames.add(ma4_Games);
+		mouseAdaptersGames.add(ma5_Games);
+		mouseAdaptersGames.add(ma6_Games);
+		mouseAdaptersGames.add(ma7_Games);
+		mouseAdaptersGames.add(ma8_Games);
+		mouseAdaptersGames.add(ma9_Games);
+		mouseAdaptersGames.add(ma10_Games);
+		mouseAdaptersGames.add(ma11_Games);
+		mouseAdaptersGames.add(ma12_Games);
+		mouseAdaptersGames.add(ma13_Games);
+		mouseAdaptersGames.add(ma14_Games);
+		mouseAdaptersGames.add(ma15_Games);
+		mouseAdaptersGames.add(ma16_Games);
+		mouseAdaptersGames.add(ma17_Games);
+		mouseAdaptersGames.add(ma18_Games);
+		mouseAdaptersGames.add(ma19_Games);
+		mouseAdaptersGames.add(ma20_Games);
+		mouseAdaptersGames.add(ma21_Games);
+		mouseAdaptersGames.add(ma22_Games);
+		mouseAdaptersGames.add(ma23_Games);
+		mouseAdaptersGames.add(ma24_Games);
+		mouseAdaptersGames.add(ma25_Games);
+		mouseAdaptersGames.add(ma26_Games);
+		mouseAdaptersGames.add(ma27_Games);
+		mouseAdaptersGames.add(ma28_Games);
+		mouseAdaptersGames.add(ma29_Games);
+		mouseAdaptersGames.add(ma30_Games);
+		mouseAdaptersGames.add(ma31_Games);
+		mouseAdaptersGames.add(ma32_Games);
+		mouseAdaptersGames.add(ma33_Games);
+		mouseAdaptersGames.add(ma34_Games);
+		mouseAdaptersGames.add(ma35_Games);
+		mouseAdaptersGames.add(ma36_Games);
+		mouseAdaptersGames.add(ma37_Games);
+		mouseAdaptersGames.add(ma38_Games);
+		mouseAdaptersGames.add(ma39_Games);
+		mouseAdaptersGames.add(ma40_Games);
+		mouseAdaptersGames.add(ma41_Games);
+		mouseAdaptersGames.add(ma42_Games);
+		mouseAdaptersGames.add(ma43_Games);
+		mouseAdaptersGames.add(ma44_Games);
 	}
-	private void setStadiumImages()
+	
+	private void addImagePathsToArrayList()
 	{
-		ImageIcon img;
-		
-		setStadiumImagePaths();
-		for(int i=1;i<=stadiumImages.size();i++)
+		stadiumImagePaths.add(path1);//dummy
+		stadiumImagePaths.add(path1);
+		stadiumImagePaths.add(path2);
+		stadiumImagePaths.add(path3);
+		stadiumImagePaths.add(path4);
+		stadiumImagePaths.add(path5);
+		stadiumImagePaths.add(path6);
+		stadiumImagePaths.add(path7);
+		stadiumImagePaths.add(path8);
+		stadiumImagePaths.add(path9);
+		stadiumImagePaths.add(path10);
+		stadiumImagePaths.add(path11);
+		stadiumImagePaths.add(path12);
+		stadiumImagePaths.add(path13);
+		stadiumImagePaths.add(path14);
+		stadiumImagePaths.add(path15);
+		stadiumImagePaths.add(path16);
+		stadiumImagePaths.add(path17);
+		stadiumImagePaths.add(path18);
+		stadiumImagePaths.add(path19);
+		stadiumImagePaths.add(path20);
+		stadiumImagePaths.add(path21);
+		stadiumImagePaths.add(path22);
+		stadiumImagePaths.add(path23);
+		stadiumImagePaths.add(path24);
+		stadiumImagePaths.add(path25);
+		stadiumImagePaths.add(path26);
+		stadiumImagePaths.add(path27);
+		stadiumImagePaths.add(path28);
+		stadiumImagePaths.add(path29);
+		stadiumImagePaths.add(path30);
+		stadiumImagePaths.add(path31);
+		stadiumImagePaths.add(path32);
+		stadiumImagePaths.add(path33);
+		stadiumImagePaths.add(path34);
+		stadiumImagePaths.add(path35);
+		stadiumImagePaths.add(path36);
+		stadiumImagePaths.add(path37);
+		stadiumImagePaths.add(path38);
+		stadiumImagePaths.add(path39);
+		stadiumImagePaths.add(path40);
+		stadiumImagePaths.add(path41);
+		stadiumImagePaths.add(path42);
+		stadiumImagePaths.add(path43);
+		stadiumImagePaths.add(path44);
+	}
+	
+	private void addImageIconsToArrayList()
+	{
+		stadiumImages.add(img_1);//Dummy element in order for us to use the actual section number with the ArrayList
+		stadiumImages.add(img_1);
+		stadiumImages.add(img_2);
+		stadiumImages.add(img_3);
+		stadiumImages.add(img_4);
+		stadiumImages.add(img_5);
+		stadiumImages.add(img_6);
+		stadiumImages.add(img_7);
+		stadiumImages.add(img_8);
+		stadiumImages.add(img_9);
+		stadiumImages.add(img_10);
+		stadiumImages.add(img_11);
+		stadiumImages.add(img_12);
+		stadiumImages.add(img_13);
+		stadiumImages.add(img_14);
+		stadiumImages.add(img_15);
+		stadiumImages.add(img_16);
+		stadiumImages.add(img_17);
+		stadiumImages.add(img_18);
+		stadiumImages.add(img_19);
+		stadiumImages.add(img_20);
+		stadiumImages.add(img_21);
+		stadiumImages.add(img_22);
+		stadiumImages.add(img_23);
+		stadiumImages.add(img_24);
+		stadiumImages.add(img_25);
+		stadiumImages.add(img_26);
+		stadiumImages.add(img_27);
+		stadiumImages.add(img_28);
+		stadiumImages.add(img_29);
+		stadiumImages.add(img_30);
+		stadiumImages.add(img_31);
+		stadiumImages.add(img_32);
+		stadiumImages.add(img_33);
+		stadiumImages.add(img_34);
+		stadiumImages.add(img_35);
+		stadiumImages.add(img_36);
+		stadiumImages.add(img_37);
+		stadiumImages.add(img_38);
+		stadiumImages.add(img_39);
+		stadiumImages.add(img_40);
+		stadiumImages.add(img_41);
+		stadiumImages.add(img_42);
+		stadiumImages.add(img_43);
+		stadiumImages.add(img_44);
+	}
+	
+	private void addSectionButtonsToArrayList() {
+		//add all buttons to list		
+				stadiumButtonsOverview.add(view.overviewPanel.overviewStadiumPanel.viewStadium_1);//dummy
+				stadiumButtonsOverview.add(view.overviewPanel.overviewStadiumPanel.viewStadium_1);
+				stadiumButtonsOverview.add(view.overviewPanel.overviewStadiumPanel.viewStadium_2);
+				stadiumButtonsOverview.add(view.overviewPanel.overviewStadiumPanel.viewStadium_3);
+				stadiumButtonsOverview.add(view.overviewPanel.overviewStadiumPanel.viewStadium_4);
+				stadiumButtonsOverview.add(view.overviewPanel.overviewStadiumPanel.viewStadium_5);
+				stadiumButtonsOverview.add(view.overviewPanel.overviewStadiumPanel.viewStadium_6);
+				stadiumButtonsOverview.add(view.overviewPanel.overviewStadiumPanel.viewStadium_7);
+				stadiumButtonsOverview.add(view.overviewPanel.overviewStadiumPanel.viewStadium_8);
+				stadiumButtonsOverview.add(view.overviewPanel.overviewStadiumPanel.viewStadium_9);
+				stadiumButtonsOverview.add(view.overviewPanel.overviewStadiumPanel.viewStadium_10);
+				stadiumButtonsOverview.add(view.overviewPanel.overviewStadiumPanel.viewStadium_11);
+				stadiumButtonsOverview.add(view.overviewPanel.overviewStadiumPanel.viewStadium_12);
+				stadiumButtonsOverview.add(view.overviewPanel.overviewStadiumPanel.viewStadium_13);
+				stadiumButtonsOverview.add(view.overviewPanel.overviewStadiumPanel.viewStadium_14);
+				stadiumButtonsOverview.add(view.overviewPanel.overviewStadiumPanel.viewStadium_15);
+				stadiumButtonsOverview.add(view.overviewPanel.overviewStadiumPanel.viewStadium_16);
+				stadiumButtonsOverview.add(view.overviewPanel.overviewStadiumPanel.viewStadium_17);
+				stadiumButtonsOverview.add(view.overviewPanel.overviewStadiumPanel.viewStadium_18);
+				stadiumButtonsOverview.add(view.overviewPanel.overviewStadiumPanel.viewStadium_19);
+				stadiumButtonsOverview.add(view.overviewPanel.overviewStadiumPanel.viewStadium_20);
+				stadiumButtonsOverview.add(view.overviewPanel.overviewStadiumPanel.viewStadium_21);
+				stadiumButtonsOverview.add(view.overviewPanel.overviewStadiumPanel.viewStadium_22);
+				stadiumButtonsOverview.add(view.overviewPanel.overviewStadiumPanel.viewStadium_23);
+				stadiumButtonsOverview.add(view.overviewPanel.overviewStadiumPanel.viewStadium_24);
+				stadiumButtonsOverview.add(view.overviewPanel.overviewStadiumPanel.viewStadium_25);
+				stadiumButtonsOverview.add(view.overviewPanel.overviewStadiumPanel.viewStadium_26);
+				stadiumButtonsOverview.add(view.overviewPanel.overviewStadiumPanel.viewStadium_27);
+				stadiumButtonsOverview.add(view.overviewPanel.overviewStadiumPanel.viewStadium_28);
+				stadiumButtonsOverview.add(view.overviewPanel.overviewStadiumPanel.viewStadium_29);
+				stadiumButtonsOverview.add(view.overviewPanel.overviewStadiumPanel.viewStadium_30);
+				stadiumButtonsOverview.add(view.overviewPanel.overviewStadiumPanel.viewStadium_31);
+				stadiumButtonsOverview.add(view.overviewPanel.overviewStadiumPanel.viewStadium_32);
+				stadiumButtonsOverview.add(view.overviewPanel.overviewStadiumPanel.viewStadium_33);
+				stadiumButtonsOverview.add(view.overviewPanel.overviewStadiumPanel.viewStadium_34);
+				stadiumButtonsOverview.add(view.overviewPanel.overviewStadiumPanel.viewStadium_35);
+				stadiumButtonsOverview.add(view.overviewPanel.overviewStadiumPanel.viewStadium_36);
+				stadiumButtonsOverview.add(view.overviewPanel.overviewStadiumPanel.viewStadium_37);
+				stadiumButtonsOverview.add(view.overviewPanel.overviewStadiumPanel.viewStadium_38);
+				stadiumButtonsOverview.add(view.overviewPanel.overviewStadiumPanel.viewStadium_39);
+				stadiumButtonsOverview.add(view.overviewPanel.overviewStadiumPanel.viewStadium_40);
+				stadiumButtonsOverview.add(view.overviewPanel.overviewStadiumPanel.viewStadium_41);
+				stadiumButtonsOverview.add(view.overviewPanel.overviewStadiumPanel.viewStadium_42);
+				stadiumButtonsOverview.add(view.overviewPanel.overviewStadiumPanel.viewStadium_43);
+				stadiumButtonsOverview.add(view.overviewPanel.overviewStadiumPanel.viewStadium_44);
+				
+				stadiumButtonsGames.add(view.gamesPanel.gamesStadiumPanel.viewStadium_1);//dummy
+				stadiumButtonsGames.add(view.gamesPanel.gamesStadiumPanel.viewStadium_1);
+				stadiumButtonsGames.add(view.gamesPanel.gamesStadiumPanel.viewStadium_2);
+				stadiumButtonsGames.add(view.gamesPanel.gamesStadiumPanel.viewStadium_3);
+				stadiumButtonsGames.add(view.gamesPanel.gamesStadiumPanel.viewStadium_4);
+				stadiumButtonsGames.add(view.gamesPanel.gamesStadiumPanel.viewStadium_5);
+				stadiumButtonsGames.add(view.gamesPanel.gamesStadiumPanel.viewStadium_6);
+				stadiumButtonsGames.add(view.gamesPanel.gamesStadiumPanel.viewStadium_7);
+				stadiumButtonsGames.add(view.gamesPanel.gamesStadiumPanel.viewStadium_8);
+				stadiumButtonsGames.add(view.gamesPanel.gamesStadiumPanel.viewStadium_9);
+				stadiumButtonsGames.add(view.gamesPanel.gamesStadiumPanel.viewStadium_10);
+				stadiumButtonsGames.add(view.gamesPanel.gamesStadiumPanel.viewStadium_11);
+				stadiumButtonsGames.add(view.gamesPanel.gamesStadiumPanel.viewStadium_12);
+				stadiumButtonsGames.add(view.gamesPanel.gamesStadiumPanel.viewStadium_13);
+				stadiumButtonsGames.add(view.gamesPanel.gamesStadiumPanel.viewStadium_14);
+				stadiumButtonsGames.add(view.gamesPanel.gamesStadiumPanel.viewStadium_15);
+				stadiumButtonsGames.add(view.gamesPanel.gamesStadiumPanel.viewStadium_16);
+				stadiumButtonsGames.add(view.gamesPanel.gamesStadiumPanel.viewStadium_17);
+				stadiumButtonsGames.add(view.gamesPanel.gamesStadiumPanel.viewStadium_18);
+				stadiumButtonsGames.add(view.gamesPanel.gamesStadiumPanel.viewStadium_19);
+				stadiumButtonsGames.add(view.gamesPanel.gamesStadiumPanel.viewStadium_20);
+				stadiumButtonsGames.add(view.gamesPanel.gamesStadiumPanel.viewStadium_21);
+				stadiumButtonsGames.add(view.gamesPanel.gamesStadiumPanel.viewStadium_22);
+				stadiumButtonsGames.add(view.gamesPanel.gamesStadiumPanel.viewStadium_23);
+				stadiumButtonsGames.add(view.gamesPanel.gamesStadiumPanel.viewStadium_24);
+				stadiumButtonsGames.add(view.gamesPanel.gamesStadiumPanel.viewStadium_25);
+				stadiumButtonsGames.add(view.gamesPanel.gamesStadiumPanel.viewStadium_26);
+				stadiumButtonsGames.add(view.gamesPanel.gamesStadiumPanel.viewStadium_27);
+				stadiumButtonsGames.add(view.gamesPanel.gamesStadiumPanel.viewStadium_28);
+				stadiumButtonsGames.add(view.gamesPanel.gamesStadiumPanel.viewStadium_29);
+				stadiumButtonsGames.add(view.gamesPanel.gamesStadiumPanel.viewStadium_30);
+				stadiumButtonsGames.add(view.gamesPanel.gamesStadiumPanel.viewStadium_31);
+				stadiumButtonsGames.add(view.gamesPanel.gamesStadiumPanel.viewStadium_32);
+				stadiumButtonsGames.add(view.gamesPanel.gamesStadiumPanel.viewStadium_33);
+				stadiumButtonsGames.add(view.gamesPanel.gamesStadiumPanel.viewStadium_34);
+				stadiumButtonsGames.add(view.gamesPanel.gamesStadiumPanel.viewStadium_35);
+				stadiumButtonsGames.add(view.gamesPanel.gamesStadiumPanel.viewStadium_36);
+				stadiumButtonsGames.add(view.gamesPanel.gamesStadiumPanel.viewStadium_37);
+				stadiumButtonsGames.add(view.gamesPanel.gamesStadiumPanel.viewStadium_38);
+				stadiumButtonsGames.add(view.gamesPanel.gamesStadiumPanel.viewStadium_39);
+				stadiumButtonsGames.add(view.gamesPanel.gamesStadiumPanel.viewStadium_40);
+				stadiumButtonsGames.add(view.gamesPanel.gamesStadiumPanel.viewStadium_41);
+				stadiumButtonsGames.add(view.gamesPanel.gamesStadiumPanel.viewStadium_42);
+				stadiumButtonsGames.add(view.gamesPanel.gamesStadiumPanel.viewStadium_43);
+				stadiumButtonsGames.add(view.gamesPanel.gamesStadiumPanel.viewStadium_44);
+	}
+	private void setStadiumMouseAdapters(int i_Index)
+	{
+		if(i_Index == 0)
 		{
-			img = new ImageIcon(Overview.class.getResource(stadiumImagePaths.get(i-1)));
-			stadiumImages.set(i-1, img);
+			for(int i=1;i<stadiumImagePaths.size();i++)
+			{
+				JButton ButtonOverview = stadiumButtonsOverview.get(i);
+				JButton ButtonGames = stadiumButtonsGames.get(i);
+				
+				MouseAdapter ma_Overview = view.overviewPanel.overviewStadiumPanel.createSectionAdapter(ButtonOverview, stadiumImages.get(i), stadiumImagesRollover.get(i), stadiumImagesSelected.get(i));
+				mouseAdaptersOverview.set(i, ma_Overview);
+				MouseAdapter ma_Games = view.overviewPanel.overviewStadiumPanel.createSectionAdapter(ButtonGames, stadiumImages.get(i), stadiumImagesRollover.get(i), stadiumImagesSelected.get(i));
+				mouseAdaptersGames.set(i, ma_Games);
+				
+			}
+		}
+		else
+		{
+			JButton ButtonOverview = stadiumButtonsOverview.get(i_Index);
+			JButton ButtonGames = stadiumButtonsGames.get(i_Index);
+
+			MouseAdapter ma_Overview = view.overviewPanel.overviewStadiumPanel.createSectionAdapter(ButtonOverview, stadiumImages.get(i_Index), stadiumImagesRollover.get(i_Index), stadiumImagesSelected.get(i_Index));
+			mouseAdaptersOverview.set(i_Index, ma_Overview);
+			MouseAdapter ma_Games = view.overviewPanel.overviewStadiumPanel.createSectionAdapter(ButtonGames, stadiumImages.get(i_Index), stadiumImagesRollover.get(i_Index), stadiumImagesSelected.get(i_Index));
+			mouseAdaptersGames.set(i_Index, ma_Games);
+		}	
+	}
+	
+	private void setButtonListeners(int i_Index)
+	{
+		
+		if(i_Index == 0)
+		{
+			for(int i=1;i<mouseAdaptersOverview.size();i++)
+			{
+				final int currentIndex = i;
+				
+				stadiumButtonsOverview.get(currentIndex).addMouseListener(mouseAdaptersOverview.get(currentIndex));
+				stadiumButtonsGames.get(currentIndex).addMouseListener(mouseAdaptersGames.get(currentIndex));
+				stadiumButtonsOverview.get(currentIndex).addActionListener(new ActionListener() {
+					public void actionPerformed(ActionEvent arg0) {
+						view.overviewPanel.overviewStadiumPanel.stadiumSectionSelection(stadiumButtonsOverview.get(currentIndex), mouseAdaptersOverview.get(currentIndex), stadiumImagesRollover.get(currentIndex));
+					}
+				});
+				stadiumButtonsGames.get(currentIndex).addActionListener(new ActionListener() {
+					public void actionPerformed(ActionEvent arg0) {
+						view.gamesPanel.gamesStadiumPanel.stadiumSectionSelection(stadiumButtonsGames.get(currentIndex), mouseAdaptersGames.get(currentIndex), stadiumImagesRollover.get(currentIndex));
+					}
+				});
+			}
+		}
+		else
+		{
+			stadiumButtonsOverview.get(i_Index).addMouseListener(mouseAdaptersOverview.get(i_Index));
+			stadiumButtonsGames.get(i_Index).addMouseListener(mouseAdaptersGames.get(i_Index));
+			stadiumButtonsOverview.get(i_Index).addActionListener(new ActionListener() {
+				public void actionPerformed(ActionEvent arg0) {
+					view.overviewPanel.overviewStadiumPanel.stadiumSectionSelection(stadiumButtonsOverview.get(i_Index), mouseAdaptersOverview.get(i_Index), stadiumImagesRollover.get(i_Index));
+				}
+			});
+			stadiumButtonsGames.get(i_Index).addActionListener(new ActionListener() {
+				public void actionPerformed(ActionEvent arg0) {
+					view.gamesPanel.gamesStadiumPanel.stadiumSectionSelection(stadiumButtonsGames.get(i_Index), mouseAdaptersGames.get(i_Index), stadiumImagesRollover.get(i_Index));
+				}
+			});
+		}
+		
+		
+	}
+	
+	private void setStadiumImagePaths(int i_Index)
+	{
+		
+		if(i_Index == 0)
+		{
+			for(int i=1;i<stadiumImagePaths.size();i++)
+			{
+				StringBuilder path = new StringBuilder();
+				String sectionIndex = Integer.toString(i);
+				path.append("/Images/StadiumSlices/Stadium" + getViewStadiumSectionType(i) + "_" + sectionIndex + ".png");
+				stadiumImagePaths.set(i, path.toString());
+				
+			}
+		}
+		else
+		{
+			StringBuilder path = new StringBuilder();
+			String sectionIndex = Integer.toString(i_Index);
+			path.append("/Images/StadiumSlices/Stadium" + getViewStadiumSectionType(i_Index) + "_" + sectionIndex + ".png");
+			stadiumImagePaths.set(i_Index, path.toString());
+		}	
+		
+	}
+
+	private void setStadiumImages(int i_Index)
+	{
+		setStadiumImagePaths(i_Index);
+		if(i_Index == 0)
+		{
+			setStadiumAncillaryImages();
+			for(int i=1;i<stadiumImages.size();i++)
+			{
+				ImageIcon img = new ImageIcon(Controller.class.getResource(stadiumImagePaths.get(i)));
+				stadiumImages.set(i, img);
+			}
+		}
+		else
+		{
+			ImageIcon img = new ImageIcon(Controller.class.getResource(stadiumImagePaths.get(i_Index)));
+			stadiumImages.set(i_Index, img);
 		}
 	}
 	
-	public void redrawStadium()
+	private void setStadiumAncillaryImages()
 	{
-		ImageIcon img;
-		
-		setStadiumImagePaths();
-		for(int i=1;i<=stadiumImages.size();i++)
+		for(int i=1;i<stadiumImages.size();i++)
 		{
-			img = new ImageIcon(Overview.class.getResource(stadiumImagePaths.get(i-1)));
-			stadiumImages.set(i-1, img);
+			String sectionIndex = Integer.toString(i);
+			StringBuilder path_R = new StringBuilder();
+			path_R.append("/Images/StadiumSlices/Stadium_Rollover_" + sectionIndex + ".png");
+			ImageIcon img_R = new ImageIcon(Controller.class.getResource(path_R.toString()));
+			StringBuilder path_S = new StringBuilder();
+			path_S.append("/Images/StadiumSlices/Stadium_Selected_" + sectionIndex + ".png");
+			ImageIcon img_S = new ImageIcon(Controller.class.getResource(path_S.toString()));
+			if(i==1) //Create Dummy
+			{
+				stadiumImagesRollover.add(img_R);
+				stadiumImagesSelected.add(img_S);
+			}
+			stadiumImagesRollover.add(img_R);
+			stadiumImagesSelected.add(img_S);
 		}
-		
-		
-		for(int i=0;i<stadiumButtonsOverview.size();i++)
+
+	}
+	
+	public void redrawStadium(int i_Index)
+	{
+		setStadiumImages(i_Index);		
+		if(i_Index == 0)
 		{
-			stadiumButtonsOverview.get(i).setIcon(UI_Elements.scaleImageToBox(stadiumImages.get(i), stadiumButtonsOverview.get(i)));
-			stadiumButtonsGames.get(i).setIcon(UI_Elements.scaleImageToBox(stadiumImages.get(i), stadiumButtonsGames.get(i)));
+			for(int i=1;i<stadiumButtonsOverview.size();i++)
+			{
+				stadiumButtonsOverview.get(i).setIcon(UI_Elements.scaleImageToBox(stadiumImages.get(i), stadiumButtonsOverview.get(i)));
+				stadiumButtonsGames.get(i).setIcon(UI_Elements.scaleImageToBox(stadiumImages.get(i), stadiumButtonsGames.get(i)));
+				
+				stadiumButtonsOverview.get(i).removeMouseListener(mouseAdaptersOverview.get(i));
+				stadiumButtonsGames.get(i).removeMouseListener(mouseAdaptersGames.get(i));
+				setStadiumMouseAdapters(i);
+				stadiumButtonsOverview.get(i).addMouseListener(mouseAdaptersOverview.get(i));
+				stadiumButtonsGames.get(i).addMouseListener(mouseAdaptersGames.get(i));
+			}
 		}
-		
-		
+		else
+		{
+			stadiumButtonsOverview.get(i_Index).setIcon(UI_Elements.scaleImageToBox(stadiumImages.get(i_Index), stadiumButtonsOverview.get(i_Index)));
+			stadiumButtonsGames.get(i_Index).setIcon(UI_Elements.scaleImageToBox(stadiumImages.get(i_Index), stadiumButtonsGames.get(i_Index)));
+			
+			stadiumButtonsOverview.get(i_Index).removeMouseListener(mouseAdaptersOverview.get(i_Index));
+			stadiumButtonsGames.get(i_Index).removeMouseListener(mouseAdaptersGames.get(i_Index));
+			setStadiumMouseAdapters(i_Index);
+			stadiumButtonsOverview.get(i_Index).addMouseListener(mouseAdaptersOverview.get(i_Index));
+			stadiumButtonsGames.get(i_Index).addMouseListener(mouseAdaptersGames.get(i_Index));
+		}
 	}
 	///
 	

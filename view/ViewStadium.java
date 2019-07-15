@@ -296,7 +296,7 @@ public class ViewStadium extends JPanel {
 		panelViewStadium.add(viewStadium_22);
 		
 		viewStadium_23 = new JButton();
-		setupViewStadiumSectionImage(viewStadium_22, "22");
+		setupViewStadiumSectionImage(viewStadium_23, "23");
 		panelViewStadium.add(viewStadium_23);
 		
 		viewStadium_24 = new JButton();
