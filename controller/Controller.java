@@ -1494,7 +1494,7 @@ public class Controller {
 		{
 			for(int i=1;i<mouseAdaptersOverview.size();i++)
 			{
-				final int currentIndex = i;
+				final int currentIndex = i; //action listener needs a final value
 				
 				stadiumButtonsOverview.get(currentIndex).addMouseListener(mouseAdaptersOverview.get(currentIndex));
 				stadiumButtonsGames.get(currentIndex).addMouseListener(mouseAdaptersGames.get(currentIndex));
@@ -1572,7 +1572,7 @@ public class Controller {
 		}
 	}
 	
-	private void setStadiumAncillaryImages()
+	private void setStadiumAncillaryImages() //set rollover and selected images
 	{
 		for(int i=1;i<stadiumImages.size();i++)
 		{

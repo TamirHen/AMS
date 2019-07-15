@@ -1,15 +1,15 @@
 package model;
 
 public class User {
-	private String userName;
+	private String username;
 	private String firstName;
 	private String lastName;
 	private String password;
 	private String email;
 
 	// Constructor:
-	public User(String userName, String firstName, String lastName, String password, String email) {
-		this.setUserName(userName);
+	public User(String username, String firstName, String lastName, String password, String email) {
+		this.setUserName(username);
 		this.setFirstName(firstName);
 		this.setLastName(lastName);
 		setPassword(password);
@@ -34,11 +34,11 @@ public class User {
 	}
 
 	public String getUserName() {
-		return userName;
+		return username;
 	}
 
 	public void setUserName(String userName) {
-		this.userName = userName;
+		this.username = userName;
 	}
 
 	public String getFirstName() {

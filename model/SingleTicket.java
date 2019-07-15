@@ -1,24 +1,24 @@
 package model;
 
-public class IndividualTicket extends Ticket {
-	private int individualTicketId;
+public class SingleTicket extends Ticket {
+	private int singleTicketId;
 	private String gameValidation;
 
 	// Constructor:
-	public IndividualTicket(float ticketPrice, int ticketSectionId, boolean isPurchased, int individualTicketId,
+	public SingleTicket(float ticketPrice, int ticketSectionId, boolean isPurchased, int singleTicketId,
 			String gameValidation) {
 		super(ticketPrice, ticketSectionId, isPurchased);
-		this.setIndividualTicketId(individualTicketId);
+		this.setIndividualTicketId(singleTicketId);
 		this.setGameValidation(gameValidation);
 	}
 
 	// Data members getters and setters:
 	public int getIndividualTicketId() {
-		return individualTicketId;
+		return singleTicketId;
 	}
 
 	public void setIndividualTicketId(int individualTicketId) {
-		this.individualTicketId = individualTicketId;
+		this.singleTicketId = individualTicketId;
 	}
 
 	public String getGameValidation() {

@@ -1,24 +1,24 @@
 package model;
 
-public class SubscriptionTicket extends Ticket {
-	private int subscriptionTicketId;
+public class SeasonTicket extends Ticket {
+	private int seasonTicketId;
 	private String seasonValidation;
 
 	// Constructor:
-	public SubscriptionTicket(float ticketPrice, int ticketSectionId, boolean isPurchased, int subscriptionTicketId,
+	public SeasonTicket(float ticketPrice, int ticketSectionId, boolean isPurchased, int seasonTicketId,
 			String seasonValidation) {
 		super(ticketPrice, ticketSectionId, isPurchased);
-		this.setSubscriptionTicketId(subscriptionTicketId);
+		this.setSubscriptionTicketId(seasonTicketId);
 		this.setSeasonValidation(seasonValidation);
 	}
 
 	// Data members getters and setters:
 	public int getSubscriptionTicketId() {
-		return subscriptionTicketId;
+		return seasonTicketId;
 	}
 
-	public void setSubscriptionTicketId(int subscriptionTicketId) {
-		this.subscriptionTicketId = subscriptionTicketId;
+	public void setSubscriptionTicketId(int seasonTicketId) {
+		this.seasonTicketId = seasonTicketId;
 	}
 
 	public String getSeasonValidation() {

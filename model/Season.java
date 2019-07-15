@@ -30,8 +30,8 @@ public class Season {
 	public String getLeagueName() {
 		return leagueName;
 	}
-	public void createGame(String name, String date, int sadiumCapacity, float vipTicketPrice, float clubLevelTicketPrice, float bleachersTicketPrice, float seasonTicketPrice, Stadium stadium) {
-		games.add(new Game(name, date, sadiumCapacity, vipTicketPrice, clubLevelTicketPrice, bleachersTicketPrice, seasonTicketPrice, stadium));
+	public void createGame(String name, String date, int stadiumCapacity, float vipTicketPrice, float clubLevelTicketPrice, float bleachersTicketPrice, float seasonTicketPrice, Stadium stadium) {
+		games.add(new Game(name, date, stadiumCapacity, vipTicketPrice, clubLevelTicketPrice, bleachersTicketPrice, seasonTicketPrice, stadium));
 		numOfGames++;
 	}
 	public float getGamesRevenue() {
