@@ -86,8 +86,8 @@ public class Model {
 	}
 
 	public void updateGameSection(int gameSectionIndex, int gameIndex, int seasonIndex, int numOfSoldTickets) {
-		season.get(seasonIndex).games.get(gameIndex).gameSections.get(gameSectionIndex).setSoldTickets(numOfSoldTickets);
-		db.updateGameSectionSoldTicketsDB(numOfSoldTickets, season.get(seasonIndex).getName(), season.get(seasonIndex).games.get(gameIndex).getName(), gameSectionIndex/*need to check if to send index or index+1*/);
+		season.get(seasonIndex).games.get(gameIndex).gameSections.get(gameSectionIndex-1).setSoldTickets(numOfSoldTickets);
+		db.updateGameSectionSoldTicketsDB(numOfSoldTickets, season.get(seasonIndex).getName(), season.get(seasonIndex).games.get(gameIndex).getName(), gameSectionIndex);
 	}
 	public void createNewSponsor(String name, Date contractStartDate, Date contractEndDate, float totalContractValue) {
 		this.sponsors.add(new Sponsor(name, contractStartDate, contractEndDate, totalContractValue));

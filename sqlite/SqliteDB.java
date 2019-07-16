@@ -168,7 +168,7 @@ public class SqliteDB {
 			index=0;
 			while(rs.next()) {
 				game.add(new Game(rs.getString("name"), rs.getString("date"),this.stadium.getCapacity(), 100, 50, 20, 300, this.stadium));//need to create class for the ticket prices and changed it here
-				game.get(index).gameSections=initializeGameSections(game.get(index));
+				game.get(index).gameSections=initializeGameSections(game.get(index), season);
 				index++;
 			}
 		} catch (Exception e) {
@@ -177,20 +177,20 @@ public class SqliteDB {
 		}
 		return game;
 	}
-	public ArrayList<GameSection> initializeGameSections(Game game) {
+	public ArrayList<GameSection> initializeGameSections(Game game, Season season) {
 		ArrayList<GameSection> gameSection=null;
 		int index=0;
 		try {
 			this.stmt = c.createStatement();
-			ResultSet rs = stmt.executeQuery("select * from GameSection where game='"+game.getName()+"'");
+			ResultSet rs = stmt.executeQuery("select * from GameSection where game='"+game.getName()+"' and seasonName='"+season.getName()+"'");
 			while(rs.next()) {
 				index++;
 			}
-			rs = stmt.executeQuery("select * from GameSection where game='"+game.getName()+"'");
+			rs = stmt.executeQuery("select * from GameSection where game='"+game.getName()+"' and seasonName='"+season.getName()+"'");
 			gameSection = new ArrayList<GameSection>();
 			index=0;
 			while(rs.next()) {
-				gameSection.add(new GameSection(stadium.getArenaSection(rs.getInt("sectionNumber"))));
+				gameSection.add(new GameSection(stadium.getArenaSection(rs.getInt("sectionNumber")-1/* to set the index and not the number */), rs.getInt("soldTickets")));
 				index++;
 			}
 		} catch (Exception e) {
@@ -244,18 +244,18 @@ public class SqliteDB {
 			this.stmt = c.createStatement();
 			System.out.println("insert into Game values('"+name+"', '"+date+"', "+0+", "+0+", "+0+", "+0+", "+0+", "+0+", "+0+", "+0+", "+0+", '"+season.getName()+"')"); //Initialize values to 0 in the DB
 			stmt.executeUpdate("insert into Game values('"+name+"', '"+date+"', "+0+", "+0+", "+0+", "+0+", "+0+", "+0+", "+0+", "+0+", "+0+", '"+season.getName()+"')");
-			createGameSectionsDB(game);
+			createGameSectionsDB(game ,season);
 		} catch (Exception e) {
 			System.out.println("Error: " + e.getMessage());
 
 		}
 	}
-	public void createGameSectionsDB(Game game) {
+	public void createGameSectionsDB(Game game, Season season) {
 		try {
 			this.stmt = c.createStatement();
 			for (int i = 0; i < stadium.getNumOfSections(); i++) {
-				System.out.println("insert into GameSection values("+(i+1)+", '"+game.getName()+"', "+game.gameSections.get(i).getSoldTickets()+")");
-				stmt.executeUpdate("insert into GameSection values("+(i+1)+", '"+game.getName()+"', "+game.gameSections.get(i).getSoldTickets()+")");
+				System.out.println("insert into GameSection values("+(i+1)+", '"+game.getName()+"', "+game.gameSections.get(i).getSoldTickets()+", '"+season.getName()+"')");
+				stmt.executeUpdate("insert into GameSection values("+(i+1)+", '"+game.getName()+"', "+game.gameSections.get(i).getSoldTickets()+", '"+season.getName()+"')");
 
 			}
 
@@ -303,7 +303,7 @@ public class SqliteDB {
 		try {
 			this.stmt = c.createStatement();
 			System.out.println("update gameSection set soldTickets="+totalSoldTickets+" where game='"+gameName+"' and seasonName='"+seasonName+"' and sectionNumber="+sectionNumber);
-			stmt.executeUpdate("update gameSection set soldTickets="+totalSoldTickets+" where game='"+gameName+"' and seasonName='"+seasonName+"'");
+			stmt.executeUpdate("update gameSection set soldTickets="+totalSoldTickets+" where game='"+gameName+"' and seasonName='"+seasonName+"' and sectionNumber="+sectionNumber);
 		} catch (Exception e) {
 			System.out.println("Error: " + e.getMessage());
 
