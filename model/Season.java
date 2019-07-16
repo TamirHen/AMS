@@ -34,6 +34,10 @@ public class Season {
 		games.add(new Game(name, date, stadiumCapacity, vipTicketPrice, clubLevelTicketPrice, bleachersTicketPrice, seasonTicketPrice, stadium));
 		numOfGames++;
 	}
+	public void createGame(Game i_Game) {
+		games.add(i_Game);
+		numOfGames++;
+	}
 	public float getGamesRevenue() {
 		for (int i = 0; i < numOfGames; i++) {
 			this.seasonRevenue+=games.get(i).getTotalGameRevenue();

@@ -23,7 +23,7 @@ public class GameTicketTest {
 	private float bleachersPrice = 20;
 	private float clubPrice = 50;
 	private float vipPrice = 100;
-	private float seasonPrice = 1000;
+	private float seasonTicketPrice = 1000;
 	private Section section1;
 	private Section section2;
 	private Section section3;
@@ -38,7 +38,7 @@ public class GameTicketTest {
 		sectionArray[1] = section2;
 		sectionArray[2] = section3;
 		stadium = Stadium.getInstance(0, "test", "team", stadiumCapacity, "Bdika 1", sectionArray.length, sectionArray);
-		game = new Game("1", "1/1/2001", stadiumCapacity, vipPrice, clubPrice, bleachersPrice, seasonPrice, stadium);
+		game = new Game("1", "1/1/2001", stadiumCapacity, vipPrice, clubPrice, bleachersPrice, seasonTicketPrice, stadium);
 		
 		game.vipTicketsSold(numOfVipSold, 0);
 		game.clubLevelTicketsSold(numOfClubLevelSold, 1);
