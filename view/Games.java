@@ -89,6 +89,7 @@ public class Games extends JPanel {
 		cb_SalesSeason.setModel(new DefaultComboBoxModel(new String[] {}));
 		cb_SalesSeason.setBounds(100, lblSeason.getBounds().y, 200, 20);
 		panelGames.add(cb_SalesSeason);
+		gamesStadiumPanel.observerComboboxes.add(cb_SalesSeason);
 		
 		lblGame = new JLabel("Game:");
 		lblGame.setAlignmentY(Component.BOTTOM_ALIGNMENT);
@@ -103,6 +104,8 @@ public class Games extends JPanel {
 		cb_SalesGame.setModel(new DefaultComboBoxModel(new String[] {}));
 		cb_SalesGame.setBounds(100, (cb_SalesSeason.getBounds().y)+30, 200, 20);
 		panelGames.add(cb_SalesGame);
+		gamesStadiumPanel.observerComboboxes.add(cb_SalesGame);
+
 		
 		
 		//Buttons
