@@ -22,6 +22,7 @@ public class Facilities extends JPanel {
 
 	public JButton btnSecurity;
 	public JButton btnMaintenance;
+
 	public FacilitiesSecurity securityPanel;
 	public FacilitiesMaintenance maintenancePanel;
 	

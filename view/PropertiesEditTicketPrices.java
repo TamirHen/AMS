@@ -31,13 +31,13 @@ public class PropertiesEditTicketPrices extends JFrame {
 	private JLabel titleEditTicketPrices;
 	private JLabel lblSectionNumber;
 	private JLabel lblVIP;
-	private JTextField tf_VIP;
-	private JTextField tf_ClubLevel;
+	public JTextField tf_VIP;
+	public JTextField tf_ClubLevel;
 	private JLabel lblClubLevel;
 	private JLabel lblBleachers;
-	private JTextField tf_Bleachers;
-	private JButton btnFinish;
-	private JButton btnCancel;
+	public JTextField tf_Bleachers;
+	public JButton btnFinish;
+	public JButton btnCancel;
 	private JLabel lblErrorMessage_InavlidValue;
 
 	private int lineSpacing = 12;

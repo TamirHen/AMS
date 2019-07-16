@@ -21,15 +21,21 @@ import javax.swing.JSeparator;
 import javax.swing.JTable;
 import javax.swing.JTextField;
 import javax.swing.SwingConstants;
+
+import model.Season;
+
 import javax.swing.JScrollPane;
 
 public class SalesSponsorships extends JPanel {
 	
 	public JPanel panelSponsorships;
-	private JLabel titleSponsorships;
+	public JLabel titleSponsorships;
 	
 	public JScrollPane sponsorTableScrollPane;
 	public JTable sponsorTable;
+	public String[] colum_headers= {"Name","Contract start date","Contract end date","Contract value"};
+	public String[][] sponsorsToDisplay=new String[100][4];
+	
 	public JButton btnAddSponsor;
 	public JButton btnRemoveSponsor;
 	
@@ -38,7 +44,7 @@ public class SalesSponsorships extends JPanel {
 	private JLabel lblAddSponsorContractStart;
 	public JTextField tf_AddSponsorContractStart;
 	private JLabel lblAddSponsorContractEnd;
-	private JTextField tf_AddSponsorContractEnd;
+	public JTextField tf_AddSponsorContractEnd;
 	private JLabel lblAddSponsorContractValue;
 	public JTextField tf_AddSponsorContractValue;
 	public JButton btnAddSponsorFinish;
@@ -47,13 +53,15 @@ public class SalesSponsorships extends JPanel {
 	private List<JComponent> addSponsorComponents = new ArrayList<JComponent>();
 	private List<JComponent> removeSponsorComponents = new ArrayList<JComponent>();
 	private JLabel lblRemoveSponsorSponsorName;
-	private JComboBox<String> cb_RemoveSponsorSponsorName;
-	private JButton btnRemoveSponsorFinish;
+	public JComboBox<String> cb_RemoveSponsorSponsorName;
+	public JButton btnRemoveSponsorFinish;
 	private JButton btnRemoveSponsorCancel;
 
 
 	
 	public SalesSponsorships(){
+		
+		
 		
 		panelSponsorships = new JPanel();
 		panelSponsorships.setBorder(null);
@@ -77,9 +85,11 @@ public class SalesSponsorships extends JPanel {
 		sponsorTableScrollPane.setBounds(titleSponsorships.getBounds().x, titleSponsorships.getBounds().y+titleSponsorships.getBounds().height-20, panelSponsorships.getBounds().width-titleSponsorships.getBounds().x-40, 275);
 		panelSponsorships.add(sponsorTableScrollPane);
 		
-		sponsorTable = new JTable();
+		sponsorTable = new JTable(sponsorsToDisplay,colum_headers);
 		sponsorTableScrollPane.setViewportView(sponsorTable);
-		//
+		sponsorTable.setEnabled(false);
+		
+		
 		
 		btnAddSponsor = new JButton("ADD SPONSOR");
 		btnAddSponsor.setFocusPainted(false);
@@ -426,6 +436,10 @@ public class SalesSponsorships extends JPanel {
 				btnRemoveSponsor.setSelected(false);
 				btnAddSponsor.setBackground(UI_Elements.color_mainBackgroundColor);
 				btnRemoveSponsor.setBackground(UI_Elements.color_mainBackgroundColor);
+				tf_AddSponsorSponsorName.setText("");
+				tf_AddSponsorContractValue.setText("");
+				tf_AddSponsorContractStart.setText("");
+				tf_AddSponsorContractEnd.setText("");
 			}
 		});
 		
@@ -452,11 +466,10 @@ public class SalesSponsorships extends JPanel {
 				btnRemoveSponsor.setSelected(false);
 				btnAddSponsor.setBackground(UI_Elements.color_mainBackgroundColor);
 				btnRemoveSponsor.setBackground(UI_Elements.color_mainBackgroundColor);
+				
 			}
 		});
 		
-		
-
 		
 	}
 }
