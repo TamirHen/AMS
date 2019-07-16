@@ -217,7 +217,7 @@ public class FacilitiesMaintenance extends JPanel {
 		btnAddMaintenanceFinish.setForeground(Color.WHITE);
 		btnAddMaintenanceFinish.setOpaque(true);
 		btnAddMaintenanceFinish.setBorder(null);
-		btnAddMaintenanceFinish.setFont(new Font(UI_Elements.mainFontName, Font.PLAIN, 18));
+		btnAddMaintenanceFinish.setFont(UI_Elements.font_AgencyActionButton);
 		btnAddMaintenanceFinish.setBackground(UI_Elements.color_mainBackgroundColor);
 		btnAddMaintenanceFinish.setBounds(221, lblAddMaintenanceMaintenanceStartDate.getBounds().y+lblAddMaintenanceMaintenanceStartDate.getBounds().height+12, 75, 25);
 		btnAddMaintenanceFinish.setSelected(false);
@@ -239,7 +239,7 @@ public class FacilitiesMaintenance extends JPanel {
 		btnAddMaintenanceCancel.setForeground(Color.WHITE);
 		btnAddMaintenanceCancel.setOpaque(true);
 		btnAddMaintenanceCancel.setBorder(null);
-		btnAddMaintenanceCancel.setFont(new Font(UI_Elements.mainFontName, Font.PLAIN, 18));
+		btnAddMaintenanceCancel.setFont(UI_Elements.font_AgencyActionButton);
 		btnAddMaintenanceCancel.setBackground(UI_Elements.color_mainBackgroundColor);
 		btnAddMaintenanceCancel.setBounds(btnAddMaintenanceFinish.getBounds().x + btnAddMaintenanceFinish.getBounds().width + 7, btnAddMaintenanceFinish.getBounds().y, 75, 25);
 		btnAddMaintenanceCancel.setSelected(false);
@@ -291,7 +291,7 @@ public class FacilitiesMaintenance extends JPanel {
 		btnRemoveMaintenanceFinish.setForeground(Color.WHITE);
 		btnRemoveMaintenanceFinish.setOpaque(true);
 		btnRemoveMaintenanceFinish.setBorder(null);
-		btnRemoveMaintenanceFinish.setFont(new Font(UI_Elements.mainFontName, Font.PLAIN, 18));
+		btnRemoveMaintenanceFinish.setFont(UI_Elements.font_AgencyActionButton);
 		btnRemoveMaintenanceFinish.setBackground(UI_Elements.color_mainBackgroundColor);
 		btnRemoveMaintenanceFinish.setBounds(221, lblRemoveMaintenanceMaintenanceName.getBounds().y+lblRemoveMaintenanceMaintenanceName.getBounds().height+12, 75, 25);
 		btnRemoveMaintenanceFinish.setSelected(false);
@@ -313,7 +313,7 @@ public class FacilitiesMaintenance extends JPanel {
 		btnRemoveMaintenanceCancel.setForeground(Color.WHITE);
 		btnRemoveMaintenanceCancel.setOpaque(true);
 		btnRemoveMaintenanceCancel.setBorder(null);
-		btnRemoveMaintenanceCancel.setFont(new Font(UI_Elements.mainFontName, Font.PLAIN, 18));
+		btnRemoveMaintenanceCancel.setFont(UI_Elements.font_AgencyActionButton);
 		btnRemoveMaintenanceCancel.setBackground(UI_Elements.color_mainBackgroundColor);
 		btnRemoveMaintenanceCancel.setBounds(btnAddMaintenanceFinish.getBounds().x + btnAddMaintenanceFinish.getBounds().width + 7, btnRemoveMaintenanceFinish.getBounds().y, 75, 25);
 		btnRemoveMaintenanceCancel.setSelected(false);

@@ -240,7 +240,7 @@ public class SqliteDB {
 			gameSection = new ArrayList<GameSection>();
 			index=0;
 			while(rs.next()) {
-				gameSection.add(new GameSection(stadium.getArenaSection(rs.getInt("sectionNumber"))));
+				gameSection.add(new GameSection(stadium.getArenaSection(rs.getInt("sectionNumber")-1)));
 				index++;
 			}
 		} catch (Exception e) {

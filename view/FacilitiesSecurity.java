@@ -220,7 +220,7 @@ public class FacilitiesSecurity extends JPanel {
 		btnAddSecurityFinish.setForeground(Color.WHITE);
 		btnAddSecurityFinish.setOpaque(true);
 		btnAddSecurityFinish.setBorder(null);
-		btnAddSecurityFinish.setFont(new Font(UI_Elements.mainFontName, Font.PLAIN, 18));
+		btnAddSecurityFinish.setFont(UI_Elements.font_AgencyActionButton);
 		btnAddSecurityFinish.setBackground(UI_Elements.color_mainBackgroundColor);
 		btnAddSecurityFinish.setBounds(221, lblAddSecurityContractStart.getBounds().y+lblAddSecurityContractStart.getBounds().height+12, 75, 25);
 		btnAddSecurityFinish.setSelected(false);
@@ -242,7 +242,7 @@ public class FacilitiesSecurity extends JPanel {
 		btnAddSecurityCancel.setForeground(Color.WHITE);
 		btnAddSecurityCancel.setOpaque(true);
 		btnAddSecurityCancel.setBorder(null);
-		btnAddSecurityCancel.setFont(new Font(UI_Elements.mainFontName, Font.PLAIN, 18));
+		btnAddSecurityCancel.setFont(UI_Elements.font_AgencyActionButton);
 		btnAddSecurityCancel.setBackground(UI_Elements.color_mainBackgroundColor);
 		btnAddSecurityCancel.setBounds(btnAddSecurityFinish.getBounds().x + btnAddSecurityFinish.getBounds().width + 7, btnAddSecurityFinish.getBounds().y, 75, 25);
 		btnAddSecurityCancel.setSelected(false);
@@ -294,7 +294,7 @@ public class FacilitiesSecurity extends JPanel {
 		btnRemoveSecurityFinish.setForeground(Color.WHITE);
 		btnRemoveSecurityFinish.setOpaque(true);
 		btnRemoveSecurityFinish.setBorder(null);
-		btnRemoveSecurityFinish.setFont(new Font(UI_Elements.mainFontName, Font.PLAIN, 18));
+		btnRemoveSecurityFinish.setFont(UI_Elements.font_AgencyActionButton);
 		btnRemoveSecurityFinish.setBackground(UI_Elements.color_mainBackgroundColor);
 		btnRemoveSecurityFinish.setBounds(221, lblRemoveSecuritySecurityName.getBounds().y+lblRemoveSecuritySecurityName.getBounds().height+12, 75, 25);
 		btnRemoveSecurityFinish.setSelected(false);
@@ -316,7 +316,7 @@ public class FacilitiesSecurity extends JPanel {
 		btnRemoveSecurityCancel.setForeground(Color.WHITE);
 		btnRemoveSecurityCancel.setOpaque(true);
 		btnRemoveSecurityCancel.setBorder(null);
-		btnRemoveSecurityCancel.setFont(new Font(UI_Elements.mainFontName, Font.PLAIN, 18));
+		btnRemoveSecurityCancel.setFont(UI_Elements.font_AgencyActionButton);
 		btnRemoveSecurityCancel.setBackground(UI_Elements.color_mainBackgroundColor);
 		btnRemoveSecurityCancel.setBounds(btnAddSecurityFinish.getBounds().x + btnAddSecurityFinish.getBounds().width + 7, btnRemoveSecurityFinish.getBounds().y, 75, 25);
 		btnRemoveSecurityCancel.setSelected(false);

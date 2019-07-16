@@ -65,8 +65,8 @@ public class UI_Elements {
 	//public static String mainFontName = "Agency FB"; // Change string name to change main Menu & Title font
 	//public static Font font_menuButtonTextDefault = new Font(mainFontName, Font.PLAIN, textMenuButtonTextDefault);
 	//public static Font font_menuButtonTextUser = new Font(mainFontName, Font.PLAIN, textMenuButtonTextUsername);
-	public static Font font_menuButtonTextDefault = font_AgencyMenu;
-	public static Font font_menuButtonTextUser = font_AgencyMenuUsername;
+	//public static Font font_menuButtonTextDefault = font_AgencyMenu;
+	//public static Font font_menuButtonTextUser = font_AgencyMenuUsername;
 	public static Font font_bodyLabel = new Font("Calibri", Font.BOLD, textBodyLabelSize); // Body JLabel font
 	public static Font font_bodyFillText = new Font("Calibri", Font.PLAIN, textBodyFillText); // Text Field & Combo Box font
 	public static Font font_bodySalesData = new Font("Calibri", Font.PLAIN, textBodySalesData); // Text Field & Combo Box font

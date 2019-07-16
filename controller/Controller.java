@@ -656,7 +656,18 @@ public class Controller {
 		});
 		
 		//---Sales Panel (in view)---//
-		
+		//
+		for (int i = 0; i < model.seasonSize; i++) {
+			view.salesPanel.cb_SalesSeason.addItem(model.season.get(i).getName() + " - " + model.season.get(i).getLeagueName());
+		}
+		displayAllGamesInSelectedSeason();//set up default
+		//
+		view.salesPanel.cb_SalesSeason.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent arg0) {
+				displayAllGamesInSelectedSeason();
+				
+			}
+		});
 		
 			view.salesPanel.cb_SalesSeason.addActionListener(new ActionListener() {
 				public void actionPerformed(ActionEvent arg0) {
