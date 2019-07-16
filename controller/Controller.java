@@ -1283,15 +1283,15 @@ public class Controller {
 
 		}
 		
-		//ViewStadium
-		public void viewSectionDetails(int sectionToDisplay, boolean viewStadiumToDisplayIn/*  1=viewStadium in overview panel, 0=viewStadium in games panel  */) {
-			if (viewStadiumToDisplayIn==true) {
-//				view.gamesPanel.sectionDetailsPanel.tf_SectionNumber.setText(String.valueOf(model.stadium.getArenaSection(sectionToDisplay).getSectionNumber())));
-			}
-			else {
-				
-			}
-		}
+//		//ViewStadium
+//		public void viewSectionDetails(int sectionToDisplay, boolean viewStadiumToDisplayIn/*  1=viewStadium in overview panel, 0=viewStadium in games panel  */) {
+//			if (viewStadiumToDisplayIn==true) {
+////				view.gamesPanel.sectionDetailsPanel.tf_SectionNumber.setText(String.valueOf(model.stadium.getArenaSection(sectionToDisplay).getSectionNumber())));
+//			}
+//			else {
+//				
+//			}
+//		}
 		//ViewStadium
 		public void viewStadiumSectionDetails(int seasonIndex, int gameIndex, int sectionToDisplay, int viewStadiumToDisplayIn/*  1=viewStadium in games panel, 2=viewStadium in overview panel, 3=details in ticket sale  */) {
 			if (viewStadiumToDisplayIn==1) {
@@ -1324,6 +1324,7 @@ public class Controller {
 			else if(viewStadiumToDisplayIn==3){
 				model.updateGameSection(sectionToDisplay, gameIndex, seasonIndex, Integer.valueOf(view.gamesPanel.sectionDetailsPanel.frameAddTicketSale.tf_DesiredAmount.getText()));
 				view.gamesPanel.sectionDetailsPanel.tf_Attendance.setText(String.valueOf(model.season.get(seasonIndex).games.get(gameIndex).gameSections.get(sectionToDisplay-1).getSoldTickets()) + "/" + String.valueOf(model.stadium.getArenaSection(sectionToDisplay-1).getNumOfSeats()));
+//				model.season.get(view.gamesPanel.cb_SalesSeason.getSelectedIndex()).games.get(view.gamesPanel.cb_SalesGame.getSelectedIndex()).vipTicketsSold(model.season.get(seasonIndex).games.get(gameIndex).gameSections.get(sectionToDisplay-1).getSoldTickets(), sectionToDisplay-1);
 
 			}
 			else {
