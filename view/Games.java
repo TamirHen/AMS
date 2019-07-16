@@ -112,7 +112,6 @@ public class Games extends JPanel {
 		btnAddSeason.setCursor(Cursor.getPredefinedCursor(Cursor.HAND_CURSOR));
 		btnAddSeason.setHorizontalAlignment(SwingConstants.LEFT);
 		btnAddSeason.setForeground(Color.WHITE);
-		btnAddSeason.setToolTipText("Tickets");
 		btnAddSeason.setOpaque(true);
 		btnAddSeason.setBorder(null);
 		btnAddSeason.setFont(new Font(UI_Elements.mainFontName, Font.PLAIN, 20));
@@ -142,7 +141,6 @@ public class Games extends JPanel {
 		btnAddGame.setCursor(Cursor.getPredefinedCursor(Cursor.HAND_CURSOR));
 		btnAddGame.setHorizontalAlignment(SwingConstants.LEFT);
 		btnAddGame.setForeground(Color.WHITE);
-		btnAddGame.setToolTipText("Concessions");
 		btnAddGame.setOpaque(true);
 		btnAddGame.setBorder(null);
 		btnAddGame.setFont(new Font(UI_Elements.mainFontName, Font.PLAIN, 20));

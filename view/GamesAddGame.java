@@ -32,7 +32,7 @@ public class GamesAddGame extends JPanel {
 	private JLabel lblDate;
 	public JTextField tf_Date;
 	public JButton btnAddGameFinish;
-	private JButton btnAddGameCancel;
+	public JButton btnAddGameCancel;
 	
 	private List<JButton> observerButtons = new ArrayList<JButton>();
 	
@@ -134,7 +134,7 @@ public class GamesAddGame extends JPanel {
 		
 		
 		//Action Listeners
-		btnAddGameFinish.addActionListener(new ActionListener() {
+		/*btnAddGameFinish.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
 				panelAddGame.setVisible(false);
 				setButtonsToDefault();
@@ -146,7 +146,7 @@ public class GamesAddGame extends JPanel {
 				panelAddGame.setVisible(false);
 				setButtonsToDefault();
 			}
-		});
+		});*/
 		
 	}
 
@@ -166,6 +166,7 @@ public class GamesAddGame extends JPanel {
 		{
 			button.setEnabled(true);
 			button.setSelected(false);
+			button.setBackground(UI_Elements.color_panelBodyButtonDefault);
 		}
 	}
 	

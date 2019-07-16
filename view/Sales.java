@@ -137,7 +137,6 @@ public class Sales extends JPanel {
 		btnTickets.setCursor(Cursor.getPredefinedCursor(Cursor.HAND_CURSOR));
 		btnTickets.setHorizontalAlignment(SwingConstants.LEFT);
 		btnTickets.setForeground(Color.WHITE);
-		btnTickets.setToolTipText("Tickets");
 		btnTickets.setOpaque(true);
 		btnTickets.setBorder(null);
 		btnTickets.setFont(new Font(UI_Elements.mainFontName, Font.PLAIN, 20));
@@ -167,7 +166,6 @@ public class Sales extends JPanel {
 		btnSponsorships.setCursor(Cursor.getPredefinedCursor(Cursor.HAND_CURSOR));
 		btnSponsorships.setHorizontalAlignment(SwingConstants.LEFT);
 		btnSponsorships.setForeground(Color.WHITE);
-		btnSponsorships.setToolTipText("Sponsorships");
 		btnSponsorships.setOpaque(true);
 		btnSponsorships.setBorder(null);
 		btnSponsorships.setFont(new Font(UI_Elements.mainFontName, Font.PLAIN, 20));

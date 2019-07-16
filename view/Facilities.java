@@ -102,7 +102,6 @@ public class Facilities extends JPanel {
 		btnSecurity.setCursor(Cursor.getPredefinedCursor(Cursor.HAND_CURSOR));
 		btnSecurity.setHorizontalAlignment(SwingConstants.LEFT);
 		btnSecurity.setForeground(Color.WHITE);
-		btnSecurity.setToolTipText("Tickets");
 		btnSecurity.setOpaque(true);
 		btnSecurity.setBorder(null);
 		btnSecurity.setFont(new Font(UI_Elements.mainFontName, Font.PLAIN, 20));
@@ -131,7 +130,6 @@ public class Facilities extends JPanel {
 		btnMaintenance.setCursor(Cursor.getPredefinedCursor(Cursor.HAND_CURSOR));
 		btnMaintenance.setHorizontalAlignment(SwingConstants.LEFT);
 		btnMaintenance.setForeground(Color.WHITE);
-		btnMaintenance.setToolTipText("Concessions");
 		btnMaintenance.setOpaque(true);
 		btnMaintenance.setBorder(null);
 		btnMaintenance.setFont(new Font(UI_Elements.mainFontName, Font.PLAIN, 20));

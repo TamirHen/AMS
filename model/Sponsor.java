@@ -14,7 +14,6 @@ public class Sponsor {
 		this.contractStartDate=contractStartDate;
 		this.contractEndDate=contractEndDate;
 		this.totalContractValue=totalContractValue;
-		//contractLength= //need to work on it
 	}
 
 	public String getName() {

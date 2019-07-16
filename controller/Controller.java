@@ -736,21 +736,42 @@ public class Controller {
 		view.gamesPanel.addGamePanel.btnAddGameFinish.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
 				view.gamesPanel.addGamePanel.panelAddGame.setVisible(false);
-				view.gamesPanel.addGamePanel.setButtonsToDefault();
 				model.createNewGame(view.gamesPanel.addGamePanel.tf_GameName.getText(), view.gamesPanel.addGamePanel.tf_Date.getText(), view.gamesPanel.cb_SalesSeason.getSelectedIndex(), model.stadium.getCapacity(), 100, 50, 20, 300, model.stadium);
 				displayAllGamesInSelectedSeason();
 				view.gamesPanel.addGamePanel.tf_GameName.setText("");
 				view.gamesPanel.addGamePanel.tf_Date.setText("");
+				view.gamesPanel.gamesStadiumPanel.assignDetailsPanel(view.gamesPanel.sectionDetailsPanel);
+				view.gamesPanel.addGamePanel.setButtonsToDefault();
 			}
 		});
+		
+		view.gamesPanel.addGamePanel.btnAddGameCancel.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent arg0) {
+				view.gamesPanel.addGamePanel.panelAddGame.setVisible(false);
+				view.gamesPanel.addGamePanel.setButtonsToDefault();
+				view.gamesPanel.gamesStadiumPanel.assignDetailsPanel(view.gamesPanel.sectionDetailsPanel);
+				view.gamesPanel.addGamePanel.setButtonsToDefault();
+			}
+		});
+		
 		view.gamesPanel.addSeasonPanel.btnAddSeasonFinish.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
 				view.gamesPanel.addSeasonPanel.panelAddSeason.setVisible(false);
-				view.gamesPanel.addSeasonPanel.setButtonsToDefault();
 				model.createNewSeason(view.gamesPanel.addSeasonPanel.tf_SeasonName.getText(), view.gamesPanel.addSeasonPanel.tf_LeagueName.getText());
 				view.gamesPanel.cb_SalesSeason.addItem(view.gamesPanel.addSeasonPanel.tf_SeasonName.getText() + " - " + view.gamesPanel.addSeasonPanel.tf_LeagueName.getText());
 				view.gamesPanel.addSeasonPanel.tf_SeasonName.setText("");
 				view.gamesPanel.addSeasonPanel.tf_LeagueName.setText("");
+				view.gamesPanel.gamesStadiumPanel.assignDetailsPanel(view.gamesPanel.sectionDetailsPanel);
+				view.gamesPanel.addSeasonPanel.setButtonsToDefault();
+			}
+		});
+		
+		view.gamesPanel.addSeasonPanel.btnAddSeasonCancel.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent arg0) {
+				view.gamesPanel.addSeasonPanel.panelAddSeason.setVisible(false);
+				view.gamesPanel.addSeasonPanel.setButtonsToDefault();
+				view.gamesPanel.gamesStadiumPanel.assignDetailsPanel(view.gamesPanel.sectionDetailsPanel);
+				view.gamesPanel.addSeasonPanel.setButtonsToDefault();
 			}
 		});
 		//---ViewStadium Image Manipulations---//
@@ -1172,7 +1193,7 @@ public class Controller {
 	
 	private void addMouseAdaptersToArrayList()
 	{
-		mouseAdaptersOverview.add(ma1_Overview); //dummy
+		mouseAdaptersOverview.add(ma1_Overview); //dummy - so we'd use "real" section number
 		mouseAdaptersOverview.add(ma1_Overview);
 		mouseAdaptersOverview.add(ma2_Overview);
 		mouseAdaptersOverview.add(ma3_Overview);
@@ -1218,7 +1239,7 @@ public class Controller {
 		mouseAdaptersOverview.add(ma43_Overview);
 		mouseAdaptersOverview.add(ma44_Overview);
 		
-		mouseAdaptersGames.add(ma1_Games); //dummy
+		mouseAdaptersGames.add(ma1_Games); //dummy - so we'd use "real" section number
 		mouseAdaptersGames.add(ma1_Games);
 		mouseAdaptersGames.add(ma2_Games);
 		mouseAdaptersGames.add(ma3_Games);
@@ -1267,7 +1288,7 @@ public class Controller {
 	
 	private void addImagePathsToArrayList()
 	{
-		stadiumImagePaths.add(path1);//dummy
+		stadiumImagePaths.add(path1); //dummy - so we'd use "real" section number
 		stadiumImagePaths.add(path1);
 		stadiumImagePaths.add(path2);
 		stadiumImagePaths.add(path3);
@@ -1316,7 +1337,7 @@ public class Controller {
 	
 	private void addImageIconsToArrayList()
 	{
-		stadiumImages.add(img_1);//Dummy element in order for us to use the actual section number with the ArrayList
+		stadiumImages.add(img_1); //dummy - so we'd use "real" section number
 		stadiumImages.add(img_1);
 		stadiumImages.add(img_2);
 		stadiumImages.add(img_3);
@@ -1365,7 +1386,7 @@ public class Controller {
 	
 	private void addSectionButtonsToArrayList() {
 		//add all buttons to list		
-				stadiumButtonsOverview.add(view.overviewPanel.overviewStadiumPanel.viewStadium_1);//dummy
+				stadiumButtonsOverview.add(view.overviewPanel.overviewStadiumPanel.viewStadium_1); //dummy - so we'd use "real" section number
 				stadiumButtonsOverview.add(view.overviewPanel.overviewStadiumPanel.viewStadium_1);
 				stadiumButtonsOverview.add(view.overviewPanel.overviewStadiumPanel.viewStadium_2);
 				stadiumButtonsOverview.add(view.overviewPanel.overviewStadiumPanel.viewStadium_3);
@@ -1411,7 +1432,7 @@ public class Controller {
 				stadiumButtonsOverview.add(view.overviewPanel.overviewStadiumPanel.viewStadium_43);
 				stadiumButtonsOverview.add(view.overviewPanel.overviewStadiumPanel.viewStadium_44);
 				
-				stadiumButtonsGames.add(view.gamesPanel.gamesStadiumPanel.viewStadium_1);//dummy
+				stadiumButtonsGames.add(view.gamesPanel.gamesStadiumPanel.viewStadium_1); //dummy - so we'd use "real" section number
 				stadiumButtonsGames.add(view.gamesPanel.gamesStadiumPanel.viewStadium_1);
 				stadiumButtonsGames.add(view.gamesPanel.gamesStadiumPanel.viewStadium_2);
 				stadiumButtonsGames.add(view.gamesPanel.gamesStadiumPanel.viewStadium_3);
@@ -1496,6 +1517,7 @@ public class Controller {
 				
 				stadiumButtonsOverview.get(currentIndex).addMouseListener(mouseAdaptersOverview.get(currentIndex));
 				stadiumButtonsGames.get(currentIndex).addMouseListener(mouseAdaptersGames.get(currentIndex));
+				
 				stadiumButtonsOverview.get(currentIndex).addActionListener(new ActionListener() {
 					public void actionPerformed(ActionEvent arg0) {
 						view.overviewPanel.overviewStadiumPanel.stadiumSectionSelection(stadiumButtonsOverview.get(currentIndex), mouseAdaptersOverview.get(currentIndex), stadiumImagesRollover.get(currentIndex));
@@ -1512,6 +1534,7 @@ public class Controller {
 		{
 			stadiumButtonsOverview.get(i_Index).addMouseListener(mouseAdaptersOverview.get(i_Index));
 			stadiumButtonsGames.get(i_Index).addMouseListener(mouseAdaptersGames.get(i_Index));
+			
 			stadiumButtonsOverview.get(i_Index).addActionListener(new ActionListener() {
 				public void actionPerformed(ActionEvent arg0) {
 					view.overviewPanel.overviewStadiumPanel.stadiumSectionSelection(stadiumButtonsOverview.get(i_Index), mouseAdaptersOverview.get(i_Index), stadiumImagesRollover.get(i_Index));

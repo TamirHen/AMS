@@ -16,3 +16,8 @@
 /Season.class
 /SeasonTicket.class
 /SingleTicket.class
+/Facilities.class
+/Sales.class
+/SalesDepartment.class
+/FacilitiesDepartment.class
+/SecurityDepartment.class

@@ -1,11 +1,11 @@
 package model;
 
-public class SalesTeam extends Department {
+public class SalesDepartment extends Department {
 	private int ticketsMonthSales;
 	private int ticketsYearSales;
 
 	// Constructor:
-	public SalesTeam(String departmentName) {
+	public SalesDepartment(String departmentName) {
 		super(departmentName);
 		this.setTicketsMonthSales(0);
 		this.setTicketsYearSales(0);
