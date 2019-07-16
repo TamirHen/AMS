@@ -93,11 +93,16 @@ public class Model {
 
 	public void createNewGame(String name, String date,int seasonIndex, int sadiumCapacity, float vipTicketPrice, float clubLevelTicketPrice, float bleachersTicketPrice, float seasonTicketPrice, Stadium stadium) {
 		this.season.get(seasonIndex).createGame(name, date, sadiumCapacity, vipTicketPrice, clubLevelTicketPrice, bleachersTicketPrice, seasonTicketPrice, stadium);
-		db.createGameDB(name, date, this.season.get(seasonIndex));
+		db.createGameDB(name, date, this.season.get(seasonIndex),this.season.get(seasonIndex).games.get(this.season.get(seasonIndex).getNumOfGames()-1));
 	}
 
+	public void updateGameSection(int gameSectionIndex, int gameIndex, int seasonIndex, int numOfSoldTickets) {
+		season.get(seasonIndex).games.get(gameIndex).gameSections.get(gameSectionIndex-1).setSoldTickets(numOfSoldTickets);
+		db.updateGameSectionSoldTicketsDB(numOfSoldTickets, season.get(seasonIndex).getName(), season.get(seasonIndex).games.get(gameIndex).getName(), gameSectionIndex);
+	}
 	
 	public void createNewSponsor(String name, String contractStartDate, String contractEndDate, float totalContractValue) {
+
 		this.sponsors.add(new Sponsor(name, contractStartDate, contractEndDate, totalContractValue));
 		this.sponsorsSize++;
 		db.createNewSponsorDB(name, contractStartDate,contractEndDate,totalContractValue);

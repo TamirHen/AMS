@@ -9,12 +9,17 @@ public class GameSection {
 	private int unsoldTickets;
 	private float ticketPrice;
 	
-	public GameSection(Section section) {
+	public GameSection(Section section, int soldTickets) {
 		this.sectionNumber=section.getSectionNumber();
 		this.sectionType=section.getSectionType();
 		this.capacity=section.getNumOfSeats();
 		this.ticketPrice=section.getTicketPrice();
-		this.soldTickets=0;
+		if(soldTickets!=0) {
+			this.soldTickets=soldTickets;
+		}
+		else {
+			this.soldTickets=0;
+		}
 		this.unsoldTickets=capacity;
 	}
 
@@ -32,6 +37,4 @@ public class GameSection {
 		return unsoldTickets;
 	}
 
-	
-	
 }

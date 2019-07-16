@@ -28,19 +28,19 @@ public class OverviewSectionDetails extends JPanel {
 	
 	public JPanel panelSectionDetails;
 	private JLabel titleSectionDetails;
-	private JLabel lblSectionNumber;
+	public JLabel lblSectionNumber;
 	private JLabel lblSectionRanking;
-	private JTextField tf_SectionRanking;
+	public JTextField tf_SectionRanking;
 	private JLabel lblSectionType;
-	private JTextField tf_SectionType;
+	public JTextField tf_SectionType;
 	private JLabel lblTicketPrice;
-	private JTextField tf_TicketPrice;
+	public JTextField tf_TicketPrice;
 	private JLabel lblCapacity;
-	private JTextField tf_Capacity;
+	public JTextField tf_Capacity;
 	private JLabel lblIsRoofed;
+	public JTextField tf_IsRoofed;
 
 	private int lineSpacing = 11;
-	private JTextField tf_IsRoofed;
 	
 	public OverviewSectionDetails() {
 		setBackground(UI_Elements.color_mainBackgroundColor);
@@ -62,7 +62,7 @@ public class OverviewSectionDetails extends JPanel {
 		titleSectionDetails.setFont(UI_Elements.font_AgencySubPanelTitle);
 		panelSectionDetails.add(titleSectionDetails);
 		
-		lblSectionNumber = new JLabel("SECTION X");
+		lblSectionNumber = new JLabel();
 		lblSectionNumber.setVerticalAlignment(SwingConstants.TOP);
 		lblSectionNumber.setBounds(titleSectionDetails.getBounds().x, titleSectionDetails.getBounds().y+titleSectionDetails.getBounds().height+25, 265, 26);
 		lblSectionNumber.setCursor(Cursor.getPredefinedCursor(Cursor.DEFAULT_CURSOR));
@@ -78,7 +78,7 @@ public class OverviewSectionDetails extends JPanel {
 		lblSectionRanking.setBounds(lblSectionNumber.getBounds().x, lblSectionNumber.getBounds().y+lblSectionNumber.getBounds().height+lineSpacing*3, 135, 20);
 		panelSectionDetails.add(lblSectionRanking);
 		
-		tf_SectionRanking = new JTextField("High");
+		tf_SectionRanking = new JTextField();
 		tf_SectionRanking.setBorder(null);
 		tf_SectionRanking.setOpaque(false);
 		tf_SectionRanking.setBounds(lblSectionRanking.getBounds().x+lblSectionRanking.getBounds().width+25, lblSectionRanking.getBounds().y, 150, 20);
@@ -96,7 +96,7 @@ public class OverviewSectionDetails extends JPanel {
 		lblSectionType.setBounds(lblSectionRanking.getBounds().x, lblSectionRanking.getBounds().y+lblSectionRanking.getBounds().height+lineSpacing, 115, 20);
 		panelSectionDetails.add(lblSectionType);
 		
-		tf_SectionType  = new JTextField("VIP");
+		tf_SectionType  = new JTextField();
 		tf_SectionType.setBorder(null);
 		tf_SectionType.setOpaque(false);
 		tf_SectionType.setBounds(tf_SectionRanking.getBounds().x, lblSectionType.getBounds().y, 150, 20);
@@ -114,7 +114,7 @@ public class OverviewSectionDetails extends JPanel {
 		lblTicketPrice.setBounds(lblSectionType.getBounds().x, lblSectionType.getBounds().y+lblSectionType.getBounds().height+lineSpacing, 115, 20);
 		panelSectionDetails.add(lblTicketPrice);
 		
-		tf_TicketPrice  = new JTextField("$200");
+		tf_TicketPrice  = new JTextField();
 		tf_TicketPrice.setBorder(null);
 		tf_TicketPrice.setOpaque(false);
 		tf_TicketPrice.setBounds(tf_SectionRanking.getBounds().x, lblTicketPrice.getBounds().y, 150, 20);
@@ -132,7 +132,7 @@ public class OverviewSectionDetails extends JPanel {
 		lblCapacity.setBounds(lblTicketPrice.getBounds().x, lblTicketPrice.getBounds().y+lblTicketPrice.getBounds().height+lineSpacing, 115, 20);
 		panelSectionDetails.add(lblCapacity);
 		
-		tf_Capacity  = new JTextField("2,000");
+		tf_Capacity  = new JTextField();
 		tf_Capacity.setBorder(null);
 		tf_Capacity.setOpaque(false);
 		tf_Capacity.setBounds(tf_SectionRanking.getBounds().x, lblCapacity.getBounds().y, 150, 20);
@@ -150,7 +150,7 @@ public class OverviewSectionDetails extends JPanel {
 		lblIsRoofed.setBounds(lblCapacity.getBounds().x, lblCapacity.getBounds().y+lblCapacity.getBounds().height+lineSpacing, 115, 20);
 		panelSectionDetails.add(lblIsRoofed);
 		
-		tf_IsRoofed  = new JTextField("Yes");
+		tf_IsRoofed  = new JTextField();
 		tf_IsRoofed.setBorder(null);
 		tf_IsRoofed.setOpaque(false);
 		tf_IsRoofed.setBounds(tf_SectionRanking.getBounds().x, lblIsRoofed.getBounds().y, 150, 20);

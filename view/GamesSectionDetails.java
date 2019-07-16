@@ -44,8 +44,8 @@ public class GamesSectionDetails extends JPanel {
 	public JTextField tf_Attendance;
 	private JLabel lblIsRoofed;
 	public JTextField tf_IsRoofed;
-	private JButton btnAddTicketSale;
-	private GamesAddTicketSale frameAddTicketSale;
+	public JButton btnAddTicketSale;
+	public GamesAddTicketSale frameAddTicketSale;
 
 	public GamesSectionDetails() {
 		setBackground(UI_Elements.color_mainBackgroundColor);
@@ -72,7 +72,7 @@ public class GamesSectionDetails extends JPanel {
 		lblSectionNumber.setBounds(titleSectionDetails.getBounds().x, titleSectionDetails.getBounds().y+titleSectionDetails.getBounds().height+12, 115, 20);
 		panelSectionDetails.add(lblSectionNumber);
 		
-		tf_SectionNumber = new JTextField("2");
+		tf_SectionNumber = new JTextField();
 		tf_SectionNumber.setBorder(null);
 		tf_SectionNumber.setOpaque(false);
 		tf_SectionNumber.setBounds(lblSectionNumber.getBounds().x+lblSectionNumber.getBounds().width+15, lblSectionNumber.getBounds().y, 150, 20);
@@ -90,7 +90,7 @@ public class GamesSectionDetails extends JPanel {
 		lblSectionName.setBounds(lblSectionNumber.getBounds().x, lblSectionNumber.getBounds().y+lblSectionNumber.getBounds().height+lineSpacing, 115, 20);
 		panelSectionDetails.add(lblSectionName);
 		
-		tf_SectionName = new JTextField("Section 2");
+		tf_SectionName = new JTextField();
 		tf_SectionName.setBorder(null);
 		tf_SectionName.setOpaque(false);
 		tf_SectionName.setBounds(lblSectionName.getBounds().x+lblSectionName.getBounds().width+15, lblSectionName.getBounds().y, 150, 20);
@@ -108,7 +108,7 @@ public class GamesSectionDetails extends JPanel {
 		lblSectionRanking.setBounds(lblSectionName.getBounds().x, lblSectionName.getBounds().y+lblSectionName.getBounds().height+lineSpacing, 115, 20);
 		panelSectionDetails.add(lblSectionRanking);
 		
-		tf_SectionRanking = new JTextField("High"); //is it needed?
+		tf_SectionRanking = new JTextField();
 		tf_SectionRanking.setBorder(null);
 		tf_SectionRanking.setOpaque(false);
 		tf_SectionRanking.setBounds(lblSectionRanking.getBounds().x+lblSectionRanking.getBounds().width+15, lblSectionRanking.getBounds().y, 150, 20);
@@ -126,7 +126,7 @@ public class GamesSectionDetails extends JPanel {
 		lblSectionType.setBounds(lblSectionRanking.getBounds().x, lblSectionRanking.getBounds().y+lblSectionRanking.getBounds().height+lineSpacing, 115, 20);
 		panelSectionDetails.add(lblSectionType);
 		
-		tf_SectionType  = new JTextField("VIP");
+		tf_SectionType  = new JTextField();
 		tf_SectionType.setBorder(null);
 		tf_SectionType.setOpaque(false);
 		tf_SectionType.setBounds(lblSectionType.getBounds().x+lblSectionType.getBounds().width+15, lblSectionType.getBounds().y, 150, 20);
@@ -144,7 +144,7 @@ public class GamesSectionDetails extends JPanel {
 		lblTicketPrice.setBounds(lblSectionType.getBounds().x, lblSectionType.getBounds().y+lblSectionType.getBounds().height+lineSpacing, 115, 20);
 		panelSectionDetails.add(lblTicketPrice);
 		
-		tf_TicketPrice  = new JTextField("$200");
+		tf_TicketPrice  = new JTextField();
 		tf_TicketPrice.setBorder(null);
 		tf_TicketPrice.setOpaque(false);
 		tf_TicketPrice.setBounds(lblTicketPrice.getBounds().x+lblTicketPrice.getBounds().width+15, lblTicketPrice.getBounds().y, 150, 20);
@@ -162,7 +162,7 @@ public class GamesSectionDetails extends JPanel {
 		lblAttendance.setBounds(lblTicketPrice.getBounds().x, lblTicketPrice.getBounds().y+lblTicketPrice.getBounds().height+lineSpacing, 115, 20);
 		panelSectionDetails.add(lblAttendance);
 		
-		tf_Attendance  = new JTextField("1,000/2,000"); // 'takenSeats'/'numOfSeats'
+		tf_Attendance  = new JTextField(); // 'takenSeats'/'numOfSeats'
 		tf_Attendance.setBorder(null);
 		tf_Attendance.setOpaque(false);
 		tf_Attendance.setBounds(lblAttendance.getBounds().x+lblAttendance.getBounds().width+15, lblAttendance.getBounds().y, 150, 20);
@@ -180,7 +180,7 @@ public class GamesSectionDetails extends JPanel {
 		lblIsRoofed.setBounds(lblAttendance.getBounds().x, lblAttendance.getBounds().y+lblAttendance.getBounds().height+lineSpacing, 115, 20);
 		panelSectionDetails.add(lblIsRoofed);
 		
-		tf_IsRoofed  = new JTextField("Yes");
+		tf_IsRoofed  = new JTextField();
 		tf_IsRoofed.setBorder(null);
 		tf_IsRoofed.setOpaque(false);
 		tf_IsRoofed.setBounds(lblIsRoofed.getBounds().x+lblIsRoofed.getBounds().width+15, lblIsRoofed.getBounds().y, 150, 20);
@@ -214,12 +214,6 @@ public class GamesSectionDetails extends JPanel {
 		} );
 		
 		frameAddTicketSale = new GamesAddTicketSale();
-		
-		btnAddTicketSale.addActionListener(new ActionListener() {
-			public void actionPerformed(ActionEvent arg0) {
-				frameAddTicketSale.setVisible(true);
-			}
-		});
 		
 	}
 

@@ -44,7 +44,7 @@ public class Game {
 			this.seasonTicketPrice=seasonTicketPrice;
 			this.gameSections=new ArrayList<GameSection>();
 			for (int i = 0; i < stadium.getNumOfSections(); i++) {
-				gameSections.add(new GameSection(stadium.getArenaSection(i)));
+				gameSections.add(new GameSection(stadium.getArenaSection(i), 0));
 			}
 			
 		}

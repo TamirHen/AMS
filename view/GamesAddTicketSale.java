@@ -29,19 +29,19 @@ public class GamesAddTicketSale extends JFrame {
 	public JPanel panelAddTicketSale;
 	private JLabel titleAddTicketSale;
 	private int lineSpacing = 10;
-	private JLabel lblSectionNumber;
+	public JLabel lblSectionNumber;
 	private JLabel lblSectionType;
-	private JTextField tf_SectionType;
-	private JTextField tf_TicketPrice;
+	public JLabel lblSectionTypeValue;
+	public JLabel lblTicketPriceValue;
 	private JLabel lblTicketPrice;
 	private JLabel lblAvailableTickets;
-	private JTextField tf_AvailableTickets;
+	public JLabel lblAvailableTicketsValue;
 	private JLabel lblDesiredAmount;
-	private JTextField tf_DesiredAmount;
-	private JButton btnFinish;
-	private JButton btnCancel;
-	private JLabel lblErrorMessage_InavlidValue;
-	private JLabel lblErrorMessage_ValueOutOfRange;
+	public JTextField tf_DesiredAmount;
+	public JButton btnFinish;
+	public JButton btnCancel;
+	public JLabel lblErrorMessage_InavlidValue;
+	public JLabel lblErrorMessage_ValueOutOfRange;
 
 	
 	public GamesAddTicketSale() {
@@ -65,7 +65,7 @@ public class GamesAddTicketSale extends JFrame {
 		titleAddTicketSale.setFont(UI_Elements.font_AgencyMediumPanelTitle);
 		panelAddTicketSale.add(titleAddTicketSale);
 		
-		lblSectionNumber = new JLabel("SECTION X");
+		lblSectionNumber = new JLabel();
 		lblSectionNumber.setVerticalAlignment(SwingConstants.TOP);
 		lblSectionNumber.setBounds(titleAddTicketSale.getBounds().x, titleAddTicketSale.getBounds().y+titleAddTicketSale.getBounds().height+25, 265, 26);
 		lblSectionNumber.setCursor(Cursor.getPredefinedCursor(Cursor.DEFAULT_CURSOR));
@@ -80,16 +80,15 @@ public class GamesAddTicketSale extends JFrame {
 		lblSectionType.setBounds(lblSectionNumber.getBounds().x, lblSectionNumber.getBounds().y+lblSectionNumber.getBounds().height+lineSpacing*2, 115, 20);
 		panelAddTicketSale.add(lblSectionType);
 		
-		tf_SectionType  = new JTextField("VIP");
-		tf_SectionType.setBorder(null);
-		tf_SectionType.setOpaque(false);
-		tf_SectionType.setBounds(lblSectionType.getBounds().x+lblSectionType.getBounds().width+15, lblSectionType.getBounds().y, 150, 20);
-		tf_SectionType.setForeground(Color.WHITE);
-		tf_SectionType.setEnabled(true);
-		tf_SectionType.setEditable(false);
-		tf_SectionType.setHorizontalAlignment(SwingConstants.LEFT);
-		tf_SectionType.setFont(UI_Elements.font_bodyLabel);
-		panelAddTicketSale.add(tf_SectionType);
+		lblSectionTypeValue  = new JLabel();
+		lblSectionTypeValue.setBorder(null);
+		lblSectionTypeValue.setOpaque(false);
+		lblSectionTypeValue.setBounds(lblSectionType.getBounds().x+lblSectionType.getBounds().width+15, lblSectionType.getBounds().y, 150, 20);
+		lblSectionTypeValue.setForeground(Color.WHITE);
+		lblSectionTypeValue.setEnabled(true);
+		lblSectionTypeValue.setHorizontalAlignment(SwingConstants.LEFT);
+		lblSectionTypeValue.setFont(UI_Elements.font_bodyLabel);
+		panelAddTicketSale.add(lblSectionTypeValue);
 		
 		lblTicketPrice = new JLabel("Ticket Price:");
 		lblTicketPrice.setBorder(null);
@@ -98,16 +97,15 @@ public class GamesAddTicketSale extends JFrame {
 		lblTicketPrice.setBounds(lblSectionType.getBounds().x, lblSectionType.getBounds().y+lblSectionType.getBounds().height+lineSpacing, 115, 20);
 		panelAddTicketSale.add(lblTicketPrice);
 		
-		tf_TicketPrice  = new JTextField("$200");
-		tf_TicketPrice.setBorder(null);
-		tf_TicketPrice.setOpaque(false);
-		tf_TicketPrice.setBounds(lblTicketPrice.getBounds().x+lblTicketPrice.getBounds().width+15, lblTicketPrice.getBounds().y, 150, 20);
-		tf_TicketPrice.setForeground(Color.WHITE);
-		tf_TicketPrice.setEnabled(true);
-		tf_TicketPrice.setEditable(false);
-		tf_TicketPrice.setHorizontalAlignment(SwingConstants.LEFT);
-		tf_TicketPrice.setFont(UI_Elements.font_bodyLabel);
-		panelAddTicketSale.add(tf_TicketPrice);
+		lblTicketPriceValue  = new JLabel();
+		lblTicketPriceValue.setBorder(null);
+		lblTicketPriceValue.setOpaque(false);
+		lblTicketPriceValue.setBounds(lblTicketPrice.getBounds().x+lblTicketPrice.getBounds().width+15, lblTicketPrice.getBounds().y, 150, 20);
+		lblTicketPriceValue.setForeground(Color.WHITE);
+		lblTicketPriceValue.setEnabled(true);
+		lblTicketPriceValue.setHorizontalAlignment(SwingConstants.LEFT);
+		lblTicketPriceValue.setFont(UI_Elements.font_bodyLabel);
+		panelAddTicketSale.add(lblTicketPriceValue);
 		
 		lblAvailableTickets = new JLabel("Available Tickets:");
 		lblAvailableTickets.setBorder(null);
@@ -116,16 +114,15 @@ public class GamesAddTicketSale extends JFrame {
 		lblAvailableTickets.setBounds(lblTicketPrice.getBounds().x, lblTicketPrice.getBounds().y+lblTicketPrice.getBounds().height+lineSpacing, 115, 20);
 		panelAddTicketSale.add(lblAvailableTickets);
 		
-		tf_AvailableTickets  = new JTextField("1,000");
-		tf_AvailableTickets.setBorder(null);
-		tf_AvailableTickets.setOpaque(false);
-		tf_AvailableTickets.setBounds(lblAvailableTickets.getBounds().x+lblAvailableTickets.getBounds().width+15, lblAvailableTickets.getBounds().y, 150, 20);
-		tf_AvailableTickets.setForeground(Color.WHITE);
-		tf_AvailableTickets.setEnabled(true);
-		tf_AvailableTickets.setEditable(false);
-		tf_AvailableTickets.setHorizontalAlignment(SwingConstants.LEFT);
-		tf_AvailableTickets.setFont(UI_Elements.font_bodyLabel);
-		panelAddTicketSale.add(tf_AvailableTickets);
+		lblAvailableTicketsValue  = new JLabel();
+		lblAvailableTicketsValue.setBorder(null);
+		lblAvailableTicketsValue.setOpaque(false);
+		lblAvailableTicketsValue.setBounds(lblAvailableTickets.getBounds().x+lblAvailableTickets.getBounds().width+15, lblAvailableTickets.getBounds().y, 150, 20);
+		lblAvailableTicketsValue.setForeground(Color.WHITE);
+		lblAvailableTicketsValue.setEnabled(true);
+		lblAvailableTicketsValue.setHorizontalAlignment(SwingConstants.LEFT);
+		lblAvailableTicketsValue.setFont(UI_Elements.font_bodyLabel);
+		panelAddTicketSale.add(lblAvailableTicketsValue);
 		
 		lblDesiredAmount = new JLabel("Desired Amount:");
 		lblDesiredAmount.setVerticalAlignment(SwingConstants.CENTER);
@@ -199,7 +196,7 @@ public class GamesAddTicketSale extends JFrame {
 		lblErrorMessage_InavlidValue.setVisible(false);
 		panelAddTicketSale.add(lblErrorMessage_InavlidValue);
 		
-		lblErrorMessage_ValueOutOfRange = new JLabel("Value out of range! Pleas enter a value between 0 and X"); //x = available tickets
+		lblErrorMessage_ValueOutOfRange = new JLabel("Not enough tickets left in this section"); 
 		lblErrorMessage_ValueOutOfRange.setBounds(btnFinish.getBounds().x, btnFinish.getBounds().y+btnFinish.getBounds().height+lineSpacing+5, 325, 30);
 		lblErrorMessage_ValueOutOfRange.setHorizontalAlignment(SwingConstants.LEFT);
 		lblErrorMessage_ValueOutOfRange.setFont(UI_Elements.font_bodyFillText);

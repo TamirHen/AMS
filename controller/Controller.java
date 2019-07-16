@@ -782,12 +782,10 @@ public class Controller {
 			
 				}
 		});
-			
 
-
-			//-----------------------------------------//
+		//-----------------------------------------//
 		
-		//---Game Panel (in view)---//
+		//---Games Panel (in view)---//
 		for (int i = 0; i < model.seasonSize; i++) {
 			view.gamesPanel.cb_SalesSeason.addItem(model.season.get(i).getName() + " - " + model.season.get(i).getLeagueName());
 		}
@@ -830,6 +828,36 @@ public class Controller {
 				view.gamesPanel.addSeasonPanel.setButtonsToDefault();
 			}
 		});
+
+		view.gamesPanel.sectionDetailsPanel.btnAddTicketSale.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent arg0) {
+				view.gamesPanel.sectionDetailsPanel.frameAddTicketSale.setVisible(true);
+				viewStadiumSectionDetails(view.gamesPanel.cb_SalesSeason.getSelectedIndex(), view.gamesPanel.cb_SalesGame.getSelectedIndex(),Integer.valueOf(view.gamesPanel.gamesStadiumPanel.lastSelectedButton.getName())-1,4);
+			}
+		});
+		view.gamesPanel.sectionDetailsPanel.frameAddTicketSale.btnFinish.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent arg0) {
+						
+				if(model.season.get(view.gamesPanel.cb_SalesSeason.getSelectedIndex()).games.get(view.gamesPanel.cb_SalesGame.getSelectedIndex()).gameSections.get(Integer.valueOf(view.gamesPanel.gamesStadiumPanel.lastSelectedButton.getName())-1).getUnsoldTickets()<Integer.valueOf(view.gamesPanel.sectionDetailsPanel.frameAddTicketSale.tf_DesiredAmount.getText())) {
+					view.gamesPanel.sectionDetailsPanel.frameAddTicketSale.lblErrorMessage_ValueOutOfRange.setVisible(true);
+				}
+				else {
+					viewStadiumSectionDetails(view.gamesPanel.cb_SalesSeason.getSelectedIndex(), view.gamesPanel.cb_SalesGame.getSelectedIndex(),Integer.valueOf(view.gamesPanel.gamesStadiumPanel.lastSelectedButton.getName()),3);
+					view.gamesPanel.sectionDetailsPanel.frameAddTicketSale.setVisible(false);
+					view.gamesPanel.sectionDetailsPanel.frameAddTicketSale.tf_DesiredAmount.setText("");
+					view.gamesPanel.sectionDetailsPanel.frameAddTicketSale.lblErrorMessage_ValueOutOfRange.setVisible(false);
+
+				}
+
+			}
+		});
+		view.gamesPanel.sectionDetailsPanel.frameAddTicketSale.btnCancel.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent arg0) {
+				view.gamesPanel.sectionDetailsPanel.frameAddTicketSale.setVisible(false);
+				view.gamesPanel.sectionDetailsPanel.frameAddTicketSale.tf_DesiredAmount.setText("");
+				view.gamesPanel.sectionDetailsPanel.frameAddTicketSale.lblErrorMessage_ValueOutOfRange.setVisible(false);
+			}
+		});
 		
 		view.gamesPanel.addSeasonPanel.btnAddSeasonCancel.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
@@ -837,6 +865,7 @@ public class Controller {
 				view.gamesPanel.addSeasonPanel.setButtonsToDefault();
 				view.gamesPanel.gamesStadiumPanel.assignDetailsPanel(view.gamesPanel.sectionDetailsPanel);
 				view.gamesPanel.addSeasonPanel.setButtonsToDefault();
+
 			}
 		});
 		//---ViewStadium Image Manipulations---//
@@ -1161,7 +1190,6 @@ public class Controller {
 		//--------------------------//
 
 		
-		
 	}//end of constructor
 	
 	//---controller methods---//
@@ -1194,6 +1222,104 @@ public class Controller {
 			view.salesPanel.ticketsPanel.tf_TotalNumOfSeasonTickets.setText(String.valueOf(model.season.get(seasonIndex).games.get(gameIndex).getSeasonTicketsSold()));
 			view.salesPanel.ticketsPanel.tf_TotalSeasonTicketRevenue.setText(String.valueOf(model.season.get(seasonIndex).games.get(gameIndex).getSeasonTicketsRevenue()));
 
+		}
+		//games panel:
+		private void displayAllGamesInSelectedSeason() {
+				
+				view.gamesPanel.cb_SalesGame.removeAllItems();
+				if (view.gamesPanel.cb_SalesSeason.getSelectedIndex()>-1) {
+					for (int i = 0; i < model.season.get(view.gamesPanel.cb_SalesSeason.getSelectedIndex()).getNumOfGames(); i++) {
+						view.gamesPanel.cb_SalesGame.addItem(model.season.get(view.gamesPanel.cb_SalesSeason.getSelectedIndex()).games.get(i).getName() + " - " + model.season.get(view.gamesPanel.cb_SalesSeason.getSelectedIndex()).games.get(i).getDate());
+					}
+				}
+				//--- for the sale panel ---//
+				view.salesPanel.cb_SalesGame.removeAllItems();
+				if (view.salesPanel.cb_SalesSeason.getSelectedIndex()>-1) {
+					for (int i = 0; i < model.season.get(view.salesPanel.cb_SalesSeason.getSelectedIndex()).getNumOfGames(); i++) {
+						view.salesPanel.cb_SalesGame.addItem(model.season.get(view.salesPanel.cb_SalesSeason.getSelectedIndex()).games.get(i).getName());
+					}
+				}
+		}
+		
+		//login panel:
+		public void btnLoginPressed() {
+		view.loginPanel.panelLogin.setVisible(false);
+		switchMainMenuPage(view.menuPanel.btnOverview); //Mimics use of btnOverview as startup view
+		
+		view.loginPanel.lblLoginFailed.setVisible(false);
+		
+		//set the logged in user:
+		view.menuPanel.btnUserName.setText("Welcome "+model.signInUser.getFirstName()+"!");
+		view.menuPanel.btnUserName.setBorder(null);
+		
+		}
+		
+		//properties panel:
+		public void displaySectionDetails(int index) {
+
+			view.propertiesPanel.cb_SectionType.setSelectedItem(model.stadium.getArenaSection(index).getSectionType());
+			view.propertiesPanel.cb_SectionRanking.setSelectedItem(model.stadium.getArenaSection(index).getSectionRanking());
+			view.propertiesPanel.tf_SectionNumOfSeats.setText(String.valueOf(model.stadium.getArenaSection(index).getNumOfSeats()));
+			if (model.stadium.getArenaSection(index).isRoofed()) {
+				view.propertiesPanel.rdbtnIsRoofedYes.setSelected(true);
+				view.propertiesPanel.rdbtnIsRoofedNO.setSelected(false);
+			} else {
+				view.propertiesPanel.rdbtnIsRoofedYes.setSelected(false);
+				view.propertiesPanel.rdbtnIsRoofedNO.setSelected(true);
+			}
+
+		}
+		
+		//ViewStadium
+		public void viewSectionDetails(int sectionToDisplay, boolean viewStadiumToDisplayIn/*  1=viewStadium in overview panel, 0=viewStadium in games panel  */) {
+			if (viewStadiumToDisplayIn==true) {
+//				view.gamesPanel.sectionDetailsPanel.tf_SectionNumber.setText(String.valueOf(model.stadium.getArenaSection(sectionToDisplay).getSectionNumber())));
+			}
+			else {
+				
+			}
+		}
+		//ViewStadium
+		public void viewStadiumSectionDetails(int seasonIndex, int gameIndex, int sectionToDisplay, int viewStadiumToDisplayIn/*  1=viewStadium in games panel, 2=viewStadium in overview panel, 3=details in ticket sale  */) {
+			if (viewStadiumToDisplayIn==1) {
+				view.gamesPanel.sectionDetailsPanel.tf_SectionNumber.setText(String.valueOf(model.stadium.getArenaSection(sectionToDisplay).getSectionNumber()));
+				view.gamesPanel.sectionDetailsPanel.tf_SectionName.setText(String.valueOf(model.stadium.getArenaSection(sectionToDisplay).getSectionName()));
+				view.gamesPanel.sectionDetailsPanel.tf_SectionRanking.setText(String.valueOf(model.stadium.getArenaSection(sectionToDisplay).getSectionRanking()));
+				view.gamesPanel.sectionDetailsPanel.tf_SectionType.setText(String.valueOf(model.stadium.getArenaSection(sectionToDisplay).getSectionType()));
+				view.gamesPanel.sectionDetailsPanel.tf_TicketPrice.setText(String.valueOf(model.stadium.getArenaSection(sectionToDisplay).getTicketPrice()));
+				view.gamesPanel.sectionDetailsPanel.tf_Attendance.setText(String.valueOf(model.season.get(seasonIndex).games.get(gameIndex).gameSections.get(sectionToDisplay).getSoldTickets()) + "/" + String.valueOf(model.stadium.getArenaSection(sectionToDisplay).getNumOfSeats()));
+				//if for isRoofed:
+				if (model.stadium.getArenaSection(sectionToDisplay).isRoofed()==true) {
+					view.gamesPanel.sectionDetailsPanel.tf_IsRoofed.setText("Yes");
+				} else {
+					view.gamesPanel.sectionDetailsPanel.tf_IsRoofed.setText("No");
+				}
+			}
+			else if(viewStadiumToDisplayIn==2) {
+				view.overviewPanel.sectionDetailsPanel.lblSectionNumber.setText(String.valueOf(model.stadium.getArenaSection(sectionToDisplay).getSectionName()));
+				view.overviewPanel.sectionDetailsPanel.tf_SectionRanking.setText(String.valueOf(model.stadium.getArenaSection(sectionToDisplay).getSectionRanking()));
+				view.overviewPanel.sectionDetailsPanel.tf_SectionType.setText(String.valueOf(model.stadium.getArenaSection(sectionToDisplay).getSectionType()));
+				view.overviewPanel.sectionDetailsPanel.tf_TicketPrice.setText(String.valueOf(model.stadium.getArenaSection(sectionToDisplay).getTicketPrice()));
+				view.overviewPanel.sectionDetailsPanel.tf_Capacity.setText(String.valueOf(model.stadium.getArenaSection(sectionToDisplay).getNumOfSeats()));
+				//if for isRoofed:
+				if (model.stadium.getArenaSection(sectionToDisplay).isRoofed()==true) {
+					view.overviewPanel.sectionDetailsPanel.tf_IsRoofed.setText("Yes");
+				} else {
+					view.overviewPanel.sectionDetailsPanel.tf_IsRoofed.setText("No");
+				}
+			}
+			else if(viewStadiumToDisplayIn==3){
+				model.updateGameSection(sectionToDisplay, gameIndex, seasonIndex, Integer.valueOf(view.gamesPanel.sectionDetailsPanel.frameAddTicketSale.tf_DesiredAmount.getText()));
+				view.gamesPanel.sectionDetailsPanel.tf_Attendance.setText(String.valueOf(model.season.get(seasonIndex).games.get(gameIndex).gameSections.get(sectionToDisplay-1).getSoldTickets()) + "/" + String.valueOf(model.stadium.getArenaSection(sectionToDisplay-1).getNumOfSeats()));
+
+			}
+			else {
+				view.gamesPanel.sectionDetailsPanel.frameAddTicketSale.lblSectionNumber.setText(model.stadium.getArenaSection(sectionToDisplay).getSectionName());
+				view.gamesPanel.sectionDetailsPanel.frameAddTicketSale.lblSectionTypeValue.setText(model.stadium.getArenaSection(sectionToDisplay).getSectionType());
+				view.gamesPanel.sectionDetailsPanel.frameAddTicketSale.lblTicketPriceValue.setText(String.valueOf(model.stadium.getArenaSection(sectionToDisplay).getTicketPrice()));
+				view.gamesPanel.sectionDetailsPanel.frameAddTicketSale.lblAvailableTicketsValue.setText(String.valueOf(model.season.get(view.gamesPanel.cb_SalesSeason.getSelectedIndex()).games.get(view.gamesPanel.cb_SalesGame.getSelectedIndex()).gameSections.get(sectionToDisplay).getUnsoldTickets()));
+
+			}
 		}
 		
 		//facilities panel:
@@ -1229,62 +1355,7 @@ public class Controller {
 			view.facilitiesPanel.maintenancePanel.maintenanceToDisplay[model.maintenanceSize]=new String[] {"","","",""};
 			view.facilitiesPanel.maintenancePanel.maintenanceEmployeeTableScrollPane.repaint();
 		}
-	//games panel:
-	private void displayAllGamesInSelectedSeason() {
-			
-			view.gamesPanel.cb_SalesGame.removeAllItems();
-			if (view.gamesPanel.cb_SalesSeason.getSelectedIndex()>-1) {
-				for (int i = 0; i < model.season.get(view.gamesPanel.cb_SalesSeason.getSelectedIndex()).getNumOfGames(); i++) {
-					view.gamesPanel.cb_SalesGame.addItem(model.season.get(view.gamesPanel.cb_SalesSeason.getSelectedIndex()).games.get(i).getName() + " - " + model.season.get(view.gamesPanel.cb_SalesSeason.getSelectedIndex()).games.get(i).getDate());
-				}
-			}
-			//--- for the sale panel ---//
-			view.salesPanel.cb_SalesGame.removeAllItems();
-			if (view.salesPanel.cb_SalesSeason.getSelectedIndex()>-1) {
-				for (int i = 0; i < model.season.get(view.salesPanel.cb_SalesSeason.getSelectedIndex()).getNumOfGames(); i++) {
-					view.salesPanel.cb_SalesGame.addItem(model.season.get(view.salesPanel.cb_SalesSeason.getSelectedIndex()).games.get(i).getName());
-				}
-			}
-	}
 	
-	//login panel:
-	public void btnLoginPressed() {
-	view.loginPanel.panelLogin.setVisible(false);
-	switchMainMenuPage(view.menuPanel.btnOverview); //Mimics use of btnOverview as startup view
-	
-	view.loginPanel.lblLoginFailed.setVisible(false);
-	
-	//set the logged in user:
-	view.menuPanel.btnUserName.setText("Welcome "+model.signInUser.getFirstName()+"!");
-	view.menuPanel.btnUserName.setBorder(null);
-	
-	}
-	
-	//properties panel:
-	public void displaySectionDetails(int index) {
-
-		view.propertiesPanel.cb_SectionType.setSelectedItem(model.stadium.getArenaSection(index).getSectionType());
-		view.propertiesPanel.cb_SectionRanking.setSelectedItem(model.stadium.getArenaSection(index).getSectionRanking());
-		view.propertiesPanel.tf_SectionNumOfSeats.setText(String.valueOf(model.stadium.getArenaSection(index).getNumOfSeats()));
-		if (model.stadium.getArenaSection(index).isRoofed()) {
-			view.propertiesPanel.rdbtnIsRoofedYes.setSelected(true);
-			view.propertiesPanel.rdbtnIsRoofedNO.setSelected(false);
-		} else {
-			view.propertiesPanel.rdbtnIsRoofedYes.setSelected(false);
-			view.propertiesPanel.rdbtnIsRoofedNO.setSelected(true);
-		}
-
-	}
-	
-	//ViewStadium
-	public void viewSectionDetails(int sectionToDisplay, boolean viewStadiumToDisplayIn/*  1=viewStadium in overview panel, 0=viewStadium in games panel  */) {
-		if (viewStadiumToDisplayIn==true) {
-//			view.gamesPanel.sectionDetailsPanel.tf_SectionNumber.setText(String.valueOf(model.stadium.getArenaSection(sectionToDisplay).getSectionNumber())));
-		}
-		else {
-			
-		}
-	}
 	
 	public String getViewStadiumSectionType(int i_SectionNum) {
 		
@@ -1300,9 +1371,9 @@ public class Controller {
 			else
 			{
 				type.append("_" + sectionType);				
+
 			}
 		}
-		
 		return type.toString();
 	}
 	
@@ -1623,7 +1694,6 @@ public class Controller {
 	
 	private void setButtonListeners(int i_Index)
 	{
-		
 		if(i_Index == 0)
 		{
 			for(int i=1;i<mouseAdaptersOverview.size();i++)
@@ -1678,7 +1748,6 @@ public class Controller {
 				String sectionIndex = Integer.toString(i);
 				path.append("/Images/StadiumSlices/Stadium" + getViewStadiumSectionType(i) + "_" + sectionIndex + ".png");
 				stadiumImagePaths.set(i, path.toString());
-				
 			}
 		}
 		else
@@ -1736,6 +1805,7 @@ public class Controller {
 	{
 		setStadiumImages(i_Index);		
 		if(i_Index == 0)
+
 		{
 			for(int i=1;i<stadiumButtonsOverview.size();i++)
 			{
