@@ -13,6 +13,7 @@ import javax.swing.ToolTipManager;
 import javax.swing.Icon;
 import javax.swing.ImageIcon;
 import javax.swing.JButton;
+import javax.swing.JComboBox;
 import javax.swing.JLabel;
 import javax.swing.JPanel;
 import javax.swing.JSeparator;
@@ -26,6 +27,8 @@ public class ViewStadium extends JPanel {
 	public JPanel panelViewStadium;
 	public JLabel viewStadium;
 	private ImageIcon stadium = new ImageIcon(Overview.class.getResource("/Images/Stadium.png"));
+	
+	public List<JComboBox<String>> observerComboboxes = new ArrayList<JComboBox<String>>();
 	
 	public JButton viewStadium_1;
 	public JButton viewStadium_2;
@@ -521,6 +524,14 @@ public class ViewStadium extends JPanel {
     		lastSelectedButton = i_Section;
     		lastButtonMouseAdapter = i_SectionAdapter;
 			numOfSelected++;
+			if(observerComboboxes.size() > 0)
+			{
+				for(JComboBox box : observerComboboxes)
+				{
+					box.setEnabled(false);
+				}
+			}
+			
     	}
 		else
 		{
@@ -529,6 +540,13 @@ public class ViewStadium extends JPanel {
 			if(numOfSelected == 0)
 			{
 				detailsPanel.setVisible(false);
+			}
+			if(observerComboboxes.size() > 0)
+			{
+				for(JComboBox box : observerComboboxes)
+				{
+					box.setEnabled(true);
+				}
 			}
 		}
 		
