@@ -1725,15 +1725,16 @@ public class Controller {
 			stadiumButtonsOverview.get(i_Index).addActionListener(new ActionListener() {
 				public void actionPerformed(ActionEvent arg0) {
 					view.overviewPanel.overviewStadiumPanel.stadiumSectionSelection(stadiumButtonsOverview.get(i_Index), mouseAdaptersOverview.get(i_Index), stadiumImagesRollover.get(i_Index));
+					viewStadiumSectionDetails(0, 0, i_Index-1, 2);
 				}
 			});
 			stadiumButtonsGames.get(i_Index).addActionListener(new ActionListener() {
 				public void actionPerformed(ActionEvent arg0) {
 					view.gamesPanel.gamesStadiumPanel.stadiumSectionSelection(stadiumButtonsGames.get(i_Index), mouseAdaptersGames.get(i_Index), stadiumImagesRollover.get(i_Index));
+					viewStadiumSectionDetails(view.gamesPanel.cb_SalesSeason.getSelectedIndex(), view.gamesPanel.cb_SalesGame.getSelectedIndex(), i_Index-1, 1);
 				}
 			});
 		}
-		
 		
 	}
 	
