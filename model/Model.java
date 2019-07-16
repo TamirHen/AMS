@@ -85,7 +85,10 @@ public class Model {
 		db.createGameDB(name, date, this.season.get(seasonIndex),this.season.get(seasonIndex).games.get(this.season.get(seasonIndex).getNumOfGames()-1));
 	}
 
-	
+	public void updateGameSection(int gameSectionIndex, int gameIndex, int seasonIndex, int numOfSoldTickets) {
+		season.get(seasonIndex).games.get(gameIndex).gameSections.get(gameSectionIndex).setSoldTickets(numOfSoldTickets);
+		db.updateGameSectionSoldTicketsDB(numOfSoldTickets, season.get(seasonIndex).getName(), season.get(seasonIndex).games.get(gameIndex).getName(), gameSectionIndex/*need to check if to send index or index+1*/);
+	}
 	public void createNewSponsor(String name, Date contractStartDate, Date contractEndDate, float totalContractValue) {
 		this.sponsors.add(new Sponsor(name, contractStartDate, contractEndDate, totalContractValue));
 		this.sponsorsSize++;

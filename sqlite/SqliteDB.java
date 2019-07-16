@@ -299,11 +299,11 @@ public class SqliteDB {
 		}
 	}
 	
-	public void updateGameSectionSoldTicketsDB(int totalSoldTickets) {
+	public void updateGameSectionSoldTicketsDB(int totalSoldTickets, String seasonName, String gameName, int sectionNumber) {
 		try {
 			this.stmt = c.createStatement();
-			System.out.println("update gameSection set soldTickets="+totalSoldTickets);
-			stmt.executeUpdate("update gameSection set soldTickets="+totalSoldTickets);
+			System.out.println("update gameSection set soldTickets="+totalSoldTickets+" where game='"+gameName+"' and seasonName='"+seasonName+"' and sectionNumber="+sectionNumber);
+			stmt.executeUpdate("update gameSection set soldTickets="+totalSoldTickets+" where game='"+gameName+"' and seasonName='"+seasonName+"'");
 		} catch (Exception e) {
 			System.out.println("Error: " + e.getMessage());
 
