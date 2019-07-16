@@ -48,7 +48,7 @@ public class FacilitiesSecurity extends JPanel {
 		titleSecurity.setBounds(30, 22, 346, 76);
 		titleSecurity.setCursor(Cursor.getPredefinedCursor(Cursor.DEFAULT_CURSOR));
 		titleSecurity.setForeground(UI_Elements.color_mainBackgroundColor);
-		titleSecurity.setFont(new Font(UI_Elements.mainFontName, Font.BOLD, UI_Elements.textSubPanelTitleSize));
+		titleSecurity.setFont(UI_Elements.font_AgencySubPanelTitle);
 		panelSecurity.add(titleSecurity);
 		
 	
@@ -69,7 +69,7 @@ public class FacilitiesSecurity extends JPanel {
 		btnAddSecurity.setForeground(Color.WHITE);
 		btnAddSecurity.setOpaque(true);
 		btnAddSecurity.setBorder(null);
-		btnAddSecurity.setFont(new Font(UI_Elements.mainFontName, Font.PLAIN, 20));
+		btnAddSecurity.setFont(UI_Elements.font_AgencyBodyButton);
 		btnAddSecurity.setBackground(UI_Elements.color_mainBackgroundColor);
 		btnAddSecurity.setBounds(securityEmployeeTableScrollPane.getBounds().x, securityEmployeeTableScrollPane.getBounds().y+securityEmployeeTableScrollPane.getBounds().height+20, securityEmployeeTableScrollPane.getBounds().width/2 - 5, 30);
 		btnAddSecurity.setSelected(false);
@@ -98,7 +98,7 @@ public class FacilitiesSecurity extends JPanel {
 		btnRemoveSecurity.setForeground(Color.WHITE);
 		btnRemoveSecurity.setOpaque(true);
 		btnRemoveSecurity.setBorder(null);
-		btnRemoveSecurity.setFont(new Font(UI_Elements.mainFontName, Font.PLAIN, 20));
+		btnRemoveSecurity.setFont(UI_Elements.font_AgencyBodyButton);
 		btnRemoveSecurity.setBackground(UI_Elements.color_mainBackgroundColor);
 		btnRemoveSecurity.setBounds(securityEmployeeTableScrollPane.getBounds().x + securityEmployeeTableScrollPane.getBounds().width - btnAddSecurity.getBounds().width, btnAddSecurity.getBounds().y, securityEmployeeTableScrollPane.getBounds().width/2 - 5, btnAddSecurity.getBounds().height);
 		btnRemoveSecurity.setSelected(false);

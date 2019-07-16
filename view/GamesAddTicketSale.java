@@ -61,7 +61,8 @@ public class GamesAddTicketSale extends JFrame {
 		titleAddTicketSale.setBounds(25, 22, 265, 30);
 		titleAddTicketSale.setCursor(Cursor.getPredefinedCursor(Cursor.DEFAULT_CURSOR));
 		titleAddTicketSale.setForeground(Color.WHITE);
-		titleAddTicketSale.setFont(new Font(UI_Elements.mainFontName, Font.BOLD, 28));
+		//titleAddTicketSale.setFont(new Font(UI_Elements.mainFontName, Font.BOLD, 28));
+		titleAddTicketSale.setFont(UI_Elements.font_AgencyMediumPanelTitle);
 		panelAddTicketSale.add(titleAddTicketSale);
 		
 		lblSectionNumber = new JLabel("SECTION X");
@@ -69,7 +70,7 @@ public class GamesAddTicketSale extends JFrame {
 		lblSectionNumber.setBounds(titleAddTicketSale.getBounds().x, titleAddTicketSale.getBounds().y+titleAddTicketSale.getBounds().height+25, 265, 26);
 		lblSectionNumber.setCursor(Cursor.getPredefinedCursor(Cursor.DEFAULT_CURSOR));
 		lblSectionNumber.setForeground(Color.WHITE);
-		lblSectionNumber.setFont(new Font(UI_Elements.mainFontName, Font.BOLD, 23));
+		lblSectionNumber.setFont(UI_Elements.font_AgencyHeader);
 		panelAddTicketSale.add(lblSectionNumber);
 		
 		lblSectionType = new JLabel("Section Type:");
@@ -154,7 +155,7 @@ public class GamesAddTicketSale extends JFrame {
 		btnFinish.setForeground(Color.WHITE);
 		btnFinish.setOpaque(true);
 		btnFinish.setBorder(null);
-		btnFinish.setFont(new Font(UI_Elements.mainFontName, Font.PLAIN, 18));
+		btnFinish.setFont(UI_Elements.font_AgencyActionButton);
 		btnFinish.setBackground(UI_Elements.color_panelBodyButtonDefault);
 		btnFinish.setBounds(lblDesiredAmount.getBounds().x, lblDesiredAmount.getBounds().y+lblDesiredAmount.getBounds().height+lineSpacing*2, 75, 25);
 		btnFinish.setSelected(false);
@@ -176,7 +177,7 @@ public class GamesAddTicketSale extends JFrame {
 		btnCancel.setForeground(Color.WHITE);
 		btnCancel.setOpaque(true);
 		btnCancel.setBorder(null);
-		btnCancel.setFont(new Font(UI_Elements.mainFontName, Font.PLAIN, 18));
+		btnCancel.setFont(UI_Elements.font_AgencyActionButton);
 		btnCancel.setBackground(UI_Elements.color_panelBodyButtonDefault);
 		btnCancel.setBounds(btnFinish.getBounds().x + btnFinish.getBounds().width + 7, btnFinish.getBounds().y, 75, 25);
 		btnCancel.setSelected(false);

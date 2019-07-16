@@ -51,7 +51,7 @@ public class GamesAddGame extends JPanel {
 		titleAddGame.setBounds(35, 1, 265, 26);
 		titleAddGame.setCursor(Cursor.getPredefinedCursor(Cursor.DEFAULT_CURSOR));
 		titleAddGame.setForeground(Color.WHITE);
-		titleAddGame.setFont(new Font(UI_Elements.mainFontName, Font.BOLD, 20));
+		titleAddGame.setFont(UI_Elements.font_AgencyHeader);
 		panelAddGame.add(titleAddGame);
 		
 		lblGameName = new JLabel("Game Name:");
@@ -96,7 +96,7 @@ public class GamesAddGame extends JPanel {
 		btnAddGameFinish.setForeground(Color.WHITE);
 		btnAddGameFinish.setOpaque(true);
 		btnAddGameFinish.setBorder(null);
-		btnAddGameFinish.setFont(new Font(UI_Elements.mainFontName, Font.PLAIN, 18));
+		btnAddGameFinish.setFont(UI_Elements.font_AgencyActionButton);
 		btnAddGameFinish.setBackground(UI_Elements.color_panelBodyButtonDefault);
 		btnAddGameFinish.setBounds(35, tf_Date.getBounds().y+tf_Date.getBounds().height+12, 75, 25);
 		btnAddGameFinish.setSelected(false);
@@ -118,7 +118,7 @@ public class GamesAddGame extends JPanel {
 		btnAddGameCancel.setForeground(Color.WHITE);
 		btnAddGameCancel.setOpaque(true);
 		btnAddGameCancel.setBorder(null);
-		btnAddGameCancel.setFont(new Font(UI_Elements.mainFontName, Font.PLAIN, 18));
+		btnAddGameCancel.setFont(UI_Elements.font_AgencyActionButton);
 		btnAddGameCancel.setBackground(UI_Elements.color_panelBodyButtonDefault);
 		btnAddGameCancel.setBounds(btnAddGameFinish.getBounds().x + btnAddGameFinish.getBounds().width + 15, btnAddGameFinish.getBounds().y, 75, 25);
 		btnAddGameCancel.setSelected(false);

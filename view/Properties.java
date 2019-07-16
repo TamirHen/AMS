@@ -85,7 +85,7 @@ public class Properties extends JPanel {
 		titleProperties.setBounds(25, 22, 470, 76);
 		titleProperties.setCursor(Cursor.getPredefinedCursor(Cursor.DEFAULT_CURSOR));
 		titleProperties.setForeground(Color.WHITE);
-		titleProperties.setFont(new Font(UI_Elements.mainFontName, Font.BOLD, UI_Elements.textPanelTitleSize));
+		titleProperties.setFont(UI_Elements.font_AgencyPanelTitle);
 		panelProperties.add(titleProperties);
 
 		lblArenaName = new JLabel("Arena Name:");
@@ -290,7 +290,7 @@ public class Properties extends JPanel {
 		btnEditProperties.setForeground(Color.WHITE);
 		btnEditProperties.setOpaque(true);
 		btnEditProperties.setBorder(null);
-		btnEditProperties.setFont(new Font(UI_Elements.mainFontName, Font.PLAIN, 17));
+		btnEditProperties.setFont(UI_Elements.font_AgencyActionButton);
 		btnEditProperties.setBackground(UI_Elements.color_panelBodyButtonDefault);
 		btnEditProperties.addMouseListener(new MouseAdapter() {
 			public void mouseEntered(MouseEvent e) {
@@ -314,7 +314,7 @@ public class Properties extends JPanel {
 		btnFinishEditingProperties.setForeground(Color.WHITE);
 		btnFinishEditingProperties.setOpaque(true);
 		btnFinishEditingProperties.setBorder(null);
-		btnFinishEditingProperties.setFont(new Font(UI_Elements.mainFontName, Font.PLAIN, 17));
+		btnFinishEditingProperties.setFont(UI_Elements.font_AgencyActionButton);
 		btnFinishEditingProperties.setBackground(UI_Elements.color_panelBodyButtonDefault);
 		btnFinishEditingProperties.addMouseListener(new MouseAdapter() {
 			public void mouseEntered(MouseEvent e) {
@@ -338,7 +338,7 @@ public class Properties extends JPanel {
 		btnCancelEditing.setForeground(Color.WHITE);
 		btnCancelEditing.setOpaque(true);
 		btnCancelEditing.setBorder(null);
-		btnCancelEditing.setFont(new Font(UI_Elements.mainFontName, Font.PLAIN, 17));
+		btnCancelEditing.setFont(UI_Elements.font_AgencyActionButton);;
 		btnCancelEditing.setBackground(UI_Elements.color_panelBodyButtonDefault);
 		btnCancelEditing.addMouseListener(new MouseAdapter() {
 			public void mouseEntered(MouseEvent e) {
@@ -362,7 +362,7 @@ public class Properties extends JPanel {
 		btnEditTicketPrices.setForeground(Color.WHITE);
 		btnEditTicketPrices.setOpaque(true);
 		btnEditTicketPrices.setBorder(null);
-		btnEditTicketPrices.setFont(new Font(UI_Elements.mainFontName, Font.PLAIN, 17));
+		btnEditTicketPrices.setFont(UI_Elements.font_AgencyActionButton);
 		btnEditTicketPrices.setBackground(UI_Elements.color_panelBodyButtonDefault);
 		btnEditTicketPrices.addMouseListener(new MouseAdapter() {
 			public void mouseEntered(MouseEvent e) {

@@ -40,7 +40,7 @@ public class Facilities extends JPanel {
 		titleFacilities.setBounds(25, 22, 470, 76);
 		titleFacilities.setCursor(Cursor.getPredefinedCursor(Cursor.DEFAULT_CURSOR));
 		titleFacilities.setForeground(Color.WHITE);
-		titleFacilities.setFont(new Font(UI_Elements.mainFontName, Font.BOLD, UI_Elements.textPanelTitleSize));
+		titleFacilities.setFont(UI_Elements.font_AgencyPanelTitle);
 		panelFacilities.add(titleFacilities);
 		
 		
@@ -104,7 +104,7 @@ public class Facilities extends JPanel {
 		btnSecurity.setForeground(Color.WHITE);
 		btnSecurity.setOpaque(true);
 		btnSecurity.setBorder(null);
-		btnSecurity.setFont(new Font(UI_Elements.mainFontName, Font.PLAIN, 20));
+		btnSecurity.setFont(UI_Elements.font_AgencyBodyButton);
 		btnSecurity.setBackground(UI_Elements.color_panelBodyButtonDefault);
 		btnSecurity.setBounds(35, 103, 265, 40);
 		panelFacilities.add(btnSecurity);
@@ -132,7 +132,7 @@ public class Facilities extends JPanel {
 		btnMaintenance.setForeground(Color.WHITE);
 		btnMaintenance.setOpaque(true);
 		btnMaintenance.setBorder(null);
-		btnMaintenance.setFont(new Font(UI_Elements.mainFontName, Font.PLAIN, 20));
+		btnMaintenance.setFont(UI_Elements.font_AgencyBodyButton);
 		btnMaintenance.setBackground(UI_Elements.color_panelBodyButtonDefault);
 		btnMaintenance.setBounds(35, (btnSecurity.getBounds().y)+55, 265, 40);
 		panelFacilities.add(btnMaintenance);

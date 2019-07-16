@@ -68,7 +68,7 @@ public class SalesSponsorships extends JPanel {
 		titleSponsorships.setBounds(30, 22, 346, 76);
 		titleSponsorships.setCursor(Cursor.getPredefinedCursor(Cursor.DEFAULT_CURSOR));
 		titleSponsorships.setForeground(UI_Elements.color_mainBackgroundColor);
-		titleSponsorships.setFont(new Font(UI_Elements.mainFontName, Font.BOLD, UI_Elements.textSubPanelTitleSize));
+		titleSponsorships.setFont(UI_Elements.font_AgencySubPanelTitle);
 		panelSponsorships.add(titleSponsorships);
 		
 	
@@ -89,7 +89,7 @@ public class SalesSponsorships extends JPanel {
 		btnAddSponsor.setForeground(Color.WHITE);
 		btnAddSponsor.setOpaque(true);
 		btnAddSponsor.setBorder(null);
-		btnAddSponsor.setFont(new Font(UI_Elements.mainFontName, Font.PLAIN, 20));
+		btnAddSponsor.setFont(UI_Elements.font_AgencyBodyButton);
 		btnAddSponsor.setBackground(UI_Elements.color_mainBackgroundColor);
 		btnAddSponsor.setBounds(sponsorTableScrollPane.getBounds().x, sponsorTableScrollPane.getBounds().y+sponsorTableScrollPane.getBounds().height+20, sponsorTableScrollPane.getBounds().width/2 - 5, 30);
 		btnAddSponsor.setSelected(false);
@@ -118,7 +118,7 @@ public class SalesSponsorships extends JPanel {
 		btnRemoveSponsor.setForeground(Color.WHITE);
 		btnRemoveSponsor.setOpaque(true);
 		btnRemoveSponsor.setBorder(null);
-		btnRemoveSponsor.setFont(new Font(UI_Elements.mainFontName, Font.PLAIN, 20));
+		btnRemoveSponsor.setFont(UI_Elements.font_AgencyBodyButton);
 		btnRemoveSponsor.setBackground(UI_Elements.color_mainBackgroundColor);
 		btnRemoveSponsor.setBounds(sponsorTableScrollPane.getBounds().x + sponsorTableScrollPane.getBounds().width - btnAddSponsor.getBounds().width, btnAddSponsor.getBounds().y, sponsorTableScrollPane.getBounds().width/2 - 5, btnAddSponsor.getBounds().height);
 		btnRemoveSponsor.setSelected(false);
@@ -215,7 +215,7 @@ public class SalesSponsorships extends JPanel {
 		btnAddSponsorFinish.setForeground(Color.WHITE);
 		btnAddSponsorFinish.setOpaque(true);
 		btnAddSponsorFinish.setBorder(null);
-		btnAddSponsorFinish.setFont(new Font(UI_Elements.mainFontName, Font.PLAIN, 18));
+		btnAddSponsorFinish.setFont(UI_Elements.font_AgencyActionButton);
 		btnAddSponsorFinish.setBackground(UI_Elements.color_mainBackgroundColor);
 		btnAddSponsorFinish.setBounds(221, lblAddSponsorContractStart.getBounds().y+lblAddSponsorContractStart.getBounds().height+12, 75, 25);
 		btnAddSponsorFinish.setSelected(false);
@@ -237,7 +237,7 @@ public class SalesSponsorships extends JPanel {
 		btnAddSponsorCancel.setForeground(Color.WHITE);
 		btnAddSponsorCancel.setOpaque(true);
 		btnAddSponsorCancel.setBorder(null);
-		btnAddSponsorCancel.setFont(new Font(UI_Elements.mainFontName, Font.PLAIN, 18));
+		btnAddSponsorCancel.setFont(UI_Elements.font_AgencyActionButton);
 		btnAddSponsorCancel.setBackground(UI_Elements.color_mainBackgroundColor);
 		btnAddSponsorCancel.setBounds(btnAddSponsorFinish.getBounds().x + btnAddSponsorFinish.getBounds().width + 7, btnAddSponsorFinish.getBounds().y, 75, 25);
 		btnAddSponsorCancel.setSelected(false);
@@ -289,7 +289,7 @@ public class SalesSponsorships extends JPanel {
 		btnRemoveSponsorFinish.setForeground(Color.WHITE);
 		btnRemoveSponsorFinish.setOpaque(true);
 		btnRemoveSponsorFinish.setBorder(null);
-		btnRemoveSponsorFinish.setFont(new Font(UI_Elements.mainFontName, Font.PLAIN, 18));
+		btnRemoveSponsorFinish.setFont(UI_Elements.font_AgencyActionButton);
 		btnRemoveSponsorFinish.setBackground(UI_Elements.color_mainBackgroundColor);
 		btnRemoveSponsorFinish.setBounds(221, lblRemoveSponsorSponsorName.getBounds().y+lblRemoveSponsorSponsorName.getBounds().height+12, 75, 25);
 		btnRemoveSponsorFinish.setSelected(false);
@@ -311,7 +311,7 @@ public class SalesSponsorships extends JPanel {
 		btnRemoveSponsorCancel.setForeground(Color.WHITE);
 		btnRemoveSponsorCancel.setOpaque(true);
 		btnRemoveSponsorCancel.setBorder(null);
-		btnRemoveSponsorCancel.setFont(new Font(UI_Elements.mainFontName, Font.PLAIN, 18));
+		btnRemoveSponsorCancel.setFont(UI_Elements.font_AgencyActionButton);
 		btnRemoveSponsorCancel.setBackground(UI_Elements.color_mainBackgroundColor);
 		btnRemoveSponsorCancel.setBounds(btnAddSponsorFinish.getBounds().x + btnAddSponsorFinish.getBounds().width + 7, btnRemoveSponsorFinish.getBounds().y, 75, 25);
 		btnRemoveSponsorCancel.setSelected(false);

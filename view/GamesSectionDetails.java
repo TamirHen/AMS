@@ -62,7 +62,7 @@ public class GamesSectionDetails extends JPanel {
 		titleSectionDetails.setBounds(35, 1, 265, 26);
 		titleSectionDetails.setCursor(Cursor.getPredefinedCursor(Cursor.DEFAULT_CURSOR));
 		titleSectionDetails.setForeground(Color.WHITE);
-		titleSectionDetails.setFont(new Font(UI_Elements.mainFontName, Font.BOLD, 20));
+		titleSectionDetails.setFont(UI_Elements.font_AgencySmallPanelTitle);
 		panelSectionDetails.add(titleSectionDetails);
 		
 		lblSectionNumber = new JLabel("Section Number:");
@@ -199,7 +199,7 @@ public class GamesSectionDetails extends JPanel {
 		btnAddTicketSale.setForeground(Color.WHITE);
 		btnAddTicketSale.setOpaque(true);
 		btnAddTicketSale.setBorder(null);
-		btnAddTicketSale.setFont(new Font(UI_Elements.mainFontName, Font.PLAIN, 18));
+		btnAddTicketSale.setFont(UI_Elements.font_AgencyActionButton);
 		btnAddTicketSale.setBackground(UI_Elements.color_panelBodyButtonDefault);
 		btnAddTicketSale.setBounds(lblIsRoofed.getBounds().x, lblIsRoofed.getBounds().y+lblIsRoofed.getBounds().height+lineSpacing*2, 150, 25);
 		btnAddTicketSale.setSelected(false);

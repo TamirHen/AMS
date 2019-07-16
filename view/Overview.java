@@ -43,7 +43,8 @@ public class Overview extends JPanel {
 		titleOverview.setBounds(25, 22, 470, 76);
 		titleOverview.setCursor(Cursor.getPredefinedCursor(Cursor.DEFAULT_CURSOR));
 		titleOverview.setForeground(Color.WHITE);
-		titleOverview.setFont(new Font(UI_Elements.mainFontName, Font.BOLD, UI_Elements.textPanelTitleSize));
+		//titleOverview.setFont(new Font(UI_Elements.mainFontName, Font.BOLD, UI_Elements.textPanelTitleSize));
+		titleOverview.setFont(UI_Elements.font_AgencyPanelTitle);
 		panelOverview.add(titleOverview);
 		
 		overviewStadiumPanel = new ViewStadium();

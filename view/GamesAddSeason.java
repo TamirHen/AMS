@@ -51,7 +51,7 @@ public class GamesAddSeason extends JPanel {
 		titleAddSeason.setBounds(35, 1, 265, 26);
 		titleAddSeason.setCursor(Cursor.getPredefinedCursor(Cursor.DEFAULT_CURSOR));
 		titleAddSeason.setForeground(Color.WHITE);
-		titleAddSeason.setFont(new Font(UI_Elements.mainFontName, Font.BOLD, 20));
+		titleAddSeason.setFont(UI_Elements.font_AgencyHeader);
 		panelAddSeason.add(titleAddSeason);
 		
 		lblSeasonName = new JLabel("Season Name (e. 2019/2020):");
@@ -96,7 +96,7 @@ public class GamesAddSeason extends JPanel {
 		btnAddSeasonFinish.setForeground(Color.WHITE);
 		btnAddSeasonFinish.setOpaque(true);
 		btnAddSeasonFinish.setBorder(null);
-		btnAddSeasonFinish.setFont(new Font(UI_Elements.mainFontName, Font.PLAIN, 18));
+		btnAddSeasonFinish.setFont(UI_Elements.font_AgencyActionButton);
 		btnAddSeasonFinish.setBackground(UI_Elements.color_panelBodyButtonDefault);
 		btnAddSeasonFinish.setBounds(35, tf_LeagueName.getBounds().y+tf_LeagueName.getBounds().height+12, 75, 25);
 		btnAddSeasonFinish.setSelected(false);
@@ -118,7 +118,7 @@ public class GamesAddSeason extends JPanel {
 		btnAddSeasonCancel.setForeground(Color.WHITE);
 		btnAddSeasonCancel.setOpaque(true);
 		btnAddSeasonCancel.setBorder(null);
-		btnAddSeasonCancel.setFont(new Font(UI_Elements.mainFontName, Font.PLAIN, 18));
+		btnAddSeasonCancel.setFont(UI_Elements.font_AgencyActionButton);
 		btnAddSeasonCancel.setBackground(UI_Elements.color_panelBodyButtonDefault);
 		btnAddSeasonCancel.setBounds(btnAddSeasonFinish.getBounds().x + btnAddSeasonFinish.getBounds().width + 15, btnAddSeasonFinish.getBounds().y, 75, 25);
 		btnAddSeasonCancel.setSelected(false);

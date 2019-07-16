@@ -48,7 +48,7 @@ public class FacilitiesMaintenance extends JPanel {
 		titleMaintenance.setBounds(30, 22, 346, 76);
 		titleMaintenance.setCursor(Cursor.getPredefinedCursor(Cursor.DEFAULT_CURSOR));
 		titleMaintenance.setForeground(UI_Elements.color_mainBackgroundColor);
-		titleMaintenance.setFont(new Font(UI_Elements.mainFontName, Font.BOLD, UI_Elements.textSubPanelTitleSize));
+		titleMaintenance.setFont(UI_Elements.font_AgencySubPanelTitle);
 		panelMaintenance.add(titleMaintenance);
 		
 	
@@ -69,7 +69,7 @@ public class FacilitiesMaintenance extends JPanel {
 		btnAddMaintenance.setForeground(Color.WHITE);
 		btnAddMaintenance.setOpaque(true);
 		btnAddMaintenance.setBorder(null);
-		btnAddMaintenance.setFont(new Font(UI_Elements.mainFontName, Font.PLAIN, 20));
+		btnAddMaintenance.setFont(UI_Elements.font_AgencyBodyButton);
 		btnAddMaintenance.setBackground(UI_Elements.color_mainBackgroundColor);
 		btnAddMaintenance.setBounds(maintenanceEmployeeTableScrollPane.getBounds().x, maintenanceEmployeeTableScrollPane.getBounds().y+maintenanceEmployeeTableScrollPane.getBounds().height+20, maintenanceEmployeeTableScrollPane.getBounds().width/2 - 5, 30);
 		btnAddMaintenance.setSelected(false);
@@ -98,7 +98,7 @@ public class FacilitiesMaintenance extends JPanel {
 		btnRemoveMaintenance.setForeground(Color.WHITE);
 		btnRemoveMaintenance.setOpaque(true);
 		btnRemoveMaintenance.setBorder(null);
-		btnRemoveMaintenance.setFont(new Font(UI_Elements.mainFontName, Font.PLAIN, 20));
+		btnRemoveMaintenance.setFont(UI_Elements.font_AgencyBodyButton);
 		btnRemoveMaintenance.setBackground(UI_Elements.color_mainBackgroundColor);
 		btnRemoveMaintenance.setBounds(maintenanceEmployeeTableScrollPane.getBounds().x + maintenanceEmployeeTableScrollPane.getBounds().width - btnAddMaintenance.getBounds().width, btnAddMaintenance.getBounds().y, maintenanceEmployeeTableScrollPane.getBounds().width/2 - 5, btnAddMaintenance.getBounds().height);
 		btnRemoveMaintenance.setSelected(false);

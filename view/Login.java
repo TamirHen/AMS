@@ -93,7 +93,8 @@ public class Login extends JPanel {
 		btnLogin.setForeground(Color.WHITE);
 		btnLogin.setOpaque(true);
 		btnLogin.setBorder(null);
-		btnLogin.setFont(new Font(UI_Elements.mainFontName, Font.BOLD, 20));
+		//btnLogin.setFont(new Font(UI_Elements.mainFontName, Font.BOLD, 20));
+		btnLogin.setFont(UI_Elements.font_AgencyBodyButton);
 		btnLogin.setBackground(UI_Elements.color_panelBodyButtonDefault);
 		btnLogin.addMouseListener(new MouseAdapter() {
 			public void mouseEntered(MouseEvent e) {
@@ -119,7 +120,7 @@ public class Login extends JPanel {
 		btnSignUp.setForeground(Color.WHITE);
 		btnSignUp.setOpaque(true);
 		btnSignUp.setBorder(null);
-		btnSignUp.setFont(new Font(UI_Elements.mainFontName, Font.BOLD, 20));
+		btnSignUp.setFont(UI_Elements.font_AgencyBodyButton);
 		btnSignUp.setBackground(UI_Elements.color_panelBodyButtonDefault);
 		btnSignUp.addMouseListener(new MouseAdapter() {
 			public void mouseEntered(MouseEvent e) {

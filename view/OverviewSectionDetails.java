@@ -59,7 +59,7 @@ public class OverviewSectionDetails extends JPanel {
 		titleSectionDetails.setBounds(35, 22, 294, 36);
 		titleSectionDetails.setCursor(Cursor.getPredefinedCursor(Cursor.DEFAULT_CURSOR));
 		titleSectionDetails.setForeground(UI_Elements.color_mainBackgroundColor);
-		titleSectionDetails.setFont(new Font(UI_Elements.mainFontName, Font.BOLD, UI_Elements.textSubPanelTitleSize));
+		titleSectionDetails.setFont(UI_Elements.font_AgencySubPanelTitle);
 		panelSectionDetails.add(titleSectionDetails);
 		
 		lblSectionNumber = new JLabel("SECTION X");
@@ -67,7 +67,8 @@ public class OverviewSectionDetails extends JPanel {
 		lblSectionNumber.setBounds(titleSectionDetails.getBounds().x, titleSectionDetails.getBounds().y+titleSectionDetails.getBounds().height+25, 265, 26);
 		lblSectionNumber.setCursor(Cursor.getPredefinedCursor(Cursor.DEFAULT_CURSOR));
 		lblSectionNumber.setForeground(UI_Elements.color_mainBackgroundColor);
-		lblSectionNumber.setFont(new Font(UI_Elements.mainFontName, Font.BOLD, 23));
+		//lblSectionNumber.setFont(new Font(UI_Elements.mainFontName, Font.BOLD, 23));
+		lblSectionNumber.setFont(UI_Elements.font_AgencyHeader);
 		panelSectionDetails.add(lblSectionNumber);
 		
 		lblSectionRanking = new JLabel("Section Ranking:");

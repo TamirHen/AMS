@@ -120,7 +120,7 @@ public class SignUp extends JFrame {
 		btnFinishSignUp.setForeground(Color.WHITE);
 		btnFinishSignUp.setOpaque(true);
 		btnFinishSignUp.setBorder(null);
-		btnFinishSignUp.setFont(new Font(UI_Elements.mainFontName, Font.BOLD, 20));
+		btnFinishSignUp.setFont(UI_Elements.font_AgencyBodyButton);
 		btnFinishSignUp.setBackground(UI_Elements.color_panelBodyButtonDefault);
 		btnFinishSignUp.addMouseListener(new MouseAdapter() {
 			public void mouseEntered(MouseEvent e) {
@@ -143,7 +143,7 @@ public class SignUp extends JFrame {
 		btnCancelSignUp.setForeground(Color.WHITE);
 		btnCancelSignUp.setOpaque(true);
 		btnCancelSignUp.setBorder(null);
-		btnCancelSignUp.setFont(new Font(UI_Elements.mainFontName, Font.BOLD, 20));
+		btnCancelSignUp.setFont(UI_Elements.font_AgencyBodyButton);
 		btnCancelSignUp.setBackground(UI_Elements.color_panelBodyButtonDefault);
 		btnCancelSignUp.addMouseListener(new MouseAdapter() {
 			public void mouseEntered(MouseEvent e) {

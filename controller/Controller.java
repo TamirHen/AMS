@@ -698,12 +698,12 @@ public class Controller {
 //				model.sponsors[1].setName(view.salesPanel.sponsorshipsPanel.tf_SponsorName.getText());
 //				
 
-		view.salesPanel.btnSponsorships.addActionListener(new ActionListener() {
+		view.salesPanel.btnSponsorship.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
-				view.salesPanel.sponsorshipsPanel.sponsorTable.setVisible(true);
-		        view.salesPanel.sponsorshipsPanel.sponsorTableScrollPane.setVisible(true);
-				view.salesPanel.sponsorshipsPanel.sponsorTable.setEnabled(true);
-				view.salesPanel.sponsorshipsPanel.sponsorTableScrollPane.setEnabled(true);
+				view.salesPanel.sponsorshipPanel.sponsorTable.setVisible(true);
+		        view.salesPanel.sponsorshipPanel.sponsorTableScrollPane.setVisible(true);
+				view.salesPanel.sponsorshipPanel.sponsorTable.setEnabled(true);
+				view.salesPanel.sponsorshipPanel.sponsorTableScrollPane.setEnabled(true);
 				
 				
 			}

@@ -73,7 +73,7 @@ public class Menu extends JPanel {
 		btnOverview.setForeground(UI_Elements.color_menuButtonText);
 		btnOverview.setOpaque(true);
 		btnOverview.setBorder(null);
-		btnOverview.setFont(UI_Elements.font_menuButtonTextDefault);
+		btnOverview.setFont(UI_Elements.font_AgencyMenu);
 		btnOverview.setBackground(UI_Elements.color_menuButtonSelected);
 		btnOverview.setBounds(0, 100, 189, 40);
 		menuPanel.add(btnOverview);
@@ -87,7 +87,7 @@ public class Menu extends JPanel {
 		btnProperties.setForeground(UI_Elements.color_menuButtonText);
 		btnProperties.setOpaque(true);
 		btnProperties.setBorder(null);
-		btnProperties.setFont(UI_Elements.font_menuButtonTextDefault);
+		btnProperties.setFont(UI_Elements.font_AgencyMenu);
 		btnProperties.setBackground(UI_Elements.color_menuBar);
 		btnProperties.setBounds(0, (btnOverview.getBounds().y) + 40, 189, 40);
 		menuPanel.add(btnProperties);
@@ -102,7 +102,7 @@ public class Menu extends JPanel {
 		btnSales.setForeground(UI_Elements.color_menuButtonText);
 		btnSales.setOpaque(true);
 		btnSales.setBorder(null);
-		btnSales.setFont(UI_Elements.font_menuButtonTextDefault);
+		btnSales.setFont(UI_Elements.font_AgencyMenu);
 		btnSales.setBackground(UI_Elements.color_menuBar);
 		btnSales.setBounds(0, (btnOverview.getBounds().y) + 40 * 2, 189, 40);
 		menuPanel.add(btnSales);
@@ -116,7 +116,7 @@ public class Menu extends JPanel {
 		btnFacilities.setForeground(UI_Elements.color_menuButtonText);
 		btnFacilities.setOpaque(true);
 		btnFacilities.setBorder(null);
-		btnFacilities.setFont(UI_Elements.font_menuButtonTextDefault);
+		btnFacilities.setFont(UI_Elements.font_AgencyMenu);
 		btnFacilities.setBackground(UI_Elements.color_menuBar);
 		btnFacilities.setBounds(0, (btnOverview.getBounds().y) + 40 * 3, 189, 40);
 		menuPanel.add(btnFacilities);
@@ -130,7 +130,7 @@ public class Menu extends JPanel {
 		btnGames.setForeground(UI_Elements.color_menuButtonText);
 		btnGames.setOpaque(true);
 		btnGames.setBorder(null);
-		btnGames.setFont(UI_Elements.font_menuButtonTextDefault);
+		btnGames.setFont(UI_Elements.font_AgencyMenu);
 		btnGames.setBackground(UI_Elements.color_menuBar);
 		btnGames.setBounds(0, (btnOverview.getBounds().y) + 40 * 4, 189, 40);
 		menuPanel.add(btnGames);
@@ -145,7 +145,7 @@ public class Menu extends JPanel {
 		btnUserName.setForeground(UI_Elements.color_menuButtonText);
 		btnUserName.setOpaque(true);
 		btnUserName.setBorder(null);
-		btnUserName.setFont(UI_Elements.font_menuButtonTextDefault);
+		btnUserName.setFont(UI_Elements.font_AgencyMenu);
 		btnUserName.setBackground(UI_Elements.color_menuBar);
 		btnUserName.setBounds(0, (btnOverview.getBounds().y) + 41 * 10, 189, 40);
 		menuPanel.add(btnUserName);
@@ -175,7 +175,7 @@ public class Menu extends JPanel {
 		btnLogout.setForeground(UI_Elements.color_menuButtonText);
 		btnLogout.setOpaque(true);
 		btnLogout.setBorder(null);
-		btnLogout.setFont(UI_Elements.font_menuButtonTextUser);
+		btnLogout.setFont(UI_Elements.font_AgencyMenuUsername);
 		btnLogout.setBackground(UI_Elements.color_menuBar);
 		btnLogout.setBounds(0, (btnUserName.getBounds().y) - 25, 189, 25);
 		btnLogout.setVisible(false);

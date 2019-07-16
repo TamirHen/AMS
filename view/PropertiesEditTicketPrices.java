@@ -57,10 +57,11 @@ public class PropertiesEditTicketPrices extends JFrame {
 		
 		titleEditTicketPrices = new JLabel("EDIT TICKET PRICES");
 		titleEditTicketPrices.setVerticalAlignment(SwingConstants.CENTER);
-		titleEditTicketPrices.setBounds(25, 22, 265, 30);
+		titleEditTicketPrices.setBounds(25, 22, 265, 32);
 		titleEditTicketPrices.setCursor(Cursor.getPredefinedCursor(Cursor.DEFAULT_CURSOR));
 		titleEditTicketPrices.setForeground(Color.WHITE);
-		titleEditTicketPrices.setFont(new Font(UI_Elements.mainFontName, Font.BOLD, 28));
+		//titleEditTicketPrices.setFont(new Font(UI_Elements.mainFontName, Font.BOLD, 28));
+		titleEditTicketPrices.setFont(UI_Elements.font_AgencySubPanelTitle);
 		panelEditTicketPrices.add(titleEditTicketPrices);
 		
 		lblVIP = new JLabel("VIP:");
@@ -137,7 +138,7 @@ public class PropertiesEditTicketPrices extends JFrame {
 		btnFinish.setForeground(Color.WHITE);
 		btnFinish.setOpaque(true);
 		btnFinish.setBorder(null);
-		btnFinish.setFont(new Font(UI_Elements.mainFontName, Font.PLAIN, 18));
+		btnFinish.setFont(UI_Elements.font_AgencyActionButton);
 		btnFinish.setBackground(UI_Elements.color_panelBodyButtonDefault);
 		btnFinish.setBounds(lblBleachers.getBounds().x, lblBleachers.getBounds().y+lblBleachers.getBounds().height+lineSpacing*2, 75, 25);
 		btnFinish.setSelected(false);
@@ -159,7 +160,7 @@ public class PropertiesEditTicketPrices extends JFrame {
 		btnCancel.setForeground(Color.WHITE);
 		btnCancel.setOpaque(true);
 		btnCancel.setBorder(null);
-		btnCancel.setFont(new Font(UI_Elements.mainFontName, Font.PLAIN, 18));
+		btnCancel.setFont(UI_Elements.font_AgencyActionButton);
 		btnCancel.setBackground(UI_Elements.color_panelBodyButtonDefault);
 		btnCancel.setBounds(btnFinish.getBounds().x + btnFinish.getBounds().width + 7, btnFinish.getBounds().y, 75, 25);
 		btnCancel.setSelected(false);

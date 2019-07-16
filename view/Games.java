@@ -59,7 +59,7 @@ public class Games extends JPanel {
 		titleGames.setBounds(25, 22, 470, 76);
 		titleGames.setCursor(Cursor.getPredefinedCursor(Cursor.DEFAULT_CURSOR));
 		titleGames.setForeground(Color.WHITE);
-		titleGames.setFont(new Font(UI_Elements.mainFontName, Font.BOLD, UI_Elements.textPanelTitleSize));
+		titleGames.setFont(UI_Elements.font_AgencyPanelTitle);
 		panelGames.add(titleGames);
 		
 		gamesStadiumPanel = new ViewStadium();
@@ -114,7 +114,7 @@ public class Games extends JPanel {
 		btnAddSeason.setForeground(Color.WHITE);
 		btnAddSeason.setOpaque(true);
 		btnAddSeason.setBorder(null);
-		btnAddSeason.setFont(new Font(UI_Elements.mainFontName, Font.PLAIN, 20));
+		btnAddSeason.setFont(UI_Elements.font_AgencyBodyButton);
 		btnAddSeason.setBackground(UI_Elements.color_panelBodyButtonDefault);
 		btnAddSeason.setBounds(35, lblGame.getBounds().y + lblGame.getBounds().height + 15, 265, 40);
 		panelGames.add(btnAddSeason);
@@ -143,7 +143,7 @@ public class Games extends JPanel {
 		btnAddGame.setForeground(Color.WHITE);
 		btnAddGame.setOpaque(true);
 		btnAddGame.setBorder(null);
-		btnAddGame.setFont(new Font(UI_Elements.mainFontName, Font.PLAIN, 20));
+		btnAddGame.setFont(UI_Elements.font_AgencyBodyButton);
 		btnAddGame.setBackground(UI_Elements.color_panelBodyButtonDefault);
 		btnAddGame.setBounds(35, (btnAddSeason.getBounds().y)+55, 265, 40);
 		panelGames.add(btnAddGame);

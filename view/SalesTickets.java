@@ -64,7 +64,7 @@ public class SalesTickets extends JPanel {
 		titleTickets.setBounds(30, 22, 346, 76);
 		titleTickets.setCursor(Cursor.getPredefinedCursor(Cursor.DEFAULT_CURSOR));
 		titleTickets.setForeground(UI_Elements.color_mainBackgroundColor);
-		titleTickets.setFont(new Font(UI_Elements.mainFontName, Font.BOLD, UI_Elements.textSubPanelTitleSize));
+		titleTickets.setFont(UI_Elements.font_AgencySubPanelTitle);
 		panelTickets.add(titleTickets);
 		
 		lblTotalAttendance = new JLabel("Total Attendance:");

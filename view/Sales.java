@@ -24,10 +24,10 @@ public class Sales extends JPanel {
 
 	public JPanel panelSales;
 	public SalesTickets ticketsPanel;
-	public SalesSponsorships sponsorshipsPanel;
+	public SalesSponsorships sponsorshipPanel;
 
 	public JButton btnTickets;
-	public JButton btnSponsorships;
+	public JButton btnSponsorship;
 	
 	private JTextField tf_TotalAttendance;
 	private JTextField tf_TotalRevenue;
@@ -78,7 +78,7 @@ public class Sales extends JPanel {
 		titleSales.setBounds(25, 22, 246, 76);
 		titleSales.setCursor(Cursor.getPredefinedCursor(Cursor.DEFAULT_CURSOR));
 		titleSales.setForeground(Color.WHITE);
-		titleSales.setFont(new Font(UI_Elements.mainFontName, Font.BOLD, UI_Elements.textPanelTitleSize));
+		titleSales.setFont(UI_Elements.font_AgencyPanelTitle);
 		panelSales.add(titleSales);
 		
 		lblSeason = new JLabel("Season:");
@@ -121,12 +121,12 @@ public class Sales extends JPanel {
 		
 		//Sponsorship sub-panel
 		
-		sponsorshipsPanel = new SalesSponsorships();
-		sponsorshipsPanel.setBounds(330, 0, sponsorshipsPanel.panelSponsorships.getBounds().width, sponsorshipsPanel.panelSponsorships.getBounds().height);
-		panelSales.add(sponsorshipsPanel);
-		sponsorshipsPanel.add(sponsorshipsPanel.panelSponsorships);
-		sponsorshipsPanel.setLayout(null);
-		sponsorshipsPanel.setVisible(false);
+		sponsorshipPanel = new SalesSponsorships();
+		sponsorshipPanel.setBounds(330, 0, sponsorshipPanel.panelSponsorships.getBounds().width, sponsorshipPanel.panelSponsorships.getBounds().height);
+		panelSales.add(sponsorshipPanel);
+		sponsorshipPanel.add(sponsorshipPanel.panelSponsorships);
+		sponsorshipPanel.setLayout(null);
+		sponsorshipPanel.setVisible(false);
 	
 
 		
@@ -139,7 +139,7 @@ public class Sales extends JPanel {
 		btnTickets.setForeground(Color.WHITE);
 		btnTickets.setOpaque(true);
 		btnTickets.setBorder(null);
-		btnTickets.setFont(new Font(UI_Elements.mainFontName, Font.PLAIN, 20));
+		btnTickets.setFont(UI_Elements.font_AgencyBodyButton);
 		btnTickets.setBackground(UI_Elements.color_panelBodyButtonDefault);
 		btnTickets.setBounds(35, 175, 265, 40);
 		panelSales.add(btnTickets);
@@ -160,30 +160,31 @@ public class Sales extends JPanel {
 		} );
 		
 		
-		btnSponsorships = new JButton("   SPONSORSHIPS");
-		btnSponsorships.setFocusPainted(false);
-		btnSponsorships.setRequestFocusEnabled(false);
-		btnSponsorships.setCursor(Cursor.getPredefinedCursor(Cursor.HAND_CURSOR));
-		btnSponsorships.setHorizontalAlignment(SwingConstants.LEFT);
-		btnSponsorships.setForeground(Color.WHITE);
-		btnSponsorships.setOpaque(true);
-		btnSponsorships.setBorder(null);
-		btnSponsorships.setFont(new Font(UI_Elements.mainFontName, Font.PLAIN, 20));
-		btnSponsorships.setBackground(UI_Elements.color_panelBodyButtonDefault);
-		btnSponsorships.setBounds(35, (btnTickets.getBounds().y)+55, 265, 40);
-		panelSales.add(btnSponsorships);
-		btnSponsorships.addMouseListener( new MouseAdapter() {
+		btnSponsorship = new JButton("   SPONSORSHIP");
+		btnSponsorship.setFocusPainted(false);
+		btnSponsorship.setRequestFocusEnabled(false);
+		btnSponsorship.setCursor(Cursor.getPredefinedCursor(Cursor.HAND_CURSOR));
+		btnSponsorship.setHorizontalAlignment(SwingConstants.LEFT);
+		btnSponsorship.setForeground(Color.WHITE);
+		btnSponsorship.setOpaque(true);
+		btnSponsorship.setBorder(null);
+		//btnSponsorship.setFont(new Font(UI_Elements.mainFontName, Font.PLAIN, 20));
+		btnSponsorship.setFont(UI_Elements.font_AgencyBodyButton);
+		btnSponsorship.setBackground(UI_Elements.color_panelBodyButtonDefault);
+		btnSponsorship.setBounds(35, (btnTickets.getBounds().y)+55, 265, 40);
+		panelSales.add(btnSponsorship);
+		btnSponsorship.addMouseListener( new MouseAdapter() {
 		    public void mouseEntered( MouseEvent e ) {
-		    	btnSponsorships.setBackground(UI_Elements.color_panelBodyButtonRollover);
+		    	btnSponsorship.setBackground(UI_Elements.color_panelBodyButtonRollover);
 		    }
 		    public void mouseExited( MouseEvent e ) {
-		    	if(sponsorshipsPanel.isVisible() == true)
+		    	if(sponsorshipPanel.isVisible() == true)
 		    	{
-		    		btnSponsorships.setBackground(UI_Elements.color_panelBodyButtonSelected);
+		    		btnSponsorship.setBackground(UI_Elements.color_panelBodyButtonSelected);
 		    	}
 		    	else
 		    	{
-		    		btnSponsorships.setBackground(UI_Elements.color_panelBodyButtonDefault);
+		    		btnSponsorship.setBackground(UI_Elements.color_panelBodyButtonDefault);
 		    	}
 		    }
 		} );
@@ -198,26 +199,26 @@ public class Sales extends JPanel {
 				ticketsPanel.panelTickets.setVisible(true);
 				btnTickets.setBackground(UI_Elements.color_panelBodyButtonSelected);
 				
-				sponsorshipsPanel.setVisible(false);
-				sponsorshipsPanel.panelSponsorships.setVisible(false);
-				btnSponsorships.setBackground(UI_Elements.color_panelBodyButtonDefault);
+				sponsorshipPanel.setVisible(false);
+				sponsorshipPanel.panelSponsorships.setVisible(false);
+				btnSponsorship.setBackground(UI_Elements.color_panelBodyButtonDefault);
 				
 				ticketsPanel.revalidate();
 			}
 		});
 		
 		
-		btnSponsorships.addActionListener(new ActionListener() {
+		btnSponsorship.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
 				ticketsPanel.setVisible(false);
 				ticketsPanel.panelTickets.setVisible(false);
 				btnTickets.setBackground(UI_Elements.color_panelBodyButtonDefault);
 				
-				sponsorshipsPanel.setVisible(true);
-				sponsorshipsPanel.panelSponsorships.setVisible(true);
-				btnSponsorships.setBackground(UI_Elements.color_panelBodyButtonSelected);
+				sponsorshipPanel.setVisible(true);
+				sponsorshipPanel.panelSponsorships.setVisible(true);
+				btnSponsorship.setBackground(UI_Elements.color_panelBodyButtonSelected);
 				
-				sponsorshipsPanel.revalidate();
+				sponsorshipPanel.revalidate();
 			}
 		});
 		panelSales.setVisible(false);

@@ -56,6 +56,7 @@ public class View extends JFrame {
 		setBounds(0, 0, 1114, 600);
 		mainPanel = new JPanel();
 		mainPanel.setLayout(null);
+		UI_Elements.createFonts();
 		
 		// set sign up frame:
 		signUpFrame = new SignUp(); //TODO - every signup should be a new instance of the object
