@@ -604,7 +604,6 @@ public class Controller {
 
 				view.propertiesPanel.cb_SectionType.setSelectedItem(model.stadium.getArenaSection(view.propertiesPanel.sectionIndex).getSectionType());
 				view.propertiesPanel.cb_SectionRanking.setSelectedItem(model.stadium.getArenaSection(view.propertiesPanel.sectionIndex).getSectionRanking());
-				//ToRemove - view.propertiesPanel.tf_SectionTicketPrice.setText(String.valueOf(model.stadium.getArenaSection(view.propertiesPanel.sectionInedex).getTicketPrice()));
 				view.propertiesPanel.tf_SectionNumOfSeats.setText(String.valueOf(model.stadium.getArenaSection(view.propertiesPanel.sectionIndex).getNumOfSeats()));
 				if (model.stadium.getArenaSection(view.propertiesPanel.sectionIndex).isRoofed()) {
 					view.propertiesPanel.rdbtnIsRoofedYes.setSelected(true);
@@ -1130,7 +1129,6 @@ public class Controller {
 
 		view.propertiesPanel.cb_SectionType.setSelectedItem(model.stadium.getArenaSection(index).getSectionType());
 		view.propertiesPanel.cb_SectionRanking.setSelectedItem(model.stadium.getArenaSection(index).getSectionRanking());
-		//ToRemove - view.propertiesPanel.tf_SectionTicketPrice.setText(String.valueOf(model.stadium.getArenaSection(index).getTicketPrice()));
 		view.propertiesPanel.tf_SectionNumOfSeats.setText(String.valueOf(model.stadium.getArenaSection(index).getNumOfSeats()));
 		if (model.stadium.getArenaSection(index).isRoofed()) {
 			view.propertiesPanel.rdbtnIsRoofedYes.setSelected(true);
