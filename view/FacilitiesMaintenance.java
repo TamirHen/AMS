@@ -54,6 +54,9 @@ public class FacilitiesMaintenance extends JPanel {
 	public JButton btnRemoveMaintenanceFinish;
 	private JButton btnRemoveMaintenanceCancel;
 	
+	private int lineSpacing = 7;
+	private int boxSpacing = 12;
+	
 	public FacilitiesMaintenance(){
 		
 		panelMaintenance = new JPanel();
@@ -145,7 +148,7 @@ public class FacilitiesMaintenance extends JPanel {
 		lblAddmAddMaintenanceMaintenanceName.setBorder(null);
 		lblAddmAddMaintenanceMaintenanceName.setForeground(UI_Elements.color_mainBackgroundColor);
 		lblAddmAddMaintenanceMaintenanceName.setFont(UI_Elements.font_bodyLabel);
-		lblAddmAddMaintenanceMaintenanceName.setBounds(btnAddMaintenance.getBounds().x, btnAddMaintenance.getBounds().y+btnAddMaintenance.getBounds().height+20, 109, 26);
+		lblAddmAddMaintenanceMaintenanceName.setBounds(btnAddMaintenance.getBounds().x, btnAddMaintenance.getBounds().y+btnAddMaintenance.getBounds().height+20, 140, 26);
 		panelMaintenance.add(lblAddmAddMaintenanceMaintenanceName);
 
 		tf_AddMaintenanceMaintenanceName = new JTextField();
@@ -154,7 +157,7 @@ public class FacilitiesMaintenance extends JPanel {
 		tf_AddMaintenanceMaintenanceName.setEditable(false);
 		tf_AddMaintenanceMaintenanceName.setHorizontalAlignment(SwingConstants.LEFT);
 		tf_AddMaintenanceMaintenanceName.setFont(UI_Elements.font_bodyFillText);
-		tf_AddMaintenanceMaintenanceName.setBounds(lblAddmAddMaintenanceMaintenanceName.getBounds().x + lblAddmAddMaintenanceMaintenanceName.getBounds().width + 12, lblAddmAddMaintenanceMaintenanceName.getBounds().y, maintenanceEmployeeTableScrollPane.getBounds().width-12-lblAddmAddMaintenanceMaintenanceName.getBounds().width, 20);
+		tf_AddMaintenanceMaintenanceName.setBounds(lblAddmAddMaintenanceMaintenanceName.getBounds().x + lblAddmAddMaintenanceMaintenanceName.getBounds().width + boxSpacing, lblAddmAddMaintenanceMaintenanceName.getBounds().y, maintenanceEmployeeTableScrollPane.getBounds().width-12-lblAddmAddMaintenanceMaintenanceName.getBounds().width, 20);
 		panelMaintenance.add(tf_AddMaintenanceMaintenanceName);
 		tf_AddMaintenanceMaintenanceName.setColumns(10);
 		
@@ -162,7 +165,7 @@ public class FacilitiesMaintenance extends JPanel {
 		lblAddMaintenanceMaintenanceReason.setBorder(null);
 		lblAddMaintenanceMaintenanceReason.setForeground(UI_Elements.color_mainBackgroundColor);
 		lblAddMaintenanceMaintenanceReason.setFont(UI_Elements.font_bodyLabel);
-		lblAddMaintenanceMaintenanceReason.setBounds(lblAddmAddMaintenanceMaintenanceName.getBounds().x, lblAddmAddMaintenanceMaintenanceName.getBounds().y+lblAddmAddMaintenanceMaintenanceName.getBounds().height+7, 109, 26);
+		lblAddMaintenanceMaintenanceReason.setBounds(lblAddmAddMaintenanceMaintenanceName.getBounds().x, lblAddmAddMaintenanceMaintenanceName.getBounds().y+lblAddmAddMaintenanceMaintenanceName.getBounds().height+lineSpacing, lblAddmAddMaintenanceMaintenanceName.getBounds().width, 26);
 		panelMaintenance.add(lblAddMaintenanceMaintenanceReason);
 
 		tf_AddMaintenanceMaintenanceReason = new JTextField();
@@ -175,11 +178,11 @@ public class FacilitiesMaintenance extends JPanel {
 		panelMaintenance.add(tf_AddMaintenanceMaintenanceReason);
 		tf_AddMaintenanceMaintenanceReason.setColumns(10);
 		
-		lblAddMaintenanceMaintenanceStartDate = new JLabel("Maintenance Start Date:");
+		lblAddMaintenanceMaintenanceStartDate = new JLabel("Start Date:");
 		lblAddMaintenanceMaintenanceStartDate.setBorder(null);
 		lblAddMaintenanceMaintenanceStartDate.setForeground(UI_Elements.color_mainBackgroundColor);
 		lblAddMaintenanceMaintenanceStartDate.setFont(UI_Elements.font_bodyLabel);
-		lblAddMaintenanceMaintenanceStartDate.setBounds(lblAddMaintenanceMaintenanceReason.getBounds().x, lblAddMaintenanceMaintenanceReason.getBounds().y+lblAddMaintenanceMaintenanceReason.getBounds().height+7, 135, 26);
+		lblAddMaintenanceMaintenanceStartDate.setBounds(lblAddMaintenanceMaintenanceReason.getBounds().x, lblAddMaintenanceMaintenanceReason.getBounds().y+lblAddMaintenanceMaintenanceReason.getBounds().height+lineSpacing, 70, 26);
 		panelMaintenance.add(lblAddMaintenanceMaintenanceStartDate);
 	
 		tf_AddMaintenanceMaintenanceStartDate = new JTextField();
@@ -188,26 +191,26 @@ public class FacilitiesMaintenance extends JPanel {
 		tf_AddMaintenanceMaintenanceStartDate.setEditable(false);
 		tf_AddMaintenanceMaintenanceStartDate.setHorizontalAlignment(SwingConstants.LEFT);
 		tf_AddMaintenanceMaintenanceStartDate.setFont(UI_Elements.font_bodyFillText);
-		tf_AddMaintenanceMaintenanceStartDate.setBounds(tf_AddMaintenanceMaintenanceName.getBounds().x, lblAddMaintenanceMaintenanceStartDate.getBounds().y , 141, 20);
+		tf_AddMaintenanceMaintenanceStartDate.setBounds(lblAddMaintenanceMaintenanceStartDate.getBounds().x + lblAddMaintenanceMaintenanceStartDate.getBounds().width + boxSpacing, lblAddMaintenanceMaintenanceStartDate.getBounds().y , 180, 20);
 		panelMaintenance.add(tf_AddMaintenanceMaintenanceStartDate);
 		tf_AddMaintenanceMaintenanceStartDate.setColumns(10);
 		
-		lblAddMaintenancePriority = new JLabel("Priority:");
-		lblAddMaintenancePriority.setBorder(null);
-		lblAddMaintenancePriority.setForeground(UI_Elements.color_mainBackgroundColor);
-		lblAddMaintenancePriority.setFont(UI_Elements.font_bodyLabel);
-		lblAddMaintenancePriority.setBounds(btnRemoveMaintenance.getBounds().x, tf_AddMaintenanceMaintenanceStartDate.getBounds().y, 119, 26);
-		panelMaintenance.add(lblAddMaintenancePriority);
-
 		tf_AddMaintenancePriority = new JTextField();
 		tf_AddMaintenancePriority.setDisabledTextColor(Color.BLACK);
 		tf_AddMaintenancePriority.setEnabled(true);
 		tf_AddMaintenancePriority.setEditable(false);
 		tf_AddMaintenancePriority.setHorizontalAlignment(SwingConstants.LEFT);
 		tf_AddMaintenancePriority.setFont(UI_Elements.font_bodyFillText);
-		tf_AddMaintenancePriority.setBounds(lblAddMaintenancePriority.getBounds().x+lblAddMaintenancePriority.getBounds().width, lblAddMaintenancePriority.getBounds().y , 141, 20);
+		tf_AddMaintenancePriority.setBounds(maintenanceEmployeeTableScrollPane.getBounds().x + maintenanceEmployeeTableScrollPane.getBounds().width - tf_AddMaintenanceMaintenanceStartDate.getBounds().width, lblAddMaintenanceMaintenanceStartDate.getBounds().y , tf_AddMaintenanceMaintenanceStartDate.getBounds().width, 20);
 		panelMaintenance.add(tf_AddMaintenancePriority);
 		tf_AddMaintenancePriority.setColumns(10);
+		
+		lblAddMaintenancePriority = new JLabel("Priority:");
+		lblAddMaintenancePriority.setBorder(null);
+		lblAddMaintenancePriority.setForeground(UI_Elements.color_mainBackgroundColor);
+		lblAddMaintenancePriority.setFont(UI_Elements.font_bodyLabel);
+		lblAddMaintenancePriority.setBounds(tf_AddMaintenancePriority.getBounds().x - lblAddMaintenanceMaintenanceStartDate.getBounds().width + boxSpacing, tf_AddMaintenanceMaintenanceStartDate.getBounds().y, lblAddMaintenanceMaintenanceStartDate.getBounds().width-20, 26);
+		panelMaintenance.add(lblAddMaintenancePriority);
 		
 		btnAddMaintenanceFinish = new JButton("FINISH");
 		btnAddMaintenanceFinish.setFocusPainted(false);
@@ -273,14 +276,14 @@ public class FacilitiesMaintenance extends JPanel {
 		lblRemoveMaintenanceMaintenanceName.setBorder(null);
 		lblRemoveMaintenanceMaintenanceName.setForeground(UI_Elements.color_mainBackgroundColor);
 		lblRemoveMaintenanceMaintenanceName.setFont(UI_Elements.font_bodyLabel);
-		lblRemoveMaintenanceMaintenanceName.setBounds(btnAddMaintenance.getBounds().x, btnAddMaintenance.getBounds().y+btnAddMaintenance.getBounds().height+20, 109, 26);
+		lblRemoveMaintenanceMaintenanceName.setBounds(btnAddMaintenance.getBounds().x, btnAddMaintenance.getBounds().y+btnAddMaintenance.getBounds().height+20, lblAddmAddMaintenanceMaintenanceName.getBounds().width, 26);
 		panelMaintenance.add(lblRemoveMaintenanceMaintenanceName);
 
 		cb_RemoveMaintenanceMaintenanceName = new JComboBox<String>();
 		cb_RemoveMaintenanceMaintenanceName.setEnabled(true);
 		cb_RemoveMaintenanceMaintenanceName.setEditable(false);
 		cb_RemoveMaintenanceMaintenanceName.setFont(UI_Elements.font_bodyFillText);
-		cb_RemoveMaintenanceMaintenanceName.setBounds(lblAddmAddMaintenanceMaintenanceName.getBounds().x + lblAddmAddMaintenanceMaintenanceName.getBounds().width + 12, lblAddmAddMaintenanceMaintenanceName.getBounds().y, maintenanceEmployeeTableScrollPane.getBounds().width-12-lblAddmAddMaintenanceMaintenanceName.getBounds().width, 25);
+		cb_RemoveMaintenanceMaintenanceName.setBounds(lblAddmAddMaintenanceMaintenanceName.getBounds().x + lblAddmAddMaintenanceMaintenanceName.getBounds().width + lineSpacing, lblAddmAddMaintenanceMaintenanceName.getBounds().y, maintenanceEmployeeTableScrollPane.getBounds().width-12-lblAddmAddMaintenanceMaintenanceName.getBounds().width, 25);
 		panelMaintenance.add(cb_RemoveMaintenanceMaintenanceName);
 
 		btnRemoveMaintenanceFinish = new JButton("FINISH");
@@ -293,7 +296,7 @@ public class FacilitiesMaintenance extends JPanel {
 		btnRemoveMaintenanceFinish.setBorder(null);
 		btnRemoveMaintenanceFinish.setFont(UI_Elements.font_AgencyActionButton);
 		btnRemoveMaintenanceFinish.setBackground(UI_Elements.color_mainBackgroundColor);
-		btnRemoveMaintenanceFinish.setBounds(221, lblRemoveMaintenanceMaintenanceName.getBounds().y+lblRemoveMaintenanceMaintenanceName.getBounds().height+12, 75, 25);
+		btnRemoveMaintenanceFinish.setBounds(221, lblRemoveMaintenanceMaintenanceName.getBounds().y+lblRemoveMaintenanceMaintenanceName.getBounds().height+lineSpacing, 75, 25);
 		btnRemoveMaintenanceFinish.setSelected(false);
 		panelMaintenance.add(btnRemoveMaintenanceFinish);
 		btnRemoveMaintenanceFinish.addMouseListener( new MouseAdapter() {

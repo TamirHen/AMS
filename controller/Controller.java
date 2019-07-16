@@ -1270,16 +1270,7 @@ public class Controller {
 			}
 
 		}
-		
-//		//ViewStadium
-//		public void viewSectionDetails(int sectionToDisplay, boolean viewStadiumToDisplayIn/*  1=viewStadium in overview panel, 0=viewStadium in games panel  */) {
-//			if (viewStadiumToDisplayIn==true) {
-////				view.gamesPanel.sectionDetailsPanel.tf_SectionNumber.setText(String.valueOf(model.stadium.getArenaSection(sectionToDisplay).getSectionNumber())));
-//			}
-//			else {
-//				
-//			}
-//		}
+		 
 		//ViewStadium
 		public void viewStadiumSectionDetails(int seasonIndex, int gameIndex, int sectionToDisplay, int viewStadiumToDisplayIn/*  1=viewStadium in games panel, 2=viewStadium in overview panel, 3=details in ticket sale  */) {
 			if (viewStadiumToDisplayIn==1) {

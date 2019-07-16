@@ -54,7 +54,8 @@ public class FacilitiesSecurity extends JPanel {
 	public JButton btnRemoveSecurityFinish;
 	private JButton btnRemoveSecurityCancel;
 
-	
+	private int lineSpacing = 7;
+	private int boxSpacing = 12;
 	
 	
 	public FacilitiesSecurity(){
@@ -178,11 +179,11 @@ public class FacilitiesSecurity extends JPanel {
 		panelSecurity.add(tf_AddSecurityJobDescription);
 		tf_AddSecurityJobDescription.setColumns(10);
 		
-		lblAddSecurityContractStart = new JLabel("Contract Start Date:");
+		lblAddSecurityContractStart = new JLabel("Start Date:");
 		lblAddSecurityContractStart.setBorder(null);
 		lblAddSecurityContractStart.setForeground(UI_Elements.color_mainBackgroundColor);
 		lblAddSecurityContractStart.setFont(UI_Elements.font_bodyLabel);
-		lblAddSecurityContractStart.setBounds(lblAddSecurityJobDescription.getBounds().x, lblAddSecurityJobDescription.getBounds().y+lblAddSecurityJobDescription.getBounds().height+7, 135, 26);
+		lblAddSecurityContractStart.setBounds(lblAddSecurityJobDescription.getBounds().x, lblAddSecurityJobDescription.getBounds().y+lblAddSecurityJobDescription.getBounds().height+7, 70, 26);
 		panelSecurity.add(lblAddSecurityContractStart);
 	
 		tf_AddSecurityContractStart = new JTextField();
@@ -191,16 +192,10 @@ public class FacilitiesSecurity extends JPanel {
 		tf_AddSecurityContractStart.setEditable(false);
 		tf_AddSecurityContractStart.setHorizontalAlignment(SwingConstants.LEFT);
 		tf_AddSecurityContractStart.setFont(UI_Elements.font_bodyFillText);
-		tf_AddSecurityContractStart.setBounds(tf_AddSecuritySecurityName.getBounds().x, lblAddSecurityContractStart.getBounds().y , 141, 20);
+		tf_AddSecurityContractStart.setBounds(lblAddSecurityContractStart.getBounds().x + lblAddSecurityContractStart.getBounds().width + boxSpacing, lblAddSecurityContractStart.getBounds().y , 180, 20);
 		panelSecurity.add(tf_AddSecurityContractStart);
 		tf_AddSecurityContractStart.setColumns(10);
 		
-		lblAddSecuritySalary = new JLabel("Salary:");
-		lblAddSecuritySalary.setBorder(null);
-		lblAddSecuritySalary.setForeground(UI_Elements.color_mainBackgroundColor);
-		lblAddSecuritySalary.setFont(UI_Elements.font_bodyLabel);
-		lblAddSecuritySalary.setBounds(btnRemoveSecurity.getBounds().x, tf_AddSecurityContractStart.getBounds().y, 119, 26);
-		panelSecurity.add(lblAddSecuritySalary);
 
 		tf_AddSecuritySalary = new JTextField();
 		tf_AddSecuritySalary.setDisabledTextColor(Color.BLACK);
@@ -208,9 +203,16 @@ public class FacilitiesSecurity extends JPanel {
 		tf_AddSecuritySalary.setEditable(false);
 		tf_AddSecuritySalary.setHorizontalAlignment(SwingConstants.LEFT);
 		tf_AddSecuritySalary.setFont(UI_Elements.font_bodyFillText);
-		tf_AddSecuritySalary.setBounds(lblAddSecuritySalary.getBounds().x+lblAddSecuritySalary.getBounds().width, lblAddSecuritySalary.getBounds().y , 141, 20);
+		tf_AddSecuritySalary.setBounds(securityEmployeeTableScrollPane.getBounds().x + securityEmployeeTableScrollPane.getBounds().width - tf_AddSecurityContractStart.getBounds().width, lblAddSecurityContractStart.getBounds().y , tf_AddSecurityContractStart.getBounds().width, 20);
 		panelSecurity.add(tf_AddSecuritySalary);
 		tf_AddSecuritySalary.setColumns(10);
+		
+		lblAddSecuritySalary = new JLabel("Salary:");
+		lblAddSecuritySalary.setBorder(null);
+		lblAddSecuritySalary.setForeground(UI_Elements.color_mainBackgroundColor);
+		lblAddSecuritySalary.setFont(UI_Elements.font_bodyLabel);
+		lblAddSecuritySalary.setBounds(tf_AddSecuritySalary.getBounds().x - lblAddSecurityContractStart.getBounds().width + boxSpacing, tf_AddSecurityContractStart.getBounds().y, lblAddSecurityContractStart.getBounds().width-20, 26);
+		panelSecurity.add(lblAddSecuritySalary);
 		
 		btnAddSecurityFinish = new JButton("FINISH");
 		btnAddSecurityFinish.setFocusPainted(false);
