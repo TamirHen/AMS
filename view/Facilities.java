@@ -20,10 +20,10 @@ public class Facilities extends JPanel {
 	public JPanel panelFacilities;
 	private  JLabel titleFacilities;
 
-	private JButton btnSecurity;
-	private JButton btnMaintenance;
-	private FacilitiesSecurity securityPanel;
-	private FacilitiesMaintenance maintenancePanel;
+	public JButton btnSecurity;
+	public JButton btnMaintenance;
+	public FacilitiesSecurity securityPanel;
+	public FacilitiesMaintenance maintenancePanel;
 	
 	
 	public Facilities() {

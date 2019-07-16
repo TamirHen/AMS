@@ -656,71 +656,125 @@ public class Controller {
 		});
 		
 		//---Sales Panel (in view)---//
-		displayAllGamesInGivenSeasonSalePanel();
-		view.salesPanel.cb_SalesSeason.removeAllItems();
-		for (int i = 0; i < model.seasonSize; i++) {
-			view.salesPanel.cb_SalesSeason.addItem(model.season.get(i).getName());
-		}
-		displayAllGamesInGivenSeasonSalePanel();//set up default
-		view.salesPanel.cb_SalesSeason.addActionListener(new ActionListener() {
-			public void actionPerformed(ActionEvent arg0) {
-				displayAllGamesInGivenSeasonSalePanel(); //
-			}
-		});
 		
-		view.salesPanel.btnTickets.addActionListener(new ActionListener() {
-			public void actionPerformed(ActionEvent arg0) {
-				displayGameRevenue(view.salesPanel.cb_SalesSeason.getSelectedIndex(),view.salesPanel.cb_SalesGame.getSelectedIndex());
-				
+		
+			view.salesPanel.cb_SalesSeason.addActionListener(new ActionListener() {
+				public void actionPerformed(ActionEvent arg0) {
+					displayAllGamesInSelectedSeason(); //
+				}
+			});		
+			view.salesPanel.btnTickets.addActionListener(new ActionListener() {
+				public void actionPerformed(ActionEvent arg0) {
+					displayGameRevenue(view.salesPanel.cb_SalesSeason.getSelectedIndex(),view.salesPanel.cb_SalesGame.getSelectedIndex());
+					
+				}
+			});
+			
+			
+			//---Sponsors---//
+			displaySponsorsToTable();
+			
+			for(int i=0; i<model.sponsorsSize;i++) {
+				view.salesPanel.sponsorshipsPanel.cb_RemoveSponsorSponsorName.addItem(model.sponsors.get(i).getName());
 			}
-		});
 
-//		view.salesPanel.btnSponsorships.addActionListener(new ActionListener() {
-//			public void actionPerformed(ActionEvent arg0) {
-//				view.salesPanel.sponsorshipsPanel.sponsorTable.setVisible(true);
-//				view.salesPanel.sponsorshipsPanel.sponsorTableScrollPane.setVisible(true);
-//				view.salesPanel.sponsorshipsPanel.sponsorTable.setEnabled(true);
-//				view.salesPanel.sponsorshipsPanel.sponsorTableScrollPane.setEnabled(true);
-//				
-//				
-//			}
-//		});
-		
-	
-//		
-//		for (int i = 0; i < model.sponsorsSize; i++) {
-//			view.salesPanel.sponsorshipsPanel.sponsorTable.add(model.season[i].getName());
-//			
-//		view.salesPanel.sponsorshipsPanel.btnAddSponsorFinish.addActionListener(new ActionListener() {
-//			public void actionPerformed(ActionEvent arg0) {
-//				model.sponsors[1].setName(view.salesPanel.sponsorshipsPanel.tf_SponsorName.getText());
-//				model.sponsors[1].setContractLength(Integer.parseInt(view.salesPanel.sponsorshipsPanel.tf_SponsorName.getText()));
-//				model.sponsors[1].setName(view.salesPanel.sponsorshipsPanel.tf_SponsorName.getText());
-//				
-
-		view.salesPanel.btnSponsorship.addActionListener(new ActionListener() {
-			public void actionPerformed(ActionEvent arg0) {
-				view.salesPanel.sponsorshipPanel.sponsorTable.setVisible(true);
-		        view.salesPanel.sponsorshipPanel.sponsorTableScrollPane.setVisible(true);
-				view.salesPanel.sponsorshipPanel.sponsorTable.setEnabled(true);
-				view.salesPanel.sponsorshipPanel.sponsorTableScrollPane.setEnabled(true);
+			
+			view.salesPanel.sponsorshipsPanel.btnAddSponsorFinish.addActionListener(new ActionListener() {
+				public void actionPerformed(ActionEvent arg0) {
+					model.createNewSponsor(view.salesPanel.sponsorshipsPanel.tf_AddSponsorSponsorName.getText(), view.salesPanel.sponsorshipsPanel.tf_AddSponsorContractStart.getText(), view.salesPanel.sponsorshipsPanel.tf_AddSponsorContractEnd.getText(),Float.valueOf(view.salesPanel.sponsorshipsPanel.tf_AddSponsorContractValue.getText()));
+					view.salesPanel.sponsorshipsPanel.cb_RemoveSponsorSponsorName.addItem(view.salesPanel.sponsorshipsPanel.tf_AddSponsorSponsorName.getText());
+					displaySponsorsToTable();
+					view.salesPanel.sponsorshipsPanel.tf_AddSponsorSponsorName.setText("");
+					view.salesPanel.sponsorshipsPanel.tf_AddSponsorContractValue.setText("");
+					view.salesPanel.sponsorshipsPanel.tf_AddSponsorContractStart.setText("");
+					view.salesPanel.sponsorshipsPanel.tf_AddSponsorContractEnd.setText("");
 				
-				
-			}
+				}
 		});
-		
-	
-		
-//		for (int i = 0; i < model.sponsorsSize; i++) {
-//			view.salesPanel.sponsorshipsPanel.sponsorTable.add(model.sponsors.get(i));
-//			
-//		view.salesPanel.sponsorshipsPanel.btnAddSponsorFinish.addActionListener(new ActionListener() {
-//			public void actionPerformed(ActionEvent arg0) {
-//				model.createNewSponsor(view.salesPanel.sponsorshipsPanel.tf_SponsorName.getText(), view.salesPanel.sponsorshipsPanel.tf_ContractStart.getText(), view.salesPanel.sponsorshipsPanel.tf_ContractEnd.getText(), view.salesPanel.sponsorshipsPanel.tf_ContractValue.getText());
-//				
-//			}
-//		});
-		//-----------------------------------------//
+			
+			
+			view.salesPanel.sponsorshipsPanel.btnRemoveSponsorFinish.addActionListener(new ActionListener() {
+				public void actionPerformed(ActionEvent arg0) {
+				
+					if(view.salesPanel.sponsorshipsPanel.cb_RemoveSponsorSponsorName.getSelectedItem()!=null) {
+					model.db.deleteGivenSponsorDB(view.salesPanel.sponsorshipsPanel.cb_RemoveSponsorSponsorName.getSelectedItem().toString());
+					model.deleteGivenSponsor(view.salesPanel.sponsorshipsPanel.cb_RemoveSponsorSponsorName.getSelectedIndex());
+					view.salesPanel.sponsorshipsPanel.cb_RemoveSponsorSponsorName.removeItem(view.salesPanel.sponsorshipsPanel.cb_RemoveSponsorSponsorName.getSelectedItem());
+					deleteSponsorFromTable();
+					}
+			
+				}
+		});
+			
+			//---Security----//
+			displaysSecurityToTable();
+			for(int i=0; i<model.securitySize;i++) {
+				view.facilitiesPanel.securityPanel.cb_RemoveSecuritySecurityName.addItem(model.security.get(i).getName());
+			}
+
+			
+			view.facilitiesPanel.securityPanel.btnAddSecurityFinish.addActionListener(new ActionListener() {
+				public void actionPerformed(ActionEvent arg0) {
+					model.createNewSecurity(view.facilitiesPanel.securityPanel.tf_AddSecuritySecurityName.getText(), view.facilitiesPanel.securityPanel.tf_AddSecurityContractStart.getText(), view.facilitiesPanel.securityPanel.tf_AddSecurityJobDescription.getText(),Float.valueOf(view.facilitiesPanel.securityPanel.tf_AddSecuritySalary.getText()));
+					view.facilitiesPanel.securityPanel.cb_RemoveSecuritySecurityName.addItem(view.facilitiesPanel.securityPanel.tf_AddSecuritySecurityName.getText());
+					displaysSecurityToTable();
+					view.facilitiesPanel.securityPanel.tf_AddSecuritySecurityName.setText("");
+					view.facilitiesPanel.securityPanel.tf_AddSecurityContractStart.setText("");
+					view.facilitiesPanel.securityPanel.tf_AddSecurityJobDescription.setText("");
+					view.facilitiesPanel.securityPanel.tf_AddSecuritySalary.setText("");
+				
+				}
+		});
+			
+			view.facilitiesPanel.securityPanel.btnRemoveSecurityFinish.addActionListener(new ActionListener() {
+				public void actionPerformed(ActionEvent arg0) {
+				
+					if(view.facilitiesPanel.securityPanel.cb_RemoveSecuritySecurityName.getSelectedItem()!=null) {
+					model.db.deleteGivenSecurityDB(view.facilitiesPanel.securityPanel.cb_RemoveSecuritySecurityName.getSelectedItem().toString());
+					model.deleteGivenSecurity(view.facilitiesPanel.securityPanel.cb_RemoveSecuritySecurityName.getSelectedIndex());
+					view.facilitiesPanel.securityPanel.cb_RemoveSecuritySecurityName.removeItem(view.facilitiesPanel.securityPanel.cb_RemoveSecuritySecurityName.getSelectedItem());
+					deleteSecurityFromTable();
+					}
+			
+				}
+		});
+			
+			
+			displaysMaintenanceToTable();
+			for(int i=0; i<model.maintenanceSize;i++) {
+				view.facilitiesPanel.maintenancePanel.cb_RemoveMaintenanceMaintenanceName.addItem(model.maintenance.get(i).getName());
+			}
+			
+			
+			view.facilitiesPanel.maintenancePanel.btnAddMaintenanceFinish.addActionListener(new ActionListener() {
+				public void actionPerformed(ActionEvent arg0) {
+					model.createNewMaintenance(view.facilitiesPanel.maintenancePanel.tf_AddMaintenanceMaintenanceName.getText(), view.facilitiesPanel.maintenancePanel.tf_AddMaintenanceMaintenanceStartDate.getText(), view.facilitiesPanel.maintenancePanel.tf_AddMaintenanceMaintenanceReason.getText(),Integer.valueOf(view.facilitiesPanel.maintenancePanel.tf_AddMaintenancePriority.getText()));
+					view.facilitiesPanel.maintenancePanel.cb_RemoveMaintenanceMaintenanceName.addItem(view.facilitiesPanel.maintenancePanel.tf_AddMaintenanceMaintenanceName.getText());
+					displaysMaintenanceToTable();
+					view.facilitiesPanel.maintenancePanel.tf_AddMaintenanceMaintenanceName.setText("");
+					view.facilitiesPanel.maintenancePanel.tf_AddMaintenanceMaintenanceReason.setText("");
+					view.facilitiesPanel.maintenancePanel.tf_AddMaintenanceMaintenanceStartDate.setText("");
+					view.facilitiesPanel.maintenancePanel.tf_AddMaintenancePriority.setText("");
+				
+				}
+		});
+			
+			view.facilitiesPanel.maintenancePanel.btnRemoveMaintenanceFinish.addActionListener(new ActionListener() {
+				public void actionPerformed(ActionEvent arg0) {
+				
+					if(view.facilitiesPanel.maintenancePanel.cb_RemoveMaintenanceMaintenanceName.getSelectedItem()!=null) {
+					model.db.deleteGivenMaintenaceDB(view.facilitiesPanel.maintenancePanel.cb_RemoveMaintenanceMaintenanceName.getSelectedItem().toString());
+					model.deleteGivenMaintenace(view.facilitiesPanel.maintenancePanel.cb_RemoveMaintenanceMaintenanceName.getSelectedIndex());
+					view.facilitiesPanel.maintenancePanel.cb_RemoveMaintenanceMaintenanceName.removeItem(view.facilitiesPanel.maintenancePanel.cb_RemoveMaintenanceMaintenanceName.getSelectedItem());
+					deleteMaintenanceFromTable();
+					}
+			
+				}
+		});
+			
+
+
+			//-----------------------------------------//
 		
 		//---Game Panel (in view)---//
 		for (int i = 0; i < model.seasonSize; i++) {
@@ -1100,36 +1154,86 @@ public class Controller {
 	}//end of constructor
 	
 	//---controller methods---//
-	//sale panel:
-	private void displayAllGamesInGivenSeasonSalePanel() {
-		view.salesPanel.cb_SalesGame.removeAllItems();
-		if (view.salesPanel.cb_SalesSeason.getSelectedIndex()>-1) {
-			for (int i = 0; i < model.season.get(view.salesPanel.cb_SalesSeason.getSelectedIndex()).getNumOfGames(); i++) {
-				view.salesPanel.cb_SalesGame.addItem(model.season.get(view.salesPanel.cb_SalesSeason.getSelectedIndex()).games.get(i).getName());
-			}
+	//---Sales panel----//
+		public void displaySponsorsToTable() {
+			for(int i=0;i<model.sponsorsSize;i++) {
+				view.salesPanel.sponsorshipsPanel.sponsorsToDisplay[i]=new String[] {model.sponsors.get(i).getName().toString(),model.sponsors.get(i).getContractStartDate().toString(),model.sponsors.get(i).getContractEndDate().toString(),String.valueOf(model.sponsors.get(i).getTotalContractValue())};
+				}
+			view.salesPanel.sponsorshipsPanel.sponsorTableScrollPane.repaint();
 		}
-	}
-	
-	public void displayGameRevenue(int seasonIndex, int gameIndex) {
-		view.salesPanel.ticketsPanel.tf_TotalAttendance.setText(String.valueOf(model.season.get(seasonIndex).games.get(gameIndex).getSoldTickets()));
-		view.salesPanel.ticketsPanel.tf_TotalRevenue.setText(String.valueOf(model.season.get(seasonIndex).games.get(gameIndex).getTotalGameRevenue()));
-		view.salesPanel.ticketsPanel.tf_TotalNumOfGameTickets.setText(String.valueOf(model.season.get(seasonIndex).games.get(gameIndex).getTotalSingleTickes()));
-		view.salesPanel.ticketsPanel.tf_TotalRevenueGameTickets.setText(String.valueOf(model.season.get(seasonIndex).games.get(gameIndex).getSingleTicketsRevenue()));
-		view.salesPanel.ticketsPanel.tf_TotalSingleVIP.setText(String.valueOf(model.season.get(seasonIndex).games.get(gameIndex).getVipRevenue()));
-		view.salesPanel.ticketsPanel.tf_TotalSingleClubLevel.setText(String.valueOf(model.season.get(seasonIndex).games.get(gameIndex).getClubLevelRevenue()));
-		view.salesPanel.ticketsPanel.tf_TotalSingleBleachers.setText(String.valueOf(model.season.get(seasonIndex).games.get(gameIndex).getBleachersRevenue()));
-		view.salesPanel.ticketsPanel.tf_TotalNumOfSeasonTickets.setText(String.valueOf(model.season.get(seasonIndex).games.get(gameIndex).getSeasonTicketsSold()));
-		view.salesPanel.ticketsPanel.tf_TotalSeasonTicketRevenue.setText(String.valueOf(model.season.get(seasonIndex).games.get(gameIndex).getSeasonTicketsRevenue()));
+		
+		public void deleteSponsorFromTable() {
+			
+			for(int i=0;i<model.sponsorsSize;i++) {
+				view.salesPanel.sponsorshipsPanel.sponsorsToDisplay[i]=new String[] {model.sponsors.get(i).getName().toString(),model.sponsors.get(i).getContractStartDate().toString(),model.sponsors.get(i).getContractEndDate().toString(),String.valueOf(model.sponsors.get(i).getTotalContractValue())};
+				}
+			view.salesPanel.sponsorshipsPanel.sponsorsToDisplay[model.sponsorsSize]=new String[] {"","","",""};
+			view.salesPanel.sponsorshipsPanel.sponsorTableScrollPane.repaint();
 
-	}
+		}
+		
+		public void displayGameRevenue(int seasonIndex, int gameIndex) {
+			view.salesPanel.ticketsPanel.tf_TotalAttendance.setText(String.valueOf(model.season.get(seasonIndex).games.get(gameIndex).getSoldTickets()) +"/"+String.valueOf(model.stadium.getCapacity()));
+			view.salesPanel.ticketsPanel.tf_TotalRevenue.setText(String.valueOf(model.season.get(seasonIndex).games.get(gameIndex).getTotalGameRevenue()));
+			view.salesPanel.ticketsPanel.tf_TotalNumOfGameTickets.setText(String.valueOf(model.season.get(seasonIndex).games.get(gameIndex).getTotalSingleTickes()));
+			view.salesPanel.ticketsPanel.tf_TotalRevenueGameTickets.setText(String.valueOf(model.season.get(seasonIndex).games.get(gameIndex).getSingleTicketsRevenue()));
+			view.salesPanel.ticketsPanel.tf_TotalSingleVIP.setText(String.valueOf(model.season.get(seasonIndex).games.get(gameIndex).getVipRevenue()));
+			view.salesPanel.ticketsPanel.tf_TotalSingleClubLevel.setText(String.valueOf(model.season.get(seasonIndex).games.get(gameIndex).getClubLevelRevenue()));
+			view.salesPanel.ticketsPanel.tf_TotalSingleBleachers.setText(String.valueOf(model.season.get(seasonIndex).games.get(gameIndex).getBleachersRevenue()));
+			view.salesPanel.ticketsPanel.tf_TotalNumOfSeasonTickets.setText(String.valueOf(model.season.get(seasonIndex).games.get(gameIndex).getSeasonTicketsSold()));
+			view.salesPanel.ticketsPanel.tf_TotalSeasonTicketRevenue.setText(String.valueOf(model.season.get(seasonIndex).games.get(gameIndex).getSeasonTicketsRevenue()));
+
+		}
+		
+		//facilities panel:
+		public void displaysSecurityToTable() {
+			for(int i=0;i<model.securitySize;i++) {
+				view.facilitiesPanel.securityPanel.securityToDisplay[i]=new String[] {model.security.get(i).getName().toString(),model.security.get(i).getContractStartDate().toString(),model.security.get(i).getJobDescription().toString(),String.valueOf(model.security.get(i).getSalary())};
+				}
+			view.facilitiesPanel.securityPanel.securityEmployeeTableScrollPane.repaint();
+		}
+		
+		public void deleteSecurityFromTable() {
+			
+			for(int i=0;i<model.securitySize;i++) {
+				view.facilitiesPanel.securityPanel.securityToDisplay[i]=new String[] {model.security.get(i).getName().toString(),model.security.get(i).getContractStartDate().toString(),model.security.get(i).getJobDescription().toString(),String.valueOf(model.security.get(i).getSalary())};
+			}
+			view.facilitiesPanel.securityPanel.securityToDisplay[model.securitySize]=new String[] {"","","",""};
+			view.facilitiesPanel.securityPanel.securityEmployeeTableScrollPane.repaint();
+		}
+		
+		
+		public void displaysMaintenanceToTable() {
+			for(int i=0;i<model.maintenanceSize;i++) {
+				view.facilitiesPanel.maintenancePanel.maintenanceToDisplay[i]=new String[] {model.maintenance.get(i).getName().toString(),model.maintenance.get(i).getMaintenanceStartdate().toString(),model.maintenance.get(i).getMaintenanceReason().toString(),String.valueOf(model.maintenance.get(i).getPriority())};
+				}
+			view.facilitiesPanel.maintenancePanel.maintenanceEmployeeTableScrollPane.repaint();
+		}
+		
+		public void deleteMaintenanceFromTable() {
+			
+			for(int i=0;i<model.maintenanceSize;i++) {
+				view.facilitiesPanel.maintenancePanel.maintenanceToDisplay[i]=new String[] {model.maintenance.get(i).getName().toString(),model.maintenance.get(i).getMaintenanceStartdate().toString(),model.maintenance.get(i).getMaintenanceReason().toString(),String.valueOf(model.maintenance.get(i).getPriority())};
+			}
+			view.facilitiesPanel.maintenancePanel.maintenanceToDisplay[model.maintenanceSize]=new String[] {"","","",""};
+			view.facilitiesPanel.maintenancePanel.maintenanceEmployeeTableScrollPane.repaint();
+		}
 	//games panel:
 	private void displayAllGamesInSelectedSeason() {
-		view.gamesPanel.cb_SalesGame.removeAllItems();
-		if (view.gamesPanel.cb_SalesSeason.getSelectedIndex()>-1) {
-			for (int i = 0; i < model.season.get(view.gamesPanel.cb_SalesSeason.getSelectedIndex()).getNumOfGames(); i++) {
-				view.gamesPanel.cb_SalesGame.addItem(model.season.get(view.gamesPanel.cb_SalesSeason.getSelectedIndex()).games.get(i).getName() + " - " + model.season.get(view.gamesPanel.cb_SalesSeason.getSelectedIndex()).games.get(i).getDate());
+			
+			view.gamesPanel.cb_SalesGame.removeAllItems();
+			if (view.gamesPanel.cb_SalesSeason.getSelectedIndex()>-1) {
+				for (int i = 0; i < model.season.get(view.gamesPanel.cb_SalesSeason.getSelectedIndex()).getNumOfGames(); i++) {
+					view.gamesPanel.cb_SalesGame.addItem(model.season.get(view.gamesPanel.cb_SalesSeason.getSelectedIndex()).games.get(i).getName() + " - " + model.season.get(view.gamesPanel.cb_SalesSeason.getSelectedIndex()).games.get(i).getDate());
+				}
 			}
-		}
+			//--- for the sale panel ---//
+			view.salesPanel.cb_SalesGame.removeAllItems();
+			if (view.salesPanel.cb_SalesSeason.getSelectedIndex()>-1) {
+				for (int i = 0; i < model.season.get(view.salesPanel.cb_SalesSeason.getSelectedIndex()).getNumOfGames(); i++) {
+					view.salesPanel.cb_SalesGame.addItem(model.season.get(view.salesPanel.cb_SalesSeason.getSelectedIndex()).games.get(i).getName());
+				}
+			}
 	}
 	
 	//login panel:
