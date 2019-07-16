@@ -803,8 +803,12 @@ public class Controller {
 				displayAllGamesInSelectedSeason();
 				view.gamesPanel.addGamePanel.tf_GameName.setText("");
 				view.gamesPanel.addGamePanel.tf_Date.setText("");
-				view.gamesPanel.gamesStadiumPanel.assignDetailsPanel(view.gamesPanel.sectionDetailsPanel);
 				view.gamesPanel.addGamePanel.setButtonsToDefault();
+				view.gamesPanel.gamesStadiumPanel.assignDetailsPanel(view.gamesPanel.sectionDetailsPanel.panelSectionDetails);
+				view.gamesPanel.sectionDetailsPanel.panelSectionDetails.setVisible(true);
+				view.gamesPanel.gamesStadiumPanel.detailsPanel.setVisible(true);
+				view.gamesPanel.gamesStadiumPanel.setVisible(true);
+				view.gamesPanel.sectionDetailsPanel.setVisible(true);
 			}
 		});
 		
@@ -812,8 +816,11 @@ public class Controller {
 			public void actionPerformed(ActionEvent arg0) {
 				view.gamesPanel.addGamePanel.panelAddGame.setVisible(false);
 				view.gamesPanel.addGamePanel.setButtonsToDefault();
-				view.gamesPanel.gamesStadiumPanel.assignDetailsPanel(view.gamesPanel.sectionDetailsPanel);
-				view.gamesPanel.addGamePanel.setButtonsToDefault();
+				view.gamesPanel.gamesStadiumPanel.assignDetailsPanel(view.gamesPanel.sectionDetailsPanel.panelSectionDetails);
+				view.gamesPanel.sectionDetailsPanel.panelSectionDetails.setVisible(true);
+				view.gamesPanel.gamesStadiumPanel.detailsPanel.setVisible(true);
+				view.gamesPanel.gamesStadiumPanel.setVisible(true);
+				view.gamesPanel.sectionDetailsPanel.setVisible(true);
 			}
 		});
 		
@@ -824,8 +831,12 @@ public class Controller {
 				view.gamesPanel.cb_SalesSeason.addItem(view.gamesPanel.addSeasonPanel.tf_SeasonName.getText() + " - " + view.gamesPanel.addSeasonPanel.tf_LeagueName.getText());
 				view.gamesPanel.addSeasonPanel.tf_SeasonName.setText("");
 				view.gamesPanel.addSeasonPanel.tf_LeagueName.setText("");
-				view.gamesPanel.gamesStadiumPanel.assignDetailsPanel(view.gamesPanel.sectionDetailsPanel);
 				view.gamesPanel.addSeasonPanel.setButtonsToDefault();
+				view.gamesPanel.gamesStadiumPanel.assignDetailsPanel(view.gamesPanel.sectionDetailsPanel.panelSectionDetails);
+				view.gamesPanel.sectionDetailsPanel.panelSectionDetails.setVisible(true);
+				view.gamesPanel.gamesStadiumPanel.detailsPanel.setVisible(true);
+				view.gamesPanel.gamesStadiumPanel.setVisible(true);
+				view.gamesPanel.sectionDetailsPanel.setVisible(true);
 			}
 		});
 
@@ -863,9 +874,11 @@ public class Controller {
 			public void actionPerformed(ActionEvent arg0) {
 				view.gamesPanel.addSeasonPanel.panelAddSeason.setVisible(false);
 				view.gamesPanel.addSeasonPanel.setButtonsToDefault();
-				view.gamesPanel.gamesStadiumPanel.assignDetailsPanel(view.gamesPanel.sectionDetailsPanel);
-				view.gamesPanel.addSeasonPanel.setButtonsToDefault();
-
+				view.gamesPanel.gamesStadiumPanel.assignDetailsPanel(view.gamesPanel.sectionDetailsPanel.panelSectionDetails);
+				view.gamesPanel.sectionDetailsPanel.panelSectionDetails.setVisible(true);
+				view.gamesPanel.gamesStadiumPanel.detailsPanel.setVisible(true);
+				view.gamesPanel.gamesStadiumPanel.setVisible(true);
+				view.gamesPanel.sectionDetailsPanel.setVisible(true);
 			}
 		});
 		//---ViewStadium Image Manipulations---//

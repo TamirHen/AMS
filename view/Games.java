@@ -183,6 +183,7 @@ public class Games extends JPanel {
 		addSeasonPanel.addObserverButton(btnAddSeason);
 		addSeasonPanel.addObserverButton(btnAddGame);
 		
+		
 		addGamePanel = new GamesAddGame();
 		addGamePanel.setBounds(addSeasonPanel.getBounds().x, addSeasonPanel.getBounds().y, addGamePanel.panelAddGame.getBounds().width, addGamePanel.panelAddGame.getBounds().height);
 		panelGames.add(addGamePanel);
