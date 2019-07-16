@@ -1,20 +1,18 @@
 package model;
-import java.util.Date;
+
 
 public class Sponsor {
 	private String name;
-	private Date contractStartDate;
-	private Date contractEndDate;
-	private int contractLength;
+	private String contractStartDate;
+	private String contractEndDate;
 	private float totalContractValue;
 
 	// Constructor:
-	public Sponsor(String name, Date contractStartDate, Date contractEndDate, float totalContractValue) {
+	public Sponsor(String name, String contractStartDate, String contractEndDate, float totalContractValue) {
 		this.name=name;
 		this.contractStartDate=contractStartDate;
 		this.contractEndDate=contractEndDate;
 		this.totalContractValue=totalContractValue;
-		//contractLength= //need to work on it
 	}
 
 	public String getName() {
@@ -25,28 +23,20 @@ public class Sponsor {
 		this.name = name;
 	}
 
-	public Date getContractStartDate() {
+	public String getContractStartDate() {
 		return contractStartDate;
 	}
 
-	public void setContractStartDate(Date contractStartDate) {
+	public void setContractStartDate(String contractStartDate) {
 		this.contractStartDate = contractStartDate;
 	}
 
-	public Date getContractEndDate() {
+	public String getContractEndDate() {
 		return contractEndDate;
 	}
 
-	public void setContractEndDate(Date contractEndDate) {
+	public void setContractEndDate(String contractEndDate) {
 		this.contractEndDate = contractEndDate;
-	}
-
-	public int getContractLength() {
-		return contractLength;
-	}
-
-	public void setContractLength(int contractLength) {
-		this.contractLength = contractLength;
 	}
 
 	public float getTotalContractValue() {

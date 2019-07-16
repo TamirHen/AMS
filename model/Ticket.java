@@ -1,49 +1,46 @@
 package model;
 
-public abstract class Ticket {
-	private int ticketId;
-	private float ticketPrice;
-	private int ticketSection;
-	private boolean isPurchased;
-
+public  class Ticket {
+	
+	private float vipTicketPrice;
+	private float clublevelTicketPrice;
+	private float bleachersTicketPrice;
+	
 	// Constructor:
-	public Ticket(float ticketPrice, int ticketSection, boolean isPurchased) {
-		this.setTicketPrice(ticketPrice);
-		this.setTicketSection(ticketSection);
-		this.setPurchased(false);
+	public Ticket(float vipTicketPrice, float clublevelTicketPrice, float bleachersTicketPrice) {
+		this.vipTicketPrice=vipTicketPrice;
+		this.clublevelTicketPrice=clublevelTicketPrice;
+		this.bleachersTicketPrice=bleachersTicketPrice;
 	}
 
-	// Data members getters and setters:
-	public int getTicketId() {
-		return ticketId;
+
+	public float getVipTicketPrice() {
+		return vipTicketPrice;
 	}
 
-	public void setTicketId(int ticketId) {
-		this.ticketId = ticketId;
-	}
-	public float getTicketPrice() {
-		return ticketPrice;
+
+	public void setVipTicketPrice(float vipTicketPrice) {
+		this.vipTicketPrice = vipTicketPrice;
 	}
 
-	public void setTicketPrice(float ticketPrice) {
-		this.ticketPrice = ticketPrice;
+
+	public float getClublevelTicketPrice() {
+		return clublevelTicketPrice;
 	}
 
-	public int getTicketSection() {
-		return ticketSection;
+
+	public void setClublevelTicketPrice(float clublevelTicketPrice) {
+		this.clublevelTicketPrice = clublevelTicketPrice;
 	}
 
-	public void setTicketSection(int ticketSectionId) {
-		this.ticketSection = ticketSectionId;
+
+	public float getBleachersTicketPrice() {
+		return bleachersTicketPrice;
 	}
 
-	public boolean isPurchased() {
-		return isPurchased;
-	}
 
-	public void setPurchased(boolean isPurchased) {
-		this.isPurchased = isPurchased;
+	public void setBleachersTicketPrice(float bleachersTicketPrice) {
+		this.bleachersTicketPrice = bleachersTicketPrice;
 	}
-
 
 }

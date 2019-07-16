@@ -26,7 +26,12 @@ public class Model {
 	public ArrayList<Sponsor> sponsors = new ArrayList<Sponsor>();
 	public int sponsorsSize;
 	//-----------------//
-	
+	//---set security---//
+	public ArrayList<Security> security = new ArrayList<Security>();
+	public int securitySize;
+	//--set maintenance--//
+	public ArrayList<Maintenance> maintenance = new ArrayList<Maintenance>();
+	public int maintenanceSize;
 	
 	public Model() {
 		//set DB:
@@ -43,6 +48,12 @@ public class Model {
 		
 		this.sponsors=db.initializeSponsors();
 		sponsorsSize=db.sponsorsSize;
+		
+		this.security=db.initializeSecurity();
+		securitySize=db.securitySize;
+		
+		this.maintenance=db.initializeMaintenance();
+		maintenanceSize=db.maintenanceSize;
 	}
 	
 	//---methods---//
@@ -86,9 +97,38 @@ public class Model {
 	}
 
 	
-	public void createNewSponsor(String name, Date contractStartDate, Date contractEndDate, float totalContractValue) {
+	public void createNewSponsor(String name, String contractStartDate, String contractEndDate, float totalContractValue) {
 		this.sponsors.add(new Sponsor(name, contractStartDate, contractEndDate, totalContractValue));
 		this.sponsorsSize++;
 		db.createNewSponsorDB(name, contractStartDate,contractEndDate,totalContractValue);
 	}
+	
+	public void deleteGivenSponsor(int index) {
+		this.sponsors.remove(index);
+		this.sponsorsSize--;
+	}
+	
+	public void createNewSecurity(String name, String contractStartDate, String jobDescription, float salary) {
+		this.security.add(new Security(name, contractStartDate, jobDescription, salary));
+		this.securitySize++;
+		db.createNewSecurityDB(name, contractStartDate,jobDescription,salary);
+	}
+	
+	public void deleteGivenSecurity(int index) {
+		this.security.remove(index);
+		this.securitySize--;
+	}
+	
+	public void createNewMaintenance(String name, String maintenanceStartdate, String maintenanceReason, int priority) {
+		this.maintenance.add(new Maintenance(name, maintenanceStartdate, maintenanceReason, priority));
+		this.maintenanceSize++;
+		db.createNewMaintenanceDB(name, maintenanceStartdate,maintenanceReason,priority);
+	}
+	
+	public void deleteGivenMaintenace(int index) {
+		this.maintenance.remove(index);
+		this.maintenanceSize--;
+	}
+
+	
 }

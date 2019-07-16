@@ -6,6 +6,10 @@ import java.sql.Statement;
 import java.util.ArrayList;
 import java.util.List;
 import javax.swing.JPanel;
+import javax.swing.JTable;
+import java.lang.Object;
+import javax.swing.table.AbstractTableModel;
+import javax.swing.table.DefaultTableModel;
 import java.util.Date;
 
 import model.*;
@@ -21,6 +25,8 @@ public class SqliteDB {
 	public int sectionSize=0;
 	public int seasonSize=0;
 	public int sponsorsSize=0;
+	public int securitySize=0;
+	public int maintenanceSize=0;
 	//Constructor:
 	private SqliteDB() {
 		//try to connect to DB:
@@ -129,7 +135,7 @@ public class SqliteDB {
 		}
 		return season;
 	}
-	
+
 	public ArrayList<Sponsor> initializeSponsors() {
 		ArrayList<Sponsor> sponsors=null;
 		try {
@@ -142,7 +148,7 @@ public class SqliteDB {
 			sponsors=new ArrayList<Sponsor>();
 			sponsorsSize=0;
 			while(rs.next()) {
-				sponsors.add(new Sponsor(rs.getString("name"), rs.getDate("contractStartDate"),rs.getDate("contractEndDate"),rs.getFloat("totalContractValue")));
+				sponsors.add(new Sponsor(rs.getString("name"), rs.getString("contractStartDate"),rs.getString("contractEndDate"),rs.getFloat("totalContractValue")));
 				sponsorsSize++;
 			}
 		} catch (Exception e) {
@@ -150,6 +156,50 @@ public class SqliteDB {
 
 		}
 		return sponsors;
+	}
+	
+	public ArrayList<Security> initializeSecurity() {
+		ArrayList<Security> security=null;
+		try {
+			this.stmt=c.createStatement();
+			ResultSet rs=stmt.executeQuery("select * from Security");
+			while(rs.next()) {
+				securitySize++;
+			}
+			rs=stmt.executeQuery("select * from Security");
+			security=new ArrayList<Security>();
+			securitySize=0;
+			while(rs.next()) {
+				security.add(new Security(rs.getString("name"), rs.getString("contractStartDate"),rs.getString("jobDescription"),rs.getFloat("salary")));
+				securitySize++;
+			}
+		} catch (Exception e) {
+			System.out.println("Error: " + e.getMessage());
+
+		}
+		return security;
+	}
+	
+	public ArrayList<Maintenance> initializeMaintenance() {
+		ArrayList<Maintenance> maintenance=null;
+		try {
+			this.stmt=c.createStatement();
+			ResultSet rs=stmt.executeQuery("select * from Maintenance");
+			while(rs.next()) {
+				maintenanceSize++;
+			}
+			rs=stmt.executeQuery("select * from Maintenance");
+			maintenance=new ArrayList<Maintenance>();
+			maintenanceSize=0;
+			while(rs.next()) {
+				maintenance.add(new Maintenance(rs.getString("name"), rs.getString("maintenanceStartdate"),rs.getString("maintenanceReason"),rs.getInt("priority")));
+				maintenanceSize++;
+			}
+		} catch (Exception e) {
+			System.out.println("Error: " + e.getMessage());
+
+		}
+		return maintenance;
 	}
 	
 	public ArrayList<Game> initializeGames(Season season) {
@@ -226,15 +276,75 @@ public class SqliteDB {
 		}
 	}
 	
-	public void createNewSponsorDB(String name, Date contractStartDate, Date contractEndDate, float totalContractValue) {
+	public void createNewSponsorDB(String name, String contractStartDate, String contractEndDate, float totalContractValue) {
 		try {
 			this.stmt = c.createStatement();
-			System.out.println("insert into Sponsor values('"+name+"', '"+contractStartDate+"', "+contractEndDate+", "+0+")");
-			stmt.executeUpdate("insert into Sponsor values('"+name+"', '"+contractStartDate+"', "+contractEndDate+", "+0+")");
+			System.out.println("insert into Sponsor values('"+name+"', '"+contractStartDate+"', '"+contractEndDate+"', "+totalContractValue+")");
+			stmt.executeUpdate("insert into Sponsor values('"+name+"', '"+contractStartDate+"', '"+contractEndDate+"', "+totalContractValue+")");
 
 		} catch (Exception e) {
 			System.out.println("Error: " + e.getMessage());
 
+		}
+	}
+	
+	public void createNewSecurityDB(String name, String contractStartDate, String jobDescription, float salary) {
+		try {
+			this.stmt = c.createStatement();
+			System.out.println("insert into Security values('"+name+"', '"+contractStartDate+"', '"+jobDescription+"', "+salary+")");
+			stmt.executeUpdate("insert into Security values('"+name+"', '"+contractStartDate+"', '"+jobDescription+"', "+salary+")");
+
+		} catch (Exception e) {
+			System.out.println("Error: " + e.getMessage());
+
+		}
+	}
+	
+	public void createNewMaintenanceDB(String name, String maintenanceStartdate, String maintenanceReason, int priority) {
+		try {
+			this.stmt = c.createStatement();
+			System.out.println("insert into Maintenance values('"+name+"', '"+maintenanceStartdate+"', '"+maintenanceReason+"', "+priority+")");
+			stmt.executeUpdate("insert into Maintenance values('"+name+"', '"+maintenanceStartdate+"', '"+maintenanceReason+"', "+priority+")");
+
+		} catch (Exception e) {
+			System.out.println("Error: " + e.getMessage());
+
+		}
+	}
+	
+	public void deleteGivenSponsorDB(String name) {
+		try {
+			if(name!="") {
+			this.stmt =c.createStatement();
+			System.out.println("delete from Sponsor where name=('"+name+"')");
+			stmt.executeUpdate("delete from Sponsor where name=('"+name+"')");
+			}
+		} catch (Exception e) {
+			System.out.println("Error: " + e.getMessage());
+		}
+	}
+	
+	public void deleteGivenSecurityDB(String name) {
+		try {
+			if(name!="") {
+			this.stmt =c.createStatement();
+			System.out.println("delete from Security where name=('"+name+"')");
+			stmt.executeUpdate("delete from Security where name=('"+name+"')");
+			}
+		} catch (Exception e) {
+			System.out.println("Error: " + e.getMessage());
+		}
+	}
+	
+	public void deleteGivenMaintenaceDB(String name) {
+		try {
+			if(name!="") {
+			this.stmt =c.createStatement();
+			System.out.println("delete from Maintenance where name=('"+name+"')");
+			stmt.executeUpdate("delete from Maintenance where name=('"+name+"')");
+			}
+		} catch (Exception e) {
+			System.out.println("Error: " + e.getMessage());
 		}
 	}
 	

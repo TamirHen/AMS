@@ -30,8 +30,32 @@ public class FacilitiesSecurity extends JPanel {
 	
 	public JScrollPane securityEmployeeTableScrollPane;
 	public JTable securityTable;
+	public String[] colum_headers= {"Name","Contract start date","Job description","Salary"};
+	public String[][] securityToDisplay=new String[100][4];
+	
 	public JButton btnAddSecurity;
 	public JButton btnRemoveSecurity;
+	
+	private JLabel lblAddSecutirySecurityName;
+	public JTextField tf_AddSecuritySecurityName;
+	private JLabel lblAddSecurityContractStart;
+	public JTextField tf_AddSecurityContractStart;
+	private JLabel lblAddSecuritySalary;
+	public JTextField tf_AddSecuritySalary;
+	private JLabel lblAddSecurityJobDescription;
+	public JTextField tf_AddSecurityJobDescription;
+	public JButton btnAddSecurityFinish;
+	public JButton btnAddSecurityCancel;
+	
+	private List<JComponent> addSecurityrComponents = new ArrayList<JComponent>();
+	private List<JComponent> removeSecurityComponents = new ArrayList<JComponent>();
+	private JLabel lblRemoveSecuritySecurityName;
+	public JComboBox<String> cb_RemoveSecuritySecurityName;
+	public JButton btnRemoveSecurityFinish;
+	private JButton btnRemoveSecurityCancel;
+
+	
+	
 	
 	public FacilitiesSecurity(){
 		
@@ -57,8 +81,9 @@ public class FacilitiesSecurity extends JPanel {
 		securityEmployeeTableScrollPane.setBounds(titleSecurity.getBounds().x, titleSecurity.getBounds().y+titleSecurity.getBounds().height-20, panelSecurity.getBounds().width-titleSecurity.getBounds().x-40, 275);
 		panelSecurity.add(securityEmployeeTableScrollPane);
 		
-		securityTable = new JTable();
+		securityTable = new JTable(securityToDisplay,colum_headers);
 		securityEmployeeTableScrollPane.setViewportView(securityTable);
+		securityTable.setEnabled(false);
 		//
 		
 		btnAddSecurity = new JButton("ADD SECURITY");
@@ -118,5 +143,330 @@ public class FacilitiesSecurity extends JPanel {
 		    	}
 		    }
 		} );
+		
+		lblAddSecutirySecurityName = new JLabel("Security Name:");
+		lblAddSecutirySecurityName.setBorder(null);
+		lblAddSecutirySecurityName.setForeground(UI_Elements.color_mainBackgroundColor);
+		lblAddSecutirySecurityName.setFont(UI_Elements.font_bodyLabel);
+		lblAddSecutirySecurityName.setBounds(btnAddSecurity.getBounds().x, btnAddSecurity.getBounds().y+btnAddSecurity.getBounds().height+20, 109, 26);
+		panelSecurity.add(lblAddSecutirySecurityName);
+
+		tf_AddSecuritySecurityName = new JTextField();
+		tf_AddSecuritySecurityName.setDisabledTextColor(Color.BLACK);
+		tf_AddSecuritySecurityName.setEnabled(true);
+		tf_AddSecuritySecurityName.setEditable(false);
+		tf_AddSecuritySecurityName.setHorizontalAlignment(SwingConstants.LEFT);
+		tf_AddSecuritySecurityName.setFont(UI_Elements.font_bodyFillText);
+		tf_AddSecuritySecurityName.setBounds(lblAddSecutirySecurityName.getBounds().x + lblAddSecutirySecurityName.getBounds().width + 12, lblAddSecutirySecurityName.getBounds().y, securityEmployeeTableScrollPane.getBounds().width-12-lblAddSecutirySecurityName.getBounds().width, 20);
+		panelSecurity.add(tf_AddSecuritySecurityName);
+		tf_AddSecuritySecurityName.setColumns(10);
+		
+		lblAddSecurityJobDescription = new JLabel("Job Description:");
+		lblAddSecurityJobDescription.setBorder(null);
+		lblAddSecurityJobDescription.setForeground(UI_Elements.color_mainBackgroundColor);
+		lblAddSecurityJobDescription.setFont(UI_Elements.font_bodyLabel);
+		lblAddSecurityJobDescription.setBounds(lblAddSecutirySecurityName.getBounds().x, lblAddSecutirySecurityName.getBounds().y+lblAddSecutirySecurityName.getBounds().height+7, 109, 26);
+		panelSecurity.add(lblAddSecurityJobDescription);
+
+		tf_AddSecurityJobDescription = new JTextField();
+		tf_AddSecurityJobDescription.setDisabledTextColor(Color.BLACK);
+		tf_AddSecurityJobDescription.setEnabled(true);
+		tf_AddSecurityJobDescription.setEditable(false);
+		tf_AddSecurityJobDescription.setHorizontalAlignment(SwingConstants.LEFT);
+		tf_AddSecurityJobDescription.setFont(UI_Elements.font_bodyFillText);
+		tf_AddSecurityJobDescription.setBounds(tf_AddSecuritySecurityName.getBounds().x, lblAddSecurityJobDescription.getBounds().y , tf_AddSecuritySecurityName.getBounds().width, tf_AddSecuritySecurityName.getBounds().height);
+		panelSecurity.add(tf_AddSecurityJobDescription);
+		tf_AddSecurityJobDescription.setColumns(10);
+		
+		lblAddSecurityContractStart = new JLabel("Contract Start Date:");
+		lblAddSecurityContractStart.setBorder(null);
+		lblAddSecurityContractStart.setForeground(UI_Elements.color_mainBackgroundColor);
+		lblAddSecurityContractStart.setFont(UI_Elements.font_bodyLabel);
+		lblAddSecurityContractStart.setBounds(lblAddSecurityJobDescription.getBounds().x, lblAddSecurityJobDescription.getBounds().y+lblAddSecurityJobDescription.getBounds().height+7, 135, 26);
+		panelSecurity.add(lblAddSecurityContractStart);
+	
+		tf_AddSecurityContractStart = new JTextField();
+		tf_AddSecurityContractStart.setDisabledTextColor(Color.BLACK);
+		tf_AddSecurityContractStart.setEnabled(true);
+		tf_AddSecurityContractStart.setEditable(false);
+		tf_AddSecurityContractStart.setHorizontalAlignment(SwingConstants.LEFT);
+		tf_AddSecurityContractStart.setFont(UI_Elements.font_bodyFillText);
+		tf_AddSecurityContractStart.setBounds(tf_AddSecuritySecurityName.getBounds().x, lblAddSecurityContractStart.getBounds().y , 141, 20);
+		panelSecurity.add(tf_AddSecurityContractStart);
+		tf_AddSecurityContractStart.setColumns(10);
+		
+		lblAddSecuritySalary = new JLabel("Salary:");
+		lblAddSecuritySalary.setBorder(null);
+		lblAddSecuritySalary.setForeground(UI_Elements.color_mainBackgroundColor);
+		lblAddSecuritySalary.setFont(UI_Elements.font_bodyLabel);
+		lblAddSecuritySalary.setBounds(btnRemoveSecurity.getBounds().x, tf_AddSecurityContractStart.getBounds().y, 119, 26);
+		panelSecurity.add(lblAddSecuritySalary);
+
+		tf_AddSecuritySalary = new JTextField();
+		tf_AddSecuritySalary.setDisabledTextColor(Color.BLACK);
+		tf_AddSecuritySalary.setEnabled(true);
+		tf_AddSecuritySalary.setEditable(false);
+		tf_AddSecuritySalary.setHorizontalAlignment(SwingConstants.LEFT);
+		tf_AddSecuritySalary.setFont(UI_Elements.font_bodyFillText);
+		tf_AddSecuritySalary.setBounds(lblAddSecuritySalary.getBounds().x+lblAddSecuritySalary.getBounds().width, lblAddSecuritySalary.getBounds().y , 141, 20);
+		panelSecurity.add(tf_AddSecuritySalary);
+		tf_AddSecuritySalary.setColumns(10);
+		
+		btnAddSecurityFinish = new JButton("FINISH");
+		btnAddSecurityFinish.setFocusPainted(false);
+		btnAddSecurityFinish.setRequestFocusEnabled(false);
+		btnAddSecurityFinish.setCursor(Cursor.getPredefinedCursor(Cursor.HAND_CURSOR));
+		btnAddSecurityFinish.setHorizontalAlignment(SwingConstants.CENTER);
+		btnAddSecurityFinish.setForeground(Color.WHITE);
+		btnAddSecurityFinish.setOpaque(true);
+		btnAddSecurityFinish.setBorder(null);
+		btnAddSecurityFinish.setFont(new Font(UI_Elements.mainFontName, Font.PLAIN, 18));
+		btnAddSecurityFinish.setBackground(UI_Elements.color_mainBackgroundColor);
+		btnAddSecurityFinish.setBounds(221, lblAddSecurityContractStart.getBounds().y+lblAddSecurityContractStart.getBounds().height+12, 75, 25);
+		btnAddSecurityFinish.setSelected(false);
+		panelSecurity.add(btnAddSecurityFinish);
+		btnAddSecurityFinish.addMouseListener( new MouseAdapter() {
+		    public void mouseEntered( MouseEvent e ) {
+		    	btnAddSecurityFinish.setBackground(UI_Elements.color_panelBodyButtonRollover);
+		    }
+		    public void mouseExited( MouseEvent e ) {
+		    	btnAddSecurityFinish.setBackground(UI_Elements.color_mainBackgroundColor);
+		    }
+		} );
+		
+		btnAddSecurityCancel = new JButton("CANCEL");
+		btnAddSecurityCancel.setFocusPainted(false);
+		btnAddSecurityCancel.setRequestFocusEnabled(false);
+		btnAddSecurityCancel.setCursor(Cursor.getPredefinedCursor(Cursor.HAND_CURSOR));
+		btnAddSecurityCancel.setHorizontalAlignment(SwingConstants.CENTER);
+		btnAddSecurityCancel.setForeground(Color.WHITE);
+		btnAddSecurityCancel.setOpaque(true);
+		btnAddSecurityCancel.setBorder(null);
+		btnAddSecurityCancel.setFont(new Font(UI_Elements.mainFontName, Font.PLAIN, 18));
+		btnAddSecurityCancel.setBackground(UI_Elements.color_mainBackgroundColor);
+		btnAddSecurityCancel.setBounds(btnAddSecurityFinish.getBounds().x + btnAddSecurityFinish.getBounds().width + 7, btnAddSecurityFinish.getBounds().y, 75, 25);
+		btnAddSecurityCancel.setSelected(false);
+		panelSecurity.add(btnAddSecurityCancel);
+		btnAddSecurityCancel.addMouseListener( new MouseAdapter() {
+		    public void mouseEntered( MouseEvent e ) {
+		    	btnAddSecurityCancel.setBackground(UI_Elements.color_panelBodyButtonRollover);
+		    }
+		    public void mouseExited( MouseEvent e ) {
+		    	btnAddSecurityCancel.setBackground(UI_Elements.color_mainBackgroundColor);
+		    }
+		} );
+		
+		addSecurityrComponents.add(lblAddSecutirySecurityName);
+		addSecurityrComponents.add(tf_AddSecuritySecurityName);
+		addSecurityrComponents.add(lblAddSecurityContractStart);
+		addSecurityrComponents.add(tf_AddSecurityContractStart);
+		addSecurityrComponents.add(lblAddSecuritySalary);
+		addSecurityrComponents.add(tf_AddSecuritySalary);
+		addSecurityrComponents.add(lblAddSecurityJobDescription);
+		addSecurityrComponents.add(tf_AddSecurityJobDescription);
+		addSecurityrComponents.add(btnAddSecurityFinish);
+		addSecurityrComponents.add(btnAddSecurityCancel);
+		for(JComponent component : addSecurityrComponents)
+		{
+			component.setVisible(false);
+		}
+		
+		//Remove Sponsor
+		lblRemoveSecuritySecurityName = new JLabel("Security Name:");
+		lblRemoveSecuritySecurityName.setBorder(null);
+		lblRemoveSecuritySecurityName.setForeground(UI_Elements.color_mainBackgroundColor);
+		lblRemoveSecuritySecurityName.setFont(UI_Elements.font_bodyLabel);
+		lblRemoveSecuritySecurityName.setBounds(btnAddSecurity.getBounds().x, btnAddSecurity.getBounds().y+btnAddSecurity.getBounds().height+20, 109, 26);
+		panelSecurity.add(lblRemoveSecuritySecurityName);
+
+		cb_RemoveSecuritySecurityName = new JComboBox<String>();
+		cb_RemoveSecuritySecurityName.setEnabled(true);
+		cb_RemoveSecuritySecurityName.setEditable(false);
+		cb_RemoveSecuritySecurityName.setFont(UI_Elements.font_bodyFillText);
+		cb_RemoveSecuritySecurityName.setBounds(lblAddSecutirySecurityName.getBounds().x + lblAddSecutirySecurityName.getBounds().width + 12, lblAddSecutirySecurityName.getBounds().y, securityEmployeeTableScrollPane.getBounds().width-12-lblAddSecutirySecurityName.getBounds().width, 25);
+		panelSecurity.add(cb_RemoveSecuritySecurityName);
+
+		btnRemoveSecurityFinish = new JButton("FINISH");
+		btnRemoveSecurityFinish.setFocusPainted(false);
+		btnRemoveSecurityFinish.setRequestFocusEnabled(false);
+		btnRemoveSecurityFinish.setCursor(Cursor.getPredefinedCursor(Cursor.HAND_CURSOR));
+		btnRemoveSecurityFinish.setHorizontalAlignment(SwingConstants.CENTER);
+		btnRemoveSecurityFinish.setForeground(Color.WHITE);
+		btnRemoveSecurityFinish.setOpaque(true);
+		btnRemoveSecurityFinish.setBorder(null);
+		btnRemoveSecurityFinish.setFont(new Font(UI_Elements.mainFontName, Font.PLAIN, 18));
+		btnRemoveSecurityFinish.setBackground(UI_Elements.color_mainBackgroundColor);
+		btnRemoveSecurityFinish.setBounds(221, lblRemoveSecuritySecurityName.getBounds().y+lblRemoveSecuritySecurityName.getBounds().height+12, 75, 25);
+		btnRemoveSecurityFinish.setSelected(false);
+		panelSecurity.add(btnRemoveSecurityFinish);
+		btnRemoveSecurityFinish.addMouseListener( new MouseAdapter() {
+		    public void mouseEntered( MouseEvent e ) {
+		    	btnRemoveSecurityFinish.setBackground(UI_Elements.color_panelBodyButtonRollover);
+		    }
+		    public void mouseExited( MouseEvent e ) {
+		    	btnRemoveSecurityFinish.setBackground(UI_Elements.color_mainBackgroundColor);
+		    }
+		} );
+		
+		btnRemoveSecurityCancel = new JButton("CANCEL");
+		btnRemoveSecurityCancel.setFocusPainted(false);
+		btnRemoveSecurityCancel.setRequestFocusEnabled(false);
+		btnRemoveSecurityCancel.setCursor(Cursor.getPredefinedCursor(Cursor.HAND_CURSOR));
+		btnRemoveSecurityCancel.setHorizontalAlignment(SwingConstants.CENTER);
+		btnRemoveSecurityCancel.setForeground(Color.WHITE);
+		btnRemoveSecurityCancel.setOpaque(true);
+		btnRemoveSecurityCancel.setBorder(null);
+		btnRemoveSecurityCancel.setFont(new Font(UI_Elements.mainFontName, Font.PLAIN, 18));
+		btnRemoveSecurityCancel.setBackground(UI_Elements.color_mainBackgroundColor);
+		btnRemoveSecurityCancel.setBounds(btnAddSecurityFinish.getBounds().x + btnAddSecurityFinish.getBounds().width + 7, btnRemoveSecurityFinish.getBounds().y, 75, 25);
+		btnRemoveSecurityCancel.setSelected(false);
+		panelSecurity.add(btnRemoveSecurityCancel);
+		btnRemoveSecurityCancel.addMouseListener( new MouseAdapter() {
+		    public void mouseEntered( MouseEvent e ) {
+		    	btnRemoveSecurityCancel.setBackground(UI_Elements.color_panelBodyButtonRollover);
+		    }
+		    public void mouseExited( MouseEvent e ) {
+		    	btnRemoveSecurityCancel.setBackground(UI_Elements.color_mainBackgroundColor);
+		    }
+		} );
+
+		removeSecurityComponents.add(lblRemoveSecuritySecurityName);
+		removeSecurityComponents.add(cb_RemoveSecuritySecurityName);
+		removeSecurityComponents.add(btnRemoveSecurityFinish);
+		removeSecurityComponents.add(btnRemoveSecurityCancel);
+		for(JComponent component : removeSecurityComponents)
+		{
+			component.setVisible(false);
+		}
+		
+
+		
+		//Action Listeners
+		btnAddSecurity.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent arg0) {
+				tf_AddSecuritySecurityName.setEditable(true);
+				tf_AddSecurityJobDescription.setEditable(true);
+				tf_AddSecurityContractStart.setEditable(true);
+				tf_AddSecuritySalary.setEditable(true);
+				
+				if(btnAddSecurity.isSelected() == false)
+				{
+					btnAddSecurity.setSelected(true);
+					btnRemoveSecurity.setSelected(false);
+					for(JComponent component : addSecurityrComponents)
+					{
+						component.setVisible(true);
+					}
+					for(JComponent component : removeSecurityComponents)
+					{
+						component.setVisible(false);
+					}
+					btnAddSecurity.setBackground(UI_Elements.color_panelBodyButtonSelected);
+					
+					btnRemoveSecurity.setBackground(UI_Elements.color_mainBackgroundColor);
+				}
+				else
+				{
+					btnAddSecurity.setSelected(false);
+					for(JComponent component : addSecurityrComponents)
+					{
+						component.setVisible(false);
+					}
+					btnAddSecurity.setBackground(UI_Elements.color_mainBackgroundColor);
+					btnRemoveSecurity.setBackground(UI_Elements.color_mainBackgroundColor);
+				}
+			}
+		});
+		
+		btnRemoveSecurity.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent arg0) {
+				if(btnRemoveSecurity.isSelected() == false)
+				{
+					btnAddSecurity.setSelected(false);
+					btnRemoveSecurity.setSelected(true);
+					for(JComponent component : addSecurityrComponents)
+					{
+						component.setVisible(false);
+					}
+					for(JComponent component : removeSecurityComponents)
+					{
+						component.setVisible(true);
+					}
+					btnAddSecurity.setBackground(UI_Elements.color_mainBackgroundColor);
+					btnRemoveSecurity.setBackground(UI_Elements.color_panelBodyButtonSelected);
+				}
+				else
+				{
+					for(JComponent component : removeSecurityComponents)
+					{
+						component.setVisible(false);
+					}
+					btnRemoveSecurity.setSelected(false);
+					btnAddSecurity.setBackground(UI_Elements.color_mainBackgroundColor);
+					btnRemoveSecurity.setBackground(UI_Elements.color_mainBackgroundColor);
+				}
+			}
+		});
+		
+		btnAddSecurityFinish.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent arg0) {
+				for(JComponent component : addSecurityrComponents)
+				{
+					component.setVisible(false);
+				}
+				btnAddSecurity.setSelected(false);
+				btnRemoveSecurity.setSelected(false);
+				btnAddSecurity.setBackground(UI_Elements.color_mainBackgroundColor);
+				btnRemoveSecurity.setBackground(UI_Elements.color_mainBackgroundColor);
+			}
+		});
+		
+		btnAddSecurityCancel.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent arg0) {
+				for(JComponent component : addSecurityrComponents)
+				{
+					component.setVisible(false);
+				}
+				btnAddSecurity.setSelected(false);
+				btnRemoveSecurity.setSelected(false);
+				btnAddSecurity.setBackground(UI_Elements.color_mainBackgroundColor);
+				btnRemoveSecurity.setBackground(UI_Elements.color_mainBackgroundColor);
+				tf_AddSecuritySecurityName.setText("");
+				tf_AddSecurityJobDescription.setText("");
+				tf_AddSecurityContractStart.setText("");
+				tf_AddSecuritySalary.setText("");
+			}
+		});
+		
+		btnRemoveSecurityFinish.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent arg0) {
+				for(JComponent component : removeSecurityComponents)
+				{
+					component.setVisible(false);
+				}
+				btnAddSecurity.setSelected(false);
+				btnRemoveSecurity.setSelected(false);
+				btnAddSecurity.setBackground(UI_Elements.color_mainBackgroundColor);
+				btnRemoveSecurity.setBackground(UI_Elements.color_mainBackgroundColor);
+			}
+		});
+		
+		btnRemoveSecurityCancel.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent arg0) {
+				for(JComponent component : removeSecurityComponents)
+				{
+					component.setVisible(false);
+				}
+				btnAddSecurity.setSelected(false);
+				btnRemoveSecurity.setSelected(false);
+				btnAddSecurity.setBackground(UI_Elements.color_mainBackgroundColor);
+				btnRemoveSecurity.setBackground(UI_Elements.color_mainBackgroundColor);
+				
+			}
+		});
+		
+		
 	}
 }
+
+
