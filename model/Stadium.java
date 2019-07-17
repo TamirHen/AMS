@@ -91,10 +91,10 @@ public class Stadium {
 	}
 	public void updateTicketPriceInAllSections(float newVipPrice,float newClubLevelPrice, float newBleachersPrice) {
 		for (int i = 0; i < this.numOfSections; i++) {
-			if(this.arenaSection[i].getSectionType()=="VIP") {
+			if(this.arenaSection[i].getSectionType().equals("VIP")) {
 				this.arenaSection[i].setTicketPrice(newVipPrice);
 			}
-			else if(this.arenaSection[i].getSectionType()=="Club Level") {
+			else if(this.arenaSection[i].getSectionType().equals("Club Level")) {
 				this.arenaSection[i].setTicketPrice(newClubLevelPrice);
 			}
 			else {
