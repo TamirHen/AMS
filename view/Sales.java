@@ -2,8 +2,6 @@ package view;
 import java.awt.Color;
 import java.awt.Component;
 import java.awt.Cursor;
-import java.awt.Font;
-import java.awt.SystemColor;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.awt.event.MouseAdapter;
@@ -16,12 +14,9 @@ import javax.swing.JComboBox;
 import javax.swing.JComponent;
 import javax.swing.JLabel;
 import javax.swing.JPanel;
-import javax.swing.JSeparator;
-import javax.swing.JTable;
-import javax.swing.JTextField;
 import javax.swing.SwingConstants;
-import javax.swing.JScrollPane;
 
+@SuppressWarnings("serial")
 public class Sales extends JPanel {
 
 	public JPanel panelSales;
@@ -135,9 +130,9 @@ public class Sales extends JPanel {
 		panelSales.add(lblSeason);
 		comboList.add(lblSeason);
 		
-		cb_SalesSeason = new JComboBox();
+		cb_SalesSeason = new JComboBox<String>();
 		cb_SalesSeason.setFont(UI_Elements.font_bodyFillText);
-		cb_SalesSeason.setModel(new DefaultComboBoxModel(new String[] {}));
+		cb_SalesSeason.setModel(new DefaultComboBoxModel<String>(new String[] {}));
 		cb_SalesSeason.setBounds(100, lblSeason.getBounds().y, 200, 20);
 		panelSales.add(cb_SalesSeason);
 		comboList.add(cb_SalesSeason);
@@ -153,9 +148,9 @@ public class Sales extends JPanel {
 		comboList.add(lblGame);
 
 		
-		cb_SalesGame = new JComboBox();
+		cb_SalesGame = new JComboBox<String>();
 		cb_SalesGame.setFont(UI_Elements.font_bodyFillText);
-		cb_SalesGame.setModel(new DefaultComboBoxModel(new String[] {}));
+		cb_SalesGame.setModel(new DefaultComboBoxModel<String>(new String[] {}));
 		cb_SalesGame.setBounds(cb_SalesSeason.getBounds().x, (cb_SalesSeason.getBounds().y)+30, cb_SalesSeason.getBounds().width, cb_SalesSeason.getBounds().height);
 		panelSales.add(cb_SalesGame);
 		comboList.add(cb_SalesGame);
@@ -253,10 +248,6 @@ public class Sales extends JPanel {
 				ticketsPanel.revalidate();
 			}
 		});
-		
-		
-		
-		
 		
 		panelSales.setVisible(false);
 	}

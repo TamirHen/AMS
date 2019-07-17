@@ -8,8 +8,6 @@ import java.io.File;
 import java.io.IOException;
 import javax.swing.ImageIcon;
 import javax.swing.JComponent;
-import javax.swing.JButton;
-import javax.swing.JLabel;
 
 public class UI_Elements {
 

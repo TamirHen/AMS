@@ -1,32 +1,14 @@
 package controller;
-import java.awt.BorderLayout;
 import java.awt.Color;
-import java.awt.Cursor;
-import java.awt.Dimension;
-import java.awt.EventQueue;
-import java.awt.Font;
 import java.awt.Graphics;
-
 import javax.swing.*;
-import model.Stadium;
-import model.User;
-
 import java.awt.event.ActionListener;
-import java.awt.event.ItemEvent;
-import java.awt.event.ItemListener;
 import java.awt.event.MouseAdapter;
 import java.awt.event.MouseEvent;
 import java.awt.event.ActionEvent;
-import java.sql.*;
-import java.sql.Connection;
-import java.sql.DriverManager;
-import java.sql.ResultSet;
-import java.sql.Statement;
 import java.util.Arrays;
-import java.util.Iterator;
 import java.util.ArrayList;
 
-import sqlite.*;
 import model.*;
 import view.*;
 
@@ -515,7 +497,6 @@ public class Controller {
 		view.propertiesPanel.tf_ArenaName.setText(model.stadium.getStadiumName());
 		view.propertiesPanel.tf_Address.setText(model.stadium.getAddress());
 		view.propertiesPanel.tf_ArenaNumOfSeats.setText(String.valueOf(model.stadium.getCapacity()));
-		//ToRemove - view.propertiesPanel.tf_SectionTicketPrice.setText(String.valueOf(model.stadium.getArenaSection(0).getTicketPrice()));
 		view.propertiesPanel.tf_SectionNumOfSeats.setText(String.valueOf(model.stadium.getArenaSection(1).getNumOfSeats()));
 		//set sections in the combobox:
 		for (int i = 0; i < model.db.sectionSize; i++) {
@@ -559,7 +540,6 @@ public class Controller {
 				String newSectionType = view.propertiesPanel.cb_SectionType.getModel().getSelectedItem().toString();
 				
 				model.stadium.getArenaSection(view.propertiesPanel.sectionIndex).setSectionType(view.propertiesPanel.cb_SectionType.getModel().getSelectedItem().toString());				
-				//model.stadium.getArenaSection(view.propertiesPanel.sectionInedex).setSectionType(view.propertiesPanel.cb_SectionType.getModel().getSelectedItem().toString());
 				model.stadium.getArenaSection(view.propertiesPanel.sectionIndex).setSectionRanking(view.propertiesPanel.cb_SectionRanking.getModel().getSelectedItem().toString());
 				model.stadium.getArenaSection(view.propertiesPanel.sectionIndex).setNumOfSeats(Integer.valueOf(view.propertiesPanel.tf_SectionNumOfSeats.getText()).intValue(), model.stadium);
 				if (view.propertiesPanel.rdbtnIsRoofedYes.isSelected()) {
@@ -846,10 +826,10 @@ public class Controller {
 		
 		//---Games Panel (in view)---//
 		for (int i = 0; i < model.seasonSize; i++) {
-			view.gamesPanel.cb_SalesSeason.addItem(model.season.get(i).getName() + " - " + model.season.get(i).getLeagueName());
+			view.gamesPanel.cb_Season.addItem(model.season.get(i).getName() + " - " + model.season.get(i).getLeagueName());
 		}
 		displayAllGamesInSelectedSeason(1);//set up default
-		view.gamesPanel.cb_SalesSeason.addActionListener(new ActionListener() {
+		view.gamesPanel.cb_Season.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
 				displayAllGamesInSelectedSeason(1);
 				
@@ -858,7 +838,7 @@ public class Controller {
 		view.gamesPanel.addGamePanel.btnAddGameFinish.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
 				view.gamesPanel.addGamePanel.panelAddGame.setVisible(false);
-				model.createNewGame(view.gamesPanel.addGamePanel.tf_GameName.getText(), view.gamesPanel.addGamePanel.tf_Date.getText(), view.gamesPanel.cb_SalesSeason.getSelectedIndex(), model.stadium.getCapacity(), 100, 50, 20, 300, model.stadium);
+				model.createNewGame(view.gamesPanel.addGamePanel.tf_GameName.getText(), view.gamesPanel.addGamePanel.tf_Date.getText(), view.gamesPanel.cb_Season.getSelectedIndex(), model.stadium.getCapacity(), 100, 50, 20, 300, model.stadium);
 				displayAllGamesInSelectedSeason(1);
 				displayAllGamesInSelectedSeason(2);
 				view.gamesPanel.addGamePanel.tf_GameName.setText("");
@@ -882,7 +862,7 @@ public class Controller {
 			public void actionPerformed(ActionEvent arg0) {
 				view.gamesPanel.addSeasonPanel.panelAddSeason.setVisible(false);
 				model.createNewSeason(view.gamesPanel.addSeasonPanel.tf_SeasonName.getText(), view.gamesPanel.addSeasonPanel.tf_LeagueName.getText());
-				view.gamesPanel.cb_SalesSeason.addItem(view.gamesPanel.addSeasonPanel.tf_SeasonName.getText() + " - " + view.gamesPanel.addSeasonPanel.tf_LeagueName.getText());
+				view.gamesPanel.cb_Season.addItem(view.gamesPanel.addSeasonPanel.tf_SeasonName.getText() + " - " + view.gamesPanel.addSeasonPanel.tf_LeagueName.getText());
 				view.salesPanel.cb_SalesSeason.addItem(view.gamesPanel.addSeasonPanel.tf_SeasonName.getText() + " - " + view.gamesPanel.addSeasonPanel.tf_LeagueName.getText());
 				view.gamesPanel.addSeasonPanel.tf_SeasonName.setText("");
 				view.gamesPanel.addSeasonPanel.tf_LeagueName.setText("");
@@ -904,17 +884,17 @@ public class Controller {
 		view.gamesPanel.sectionDetailsPanel.btnAddTicketSale.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
 				view.gamesPanel.sectionDetailsPanel.frameAddTicketSale.setVisible(true);
-				viewStadiumSectionDetails(view.gamesPanel.cb_SalesSeason.getSelectedIndex(), view.gamesPanel.cb_SalesGame.getSelectedIndex(),Integer.valueOf(view.gamesPanel.gamesStadiumPanel.lastSelectedButton.getName())-1,4);
+				viewStadiumSectionDetails(view.gamesPanel.cb_Season.getSelectedIndex(), view.gamesPanel.cb_Game.getSelectedIndex(),Integer.valueOf(view.gamesPanel.gamesStadiumPanel.lastSelectedButton.getName())-1,4);
 			}
 		});
 		view.gamesPanel.sectionDetailsPanel.frameAddTicketSale.btnFinish.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
 						
-				if(model.season.get(view.gamesPanel.cb_SalesSeason.getSelectedIndex()).games.get(view.gamesPanel.cb_SalesGame.getSelectedIndex()).gameSections.get(Integer.valueOf(view.gamesPanel.gamesStadiumPanel.lastSelectedButton.getName())-1).getUnsoldTickets()<Integer.valueOf(view.gamesPanel.sectionDetailsPanel.frameAddTicketSale.tf_DesiredAmount.getText())) {
+				if(model.season.get(view.gamesPanel.cb_Season.getSelectedIndex()).games.get(view.gamesPanel.cb_Game.getSelectedIndex()).gameSections.get(Integer.valueOf(view.gamesPanel.gamesStadiumPanel.lastSelectedButton.getName())-1).getUnsoldTickets()<Integer.valueOf(view.gamesPanel.sectionDetailsPanel.frameAddTicketSale.tf_DesiredAmount.getText())) {
 					view.gamesPanel.sectionDetailsPanel.frameAddTicketSale.lblErrorMessage_ValueOutOfRange.setVisible(true);
 				}
 				else {
-					viewStadiumSectionDetails(view.gamesPanel.cb_SalesSeason.getSelectedIndex(), view.gamesPanel.cb_SalesGame.getSelectedIndex(),Integer.valueOf(view.gamesPanel.gamesStadiumPanel.lastSelectedButton.getName()),3);
+					viewStadiumSectionDetails(view.gamesPanel.cb_Season.getSelectedIndex(), view.gamesPanel.cb_Game.getSelectedIndex(),Integer.valueOf(view.gamesPanel.gamesStadiumPanel.lastSelectedButton.getName()),3);
 					view.gamesPanel.sectionDetailsPanel.frameAddTicketSale.setVisible(false);
 					view.gamesPanel.sectionDetailsPanel.frameAddTicketSale.tf_DesiredAmount.setText("");
 					view.gamesPanel.sectionDetailsPanel.frameAddTicketSale.lblErrorMessage_ValueOutOfRange.setVisible(false);
@@ -1286,10 +1266,10 @@ public class Controller {
 	//games panel:
 	private void displayAllGamesInSelectedSeason(int flag/* 1= gamesPanel else salesPanel*/) {
 		if(flag==1) {
-			view.gamesPanel.cb_SalesGame.removeAllItems();
-			if (view.gamesPanel.cb_SalesSeason.getSelectedIndex()>-1) {
-				for (int i = 0; i < model.season.get(view.gamesPanel.cb_SalesSeason.getSelectedIndex()).getNumOfGames(); i++) {
-					view.gamesPanel.cb_SalesGame.addItem(model.season.get(view.gamesPanel.cb_SalesSeason.getSelectedIndex()).games.get(i).getName() + " - " + model.season.get(view.gamesPanel.cb_SalesSeason.getSelectedIndex()).games.get(i).getDate());
+			view.gamesPanel.cb_Game.removeAllItems();
+			if (view.gamesPanel.cb_Season.getSelectedIndex()>-1) {
+				for (int i = 0; i < model.season.get(view.gamesPanel.cb_Season.getSelectedIndex()).getNumOfGames(); i++) {
+					view.gamesPanel.cb_Game.addItem(model.season.get(view.gamesPanel.cb_Season.getSelectedIndex()).games.get(i).getName() + " - " + model.season.get(view.gamesPanel.cb_Season.getSelectedIndex()).games.get(i).getDate());
 				}
 			}
 		}
@@ -1331,19 +1311,6 @@ public class Controller {
 			}
 
 		}
-		//-----------------------------------------------------------//
-		
-		//-----------------------------------------------------------//
-		
-		//-----------------------------------------------------------//
-		
-		//-----------------------------------------------------------//
-		
-		//-----------------------------------------------------------//
-		
-		//-----------------------------------------------------------//
-		
-		//-----------------------------------------------------------//
 		
 		//-----------------------------------------------------------//
 		 
@@ -1388,13 +1355,12 @@ public class Controller {
 				else {
 					model.season.get(seasonIndex).games.get(gameIndex).bleachersTicketsSold(Integer.valueOf(view.gamesPanel.sectionDetailsPanel.frameAddTicketSale.tf_DesiredAmount.getText()), sectionToDisplay-1);
 				}
-				//ticketTypeSold(view.gamesPanel.cb_SalesSeason.getSelectedIndex(),view.gamesPanel.cb_SalesGame.getSelectedIndex(),sectionToDisplay-1,Integer.valueOf(view.gamesPanel.sectionDetailsPanel.frameAddTicketSale.tf_DesiredAmount.getText()));
 			}
 			else {
 				view.gamesPanel.sectionDetailsPanel.frameAddTicketSale.lblSectionNumber.setText(model.stadium.getArenaSection(sectionToDisplay).getSectionName());
 				view.gamesPanel.sectionDetailsPanel.frameAddTicketSale.lblSectionTypeValue.setText(model.stadium.getArenaSection(sectionToDisplay).getSectionType());
 				view.gamesPanel.sectionDetailsPanel.frameAddTicketSale.lblTicketPriceValue.setText(String.valueOf(model.stadium.getArenaSection(sectionToDisplay).getTicketPrice()));
-				view.gamesPanel.sectionDetailsPanel.frameAddTicketSale.lblAvailableTicketsValue.setText(String.valueOf(model.season.get(view.gamesPanel.cb_SalesSeason.getSelectedIndex()).games.get(view.gamesPanel.cb_SalesGame.getSelectedIndex()).gameSections.get(sectionToDisplay).getUnsoldTickets()));
+				view.gamesPanel.sectionDetailsPanel.frameAddTicketSale.lblAvailableTicketsValue.setText(String.valueOf(model.season.get(view.gamesPanel.cb_Season.getSelectedIndex()).games.get(view.gamesPanel.cb_Game.getSelectedIndex()).gameSections.get(sectionToDisplay).getUnsoldTickets()));
 
 			}
 		}
@@ -1788,7 +1754,7 @@ public class Controller {
 				stadiumButtonsGames.get(currentIndex).addActionListener(new ActionListener() {
 					public void actionPerformed(ActionEvent arg0) {
 						view.gamesPanel.gamesStadiumPanel.stadiumSectionSelection(stadiumButtonsGames.get(currentIndex), mouseAdaptersGames.get(currentIndex), stadiumImagesRollover.get(currentIndex));
-						viewStadiumSectionDetails(view.gamesPanel.cb_SalesSeason.getSelectedIndex(), view.gamesPanel.cb_SalesGame.getSelectedIndex(), currentIndex-1, 1);
+						viewStadiumSectionDetails(view.gamesPanel.cb_Season.getSelectedIndex(), view.gamesPanel.cb_Game.getSelectedIndex(), currentIndex-1, 1);
 					}
 				});
 			}
@@ -1807,7 +1773,7 @@ public class Controller {
 			stadiumButtonsGames.get(i_Index).addActionListener(new ActionListener() {
 				public void actionPerformed(ActionEvent arg0) {
 					view.gamesPanel.gamesStadiumPanel.stadiumSectionSelection(stadiumButtonsGames.get(i_Index), mouseAdaptersGames.get(i_Index), stadiumImagesRollover.get(i_Index));
-					viewStadiumSectionDetails(view.gamesPanel.cb_SalesSeason.getSelectedIndex(), view.gamesPanel.cb_SalesGame.getSelectedIndex(), i_Index-1, 1);
+					viewStadiumSectionDetails(view.gamesPanel.cb_Season.getSelectedIndex(), view.gamesPanel.cb_Game.getSelectedIndex(), i_Index-1, 1);
 				}
 			});
 		}

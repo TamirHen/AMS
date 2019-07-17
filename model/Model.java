@@ -1,9 +1,5 @@
 package model;
 import java.util.ArrayList;
-import java.util.List;
-import javax.swing.JPanel;
-import java.util.Date;
-
 import sqlite.*;
 
 public class Model {

@@ -2,10 +2,7 @@ package view;
 
 import java.awt.Color;
 import java.awt.Cursor;
-import java.awt.Font;
 import java.awt.Graphics;
-import java.awt.event.ActionEvent;
-import java.awt.event.ActionListener;
 import java.awt.event.MouseAdapter;
 import java.awt.event.MouseEvent;
 
@@ -20,6 +17,7 @@ import javax.swing.JSeparator;
 import javax.swing.JTextField;
 import javax.swing.SwingConstants;
 
+@SuppressWarnings("serial")
 public class Properties extends JPanel {
 
 
@@ -110,8 +108,8 @@ public class Properties extends JPanel {
 		lblArenaType.setBounds(lblArenaName.getBounds().x, lblArenaName.getBounds().y+lblArenaName.getBounds().height+lineSpacing, lblArenaName.getBounds().width, lblArenaName.getBounds().height);
 		panelProperties.add(lblArenaType);
 
-		cb_ArenaType = new JComboBox();
-		cb_ArenaType.setModel(new DefaultComboBoxModel(new String[] { "Stadium" }));
+		cb_ArenaType = new JComboBox<String>();
+		cb_ArenaType.setModel(new DefaultComboBoxModel<String>(new String[] { "Stadium" }));
 		cb_ArenaType.setBounds(tf_ArenaName.getBounds().x, lblArenaType.getBounds().y, tf_ArenaName.getBounds().width, tf_ArenaName.getBounds().height);
 		cb_ArenaType.setFont(UI_Elements.font_bodyFillText);
 		panelProperties.add(cb_ArenaType);
@@ -161,8 +159,8 @@ public class Properties extends JPanel {
 		lblSectionManagement.setBounds(separatorProperties.getBounds().x, separatorProperties.getBounds().y+separatorProperties.getBounds().height+lineSpacing*2, 170, lblArenaNumOfSeats.getBounds().height);
 		panelProperties.add(lblSectionManagement);
 
-		cb_SectionSelection = new JComboBox();
-		cb_SectionSelection.setModel(new DefaultComboBoxModel(new String[] {}));
+		cb_SectionSelection = new JComboBox<String>();
+		cb_SectionSelection.setModel(new DefaultComboBoxModel<String>(new String[] {}));
 		cb_SectionSelection.setFont(UI_Elements.font_bodyFillText);
 		cb_SectionSelection.setBorder(null);
 		cb_SectionSelection.setBounds(lblSectionManagement.getBounds().x, lblSectionManagement.getBounds().y+lblSectionManagement.getBounds().height+lineSpacing*2, tf_ArenaNumOfSeats.getBounds().width, tf_ArenaNumOfSeats.getBounds().height);
@@ -175,9 +173,9 @@ public class Properties extends JPanel {
 		lblSectionType.setBounds(cb_SectionSelection.getBounds().x, cb_SectionSelection.getBounds().y+cb_SectionSelection.getBounds().height+lineSpacing*2, lblArenaNumOfSeats.getBounds().width, lblArenaNumOfSeats.getBounds().height);
 		panelProperties.add(lblSectionType);
 
-		cb_SectionType = new JComboBox();
+		cb_SectionType = new JComboBox<String>();
 		cb_SectionType.setEnabled(false);
-		cb_SectionType.setModel(new DefaultComboBoxModel(new String[] { "Club Level", "Bleachers", "VIP" }));
+		cb_SectionType.setModel(new DefaultComboBoxModel<String>(new String[] { "Club Level", "Bleachers", "VIP" }));
 		cb_SectionType.setFont(UI_Elements.font_bodyFillText);
 		cb_SectionType.setBorder(null);
 		cb_SectionType.setBounds(tf_ArenaNumOfSeats.getBounds().x, lblSectionType.getBounds().y, cb_SectionSelection.getBounds().width, cb_SectionSelection.getBounds().height);
@@ -244,9 +242,9 @@ public class Properties extends JPanel {
 		lblSectionRanking.setBounds(lblIsRoofed.getBounds().x, lblIsRoofed.getBounds().y+lblIsRoofed.getBounds().height+lineSpacing, lblIsRoofed.getBounds().width, lblIsRoofed.getBounds().height);
 		panelProperties.add(lblSectionRanking);
 
-		cb_SectionRanking = new JComboBox();
+		cb_SectionRanking = new JComboBox<String>();
 		cb_SectionRanking.setEnabled(false);
-		cb_SectionRanking.setModel(new DefaultComboBoxModel(new String[] { "High", "Medium", "Low" }));
+		cb_SectionRanking.setModel(new DefaultComboBoxModel<String>(new String[] { "High", "Medium", "Low" }));
 		cb_SectionRanking.setFont(UI_Elements.font_bodyFillText);
 		cb_SectionRanking.setBorder(null);
 		cb_SectionRanking.setBounds(tf_SectionNumOfSeats.getBounds().x, lblSectionRanking.getBounds().y, tf_SectionNumOfSeats.getBounds().width, tf_SectionNumOfSeats.getBounds().height);
@@ -364,7 +362,7 @@ public class Properties extends JPanel {
 	}
 
 	// methods:
-	public void setProperties(boolean action) // Function that set the properties page by a given action (true/false)
+	public void setProperties(boolean action) // Function that sets the properties page by a given action (true/false)
 	{
 		tf_ArenaName.setEnabled(action);
 		tf_ArenaName.setEditable(action);

@@ -11,9 +11,7 @@ import model.User;
 
 public class ModelTest {
 
-	private Model model;
-	private User user;
-	
+	private Model model;	
 	private String username;
 	private String password;
 	private String firstName;

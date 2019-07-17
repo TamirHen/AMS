@@ -52,7 +52,6 @@ public class Game {
 			this.soldTickets+=numOfTicketsSold;
 			this.totalSingleTickets+=numOfTicketsSold;
 			this.singleTicketsRevenue+=this.vipRevenue;
-//			this.gameSections.get(sectionIndex).setSoldTickets(numOfTicketsSold);
 		}
 		public void clubLevelTicketsSold(int numOfTicketsSold, int sectionIndex) {
 			this.clubLevelTicketsSold+=numOfTicketsSold;
@@ -62,7 +61,6 @@ public class Game {
 			this.soldTickets+=numOfTicketsSold;
 			this.totalSingleTickets+=numOfTicketsSold;
 			this.singleTicketsRevenue+=this.clubLevelRevenue;
-//			this.gameSections.get(sectionIndex).setSoldTickets(numOfTicketsSold);
 
 		}
 		public void bleachersTicketsSold(int numOfTicketsSold, int sectionIndex) {
@@ -73,7 +71,6 @@ public class Game {
 			this.soldTickets+=numOfTicketsSold;
 			this.totalSingleTickets+=numOfTicketsSold;
 			this.singleTicketsRevenue+=this.bleachersRevenue;
-//			this.gameSections.get(sectionIndex).setSoldTickets(numOfTicketsSold);
 
 		}
 

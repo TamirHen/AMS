@@ -1,28 +1,18 @@
 package view;
 import java.awt.Color;
-import java.awt.Component;
 import java.awt.Cursor;
-import java.awt.Font;
-import java.awt.SystemColor;
-import java.awt.event.ActionEvent;
-import java.awt.event.ActionListener;
 import java.awt.event.MouseAdapter;
 import java.awt.event.MouseEvent;
 import java.util.ArrayList;
 import java.util.List;
 
-import javax.swing.DefaultComboBoxModel;
 import javax.swing.JButton;
-import javax.swing.JComboBox;
-import javax.swing.JComponent;
 import javax.swing.JLabel;
 import javax.swing.JPanel;
-import javax.swing.JSeparator;
-import javax.swing.JTable;
 import javax.swing.JTextField;
 import javax.swing.SwingConstants;
-import javax.swing.JScrollPane;
 
+@SuppressWarnings("serial")
 public class GamesAddGame extends JPanel {
 	
 	public JPanel panelAddGame;
@@ -61,7 +51,7 @@ public class GamesAddGame extends JPanel {
 		lblGameName.setBounds(35, titleAddGame.getBounds().y+titleAddGame.getBounds().height+12, 250, 22);
 		panelAddGame.add(lblGameName);
 		
-		tf_GameName = new JTextField(); //TODO - add name validation
+		tf_GameName = new JTextField();
 		tf_GameName.setDisabledTextColor(Color.BLACK);
 		tf_GameName.setEnabled(true);
 		tf_GameName.setEditable(true);
@@ -78,7 +68,7 @@ public class GamesAddGame extends JPanel {
 		lblDate.setBounds(lblGameName.getBounds().x, tf_GameName.getBounds().y+tf_GameName.getBounds().height+10, 250, 22);
 		panelAddGame.add(lblDate);
 		
-		tf_Date = new JTextField(); //TODO - add name validation
+		tf_Date = new JTextField();
 		tf_Date.setDisabledTextColor(Color.BLACK);
 		tf_Date.setEnabled(true);
 		tf_Date.setEditable(true);
@@ -132,23 +122,7 @@ public class GamesAddGame extends JPanel {
 		    }
 		} );
 		
-		
-		//Action Listeners
-		/*btnAddGameFinish.addActionListener(new ActionListener() {
-			public void actionPerformed(ActionEvent arg0) {
-				panelAddGame.setVisible(false);
-				setButtonsToDefault();
-			}
-		});
-		
-		btnAddGameCancel.addActionListener(new ActionListener() {
-			public void actionPerformed(ActionEvent arg0) {
-				panelAddGame.setVisible(false);
-				setButtonsToDefault();
-			}
-		});*/
-		
-	}
+	}// end of constructor
 
 	public void addObserverButton(JButton i_Button)
 	{

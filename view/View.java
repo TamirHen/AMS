@@ -1,37 +1,8 @@
 package view;
-import java.awt.BorderLayout;
-import java.awt.Color;
-import java.awt.Cursor;
-import java.awt.Dimension;
-import java.awt.EventQueue;
-import java.awt.Font;
-import java.awt.Image;
-import java.awt.event.MouseAdapter;
-import java.awt.event.MouseEvent;
-
-import javax.swing.ImageIcon;
-import javax.swing.JButton;
 import javax.swing.JFrame;
-import javax.swing.JLabel;
 import javax.swing.JPanel;
-import javax.swing.JPasswordField;
-import javax.swing.JTextField;
-import javax.swing.SwingConstants;
-import javax.swing.border.EmptyBorder;
 
-import model.Model;
-import model.Stadium;
-import model.User;
-
-import java.awt.event.ActionListener;
-import java.awt.event.ActionEvent;
-import java.sql.*;
-import javax.swing.*;
-import java.sql.Connection;
-import java.sql.DriverManager;
-import java.sql.ResultSet;
-import java.sql.Statement;
-import sqlite.*;
+@SuppressWarnings("serial")
 public class View extends JFrame {
 	
 	public JPanel mainPanel;
@@ -57,7 +28,7 @@ public class View extends JFrame {
 		UI_Elements.createFonts();
 		
 		// set sign up frame:
-		signUpFrame = new SignUp(); //TODO - every signup should be a new instance of the object
+		signUpFrame = new SignUp();
 		// set all panels:
 		loginPanel = new Login();
 		overviewPanel = new Overview();

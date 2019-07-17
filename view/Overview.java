@@ -1,24 +1,12 @@
 package view;
 import java.awt.Color;
-import java.awt.Component;
 import java.awt.Cursor;
-import java.awt.Font;
-import java.awt.Image;
-import java.awt.SystemColor;
-import java.awt.event.ActionEvent;
-import java.awt.event.ActionListener;
-import java.awt.event.MouseAdapter;
-import java.awt.event.MouseEvent;
-
-import javax.swing.Icon;
 import javax.swing.ImageIcon;
-import javax.swing.JButton;
-import javax.swing.JFrame;
 import javax.swing.JLabel;
 import javax.swing.JPanel;
-import javax.swing.JSeparator;
 import javax.swing.SwingConstants;
 
+@SuppressWarnings("serial")
 public class Overview extends JPanel {
 
 	public JPanel panelOverview;
@@ -43,7 +31,6 @@ public class Overview extends JPanel {
 		titleOverview.setBounds(25, 22, 470, 76);
 		titleOverview.setCursor(Cursor.getPredefinedCursor(Cursor.DEFAULT_CURSOR));
 		titleOverview.setForeground(Color.WHITE);
-		//titleOverview.setFont(new Font(UI_Elements.mainFontName, Font.BOLD, UI_Elements.textPanelTitleSize));
 		titleOverview.setFont(UI_Elements.font_AgencyPanelTitle);
 		panelOverview.add(titleOverview);
 		
@@ -67,16 +54,6 @@ public class Overview extends JPanel {
 		sectionDetailsPanel.setLayout(null);
 		panelOverview.add(sectionDetailsPanel);
 		overviewStadiumPanel.assignDetailsPanel(sectionDetailsPanel.panelSectionDetails);
-
-		/*panelSectionDetails = new JPanel();
-		panelSectionDetails.setBorder(null);
-		panelSectionDetails.setBackground(SystemColor.control);
-		panelSectionDetails.setBounds(596, 0, 329, 617);
-		panelOverview.add(panelSectionDetails);
-		panelSectionDetails.setLayout(null);
-		panelSectionDetails.setVisible(false);*/
-
-
 				
 			
 	}

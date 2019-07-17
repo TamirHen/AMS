@@ -1,29 +1,14 @@
 package view;
-import java.awt.Color;
 import java.awt.Component;
 import java.awt.Cursor;
-import java.awt.Font;
 import java.awt.SystemColor;
-import java.awt.event.ActionEvent;
-import java.awt.event.ActionListener;
-import java.awt.event.MouseAdapter;
-import java.awt.event.MouseEvent;
-import java.util.ArrayList;
-import java.util.List;
-
-import javax.swing.DefaultComboBoxModel;
-import javax.swing.JButton;
-import javax.swing.JComboBox;
-import javax.swing.JComponent;
 import javax.swing.JLabel;
 import javax.swing.JPanel;
-import javax.swing.JSeparator;
-import javax.swing.JTable;
 import javax.swing.JTextField;
 import javax.swing.SwingConstants;
-import javax.swing.JScrollPane;
 
 
+@SuppressWarnings("serial")
 public class OverviewSectionDetails extends JPanel {
 	
 	public JPanel panelSectionDetails;
@@ -67,7 +52,6 @@ public class OverviewSectionDetails extends JPanel {
 		lblSectionNumber.setBounds(titleSectionDetails.getBounds().x, titleSectionDetails.getBounds().y+titleSectionDetails.getBounds().height+25, 265, 26);
 		lblSectionNumber.setCursor(Cursor.getPredefinedCursor(Cursor.DEFAULT_CURSOR));
 		lblSectionNumber.setForeground(UI_Elements.color_mainBackgroundColor);
-		//lblSectionNumber.setFont(new Font(UI_Elements.mainFontName, Font.BOLD, 23));
 		lblSectionNumber.setFont(UI_Elements.font_AgencyHeader);
 		panelSectionDetails.add(lblSectionNumber);
 		

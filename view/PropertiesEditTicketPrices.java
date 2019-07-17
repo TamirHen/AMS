@@ -1,30 +1,21 @@
 package view;
 
-import java.awt.BorderLayout;
 import java.awt.Color;
 import java.awt.Component;
 import java.awt.Cursor;
-import java.awt.EventQueue;
-import java.awt.Font;
-import java.awt.SystemColor;
-import java.awt.event.ActionEvent;
-import java.awt.event.ActionListener;
 import java.awt.event.MouseAdapter;
 import java.awt.event.MouseEvent;
 
-import javax.swing.ImageIcon;
 import javax.swing.JButton;
-import javax.swing.JComponent;
 import javax.swing.JFrame;
 import javax.swing.JLabel;
 import javax.swing.JPanel;
-import javax.swing.JPasswordField;
 import javax.swing.JTextField;
 import javax.swing.SwingConstants;
 import javax.swing.border.EmptyBorder;
-import javax.swing.text.JTextComponent;
 
 
+@SuppressWarnings("serial")
 public class PropertiesEditTicketPrices extends JFrame {
 
 	public JPanel panelEditTicketPrices;
@@ -179,9 +170,7 @@ public class PropertiesEditTicketPrices extends JFrame {
 		lblErrorMessage_InavlidValue.setForeground(Color.RED);
 		lblErrorMessage_InavlidValue.setVisible(false);
 		panelEditTicketPrices.add(lblErrorMessage_InavlidValue);
-		
 
-		//Action Listeners
 		
 		
 	}

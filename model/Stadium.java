@@ -1,8 +1,5 @@
 package model;
 
-import java.util.Scanner;
-import java.util.ArrayList;
-
 public class Stadium {
 	private static Stadium instance=null;
 	private int stadiumId;

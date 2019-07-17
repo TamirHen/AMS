@@ -69,7 +69,6 @@ public class Section {
 		
 		stadium.setCapacity(newNumOfSeats-this.numOfSeats); //send only the difference to the stadium
 		this.numOfSeats = newNumOfSeats;
-		//needs to update the DB as well
 		
 	}
 

@@ -2,7 +2,6 @@ package view;
 import java.awt.Color;
 import java.awt.Component;
 import java.awt.Cursor;
-import java.awt.Font;
 import java.awt.SystemColor;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
@@ -11,18 +10,17 @@ import java.awt.event.MouseEvent;
 import java.util.ArrayList;
 import java.util.List;
 
-import javax.swing.DefaultComboBoxModel;
 import javax.swing.JButton;
 import javax.swing.JComboBox;
 import javax.swing.JComponent;
 import javax.swing.JLabel;
 import javax.swing.JPanel;
-import javax.swing.JSeparator;
 import javax.swing.JTable;
 import javax.swing.JTextField;
 import javax.swing.SwingConstants;
 import javax.swing.JScrollPane;
 
+@SuppressWarnings("serial")
 public class FacilitiesSecurity extends JPanel {
 
 	public JPanel panelSecurity;
@@ -54,8 +52,8 @@ public class FacilitiesSecurity extends JPanel {
 	public JButton btnRemoveSecurityFinish;
 	private JButton btnRemoveSecurityCancel;
 
-	private int lineSpacing = 7;
-	private int boxSpacing = 12;
+	private final int lineSpacing = 7;
+	private final int boxSpacing = 12;
 	
 	
 	public FacilitiesSecurity(){
@@ -166,7 +164,7 @@ public class FacilitiesSecurity extends JPanel {
 		lblAddSecurityJobDescription.setBorder(null);
 		lblAddSecurityJobDescription.setForeground(UI_Elements.color_mainBackgroundColor);
 		lblAddSecurityJobDescription.setFont(UI_Elements.font_bodyLabel);
-		lblAddSecurityJobDescription.setBounds(lblAddSecutirySecurityName.getBounds().x, lblAddSecutirySecurityName.getBounds().y+lblAddSecutirySecurityName.getBounds().height+7, 109, 26);
+		lblAddSecurityJobDescription.setBounds(lblAddSecutirySecurityName.getBounds().x, lblAddSecutirySecurityName.getBounds().y+lblAddSecutirySecurityName.getBounds().height+lineSpacing, 109, 26);
 		panelSecurity.add(lblAddSecurityJobDescription);
 
 		tf_AddSecurityJobDescription = new JTextField();
@@ -183,7 +181,7 @@ public class FacilitiesSecurity extends JPanel {
 		lblAddSecurityContractStart.setBorder(null);
 		lblAddSecurityContractStart.setForeground(UI_Elements.color_mainBackgroundColor);
 		lblAddSecurityContractStart.setFont(UI_Elements.font_bodyLabel);
-		lblAddSecurityContractStart.setBounds(lblAddSecurityJobDescription.getBounds().x, lblAddSecurityJobDescription.getBounds().y+lblAddSecurityJobDescription.getBounds().height+7, 70, 26);
+		lblAddSecurityContractStart.setBounds(lblAddSecurityJobDescription.getBounds().x, lblAddSecurityJobDescription.getBounds().y+lblAddSecurityJobDescription.getBounds().height+lineSpacing, 70, 26);
 		panelSecurity.add(lblAddSecurityContractStart);
 	
 		tf_AddSecurityContractStart = new JTextField();

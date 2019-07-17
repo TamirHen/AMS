@@ -2,9 +2,6 @@ package view;
 import java.awt.Color;
 import java.awt.Component;
 import java.awt.Cursor;
-import java.awt.Font;
-import java.awt.Image;
-import java.awt.SystemColor;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.awt.event.MouseAdapter;
@@ -13,17 +10,14 @@ import java.util.ArrayList;
 import java.util.List;
 
 import javax.swing.DefaultComboBoxModel;
-import javax.swing.Icon;
 import javax.swing.ImageIcon;
 import javax.swing.JButton;
 import javax.swing.JComboBox;
-import javax.swing.JComponent;
-import javax.swing.JFrame;
 import javax.swing.JLabel;
 import javax.swing.JPanel;
-import javax.swing.JSeparator;
 import javax.swing.SwingConstants;
 
+@SuppressWarnings("serial")
 public class Games extends JPanel {
 	
 	public JPanel panelGames;
@@ -35,8 +29,8 @@ public class Games extends JPanel {
 	
 	private JLabel lblSeason;
 	private JLabel lblGame;
-	public JComboBox<String> cb_SalesSeason;
-	public JComboBox<String> cb_SalesGame;
+	public JComboBox<String> cb_Season;
+	public JComboBox<String> cb_Game;
 	private JButton btnAddSeason;
 	private JButton btnAddGame;
 	
@@ -84,12 +78,12 @@ public class Games extends JPanel {
 		lblSeason.setBounds(35,gamesStadiumPanel.getBounds().y + 5 , 65, 20);
 		panelGames.add(lblSeason);
 		
-		cb_SalesSeason = new JComboBox();
-		cb_SalesSeason.setFont(UI_Elements.font_bodyFillText);
-		cb_SalesSeason.setModel(new DefaultComboBoxModel(new String[] {}));
-		cb_SalesSeason.setBounds(100, lblSeason.getBounds().y, 200, 20);
-		panelGames.add(cb_SalesSeason);
-		gamesStadiumPanel.observerComboboxes.add(cb_SalesSeason);
+		cb_Season = new JComboBox<String>();
+		cb_Season.setFont(UI_Elements.font_bodyFillText);
+		cb_Season.setModel(new DefaultComboBoxModel<String>(new String[] {}));
+		cb_Season.setBounds(100, lblSeason.getBounds().y, 200, 20);
+		panelGames.add(cb_Season);
+		gamesStadiumPanel.observerComboboxes.add(cb_Season);
 		
 		lblGame = new JLabel("Game:");
 		lblGame.setAlignmentY(Component.BOTTOM_ALIGNMENT);
@@ -99,12 +93,12 @@ public class Games extends JPanel {
 		lblGame.setBounds(35, (lblSeason.getBounds().y)+30, 65, 20);
 		panelGames.add(lblGame);
 		
-		cb_SalesGame = new JComboBox();
-		cb_SalesGame.setFont(UI_Elements.font_bodyFillText);
-		cb_SalesGame.setModel(new DefaultComboBoxModel(new String[] {}));
-		cb_SalesGame.setBounds(100, (cb_SalesSeason.getBounds().y)+30, 200, 20);
-		panelGames.add(cb_SalesGame);
-		gamesStadiumPanel.observerComboboxes.add(cb_SalesGame);
+		cb_Game = new JComboBox<String>();
+		cb_Game.setFont(UI_Elements.font_bodyFillText);
+		cb_Game.setModel(new DefaultComboBoxModel<String>(new String[] {}));
+		cb_Game.setBounds(100, (cb_Season.getBounds().y)+30, 200, 20);
+		panelGames.add(cb_Game);
+		gamesStadiumPanel.observerComboboxes.add(cb_Game);
 
 		
 		

@@ -4,14 +4,6 @@ import java.sql.DriverManager;
 import java.sql.ResultSet;
 import java.sql.Statement;
 import java.util.ArrayList;
-import java.util.List;
-import javax.swing.JPanel;
-import javax.swing.JTable;
-import java.lang.Object;
-import javax.swing.table.AbstractTableModel;
-import javax.swing.table.DefaultTableModel;
-import java.util.Date;
-
 import model.*;
 
 public class SqliteDB {
@@ -213,11 +205,10 @@ public class SqliteDB {
 			}
 			season.setNumOfGames(index);
 			rs = stmt.executeQuery("select * from Game where season='"+season.getName()+"'");
-//			System.out.println("select * from Game where season.name="+season.getName());
 			game = new ArrayList<Game>();
 			index=0;
 			while(rs.next()) {
-				game.add(new Game(rs.getString("name"), rs.getString("date"),this.stadium.getCapacity(), 100, 50, 20, 300, this.stadium));//need to create class for the ticket prices and changed it here
+				game.add(new Game(rs.getString("name"), rs.getString("date"),this.stadium.getCapacity(), 100, 50, 20, 300, this.stadium));
 				game.get(index).gameSections=initializeGameSections(game.get(index), season);
 				index++;
 			}

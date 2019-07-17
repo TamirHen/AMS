@@ -1,16 +1,11 @@
 package view;
-import java.awt.BorderLayout;
 import java.awt.Color;
 import java.awt.Cursor;
-import java.awt.Dimension;
-import java.awt.EventQueue;
-import java.awt.Font;
 import java.awt.event.MouseAdapter;
 import java.awt.event.MouseEvent;
 
 import javax.swing.ImageIcon;
 import javax.swing.JButton;
-import javax.swing.JFrame;
 import javax.swing.JLabel;
 import javax.swing.JPanel;
 import javax.swing.JPasswordField;
@@ -18,11 +13,7 @@ import javax.swing.JTextField;
 import javax.swing.SwingConstants;
 import javax.swing.border.EmptyBorder;
 
-import sqlite.SqliteDB;
-
-import java.awt.event.ActionListener;
-import java.awt.event.ActionEvent;
-
+@SuppressWarnings("serial")
 public class Login extends JPanel {
 	
 	public JPanel panelLogin;
@@ -93,7 +84,6 @@ public class Login extends JPanel {
 		btnLogin.setForeground(Color.WHITE);
 		btnLogin.setOpaque(true);
 		btnLogin.setBorder(null);
-		//btnLogin.setFont(new Font(UI_Elements.mainFontName, Font.BOLD, 20));
 		btnLogin.setFont(UI_Elements.font_AgencyBodyButton);
 		btnLogin.setBackground(UI_Elements.color_panelBodyButtonDefault);
 		btnLogin.addMouseListener(new MouseAdapter() {

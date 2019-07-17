@@ -1,20 +1,16 @@
 package view;
 import java.awt.Color;
-import java.awt.Component;
 import java.awt.Cursor;
-import java.awt.Font;
-import java.awt.SystemColor;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.awt.event.MouseAdapter;
 import java.awt.event.MouseEvent;
-
 import javax.swing.JButton;
 import javax.swing.JLabel;
 import javax.swing.JPanel;
-import javax.swing.JTextField;
 import javax.swing.SwingConstants;
 
+@SuppressWarnings("serial")
 public class Facilities extends JPanel {
 	
 	public JPanel panelFacilities;
@@ -60,40 +56,6 @@ public class Facilities extends JPanel {
 		maintenancePanel.add(maintenancePanel.panelMaintenance);
 		maintenancePanel.setLayout(null);
 		maintenancePanel.setVisible(false);
-		
-		
-		/*
-		panelSecurity = new JPanel();
-		panelSecurity.setBorder(null);
-		panelSecurity.setBackground(SystemColor.control);
-		panelSecurity.setBounds(330, 0, 600, 617);
-		panelFacilities.add(panelSecurity);
-		panelSecurity.setLayout(null);
-		
-		titleSecurity = new JLabel("SECURITY");
-		titleSecurity.setAlignmentY(Component.TOP_ALIGNMENT);
-		titleSecurity.setVerticalAlignment(SwingConstants.TOP);
-		titleSecurity.setBounds(30, 22, 346, 76);
-		titleSecurity.setCursor(Cursor.getPredefinedCursor(Cursor.DEFAULT_CURSOR));
-		titleSecurity.setForeground(UI_Elements.color_mainBackgroundColor);
-		titleSecurity.setFont(new Font(UI_Elements.mainFontName, Font.BOLD, UI_Elements.textSubPanelTitleSize));
-		panelSecurity.add(titleSecurity);
-		
-		panelMaintenance = new JPanel();
-		panelMaintenance.setBorder(null);
-		panelMaintenance.setBackground(SystemColor.control);
-		panelMaintenance.setBounds(330, 0, 600, 617);
-		panelFacilities.add(panelMaintenance);
-		panelMaintenance.setLayout(null);
-		
-		titleMaintenance = new JLabel("MAINTENANCE");
-		titleMaintenance.setAlignmentY(Component.TOP_ALIGNMENT);
-		titleMaintenance.setVerticalAlignment(SwingConstants.TOP);
-		titleMaintenance.setBounds(30, 22, 346, 76);
-		titleMaintenance.setCursor(Cursor.getPredefinedCursor(Cursor.DEFAULT_CURSOR));
-		titleMaintenance.setForeground(UI_Elements.color_mainBackgroundColor);
-		titleMaintenance.setFont(new Font(UI_Elements.mainFontName, Font.BOLD, UI_Elements.textSubPanelTitleSize));
-		panelMaintenance.add(titleMaintenance);*/
 		
 		
 		//Buttons

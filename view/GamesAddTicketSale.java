@@ -1,29 +1,19 @@
 package view;
 
-import java.awt.BorderLayout;
 import java.awt.Color;
-import java.awt.Component;
 import java.awt.Cursor;
-import java.awt.EventQueue;
-import java.awt.Font;
-import java.awt.SystemColor;
-import java.awt.event.ActionEvent;
-import java.awt.event.ActionListener;
 import java.awt.event.MouseAdapter;
 import java.awt.event.MouseEvent;
 
-import javax.swing.ImageIcon;
 import javax.swing.JButton;
-import javax.swing.JComponent;
 import javax.swing.JFrame;
 import javax.swing.JLabel;
 import javax.swing.JPanel;
-import javax.swing.JPasswordField;
 import javax.swing.JTextField;
 import javax.swing.SwingConstants;
 import javax.swing.border.EmptyBorder;
-import javax.swing.text.JTextComponent;
 
+@SuppressWarnings("serial")
 public class GamesAddTicketSale extends JFrame {
 
 	public JPanel panelAddTicketSale;
@@ -61,7 +51,6 @@ public class GamesAddTicketSale extends JFrame {
 		titleAddTicketSale.setBounds(25, 22, 265, 30);
 		titleAddTicketSale.setCursor(Cursor.getPredefinedCursor(Cursor.DEFAULT_CURSOR));
 		titleAddTicketSale.setForeground(Color.WHITE);
-		//titleAddTicketSale.setFont(new Font(UI_Elements.mainFontName, Font.BOLD, 28));
 		titleAddTicketSale.setFont(UI_Elements.font_AgencyMediumPanelTitle);
 		panelAddTicketSale.add(titleAddTicketSale);
 		
@@ -203,9 +192,6 @@ public class GamesAddTicketSale extends JFrame {
 		lblErrorMessage_ValueOutOfRange.setForeground(Color.RED);
 		lblErrorMessage_ValueOutOfRange.setVisible(false);
 		panelAddTicketSale.add(lblErrorMessage_ValueOutOfRange);
-
-		//Action Listeners
-		
 		
 	}
 }
