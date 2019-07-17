@@ -43,11 +43,6 @@ public class SalesTickets extends JPanel {
 	public JTextField tf_TotalSingleClubLevel;
 	private JLabel lblTotalSingleBleachers;
 	public JTextField tf_TotalSingleBleachers;
-	private JSeparator sprtrTickets2;
-	private JLabel lblTotalNumOfSeasonTickets;
-	public JTextField tf_TotalNumOfSeasonTickets;
-	private JLabel lblTotalSeasonTicketRevenue;
-	public JTextField tf_TotalSeasonTicketRevenue;
 	
 	private int lineSpacing = 7;
 
@@ -75,7 +70,7 @@ public class SalesTickets extends JPanel {
 		lblTotalAttendance.setBounds(30, 103, 180, 15);
 		panelTickets.add(lblTotalAttendance);
 		
-		tf_TotalAttendance = new JTextField("20,000/60,000");
+		tf_TotalAttendance = new JTextField();
 		tf_TotalAttendance.setAlignmentY(Component.TOP_ALIGNMENT);
 		tf_TotalAttendance.setBorder(null);
 		tf_TotalAttendance.setOpaque(false);
@@ -97,7 +92,7 @@ public class SalesTickets extends JPanel {
 		lblTotalRevenue.setBounds(lblTotalAttendance.getBounds().x, lblTotalAttendance.getBounds().y+lblTotalAttendance.getBounds().height+lineSpacing, 180, lblTotalAttendance.getBounds().height);
 		panelTickets.add(lblTotalRevenue);
 		
-		tf_TotalRevenue = new JTextField("$500,000.0");
+		tf_TotalRevenue = new JTextField();
 		tf_TotalRevenue.setAlignmentY(Component.TOP_ALIGNMENT);
 		tf_TotalRevenue.setBorder(null);
 		tf_TotalRevenue.setOpaque(false);
@@ -124,7 +119,7 @@ public class SalesTickets extends JPanel {
 		lblTotalNumOfGameTickets.setBounds(sprtrTickets1.getBounds().x, sprtrTickets1.getBounds().y+sprtrTickets1.getBounds().height+lineSpacing*2, 250, lblTotalAttendance.getBounds().height);
 		panelTickets.add(lblTotalNumOfGameTickets);
 		
-		tf_TotalNumOfGameTickets = new JTextField("12,000/13,000");
+		tf_TotalNumOfGameTickets = new JTextField();
 		tf_TotalNumOfGameTickets.setAlignmentY(Component.TOP_ALIGNMENT);
 		tf_TotalNumOfGameTickets.setBorder(null);
 		tf_TotalNumOfGameTickets.setOpaque(false);
@@ -146,7 +141,7 @@ public class SalesTickets extends JPanel {
 		lblTotalGameTicketRevenue.setBounds(lblTotalNumOfGameTickets.getBounds().x, lblTotalNumOfGameTickets.getBounds().y+lblTotalNumOfGameTickets.getBounds().height+lineSpacing*2, 250, lblTotalNumOfGameTickets.getBounds().height);
 		panelTickets.add(lblTotalGameTicketRevenue);
 		
-		tf_TotalRevenueGameTickets = new JTextField("$100,000.0");
+		tf_TotalRevenueGameTickets = new JTextField();
 		tf_TotalRevenueGameTickets.setAlignmentY(Component.TOP_ALIGNMENT);
 		tf_TotalRevenueGameTickets.setBorder(null);
 		tf_TotalRevenueGameTickets.setOpaque(false);
@@ -168,7 +163,7 @@ public class SalesTickets extends JPanel {
 		lblTotalSingleVIP.setBounds(lblTotalGameTicketRevenue.getBounds().x+20, lblTotalGameTicketRevenue.getBounds().y+lblTotalGameTicketRevenue.getBounds().height+lineSpacing, 250, lblTotalGameTicketRevenue.getBounds().height);
 		panelTickets.add(lblTotalSingleVIP);
 		
-		tf_TotalSingleVIP = new JTextField("$10,000.0");
+		tf_TotalSingleVIP = new JTextField();
 		tf_TotalSingleVIP.setAlignmentY(Component.TOP_ALIGNMENT);
 		tf_TotalSingleVIP.setBorder(null);
 		tf_TotalSingleVIP.setOpaque(false);
@@ -190,7 +185,7 @@ public class SalesTickets extends JPanel {
 		lblTotalSingleClubLevel.setBounds(lblTotalSingleVIP.getBounds().x, lblTotalSingleVIP.getBounds().y+lblTotalSingleVIP.getBounds().height+lineSpacing, 180, lblTotalSingleVIP.getBounds().height);
 		panelTickets.add(lblTotalSingleClubLevel);
 		
-		tf_TotalSingleClubLevel = new JTextField("$10,000.0");
+		tf_TotalSingleClubLevel = new JTextField();
 		tf_TotalSingleClubLevel.setAlignmentY(Component.TOP_ALIGNMENT);
 		tf_TotalSingleClubLevel.setBorder(null);
 		tf_TotalSingleClubLevel.setOpaque(false);
@@ -213,7 +208,7 @@ public class SalesTickets extends JPanel {
 		lblTotalSingleBleachers.setBounds(lblTotalSingleClubLevel.getBounds().x, lblTotalSingleClubLevel.getBounds().y+lblTotalSingleClubLevel.getBounds().height+lineSpacing, 180, lblTotalSingleClubLevel.getBounds().height);
 		panelTickets.add(lblTotalSingleBleachers);
 		
-		tf_TotalSingleBleachers = new JTextField("$10,000.0");
+		tf_TotalSingleBleachers = new JTextField();
 		tf_TotalSingleBleachers.setAlignmentY(Component.TOP_ALIGNMENT);
 		tf_TotalSingleBleachers.setBorder(null);
 		tf_TotalSingleBleachers.setOpaque(false);
@@ -226,54 +221,7 @@ public class SalesTickets extends JPanel {
 		tf_TotalSingleBleachers.setFont(UI_Elements.font_bodySalesData);
 		panelTickets.add(tf_TotalSingleBleachers);
 		
-		sprtrTickets2 = new JSeparator();
-		sprtrTickets2.setForeground(UI_Elements.color_mainBackgroundColor);
-		sprtrTickets2.setBounds(lblTotalRevenue.getBounds().x, lblTotalSingleBleachers.getBounds().y+lblTotalSingleBleachers.getBounds().height+lineSpacing*2, 533, 10);
-		panelTickets.add(sprtrTickets2);
 		
-		lblTotalNumOfSeasonTickets = new JLabel("Total Num. of Season Tickets:");
-		lblTotalNumOfSeasonTickets.setAlignmentY(Component.TOP_ALIGNMENT);
-		lblTotalNumOfSeasonTickets.setVerticalAlignment(SwingConstants.TOP);
-		lblTotalNumOfSeasonTickets.setForeground(UI_Elements.color_mainBackgroundColor);
-		lblTotalNumOfSeasonTickets.setFont(UI_Elements.font_bodyLabel);
-		lblTotalNumOfSeasonTickets.setBorder(null);
-		lblTotalNumOfSeasonTickets.setBounds(sprtrTickets2.getBounds().x, sprtrTickets2.getBounds().y+sprtrTickets2.getBounds().height+lineSpacing*2, 250, lblTotalAttendance.getBounds().height);
-		panelTickets.add(lblTotalNumOfSeasonTickets);
-		
-		tf_TotalNumOfSeasonTickets = new JTextField("8,000");
-		tf_TotalNumOfSeasonTickets.setAlignmentY(Component.TOP_ALIGNMENT);
-		tf_TotalNumOfSeasonTickets.setBorder(null);
-		tf_TotalNumOfSeasonTickets.setOpaque(false);
-		tf_TotalNumOfSeasonTickets.setBackground(Color.WHITE);
-		tf_TotalNumOfSeasonTickets.setBounds(tf_TotalSingleBleachers.getBounds().x, lblTotalNumOfSeasonTickets.getBounds().y, 150, tf_TotalSingleBleachers.getBounds().height);
-		tf_TotalNumOfSeasonTickets.setForeground(UI_Elements.color_mainBackgroundColor);
-		tf_TotalNumOfSeasonTickets.setEnabled(true);
-		tf_TotalNumOfSeasonTickets.setEditable(false);
-		tf_TotalNumOfSeasonTickets.setHorizontalAlignment(SwingConstants.LEFT);
-		tf_TotalNumOfSeasonTickets.setFont(UI_Elements.font_bodySalesData);
-		panelTickets.add(tf_TotalNumOfSeasonTickets);
-		
-		lblTotalSeasonTicketRevenue = new JLabel("Total Season Ticket Revenue:");
-		lblTotalSeasonTicketRevenue.setAlignmentY(Component.TOP_ALIGNMENT);
-		lblTotalSeasonTicketRevenue.setVerticalAlignment(SwingConstants.TOP);
-		lblTotalSeasonTicketRevenue.setForeground(UI_Elements.color_mainBackgroundColor);
-		lblTotalSeasonTicketRevenue.setFont(UI_Elements.font_bodyLabel);
-		lblTotalSeasonTicketRevenue.setBorder(null);
-		lblTotalSeasonTicketRevenue.setBounds(lblTotalNumOfSeasonTickets.getBounds().x, lblTotalNumOfSeasonTickets.getBounds().y+lblTotalNumOfSeasonTickets.getBounds().height+lineSpacing, 250, lblTotalNumOfSeasonTickets.getBounds().height);
-		panelTickets.add(lblTotalSeasonTicketRevenue);
-		
-		tf_TotalSeasonTicketRevenue = new JTextField("$28,000");
-		tf_TotalSeasonTicketRevenue.setAlignmentY(Component.TOP_ALIGNMENT);
-		tf_TotalSeasonTicketRevenue.setBorder(null);
-		tf_TotalSeasonTicketRevenue.setOpaque(false);
-		tf_TotalSeasonTicketRevenue.setBackground(Color.WHITE);
-		tf_TotalSeasonTicketRevenue.setBounds(tf_TotalNumOfSeasonTickets.getBounds().x, lblTotalSeasonTicketRevenue.getBounds().y, 150, tf_TotalNumOfSeasonTickets.getBounds().height);
-		tf_TotalSeasonTicketRevenue.setForeground(UI_Elements.color_mainBackgroundColor);
-		tf_TotalSeasonTicketRevenue.setEnabled(true);
-		tf_TotalSeasonTicketRevenue.setEditable(false);
-		tf_TotalSeasonTicketRevenue.setHorizontalAlignment(SwingConstants.LEFT);
-		tf_TotalSeasonTicketRevenue.setFont(UI_Elements.font_bodySalesData);
-		panelTickets.add(tf_TotalSeasonTicketRevenue);
 		
 	}
 	

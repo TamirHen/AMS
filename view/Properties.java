@@ -27,7 +27,6 @@ public class Properties extends JPanel {
 
 	public JTextField tf_Address;
 	public JTextField tf_ArenaName;
-	//public JTextField tf_SectionTicketPrice;
 	public JTextField tf_SectionNumOfSeats;
 	public JTextField tf_ArenaNumOfSeats;
 	public JTextField tf_TotalAttendance;
@@ -49,17 +48,16 @@ public class Properties extends JPanel {
 	public JButton btnFinishEditingProperties;
 	public JButton btnCancelEditing;
 	
-	public  JLabel titleProperties;
+	public JLabel titleProperties;
 	public JLabel lblArenaName;
-	public  JLabel lblArenaType;
-	public  JLabel lblAddress;
-	public  JLabel lblArenaNumOfSeats;
-	public  JLabel lblSectionManagement;
-	public  JLabel lblSectionType;
-	//public  JLabel lblSectionTicketPrice;
-	public  JLabel lblSectionNumOfSeats;
-	public  JLabel lblIsRoofed;
-	public  JLabel lblSectionRanking;
+	public JLabel lblArenaType;
+	public JLabel lblAddress;
+	public JLabel lblArenaNumOfSeats;
+	public JLabel lblSectionManagement;
+	public JLabel lblSectionType;
+	public JLabel lblSectionNumOfSeats;
+	public JLabel lblIsRoofed;
+	public JLabel lblSectionRanking;
 	
 	public  JSeparator separatorProperties;
 	

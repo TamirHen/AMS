@@ -85,20 +85,12 @@ public class Model {
 		db.createNewUserDB(userName, firstName, lastName, pf_password, email);
 		
 	}
+	//create methods:
+	
 	public void createNewSeason(String name, String leagueName) {
 		this.season.add(new Season(name, leagueName));
 		this.seasonSize++;
 		db.createNewSeasonDB(name, leagueName);
-	}
-
-	public void createNewGame(String name, String date,int seasonIndex, int sadiumCapacity, float vipTicketPrice, float clubLevelTicketPrice, float bleachersTicketPrice, float seasonTicketPrice, Stadium stadium) {
-		this.season.get(seasonIndex).createGame(name, date, sadiumCapacity, vipTicketPrice, clubLevelTicketPrice, bleachersTicketPrice, seasonTicketPrice, stadium);
-		db.createGameDB(name, date, this.season.get(seasonIndex),this.season.get(seasonIndex).games.get(this.season.get(seasonIndex).getNumOfGames()-1));
-	}
-
-	public void updateGameSection(int gameSectionIndex, int gameIndex, int seasonIndex, int numOfSoldTickets) {
-		season.get(seasonIndex).games.get(gameIndex).gameSections.get(gameSectionIndex-1).setSoldTickets(numOfSoldTickets);
-		db.updateGameSectionSoldTicketsDB(numOfSoldTickets, season.get(seasonIndex).getName(), season.get(seasonIndex).games.get(gameIndex).getName(), gameSectionIndex);
 	}
 	
 	public void createNewSponsor(String name, String contractStartDate, String contractEndDate, float totalContractValue) {
@@ -107,21 +99,11 @@ public class Model {
 		this.sponsorsSize++;
 		db.createNewSponsorDB(name, contractStartDate,contractEndDate,totalContractValue);
 	}
-	
-	public void deleteGivenSponsor(int index) {
-		this.sponsors.remove(index);
-		this.sponsorsSize--;
-	}
-	
+
 	public void createNewSecurity(String name, String contractStartDate, String jobDescription, float salary) {
 		this.security.add(new Security(name, contractStartDate, jobDescription, salary, this.stadium));
 		this.securitySize++;
 		db.createNewSecurityDB(name, contractStartDate,jobDescription,salary);
-	}
-	
-	public void deleteGivenSecurity(int index) {
-		this.security.remove(index);
-		this.securitySize--;
 	}
 	
 	public void createNewMaintenance(String name, String maintenanceStartdate, String maintenanceReason, int priority) {
@@ -129,11 +111,39 @@ public class Model {
 		this.maintenanceSize++;
 		db.createNewMaintenanceDB(name, maintenanceStartdate,maintenanceReason,priority);
 	}
+
+	public void createNewGame(String name, String date,int seasonIndex, int sadiumCapacity, float vipTicketPrice, float clubLevelTicketPrice, float bleachersTicketPrice, float seasonTicketPrice, Stadium stadium) {
+		this.season.get(seasonIndex).createGame(name, date, sadiumCapacity, vipTicketPrice, clubLevelTicketPrice, bleachersTicketPrice, seasonTicketPrice, stadium);
+		db.createGameDB(name, date, this.season.get(seasonIndex),this.season.get(seasonIndex).games.get(this.season.get(seasonIndex).getNumOfGames()-1));
+	}
+	
+	//update methods:
+	
+	public void updateGameSection(int gameSectionIndex, int gameIndex, int seasonIndex, int numOfSoldTickets) {
+		season.get(seasonIndex).games.get(gameIndex).gameSections.get(gameSectionIndex-1).setSoldTickets(numOfSoldTickets);
+		db.updateGameSectionSoldTicketsDB(season.get(seasonIndex).games.get(gameIndex).gameSections.get(gameSectionIndex-1).getSoldTickets(), season.get(seasonIndex).getName(), season.get(seasonIndex).games.get(gameIndex).getName(), gameSectionIndex);
+	}
+	
+	public void updateTicketPrice(float newVipPrice,float newClubLevelPrice, float newBleachersPrice) {
+		this.stadium.updateTicketPriceInAllSections(newVipPrice, newClubLevelPrice, newBleachersPrice);
+		db.updateSectionPrice(newVipPrice, newClubLevelPrice, newBleachersPrice);
+	}
+	
+	//delete methods:
+	
+	public void deleteGivenSecurity(int index) {
+		this.security.remove(index);
+		this.securitySize--;
+	}
 	
 	public void deleteGivenMaintenace(int index) {
 		this.maintenance.remove(index);
 		this.maintenanceSize--;
 	}
-
+	
+	public void deleteGivenSponsor(int index) {
+		this.sponsors.remove(index);
+		this.sponsorsSize--;
+	}
 	
 }
