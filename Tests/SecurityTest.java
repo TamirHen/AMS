@@ -10,7 +10,7 @@ import org.junit.jupiter.api.Test;
 
 import model.Security;
 
-class SecurityTest {
+public class SecurityTest {
 	
 	private ArrayList<Security> securityList = new ArrayList<Security>();
 	private String securityName;

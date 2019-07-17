@@ -10,7 +10,7 @@ import org.junit.jupiter.api.Test;
 
 import model.Sponsor;
 
-class SponsorTest {
+public class SponsorTest {
 	
 	private ArrayList<Sponsor> sponsorList = new ArrayList<Sponsor>();
 	private String sponsorName;

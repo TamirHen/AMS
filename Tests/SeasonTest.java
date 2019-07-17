@@ -11,7 +11,7 @@ import model.Season;
 import model.Section;
 import model.Stadium;
 
-class SeasonTest {
+public class SeasonTest {
 
 	private Stadium stadium;
 	private Section[] sectionArray;
@@ -70,8 +70,17 @@ class SeasonTest {
 
 	@Test
 	void seasonTest() {
-		season.createGame(game1);
-		season.createGame(game2);
+		season.createGame("1", "1/1/2001", stadiumCapacity, vipPrice, clubPrice, bleachersPrice, seasonTicketPrice, stadium);
+		season.createGame("2", "8/1/2001", stadiumCapacity, vipPrice, clubPrice, bleachersPrice, seasonTicketPrice, stadium);
+		
+		season.games.get(0).vipTicketsSold(numOfVipSold1, 0);
+		season.games.get(0).clubLevelTicketsSold(numOfClubLevelSold1, 1);
+		season.games.get(0).bleachersTicketsSold(numOfBleachersSold1, 2);
+		
+		season.games.get(1).vipTicketsSold(numOfVipSold2, 0);
+		season.games.get(1).clubLevelTicketsSold(numOfClubLevelSold2, 1);
+		season.games.get(1).bleachersTicketsSold(numOfBleachersSold2, 2);
+		
 		
 		expectedTotalSeasonRevenue = game1.getTotalGameRevenue() + game2.getTotalGameRevenue();
 		
