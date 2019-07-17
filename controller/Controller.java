@@ -705,48 +705,6 @@ public class Controller {
 			}
 		});
 				
-		view.salesPanel.btnDisplayTicketData.addActionListener(new ActionListener() {
-			public void actionPerformed(ActionEvent arg0) {
-				view.salesPanel.ticketsPanel.setVisible(true);
-				displayGameRevenue(view.salesPanel.cb_SalesSeason.getSelectedIndex(), view.salesPanel.cb_SalesGame.getSelectedIndex());
-				if(view.salesPanel.btnDisplayTicketData.isSelected())
-				{
-					view.salesPanel.ticketsPanel.panelTickets.setVisible(false);
-					view.salesPanel.btnDisplayTicketData.setSelected(false);
-					view.salesPanel.btnDisplayTicketData.setBackground(UI_Elements.color_panelBodyButtonDefault);
-					
-					for(JComponent component : view.salesPanel.comboList)
-					{
-						component.setEnabled(true);
-					}
-
-				}
-				else 
-				{
-					//Simmulate panel change
-					view.salesPanel.ticketsPanel.setVisible(false);
-					view.salesPanel.ticketsPanel.panelTickets.setVisible(false);
-					view.salesPanel.sponsorshipsPanel.setVisible(true);
-					view.salesPanel.sponsorshipsPanel.panelSponsorships.setVisible(true);
-					
-					view.salesPanel.ticketsPanel.setVisible(true);
-					view.salesPanel.ticketsPanel.panelTickets.setVisible(false);
-					view.salesPanel.sponsorshipsPanel.setVisible(false);
-					view.salesPanel.sponsorshipsPanel.panelSponsorships.setVisible(false);					
-					//
-					
-					for(JComponent component : view.salesPanel.comboList)
-					{
-						component.setEnabled(false);
-					}
-					
-					view.salesPanel.ticketsPanel.panelTickets.setVisible(true);
-					view.salesPanel.btnDisplayTicketData.setSelected(true);
-					view.salesPanel.btnDisplayTicketData.setBackground(UI_Elements.color_panelBodyButtonSelected);
-				}
-				
-			}
-		});
 					
 			
 			//---Sponsors---//
