@@ -1,14 +1,16 @@
 package model;
 
 
-public class Security {
+public class Security extends FacilitiesDepartment {
 	private String name;
 	private String contractStartDate;
 	private String jobDescription;
 	private float salary;
 
 	// Constructor:
-	public Security(String name, String contractStartDate, String jobDescription, float salary) {
+	public Security(String name, String contractStartDate, String jobDescription, float salary, Stadium stadium) {
+		super("Security", stadium);
+
 		this.name=name;
 		this.contractStartDate=contractStartDate;
 		this.jobDescription=jobDescription;
