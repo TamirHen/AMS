@@ -13,18 +13,15 @@ public class Game {
 	private int clubLevelTicketsSold;
 	private int bleachersTicketsSold;
 	private int totalSingleTickets;        // club+bleachers+vip
-	private int seasonTicketsSold;
 	
 	private float vipTicketPrice;
 	private float clubLevelTicketPrice;
 	private float bleachersTicketPrice;
-	private float seasonTicketPrice;
 	
 	private float vipRevenue;
 	private float clubLevelRevenue;
 	private float bleachersRevenue;
 	private float singleTicketsRevenue; // club+bleachers+vip revenue
-	private float seasonTicketsRevenue;
 	private float totalGameRevenue;
 	//Constructor
 		public Game (String name, String date, int stadiumCapacity, float vipTicketPrice, float clubLevelTicketPrice, float bleachersTicketPrice, float seasonTicketPrice, Stadium stadium) {
@@ -36,17 +33,14 @@ public class Game {
 			this.clubLevelTicketsSold=0;
 			this.bleachersTicketsSold=0;
 			this.totalSingleTickets=0;
-			this.seasonTicketsSold=0;
 			this.totalGameRevenue=0;
 			this.vipTicketPrice=vipTicketPrice;
 			this.clubLevelTicketPrice=clubLevelTicketPrice;
 			this.bleachersTicketPrice=bleachersTicketPrice;
-			this.seasonTicketPrice=seasonTicketPrice;
 			this.gameSections=new ArrayList<GameSection>();
 			for (int i = 0; i < stadium.getNumOfSections(); i++) {
 				gameSections.add(new GameSection(stadium.getArenaSection(i), 0));
 			}
-			
 		}
 		
 		//Methods
@@ -82,15 +76,7 @@ public class Game {
 //			this.gameSections.get(sectionIndex).setSoldTickets(numOfTicketsSold);
 
 		}
-		public void seasonTicketsSold(int numOfTicketsSold, int sectionIndex) {
-			this.seasonTicketsSold+=numOfTicketsSold;
-			this.seasonTicketsRevenue+=(numOfTicketsSold*seasonTicketPrice);
-			this.totalGameRevenue+=this.seasonTicketsRevenue;
-			this.unsoldTickets-=numOfTicketsSold;
-			this.soldTickets+=numOfTicketsSold;
-//			this.gameSections.get(sectionIndex).setSoldTickets(numOfTicketsSold);
 
-		}
 		public String getName() {
 			return this.name;
 		}
@@ -103,9 +89,6 @@ public class Game {
 		public int getBleachersTicketsSold() {
 			return this.bleachersTicketsSold;
 		}
-		public int getSeasonTicketsSold() {
-			return this.seasonTicketsSold;
-		}
 
 		public float getVipRevenue() {
 			return vipRevenue;
@@ -117,10 +100,6 @@ public class Game {
 
 		public float getBleachersRevenue() {
 			return bleachersRevenue;
-		}
-
-		public float getSeasonTicketsRevenue() {
-			return seasonTicketsRevenue;
 		}
 
 		public float getTotalGameRevenue() {
@@ -139,9 +118,7 @@ public class Game {
 			return soldTickets;
 		}
 
-		public int getTotalSingleTickes() {
-			return totalSingleTickets;
-		}
+		
 
 		public float getSingleTicketsRevenue() {
 			return singleTicketsRevenue;
@@ -149,6 +126,42 @@ public class Game {
 
 		public String getDate() {
 			return date;
+		}
+
+		public int getTotalSingleTickets() {
+			return totalSingleTickets;
+		}
+
+		public void setTotalSingleTickets(int totalSingleTickets) {
+			this.totalSingleTickets += totalSingleTickets;
+		}
+
+		public void setVipTicketsSold(int vipTicketsSold) {
+			this.vipTicketsSold += vipTicketsSold;
+		}
+
+		public void setClubLevelTicketsSold(int clubLevelTicketsSold) {
+			this.clubLevelTicketsSold += clubLevelTicketsSold;
+		}
+
+		public void setBleachersTicketsSold(int bleachersTicketsSold) {
+			this.bleachersTicketsSold += bleachersTicketsSold;
+		}
+
+		public void setVipRevenue(float vipRevenue) {
+			this.vipRevenue += vipRevenue;
+		}
+
+		public void setClubLevelRevenue(float clubLevelRevenue) {
+			this.clubLevelRevenue += clubLevelRevenue;
+		}
+
+		public void setBleachersRevenue(float bleachersRevenue) {
+			this.bleachersRevenue += bleachersRevenue;
+		}
+
+		public void setSingleTicketsRevenue(float singleTicketsRevenue) {
+			this.singleTicketsRevenue += singleTicketsRevenue;
 		}
 
 		

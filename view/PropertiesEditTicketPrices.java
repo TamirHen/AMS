@@ -29,7 +29,6 @@ public class PropertiesEditTicketPrices extends JFrame {
 
 	public JPanel panelEditTicketPrices;
 	private JLabel titleEditTicketPrices;
-	private JLabel lblSectionNumber;
 	private JLabel lblVIP;
 	public JTextField tf_VIP;
 	public JTextField tf_ClubLevel;
@@ -72,7 +71,7 @@ public class PropertiesEditTicketPrices extends JFrame {
 		lblVIP.setBounds(titleEditTicketPrices.getBounds().x, titleEditTicketPrices.getBounds().y+titleEditTicketPrices.getBounds().height+lineSpacing*2, 90, 25);
 		panelEditTicketPrices.add(lblVIP);
 		
-		tf_VIP  = new JTextField("$1000");
+		tf_VIP  = new JTextField();
 		tf_VIP.setAlignmentY(Component.CENTER_ALIGNMENT);
 		tf_VIP.setBounds(lblVIP.getBounds().x+lblVIP.getBounds().width+15, lblVIP.getBounds().y-boxHeightDifference, 150, lblVIP.getBounds().height);
 		tf_VIP.setBorder(null);
@@ -94,7 +93,7 @@ public class PropertiesEditTicketPrices extends JFrame {
 		lblClubLevel.setBounds(lblVIP.getBounds().x, lblVIP.getBounds().y+lblVIP.getBounds().height+lineSpacing, lblVIP.getBounds().width, lblVIP.getBounds().height);
 		panelEditTicketPrices.add(lblClubLevel);
 		
-		tf_ClubLevel  = new JTextField("$1000");
+		tf_ClubLevel  = new JTextField();
 		tf_ClubLevel.setAlignmentY(Component.CENTER_ALIGNMENT);
 		tf_ClubLevel.setBounds(lblClubLevel.getBounds().x+lblClubLevel.getBounds().width+15, lblClubLevel.getBounds().y-boxHeightDifference, tf_VIP.getBounds().width, lblVIP.getBounds().height);
 		tf_ClubLevel.setBorder(null);
@@ -116,7 +115,7 @@ public class PropertiesEditTicketPrices extends JFrame {
 		lblBleachers.setBounds(lblClubLevel.getBounds().x, lblClubLevel.getBounds().y+lblClubLevel.getBounds().height+lineSpacing, lblVIP.getBounds().width, lblVIP.getBounds().height);
 		panelEditTicketPrices.add(lblBleachers);
 		
-		tf_Bleachers  = new JTextField("$1000");
+		tf_Bleachers  = new JTextField();
 		tf_Bleachers.setAlignmentY(Component.CENTER_ALIGNMENT);
 		tf_Bleachers.setBounds(lblBleachers.getBounds().x+lblBleachers.getBounds().width+15, lblBleachers.getBounds().y-boxHeightDifference, tf_VIP.getBounds().width, lblVIP.getBounds().height);
 		tf_Bleachers.setBorder(null);

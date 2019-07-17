@@ -241,6 +241,7 @@ public class SqliteDB {
 			index=0;
 			while(rs.next()) {
 				gameSection.add(new GameSection(stadium.getArenaSection(rs.getInt("sectionNumber")-1/* to set the index and not the number */), rs.getInt("soldTickets")));
+				setTotalRevenue(season, game, gameSection.get(index), index);
 				index++;
 			}
 		} catch (Exception e) {
@@ -312,6 +313,32 @@ public class SqliteDB {
 		}
 	}
 	
+	public void createGameDB(String name, String date, Season season, Game game) {
+		try {
+			this.stmt = c.createStatement();
+			System.out.println("insert into Game values('"+name+"', '"+date+"', "+0+", "+0+", "+0+", "+0+", "+0+", "+0+", "+0+", "+0+", "+0+", '"+season.getName()+"')"); //Initialize values to 0 in the DB
+			stmt.executeUpdate("insert into Game values('"+name+"', '"+date+"', "+0+", "+0+", "+0+", "+0+", "+0+", "+0+", "+0+", "+0+", "+0+", '"+season.getName()+"')");
+			createGameSectionsDB(game ,season);
+		} catch (Exception e) {
+			System.out.println("Error: " + e.getMessage());
+
+		}
+	}
+	public void createGameSectionsDB(Game game, Season season) {
+		try {
+			this.stmt = c.createStatement();
+			for (int i = 0; i < stadium.getNumOfSections(); i++) {
+				System.out.println("insert into GameSection values("+(i+1)+", '"+game.getName()+"', "+game.gameSections.get(i).getSoldTickets()+", '"+season.getName()+"')");
+				stmt.executeUpdate("insert into GameSection values("+(i+1)+", '"+game.getName()+"', "+game.gameSections.get(i).getSoldTickets()+", '"+season.getName()+"')");
+
+			}
+
+		} catch (Exception e) {
+			System.out.println("Error: " + e.getMessage());
+
+		}
+	}
+	// delete methods:
 	public void deleteGivenSponsorDB(String name) {
 		try {
 			if(name!="") {
@@ -349,32 +376,6 @@ public class SqliteDB {
 	}
 	
 	
-	public void createGameDB(String name, String date, Season season, Game game) {
-		try {
-			this.stmt = c.createStatement();
-			System.out.println("insert into Game values('"+name+"', '"+date+"', "+0+", "+0+", "+0+", "+0+", "+0+", "+0+", "+0+", "+0+", "+0+", '"+season.getName()+"')"); //Initialize values to 0 in the DB
-			stmt.executeUpdate("insert into Game values('"+name+"', '"+date+"', "+0+", "+0+", "+0+", "+0+", "+0+", "+0+", "+0+", "+0+", "+0+", '"+season.getName()+"')");
-			createGameSectionsDB(game ,season);
-		} catch (Exception e) {
-			System.out.println("Error: " + e.getMessage());
-
-		}
-	}
-	public void createGameSectionsDB(Game game, Season season) {
-		try {
-			this.stmt = c.createStatement();
-			for (int i = 0; i < stadium.getNumOfSections(); i++) {
-				System.out.println("insert into GameSection values("+(i+1)+", '"+game.getName()+"', "+game.gameSections.get(i).getSoldTickets()+", '"+season.getName()+"')");
-				stmt.executeUpdate("insert into GameSection values("+(i+1)+", '"+game.getName()+"', "+game.gameSections.get(i).getSoldTickets()+", '"+season.getName()+"')");
-
-			}
-
-		} catch (Exception e) {
-			System.out.println("Error: " + e.getMessage());
-
-		}
-	}
-	
 	//update methods:
 	public void updateProperties(int stadiumIdToUpdate, String stadiumName, String homeTeam, int capacity, String address, int numOfSections) {
 		try {
@@ -387,16 +388,6 @@ public class SqliteDB {
 		}
 	}
 	
-	/*public void updateSections(int sectionNumToUpdate, String newSectionType, Float newTicketPrice, int newNumOfSeats, String newIsRoofed, String newSectionRanking) {
-		try {
-			this.stmt = c.createStatement();
-			System.out.println("update Section set sectionType='"+newSectionType+"', ticketPrice="+newTicketPrice+", numOfSeats="+newNumOfSeats+", isRoofed='"+newIsRoofed+"', sectionRanking='"+newSectionRanking+"' where sectionNumber="+sectionNumToUpdate);
-			stmt.executeUpdate("update Section set sectionType='"+newSectionType+"', ticketPrice="+newTicketPrice+", numOfSeats="+newNumOfSeats+", isRoofed='"+newIsRoofed+"', sectionRanking='"+newSectionRanking+"' where sectionNumber="+sectionNumToUpdate);
-		} catch (Exception e) {
-			System.out.println("Error: " + e.getMessage());
-
-		}
-	}*/
 	
 	public void updateSections(int sectionNumToUpdate, String newSectionType, int newNumOfSeats, String newIsRoofed, String newSectionRanking) {
 		try {
@@ -409,6 +400,23 @@ public class SqliteDB {
 		}
 	}
 	
+	public void updateSectionPrice(float newVipPrice,float newClubLevelPrice, float newBleachersPrice) {
+		try {
+			this.stmt = c.createStatement();
+			System.out.println("update Section set ticketPrice="+newVipPrice+" where sectionType='VIP'");
+			stmt.executeUpdate("update Section set ticketPrice="+newVipPrice+" where sectionType='VIP'");
+			System.out.println("update Section set ticketPrice="+newClubLevelPrice+" where sectionType='Club Level'");
+			stmt.executeUpdate("update Section set ticketPrice="+newClubLevelPrice+" where sectionType='Club Level'");
+			System.out.println("update Section set ticketPrice="+newBleachersPrice+" where sectionType='Bleachers'");
+			stmt.executeUpdate("update Section set ticketPrice="+newBleachersPrice+" where sectionType='Bleachers'");
+		
+		} catch (Exception e) {
+			System.out.println("Error: " + e.getMessage());
+
+		}
+	}
+	
+	
 	public void updateGameSectionSoldTicketsDB(int totalSoldTickets, String seasonName, String gameName, int sectionNumber) {
 		try {
 			this.stmt = c.createStatement();
@@ -419,6 +427,29 @@ public class SqliteDB {
 
 		}
 	}
+	// other methods:
+	public void setTotalRevenue(Season season, Game game, GameSection gameSection, int index){
+		//set the total revenue and sold tickets from DB:
+		if(gameSection.getSectionType().equals("VIP")) {
+			game.setVipTicketsSold(gameSection.getSoldTickets());
+			game.setVipRevenue(gameSection.getSoldTickets()*this.stadium.getArenaSection(index).getTicketPrice());
+			game.setTotalSingleTickets(gameSection.getSoldTickets());
+			game.setSingleTicketsRevenue(game.getVipRevenue());
+		}
+		else if(gameSection.getSectionType().equals("Bleachers")) {
+			game.setBleachersTicketsSold(gameSection.getSoldTickets());
+			game.setBleachersRevenue(gameSection.getSoldTickets()*this.stadium.getArenaSection(index).getTicketPrice());
+			game.setTotalSingleTickets(gameSection.getSoldTickets());
+			game.setSingleTicketsRevenue(game.getBleachersRevenue());
+		}
+		else {
+			game.setClubLevelTicketsSold(gameSection.getSoldTickets());
+			game.setClubLevelRevenue(gameSection.getSoldTickets()*this.stadium.getArenaSection(index).getTicketPrice());
+			game.setTotalSingleTickets(gameSection.getSoldTickets());
+			game.setSingleTicketsRevenue(game.getBleachersRevenue());
+			}
+	}
+
 	
 	// close connection:
 	public void closeConnection() {

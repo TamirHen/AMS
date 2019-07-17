@@ -39,7 +39,7 @@ public class GameSection {
 	}
 
 	public String getSectionType() {
-		return sectionType;
+		return this.sectionType;
 	}
 
 }
