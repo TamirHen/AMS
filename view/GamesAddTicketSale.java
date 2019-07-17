@@ -191,15 +191,15 @@ public class GamesAddTicketSale extends JFrame {
 		lblErrorMessage_InavlidValue = new JLabel("Invalid Value! Please try again"); 
 		lblErrorMessage_InavlidValue.setBounds(btnFinish.getBounds().x, btnFinish.getBounds().y+btnFinish.getBounds().height+lineSpacing+5, 325, 30);
 		lblErrorMessage_InavlidValue.setHorizontalAlignment(SwingConstants.LEFT);
-		lblErrorMessage_InavlidValue.setFont(UI_Elements.font_bodyFillText);
+		lblErrorMessage_InavlidValue.setFont(UI_Elements.font_errorMessage);
 		lblErrorMessage_InavlidValue.setForeground(Color.RED);
 		lblErrorMessage_InavlidValue.setVisible(false);
 		panelAddTicketSale.add(lblErrorMessage_InavlidValue);
 		
-		lblErrorMessage_ValueOutOfRange = new JLabel("Not enough tickets left in this section"); 
-		lblErrorMessage_ValueOutOfRange.setBounds(btnFinish.getBounds().x, btnFinish.getBounds().y+btnFinish.getBounds().height+lineSpacing+5, 325, 30);
+		lblErrorMessage_ValueOutOfRange = new JLabel("Amount exceeds available tickets left in this section"); 
+		lblErrorMessage_ValueOutOfRange.setBounds(btnFinish.getBounds().x, btnFinish.getBounds().y+btnFinish.getBounds().height+lineSpacing+5, 335, 30);
 		lblErrorMessage_ValueOutOfRange.setHorizontalAlignment(SwingConstants.LEFT);
-		lblErrorMessage_ValueOutOfRange.setFont(UI_Elements.font_bodyFillText);
+		lblErrorMessage_ValueOutOfRange.setFont(UI_Elements.font_errorMessage);;
 		lblErrorMessage_ValueOutOfRange.setForeground(Color.RED);
 		lblErrorMessage_ValueOutOfRange.setVisible(false);
 		panelAddTicketSale.add(lblErrorMessage_ValueOutOfRange);

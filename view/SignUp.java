@@ -97,7 +97,7 @@ public class SignUp extends JFrame {
 		lblUsernameAlreadyExist = new JLabel("Username already exists"); 
 		lblUsernameAlreadyExist.setBounds(-26, 480, 450, 30);
 		lblUsernameAlreadyExist.setHorizontalAlignment(SwingConstants.CENTER);
-		lblUsernameAlreadyExist.setFont(UI_Elements.font_bodyFillText);
+		lblUsernameAlreadyExist.setFont(UI_Elements.font_errorMessage);
 		lblUsernameAlreadyExist.setForeground(Color.RED);
 		lblUsernameAlreadyExist.setVisible(false);
 		panelSignUp.add(lblUsernameAlreadyExist);
@@ -105,7 +105,7 @@ public class SignUp extends JFrame {
 		lblPasswordMismatch = new JLabel("Passwords do not match");
 		lblPasswordMismatch.setBounds(-26, 480, 450, 30);
 		lblPasswordMismatch.setHorizontalAlignment(SwingConstants.CENTER);
-		lblPasswordMismatch.setFont(UI_Elements.font_bodyFillText);
+		lblPasswordMismatch.setFont(UI_Elements.font_errorMessage);
 		lblPasswordMismatch.setForeground(Color.RED);
 		lblPasswordMismatch.setVisible(false);
 		panelSignUp.add(lblPasswordMismatch);

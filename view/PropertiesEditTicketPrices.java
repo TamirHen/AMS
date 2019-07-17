@@ -60,7 +60,6 @@ public class PropertiesEditTicketPrices extends JFrame {
 		titleEditTicketPrices.setBounds(25, 22, 265, 32);
 		titleEditTicketPrices.setCursor(Cursor.getPredefinedCursor(Cursor.DEFAULT_CURSOR));
 		titleEditTicketPrices.setForeground(Color.WHITE);
-		//titleEditTicketPrices.setFont(new Font(UI_Elements.mainFontName, Font.BOLD, 28));
 		titleEditTicketPrices.setFont(UI_Elements.font_AgencySubPanelTitle);
 		panelEditTicketPrices.add(titleEditTicketPrices);
 		
@@ -177,7 +176,7 @@ public class PropertiesEditTicketPrices extends JFrame {
 		lblErrorMessage_InavlidValue = new JLabel("Invalid Value! Please try again"); 
 		lblErrorMessage_InavlidValue.setBounds(btnFinish.getBounds().x, btnFinish.getBounds().y+btnFinish.getBounds().height+lineSpacing+5, 325, 30);
 		lblErrorMessage_InavlidValue.setHorizontalAlignment(SwingConstants.LEFT);
-		lblErrorMessage_InavlidValue.setFont(UI_Elements.font_bodyOverviewSectionDetails);
+		lblErrorMessage_InavlidValue.setFont(UI_Elements.font_errorMessage);
 		lblErrorMessage_InavlidValue.setForeground(Color.RED);
 		lblErrorMessage_InavlidValue.setVisible(false);
 		panelEditTicketPrices.add(lblErrorMessage_InavlidValue);

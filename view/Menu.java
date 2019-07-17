@@ -31,24 +31,6 @@ public class Menu extends JPanel {
 	public JButton btnLogout;
 	public JButton btnGames;
 	
-	enum Pages{
-		OVERVIEW(0),
-		PROPERTIES(1),
-		SALES(2),
-		FACILITIES(3),
-		GAMES(4);
-		
-		private int value;
-		
-		private Pages(int value) {
-			this.value = value;
-		}
-		
-		public int getValue() {
-			return value;
-		}
-	}
-	
 	public Menu() {
 		
 		menuPanel = new JPanel();
@@ -57,7 +39,6 @@ public class Menu extends JPanel {
 		menuPanel.setLayout(null);
 		
 		HeaderBG = new JLabel();
-		/*HeaderBG.setIcon(new ImageIcon(Menu.class.getResource("/Images/logoHeader.png")));*/
 		HeaderBG.setBorder(null);
 		HeaderBG.setBackground(new Color(28, 23, 92));
 		HeaderBG.setBounds(0, 0, 190, 100);

@@ -35,8 +35,9 @@ public class UI_Elements {
 	public static int textMenuButtonTextDefault = 19;
 	public static int textMenuButtonTextUsername = 16;
 	public static int textPanelBodyButton = 20;
-	public static int textActionButton = 17;
+	public static int textActionButton = 16;
 	public static int textHeader = 23;
+	public static int textErrorMessage = 14;
 
 
 	
@@ -59,19 +60,15 @@ public class UI_Elements {
 	public static Font font_AgencyActionButton;
 	public static Font font_AgencyHeader;
 
-
 	
-	//Dynamic Fonts
-	//public static String mainFontName = "Agency FB"; // Change string name to change main Menu & Title font
-	//public static Font font_menuButtonTextDefault = new Font(mainFontName, Font.PLAIN, textMenuButtonTextDefault);
-	//public static Font font_menuButtonTextUser = new Font(mainFontName, Font.PLAIN, textMenuButtonTextUsername);
-	//public static Font font_menuButtonTextDefault = font_AgencyMenu;
-	//public static Font font_menuButtonTextUser = font_AgencyMenuUsername;
-	public static Font font_bodyLabel = new Font("Calibri", Font.BOLD, textBodyLabelSize); // Body JLabel font
-	public static Font font_bodyFillText = new Font("Calibri", Font.PLAIN, textBodyFillText); // Text Field & Combo Box font
-	public static Font font_bodySalesData = new Font("Calibri", Font.PLAIN, textBodySalesData); // Text Field & Combo Box font
-	public static Font font_bodyOverviewSectionDetails = new Font("Calibri", Font.PLAIN, textOverviewSectionDetails); 
-	public static Font font_bodyOverviewSectionDetailsBold = new Font("Calibri", Font.BOLD, textOverviewSectionDetails);
+	//System Fonts
+	public static String systemFontName = "Calibri";
+	public static Font font_bodyLabel = new Font(systemFontName, Font.BOLD, textBodyLabelSize); // Body JLabel font
+	public static Font font_bodyFillText = new Font(systemFontName, Font.PLAIN, textBodyFillText); // Text Field & Combo Box font
+	public static Font font_bodySalesData = new Font(systemFontName, Font.PLAIN, textBodySalesData); // Text Field & Combo Box font
+	public static Font font_bodyOverviewSectionDetails = new Font(systemFontName, Font.PLAIN, textOverviewSectionDetails); 
+	public static Font font_bodyOverviewSectionDetailsBold = new Font(systemFontName, Font.BOLD, textOverviewSectionDetails);
+	public static Font font_errorMessage = new Font(systemFontName, Font.PLAIN, textErrorMessage);
 
 	
 	//UI METHODS
