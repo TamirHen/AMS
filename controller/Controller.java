@@ -698,13 +698,49 @@ public class Controller {
 			}
 		});
 		
-		view.menuPanel.btnSales.addActionListener(new ActionListener() {
+				
+		view.salesPanel.btnDisplayTicketData.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
-				displayGameRevenue(view.salesPanel.cb_SalesSeason.getSelectedIndex(),view.salesPanel.cb_SalesGame.getSelectedIndex());
+				view.salesPanel.ticketsPanel.setVisible(true);
+				displayGameRevenue(view.salesPanel.cb_SalesSeason.getSelectedIndex(), view.salesPanel.cb_SalesGame.getSelectedIndex());
+				if(view.salesPanel.btnDisplayTicketData.isSelected())
+				{
+					view.salesPanel.ticketsPanel.panelTickets.setVisible(false);
+					view.salesPanel.btnDisplayTicketData.setSelected(false);
+					view.salesPanel.btnDisplayTicketData.setBackground(UI_Elements.color_panelBodyButtonDefault);
+					
+					for(JComponent component : view.salesPanel.comboList)
+					{
+						component.setEnabled(true);
+					}
+
+				}
+				else 
+				{
+					//Simmulate panel change
+					view.salesPanel.ticketsPanel.setVisible(false);
+					view.salesPanel.ticketsPanel.panelTickets.setVisible(false);
+					view.salesPanel.sponsorshipsPanel.setVisible(true);
+					view.salesPanel.sponsorshipsPanel.panelSponsorships.setVisible(true);
+					
+					view.salesPanel.ticketsPanel.setVisible(true);
+					view.salesPanel.ticketsPanel.panelTickets.setVisible(false);
+					view.salesPanel.sponsorshipsPanel.setVisible(false);
+					view.salesPanel.sponsorshipsPanel.panelSponsorships.setVisible(false);					
+					//
+					
+					for(JComponent component : view.salesPanel.comboList)
+					{
+						component.setEnabled(false);
+					}
+					
+					view.salesPanel.ticketsPanel.panelTickets.setVisible(true);
+					view.salesPanel.btnDisplayTicketData.setSelected(true);
+					view.salesPanel.btnDisplayTicketData.setBackground(UI_Elements.color_panelBodyButtonSelected);
+				}
 				
 			}
 		});
-				
 					
 			
 			//---Sponsors---//
@@ -807,8 +843,6 @@ public class Controller {
 			
 				}
 		});
-
-		//-----------------------------------------//
 		
 		//---Games Panel (in view)---//
 		for (int i = 0; i < model.seasonSize; i++) {
@@ -826,6 +860,7 @@ public class Controller {
 				view.gamesPanel.addGamePanel.panelAddGame.setVisible(false);
 				model.createNewGame(view.gamesPanel.addGamePanel.tf_GameName.getText(), view.gamesPanel.addGamePanel.tf_Date.getText(), view.gamesPanel.cb_SalesSeason.getSelectedIndex(), model.stadium.getCapacity(), 100, 50, 20, 300, model.stadium);
 				displayAllGamesInSelectedSeason(1);
+				displayAllGamesInSelectedSeason(2);
 				view.gamesPanel.addGamePanel.tf_GameName.setText("");
 				view.gamesPanel.addGamePanel.tf_Date.setText("");
 				view.gamesPanel.addGamePanel.setButtonsToDefault();

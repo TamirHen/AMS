@@ -254,47 +254,7 @@ public class Sales extends JPanel {
 			}
 		});
 		
-		btnDisplayTicketData.addActionListener(new ActionListener() {
-			public void actionPerformed(ActionEvent arg0) {
-				ticketsPanel.setVisible(true);
-				if(btnDisplayTicketData.isSelected())
-				{
-					ticketsPanel.panelTickets.setVisible(false);
-					btnDisplayTicketData.setSelected(false);
-					btnDisplayTicketData.setBackground(UI_Elements.color_panelBodyButtonDefault);
-					
-					for(JComponent component : comboList)
-					{
-						component.setEnabled(true);
-					}
-
-				}
-				else 
-				{
-					//Simmulate panel change
-					ticketsPanel.setVisible(false);
-					ticketsPanel.panelTickets.setVisible(false);
-					sponsorshipsPanel.setVisible(true);
-					sponsorshipsPanel.panelSponsorships.setVisible(true);
-					
-					ticketsPanel.setVisible(true);
-					ticketsPanel.panelTickets.setVisible(false);
-					sponsorshipsPanel.setVisible(false);
-					sponsorshipsPanel.panelSponsorships.setVisible(false);					
-					//
-					
-					for(JComponent component : comboList)
-					{
-						component.setEnabled(false);
-					}
-					
-					ticketsPanel.panelTickets.setVisible(true);
-					btnDisplayTicketData.setSelected(true);
-					btnDisplayTicketData.setBackground(UI_Elements.color_panelBodyButtonSelected);
-				}
-				
-			}
-		});
+		
 		
 		
 		
