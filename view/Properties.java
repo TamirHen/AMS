@@ -191,23 +191,6 @@ public class Properties extends JPanel {
 			}
 		});
 
-		/*lblSectionTicketPrice = new JLabel("Ticket Price:");
-		lblSectionTicketPrice.setBorder(null);
-		lblSectionTicketPrice.setForeground(Color.WHITE);
-		lblSectionTicketPrice.setFont(UI_Elements.font_bodyLabel);
-		lblSectionTicketPrice.setBounds(lblSectionType.getBounds().x, lblSectionType.getBounds().y+lblSectionType.getBounds().height+lineSpacing, lblSectionType.getBounds().width, lblSectionType.getBounds().height);
-		panelProperties.add(lblSectionTicketPrice);
-
-		tf_SectionTicketPrice = new JTextField();
-		tf_SectionTicketPrice.setDisabledTextColor(Color.BLACK);
-		tf_SectionTicketPrice.setEnabled(false);
-		tf_SectionTicketPrice.setEditable(false);
-		tf_SectionTicketPrice.setHorizontalAlignment(SwingConstants.LEFT);
-		tf_SectionTicketPrice.setFont(UI_Elements.font_bodyFillText);
-		tf_SectionTicketPrice.setBounds(cb_SectionType.getBounds().x, lblSectionTicketPrice.getBounds().y, cb_SectionType.getBounds().width, cb_SectionType.getBounds().height);
-		panelProperties.add(tf_SectionTicketPrice);
-		tf_SectionTicketPrice.setColumns(10);*/
-
 		lblSectionNumOfSeats = new JLabel("Num. of Seats:");
 		lblSectionNumOfSeats.setBorder(null);
 		lblSectionNumOfSeats.setForeground(Color.WHITE);

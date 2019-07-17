@@ -38,4 +38,8 @@ public class GameSection {
 		return unsoldTickets;
 	}
 
+	public String getSectionType() {
+		return sectionType;
+	}
+
 }
