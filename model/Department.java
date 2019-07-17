@@ -2,7 +2,6 @@ package model;
 
 public abstract class Department {
 	protected String departmentName;
-	protected int numOfEmployees;
 
 	// Constructor:
 	public Department(String i_DepartmentName) 
@@ -21,13 +20,4 @@ public abstract class Department {
 		this.departmentName = i_DepartmentName;
 	}
 	
-	public int getNumOfEmployees()
-	{
-		return numOfEmployees;
-	}
-	
-	public void setNumOfEmployees(int i_NumOfEmployees)
-	{
-		this.numOfEmployees = i_NumOfEmployees;
-	}
 }

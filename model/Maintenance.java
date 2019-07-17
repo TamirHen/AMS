@@ -1,13 +1,15 @@
 package model;
 
-public class Maintenance {
+public class Maintenance extends FacilitiesDepartment {
 	private String name;
 	private String maintenanceStartdate;
 	private String maintenanceReason;
 	private int priority;
 
 	// Constructor:
-	public Maintenance(String name, String maintenanceStartdate, String maintenanceReason, int priority) {
+	public Maintenance(String name, String maintenanceStartdate, String maintenanceReason, int priority, Stadium stadium) {
+		super("Maintenance", stadium);
+
 		this.name=name;
 		this.maintenanceStartdate=maintenanceStartdate;
 		this.maintenanceReason=maintenanceReason;

@@ -114,7 +114,7 @@ public class Model {
 	}
 	
 	public void createNewSecurity(String name, String contractStartDate, String jobDescription, float salary) {
-		this.security.add(new Security(name, contractStartDate, jobDescription, salary));
+		this.security.add(new Security(name, contractStartDate, jobDescription, salary, this.stadium));
 		this.securitySize++;
 		db.createNewSecurityDB(name, contractStartDate,jobDescription,salary);
 	}
@@ -125,7 +125,7 @@ public class Model {
 	}
 	
 	public void createNewMaintenance(String name, String maintenanceStartdate, String maintenanceReason, int priority) {
-		this.maintenance.add(new Maintenance(name, maintenanceStartdate, maintenanceReason, priority));
+		this.maintenance.add(new Maintenance(name, maintenanceStartdate, maintenanceReason, priority, this.stadium));
 		this.maintenanceSize++;
 		db.createNewMaintenanceDB(name, maintenanceStartdate,maintenanceReason,priority);
 	}

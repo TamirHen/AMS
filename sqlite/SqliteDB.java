@@ -170,7 +170,7 @@ public class SqliteDB {
 			security=new ArrayList<Security>();
 			securitySize=0;
 			while(rs.next()) {
-				security.add(new Security(rs.getString("name"), rs.getString("contractStartDate"),rs.getString("jobDescription"),rs.getFloat("salary")));
+				security.add(new Security(rs.getString("name"), rs.getString("contractStartDate"),rs.getString("jobDescription"),rs.getFloat("salary"), this.stadium));
 				securitySize++;
 			}
 		} catch (Exception e) {
@@ -192,7 +192,7 @@ public class SqliteDB {
 			maintenance=new ArrayList<Maintenance>();
 			maintenanceSize=0;
 			while(rs.next()) {
-				maintenance.add(new Maintenance(rs.getString("name"), rs.getString("maintenanceStartdate"),rs.getString("maintenanceReason"),rs.getInt("priority")));
+				maintenance.add(new Maintenance(rs.getString("name"), rs.getString("maintenanceStartdate"),rs.getString("maintenanceReason"),rs.getInt("priority"), this.stadium));
 				maintenanceSize++;
 			}
 		} catch (Exception e) {
