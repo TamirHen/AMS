@@ -21,6 +21,7 @@ public class GameSection {
 			this.soldTickets=0;
 		}
 		this.unsoldTickets=capacity;
+		this.unsoldTickets=this.capacity-soldTickets;
 	}
 
 	public int getSoldTickets() {
