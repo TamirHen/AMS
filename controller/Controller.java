@@ -1220,8 +1220,8 @@ public class Controller {
 			view.salesPanel.ticketsPanel.tf_TotalSingleVIP.setText(String.valueOf(model.season.get(seasonIndex).games.get(gameIndex).getVipRevenue()));
 			view.salesPanel.ticketsPanel.tf_TotalSingleClubLevel.setText(String.valueOf(model.season.get(seasonIndex).games.get(gameIndex).getClubLevelRevenue()));
 			view.salesPanel.ticketsPanel.tf_TotalSingleBleachers.setText(String.valueOf(model.season.get(seasonIndex).games.get(gameIndex).getBleachersRevenue()));
-			view.salesPanel.ticketsPanel.tf_TotalNumOfSeasonTickets.setText(String.valueOf(model.season.get(seasonIndex).games.get(gameIndex).getSeasonTicketsSold()));
-			view.salesPanel.ticketsPanel.tf_TotalSeasonTicketRevenue.setText(String.valueOf(model.season.get(seasonIndex).games.get(gameIndex).getSeasonTicketsRevenue()));
+			//view.salesPanel.ticketsPanel.tf_TotalNumOfSeasonTickets.setText(String.valueOf(model.season.get(seasonIndex).games.get(gameIndex).getSeasonTicketsSold()));
+			//view.salesPanel.ticketsPanel.tf_TotalSeasonTicketRevenue.setText(String.valueOf(model.season.get(seasonIndex).games.get(gameIndex).getSeasonTicketsRevenue()));
 
 		}
 		//games panel:
