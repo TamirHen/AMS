@@ -137,6 +137,7 @@ public class Games extends JPanel {
 		    	}
 		    }
 		} );
+		gamesStadiumPanel.observerButtons.add(btnAddSeason);
 		
 		btnAddGame = new JButton("   ADD GAME");
 		btnAddGame.setFocusPainted(false);
@@ -166,6 +167,8 @@ public class Games extends JPanel {
 		    	}
 		    }
 		} );
+		gamesStadiumPanel.observerButtons.add(btnAddGame);
+
 		
 		//Sub-panels
 		sectionDetailsPanel = new GamesSectionDetails();

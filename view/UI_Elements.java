@@ -24,20 +24,20 @@ public class UI_Elements {
 	public static Color color_panelBodyButtonRollover = new Color(63, 50, 117); // Panel body button - Rollover
 
 	//SIZE CONTROLLERS
-	public static int textPanelTitleSize = 40;
-	public static int textSmallPanelTitleSize = 20;
-	public static int textMediumPanelTitleSize = 28;
-	public static int textSubPanelTitleSize = 30;
-	public static int textBodyLabelSize = 15;
-	public static int textBodyFillText = 13;
-	public static int textBodySalesData = 17;
-	public static int textOverviewSectionDetails = 18;
-	public static int textMenuButtonTextDefault = 19;
-	public static int textMenuButtonTextUsername = 16;
-	public static int textPanelBodyButton = 20;
-	public static int textActionButton = 16;
-	public static int textHeader = 23;
-	public static int textErrorMessage = 14;
+	public static final int textPanelTitleSize = 40;
+	public static final int textSmallPanelTitleSize = 20;
+	public static final int textMediumPanelTitleSize = 28;
+	public static final int textSubPanelTitleSize = 30;
+	public static final int textBodyLabelSize = 15;
+	public static final int textBodyFillText = 13;
+	public static final int textBodySalesData = 17;
+	public static final int textOverviewSectionDetails = 18;
+	public static final int textMenuButtonTextDefault = 19;
+	public static final int textMenuButtonTextUsername = 16;
+	public static final int textPanelBodyButton = 20;
+	public static final int textActionButton = 16;
+	public static final int textHeader = 23;
+	public static final int textErrorMessage = 14;
 
 
 	

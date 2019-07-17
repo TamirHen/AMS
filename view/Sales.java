@@ -8,10 +8,12 @@ import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.awt.event.MouseAdapter;
 import java.awt.event.MouseEvent;
+import java.util.ArrayList;
 
 import javax.swing.DefaultComboBoxModel;
 import javax.swing.JButton;
 import javax.swing.JComboBox;
+import javax.swing.JComponent;
 import javax.swing.JLabel;
 import javax.swing.JPanel;
 import javax.swing.JSeparator;
@@ -36,6 +38,12 @@ public class Sales extends JPanel {
 	public JComboBox<String> cb_SalesSeason;
 	public JComboBox<String> cb_SalesGame;
 	
+	public int selectedSeasonIndex;
+	public int selectedGameIndex;
+
+	
+	public ArrayList<JComponent> comboList = new ArrayList<JComponent>();
+	
 	public Sales() {
 		//Sales Panel Settings
 		panelSales = new JPanel();
@@ -56,56 +64,36 @@ public class Sales extends JPanel {
 		titleSales.setFont(UI_Elements.font_AgencyPanelTitle);
 		panelSales.add(titleSales);
 		
-		lblSeason = new JLabel("Season:");
-		lblSeason.setAlignmentY(Component.BOTTOM_ALIGNMENT);
-		lblSeason.setForeground(Color.WHITE);
-		lblSeason.setFont(UI_Elements.font_bodyLabel);
-		lblSeason.setBorder(null);
-		lblSeason.setBounds(35, 103, 65, 20);
-		panelSales.add(lblSeason);
-		
-		cb_SalesSeason = new JComboBox();
-		cb_SalesSeason.setFont(UI_Elements.font_bodyFillText);
-		cb_SalesSeason.setModel(new DefaultComboBoxModel(new String[] {}));
-		cb_SalesSeason.setBounds(100, 103, 200, 20);
-		panelSales.add(cb_SalesSeason);
-		
-		lblGame = new JLabel("Game:");
-		lblGame.setAlignmentY(Component.BOTTOM_ALIGNMENT);
-		lblGame.setForeground(Color.WHITE);
-		lblGame.setFont(UI_Elements.font_bodyLabel);
-		lblGame.setBorder(null);
-		lblGame.setBounds(35, (lblSeason.getBounds().y)+30, 65, 20);
-		panelSales.add(lblGame);
-		
-		cb_SalesGame = new JComboBox();
-		cb_SalesGame.setFont(UI_Elements.font_bodyFillText);
-		cb_SalesGame.setModel(new DefaultComboBoxModel(new String[] {}));
-		cb_SalesGame.setBounds(100, (cb_SalesSeason.getBounds().y)+30, 200, 20);
-		panelSales.add(cb_SalesGame);
-		
-		
-		//Tickets sub-panel
-		ticketsPanel = new SalesTickets();
-		ticketsPanel.setBounds(330, 0, ticketsPanel.panelTickets.getBounds().width, ticketsPanel.panelTickets.getBounds().height);
-		panelSales.add(ticketsPanel);
-		ticketsPanel.add(ticketsPanel.panelTickets);
-		ticketsPanel.setLayout(null);
-		ticketsPanel.setVisible(false);
-		
-		
-		//Sponsorship sub-panel
-		
-		sponsorshipsPanel = new SalesSponsorships();
-		sponsorshipsPanel.setBounds(330, 0, sponsorshipsPanel.panelSponsorships.getBounds().width, sponsorshipsPanel.panelSponsorships.getBounds().height);
-		panelSales.add(sponsorshipsPanel);
-		sponsorshipsPanel.add(sponsorshipsPanel.panelSponsorships);
-		sponsorshipsPanel.setLayout(null);
-		sponsorshipsPanel.setVisible(false);
-	
-
 		
 		//Buttons
+		btnSponsorship = new JButton("   SPONSORSHIP");
+		btnSponsorship.setFocusPainted(false);
+		btnSponsorship.setRequestFocusEnabled(false);
+		btnSponsorship.setCursor(Cursor.getPredefinedCursor(Cursor.HAND_CURSOR));
+		btnSponsorship.setHorizontalAlignment(SwingConstants.LEFT);
+		btnSponsorship.setForeground(Color.WHITE);
+		btnSponsorship.setOpaque(true);
+		btnSponsorship.setBorder(null);
+		btnSponsorship.setFont(UI_Elements.font_AgencyBodyButton);
+		btnSponsorship.setBackground(UI_Elements.color_panelBodyButtonDefault);
+		btnSponsorship.setBounds(35, 103, 265, 40);
+		panelSales.add(btnSponsorship);
+		btnSponsorship.addMouseListener( new MouseAdapter() {
+		    public void mouseEntered( MouseEvent e ) {
+		    	btnSponsorship.setBackground(UI_Elements.color_panelBodyButtonRollover);
+		    }
+		    public void mouseExited( MouseEvent e ) {
+		    	if(sponsorshipsPanel.isVisible() == true)
+		    	{
+		    		btnSponsorship.setBackground(UI_Elements.color_panelBodyButtonSelected);
+		    	}
+		    	else
+		    	{
+		    		btnSponsorship.setBackground(UI_Elements.color_panelBodyButtonDefault);
+		    	}
+		    }
+		} );
+		
 		btnTickets = new JButton("   TICKETS");
 		btnTickets.setFocusPainted(false);
 		btnTickets.setRequestFocusEnabled(false);
@@ -116,7 +104,7 @@ public class Sales extends JPanel {
 		btnTickets.setBorder(null);
 		btnTickets.setFont(UI_Elements.font_AgencyBodyButton);
 		btnTickets.setBackground(UI_Elements.color_panelBodyButtonDefault);
-		btnTickets.setBounds(35, 175, 265, 40);
+		btnTickets.setBounds(35, (btnSponsorship.getBounds().y)+55, btnSponsorship.getBounds().width, btnSponsorship.getBounds().height);
 		panelSales.add(btnTickets);
 		btnTickets.addMouseListener( new MouseAdapter() {
 		    public void mouseEntered( MouseEvent e ) {
@@ -135,54 +123,69 @@ public class Sales extends JPanel {
 		} );
 		
 		
-		btnSponsorship = new JButton("   SPONSORSHIP");
-		btnSponsorship.setFocusPainted(false);
-		btnSponsorship.setRequestFocusEnabled(false);
-		btnSponsorship.setCursor(Cursor.getPredefinedCursor(Cursor.HAND_CURSOR));
-		btnSponsorship.setHorizontalAlignment(SwingConstants.LEFT);
-		btnSponsorship.setForeground(Color.WHITE);
-		btnSponsorship.setOpaque(true);
-		btnSponsorship.setBorder(null);
-		//btnSponsorship.setFont(new Font(UI_Elements.mainFontName, Font.PLAIN, 20));
-		btnSponsorship.setFont(UI_Elements.font_AgencyBodyButton);
-		btnSponsorship.setBackground(UI_Elements.color_panelBodyButtonDefault);
-		btnSponsorship.setBounds(35, (btnTickets.getBounds().y)+55, 265, 40);
-		panelSales.add(btnSponsorship);
-		btnSponsorship.addMouseListener( new MouseAdapter() {
-		    public void mouseEntered( MouseEvent e ) {
-		    	btnSponsorship.setBackground(UI_Elements.color_panelBodyButtonRollover);
-		    }
-		    public void mouseExited( MouseEvent e ) {
-		    	if(sponsorshipsPanel.isVisible() == true)
-		    	{
-		    		btnSponsorship.setBackground(UI_Elements.color_panelBodyButtonSelected);
-		    	}
-		    	else
-		    	{
-		    		btnSponsorship.setBackground(UI_Elements.color_panelBodyButtonDefault);
-		    	}
-		    }
-		} );
+		
+		//Comboboxes
+		lblSeason = new JLabel("Season:");
+		lblSeason.setAlignmentY(Component.BOTTOM_ALIGNMENT);
+		lblSeason.setForeground(Color.WHITE);
+		lblSeason.setFont(UI_Elements.font_bodyLabel);
+		lblSeason.setBorder(null);
+		lblSeason.setBounds(btnTickets.getBounds().x, btnTickets.getBounds().y+60, 65, 20);
+		panelSales.add(lblSeason);
+		comboList.add(lblSeason);
+		
+		cb_SalesSeason = new JComboBox();
+		cb_SalesSeason.setFont(UI_Elements.font_bodyFillText);
+		cb_SalesSeason.setModel(new DefaultComboBoxModel(new String[] {}));
+		cb_SalesSeason.setBounds(100, lblSeason.getBounds().y, 200, 20);
+		panelSales.add(cb_SalesSeason);
+		comboList.add(cb_SalesSeason);
+
+		
+		lblGame = new JLabel("Game:");
+		lblGame.setAlignmentY(Component.BOTTOM_ALIGNMENT);
+		lblGame.setForeground(Color.WHITE);
+		lblGame.setFont(UI_Elements.font_bodyLabel);
+		lblGame.setBorder(null);
+		lblGame.setBounds(lblSeason.getBounds().x, (lblSeason.getBounds().y)+30, lblSeason.getBounds().width, lblSeason.getBounds().height);
+		panelSales.add(lblGame);
+		comboList.add(lblGame);
+
+		
+		cb_SalesGame = new JComboBox();
+		cb_SalesGame.setFont(UI_Elements.font_bodyFillText);
+		cb_SalesGame.setModel(new DefaultComboBoxModel(new String[] {}));
+		cb_SalesGame.setBounds(cb_SalesSeason.getBounds().x, (cb_SalesSeason.getBounds().y)+30, cb_SalesSeason.getBounds().width, cb_SalesSeason.getBounds().height);
+		panelSales.add(cb_SalesGame);
+		comboList.add(cb_SalesGame);
+
+		for(JComponent component : comboList)
+		{
+			component.setVisible(false);
+		}
+		
+		//Tickets sub-panel
+		ticketsPanel = new SalesTickets();
+		ticketsPanel.setBounds(330, 0, ticketsPanel.panelTickets.getBounds().width, ticketsPanel.panelTickets.getBounds().height);
+		panelSales.add(ticketsPanel);
+		ticketsPanel.add(ticketsPanel.panelTickets);
+		ticketsPanel.setLayout(null);
+		ticketsPanel.setVisible(false);
+		
+		
+		//Sponsorship sub-panel
+		
+		sponsorshipsPanel = new SalesSponsorships();
+		sponsorshipsPanel.setBounds(330, 0, sponsorshipsPanel.panelSponsorships.getBounds().width, sponsorshipsPanel.panelSponsorships.getBounds().height);
+		panelSales.add(sponsorshipsPanel);
+		sponsorshipsPanel.add(sponsorshipsPanel.panelSponsorships);
+		sponsorshipsPanel.setLayout(null);
+		sponsorshipsPanel.setVisible(false);
 		
 
 		
 		
 		//Action listeners
-		btnTickets.addActionListener(new ActionListener() {
-			public void actionPerformed(ActionEvent arg0) {
-				ticketsPanel.setVisible(true);
-				ticketsPanel.panelTickets.setVisible(true);
-				btnTickets.setBackground(UI_Elements.color_panelBodyButtonSelected);
-				
-				sponsorshipsPanel.setVisible(false);
-				sponsorshipsPanel.panelSponsorships.setVisible(false);
-				btnSponsorship.setBackground(UI_Elements.color_panelBodyButtonDefault);
-				
-				ticketsPanel.revalidate();
-			}
-		});
-		
-		
 		btnSponsorship.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
 				ticketsPanel.setVisible(false);
@@ -193,9 +196,38 @@ public class Sales extends JPanel {
 				sponsorshipsPanel.panelSponsorships.setVisible(true);
 				btnSponsorship.setBackground(UI_Elements.color_panelBodyButtonSelected);
 				
+				if(comboList.get(0).isVisible())
+				{
+					for(JComponent component : comboList)
+					{
+						component.setVisible(false);
+					}
+				}
+				
 				sponsorshipsPanel.revalidate();
 			}
 		});
+		
+		btnTickets.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent arg0) {
+				ticketsPanel.setVisible(true);
+				ticketsPanel.panelTickets.setVisible(true);
+				btnTickets.setBackground(UI_Elements.color_panelBodyButtonSelected);
+				
+				sponsorshipsPanel.setVisible(false);
+				sponsorshipsPanel.panelSponsorships.setVisible(false);
+				btnSponsorship.setBackground(UI_Elements.color_panelBodyButtonDefault);
+				
+				for(JComponent component : comboList)
+				{
+					component.setVisible(true);
+				}
+				
+				ticketsPanel.revalidate();
+			}
+		});
+		
+		
 		panelSales.setVisible(false);
 	}
 }

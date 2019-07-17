@@ -29,6 +29,8 @@ public class ViewStadium extends JPanel {
 	private ImageIcon stadium = new ImageIcon(Overview.class.getResource("/Images/Stadium.png"));
 	
 	public List<JComboBox<String>> observerComboboxes = new ArrayList<JComboBox<String>>();
+	public List<JButton> observerButtons = new ArrayList<JButton>();
+
 	
 	public JButton viewStadium_1;
 	public JButton viewStadium_2;
@@ -526,9 +528,16 @@ public class ViewStadium extends JPanel {
 			numOfSelected++;
 			if(observerComboboxes.size() > 0)
 			{
-				for(JComboBox box : observerComboboxes)
+				for(JComboBox<String> box : observerComboboxes)
 				{
 					box.setEnabled(false);
+				}
+			}
+			if(observerButtons.size() > 0)
+			{
+				for(JButton button : observerButtons)
+				{
+					button.setEnabled(false);
 				}
 			}
 			
@@ -546,6 +555,13 @@ public class ViewStadium extends JPanel {
 				for(JComboBox box : observerComboboxes)
 				{
 					box.setEnabled(true);
+				}
+			}
+			if(observerButtons.size() > 0)
+			{
+				for(JButton button : observerButtons)
+				{
+					button.setEnabled(true);
 				}
 			}
 		}

@@ -43,13 +43,8 @@ public class SalesTickets extends JPanel {
 	public JTextField tf_TotalSingleClubLevel;
 	private JLabel lblTotalSingleBleachers;
 	public JTextField tf_TotalSingleBleachers;
-	private JSeparator sprtrTickets2;
-	private JLabel lblTotalNumOfSeasonTickets;
-	public JTextField tf_TotalNumOfSeasonTickets;
-	private JLabel lblTotalSeasonTicketRevenue;
-	public JTextField tf_TotalSeasonTicketRevenue;
 	
-	private int lineSpacing = 7;
+	private final int lineSpacing = 7;
 
 	SalesTickets(){
 		panelTickets = new JPanel();
@@ -224,56 +219,7 @@ public class SalesTickets extends JPanel {
 		tf_TotalSingleBleachers.setEditable(false);
 		tf_TotalSingleBleachers.setHorizontalAlignment(SwingConstants.LEFT);
 		tf_TotalSingleBleachers.setFont(UI_Elements.font_bodySalesData);
-		panelTickets.add(tf_TotalSingleBleachers);
-		
-		sprtrTickets2 = new JSeparator();
-		sprtrTickets2.setForeground(UI_Elements.color_mainBackgroundColor);
-		sprtrTickets2.setBounds(lblTotalRevenue.getBounds().x, lblTotalSingleBleachers.getBounds().y+lblTotalSingleBleachers.getBounds().height+lineSpacing*2, 533, 10);
-		panelTickets.add(sprtrTickets2);
-		
-		lblTotalNumOfSeasonTickets = new JLabel("Total Num. of Season Tickets:");
-		lblTotalNumOfSeasonTickets.setAlignmentY(Component.TOP_ALIGNMENT);
-		lblTotalNumOfSeasonTickets.setVerticalAlignment(SwingConstants.TOP);
-		lblTotalNumOfSeasonTickets.setForeground(UI_Elements.color_mainBackgroundColor);
-		lblTotalNumOfSeasonTickets.setFont(UI_Elements.font_bodyLabel);
-		lblTotalNumOfSeasonTickets.setBorder(null);
-		lblTotalNumOfSeasonTickets.setBounds(sprtrTickets2.getBounds().x, sprtrTickets2.getBounds().y+sprtrTickets2.getBounds().height+lineSpacing*2, 250, lblTotalAttendance.getBounds().height);
-		panelTickets.add(lblTotalNumOfSeasonTickets);
-		
-		tf_TotalNumOfSeasonTickets = new JTextField("8,000");
-		tf_TotalNumOfSeasonTickets.setAlignmentY(Component.TOP_ALIGNMENT);
-		tf_TotalNumOfSeasonTickets.setBorder(null);
-		tf_TotalNumOfSeasonTickets.setOpaque(false);
-		tf_TotalNumOfSeasonTickets.setBackground(Color.WHITE);
-		tf_TotalNumOfSeasonTickets.setBounds(tf_TotalSingleBleachers.getBounds().x, lblTotalNumOfSeasonTickets.getBounds().y, 150, tf_TotalSingleBleachers.getBounds().height);
-		tf_TotalNumOfSeasonTickets.setForeground(UI_Elements.color_mainBackgroundColor);
-		tf_TotalNumOfSeasonTickets.setEnabled(true);
-		tf_TotalNumOfSeasonTickets.setEditable(false);
-		tf_TotalNumOfSeasonTickets.setHorizontalAlignment(SwingConstants.LEFT);
-		tf_TotalNumOfSeasonTickets.setFont(UI_Elements.font_bodySalesData);
-		panelTickets.add(tf_TotalNumOfSeasonTickets);
-		
-		lblTotalSeasonTicketRevenue = new JLabel("Total Season Ticket Revenue:");
-		lblTotalSeasonTicketRevenue.setAlignmentY(Component.TOP_ALIGNMENT);
-		lblTotalSeasonTicketRevenue.setVerticalAlignment(SwingConstants.TOP);
-		lblTotalSeasonTicketRevenue.setForeground(UI_Elements.color_mainBackgroundColor);
-		lblTotalSeasonTicketRevenue.setFont(UI_Elements.font_bodyLabel);
-		lblTotalSeasonTicketRevenue.setBorder(null);
-		lblTotalSeasonTicketRevenue.setBounds(lblTotalNumOfSeasonTickets.getBounds().x, lblTotalNumOfSeasonTickets.getBounds().y+lblTotalNumOfSeasonTickets.getBounds().height+lineSpacing, 250, lblTotalNumOfSeasonTickets.getBounds().height);
-		panelTickets.add(lblTotalSeasonTicketRevenue);
-		
-		tf_TotalSeasonTicketRevenue = new JTextField("$28,000");
-		tf_TotalSeasonTicketRevenue.setAlignmentY(Component.TOP_ALIGNMENT);
-		tf_TotalSeasonTicketRevenue.setBorder(null);
-		tf_TotalSeasonTicketRevenue.setOpaque(false);
-		tf_TotalSeasonTicketRevenue.setBackground(Color.WHITE);
-		tf_TotalSeasonTicketRevenue.setBounds(tf_TotalNumOfSeasonTickets.getBounds().x, lblTotalSeasonTicketRevenue.getBounds().y, 150, tf_TotalNumOfSeasonTickets.getBounds().height);
-		tf_TotalSeasonTicketRevenue.setForeground(UI_Elements.color_mainBackgroundColor);
-		tf_TotalSeasonTicketRevenue.setEnabled(true);
-		tf_TotalSeasonTicketRevenue.setEditable(false);
-		tf_TotalSeasonTicketRevenue.setHorizontalAlignment(SwingConstants.LEFT);
-		tf_TotalSeasonTicketRevenue.setFont(UI_Elements.font_bodySalesData);
-		panelTickets.add(tf_TotalSeasonTicketRevenue);
+		panelTickets.add(tf_TotalSingleBleachers);	
 		
 	}
 	
