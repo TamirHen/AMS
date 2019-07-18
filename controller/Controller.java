@@ -506,6 +506,7 @@ public class Controller {
 		displaySectionDetails(0);
 		// Actions:
 		view.propertiesPanel.btnEditProperties.addActionListener(new ActionListener() {
+			@SuppressWarnings("serial")
 			public void actionPerformed(ActionEvent arg0) {
 				view.propertiesPanel.btnEditProperties.setVisible(false);
 				view.propertiesPanel.btnCancelEditing.setVisible(true);
@@ -513,7 +514,7 @@ public class Controller {
 				view.propertiesPanel.btnEditTicketPrices.setVisible(true);
 				view.propertiesPanel.setProperties(true);
 				view.propertiesPanel.cb_SectionSelection.setEnabled(false);
-				view.propertiesPanel.cb_SectionSelection.setRenderer(new DefaultListCellRenderer() { // Send Yoni
+				view.propertiesPanel.cb_SectionSelection.setRenderer(new DefaultListCellRenderer() {
 					public void paint(Graphics g) {
 						setForeground(Color.BLACK);
 						super.paint(g);

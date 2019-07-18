@@ -203,11 +203,11 @@ public class FacilitiesMaintenance extends JPanel {
 		panelMaintenance.add(tf_AddMaintenancePriority);
 		tf_AddMaintenancePriority.setColumns(10);
 		
-		lblAddMaintenancePriority = new JLabel("Priority:");
+		lblAddMaintenancePriority = new JLabel("Priority (#):");
 		lblAddMaintenancePriority.setBorder(null);
 		lblAddMaintenancePriority.setForeground(UI_Elements.color_mainBackgroundColor);
 		lblAddMaintenancePriority.setFont(UI_Elements.font_bodyLabel);
-		lblAddMaintenancePriority.setBounds(tf_AddMaintenancePriority.getBounds().x - lblAddMaintenanceMaintenanceStartDate.getBounds().width + boxSpacing, tf_AddMaintenanceMaintenanceStartDate.getBounds().y, lblAddMaintenanceMaintenanceStartDate.getBounds().width-20, 26);
+		lblAddMaintenancePriority.setBounds(tf_AddMaintenancePriority.getBounds().x - lblAddMaintenanceMaintenanceStartDate.getBounds().width-10, tf_AddMaintenanceMaintenanceStartDate.getBounds().y, lblAddMaintenanceMaintenanceStartDate.getBounds().width+10, 26);
 		panelMaintenance.add(lblAddMaintenancePriority);
 		
 		btnAddMaintenanceFinish = new JButton("FINISH");
