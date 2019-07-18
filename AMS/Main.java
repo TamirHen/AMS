@@ -11,6 +11,7 @@ public class Main {
 	public static void main(String[] args) {
 
 		EventQueue.invokeLater(new Runnable() {
+			@SuppressWarnings("unused")
 			public void run() {				
 				try {
 					Model amsModel = new Model();
