@@ -22,10 +22,10 @@ import javax.swing.SwingConstants;
 import javax.swing.JScrollPane;
 
 @SuppressWarnings("serial")
-public class SalesSponsorships extends JPanel {
+public class SalesSponsorship extends JPanel {
 	
-	public JPanel panelSponsorships;
-	public JLabel titleSponsorships;
+	public JPanel panelSponsorship;
+	public JLabel titleSponsorship;
 	
 	public JScrollPane sponsorTableScrollPane;
 	public JTable sponsorTable;
@@ -55,31 +55,31 @@ public class SalesSponsorships extends JPanel {
 
 
 	
-	public SalesSponsorships(){
+	public SalesSponsorship(){
 		
 		
 		
-		panelSponsorships = new JPanel();
-		panelSponsorships.setBorder(null);
-		panelSponsorships.setBackground(SystemColor.control);
-		panelSponsorships.setBounds(0, 0, 600, 617);
-		panelSponsorships.setLayout(null);
-		panelSponsorships.setVisible(true);
+		panelSponsorship = new JPanel();
+		panelSponsorship.setBorder(null);
+		panelSponsorship.setBackground(SystemColor.control);
+		panelSponsorship.setBounds(0, 0, 600, 617);
+		panelSponsorship.setLayout(null);
+		panelSponsorship.setVisible(true);
 		
-		titleSponsorships = new JLabel("SPONSORSHIPS");
-		titleSponsorships.setAlignmentY(Component.TOP_ALIGNMENT);
-		titleSponsorships.setVerticalAlignment(SwingConstants.TOP);
-		titleSponsorships.setBounds(30, 22, 346, 76);
-		titleSponsorships.setCursor(Cursor.getPredefinedCursor(Cursor.DEFAULT_CURSOR));
-		titleSponsorships.setForeground(UI_Elements.color_mainBackgroundColor);
-		titleSponsorships.setFont(UI_Elements.font_AgencySubPanelTitle);
-		panelSponsorships.add(titleSponsorships);
+		titleSponsorship = new JLabel("SPONSORSHIP");
+		titleSponsorship.setAlignmentY(Component.TOP_ALIGNMENT);
+		titleSponsorship.setVerticalAlignment(SwingConstants.TOP);
+		titleSponsorship.setBounds(30, 22, 346, 76);
+		titleSponsorship.setCursor(Cursor.getPredefinedCursor(Cursor.DEFAULT_CURSOR));
+		titleSponsorship.setForeground(UI_Elements.color_mainBackgroundColor);
+		titleSponsorship.setFont(UI_Elements.font_AgencySubPanelTitle);
+		panelSponsorship.add(titleSponsorship);
 		
 	
 		//Sponsor table from DB
 		sponsorTableScrollPane = new JScrollPane();
-		sponsorTableScrollPane.setBounds(titleSponsorships.getBounds().x, titleSponsorships.getBounds().y+titleSponsorships.getBounds().height-20, panelSponsorships.getBounds().width-titleSponsorships.getBounds().x-40, 275);
-		panelSponsorships.add(sponsorTableScrollPane);
+		sponsorTableScrollPane.setBounds(titleSponsorship.getBounds().x, titleSponsorship.getBounds().y+titleSponsorship.getBounds().height-20, panelSponsorship.getBounds().width-titleSponsorship.getBounds().x-40, 275);
+		panelSponsorship.add(sponsorTableScrollPane);
 		
 		sponsorTable = new JTable(sponsorsToDisplay,colum_headers);
 		sponsorTableScrollPane.setViewportView(sponsorTable);
@@ -99,7 +99,7 @@ public class SalesSponsorships extends JPanel {
 		btnAddSponsor.setBackground(UI_Elements.color_mainBackgroundColor);
 		btnAddSponsor.setBounds(sponsorTableScrollPane.getBounds().x, sponsorTableScrollPane.getBounds().y+sponsorTableScrollPane.getBounds().height+20, sponsorTableScrollPane.getBounds().width/2 - 5, 30);
 		btnAddSponsor.setSelected(false);
-		panelSponsorships.add(btnAddSponsor);
+		panelSponsorship.add(btnAddSponsor);
 		btnAddSponsor.addMouseListener( new MouseAdapter() {
 		    public void mouseEntered( MouseEvent e ) {
 		    	btnAddSponsor.setBackground(UI_Elements.color_panelBodyButtonRollover);
@@ -128,7 +128,7 @@ public class SalesSponsorships extends JPanel {
 		btnRemoveSponsor.setBackground(UI_Elements.color_mainBackgroundColor);
 		btnRemoveSponsor.setBounds(sponsorTableScrollPane.getBounds().x + sponsorTableScrollPane.getBounds().width - btnAddSponsor.getBounds().width, btnAddSponsor.getBounds().y, sponsorTableScrollPane.getBounds().width/2 - 5, btnAddSponsor.getBounds().height);
 		btnRemoveSponsor.setSelected(false);
-		panelSponsorships.add(btnRemoveSponsor);
+		panelSponsorship.add(btnRemoveSponsor);
 		btnRemoveSponsor.addMouseListener( new MouseAdapter() {
 		    public void mouseEntered( MouseEvent e ) {
 		    	btnRemoveSponsor.setBackground(UI_Elements.color_panelBodyButtonRollover);
@@ -150,7 +150,7 @@ public class SalesSponsorships extends JPanel {
 		lblAddSponsorSponsorName.setForeground(UI_Elements.color_mainBackgroundColor);
 		lblAddSponsorSponsorName.setFont(UI_Elements.font_bodyLabel);
 		lblAddSponsorSponsorName.setBounds(btnAddSponsor.getBounds().x, btnAddSponsor.getBounds().y+btnAddSponsor.getBounds().height+20, 109, 26);
-		panelSponsorships.add(lblAddSponsorSponsorName);
+		panelSponsorship.add(lblAddSponsorSponsorName);
 
 		tf_AddSponsorSponsorName = new JTextField();
 		tf_AddSponsorSponsorName.setDisabledTextColor(Color.BLACK);
@@ -159,7 +159,7 @@ public class SalesSponsorships extends JPanel {
 		tf_AddSponsorSponsorName.setHorizontalAlignment(SwingConstants.LEFT);
 		tf_AddSponsorSponsorName.setFont(UI_Elements.font_bodyFillText);
 		tf_AddSponsorSponsorName.setBounds(lblAddSponsorSponsorName.getBounds().x + lblAddSponsorSponsorName.getBounds().width + 12, lblAddSponsorSponsorName.getBounds().y, sponsorTableScrollPane.getBounds().width-12-lblAddSponsorSponsorName.getBounds().width, 20);
-		panelSponsorships.add(tf_AddSponsorSponsorName);
+		panelSponsorship.add(tf_AddSponsorSponsorName);
 		tf_AddSponsorSponsorName.setColumns(10);
 		
 		lblAddSponsorContractValue = new JLabel("Contract Value:");
@@ -167,7 +167,7 @@ public class SalesSponsorships extends JPanel {
 		lblAddSponsorContractValue.setForeground(UI_Elements.color_mainBackgroundColor);
 		lblAddSponsorContractValue.setFont(UI_Elements.font_bodyLabel);
 		lblAddSponsorContractValue.setBounds(lblAddSponsorSponsorName.getBounds().x, lblAddSponsorSponsorName.getBounds().y+lblAddSponsorSponsorName.getBounds().height+7, 109, 26);
-		panelSponsorships.add(lblAddSponsorContractValue);
+		panelSponsorship.add(lblAddSponsorContractValue);
 
 		tf_AddSponsorContractValue = new JTextField();
 		tf_AddSponsorContractValue.setDisabledTextColor(Color.BLACK);
@@ -176,7 +176,7 @@ public class SalesSponsorships extends JPanel {
 		tf_AddSponsorContractValue.setHorizontalAlignment(SwingConstants.LEFT);
 		tf_AddSponsorContractValue.setFont(UI_Elements.font_bodyFillText);
 		tf_AddSponsorContractValue.setBounds(tf_AddSponsorSponsorName.getBounds().x, lblAddSponsorContractValue.getBounds().y , tf_AddSponsorSponsorName.getBounds().width, tf_AddSponsorSponsorName.getBounds().height);
-		panelSponsorships.add(tf_AddSponsorContractValue);
+		panelSponsorship.add(tf_AddSponsorContractValue);
 		tf_AddSponsorContractValue.setColumns(10);
 		
 		lblAddSponsorContractStart = new JLabel("Contract Start Date:");
@@ -184,7 +184,7 @@ public class SalesSponsorships extends JPanel {
 		lblAddSponsorContractStart.setForeground(UI_Elements.color_mainBackgroundColor);
 		lblAddSponsorContractStart.setFont(UI_Elements.font_bodyLabel);
 		lblAddSponsorContractStart.setBounds(lblAddSponsorContractValue.getBounds().x, lblAddSponsorContractValue.getBounds().y+lblAddSponsorContractValue.getBounds().height+7, 135, 26);
-		panelSponsorships.add(lblAddSponsorContractStart);
+		panelSponsorship.add(lblAddSponsorContractStart);
 	
 		tf_AddSponsorContractStart = new JTextField();
 		tf_AddSponsorContractStart.setDisabledTextColor(Color.BLACK);
@@ -193,7 +193,7 @@ public class SalesSponsorships extends JPanel {
 		tf_AddSponsorContractStart.setHorizontalAlignment(SwingConstants.LEFT);
 		tf_AddSponsorContractStart.setFont(UI_Elements.font_bodyFillText);
 		tf_AddSponsorContractStart.setBounds(tf_AddSponsorSponsorName.getBounds().x, lblAddSponsorContractStart.getBounds().y , 141, 20);
-		panelSponsorships.add(tf_AddSponsorContractStart);
+		panelSponsorship.add(tf_AddSponsorContractStart);
 		tf_AddSponsorContractStart.setColumns(10);
 		
 		lblAddSponsorContractEnd = new JLabel("Contract End Date:");
@@ -201,7 +201,7 @@ public class SalesSponsorships extends JPanel {
 		lblAddSponsorContractEnd.setForeground(UI_Elements.color_mainBackgroundColor);
 		lblAddSponsorContractEnd.setFont(UI_Elements.font_bodyLabel);
 		lblAddSponsorContractEnd.setBounds(btnRemoveSponsor.getBounds().x, tf_AddSponsorContractStart.getBounds().y, 119, 26);
-		panelSponsorships.add(lblAddSponsorContractEnd);
+		panelSponsorship.add(lblAddSponsorContractEnd);
 
 		tf_AddSponsorContractEnd = new JTextField();
 		tf_AddSponsorContractEnd.setDisabledTextColor(Color.BLACK);
@@ -210,7 +210,7 @@ public class SalesSponsorships extends JPanel {
 		tf_AddSponsorContractEnd.setHorizontalAlignment(SwingConstants.LEFT);
 		tf_AddSponsorContractEnd.setFont(UI_Elements.font_bodyFillText);
 		tf_AddSponsorContractEnd.setBounds(lblAddSponsorContractEnd.getBounds().x+lblAddSponsorContractEnd.getBounds().width, lblAddSponsorContractEnd.getBounds().y , 141, 20);
-		panelSponsorships.add(tf_AddSponsorContractEnd);
+		panelSponsorship.add(tf_AddSponsorContractEnd);
 		tf_AddSponsorContractEnd.setColumns(10);
 		
 		btnAddSponsorFinish = new JButton("FINISH");
@@ -225,7 +225,7 @@ public class SalesSponsorships extends JPanel {
 		btnAddSponsorFinish.setBackground(UI_Elements.color_mainBackgroundColor);
 		btnAddSponsorFinish.setBounds(221, lblAddSponsorContractStart.getBounds().y+lblAddSponsorContractStart.getBounds().height+12, 75, 25);
 		btnAddSponsorFinish.setSelected(false);
-		panelSponsorships.add(btnAddSponsorFinish);
+		panelSponsorship.add(btnAddSponsorFinish);
 		btnAddSponsorFinish.addMouseListener( new MouseAdapter() {
 		    public void mouseEntered( MouseEvent e ) {
 		    	btnAddSponsorFinish.setBackground(UI_Elements.color_panelBodyButtonRollover);
@@ -247,7 +247,7 @@ public class SalesSponsorships extends JPanel {
 		btnAddSponsorCancel.setBackground(UI_Elements.color_mainBackgroundColor);
 		btnAddSponsorCancel.setBounds(btnAddSponsorFinish.getBounds().x + btnAddSponsorFinish.getBounds().width + 7, btnAddSponsorFinish.getBounds().y, 75, 25);
 		btnAddSponsorCancel.setSelected(false);
-		panelSponsorships.add(btnAddSponsorCancel);
+		panelSponsorship.add(btnAddSponsorCancel);
 		btnAddSponsorCancel.addMouseListener( new MouseAdapter() {
 		    public void mouseEntered( MouseEvent e ) {
 		    	btnAddSponsorCancel.setBackground(UI_Elements.color_panelBodyButtonRollover);
@@ -278,14 +278,14 @@ public class SalesSponsorships extends JPanel {
 		lblRemoveSponsorSponsorName.setForeground(UI_Elements.color_mainBackgroundColor);
 		lblRemoveSponsorSponsorName.setFont(UI_Elements.font_bodyLabel);
 		lblRemoveSponsorSponsorName.setBounds(btnAddSponsor.getBounds().x, btnAddSponsor.getBounds().y+btnAddSponsor.getBounds().height+20, 109, 26);
-		panelSponsorships.add(lblRemoveSponsorSponsorName);
+		panelSponsorship.add(lblRemoveSponsorSponsorName);
 
 		cb_RemoveSponsorSponsorName = new JComboBox<String>();
 		cb_RemoveSponsorSponsorName.setEnabled(true);
 		cb_RemoveSponsorSponsorName.setEditable(false);
 		cb_RemoveSponsorSponsorName.setFont(UI_Elements.font_bodyFillText);
 		cb_RemoveSponsorSponsorName.setBounds(lblAddSponsorSponsorName.getBounds().x + lblAddSponsorSponsorName.getBounds().width + 12, lblAddSponsorSponsorName.getBounds().y, sponsorTableScrollPane.getBounds().width-12-lblAddSponsorSponsorName.getBounds().width, 25);
-		panelSponsorships.add(cb_RemoveSponsorSponsorName);
+		panelSponsorship.add(cb_RemoveSponsorSponsorName);
 
 		btnRemoveSponsorFinish = new JButton("FINISH");
 		btnRemoveSponsorFinish.setFocusPainted(false);
@@ -299,7 +299,7 @@ public class SalesSponsorships extends JPanel {
 		btnRemoveSponsorFinish.setBackground(UI_Elements.color_mainBackgroundColor);
 		btnRemoveSponsorFinish.setBounds(221, lblRemoveSponsorSponsorName.getBounds().y+lblRemoveSponsorSponsorName.getBounds().height+12, 75, 25);
 		btnRemoveSponsorFinish.setSelected(false);
-		panelSponsorships.add(btnRemoveSponsorFinish);
+		panelSponsorship.add(btnRemoveSponsorFinish);
 		btnRemoveSponsorFinish.addMouseListener( new MouseAdapter() {
 		    public void mouseEntered( MouseEvent e ) {
 		    	btnRemoveSponsorFinish.setBackground(UI_Elements.color_panelBodyButtonRollover);
@@ -321,7 +321,7 @@ public class SalesSponsorships extends JPanel {
 		btnRemoveSponsorCancel.setBackground(UI_Elements.color_mainBackgroundColor);
 		btnRemoveSponsorCancel.setBounds(btnAddSponsorFinish.getBounds().x + btnAddSponsorFinish.getBounds().width + 7, btnRemoveSponsorFinish.getBounds().y, 75, 25);
 		btnRemoveSponsorCancel.setSelected(false);
-		panelSponsorships.add(btnRemoveSponsorCancel);
+		panelSponsorship.add(btnRemoveSponsorCancel);
 		btnRemoveSponsorCancel.addMouseListener( new MouseAdapter() {
 		    public void mouseEntered( MouseEvent e ) {
 		    	btnRemoveSponsorCancel.setBackground(UI_Elements.color_panelBodyButtonRollover);

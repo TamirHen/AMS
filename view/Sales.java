@@ -21,7 +21,7 @@ public class Sales extends JPanel {
 
 	public JPanel panelSales;
 	public SalesTickets ticketsPanel;
-	public SalesSponsorships sponsorshipsPanel;
+	public SalesSponsorship sponsorshipPanel;
 
 	public JButton btnSponsorship;
 	public JButton btnTickets;
@@ -79,7 +79,7 @@ public class Sales extends JPanel {
 		    	btnSponsorship.setBackground(UI_Elements.color_panelBodyButtonRollover);
 		    }
 		    public void mouseExited( MouseEvent e ) {
-		    	if(sponsorshipsPanel.isVisible() == true)
+		    	if(sponsorshipPanel.isVisible() == true)
 		    	{
 		    		btnSponsorship.setBackground(UI_Elements.color_panelBodyButtonSelected);
 		    	}
@@ -197,12 +197,12 @@ public class Sales extends JPanel {
 		
 		//Sponsorship sub-panel
 		
-		sponsorshipsPanel = new SalesSponsorships();
-		sponsorshipsPanel.setBounds(330, 0, sponsorshipsPanel.panelSponsorships.getBounds().width, sponsorshipsPanel.panelSponsorships.getBounds().height);
-		panelSales.add(sponsorshipsPanel);
-		sponsorshipsPanel.add(sponsorshipsPanel.panelSponsorships);
-		sponsorshipsPanel.setLayout(null);
-		sponsorshipsPanel.setVisible(false);
+		sponsorshipPanel = new SalesSponsorship();
+		sponsorshipPanel.setBounds(330, 0, sponsorshipPanel.panelSponsorship.getBounds().width, sponsorshipPanel.panelSponsorship.getBounds().height);
+		panelSales.add(sponsorshipPanel);
+		sponsorshipPanel.add(sponsorshipPanel.panelSponsorship);
+		sponsorshipPanel.setLayout(null);
+		sponsorshipPanel.setVisible(false);
 		
 
 		
@@ -214,8 +214,8 @@ public class Sales extends JPanel {
 				ticketsPanel.panelTickets.setVisible(false);
 				btnTickets.setBackground(UI_Elements.color_panelBodyButtonDefault);
 				
-				sponsorshipsPanel.setVisible(true);
-				sponsorshipsPanel.panelSponsorships.setVisible(true);
+				sponsorshipPanel.setVisible(true);
+				sponsorshipPanel.panelSponsorship.setVisible(true);
 				btnSponsorship.setBackground(UI_Elements.color_panelBodyButtonSelected);
 				
 				if(comboList.get(0).isVisible())
@@ -226,7 +226,7 @@ public class Sales extends JPanel {
 					}
 				}
 				btnDisplayTicketData.setVisible(false);
-				sponsorshipsPanel.revalidate();
+				sponsorshipPanel.revalidate();
 			}
 		});
 		
@@ -236,8 +236,8 @@ public class Sales extends JPanel {
 				ticketsPanel.panelTickets.setVisible(false);
 				btnTickets.setBackground(UI_Elements.color_panelBodyButtonSelected);
 				
-				sponsorshipsPanel.setVisible(false);
-				sponsorshipsPanel.panelSponsorships.setVisible(false);
+				sponsorshipPanel.setVisible(false);
+				sponsorshipPanel.panelSponsorship.setVisible(false);
 				btnSponsorship.setBackground(UI_Elements.color_panelBodyButtonDefault);
 				
 				for(JComponent component : comboList)

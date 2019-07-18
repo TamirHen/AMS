@@ -701,13 +701,13 @@ public class Controller {
 					//Simmulate panel change
 					view.salesPanel.ticketsPanel.setVisible(false);
 					view.salesPanel.ticketsPanel.panelTickets.setVisible(false);
-					view.salesPanel.sponsorshipsPanel.setVisible(true);
-					view.salesPanel.sponsorshipsPanel.panelSponsorships.setVisible(true);
+					view.salesPanel.sponsorshipPanel.setVisible(true);
+					view.salesPanel.sponsorshipPanel.panelSponsorship.setVisible(true);
 					
 					view.salesPanel.ticketsPanel.setVisible(true);
 					view.salesPanel.ticketsPanel.panelTickets.setVisible(false);
-					view.salesPanel.sponsorshipsPanel.setVisible(false);
-					view.salesPanel.sponsorshipsPanel.panelSponsorships.setVisible(false);					
+					view.salesPanel.sponsorshipPanel.setVisible(false);
+					view.salesPanel.sponsorshipPanel.panelSponsorship.setVisible(false);					
 					//
 					
 					for(JComponent component : view.salesPanel.comboList)
@@ -728,31 +728,31 @@ public class Controller {
 			displaySponsorsToTable();
 			
 			for(int i=0; i<model.sponsorsSize;i++) {
-				view.salesPanel.sponsorshipsPanel.cb_RemoveSponsorSponsorName.addItem(model.sponsors.get(i).getName());
+				view.salesPanel.sponsorshipPanel.cb_RemoveSponsorSponsorName.addItem(model.sponsors.get(i).getName());
 			}
 
 			
-			view.salesPanel.sponsorshipsPanel.btnAddSponsorFinish.addActionListener(new ActionListener() {
+			view.salesPanel.sponsorshipPanel.btnAddSponsorFinish.addActionListener(new ActionListener() {
 				public void actionPerformed(ActionEvent arg0) {
-					model.createNewSponsor(view.salesPanel.sponsorshipsPanel.tf_AddSponsorSponsorName.getText(), view.salesPanel.sponsorshipsPanel.tf_AddSponsorContractStart.getText(), view.salesPanel.sponsorshipsPanel.tf_AddSponsorContractEnd.getText(),Float.valueOf(view.salesPanel.sponsorshipsPanel.tf_AddSponsorContractValue.getText()));
-					view.salesPanel.sponsorshipsPanel.cb_RemoveSponsorSponsorName.addItem(view.salesPanel.sponsorshipsPanel.tf_AddSponsorSponsorName.getText());
+					model.createNewSponsor(view.salesPanel.sponsorshipPanel.tf_AddSponsorSponsorName.getText(), view.salesPanel.sponsorshipPanel.tf_AddSponsorContractStart.getText(), view.salesPanel.sponsorshipPanel.tf_AddSponsorContractEnd.getText(),Float.valueOf(view.salesPanel.sponsorshipPanel.tf_AddSponsorContractValue.getText()));
+					view.salesPanel.sponsorshipPanel.cb_RemoveSponsorSponsorName.addItem(view.salesPanel.sponsorshipPanel.tf_AddSponsorSponsorName.getText());
 					displaySponsorsToTable();
-					view.salesPanel.sponsorshipsPanel.tf_AddSponsorSponsorName.setText("");
-					view.salesPanel.sponsorshipsPanel.tf_AddSponsorContractValue.setText("");
-					view.salesPanel.sponsorshipsPanel.tf_AddSponsorContractStart.setText("");
-					view.salesPanel.sponsorshipsPanel.tf_AddSponsorContractEnd.setText("");
+					view.salesPanel.sponsorshipPanel.tf_AddSponsorSponsorName.setText("");
+					view.salesPanel.sponsorshipPanel.tf_AddSponsorContractValue.setText("");
+					view.salesPanel.sponsorshipPanel.tf_AddSponsorContractStart.setText("");
+					view.salesPanel.sponsorshipPanel.tf_AddSponsorContractEnd.setText("");
 				
 				}
 		});
 			
 			
-			view.salesPanel.sponsorshipsPanel.btnRemoveSponsorFinish.addActionListener(new ActionListener() {
+			view.salesPanel.sponsorshipPanel.btnRemoveSponsorFinish.addActionListener(new ActionListener() {
 				public void actionPerformed(ActionEvent arg0) {
 				
-					if(view.salesPanel.sponsorshipsPanel.cb_RemoveSponsorSponsorName.getSelectedItem()!=null) {
-					model.db.deleteGivenSponsorDB(view.salesPanel.sponsorshipsPanel.cb_RemoveSponsorSponsorName.getSelectedItem().toString());
-					model.deleteGivenSponsor(view.salesPanel.sponsorshipsPanel.cb_RemoveSponsorSponsorName.getSelectedIndex());
-					view.salesPanel.sponsorshipsPanel.cb_RemoveSponsorSponsorName.removeItem(view.salesPanel.sponsorshipsPanel.cb_RemoveSponsorSponsorName.getSelectedItem());
+					if(view.salesPanel.sponsorshipPanel.cb_RemoveSponsorSponsorName.getSelectedItem()!=null) {
+					model.db.deleteGivenSponsorDB(view.salesPanel.sponsorshipPanel.cb_RemoveSponsorSponsorName.getSelectedItem().toString());
+					model.deleteGivenSponsor(view.salesPanel.sponsorshipPanel.cb_RemoveSponsorSponsorName.getSelectedIndex());
+					view.salesPanel.sponsorshipPanel.cb_RemoveSponsorSponsorName.removeItem(view.salesPanel.sponsorshipPanel.cb_RemoveSponsorSponsorName.getSelectedItem());
 					deleteSponsorFromTable();
 					}
 			
@@ -1239,18 +1239,18 @@ public class Controller {
 	//---Sales panel----//
 	public void displaySponsorsToTable() {
 		for(int i=0;i<model.sponsorsSize;i++) {
-			view.salesPanel.sponsorshipsPanel.sponsorsToDisplay[i]=new String[] {model.sponsors.get(i).getName().toString(),model.sponsors.get(i).getContractStartDate().toString(),model.sponsors.get(i).getContractEndDate().toString(),String.valueOf(model.sponsors.get(i).getTotalContractValue())};
+			view.salesPanel.sponsorshipPanel.sponsorsToDisplay[i]=new String[] {model.sponsors.get(i).getName().toString(),model.sponsors.get(i).getContractStartDate().toString(),model.sponsors.get(i).getContractEndDate().toString(),String.valueOf(model.sponsors.get(i).getTotalContractValue())};
 			}
-		view.salesPanel.sponsorshipsPanel.sponsorTableScrollPane.repaint();
+		view.salesPanel.sponsorshipPanel.sponsorTableScrollPane.repaint();
 	}
 	
 	public void deleteSponsorFromTable() {
 		
 		for(int i=0;i<model.sponsorsSize;i++) {
-			view.salesPanel.sponsorshipsPanel.sponsorsToDisplay[i]=new String[] {model.sponsors.get(i).getName().toString(),model.sponsors.get(i).getContractStartDate().toString(),model.sponsors.get(i).getContractEndDate().toString(),String.valueOf(model.sponsors.get(i).getTotalContractValue())};
+			view.salesPanel.sponsorshipPanel.sponsorsToDisplay[i]=new String[] {model.sponsors.get(i).getName().toString(),model.sponsors.get(i).getContractStartDate().toString(),model.sponsors.get(i).getContractEndDate().toString(),String.valueOf(model.sponsors.get(i).getTotalContractValue())};
 			}
-		view.salesPanel.sponsorshipsPanel.sponsorsToDisplay[model.sponsorsSize]=new String[] {"","","",""};
-		view.salesPanel.sponsorshipsPanel.sponsorTableScrollPane.repaint();
+		view.salesPanel.sponsorshipPanel.sponsorsToDisplay[model.sponsorsSize]=new String[] {"","","",""};
+		view.salesPanel.sponsorshipPanel.sponsorTableScrollPane.repaint();
 
 	}
 	
